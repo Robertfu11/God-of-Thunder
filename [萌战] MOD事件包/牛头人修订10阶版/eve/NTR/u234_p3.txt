@@ -1,7 +1,0 @@
-chk_mval,‘¯ÈÑ:yome_player>=2,,,,
-chk_mval_then
-    txtload,NTR\u234_ntr3
-end
-chk_mval_else
-    txtload,NTR\u234_repeat
-end
