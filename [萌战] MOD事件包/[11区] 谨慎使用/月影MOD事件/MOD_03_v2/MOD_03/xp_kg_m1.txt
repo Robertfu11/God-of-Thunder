@@ -1,0 +1,104 @@
+//覇王オルド　妾　強引　タイプ1　正常位
+//状態チェック
+zin_seloop,se137,1
+chk_wsts,pid2
+//通常パターン
+case_normal
+	chk_sts,pid2,4,12080
+	chk_sts_then
+	zin_seloop_stop
+		zin_reg_msg,什麼！？cr你難道想違抗callself_pid1的命令嗎！,0
+		zin_reg_msg,是命令？,1
+		zin_reg_msg,沒錯,0
+		zin_reg_msg,不服從的話就徹底和你斷絕一切關系,0
+		zin_reg_msg,怎、怎麼會．．．,1
+		zin_reg_msg,習慣于奢靡生活的你、一定無法忍受吧,0
+		zin_reg_msg,我、我明白要怎麼做了,1
+		zin_reg_msg,呵呵呵,0
+		zin_old_init
+		zin_old_img_pid,pid2,1
+		txtload,xpkm_gn
+		end
+	chk_sts_else
+	zin_seloop_stop
+		zin_reg_msg,我今晚就不回去了,0
+		zin_reg_msg,求您了、請回去吧,1
+		zin_reg_msg,你越拒絕、我的征服欲就越強,0
+		zin_reg_msg,啊、不、不行．．．不、不要啊！！,1
+		zin_old_init
+		zin_old_img_pid,pid2,1
+		txtload,xpkm_gn
+		end
+
+//初膜パターン
+case_hatumaku
+zin_seloop_stop
+	zin_reg_msg,你難道不想履行你身為妾室的義務嗎？,pid1
+	zin_reg_msg,沒、沒有這種事．．．,1
+	zin_reg_msg,呵呵呵、我知道了、你還是個處女吧？,0
+	zin_reg_msg,呃．．．,1
+	zin_reg_msg,是在害怕初體驗的感覺？,0
+	zin_reg_msg,不、不是的、那個．．．,1
+	zin_reg_msg,不用擔心、一點都不疼,0
+	zin_reg_msg,把一切都交給callself_pid1吧,0
+	zin_reg_msg,啊、可、可是．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_seloop,se137,1
+rnd,3
+case0
+	zin_old_msg,呵呵呵、身體已經十分成熟了那,pid1
+	zin_old_msg,那就沒顧忌了,pid1
+	zin_old_msg,求、求你了、請、請住手啊．．．,pid2
+	zin_old_msg,都到這一步了還矯情個啥、老老實實的把身體交給我吧,pid1
+	zin_old_msg,不、不要啊．．．這、這樣．．．不行．．．,pid2
+	zin_old_msg,嗯、濕度好像還差點。這樣進入有點．．．,pid1
+	zin_old_msg,好、好疼啊．．．快、快停下來啊．．．,pid2
+	zin_old_msg,沒問題的、只要動起來、出汁了就會感覺好些的哦,pid1
+	zin_old_msg,啊咿咿咿．．．．不、不要啊！！　要、要裂開了啊啊啊！！！,pid2
+	zin_old_msg,你也別光是叫喚、不如試著自己動下腰如何？,pid1
+	zin_old_msg,那、那種事情．．．不、不要．．．快．．．住手,pid2
+	zin_old_msg,呵呵、臉蛋潮紅果然是未經世故．．．這表情最棒了、我興奮起來了！！,pid1
+	zin_old_msg,那、差不多要射了、好好的懷上喲！！,pid1
+	zin_seloop_stop
+	zin_old_msg,啊、不要、外、外面．．．射在外面誒誒誒！！,pid2
+	bgm_se,141
+	zin_flush,pid2
+	zin_old_msg,啊啊．．裡面．．在裡面射了這麼多．．,pid2
+	end
+case1
+	zin_old_msg,．．．啊啊．．．不、不行．．．拔出來．．．快拔出來呀．．．,pid2
+	zin_old_msg,嗯．．．果然是初物的鮮度,pid1
+	zin_old_msg,這緊致、深度、今後要怎麼開發、光是想想口水就流出來了,pid1
+	zin_old_msg,．．啊啊．．那麼說．．．好過分．．．,pid2
+	zin_old_msg,那麼、這次就好好的開發一下、用力張開雙腿！！,pid1
+	zin_old_msg,啊啊、疼、好疼啊！！．．．這、這麼深．．．啵嗞啵滋的、不、不要啊！！,pid2
+	zin_old_msg,嗯嗯、很好、快感如潮水一般涌來啊。開苞的感覺真是讓人無法自拔啊、唔哈哈哈哈！！,pid1
+	zin_old_msg,呼啊．．．呀啊啊啊．．．呼．．這樣．．．我的第一次．．．不要做這種事．．．,pid2
+	zin_old_msg,唔唔．．．差不多到位了、種子已經準備就緒、好好的榨取吧！！,pid1
+	zin_old_msg,啊啊、不行．．．請不要射在裡面！！,pid2
+	zin_old_msg,別說蠢話、為callself_pid1生兒育女、是你的義務！！　接著！！,pid1
+	zin_seloop_stop
+	zin_old_msg,啊、啊咿呀啊啊啊啊！！！,pid2
+	bgm_se,141
+	zin_flush,pid2
+	zin_old_msg,啊啊．．．不行啊．．．子宮裡面．．．咕嘟咕嘟的．．．流進去了．．．．,pid2
+	end
+case2
+	txtload,xpkm_gv
+	end
+
+
+//孕みパターン
+case_botebara
+zin_seloop_stop
+	zin_reg_msg,和孩子一起玩玩3P也挺不錯的嘛,0
+	zin_reg_msg,怎麼可以．．．拜託了、今天不行．．．,1
+	zin_reg_msg,不行、這是命令,0
+	zin_reg_msg,這麼說可是．．．,1
+	zin_reg_msg,趕快把衣服脫光、打開城門迎圣駕！,0
+	zin_reg_msg,啊啊、不要這樣、這樣、粗暴．．孩子會！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	txtload,xpkm_gb
+	end

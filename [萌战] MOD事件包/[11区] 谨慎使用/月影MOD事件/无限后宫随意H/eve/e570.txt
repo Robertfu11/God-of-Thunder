@@ -1,0 +1,38 @@
+eve_start
+	if_eveflg,74,0
+	if_haou,870
+	if_haou,571
+//庫爾特尼奧870の目標が多拉
+	if_target_hao,870,571
+//梅蘿がsts6
+	if_psts,896,6
+eve_end
+
+set_eveflg,74,1
+
+chk_exeplayer,870,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,帕米拉的執務室,606,896,,gzin33
+zin_reg_qnar,帕米拉は現在庫爾特尼奧軍の攻略目標となっている多拉攻略を思案していた。
+zin_reg_msg,多拉．．． ,0
+zin_reg_msg,聽聞那邊好像是女霸王統治的吧,0
+zin_reg_msg,是的，沒錯。,1
+zin_reg_msg,恩，女王大人有著強大的信念吧,0
+zin_reg_msg,至少是以民眾的自治獨立為目的,1
+zin_reg_msg,民眾的自治獨立？,0
+zin_reg_msg,這完全是謬論,0
+zin_reg_msg,優秀的領導者是不會這麼想的，會想的只是理想主義者。,0
+zin_reg_msg,你認為讓愚蠢的凡人處理國事會有未來麼！,0
+zin_reg_msg,如果不是被一部分的優秀的人種統治的話，結果就是∶滅亡,0
+zin_reg_msg,派人去把多拉殺了吧,0
+zin_reg_msg,聽到民眾自治獨立時，我都冒著冷汗,0
+zin_reg_msg,那種的為了民眾的領導者，不應該存在於這個世界上,0
+zin_reg_msg,遵命,1
+zin_reg_button,0
+//zin_reg_exit
+end

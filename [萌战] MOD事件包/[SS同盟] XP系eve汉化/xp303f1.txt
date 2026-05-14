@@ -1,0 +1,18 @@
+//夜這い　弱みオルド 姫　初回 膜あり
+rnd,2
+case0
+	zin_old_msg,嗯？第一次被男人的tin_str這樣插嗎？　怎麼樣、試著被插入的感覺是？,pid1
+	goto,*np1
+case1
+	zin_old_msg,呵呵呵、果然還是処女呀。cr公主殿下的処女膜我就收下了、這真得是很珍貴的榮譽,pid1
+
+*np1
+zin_old_msg,小穴．．．非常．．的、痛的．．．cr已經．．．原諒．．．,pid2
+zin_old_msg,哎呀哎呀、剛剛還做了插入那樣的事情．．．這就不要了？cr公主殿下還真是任性啊,pid1
+zin_old_msg,能把王的女兒抱在懷中真的像是在做夢一樣呢。cr一起再生個cf_pid1的孩子怎麼樣？,pid1
+zin_old_msg,那、那樣的．．．生孩子啊什麼的！！,pid2
+zin_old_msg,放心啊、那時候就做我的妾好了。cr啪啪啪、生個cf_pid1的孩子吧,pid1
+zin_old_msg,討、討厭啊、那樣的、我不要啊！！,pid2
+zin_old_msg,笨蛋、殿下還有選擇的自由麼？cr來、懷上cf_pid1的孩子吧！！,pid1
+zin_flush,pid2
+end

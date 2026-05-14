@@ -1,0 +1,154 @@
+eve_start
+	if_date,96,3
+	//カンシ　sts6である
+	if_psts,356,6
+	if_psts,813,6
+	if_psts,843,6
+eve_end
+
+bgm_chg,35
+//zin_reg_init
+zin_reg_event,,813,843,,gzin18
+zin_reg_qnar,坎西依靠情報力量查明了莉莉罕的住所。
+zin_reg_msg,好了，找到了cr你就是莉莉罕,0
+zin_reg_msg,你，是誰！！,1
+zin_reg_msg,你的頭顱我要了,0
+zin_reg_msg,來一決勝負吧,0
+zin_reg_msg,你是賞金獵人？,1
+zin_reg_msg,可惡偏偏是這個時候,1
+zin_reg_msg,想要我的頭．．． 哼！！,1
+zin_reg_msg,不用你說我也會去拿,0
+zin_reg_msg,覺悟吧！！,0
+bgm_se,6
+zin_reg_qnar,瓦德非常輕鬆地把劍對准了莉莉罕的咽喉。
+zin_reg_msg,啊，什麼？,0
+zin_reg_msg,太弱啦cr你，真的是莉莉罕？,0
+zin_reg_msg,哼．．． cr當然是,1
+zin_reg_msg,喂，坎西cr怎麼回事？,0
+zin_reg_msg,這麼弱的傢伙為何會被巨額懸賞呢？,0
+zin_reg_face_1,356
+zin_reg_msg,這麼說．．.,1
+zin_reg_face_1,855
+zin_reg_msg,莉莉罕大人！！,1
+zin_reg_face_1,843
+zin_reg_msg,西門賈！！cr是賞金獵人！！,1
+zin_reg_face_1,855
+zin_reg_msg,混蛋，怎麼能對莉莉罕大人無禮,1
+zin_reg_msg,哦，你很強,0
+zin_reg_msg,過來做我的對手吧,0
+bgm_se,6
+zin_reg_qnar,西門賈與瓦德互斬兩三次後，就自己吐血倒下了。
+zin_reg_msg,你，你．．.,0
+zin_reg_msg,呵，呵呵．．．cr在這種時候,1
+zin_reg_msg,生病了？,0
+zin_reg_msg,我總來沒生過,1
+zin_reg_msg,怎麼搞的cr好不容易有個對手怎麼這麼容易就死了！,0
+zin_reg_face_1,356
+zin_reg_msg,想起來了！！,1
+zin_reg_msg,怎麼了，坎西！？,0
+zin_reg_msg,這個女人，是茲烏蓋大人的女兒啊,1
+zin_reg_msg,茲烏蓋的？,0
+zin_reg_face_1,855
+zin_reg_msg,什麼．．． 你不知道嗎．．．！,1
+zin_reg_msg,是這樣的cr他是已故的阿古迪巴霸王的女兒．．． 莉莉罕公主,1
+zin_reg_msg,什，什麼？cr阿古迪巴的女兒嗎．．． 茲烏蓋？,0
+zin_reg_msg,完全不知道,0
+zin_reg_face_1,356
+zin_reg_msg,是的，正是這樣才需要這樣的巨款,1
+zin_reg_msg,瓦德大人，這個人是莉莉罕公主,1
+zin_reg_msg,阿古迪巴和茲烏蓋的妃三味的女兒,1
+zin_reg_msg,聽說失蹤了．．． 沒想到還活著,1
+zin_reg_msg,為什麼公主不在王宮，而是在這種地方？,0
+zin_reg_face_1,855
+zin_reg_msg,莉莉罕公主．．． 是ア族和ツ族的餘黨．．． 她的生命受到威脅．．.,1
+zin_reg_msg,已經好幾年都過著潛伏生活了。,1
+zin_reg_face_0,843
+zin_reg_msg,西門賈，不要再說了．．.,0
+zin_reg_msg,莉莉罕大人，是說再見的時候了,1
+zin_reg_msg,這，這個男人說瓦德是無與倫比的格斗家,1
+zin_reg_msg,如果這個男人是的話，還有什麼害怕的事情呢,1
+zin_reg_msg,西門賈，你說什麼！,0
+zin_reg_face_0,813
+zin_reg_msg,瓦德啊，我代表莉莉罕拜託你了,1
+zin_reg_msg,希望你能保護她,1
+zin_reg_msg,喂喂，說什麼呢,0
+zin_reg_msg,我什麼時候說要照顧她了,0
+zin_reg_msg,你··· 曾經也是王子啊,1
+zin_reg_msg,王族被迫偽裝身份．．． 忍受痛苦的事你明白的吧,1
+zin_reg_msg,幹什麼，你個自私鬼！,0
+zin_reg_msg,拜託了．．．cr只能拜託你了．．．其他人．．.,1
+zin_reg_msg,哈哈！！,1
+zin_reg_face_0,843
+zin_reg_msg,西門賈！！,0
+zin_reg_msg,我不想和這個噁心的男人一起走啊,0
+zin_reg_msg,呵呵，我也不希望這樣,1
+zin_reg_msg,我恐怕有這幾天有事,1
+zin_reg_msg,不過和現在分別也沒什麼不同吧,1
+zin_reg_msg,再見吧，公主,1
+zin_reg_qnar,西門賈用牙咬碎嘴裏的毒藥，馬上就停止呼吸了。
+zin_reg_face_1,0
+zin_reg_msg,西、西門賈！！,0
+zin_reg_face_0,813
+zin_reg_face_1,356
+zin_reg_msg,瓦德大人，你打算怎麼做呢?,1
+zin_reg_msg,額．．.,0
+zin_reg_face_1,843
+zin_reg_msg,瓦德大人,1
+zin_reg_msg,能幫幫我嗎？,1
+zin_reg_msg,我想埋葬西門賈但是不知道怎麼弄好,1
+zin_reg_face_1,356
+zin_reg_msg,瓦德大人．．.,1
+zin_reg_msg,啊，好吧．．．cr我幫你,0
+bl_fadeout
+bgm_chg,64
+bl_fadein,gzin81
+zin_reg_event,,813,843,,gzin81
+zin_reg_qnar,瓦德和坎西鄭重的吧西門賈埋葬了。
+zin_reg_msg,這樣就行了吧,0
+zin_reg_msg,謝謝,1
+zin_reg_face_0,356
+zin_reg_msg,公主，從今以後要一起走麼?,0
+zin_reg_msg,.．．．．.,1
+zin_reg_face_0,813
+zin_reg_msg,喂，坎西．．．cr你是認真的麼?,0
+zin_reg_face_1,356
+zin_reg_msg,這種的地方不能一個人呆在這啊,1
+zin_reg_msg,但是．．.,0
+zin_reg_face_1,843
+zin_reg_msg,哼，我不要被同情,1
+zin_reg_msg,我不需要你們的力量,1
+zin_reg_msg,哦，那太好了,0
+zin_reg_msg,我還在想怎麼拒絕呢,0
+zin_reg_msg,哼，快去下一個賞金的地方吧,1
+zin_reg_msg,在我面前消失,1
+zin_reg_msg,這種女人．．．cr後悔剛才那麼一點同情了,0
+zin_reg_msg,那麼，坎西走吧,0
+zin_reg_msg,和這樣弱氣的女人談話簡直是浪費時間,0
+zin_reg_face_1,356
+zin_reg_msg,但是瓦德．．.,1
+bgm_chg,69
+zin_reg_msg,不要管了,0
+zin_reg_msg,去下一個地方吧,0
+zin_reg_msg,去尋找宇宙第一的忍者一太郎,0
+zin_reg_msg,除了這個傢伙以外沒有任何人能勝任做我的對手,0
+zin_reg_msg,尋找一太郎去吧，坎西,0
+zin_reg_msg,但是，一太郎是一流的忍者,1
+zin_reg_msg,我的情報網想要抓住的也是很難。,1
+zin_reg_msg,想辦法吧cr以前都是成功的！,0
+zin_reg_face_1,843
+zin_reg_msg,你要去尋找一太郎？,1
+zin_reg_msg,這和你沒關系吧,0
+zin_reg_msg,是那樣cr不過可惜,1
+zin_reg_msg,一太郎住的地方的話，只有我知道,1
+zin_reg_msg,什麼！！cr你真的知道嗎？！！,0
+zin_reg_msg,當然,1
+zin_reg_msg,哪裏！！cr告訴我們！！,0
+zin_reg_msg,我不會免費告訴你們的．．.,1
+zin_reg_msg,首先吧今天的晚飯和住的地方准備好吧,1
+zin_reg_msg,這，這個····,0
+zin_reg_face_1,356
+zin_reg_msg,瓦德大人cr把她一起帶去才是上策啊,1
+zin_reg_msg,唉，真是沒辦法啊,0
+zin_reg_button,0
+//zin_reg_exit
+end

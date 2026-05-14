@@ -1,0 +1,28 @@
+//3回目　義姉オンリー
+bl_fadeout
+bgm_chg,64
+zin_old_init
+zin_old_img_pid,pid2,1
+
+zin_old_msg,call_pid12のアソコもずいぶんほぐれてきましたね,pid1
+zin_old_msg,どうです？　そろそろ気持よくなってきたのではありませんか？,pid1
+zin_old_msg,そ、そんなわけ．．．ないじゃない！！　ん．．．ううっ、くううっ．．はあっ、ああっ！！,pid2
+zin_old_msg,そうですか、とてもそうは見えませんがね。crでは、man_strからダラダラと流れ出るこれはなんですか？,pid1
+zin_old_msg,んんっ．．．うくっ．．へ、へんなウソ．．．言わないで！！,pid2
+zin_old_msg,おやおや、ウソではありませんよ。crならばcf_pid1のtin_strでもっとman_strをえぐり込んであげましょう,pid1
+zin_old_msg,ふあっ．．．ひあっ、だ、ダメよ．．．そんなこと．．．しないで！！,pid2
+zin_old_msg,そりゃああああっ！！,pid1
+zin_old_msg,んああああっ！！　ああっ、んくっ．．．あぁ、あうっ．．あおおおっ！！,pid2
+zin_old_msg,どうです？　call_pid12、最高でしょう？,pid1
+zin_old_msg,お、お願い．．．もう、ゆるひてえええ．．．あがあっ．．．,pid2
+zin_old_msg,あっはあ．．．ん！　あんっ！　あんっ！　あんっ！　あんっ！　いいっ！　いいのおっ！　おちんぽいいっ！！,pid2
+zin_old_msg,どうやら、やっと身も心も気持よくなったようですね,pid1
+zin_old_msg,ああっ！　も、もう．．．イッちゃう．．ああっ．．いやぁん．．はああーーっ！！,pid2
+zin_old_msg,おやおや、これはcall_pid12とは思えぬほどの乱れっぷり。兄上が見たらなんと言うか．．．,pid1
+zin_old_msg,やあああん．．．あ、あの人のことは．．．言わないで．．．,pid2
+zin_old_msg,もっと．．．もっと、p_name2のman_strを．．．え、えぐってぇええええっ！！,pid2
+zin_old_msg,いいでしょう！！　そう来なくては！！,pid1
+zin_old_msg,やああっ、いやあああっ！　だめっ、もうダメっ！！！,pid2
+zin_old_msg,イく．．．イく．．．イッちゃうーーーーーっ！！！,pid2
+zin_flush,pid2
+end

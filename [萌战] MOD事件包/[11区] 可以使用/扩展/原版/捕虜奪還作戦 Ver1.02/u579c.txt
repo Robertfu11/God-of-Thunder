@@ -1,0 +1,150 @@
+//メイドの土産
+set_epid4,765
+chk_sts,pid3,性別,2
+chk_sts_then
+btl_ansatu,pid3,pid4,0,2
+get_resp
+ret_sel2
+	//人物①の勝利
+	zin_reg_msg,ごめん！手荒な事する気はなかったの,0
+	zin_reg_msg,ところであなた牢獄の場所しらない?,0
+	zin_reg_msg,．．．．ブンブン．．．．ころさないで．．．,1
+	zin_reg_msg,．．．これ．．．差し上げますから．．．,1
+	get_item,player,,一族の家宝
+	zin_reg_msg,これは．．．一族の家宝．．．見逃してあげる,0
+	zin_reg_msg,ああっ！ありがとうございます,1
+	zin_reg_msg,じゃあね,0
+	goto,*tousouo
+ret_sel3
+	//人物②の勝利
+	zin_reg_msg,うっ．．．そんな．．．,0
+	zin_reg_msg,曲者を捕らえました。,1
+	zin_reg_qnar,p_name3は捕らえられた。
+	txtload,u579d
+	
+
+chk_sts_else
+
+
+bgm_chg,61
+bl_fadein,gzin6
+zin_reg_event,メイドの土産,pid3,pid4,,gzin6
+zin_reg_msg,．．．だれ？．．ふぐぅ．．．ふぅ！！,1
+zin_reg_qnar,その場にいたメイドはp_name3により口を塞がれた
+zin_reg_msg,黙れっ！！．．．静かにしろ．．．さもないと命は無いぞ。,0
+zin_reg_msg,．．．．コクコク．．．．,1
+zin_reg_msg,牢獄に．．．行くつもりが．．．なんでこんなことに．．．,0
+zin_reg_msg,．．．んっ．．．んふぅ．．．ふも．．．,1
+zin_reg_msg,どうするべきか．．．ん？何だお前身体が熱いぞ．．．,0
+zin_reg_msg,．．．．っ！！！ブンブン．．．．んーー,1
+zin_reg_msg,風邪をひいてるのか？．．．おや．．．なんだ興奮してるのか。,0
+zin_reg_msg,．．．．！！！！ブンブン！！！．．．んっんーーー,1
+zin_reg_msg,ふん、嘘付け！！潜入中の工作員との合流まで暇潰すか。,0
+zin_reg_qnar,p_name3はメイドの身体を嬲りはじめた
+bl_fadeout
+set_epid2,811
+
+bgm_chg,61
+zin_old_init
+zin_old_img_str,e314a,0,1
+zin_old_qnar,　　　３０分後p_name3は潜入していた工作員とメイドを犯していた。
+zin_old_msg,call_pid23．．．潜入中ですよ．．．こんな事してる暇．．．,pid2
+zin_old_msg,いいから手押さえてろっ！！,pid3
+zin_old_msg,だめぇ．．．違うんですっ．．．．本当にちがうの．．．興奮なんか,pid4
+zin_old_msg,だ．．．だめ．．きちゃうぅ！！！あっイックゥゥ．．．んんっ！！！んふーー,pid4
+zin_old_msg,気持ちよくても．．．あんまり大きな声をだすなっ．．．,pid3
+zin_old_msg,はぁ．．．もうcall_pid23、任務忘れてますよね？絶対。,pid2
+zin_old_msg,．．．んっ．．．．くぅ．．．あっ、あっ．．．,pid4
+zin_old_msg,任務の遂行には適度の息抜きも必要だ。入れるぞ,pid3
+zin_old_msg,はぁ．．．じゃあ私も口使わせてもらいます．．．ううぅ！！,pid2
+zin_old_msg,．．．んんっう！．．．んふーー！！！．．．んっ！んっ！,pid4
+zin_old_msg,うぅ！なかなか具合のイイ娘だな．．．絡みついてくるぞ,pid3
+zin_old_msg,おぅ．．．フェラも誰かに仕込まれたみたい．．．ですね。,pid2
+zin_old_msg,．．．んはぁ．．．はむぅ．．．んぽっ．．．んぽっ！,pid4
+zin_old_msg,はっ！はっ！ダメだ腰が止まらんっ！！,pid3
+zin_old_msg,私もっ！！おおぅそんな奥まで呑みこまれたら。,pid2
+zin_old_msg,んあぁ．．．もっほ．．．もっほ．．．ジュル．．．ズズッ！！,pid4
+zin_old_msg,すごい淫乱だな．．．そろそろもちそうにない．．．,pid3
+zin_old_msg,私も出そうだ．．．．,pid2
+zin_old_msg,子宮が欲しがってるtane_strちゃんと中に出してやるからな！！！,pid3
+zin_old_msg,んーーんーーーーんぷはぁ！！中は！！！中はだめですぅううう！！！んんっーーー,pid4
+zin_old_msg,声がでかいっ！！！うううぅうう気持ちいいい．．．,pid2
+zin_old_msg,ううう．．．．man_strが搾りあげおぅう！！,pid3
+zin_old_msg,んふふうううううううーーー！！！,pid4
+zin_old_img_str,e314c,0,1
+zin_old_msg,．．．コホゴホ．．．んっ中ダメなのに．．．赤ちゃんできちゃう．．．,pid4
+zin_old_fadeout,0,6
+
+chk_sts,pid3,知力,>50
+chk_sts_then
+goto,*miage
+
+chk_sts_else
+goto,*tousouk
+*miage
+bgm_chg,61
+bl_fadein,gzin6
+zin_reg_event,メイドの土産,pid4,pid3,,gzin6
+zin_reg_msg,もう．．．中で出すなんて．．．,0
+zin_reg_msg,いや実に気持ち良かったぞ．．．,1
+zin_reg_msg,．．．．ポッ．．．ところでお名前を伺っていませんでした。,0
+zin_reg_msg,ん？ああそうだったなp_name3だ。,1
+zin_reg_msg,call_pid43．．．赤ちゃんが出来たらお伺いします．．．,0
+zin_reg_msg,．．．っ！！！,1
+zin_reg_msg,嘘です私不妊なんです．．．だからきっと大丈夫,0
+zin_reg_msg,．．．そうか．．．．なんか悪いな．．．,1
+zin_reg_msg,実は私も気持ち良かったし．．．そうだっ！！土産にこちらをどうぞ,0
+zin_reg_msg,薬？まぁ飲んでみるか,1
+rnd,4
+case0
+upd_sts,pid3,知力,5
+zin_reg_qnar,　　　　　　知力があがった
+goto,*tousou
+case1
+upd_sts,pid3,攻撃,5
+zin_reg_qnar,　　　　　　攻撃があがった
+goto,*tousou
+case2
+upd_sts,pid3,防御,5
+zin_reg_qnar,　　　　　　防御があがった
+goto,*tousou
+case3
+upd_sts,pid3,格闘,5
+zin_reg_qnar,　　　　　　格闘があがった
+goto,*tousou
+
+*tousouk
+bgm_chg,61
+bl_fadein,gzin6
+zin_reg_event,,pid4,pid3,,gzin6
+zin_reg_msg,もう．．．中で出すなんて．．．ひどい．．．,0
+zin_reg_msg,．．．さらばだ．．．．,1
+zin_reg_msg,．．．．あっ！逃げた！だれかぁあああ！！！侵入者よっ！！！！,0
+zin_reg_qnar,p_name3はそのまま本星に逃げ帰った。
+bl_fadeout
+
+*tousou
+bgm_chg,61
+bl_fadein,gzin43
+zin_reg_event,救出失敗,pid1,pid3,,gzin43
+zin_reg_msg,．．．すみません。任務に失敗しました。,1
+zin_reg_msg,現地からの工作員の報告だとcall_pid13はメイドと．．．,0
+zin_reg_msg,いえっ、そんなことは．．．ただ所在を掴めなくて,．．．1
+zin_reg_msg,そうゆう事にしておくか．．．,0
+add_kunkou,pid3,-500
+zin_reg_qnar,　　　　p_name3の勲功が５００下がった。
+bl_fadeout
+end
+
+*tousouo
+bgm_chg,61
+bl_fadein,gzin43
+zin_reg_event,救出失敗,pid1,pid3,,gzin43
+zin_reg_msg,．．．すみません。任務に失敗しました。,1
+zin_reg_msg,無事の帰還なによりだ．．．,0
+zin_reg_msg,所在を掴めなくて,．．．ただ一族の家宝を見つけました。1
+zin_reg_msg,おお、それはまことか．．．ならば今回の件、不問にいたそう。,0
+add_kunkou,pid3,100
+zin_reg_qnar,　　　　p_name3の勲功が１００上がった。
+bl_fadeout
+end

@@ -1,0 +1,196 @@
+//王族オルド通常　相手：妹
+
+//状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,call_pid1！最喜歡了！,1
+	zin_reg_msg,既然是我的妹妹、那就一定會有一個H的身體,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+rnd,5
+case0
+	zin_old_msg,不知不覺、已經長成這樣了,pid1
+	zin_old_msg,女大十八變喲,pid2
+	zin_old_msg,真是的、這豐滿圓潤的花蕾、無法忍受,pid1
+	zin_old_msg,討厭、call_pid1、那裡．．．啊！！,pid2
+	zin_old_msg,不要那樣．．．那樣、亂摸啊．．．．很、很癢．．．,pid2
+	zin_old_msg,呵呵呵、不錯的感度、好吧,pid1
+	zin_old_msg,啊嗯、啊嗯．．．咿咿．．．,pid2
+	zin_old_msg,那、p_name2喲、這些只是前戲。接下來才是本番。我會狠狠的插你的！！,pid1
+	zin_old_msg,啊咿咿咿、．．．．哦、call_pid1．．．那個．．好、厲害．．．cr啊、我要飛起來了呀啊啊啊！！,pid2
+	zin_old_msg,那就、盡情的享樂吧、瘋起來吧、上了！！,pid1
+	zin_old_msg,呀啊啊啊 啊．．．吧、不行．．．p_name2．．．要、要飛起來了呀啊啊啊啊！！,pid2
+	zin_flush,pid2
+	end
+case1
+	zin_old_msg,啊啊．．．call_pid1的．．．在肚子裡．．．嗯嗯．．．在動．．．,pid2
+	zin_old_msg,這麼做的話、你也會成為一個成熟的女人。一直都想要個孩子的說．．．,pid1
+	zin_old_msg,當、當然咯．．．call_pid1的話．．．好、無情．．．啊啊．．．,pid2
+	zin_old_msg,是麼．．．不好意思了．．．,pid1
+	zin_old_msg,啊啊．．．我．．．現在和、call_pid1能．．．在、在一起．．．真的．．．非常幸福．．．,pid2
+	zin_old_msg,callself_pid1因為有你的陪伴．．．感到很高興,pid1
+	zin_old_msg,真、真的嗎？．．．p_name2也．．．很、很高興．．．,pid2
+	zin_old_msg,吶、call_pid1的種子．．．種子、滿滿的給我．．．．,pid2
+	zin_old_msg,call_pid1的孩子．．．好想要！！,pid2
+	zin_old_msg,是嘛、說的好。為了我們一族的繁榮、生個健康的寶寶吧,pid1
+	zin_old_msg,是、是的．．．call_pid1的孩子．．．孩子．．．一定要生出來！！,pid2
+	zin_old_msg,嗯！！,pid1
+	zin_flush,pid2
+	end
+case2
+	zin_old_msg,call_pid1、果然兄妹之間做這種事情．．．是不是有點不對勁？,pid2
+	zin_old_msg,沒有這種事情。以一族的純血誕下我們的后繼吧,pid1
+	zin_old_msg,如此而來的后繼者不更是名正言順嗎？,pid1
+	zin_old_msg,唔．．．可、可是．．．．,pid2
+	zin_old_msg,你是不是有一種奇怪的罪惡感。不要在意這些。這種事情在王族之間很常見,pid1
+	zin_old_msg,是、是這樣嘛．．．咿呀！！,pid2
+	zin_old_msg,陰核都腫這麼大了還有什麼好說的呢,pid1
+	zin_old_msg,忍不住要嘗嘗哥哥的大肉棒？,pid1
+	zin_old_msg,噗啊．．．那、那可．．．呀啊啊啊啊！！,pid2
+	zin_old_msg,唔．．．受不了了、要射了！！,pid1
+	zin_old_msg,呀啊啊啊．．．是、是的．．．啊啊啊！！,pid2
+	zin_flush,pid2
+	zin_old_msg,啊啊．．．call_pid1的精液．．．咕嚕咕嚕的進來了．．．．,pid2
+	end
+case3
+	zin_old_msg,什麼、已經濕成這個樣子了,pid1
+	zin_old_msg,因、因為．．．一想到能和call_pid1一起做H的事情．．．就這樣隨便的濕透了．．．,pid2
+	zin_old_msg,你、好變態,pid1
+	zin_old_msg,別．．．別說這種壞心眼的話．．．啊啊．．．,pid2
+	zin_old_msg,呵呵呵、對不起啦、可是我就喜歡淫蕩的p_name2,pid1
+	zin_old_msg,真、真的？　我、我最喜歡．．．call_pid1．．．最、最喜歡了．．．啊啊、好．．．好厲害．．．,pid2
+	zin_old_msg,啥．．．愛液已經滾滾而出了麼．．．,pid1
+	zin_old_msg,啊．．．因為．．．感覺超好的說．．．啊啊．．．,pid2
+	zin_old_msg,哦、call_pid1是．．．我的東西．．．誰、誰也別想．．．搶走．．．啊啊啊！！,pid2
+	zin_old_msg,p_name2、我差不多要射了．．．,pid1
+	zin_old_msg,好的．．．call_pid1．．．call_pid1的種子．．．滿滿的注入p_name2的子宮吧！！！,pid2
+	zin_flush,pid2
+	end
+case4
+	zin_old_msg,呀啊！！　那、那樣．．不行．．．,pid2
+	zin_old_msg,call_pid1．．．我、我還是第一次．．．請再、溫柔一些．．一些．．啊昂．．．,pid2
+	zin_old_msg,是這樣麼、那我就慢點,pid1
+	zin_old_msg,啊啊．．．昂．．．好高興．．．能和call_pid1．．．這樣．．．在一起．．．啊啊！！,pid2
+	zin_old_msg,恩．．果然是細致有彈性．．．call_pid2的肉穴還和小孩子一樣,pid1
+	zin_old_msg,沒、沒有．．．這回事兒．．．我已經．．．是．．是大人了．．．,pid2
+	zin_old_msg,嘿嘿、是麼、對不起咯,pid1
+	zin_old_msg,啊啊．．．哈啊啊．．．昂．．．啊啊．．．嗯嗯,pid2
+	zin_old_msg,怎麼樣、有快感了吧？,pid1
+	zin_old_msg,是的、真的．．感覺到了．．．call_pid1的．．．溫柔．．．唔嗯嗯呃！！,pid2
+	zin_old_msg,要泄了嗎？,pid1
+	zin_old_msg,是、是的．．．請再深入一些．．．也、也沒有關系．．．啊啊．．,pid2
+	zin_old_msg,是嗎、這怎麼樣？,pid1
+	zin_old_msg,哈咿呀啊啊啊 啊！！　啊啊、好厲害．．．！！,pid2
+	zin_old_msg,啊啊、要去了啊！！,pid2
+	zin_old_msg,啊啊！　已經、已經．．．不行了、要高潮了啦啊啊啊啊啊！！,pid2
+	zin_flush,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,call_pid1！！　請享用p_name2的蜜穴吧,1
+	zin_reg_msg,漂亮的粉木耳啊、終于如愿以償了,0
+	zin_reg_msg,我隨時都做好了和call_pid1啪啪啪的準備哦,1
+	zin_reg_msg,嗯、辛苦你了,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+rnd,2
+case0
+	zin_old_msg,哈啊、好疼！！！,pid2
+	zin_old_msg,嗯．．．很疼麼？,pid1
+	zin_old_msg,沒關系的、call_pid1的話．．．我．．．,pid2
+	zin_old_msg,我知道了、我會慢一點,pid1
+	zin_old_msg,謝謝啦、好體貼哦call_pid1,pid2
+	zin_old_msg,哈唔！！啊啊！！,pid2
+	zin_old_msg,call_pid1．．．p_name2．．已、已經．．．不行了．．．,pid2
+	zin_old_msg,怎麼不行了,pid1
+	zin_old_msg,已經、要出來了．．．,pid2
+	zin_old_msg,我、還沒有怎麼動呢。就那麼感覺好嗎,pid1
+	zin_old_msg,是的、H的感覺是這麼美好．．．我完全不知道呢,pid2
+	zin_old_msg,請趕快用call_pid1的種子把p_name2的小穴塞滿吧。,pid2
+	zin_old_msg,請讓p_name2變成成熟的女人吧,pid2
+	zin_old_msg,好的、我要射了！！,pid1
+	zin_old_msg,哈．．．啊啊啊啊！！！,pid2
+	zin_flush,pid2
+	zin_old_msg,．．．．處女什麼的．．還是早點丟掉好了,pid2
+	end
+case1
+	zin_old_msg,啊啊、哦、call_pid1．．果、果然、那裡．．,pid2
+	zin_old_msg,不、不可以．．．啊啊啊！！,pid2
+	zin_old_msg,因為是第一次、速速突破也許才是上策,pid1
+	zin_old_msg,很疼是不是？,pid1
+	zin_old_msg,是、是的．．這種程度．．．啊、啊啊！！,pid2
+	zin_old_msg,可是、對方．．是call_pid1．．．這麼的．．．感覺好,pid2
+	zin_old_msg,啊啊、call_pid1．．．我喜歡你、我愛你,pid2
+	zin_old_msg,嗯、我也很愛p_name2哦,pid1
+	zin_old_msg,啊啊、call_pid1．．．這麼說．．．好、好高興．．．,pid2
+	zin_old_msg,接下來、就把call_pid1的種子．．．在p_name2的初穴裡．．．,pid2
+	zin_old_msg,嗯、接受我愛的種子吧,pid1
+	zin_old_msg,啊啊、來了．．．來了、call_pid1！！,pid2
+	zin_old_msg,咕唔唔唔！！　唔哦哦哦哦！！,pid1
+	zin_flush,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_reg_msg,接下來、call_pid1！！　請享用p_name2的蜜穴吧,1
+	zin_reg_msg,漂亮的粉木耳啊、終于如愿以償了,0
+	zin_reg_msg,我隨時都做好了和call_pid1啪啪啪的準備哦,1
+	zin_reg_msg,嗯、辛苦你了,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+rnd,4
+case0
+	zin_old_msg,腹中的孩子好像正在健康的成長呢,pid1
+	zin_old_msg,是．．．這、這全都是．．．call_pid1的．．．滿滿的愛．．．啊啊．．．,pid2
+	zin_old_msg,嗯．．．可是、用自己的種子讓親妹妹懷孕、總有一種奇妙的感覺,pid1
+	zin_old_msg,呵呵．．．即使是call_pid1也會有那種侵犯親妹妹的罪惡感？,pid2
+	zin_old_msg,也許吧．．．,pid1
+	zin_old_msg,那種事情完全沒必要考慮、現在就請在p_name2的肉穴裡找到快樂吧,pid2
+	zin_old_msg,呵呵呵、是麼。p_name2的裡面感覺最棒了,pid1
+	zin_old_msg,啊啊．．．好、好高興．．．call_pid1的肉棒．．．跳動著．．．感覺超爽！！,pid2
+	zin_old_msg,不錯的感度．．．那接下來、差不多就要射了,pid1
+	zin_old_msg,啊啊．．．call_pid1的．．．來了．．．濃濃的．．．黏黏的東西．．．,pid2
+	zin_old_msg,給孩子、來點額外的營養哦．．．要、要射了！！,pid1
+	zin_old_msg,啊啊啊、啊啊．．．p_name2也、也要、高潮了ーーーッ！！,pid2
+	zin_flush,pid2
+	zin_old_msg,哈啊～～哈啊～～call_pid1的．．孩子．．．變得黏糊糊的了．．．．,pid2
+	end
+case1
+	zin_old_msg,啊啊、今天的call_pid1．．．比平時、更加神勇！！！,pid2
+	zin_old_msg,是、是麼．．．似乎是看見了大肚子才興奮起來的,pid1
+	zin_old_msg,啊、啊啊啊．．．這、這麼激烈的話、孩子要．．．孩子會．．．,pid2
+	zin_old_msg,可是、這樣咯吱咯吱的．．．好、好舒服啊．．．．,pid2
+	zin_old_msg,啊啊．．．這樣摩擦的話．．．馬上、就要高出了！！,pid2
+	zin_old_msg,callself_pid1似乎也要射了．．．,pid1
+	zin_old_msg,深、深深的．．．去了．．．．去了．．要去了．要高潮了啊啊啊啊啊啊！！！,pid2
+	zin_flush,pid2
+	end
+case2
+	zin_old_msg,說起來、你這肚子已經相當大了啊,pid1
+	zin_old_msg,馬上就要生了哦、call_pid1．．．cr這樣一來、就能給call_pid1一個傳宗接代的孩子了．．．p_name2真的很榮幸,pid2
+	zin_old_msg,嗯、我的繼承者或許現在只是個弱子、將來一定會有出息的,pid1
+	zin_old_msg,好好的孕育吧,pid1
+	zin_old_msg,是的．．．啊啊．．．光顧著考慮孩子的事情了．．．不知不覺已經流了好多汁了．．．,pid2
+	zin_old_msg,真是的、好下流的妹妹啊,pid1
+	zin_old_msg,嘛、好過分、call_pid1！！　真是的、我要懲罰你！！,pid2
+	zin_old_msg,哦哦．．．這種技法．．．突然就收緊了．．．,pid1
+	zin_old_msg,哦呵呵呵呵、call_pid1．．．請趕快交糧,pid2
+	zin_old_msg,唔．．．這個．．．沒辦法．．．要、要射了！！,pid1
+	zin_flush,pid2
+	end
+case3
+	zin_old_msg,啊啊．．．感覺好舒服．．．,pid2
+	zin_old_msg,也請call_pid1好好疼愛喲、我們的孩子．．．,pid2
+	zin_old_msg,呵呵、是麼、這就是將要做母親的快樂嘛,pid1
+	zin_old_msg,一定很辛苦吧？,pid1
+	zin_old_msg,是的．．．在call_pid1溫柔的呵護下、小寶寶感覺也不錯．．．,pid2
+	zin_old_msg,雖然要生產了、可p_name2的肉穴還是一如既往的銷魂啊,pid1
+	zin_old_msg,托你的福、要射了,pid1
+	zin_old_msg,是．．．隨時都可以、call_pid1,pid2
+	zin_old_msg,我也、感覺好棒．．．已經．．要高潮了！！,pid2
+	zin_old_msg,嗯、讓我們一起．．．唔唔！！,pid1
+	zin_old_msg,是、好的．．．啊啊．．．我也．．．要去了！！！,pid2
+	zin_flush,pid2
+	end

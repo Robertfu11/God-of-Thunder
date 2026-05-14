@@ -1,0 +1,86 @@
+//王族オルド強引　相手：母
+	zin_reg_msg,對母親而言、我說的話還希望您能遵從,0
+	zin_reg_msg,這種不道德的事、我才不會受你的逼迫！,1
+	zin_reg_msg,呵呵、真是個相當可愛的母親大人呢,0
+	zin_reg_msg,不知道別人見到我的妹妹會知道其實是我的女兒嗎,0
+	zin_reg_msg,在那以上、不要靠近我！,1
+	zin_reg_msg,呵呵、那麼請讓我好好看一下那個身體吧,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,哇哈哈哈哈、根本不像是有過生育經歷的女人啊,pid1
+	zin_old_msg,這緊密糾纏的感覺、母親啊,pid1
+	zin_old_msg,仿佛在和小姑娘做一樣呢,pid1
+	zin_old_msg,啊啊．．．不行啊．．．cr快、快．．．停下啊．．．．,pid2
+	zin_old_msg,呵呵、母親．．．已經．．．超越親子之間的界限了呢？,pid1
+	zin_old_msg,是、是啊．．．不要再往上頂了啊．．．．啊啊嗯！！,pid2
+	zin_old_msg,被兒子像狗一樣的干著．．．cr還真是個意想不到的變態女人啊,pid1
+	zin_old_msg,那樣的．．．因為．．．被你．．．強行．．．的啊啊啊啊啊！！,pid2
+	zin_old_msg,不管是強行的還是意外的。cr從母親的陰道裡、可是有越來越多的蜜汁滿溢出來了啊,pid1
+	zin_old_msg,這樣也是被我強行搞出來的？,pid1
+	zin_old_msg,那、那樣的事．．．嗚嗯嗯啊！！！,pid2
+	zin_old_msg,怎麼樣啊？　母親,pid1
+	zin_old_msg,啊嗯！　啊嗯！　啊嗯！　啊嗯！　好！　好棒的啊！　tin_str心情舒爽！,pid2
+	zin_old_msg,更多！　更多、頂啊！！！,pid2
+	zin_old_msg,呵呵呵、終於肯說出內心真實的想法了啊,pid1
+	zin_old_msg,好吧、今天就用子宮直接盛裝我的種子吧,pid1
+	zin_old_msg,好！！　子宮也要！！　非常的舒爽啊！！,pid2
+	zin_old_msg,那就！！　趕快把我弄到高潮啊、你這個淫乱的娼婦！！,pid1
+	zin_old_msg,啊．．．啊啊啊啊．．．高潮了ーーーーー啊！！！,pid2
+	zin_flush,pid2
+	zin_old_msg,啊～～啊～～啊～～啊～～,pid2
+	zin_old_msg,居然會那樣的．．．湮沒在、兒子的肉棒之下．．．高潮了之類的．．．,pid2
+	goto,*check
+
+*check
+bl_fadeout
+zin_reg_event,日常调教,pid1,pid2,,gzin32
+zin_reg_msg,今夜cf_pid1也干了个爽,0
+zin_reg_3sel,已经满足了,再来一次,我爱你
+get_resp
+
+ret_sel1
+upd_sts,pid2,1,250 
+upd_sts,pid2,5,250 
+upd_sts,pid2,6,250 
+upd_sts,pid2,7,250 
+upd_sts,pid2,8,250 
+upd_sts,pid2,9,250
+add_kunkou,pid2,5000
+set_sinmitu,pid2,110
+zin_reg_msg,啊啊，您高兴就好，肉便器p_name2随时为call_pid21准备着！,1
+zin_reg_qnar,p_name2的忠诚，知力，攻击，防御，格斗，交涉提升
+zin_reg_button,0
+zin_reg_exit
+end
+
+
+ret_sel2
+upd_sts,pid2,1,250 
+upd_sts,pid2,5,250 
+upd_sts,pid2,6,250 
+upd_sts,pid2,7,250 
+upd_sts,pid2,8,250 
+upd_sts,pid2,9,250
+add_kunkou,pid2,6000
+set_sinmitu,pid2,110
+zin_reg_msg,太好了，被call_pid21随意使用是肉便器p_name2的使命！,1
+zin_reg_qnar,p_name2的功勋双倍提升
+zin_reg_button,0
+zin_reg_exit
+end
+
+
+ret_sel3
+upd_sts,pid2,1,300 
+upd_sts,pid2,5,300 
+upd_sts,pid2,6,300 
+upd_sts,pid2,7,300 
+upd_sts,pid2,8,300 
+upd_sts,pid2,9,300
+add_kunkou,pid2,1000
+set_sinmitu,pid2,110
+zin_reg_msg,能够成为call_pid21的妃子真是太好了,1
+zin_reg_qnar,p_name2全属性大幅提升
+zin_reg_button,0
+zin_reg_exit
+end

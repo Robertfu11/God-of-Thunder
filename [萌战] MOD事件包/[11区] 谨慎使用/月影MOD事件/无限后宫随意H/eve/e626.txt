@@ -1,0 +1,27 @@
+eve_start
+	if_eveflg,75,30
+	if_val,状態:243=6
+	if_val,覇王:243=覇王:player
+eve_end
+
+add_menkai,243
+
+set_epid1,243
+set_epid2,player
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin43
+zin_reg_msg,p_name2、在嗎！！,0
+zin_reg_msg,p_name1大人,1
+zin_reg_msg,呐、知道嗎？,0
+zin_reg_msg,上周、這個星球來了一只歌舞團,0
+zin_reg_msg,我現在想去看你也一起來吧,0
+zin_reg_msg,現、現在就去嗎？,1
+zin_reg_msg,是啊、你還有比我更重要的事情嗎？,0
+zin_reg_msg,不、沒、沒有．．．,1
+zin_reg_msg,很好、那就沒有問題了,0
+zin_reg_msg,馬上出發吧,0
+zin_reg_msg,遵、遵命．．．,1
+zin_reg_button,0
+//zin_reg_exit
+end

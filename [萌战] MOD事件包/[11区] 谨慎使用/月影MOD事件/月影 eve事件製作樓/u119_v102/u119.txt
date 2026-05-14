@@ -1,0 +1,41 @@
+eve_start
+//if_date,98,1
+if_val,ó‘Ô:player=2
+//if_amon,8
+eve_end
+set_epid1,player
+set_eveflg,194,0
+bl_fadein,gzin8
+zin_reg_event,,player,,,
+zin_reg_msg,‰¤‘°“Š–?,0
+zin_reg_2sel,‰¤‘°“Š–,‚¢‚â
+        get_resp
+        ret_sel1
+        goto,*s
+        ret_sel2
+        set_eveflg,194,0
+        end
+        *s
+                for,PMAX,194,1
+                chk_msts,eveflg194,”e‰¤,poid_player,ŒMŒ÷,>12000,ŒMŒ÷,<13000,ó‘Ô,!3,NON,0
+                chk_msts_then
+                    set_epid2,eveflg194
+                    bl_fadein,gzin8
+                    zin_reg_event,,player,eveflg194,,
+                    zin_reg_msg,p_name2,0
+                    set_eveflg,195,1
+                    zin_reg_3sel,“Š–,‚¢‚â,’†Ð
+                    get_resp
+                    ret_sel1
+                    set_horyo,eveflg194,poid_player
+                    continue
+                    ret_sel2
+                    continue
+                    ret_sel3
+                    set_eveflg,194,0
+                    end
+                chk_msts_else
+                    continue
+                 next
+set_eveflg,194,0
+end

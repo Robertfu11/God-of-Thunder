@@ -1,0 +1,29 @@
+zin_reg_msg,p_name2、這是只屬於我們兩個人的秘密,0
+zin_reg_msg,不能向外人說起的哦,0
+zin_reg_msg,好的、我知道了、call_pid21,1
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_msg,哈！哈！哈！哈哈哈！！！！,pid2
+	zin_old_msg,好舒服、call_pid21,pid2
+	zin_old_msg,我、我也一樣．．．,pid1
+	zin_old_msg,我已經快要高潮了,pid2
+	zin_old_msg,我也是、和哥哥一起高朝吧,pid1
+	zin_old_msg,好、好的．．．啊啊、高潮了啊！！啊啊啊啊！！,pid2
+	zin_flush,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_old_msg,啊啊、嗯啊、啊啊啊！！！！,pid2
+	zin_old_msg,還要、call_pid21、更多的、更多的,pid2
+	zin_old_msg,呵呵、妹妹變得真是色情了呢．．．,pid1
+	zin_old_msg,啊嗯、哈嗯啊、不行了啊啊啊、不行、不管了、高潮了啊啊啊啊！！！！,pid2
+	zin_old_msg,我也差不多、那就在妹妹的man_str裡充分的中出吧！嗯啊啊！,pid1
+	zin_old_msg,好、嗯啊．．．哥哥的、tane_str！！射進來了啊啊啊啊！！,pid2
+	zin_flush,pid2
+	end

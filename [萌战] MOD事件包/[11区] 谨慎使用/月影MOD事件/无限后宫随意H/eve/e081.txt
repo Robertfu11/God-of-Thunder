@@ -1,0 +1,16 @@
+eve_start
+	if_eveflg,10,2
+	if_aft_date,73,10
+eve_end
+
+set_eveflg,10,3
+
+dokuritu,2,1,0
+put_wakusei,1
+set_winfo,1,0,150000,180000,80,5000,-1,-1
+set_run_msg,バンが惑星基魯比斯で挙兵しました。
+//薩布麗娜は生まれている
+set_sikan,208,2
+set_pnen,208,1
+upd_sts,208,母,153
+end

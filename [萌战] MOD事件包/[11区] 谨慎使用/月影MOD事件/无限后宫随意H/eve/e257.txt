@@ -1,0 +1,80 @@
+//闖到斯庫洛克那　當斯庫洛克已死
+eve_start
+	if_date,86,5
+	if_eveflg,26,9
+	if_psts,624,!2
+//艾露巴　被俘狀態
+	if_psts,599,8
+eve_end
+
+set_eveflg,26,10
+
+chk_exeplayer,poid599,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,68
+//zin_reg_init
+zin_reg_event,地下牢,668,599,,gzin35
+zin_reg_msg,艾露巴 ．．．cr你是艾露巴吧？,0
+zin_reg_msg,你、你是誰？,1
+zin_reg_msg,我是琳希,0
+zin_reg_msg,聽說我還是嬰兒的時候你救過我,0
+zin_reg_msg,謝謝啦,0
+zin_reg_msg,琳、琳希大人．．．cr真的是您？,1
+zin_reg_msg,您、您沒事真的太好了．．．,1
+zin_reg_msg,話說，斯庫洛克是不是已經死了？,0
+zin_reg_msg,是的，他被處刑了,1
+zin_reg_msg,是麼．．．cr果然是真的啊．．．,0
+zin_reg_msg,請問您怎麼了？,1
+zin_reg_msg,我們是為了打倒斯庫洛克來的,0
+zin_reg_msg,不過看來是白來了啊,0
+zin_reg_msg,請放心，cr已經沒有人想要殺害您了,1
+zin_reg_msg,是麼．．．謝謝啦,0
+zin_reg_msg,不過，人沒了目的馬上就提不起勁了啊,0
+zin_reg_msg,今後該怎麼辦呢．．．,0
+zin_reg_msg,那麼去找貝塔大人如何？,1
+zin_reg_msg,貝塔？,0
+zin_reg_msg,他是琳希大人您的父親,1
+zin_reg_msg,他肯定能幫到您,1
+zin_reg_msg,我父親．．．．cr不是說他很久之前就過世了麼,0
+zin_reg_msg,為什麼父親過世了那麼久之後我才出生？,0
+zin_reg_msg,這個我也是聽我爸說的．．．,1
+zin_reg_msg,以前凱莉大人的一族人住在巴爾根行星附近的小行星上,1
+zin_reg_msg,他們在那裏似乎是因為一項機密的任務——保存貝塔大人的種子,1
+zin_reg_msg,可是，凱莉大人所在的基地因為小行星間的碰撞毀掉了,1
+zin_reg_msg,凱莉大人逃出來後被我爸救了,1
+zin_reg_msg,雖然貝塔大人的種子似乎和小行星一起消失了,1
+zin_reg_msg,不過凱莉大人通過人工受精的方式將貝塔大人的種子保存在了自己體內,1
+zin_reg_msg,之後生下來的就是琳希大人您了,1
+zin_reg_msg,而且貝塔大人還活著,1
+zin_reg_msg,歐瓦南——就是我爸——跟我這麼說過,1
+zin_reg_msg,可是他沒有明說貝塔大人具體在哪裏,1
+zin_reg_msg,我想霍斯因的巴庫恩閣下應該知道點什麼．．．,1
+zin_reg_msg,不知道他是不是還活著．．．,1
+zin_reg_msg,我．．．原來是這麼來的啊．．．,0
+zin_reg_msg,琳希大人是貝塔大人正統的繼承人,1
+zin_reg_msg,可是女的是當不了繼承人的．．．,0
+zin_reg_msg,就算是這樣，大家仍然希望您來繼承,1
+zin_reg_msg,希望貝塔大人能複活的人實在太多了,1
+zin_reg_msg,是麼．．．．cr好吧,0
+zin_reg_msg,我去找找父親看看,0
+zin_reg_msg,琳希大人．．．．,1
+zin_reg_msg,艾露巴，我也把你從這裏放出來好了,0
+zin_reg_msg,這種程度的讓靜香來兩下就能弄破,0
+zin_reg_msg,不，琳希大人，cr這不行,1
+zin_reg_msg,為什麼？,0
+zin_reg_msg,這裏還有很多曾經是家臣的人,1
+zin_reg_msg,我怎麼能自己一個人逃跑,1
+zin_reg_face_0,758
+zin_reg_msg,琳希大人，警衛來了！！,0
+zin_reg_face_0,668
+zin_reg_msg,您還是快走吧,1
+zin_reg_msg,．．．．．．,0
+zin_reg_msg,抱歉了，艾露巴,0
+zin_reg_msg,請不用替我擔心,1
+zin_reg_msg,快走吧！！,1
+zin_reg_msg,好,0
+zin_reg_button,0
+//zin_reg_exit

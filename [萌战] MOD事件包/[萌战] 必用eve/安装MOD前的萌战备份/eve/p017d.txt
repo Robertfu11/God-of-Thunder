@@ -1,0 +1,16 @@
+bgm_chg,65
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin9
+zin_reg_msg,p_name1、你看,1
+zin_reg_msg,這是我們的孩子,1
+zin_reg_face,pid3
+zin_reg_msg,哦哦、太好了crp_name2大人,0
+zin_reg_msg,你看這孩子多可愛啊,0
+zin_reg_msg,為了這個孩子的將來,1
+zin_reg_msg,現在開始、你要更加努力啊,1
+zin_reg_msg,是,0
+zin_reg_msg,屬下定當誓死效忠,0
+zin_reg_title,p_name3出生了。
+zin_reg_button,0
+zin_reg_exit
+end

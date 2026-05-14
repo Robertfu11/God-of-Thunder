@@ -1,0 +1,35 @@
+eve_start
+	if_val,状態:player=2
+	//if_val,勲功:player=13000
+	if_date,70,2
+eve_end
+set_epid1,player
+set_eveflg,192,0
+bl_fadein,gzin8
+zin_reg_event,,player,,,
+zin_reg_msg,覇王國家技術增加9000?,0
+zin_reg_2sel,覇王國家技術增加9000,放棄
+        get_resp
+        ret_sel1
+                add_sdev,poid_player,0,9000
+                add_sdev,poid_player,1,9000
+                add_sdev,poid_player,2,9000
+                add_sdev,poid_player,3,9000
+                add_sdev,poid_player,4,9000
+                add_sdev,poid_player,5,9000
+                add_sdev,poid_player,6,9000
+                add_sdev,poid_player,7,9000
+                add_sdev,poid_player,8,9000
+                add_sdev,poid_player,9,9000
+                rel_weapon,poid_player
+				rel_weapon,poid_player
+				rel_weapon,poid_player
+				rel_weapon,poid_player
+                set_eveflg,192,0
+                zin_reg_msg,覇王國家技術增加9000,0
+                end
+        ret_sel2
+                set_eveflg,192,0
+                end
+set_eveflg,192,0
+end

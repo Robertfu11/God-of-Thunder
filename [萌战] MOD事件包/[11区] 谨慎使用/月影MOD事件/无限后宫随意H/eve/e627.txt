@@ -1,0 +1,39 @@
+eve_start
+	if_eveflg,75,36
+	if_val,状態:243=6
+	if_val,覇王:243=覇王:player
+eve_end
+
+add_menkai,243
+
+set_epid1,243
+set_epid2,player
+bgm_chg,54
+//zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin43
+zin_reg_msg,p_name2、在嗎！！,0
+zin_reg_msg,p_name1大人,1
+zin_reg_msg,我說、我也到了一定年齡了,0
+zin_reg_msg,也想像其他人一樣去約會了,0
+zin_reg_msg,p_name1大人身邊、永遠都不會缺男人的,1
+zin_reg_msg,說什麼呢cr不是隨便是個男人就行的,0
+zin_reg_msg,說、說的也是．．．,1
+zin_reg_msg,我說、p_name2,0
+zin_reg_msg,接下來和我去約會吧,0
+zin_reg_msg,什、什麼！！,1
+zin_reg_msg,去哪兒都行,0
+zin_reg_msg,有沒有什麼好玩的地方帶我去呢？,0
+zin_reg_msg,我呢、不會很了解平民們常去玩的地方,0
+zin_reg_msg,今天可是偷偷地出來約會的哦,0
+zin_reg_msg,是這樣啊．．．,1
+zin_reg_msg,那麼、我帶你去平民的廚房、集市去逛一逛吧？,1
+zin_reg_msg,那裏賣各種各樣的食材很有意思的,1
+zin_reg_msg,旁邊還有直接加工的地方,1
+zin_reg_msg,哦哦、聽起來好有趣,0
+zin_reg_msg,我對平民的飲食很感興趣的,0
+zin_reg_msg,我們這就出發吧,0
+zin_reg_msg,遵命,1
+zin_reg_qnar,這一天、p_name2和p_name1來了一次愉快的約會。
+zin_reg_button,0
+//zin_reg_exit
+end

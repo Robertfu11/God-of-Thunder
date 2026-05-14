@@ -1,0 +1,68 @@
+//hime_dok
+set_eveflg,240,0
+set_eveflg,241,0
+set_eveflg,242,0
+set_eveflg,243,0
+
+for,PMAX,240,1
+	chk_msts,eveflg240,状態,2,性別,2,勲功,<12101,勲功,>12079,年齢,>12
+	chk_msts_else
+	continue
+	chk_msts_then
+		set_eveflg,241,覇王:eveflg240
+		get_bgst_habatu,eveflg241,0
+		chk_msts,eveflg240,派閥,eveflg240,派閥,pval,年齢,>12,忠誠,<66,NON,0
+		chk_msts_else
+		continue
+		chk_msts_then
+			chk_msts,eveflg241,勲功,13000,状態,2,人物汎用,>99,NON,0,NON,0
+			chk_msts_else
+			continue
+			chk_msts_then
+			goto,*con
+
+next
+
+
+end
+
+*con
+get_ncwid,eveflg241
+set_eveflg,242,pval
+chk_eveflg,242,0
+chk_sts_then
+continue
+chk_sts_else
+	chk_sts,eveflg240,32,3004
+	chk_sts_else
+	continue
+	chk_sts_then
+
+get_habatu2,eveflg240
+set_epid1,eveflg240
+set_epid2,pval
+set_epid3,eveflg241
+get_ncwid,eveflg241
+
+
+bgm_chg,68
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin26
+//	zin_reg_msg,０１２３４５６７８９０１２３４５６７８９０１,0
+	zin_reg_msg,call_pid1、何の事ですか,1
+	zin_reg_msg,これ以上p_name3を従うことはできない,0
+	zin_reg_msg,予定通り独立しようとする,0
+	zin_reg_msg,何と．．．,1
+	zin_reg_msg,やはりご決断したのでございますか,1
+	zin_reg_msg,そう、準備は?,0
+	zin_reg_msg,完璧です,1
+	zin_reg_msg,よい、今日付にp_name1派閥は独立だ,0
+	zin_reg_msg,は！,1
+	bl_fadeout
+	zin_reg_qnar,p_name1は惑星s_name_pvalに独立しました。
+///////////set_habatusts,eveflg240,6
+dokuritu,eveflg240,pval,1
+upd_winfo,pval,0,0,0,0,25000,0,0
+zin_reg_button,0
+zin_reg_exit
+continue

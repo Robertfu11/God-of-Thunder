@@ -1,0 +1,16 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin2
+zin_reg_msg,p_name1殿下,1
+zin_reg_msg,怎麼了？,0
+zin_reg_msg,雖然一直以來很受你照顧,1
+zin_reg_msg,p_name2！！cr為什麼要回去啊,0
+zin_reg_msg,我想要說句對你的感謝,1
+zin_reg_msg,我能夠回來原來主人的感謝,1
+zin_reg_msg,這是一份小小的禮物cr請收下吧,1
+zin_reg_msg,噢噢、這是．．．,0
+zin_reg_msg,那麼、我就先告辭了,1
+zin_reg_title,buf_str1入手了。
+zin_reg_button,0
+zin_reg_exit
+end

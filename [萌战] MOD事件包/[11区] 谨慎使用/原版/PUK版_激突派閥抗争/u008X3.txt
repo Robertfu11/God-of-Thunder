@@ -1,0 +1,179 @@
+////////////////////
+
+
+rnd,3
+case0
+	zin_reg_msg,p_name_eveflg(281)派のメンバーを粛正しましょう,1
+	goto,*Hiboutyuu02
+case1
+	zin_reg_msg,p_name_eveflg(281)派のメンバーを始末しましょう,1
+	goto,*Hiboutyuu02
+case2
+	zin_reg_msg,p_name_eveflg(281)派のメンバーをひと思いに．．．,1
+	*Hiboutyuu02
+/////////////////
+rnd,3
+case0
+	zin_reg_msg,．．．聞かなかった事にする,0
+	goto,*Hiboutyuu03
+case1
+	zin_reg_msg,．．．俺はcr何も聞いていない,0
+	goto,*Hiboutyuu03
+case2
+	zin_reg_msg,．．．俺はcrしらんぞ,0
+	*Hiboutyuu03
+
+	zin_reg_msg,やるなら勝手にしろ,0
+
+////////////////////////
+rnd,3
+case0
+	zin_reg_msg,．．．ハッ,1
+	goto,*Hiboutyuu04
+case1
+	zin_reg_msg,．．．お任せを,1
+	goto,*Hiboutyuu04
+case2
+	zin_reg_msg,．．．ハハ,1
+	*Hiboutyuu04
+///////////暗殺する人物
+get_habatumem,eveflg281,eveflg281
+set_eveflg,271,pval
+///////////////////////////
+rnd,3
+case0
+	bl_fadeout
+	bl_fadein,gzin13
+zin_reg_event,市街,eveflg271,840,,gzin13
+	goto,*Hiboutyuu05
+case1
+	bl_fadeout
+	bl_fadein,gzin2
+zin_reg_event,市街,eveflg271,840,,gzin2
+	goto,*Hiboutyuu05
+case2
+	bl_fadeout
+	bl_fadein,gzin44
+zin_reg_event,市外,eveflg271,840,,gzin44
+	*Hiboutyuu05
+///////////////////////////
+bgm_chg,61
+
+rnd,3
+case0
+	zin_reg_msg,．．．やれやれcr遅くなってしまったな,0
+	goto,*Hiboutyuu06
+case1
+	zin_reg_msg,こんな時に故障とはついてない．．．,0
+	goto,*Hiboutyuu06
+case2
+	zin_reg_msg,まさか步くことになるとはな．．．,0
+	*Hiboutyuu06
+
+rnd,3
+case0
+	zin_reg_msg,失礼します．．．,1
+	goto,*Hiboutyuu07
+case1
+	zin_reg_msg,p_name_eveflg(271)様ですね,1
+	goto,*Hiboutyuu07
+case2
+	zin_reg_msg,あ、お待ち下さい,1
+	*Hiboutyuu07
+
+rnd,3
+case0
+	zin_reg_msg,．．．ん？,0
+	goto,*Hiboutyuu08
+case1
+	zin_reg_msg,なんだ？,0
+	goto,*Hiboutyuu08
+case2
+	zin_reg_msg,．．．？,0
+	*Hiboutyuu08
+
+	zin_reg_msg,死ね,1
+
+	zin_reg_msg,．．．！？,0
+///////////////////
+	hao_ansatu,eveflg271,840
+	get_resp
+	ret_sel1
+
+//////////////////////生粋の武闘派には通じない
+chk_msts,eveflg271,信念,>79,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+goto,*Odosisippa01
+chk_msts_else
+//////////////////生粋の信義派にも通じない
+chk_msts,eveflg271,信念,<-79,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+goto,*Odosisippa01
+chk_msts_else
+/////////////////
+rnd,6
+case0
+case1
+case2
+case3
+*Odosisippa01
+case4
+*Odosisippa01
+case5
+//////////////脅しには屈しない
+*Odosisippa01
+
+case0
+	zin_reg_msg,．．．ふぅ,0
+	goto,*Hiboutyuu10
+case1
+	zin_reg_msg,．．．やれやれだな,0
+	goto,*Hiboutyuu10
+case2
+	zin_reg_msg,直接、命を狙いに来るとは．．．,0
+	*Hiboutyuu10
+
+case0
+	zin_reg_msg,．．．奴らも必死だな,0
+	goto,*Hiboutyuu10
+case1
+	zin_reg_msg,下らんことを．．．,0
+	goto,*Hiboutyuu10
+case2
+	zin_reg_msg,愚か者め．．．,0
+	*Hiboutyuu10
+
+	bl_fadeout
+	bl_fadein,gzin30
+zin_reg_event,p_name_eveflg(280)派会合,eveflg280,eveflg290,,gzin30
+
+	zin_reg_msg,しくじったか．．．,0
+	zin_reg_msg,申し訳ありません,1
+	zin_reg_msg,バレてはいないな？,0
+	zin_reg_msg,証拠となるもは全て消しておきました,1
+	zin_reg_msg,ならば良いcr全て忘れろ、いいな？,0
+	zin_reg_msg,．．．ハッ,1
+	zin_reg_msg,．．．ふん,0
+	zin_reg_msg,運の良い奴らだ,0
+
+
+zin_reg_button,0
+end
+/////////////////////敗北した。
+	ret_sel2
+add_kunkou,eveflg290,500
+	zin_reg_msg,．．．,1
+	zin_reg_msg,．．．任務終了,1
+zin_reg_qnar,p_name_eveflg(271)は翌日死体となって発見された．．．
+zin_reg_event,p_name_eveflg(281)派会合,eveflg281,eveflg296,,gzin30
+
+	zin_reg_msg,犯人はわからないのか！．,0
+	zin_reg_msg,申し訳ございません．．．,1
+	zin_reg_msg,誰がやったのかは知らんが．．．,0
+	zin_reg_msg,裏で糸を引いたヤツは絶対に許さん！,0
+zin_reg_button,0
+end
+
+
+
+end

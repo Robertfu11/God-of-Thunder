@@ -1,0 +1,434 @@
+/////異性交遊推進_ver2.0（天之声付き）/////
+
+eve_start
+	if_orval,状態:player=2,状態:player=4,,,
+	if_rnd,4
+eve_end
+
+//自勢力の処理//////////////////////////////////////////////////
+get_mpid,性別=2,状態=2|4,婚姻=0,懐妊=0,覇王=poid_player,年齢>24,
+//同じ陣営の25歳以上で行き遅れで焦っている未婚女性を抽出
+set_epid2,pval
+chk_mval,pid2>0,特殊:pid2!1,,,
+//該当者いれば続行、いなければ24歳以下へ
+	chk_mval_then
+	goto,*OaiteDansei
+	chk_mval_else
+
+get_mpid,性別=2,状態=2|4,婚姻=0,懐妊=0,覇王=poid_player,年齢<25,年齢>17
+//同じ陣営の18歳以上24歳以下のまだ心に余裕のある未婚女性を抽出
+set_epid2,pval
+chk_mval,pid2>0,特殊:pid2!1,,,
+//該当者いれば続行、いなければ他勢力の処理へ
+	chk_mval_then
+	goto,*OaiteDansei
+	chk_mval_else
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,自勢力中沒有符合條件的女性角色．,0
+		zin_reg_exit
+	goto,*TakokuSyori
+
+*OaiteDansei
+get_mpid,性別=1,状態=2|4,婚姻=0,特殊=0,覇王=poid_player,勲功<11001,年齢>17
+//同じ陣営の将軍以下もしくは海賊手下の18歳以上未婚男性を抽出
+set_epid3,pval
+chk_mval,pid3>0,pid3!player,,,
+//該当者いれば続行、いなければ他勢力の処理へ
+	chk_mval_then
+	goto,*KosaiH
+	chk_mval_else
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,自勢力中有符合條件的男性角色、自已被入選了．,0
+		zin_reg_exit
+	goto,*TakokuSyori
+
+*KosaiH
+chk_sts,pid2,14,0
+chk_sts_then
+//処女の場合ガードが堅いので
+rnd,10
+//Ｈまでいけたのが40％、そこからさらに妊娠に発展するのが25％（全体で見ると10％）、何も起こらず終わるが60％
+case0
+	set_non_virgin,pid2
+	set_ninsin,pid2,pid3
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,自勢力的p_name3將p_name2的処女奪走了、並因此導致其懷有子嗣．,0
+		zin_reg_exit
+	goto,*KekkonHantei
+
+case1
+case2
+case3
+	set_non_virgin,pid2
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,自勢力的p_name3將p_name2的処女奪走了．,0
+		zin_reg_exit
+	goto,*KekkonHantei
+
+case4
+case5
+case6
+case7
+case8
+case9
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,自勢力的p_name3與還是処女的p_name2約會了、但什麼事也沒發生．,0
+		zin_reg_exit
+	goto,*TakokuSyori
+
+chk_sts_else
+//非処女の場合はガードがゆるめ
+rnd,6
+//Ｈまでいけたのが50％、そこからさらに妊娠に発展するのが33％（全体で見ると16％）、Ｈしたかも知れないが何も起こらず終わるが50％
+case0
+	set_ninsin,pid2,pid3
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,自勢力的p_name3與p_name2一直暗中保持著肉体関係、她因此而懷孕了．,0
+		zin_reg_exit
+	goto,*KekkonHantei
+
+case1
+case2
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,自勢力的p_name3與p_name2一直暗中保持著肉体関係．,0
+		zin_reg_exit
+	goto,*KekkonHantei
+
+case3
+case4
+case5
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,自勢力的p_name3與p_name2約會了、但什麼事也沒發生．,0
+		zin_reg_exit
+	goto,*TakokuSyori
+
+*KekkonHantei
+rnd,2
+//Ｈしたんだから結婚してよねってことで結婚に発展するのが50％
+case0
+//結婚女性が身内かどうか
+set_epid1,player
+chk_family,pid2,pid1
+	case_fam_姉
+	case_fam_妹
+	case_fam_母
+	case_fam_娘
+	case_fam_娘(養)
+	goto,*MiutiKekkon
+	default_fam
+	goto,*TaninKekkon
+
+case1
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,p_name3被p_name2強行逼迫結婚、逃離成功了．,0
+		zin_reg_exit
+goto,*TakokuSyori
+
+*TaninKekkon
+bgm_chg,65
+chk_mval,状態:pid3=2,,,,
+chk_mval_then
+	goto,*Sikannobaai
+chk_mval_else
+	goto,*Kaizokunobaai
+
+*Sikannobaai
+get_kunpsn2,poid_player,player
+set_epid4,pval
+chk_ormval,pid4=0,pid4=pid2,pid4=pid3,,
+
+chk_ormval_then
+zin_reg_event,結婚式,pid1,845,zin6,gzin5
+zin_reg_qnar,p_name3和p_name2結婚典禮的儀式上．crp_name1也受邀參加．
+zin_reg_msg,明明是在和我交往的啊．,1
+zin_reg_msg,p_name2大人、cr對於我們下士官來說．cr可是十分憧憬的高嶺之花呢．cr再也可望而不可及了、残念吶．,1
+zin_reg_msg,是啊．cr錯過了一條大魚呢．．．,0
+chk_sts,pid2,12,>75
+chk_sts_then
+	zin_reg_msg,（唉、難道應指責crp_name3麼？cr橫刀奪愛！）,0
+	zin_reg_msg,（到底是什麼時候．cr那樣關係的．．．）,0
+chk_sts_else
+zin_reg_event,結婚式,pid3,pid2,zin6,gzin5
+zin_reg_msg,p_name3、crcf_pid2感到好幸福．．．,1
+zin_reg_msg,這世上所有的一切的幸福．cr都在飛舞著、降臨著．cr深愛著妳、crp_name2．,0
+zin_reg_msg,謝謝你．．．cr．．．．．．親愛的．,1
+set_pkon,pid2,pid3
+zin_reg_button,0
+zin_reg_exit
+goto,*TakokuSyori
+
+chk_ormval_else
+zin_reg_event,結婚式,pid1,pid4,zin6,gzin5
+zin_reg_qnar,p_name3和p_name2結婚典禮的儀式上．crp_name1也受邀參加．
+chk_kunko,pid1,pid4
+case_kun_上司
+case_kun_同僚
+	zin_reg_msg,可是、那兩個人．cr在一起交往了啊．cr沒有被注意到呢．,1
+	zin_reg_msg,嗯．cr完全沒注意．．．,0
+	goto,*TaninKekkon2
+case_kun_部下
+default_kun
+	zin_reg_msg,可是、那兩個人．cr在一起交往中．crp_name1大人有cr注意到嗎？,1
+	zin_reg_msg,不、cf_pid1也完全不知道啊．．．,0
+
+*TaninKekkon2
+chk_sts,pid2,12,>75
+chk_sts_then
+	zin_reg_msg,（唉、難道應指責crp_name3麼？cr橫刀奪愛！）,0
+	zin_reg_msg,（到底是什麼時候．cr那樣關係的．．．）,0
+chk_sts_else
+zin_reg_event,結婚式,pid3,pid2,zin6,gzin5
+zin_reg_msg,p_name3、crcf_pid2感到好幸福．．．,1
+zin_reg_msg,這世上所有的一切的幸福．cr都在飛舞著、降臨著．cr深愛著妳、crp_name2．,0
+zin_reg_msg,謝謝你．．．cr．．．．．．親愛的．,1
+set_pkon,pid2,pid3
+zin_reg_button,0
+zin_reg_exit
+goto,*TakokuSyori
+
+*Kaizokunobaai
+get_mpid,状態=4,覇王=player,勲功!13000,,,,
+set_epid4,pval
+chk_ormval,pid4=0,pid4=pid2,pid4=pid3,,
+
+chk_ormval_then
+zin_reg_event,結婚式,pid1,666,zin6,gzin53
+zin_reg_qnar,p_name3和p_name2結婚了．cr儀式在艦内舉行．
+zin_reg_msg,那兩個傢伙．cr終於變得在一起了麼？,1
+zin_reg_msg,p_name2也是cr俺偷偷瞄了好久的．cr上等貨色啊．cr咳、還說這些做什麼．,1
+zin_reg_msg,哈哈哈．cr一個好女人．cr被錯過了啊．．．,0
+zin_reg_event,結婚式,pid3,pid2,zin6,gzin53
+zin_reg_msg,p_name3、crcf_pid2感到好幸福．．．,1
+zin_reg_msg,這世上所有的一切的幸福．cr都在飛舞著、降臨著．cr深愛著妳、crp_name2．,0
+zin_reg_msg,你也是．．．cr．．．．．親愛的．,1
+set_pkon,pid2,pid3
+zin_reg_button,0
+zin_reg_exit
+goto,*TakokuSyori
+
+chk_ormval_else
+zin_reg_event,結婚式,pid1,pid4,zin6,gzin53
+zin_reg_qnar,p_name3和p_name2結婚了．cr儀式在艦内舉行．
+zin_reg_msg,可是、那兩個人．cr在一起交往中．cr可曾有cr注意到嗎？,1
+zin_reg_msg,不、cf_pid1也完全不知道啊．．．,0
+zin_reg_event,結婚式,pid3,pid2,zin6,gzin53
+zin_reg_msg,p_name3、crcf_pid2感到好幸福．．．,1
+zin_reg_msg,這世上所有的一切的幸福．cr都在飛舞著、降臨著．cr深愛著妳、crp_name2．,0
+zin_reg_msg,你也是．．．cr．．．．．親愛的．,1
+set_pkon,pid2,pid3
+zin_reg_button,0
+zin_reg_exit
+goto,*TakokuSyori
+
+*MiutiKekkon
+bgm_chg,59
+chk_mval,状態:pid3=2,,,,
+chk_mval_then
+	goto,*Sikannobaai2
+chk_mval_else
+	goto,*Kaizokunobaai2
+
+*Sikannobaai2
+zin_reg_event,辦公室,pid1,pid2,,gzin33
+zin_reg_qnar,某個晴天、p_name2忽然來訪．
+zin_reg_msg,你好！crcall_pid1？,1
+zin_reg_msg,喔、好久不見．crcall_pid2、cr怎麼了？,0
+zin_reg_msg,其實、是有重要的話要說才來的．,1
+zin_reg_msg,一下子鄭重起來．．．cr這是怎麼了？,0
+zin_reg_msg,cf_pid2、cr我已經cr結婚了！,1
+zin_reg_msg,什麼！？cr啊、和誰？,0
+zin_reg_msg,p_name3先生．,1
+chk_kunko,pid1,pid3
+case_kun_上司
+	zin_reg_msg,p_name3先生！？cr那是、那是．．．cr知道了．cr已經是這樣的關係了啊．,0
+	zin_reg_msg,結婚式時、cr希望call_pid1也cr可否應邀出席？,1
+	zin_reg_msg,那是當然的．,0
+	zin_reg_msg,呵呵．cr謝謝．,1
+	zin_reg_msg,再聯絡．crcf_pid2、您先cr忙吧．．．,1
+	zin_reg_face_1,0
+	zin_reg_msg,好．．．cr去吧．．．,0
+	goto,*MiutiKekkon2
+case_kun_同僚
+case_kun_部下
+default_kun
+	zin_reg_msg,p_name3！？cr這還真是青天霹靂呀．cr已經是這樣的關係了啊．,0
+	zin_reg_msg,結婚式時、cr希望call_pid1也cr可否應邀出席？,1
+	zin_reg_msg,那是當然的．,0
+	zin_reg_msg,呵呵．cr謝謝．,1
+	zin_reg_msg,再聯絡．crcf_pid2、您先cr忙吧．．．,1
+	zin_reg_face_1,0
+	zin_reg_msg,好．．．cr去吧．．．,0
+
+*MiutiKekkon2
+zin_reg_qnar,就這樣、数週過後．．．
+bgm_chg,65
+zin_reg_event,結婚式,pid3,pid2,zin6,gzin5
+zin_reg_msg,p_name3、crcf_pid2感到好幸福．．．,1
+zin_reg_msg,這世上所有的一切的幸福．cr都在飛舞著、降臨著．cr深愛著妳、crp_name2．,0
+zin_reg_msg,謝謝你．．．cr．．．．．．親愛的．,1
+zin_reg_event,結婚式,pid1,pid2,zin6,gzin5
+zin_reg_msg,（要快樂吶．crcall_pid2．cr稍微有些複雜的心情．．．祝妳幸福．．．）,0
+set_pkon,pid2,pid3
+zin_reg_button,0
+zin_reg_exit
+goto,*TakokuSyori
+
+*Kaizokunobaai2
+zin_reg_event,オカシラ的房間,pid1,pid2,,gzin54
+zin_reg_qnar,在惑星間航行中的某一日、p_name2忽然來訪．
+zin_reg_msg,哎！cr是オカシラ麼？,1
+zin_reg_msg,欸？crcall_pid2？cr怎麼了？,0
+zin_reg_msg,其實、是有重要的話要說才來的．,1
+zin_reg_msg,一下子鄭重起來．．．cr這是怎麼了？,0
+zin_reg_msg,cf_pid2、cr我已經cr找到我的伴侶了！,1
+zin_reg_msg,什麼！？cr啊、和誰？,0
+zin_reg_msg,p_name3啊．,1
+zin_reg_msg,p_name3！？cr難道你們已經、cr已經是這樣的關係了啊．,0
+zin_reg_msg,結婚式時、cr希望你也能cr應邀出席．,1
+zin_reg_msg,那是當然的．,0
+zin_reg_msg,呵呵．cr謝謝．,1
+zin_reg_msg,詳細的話以後再說．crcf_pid2、先去cr忙嘍．．．,1
+zin_reg_face_1,0
+zin_reg_msg,好．．．cr去吧．．．,0
+zin_reg_qnar,就這樣、数週過後．．．
+bgm_chg,65
+zin_reg_event,結婚式,pid3,pid2,zin6,gzin53
+zin_reg_msg,p_name3、crcf_pid2感到好幸福．．．,1
+zin_reg_msg,這世上所有的一切的幸福．cr都在飛舞著、降臨著．cr深愛著妳、crp_name2．,0
+zin_reg_msg,你也是．．．cr．．．．．親愛的．,1
+zin_reg_event,結婚式,pid1,pid2,zin6,gzin53
+zin_reg_msg,（要快樂吶．crcall_pid2．cr稍微有些複雜的心情．．．祝妳幸福．．．）,0
+set_pkon,pid2,pid3
+zin_reg_button,0
+zin_reg_exit
+
+
+//他勢力の処理//////////////////////////////////////////////////
+*TakokuSyori
+get_mpid,性別=2,状態=2,婚姻=0,懐妊=0,覇王!poid_player,年齢>24,
+//他勢力の25歳以上で行き遅れで焦っている未婚女性を抽出
+set_epid2,pval
+chk_mval,pid2>0,特殊:pid2!1,,,
+//該当者いれば続行、いなければ24歳以下へ
+	chk_mval_then
+	goto,*TakokuOaiteDansei
+	chk_mval_else
+
+get_mpid,性別=2,状態=2,婚姻=0,懐妊=0,覇王!poid_player,年齢<25,年齢>17
+//他勢力の18歳以上24歳以下のまだ心に余裕のある未婚女性を抽出
+set_epid2,pval
+chk_mval,pid2>0,特殊:pid2!1,,,
+//該当者いれば続行、いなければ終了
+	chk_mval_then
+	goto,*TakokuOaiteDansei
+	chk_mval_else
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,其他勢力中沒有符合條件的女性角色．,0
+		zin_reg_exit
+	end
+
+*TakokuOaiteDansei
+for,PMAX,239,1
+	chk_mval,覇王:pid2=eveflg239,,,,
+	chk_mval_then
+		set_epid4,eveflg239
+		goto,*TakokuOaiteDansei2
+	chk_mval_else
+	continue
+next
+zin_reg_event,劇本的牢獄,840,,,gzin40
+zin_reg_msg,喂喂喂、來到這裡不覺得很奇怪嗎？,0
+zin_reg_msg,処理時發生錯誤了吧、再重新檢查一遍劇本吧．,0
+zin_reg_button,0
+zin_reg_exit
+end
+
+*TakokuOaiteDansei2
+get_mpid,性別=1,状態=2,婚姻=0,特殊=0,覇王=pid4,勲功<11001,年齢>17
+//他勢力の女性と同じ陣営の将軍以下で18歳以上未婚男性を抽出
+set_epid3,pval
+chk_mval,pid3>0,,,,
+//該当者いれば続行、いなければ終了
+	chk_mval_then
+	goto,*TakokuKosaiH
+	chk_mval_else
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,其他勢力中沒有符合條件的男性角色．,0
+		zin_reg_exit
+	end
+
+*TakokuKosaiH
+chk_sts,pid2,14,0
+chk_sts_then
+//処女の場合ガードが堅いので
+rnd,10
+//Ｈまでいけたのが40％、そこからさらに妊娠に発展するのが25％（全体で見ると10％）、何も起こらず終わるが60％
+case0
+	set_non_virgin,pid2
+	set_ninsin,pid2,pid3
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,p_name4手下的p_name3將p_name2的処女奪走了、並因此導致其懷有子嗣．,0
+		zin_reg_exit
+	goto,*TakokuKekkonHantei
+
+case1
+case2
+case3
+	set_non_virgin,pid2
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,p_name4手下的p_name3將p_name2的処女奪走了．,0
+		zin_reg_exit
+	goto,*TakokuKekkonHantei
+
+case4
+case5
+case6
+case7
+case8
+case9
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,p_name4手下的p_name3與還是処女的p_name2約會了、但什麼事也沒發生．,0
+		zin_reg_exit
+	end
+
+chk_sts_else
+//非処女の場合はガードがゆるめ
+rnd,6
+//Ｈまでいけたのが50％、そこからさらに妊娠に発展するのが33％（全体で見ると16％）、Ｈしたかも知れないが何も起こらず終わるが50％
+case0
+	set_ninsin,pid2,pid3
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,p_name4手下的p_name3與p_name2一直暗中保持著肉体関係、她因此而懷孕了．,0
+		zin_reg_exit
+	goto,*TakokuKekkonHantei
+
+case1
+case2
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,p_name4手下的p_name3與p_name2一直暗中保持著肉体関係．,0
+		zin_reg_exit
+	goto,*TakokuKekkonHantei
+
+case3
+case4
+case5
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,p_name4手下的p_name3與p_name2約會了、但什麼事也沒發生．,0
+		zin_reg_exit
+	end
+
+*TakokuKekkonHantei
+rnd,2
+//Ｈしたんだから結婚してよねってことで結婚に発展するのが50％
+case0
+set_pkon,pid2,pid3
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,p_name3對p_name2負責任的與之結婚了．,0
+		zin_reg_exit
+end
+
+case1
+		zin_reg_event,天之声,781,,,gzin3
+		zin_reg_msg,p_name3被p_name2強行逼迫結婚、逃離成功了．,0
+		zin_reg_exit
+end

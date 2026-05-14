@@ -1,0 +1,26 @@
+eve_start
+	if_eveflg,28,1
+	if_psts,412,2
+	if_pkun,412,<13000
+eve_end
+
+//移動至貝塔麾下
+set_pmov,412,669
+//功勳、忠誠設定
+upd_sts,412,1,100
+upd_sts,412,4,7000
+
+chk_exeplayer,piod0412,669,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event_mode,山村的住宅,412,0,,gzin18,2
+zin_reg_msg,終於來了,0
+zin_reg_msg,雖然年事已老，不知能否派上用場．．．,0
+zin_reg_msg,但我忠心不變,0
+zin_reg_title,山村投靠天王。
+zin_reg_button,0
+//zin_reg_exit

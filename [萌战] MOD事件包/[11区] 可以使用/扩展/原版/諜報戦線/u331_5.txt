@@ -1,0 +1,98 @@
+auth_uid,123D
+//流言イベントスクリプト
+bl_fadeout
+//担当者の能力による成功率
+set_eveflg,211,0
+add_eveflg,211,知力:pid2
+add_eveflg,211,交渉:pid2
+chk_eveflg,211,>139
+chk_eveflg_then
+	rnd,2
+	goto,*chktantousts
+chk_eveflg_else
+chk_eveflg,211,>109
+chk_eveflg_then
+	rnd,4
+	goto,*chktantousts
+chk_eveflg_else
+	rnd,8
+	*chktantousts
+	case0
+		goto,*ryugensuccess
+	case1
+	case2
+	case3
+	case4
+	case5
+	case6
+	case7
+		zin_reg_event,風説の流布,780,814,,gzin22
+		zin_reg_msg,知ってるかい、p_name3様はね．．．,0
+		zin_reg_msg,はいはい、そんなことよりもね．．．,1
+		zin_reg_qnar,流言の拡散に失敗しました。
+		zin_reg_button,0
+		zin_reg_exit
+		end
+		
+*ryugensuccess
+	set_eveflg,213,0
+	set_eveflg,214,0
+	set_eveflg,215,0
+	set_eveflg,218,0
+	set_eveflg,219,0
+	set_eveflg,211,部下数:pid3
+	chk_eveflg,211,>4
+	chk_eveflg_then
+		set_eveflg,212,219
+		gosub,*getrndperson
+	chk_eveflg_else
+	chk_eveflg,211,4
+	chk_eveflg_then
+		set_eveflg,212,218
+		gosub,*getrndperson
+	chk_eveflg_else
+	chk_eveflg,211,3
+	chk_eveflg_then
+		set_eveflg,212,215
+		gosub,*getrndperson
+	chk_eveflg_else
+	chk_eveflg,211,2
+	chk_eveflg_then
+		set_eveflg,212,214
+		gosub,*getrndperson
+	chk_eveflg_else
+	chk_eveflg,211,1
+	chk_eveflg_then
+		set_eveflg,212,213
+		gosub,*getrndperson
+	chk_eveflg_else
+	zin_reg_event,風説の流布,780,814,,gzin22
+	zin_reg_msg,知ってるかい、p_name3様はね．．．,0
+	zin_reg_msg,ええ！！　本当なの？crそんなこと．．．,1
+	bl_fadeout
+	zin_reg_event,風説の流布,eveflg213,,,gzin22
+	zin_reg_msg,（まさかp_name3様が．．．）,0
+	zin_reg_msg,（しかし、火のないところに噂は立たぬというし．．．）,0
+	zin_reg_qnar,流言が飛び交い、p_name3勢力の忠誠が揺るいだ。cr
+	zin_reg_button,0
+	zin_reg_exit
+	end
+
+*getrndperson
+	for,2000,210,1
+		get_mpid,状態=2,覇王=pid3,勲功<13000,,,,
+		chk_ormval,pval=eveflg213,pval=eveflg214,pval=eveflg215,pval=eveflg218,pval=eveflg219
+		chk_ormval_then
+			goto,*getidloop
+		chk_ormval_else
+			set_eveflg,eveflg212,pval
+			set_epid4,pval
+			break
+		*getidloop
+		continue
+	next
+	chk_eveflg,eveflg212,>0
+	chk_eveflg_then
+		upd_sts,pid4,忠誠,-10
+	chk_eveflg_else
+	return

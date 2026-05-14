@@ -1,0 +1,15 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,武裝起義,pid1,pid2,,gzin8
+zin_reg_msg,p_name1大人、大事不好了,1
+zin_reg_msg,在首星p_name3發生了武裝叛亂,1
+zin_reg_msg,你說什麼！！,0
+zin_reg_msg,叛軍已經快要打到這裏了．．．,1
+zin_reg_msg,請您盡快做好轉移的准備．．．,1
+zin_reg_msg,可惡．．．．,0
+zin_reg_msg,馬上就出發,0
+zin_reg_msg,這邊走,1
+zin_reg_title,p_name1進入了流亡狀態。
+zin_reg_button,0
+zin_reg_exit
+end

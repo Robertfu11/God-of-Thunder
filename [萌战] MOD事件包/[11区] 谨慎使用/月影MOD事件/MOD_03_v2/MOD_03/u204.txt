@@ -1,0 +1,266 @@
+eve_start
+	if_psex,player,1
+	if_val,勲功:player=13000
+	if_val,状態:player=3
+eve_end
+set_eveflg,193,0
+set_eveflg,195,0
+for,PMAX,193,1
+                chk_msts,eveflg193,状態,4,NON,0,NON,0,NON,0,NON,0
+                chk_msts_then
+                        //chk_sts,eveflg193,性別,2
+                        //chk_sts_then
+                       // set_eveflg,195,eveflg193
+                        //continue
+                       // chk_sts_else
+                rnd,4
+                case0
+                continue
+                case1
+                continue
+                case2
+                set_eveflg,195,eveflg193
+                break
+                case3
+                continue
+                chk_msts_else
+                    continue
+                 next
+set_epid4,eveflg195
+get_rndwman,on,off,off,off,6,1
+set_epid2,pval
+set_eveflg,194,0
+for,PMAX,194,1
+                chk_sts,pid2,21,eveflg194
+                chk_sts_then
+                set_epid3,eveflg194
+                break
+                chk_sts_else
+                    continue
+                 next
+set_eveflg,194,0
+eve_start
+if_not_eveflg,195,0
+if_cnt_yaku,pid3,4,>0
+eve_end
+//set_epid3,poid_pid2
+bl_fadein,gzin20
+zin_reg_event,,pid4,,,
+zin_reg_msg,開始侵略!!,0
+bl_fadeout
+bl_fadein,gzin8
+zin_reg_event,,pid3,,,
+zin_reg_msg,海賊打來了!!,0
+get_yaku_id,pid3,4,0,0
+set_epid1,pval
+bl_fadeout
+bl_fadein,gzin84
+zin_reg_event,,pid1,pid4,,
+zin_reg_msg,搶呀!!,1
+zin_reg_msg,可惡 在幹什麼!!,0
+set_eveflg,193,0
+set_eveflg,195,0
+btl_ansatu,pid1,pid4,0,2
+        get_resp
+        ret_sel2
+                chk_sts,pid4,性別,1
+                chk_sts_then
+                zin_reg_msg,滾!!,0
+                    end
+                chk_sts_else
+                        chk_sts,pid1,性別,2
+                        chk_sts_then
+                        zin_reg_msg,滾!!,0
+                            end
+                        chk_sts_else
+                zin_reg_msg,女海賊 長的還不錯 那就..,0
+                set_epid2,pid4
+                 bgm_chg,64
+				zin_old_init
+				zin_old_img_pid,pid2,1
+				zin_old_msg,嗚嗚嗚．．．．cr拜、拜託你．．．一點也不快樂．．．,pid2
+				zin_old_msg,你在說什麼胡話啊、明明你也很舒服的吧？,pid1
+				zin_old_msg,這樣的．．．完全、不快樂．．．,pid2
+
+				chk_wsts,pid2
+				//処女
+				case_hatumaku
+					zin_old_msg,我、還是第一次．．．cr這樣的．．．過份啊．．．,pid2
+					zin_old_msg,難得還是新鮮品啊cr予想之外的受寵若驚啊,pid1
+					zin_old_msg,第一次的性愛可不能討厭啊、要好好記住你的第一個男人啊,pid1
+					goto,*np1
+				//妊娠中
+				case_botebara
+				case_normal
+				//人妻
+				chk_mval,婚姻:pid2>0,覇王:pid2=覇王:pid3,状態:pid3=2,,,
+				chk_mval_then
+					zin_old_msg,不要說假話、我的、比你丈夫的更令人舒服吧？,pid1
+					zin_old_msg,請、不要說些多餘的話．．．,pid2
+					zin_old_msg,這、這樣的．．．和丈夫以外的男人．．．cr如果p_name3知道的話．．．,pid2
+					zin_old_msg,p_name3君每天、都能品味如此上等的man_str的味道、還真是個奢侈的傢伙啊,pid1
+					zin_old_msg,但是、從現在開始、就讓你看看和p_name3具有不同風味的地方,pid1
+
+				chk_mval_else
+				*np1
+				//体位ごとに分岐
+				switch_otaii,pid2
+				//バック
+				case_oback
+					chk_mval,初膜:pid2=0,,,,,
+					chk_mval_then
+						zin_old_msg,唔、這個小穴好像還沒有被經常開發過啊,pid1
+						zin_old_msg,啊、當然了．．．cr這樣的事被．．．不、淋濕的吧！！,pid2
+						zin_old_msg,呵呵呵、為處女開苞那也是一種樂趣啊。cr但是、如果經過適度的摩擦的話、會更具美味哦,pid1
+
+					chk_mval_else
+						zin_old_msg,啊嗚嗯！！　不要、痛啊！！　請、請停下來！！,pid2
+						zin_old_msg,暫時忍耐一下、我會慢慢的插的、很快就會被快樂所俘虜的喲,pid1
+						zin_old_msg,不要啊．．．嗚啊啊啊啊！　啊、啊啊啊嗚！,pid2
+						zin_old_msg,那麼、差不多．．．也、該結束了呢！！,pid1
+						zin_old_msg,啊、做什麼！！　不要、不要中出啊！！,pid2
+						zin_old_msg,呼呼嗬！！　承受我精種的慾火吧！！,pid1
+						zin_flush,pid2
+						zin_old_msg,啊啊．．．快停下啊．．．都說了的．．．cr還這麼．．．嘩啦嘩啦、的、注入著．．．,pid2
+						zin_old_msg,呼呼、下次要更加黏濕你啊。cr請快樂的期待吧,pid1
+						zin_old_msg,嗚、不會原諒你的．．．,pid2
+						goto,*g
+
+				//騎乗位
+				case_okijo
+					zin_old_msg,喂、你也動動腰啊！！,pid1
+					zin_old_msg,那、那種事情．．．不能啊．．．,pid2
+					zin_old_msg,真是的．．沒用的女人啊．．．,pid1
+					zin_old_qnar,p_name1從下方開始強力的頂動著。,0
+					zin_old_msg,啊啊！！　那樣的不行啊！！cr你、拜託你不要ーーー！！,pid2
+					zin_old_msg,呵呵、擁有著這麼好的肉洞。cr馬上就讓你高潮吧,pid1
+					zin_old_msg,嗯啊、啊、不行啊．．．cr高潮的時候．．．請、在外面．．．,pid2
+					zin_old_msg,那樣任性的要求怎麼能被接受呢、嗯嗯嗯、重要的中出才爽嘛！！,pid1
+					zin_old_msg,啊啊！！　不、不行啦！！　討、討厭啊啊啊啊啊！！,pid2
+					zin_flush,pid2
+					goto,*g
+
+				//正常位
+				default_otaii
+					zin_old_msg,這樣的話、怎麼樣！！,pid1
+					zin_old_qnar,p_name1把自己的腰急速地突刺著。,0
+					zin_old_msg,啊嗚嗯嗯！！,pid2
+					zin_old_msg,哇哈哈哈哈！！cr從小穴裡不斷的向上潮吹啦,pid1
+					zin_old_msg,身體比人要老實嘛cr這樣心情也舒暢了吧？,pid1
+					zin_old_msg,拜託了、不要ーーーー啊！！cr這樣頂的話．．．要、要高潮了！！,pid2
+					zin_old_msg,哈哈、已經根本停不下了啦cr就這樣完全的大噴射給你吧！！,pid1
+					zin_old_msg,不、不要、快停下！！　拜、拜託了、謝謝,pid2
+					zin_old_msg,嗚ーーー嗯！！　嗚嗚嗚、已經高潮了！！,pid2
+					zin_flush,pid2
+                        zin_old_fadeout,0,5
+                        goto,*g
+*g
+                        bl_fadein,gzin8
+                        zin_reg_event,,pid1,pid2,,
+                        zin_reg_msg,真爽!!!,0
+                        chk_sts,pid1,21,poid_player
+                        chk_sts_then
+                        zin_reg_msg,帶到監獄!!!,0
+                        kaizoku_cancel,pid2
+                        set_horyo,pid2,poid_player
+                            end
+                        chk_sts_else
+                        zin_reg_msg,滾!!!,0
+                            end
+        ret_sel3
+                chk_sts,pid4,性別,1
+                chk_sts_then
+                zin_reg_msg,什麼東西 那麼弱,1
+                zin_reg_msg,那邊有個女的看起來還不錯!!,1
+                set_epid1,pid4
+                bl_fadein,gzin84
+                zin_reg_event,,pid1,pid2,,
+                zin_reg_msg,給我過來!!,0
+                zin_reg_msg,!!!!,1
+                                  bgm_chg,64
+				zin_old_init
+				zin_old_img_pid,pid2,1
+				zin_old_msg,嗚嗚嗚．．．．cr拜、拜託你．．．一點也不快樂．．．,pid2
+				zin_old_msg,你在說什麼胡話啊、明明你也很舒服的吧？,pid1
+				zin_old_msg,這樣的．．．完全、不快樂．．．,pid2
+
+				chk_wsts,pid2
+				//処女
+				case_hatumaku
+					zin_old_msg,我、還是第一次．．．cr這樣的．．．過份啊．．．,pid2
+					zin_old_msg,難得還是新鮮品啊cr予想之外的受寵若驚啊,pid1
+					zin_old_msg,第一次的性愛可不能討厭啊、要好好記住你的第一個男人啊,pid1
+					goto,*np1
+				//妊娠中
+				case_botebara
+				case_normal
+				//人妻
+				chk_mval,婚姻:pid2>0,覇王:pid2=覇王:pid3,状態:pid3=2,,,
+				chk_mval_then
+					zin_old_msg,不要說假話、我的、比你丈夫的更令人舒服吧？,pid1
+					zin_old_msg,請、不要說些多餘的話．．．,pid2
+					zin_old_msg,這、這樣的．．．和丈夫以外的男人．．．cr如果p_name3知道的話．．．,pid2
+					zin_old_msg,p_name3君每天、都能品味如此上等的man_str的味道、還真是個奢侈的傢伙啊,pid1
+					zin_old_msg,但是、從現在開始、就讓你看看和p_name3具有不同風味的地方,pid1
+
+				chk_mval_else
+				*np1
+				//体位ごとに分岐
+				switch_otaii,pid2
+				//バック
+				case_oback
+					chk_mval,初膜:pid2=0,,,,,
+					chk_mval_then
+						zin_old_msg,唔、這個小穴好像還沒有被經常開發過啊,pid1
+						zin_old_msg,啊、當然了．．．cr這樣的事被．．．不、淋濕的吧！！,pid2
+						zin_old_msg,呵呵呵、為處女開苞那也是一種樂趣啊。cr但是、如果經過適度的摩擦的話、會更具美味哦,pid1
+
+					chk_mval_else
+						zin_old_msg,啊嗚嗯！！　不要、痛啊！！　請、請停下來！！,pid2
+						zin_old_msg,暫時忍耐一下、我會慢慢的插的、很快就會被快樂所俘虜的喲,pid1
+						zin_old_msg,不要啊．．．嗚啊啊啊啊！　啊、啊啊啊嗚！,pid2
+						zin_old_msg,那麼、差不多．．．也、該結束了呢！！,pid1
+						zin_old_msg,啊、做什麼！！　不要、不要中出啊！！,pid2
+						zin_old_msg,呼呼嗬！！　承受我精種的慾火吧！！,pid1
+						zin_flush,pid2
+						zin_old_msg,啊啊．．．快停下啊．．．都說了的．．．cr還這麼．．．嘩啦嘩啦、的、注入著．．．,pid2
+						zin_old_msg,呼呼、下次要更加黏濕你啊。cr請快樂的期待吧,pid1
+						zin_old_msg,嗚、不會原諒你的．．．,pid2
+						goto,*s
+
+				//騎乗位
+				case_okijo
+					zin_old_msg,喂、你也動動腰啊！！,pid1
+					zin_old_msg,那、那種事情．．．不能啊．．．,pid2
+					zin_old_msg,真是的．．沒用的女人啊．．．,pid1
+					zin_old_qnar,p_name1從下方開始強力的頂動著。,0
+					zin_old_msg,啊啊！！　那樣的不行啊！！cr你、拜託你不要ーーー！！,pid2
+					zin_old_msg,呵呵、擁有著這麼好的肉洞。cr馬上就讓你高潮吧,pid1
+					zin_old_msg,嗯啊、啊、不行啊．．．cr高潮的時候．．．請、在外面．．．,pid2
+					zin_old_msg,那樣任性的要求怎麼能被接受呢、嗯嗯嗯、重要的中出才爽嘛！！,pid1
+					zin_old_msg,啊啊！！　不、不行啦！！　討、討厭啊啊啊啊啊！！,pid2
+					zin_flush,pid2
+					goto,*s
+
+				//正常位
+				default_otaii
+					zin_old_msg,這樣的話、怎麼樣！！,pid1
+					zin_old_qnar,p_name1把自己的腰急速地突刺著。,0
+					zin_old_msg,啊嗚嗯嗯！！,pid2
+					zin_old_msg,哇哈哈哈哈！！cr從小穴裡不斷的向上潮吹啦,pid1
+					zin_old_msg,身體比人要老實嘛cr這樣心情也舒暢了吧？,pid1
+					zin_old_msg,拜託了、不要ーーーー啊！！cr這樣頂的話．．．要、要高潮了！！,pid2
+					zin_old_msg,哈哈、已經根本停不下了啦cr就這樣完全的大噴射給你吧！！,pid1
+					zin_old_msg,不、不要、快停下！！　拜、拜託了、謝謝,pid2
+					zin_old_msg,嗚ーーー嗯！！　嗚嗚嗚、已經高潮了！！,pid2
+					zin_flush,pid2
+                        zin_old_fadeout,0,5
+*s
+                        bl_fadein,gzin84
+                        zin_reg_event,,pid1,pid2,,
+                        zin_reg_msg,真爽!!!走了!!,0
+                        zin_reg_msg,......,1
+                    end
+                chk_sts_else
+                zin_reg_msg,真無趣!!搶完就走了,1
+                    end

@@ -1,0 +1,12 @@
+bgm_chg,60
+zin_reg_event,,pid1,pid2,zin53,gzin18
+zin_reg_msg,p_name2在嗎！！,0
+zin_reg_msg,p_name2是我,1
+zin_reg_msg,以p_name3大人被殺的理由逮捕你,0
+zin_reg_msg,跟我走一趟吧,0
+zin_reg_msg,哈！！,1
+zin_reg_face_r,0
+zin_reg_msg,喂！！cr你別想逃！！,0
+zin_reg_title,p_name2從軍中脫走。
+zin_reg_button,0
+end

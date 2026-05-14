@@ -1,0 +1,35 @@
+//阿希、ゼファーへ遷都する
+eve_start
+	if_eveflg,23,0
+	if_eveflg,21,1
+	//阿莫斯　阿希配下
+	if_poid,423,432
+	//ゼファーは阿希配下
+	if_hid,17,432
+	//阿古迪巴は覇王
+	if_pkun,16,13000
+eve_end
+
+set_eveflg,23,1
+
+chk_exeplayer,432,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+get_kunpsn,432
+zin_reg_event,阿希的宮殿,432,pval,,gzin8
+zin_reg_msg,終於，塞法也落入我們手中,0
+zin_reg_msg,終於成功了呢、阿希大人,1
+zin_reg_msg,這樣一來我們就有了和阿古迪巴一戰的實力了,1
+zin_reg_msg,正是如此,0
+zin_reg_msg,趕緊討論向塞法遷都的事宜吧,1
+zin_reg_msg,這樣才能完全控制住塞法行星,1
+zin_reg_msg,恩、就這麼辦,0
+zin_reg_msg,下面的事就一如既往地拜託了,0
+zin_reg_msg,是！！,1
+zin_reg_button,0
+//zin_reg_exit
+end

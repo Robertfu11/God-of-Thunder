@@ -1,0 +1,9 @@
+eve_start
+	if_date,75,4
+	if_haou,11
+	if_haou,7
+eve_end
+
+//¹¥ÊØÔO¶¨ ¥¢¥Ù¥ä¥¯©`¥ó¡ú¥¢¥É¥´¥ë
+set_kmdata,11,7,0,0
+end

@@ -1,0 +1,33 @@
+bgm_chg,21
+zin_reg_init
+zin_old_init
+zin_old_img_pid,pid2,1
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン 初膜パターン
+case_normal
+case_hatumaku
+	zin_old_msg,啊啊．．．p_name1大人的種子就這樣．．．,pid2
+	zin_old_msg,呵呵、今天你表現不錯,pid1
+	zin_old_msg,今天在你身體裡的種子,pid1
+	zin_old_msg,以后就有趣了呢,pid1
+	zin_old_msg,還、還在、往外流呢．．．．,pid2
+	zin_old_msg,慎重起見、再讓我再弄點進去吧,pid1
+	zin_old_msg,啊、別這樣、剛剛才做過啊！！,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end
+//孕みパターン
+case_botebara
+	zin_old_msg,啊啊、人家明明肚子裡有孩子了呢．．．,pid2
+	zin_old_msg,沒準兒肚子裡的是一對兄弟呢,pid1
+	zin_old_msg,怎麼會．．．．,pid2
+	zin_old_msg,肚子已經這麼大了,pid1
+	zin_old_msg,下奶了嗎？,pid1
+	zin_old_msg,是的、奶水很充足,pid2
+	zin_old_msg,是麼、那就讓callself_pid1嘗個鮮,pid1
+	zin_old_msg,啊、不行．．．那麼吸．．．cr有、有感覺了！！,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end

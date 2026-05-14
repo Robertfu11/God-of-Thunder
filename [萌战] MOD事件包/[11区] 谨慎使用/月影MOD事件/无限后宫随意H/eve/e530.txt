@@ -1,0 +1,47 @@
+eve_start
+	if_date,103,6
+	if_eveflg,65,20
+	if_eveflg,17,5
+eve_end
+
+set_eveflg,65,21
+set_eveflg,17,6
+
+chk_exeplayer,9,10,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,69
+//こわれたバニューダ要塞
+//zin_reg_init
+zin_reg_event,洛根的殘黨軍,620,607,,gzin82
+zin_reg_qnar,西恩被破壞的要塞據點活動著反抗軍。cr期間，西恩成為反抗軍的領導人的存在。
+zin_reg_msg,我們只有保護身體才能與生存在周邊地區的反抗軍交手,0
+zin_reg_msg,也就是說，反抗軍之間的同盟的?,1
+zin_reg_msg,好了，這樣下去要塞也總有一天會找到了,0
+zin_reg_msg,在這之前強化軍隊是有必要的,0
+zin_reg_face_1,671
+zin_reg_msg,這要塞是空的船塢不計其數。,1
+zin_reg_face_1,583
+zin_reg_msg,同伴因為找不到艦隊的放置處而感到困擾。,1
+zin_reg_qnar,艾米伊和基裏婭四處流浪,在西恩的幫助下走到了一起。
+zin_reg_msg,是啊,0
+zin_reg_msg,我們當前的目標是找到抵抗軍。,0
+zin_reg_msg,如果這個要塞的船塢一壞，那裏的行星估計也有可能被占領了。,0
+zin_reg_face_1,576
+zin_reg_msg,西恩，如果能．．．找到行星拉埃．．．能給我麼．．.,1
+zin_reg_msg,啊，那裏因為是···我的故鄉所以···,1
+zin_reg_face_0,607
+zin_reg_msg,老婆！！cr不能睡著！,0
+zin_reg_qnar,法法塔身患重病。
+zin_reg_msg,謝謝，艾米伊,1
+zin_reg_msg,但是，再拉埃到達之前你不能死。,1
+zin_reg_msg,那麼，回到病房吧，夫人,0
+zin_reg_face_0,620
+zin_reg_msg,法法塔夫人．．.,0
+zin_reg_qnar,不久後法法塔去世了。
+zin_reg_button,0
+set_dead,576,0
+//zin_reg_exit
+end

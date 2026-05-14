@@ -1,0 +1,369 @@
+//宇宙超昂閃忍三人組
+
+eve_start
+	//遙，鳴香，昂仕官於同一勢力．主角仕官，七分位以上，与三人不同勢力
+	if_poid,1250,eveflg174
+	if_poid,1251,eveflg174
+	if_poid,1252,eveflg174
+	if_val,状態:player=2
+	if_val,勲功:player>3000
+	if_val,覇王:player!eveflg174
+eve_end
+
+set_epid1,player
+
+get_mpid,状態=2,性別=2,覇王=poid_player,年齢>5,勲功<13000,,
+chk_ormval,pval=0,pval=player,,,
+chk_ormval_then
+	end
+chk_ormval_else
+	set_epid2,pval
+	set_eveflg,175,pval
+
+set_epid3,1252
+set_epid4,eveflg174
+
+	bgm_chg,53
+	zin_reg_event,情報室,pid1,811,,gzin7
+	zin_reg_msg,長官！我們剛剛獲得了重要的情報！,1
+	zin_reg_msg,哦？趕快報告,0
+	zin_reg_msg,由我們安插在p_name4軍的內線傳來了急報,1
+	zin_reg_face,pid2
+	zin_reg_msg,上次提到的那個閃忍三人組，似乎已經鎖定了我軍的p_name2爲目標了！,1
+	zin_reg_msg,你確定？！,0
+	zin_reg_msg,是的，千真萬確！,1
+	zin_reg_msg,唔．．．,0
+	zin_reg_msg,長官！我們現在應該怎麼辦？,1
+	zin_reg_msg,讓我好好想一想．．．,0
+
+	zin_reg_3sel,盡全力阻止,趁機設下陷阱,放任不管．．．
+	get_resp
+	ret_sel1
+		goto,*c1
+	ret_sel2
+		goto,*c2
+	ret_sel3
+		goto,*c3
+
+*c1
+	zin_reg_msg,p_name2是我軍非常重要的一員！,0
+	zin_reg_msg,無論如何，絕對不能讓她有任何閃失,0
+	zin_reg_msg,馬上去通知特命人員嚴加戒備！,0
+	zin_reg_msg,是！cr長官！,1
+	zin_reg_msg,另外，馬上聯絡p_name4軍的內線,0
+	zin_reg_msg,讓他們盡可能的想辦法打通關節，改變三人組的目標！,0
+	zin_reg_msg,是！cr屬下這就去辦,1
+rnd,3
+	case0
+		goto,*safe1
+	case1
+		goto,*safe1
+	case2
+		bl_fadeout
+		zin_reg_qnar,儘管p_name1爲保護p_name2進行了層層設防，嚴密護衛
+		zin_reg_qnar,	然而．．．．．．
+		goto,*kidn1
+
+*c2
+	zin_reg_msg,反過來想想cr這其實倒是個絕佳的．．機會呢．．．,0
+	zin_reg_msg,與其徒勞的嚴防死守．.,0
+	zin_reg_msg,倒不如斬草除根！cr將她們盡數擒獲才是一勞永逸的解決方案！,0
+	zin_reg_msg,那．．．crp_name2方面，我們是不是也要安排相應的保護措施？,1
+	zin_reg_msg,不！cr不能打草驚蛇，萬一引起了她們的警覺就功虧一簣了,0
+	zin_reg_msg,是！cr屬下明白了,1
+	zin_reg_msg,至於如何設下陷阱cr才能將她們一舉擒獲．．,0
+	zin_reg_msg,這個重要的任務cr就全權交給你去辦了！,0
+	zin_reg_msg,．．．．．．,1
+	zin_reg_msg,一旦成功cr我定會爲你加官進爵的,0
+	zin_reg_msg,可是．．．cr萬一失敗了．．．,1
+	zin_reg_msg,這個你無需多慮cr必要的損失．．有時候也是無法避免的．．．,0
+	zin_reg_msg,是！cr屬下這就去安排！,1
+
+rnd,2
+	case0
+		bl_fadeout
+		zin_reg_qnar,雖然p_name1在暗中設下了精巧的圈套
+		zin_reg_qnar,	但是．．．．．．
+		goto,*kidn1
+
+	case1
+		goto,*f1
+
+
+
+*c3
+	zin_reg_msg,p_name2那個傢伙．．cr素來與我不合呢．．．,0
+	zin_reg_msg,剛好可以趁此機會cr假三人組之手，除掉這個眼中釘！,0
+	zin_reg_msg,那．．．,1
+	zin_reg_msg,我們就靜觀其變好了,0
+	zin_reg_msg,對了，這件事情必須嚴加保密，不能走漏了任何風聲！,0
+	zin_reg_msg,是，屬下明白！,1
+	zin_reg_msg,你馬上去聯絡下傳遞情報過來的各個環節cr讓他們務必守口如瓶！,0
+	zin_reg_msg,屬下這就去辦！,1
+	zin_reg_face_1,0
+	zin_reg_msg,呵呵．．cr想不到，三人組偶爾也能幫上大忙呢．．．．,0
+
+	goto,*kidn1
+
+*safe1
+	bl_fadeout
+	zin_reg_qnar,在p_name1的層層設防，嚴加戒備之下，三人組暫時難以得手
+	zin_reg_qnar,此時，p_name4軍傳來緊急命令．．．cr指令要求她們立刻回國，放棄此次任務的目標
+	zin_reg_event,野外無人的空地,1251,1252,,gzin12
+	zin_reg_msg,那幫人到底在想什麼呀？好不容易終於等到機會來了，又要我們放棄掉！,0
+	zin_reg_msg,我是無所謂了cr那幫人他們想怎麼樣就怎麼樣好了．．．,1
+	zin_reg_msg,反正照着命令做cr就是了．．,1
+	zin_reg_face_0,1250
+	zin_reg_msg,p_name4大人會下達這樣的命令肯定是有他的考慮的，我們不應該妄加猜測,0
+	zin_reg_msg,既然命令說了讓我們火速歸國cr那事不宜遲，我們就立刻動身出發吧,0
+	zin_reg_face_1,1251
+	zin_reg_msg,嘛～cr人家最討厭cr最討厭這樣半途而廢了！,1
+	zin_reg_qnar,就這樣，p_name2幸運的逃過了一劫cr而其本人卻對周圍潛伏的危險絲毫未有察覺．．．
+	zin_reg_button,0
+	zin_reg_exit
+
+	set_eveflg,175,0
+	set_eveflg,176,4
+
+	end
+
+*kidn1
+	bl_fadeout
+	zin_reg_qnar,在幾天之後的一個月黑風高的夜晚，p_name2在家中離奇的失蹤了
+	zin_reg_qnar,現場沒有留下任何線索痕跡．．．
+	zin_reg_event,某棟建築的陰影裏,1251,1252,,gzin11
+	zin_reg_msg,輕鬆得手～cr真是太簡單了～～,0
+	zin_reg_msg,哼！！cr不堪一擊，漏洞百出！cr真無聊．．．,1
+	zin_reg_face_0,1250
+	zin_reg_msg,好了，任務目標順利確保完成．cr我們馬上就動身撤退吧,0
+	zin_reg_msg,這次的成功cr可會大大提升我們在陛下心目中的評價呢！,0
+	zin_reg_msg,真是．．．cr太無聊了．．．．．．,1
+	zin_reg_button,0
+	zin_reg_exit
+
+	upd_sts,pid2,状態,6
+	set_eveflg,176,3
+
+	end
+
+*f1
+	bl_fadeout
+	zin_reg_qnar,在p_name1的精心設計下cr三人組絲毫未察覺到，自己已經踏入了p_name1早已準備好的陷阱中
+	zin_reg_qnar,就在三人組準備動手的那一刻．．．
+	zin_reg_event,某棟建築的陰影裏,pid1,1250,,gzin11
+	zin_reg_msg,你們就是p_name4軍僱傭的閃忍三人組吧！,0
+	zin_reg_msg,你們的陰謀已經被我識破了，現在乖乖放下武器，束手就擒吧！,0
+	zin_reg_msg,可惡！cr怎麼會．．．,1
+	zin_reg_face_1,1251
+	zin_reg_msg,哼！！cr想讓我們投降，你還早了一萬年呢！,1
+	zin_reg_face_1,1252
+	zin_reg_msg,．．．．．．cr多說無益．．．cr上吧！！,1
+	zin_reg_qnar,三人組瞬間衝破了層層包圍，一路強行突破到了p_name1的面前！
+	zin_reg_face_1,1250
+	zin_reg_msg,你看起來就是帶頭的了！接招吧！cr哈啊！！！,1
+	zin_reg_msg,可惡！！cr就讓妳們好好瞧一瞧我的真本事了！,0
+
+	btl_ansatu,pid1,1250,0,2
+	get_resp
+	ret_sel2
+		zin_reg_msg,呀啊！cr呀．．．．．,1
+		zin_reg_face_1,0
+		zin_reg_msg,呼呼．．．cr好險啊！,0
+		zin_reg_face_1,1251
+		zin_reg_msg,姐姐！,1
+		zin_reg_msg,居然敢傷到姐姐！cr讓我來會會你！,1
+		goto,*f2
+	ret_sel3
+		goto,*lose
+
+*f2
+	btl_ansatu,pid1,1251,0,2
+	get_resp
+	ret_sel2
+		zin_reg_msg,咿呀～～～,1
+		zin_reg_face_1,0
+		zin_reg_msg,呼．．cr呼呼．．．．cr差一點就！,0
+		zin_reg_face_1,1252
+		zin_reg_msg,哼哼cr看來你確實有兩下子嘛！,1
+		zin_reg_msg,呼！！cr好久沒有這種熱血沸騰的感覺了．．．來了！,1
+		goto,*f3
+	ret_sel3
+		goto,*lose
+
+*f3
+	btl_ansatu,pid1,1252,0,2
+	get_resp
+	ret_sel2
+		zin_reg_msg,哈啊！,1
+		zin_reg_msg,沒想到有這麼強的對手！,1
+		zin_reg_msg,雖然還想好好和你再打上一場cr但是．．cr時間不夠了．．．,1
+		zin_reg_msg,看來不得不用到這招了！,1
+		zin_reg_qnar,p_name3從懷中掏出一個奇怪的圓筒，猛地朝地上一擲．cr瞬間，在場的衆人都被煙霧籠罩住了
+		goto,*f4
+
+	ret_sel3
+		goto,*lose
+
+*f4
+rnd,4
+case0
+	goto,*capt1
+case1
+	goto,*esct1
+case2
+	goto,*esct1
+case3
+	goto,*esct1
+
+
+*capt1
+set_epid4,1288
+	bl_fadeout
+	zin_reg_qnar,煙霧散去之後，逐漸恢復視力的衆人被眼前的情景嚇得大吃一驚！
+	zin_reg_qnar,周圍突然出現了許多奇異裝束的男子，手持長刀將他們團團圍住
+	zin_reg_event,某棟建築的陰影裏,pid1,pid4,,gzin44
+	zin_reg_msg,你們是什麼人！,0
+	zin_reg_msg,．．．．．．,1
+	zin_reg_msg,抱歉，失禮了．cr請容我代大夥做個簡單自我介紹,1
+	zin_reg_msg,我們是上弦衆世世代代的宿敵，詛咒一黨！,1
+	zin_reg_msg,我的名字是p_name4．cr目前暫代詛咒一黨首領之職,1
+	zin_reg_msg,既然是宿敵cr你們爲什麼．．．,0
+	zin_reg_msg,由於上弦衆的力量過於強大，我們詛咒一黨一直被壓制在暗影之中,1
+	zin_reg_msg,直到剛才，憑藉大人的精湛武藝，將她們三人暫時壓制，我們這才敢露面,1
+	zin_reg_msg,剛才，p_name3放出煙霧，cr眼看就要逃脫！,1
+	zin_reg_msg,情急之下，我們只得貿然出手．．．cr多有冒犯，還望大人包涵了,1
+	zin_reg_msg,哦？cr看來倒還是你幫了個大忙呢！,0
+	zin_reg_msg,大人，容在下一言！cr這三人雖然暫時被我的忍術壓制，無法行動,1
+	zin_reg_msg,但是她們很快就會恢復力量，到時候只怕就難以阻止她們了！,1
+	zin_reg_msg,她們三人的力量cr大人也有切身體會吧！,1
+	zin_reg_msg,那你有什麼建議？,0
+	zin_reg_msg,我現在打算對她們施展詛咒一黨代代相傳的祕術,1
+	zin_reg_msg,這樣就能徹底封印住她們的力量,1
+	zin_reg_msg,．．．．．．,0
+	zin_reg_msg,還請大人務必相信在下！時間緊迫，我無法再詳細解釋了！,1
+	zin_reg_msg,好吧，姑且相信你了,0
+	zin_reg_msg,記住，這裏是我軍地盤，最好不要有什麼容易招致誤會的舉動！,0
+	zin_reg_msg,請您放心，大人！,1
+	zin_reg_qnar,說完，p_name4快步走到還在地上掙扎的p_name3跟前，拔出了佩刀．．．
+
+	bgm_chg,64
+	zin_old_init
+	zin_old_img_str,eu313a,5,1
+	zin_old_qnar,p_name4將刀架在了p_name3的咽喉旁，俯身在她的大腿上畫下了一個奇異的符號
+	zin_old_msg,嗚！！！cr．．．．．．．,pid3
+	zin_old_qnar,p_name3停止了掙扎，用怨恨與憤怒的眼神盯着p_name4，咬緊牙關一言不發
+	zin_old_msg,．．．．．．,pid3
+	zin_old_msg,～～．．．cr～～～．．．cr～～．．～～～．．．,pid4
+	zin_old_qnar,p_name4口中低聲唸誦着奇怪的咒語，p_name3的表情開始慢慢變得奇怪起來
+	zin_old_msg,～～．．．cr～～～．．．cr～～．．cr～～～．．．,pid4
+	zin_old_msg,嗚．．．cr嗯～cr嗯啊～．．哈～～．．．．,pid3
+
+	bgm_se,32
+	zin_flush_file_one,eu313b,5
+	zin_old_qnar,突然，p_name4再次俯身，一把扯下了p_name3的貼身內褲
+	zin_old_qnar,p_name3的下體，不知道什麼時候已經是洪水氾濫，泥濘一片了．
+	zin_old_msg,嗚．．．．．．,pid3
+	zin_old_msg,哦～～～,811
+	zin_old_msg,哇～～～～,845
+	zin_old_msg,．．．．．．,pid1
+	zin_old_qnar,周圍的部下們瞪大了眼睛，所有人的視線都集中到了p_name3股間那誘人的私處上
+	zin_old_qnar,p_name3對自己春光外泄一事似乎毫不知情cr她雙眼迷離，臉上口涎垂流，一副發情了的模樣
+	zin_old_msg,嗯～cr嗯啊～～～cr嗯啊啊啊～～．．哈啊，哈啊～．．．．,pid3
+	zin_old_msg,～～．．．cr～～～．．．cr～～．．～～～．．．,pid4
+	zin_old_msg,哈啊～～哈．．．．．cr嗯啊啊啊～～～,pid3
+	zin_old_msg,～．．．cr～～～～．．．cr～～～～．．～～．．．,pid4
+	zin_old_qnar,p_name4口中不停的唸誦着咒語，身上開始漸漸發出奇異的光芒
+	zin_old_msg,哈啊～～cr哈啊，哈啊．．．．cr不，不要．．．．啊！！,pid3
+	zin_old_msg,～～．．．cr～～～！．．．cr～～．．～～～！．．．,pid4
+	zin_old_msg,停，停．．．下！．．cr嗯啊～～cr嗯～～～～咿呀！！,pid3
+	zin_old_msg,～．．．cr～～～～！．．．cr～～～～！．．cr～～．．～～～！！．．．,pid4
+	zin_old_qnar,漸漸的，這層光芒沿着p_name4手中的長刀，慢慢擴散籠罩住了地上p_name3的全身
+	zin_old_msg,不，不要再．．．cr咿呀啊！！cr咿呀～～～～啊～～啊啊！！,pid3
+	zin_old_msg,～～！．．．cr～～～！！．．．cr～～！．．～～～！！．．．,pid4
+	zin_old_msg,不！不！！cr不要，不要啊～～～cr求，求求你．．．．咿呀啊啊啊啊啊！！！,pid3
+	zin_old_msg,～！．．．cr～～～～！！．．．cr～～～～！！．．cr～～～．．．～～～～～！！！！．．．,pid4
+	zin_old_qnar,p_name4的唸誦聲越來越大，節奏越來越快cr	突然之間！！
+
+	zin_flush_file,eu313c,5
+	zin_old_msg,咿呀啊啊啊！！！,pid3
+	zin_old_msg,咿呀～～～～～～,pid3
+	zin_old_qnar,躺在地上的p_name3突然尖叫不止，下體的花瓣間猛烈的噴射出大量的奇怪的白色液體
+	zin_old_msg,咿～～～～,pid3
+	zin_old_msg,啊．．．,pid3
+	zin_old_msg,．．．．．．．．．,pid3
+	zin_old_msg,哇哦～～～,844
+	zin_old_msg,喲～～～,845
+	zin_old_msg,難道這是！！！cr不會吧．．．,811
+	zin_old_msg,．．．．．．,pid1
+	zin_old_msg,呼呼．．．cr大人，p_name3的力量已經被在下徹底封印住了,pid4
+	zin_old_qnar,p_name4停止了吟誦，喘着氣向p_name1報告着
+	zin_old_msg,．．．cr她真的已經無法再次施展那種力量了麼？,pid1
+	zin_old_msg,是的，大人！cr這點請您放心．cr這是我們詛咒一黨代代相傳的祕術，上弦衆的人是無法自力解除的,pid4
+	zin_old_msg,呼，那就好！cr總算是除掉一個心腹大患了,pid1
+	zin_old_msg,等下我要好好的犒賞你！,pid1
+	zin_old_msg,大人，先不急此事．cr剩下兩人也需要同樣施法封印才行,pid4
+	zin_old_msg,哦？cr那就全權拜託你了！,pid1
+	zin_old_msg,是，大人！,pid4
+	zin_old_qnar,p_name4轉身向剩下的二人走去cr周圍的部下們也一起鬨笑着跟着p_name4圍了過去．．．
+	zin_old_msg,．．．．．．,pid1
+	zin_old_qnar,就這樣，藉由神祕的詛咒一黨的p_name4的幫助，p_name1成功的捕獲了上弦衆所屬的閃忍三人組
+	zin_reg_button,16
+	zin_old_exit
+
+		set_sikan,pid4,poid_player
+		upd_sts,pid2,1,99
+
+		upd_sts,1250,状態,6
+		upd_sts,1251,状態,6
+		upd_sts,1252,状態,6
+
+		set_eveflg,176,9
+		set_eveflg,175,0
+		end
+*esct1
+		zin_reg_qnar,煙霧散去之後，三人組早已沒了蹤影
+		zin_reg_msg,可惡啊！cr居然這樣還讓她們逃掉了！,0
+		zin_reg_msg,．．．．．．,0
+		zin_reg_msg,看來要詳細調查下她們的資料，得想出個萬全的對策才行了！,0
+		zin_reg_qnar,就這樣，三人組在p_name1的眼皮底下成功逃脫了．．．
+		zin_reg_button,0
+		zin_reg_exit
+
+		set_eveflg,175,0
+		set_eveflg,176,4
+		end
+
+*lose
+		zin_reg_msg,嗚哇！,0
+		zin_reg_msg,可，可恨啊！,0
+		zin_reg_face_0,0
+		zin_reg_qnar,p_name1身負重傷，眼前一黑，就不省人事了．．．
+		zin_reg_qnar,		．．．．．．
+		bl_fadeout
+		zin_reg_event,某棟建築的陰影裏,pid1,811,,gzin37
+		zin_reg_msg,大人！cr大人！您終於醒啦！,1
+		zin_reg_msg,嗚．．．cr呃．．．？cr這裏是？,0
+		zin_reg_msg,大人您剛才遭到了那幾個刺客的偷襲cr現在是身負重傷啊！,1
+		zin_reg_msg,這次能撿回一條命cr已經是不幸中的萬幸了！,1
+		zin_reg_msg,嗚．．．cr她，他們人呢？cr抓到了沒有？,0
+		zin_reg_msg,非常抱歉．．．,1
+		zin_reg_msg,長官，她們的實力實在太過強大了．．．我們的兄弟損失過半．．．,1
+		zin_reg_msg,而且．．．cr而且．．．．．．crp_name2也被她們給強行帶走了．．．,1
+		zin_reg_msg,嗚哇！,0
+		zin_reg_qnar,p_name1因爲激動而牽扯到了傷口，嘴中噴出了一口鮮血．．．
+		zin_reg_msg,大人！,1
+		zin_reg_msg,大人請您千萬別激動，當下最重要的還是先養好傷勢啊！,1
+		zin_reg_msg,君子報仇十年不晚cr大人您千萬要保重自己的身體啊！,1
+		zin_reg_msg,．．．．．．,0
+		zin_reg_msg,（這份屈辱．．．cr這份屈辱！！！）,0
+		zin_reg_msg,（我來日一定！cr一定要她們加倍償還！）,0
+		zin_reg_button,0
+		zin_reg_exit
+
+		upd_sts,pid1,33,2
+		upd_sts,pid2,状態,6
+		set_eveflg,176,3
+
+end
+
+

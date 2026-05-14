@@ -1,0 +1,72 @@
+auth_uid,123D
+//	施設建設　移民局
+bgm_chg,60
+zin_reg_event,人口増加,779,778,,gzin21
+zin_reg_msg,なんだか最近人が増えた気がするな,0
+zin_reg_msg,移民の受け入れが進んでるらしい,1
+get_ncwid,poid_player
+chk_mval,pval=0,,,,
+chk_mval_then
+	//首都のみ
+	goto,*setcapwid
+chk_mval_else
+rnd,2
+case0
+	*setcapwid
+	get_capwid,poid_player
+	goto,*rndplasel
+case1
+	get_ncwid,poid_player
+*rndplasel
+set_eveflg,212,pval
+chk_eveflg,211,1
+chk_eveflg_then
+	set_wjinko,eveflg212,3000
+	zin_reg_qnar,移民局の働きでs_name_eveflg(212)の人口が増えました。cr（人口＋３万人）
+	goto,*addeffectend1
+chk_eveflg_else
+chk_eveflg,211,2
+chk_eveflg_then
+	set_wjinko,eveflg212,4000
+	zin_reg_qnar,移民局の働きでs_name_eveflg(212)の人口が増えました。cr（人口＋４万人）
+	goto,*addeffectend1
+chk_eveflg_else
+chk_eveflg,211,3
+chk_eveflg_then
+	set_wjinko,eveflg212,6000
+	zin_reg_qnar,移民局の働きでs_name_eveflg(212)の人口が増えました。cr（人口＋６万人）
+	goto,*addeffectend1
+chk_eveflg_else
+chk_eveflg,211,4
+chk_eveflg_then
+	set_wjinko,eveflg212,8000
+	zin_reg_qnar,移民局の働きでs_name_eveflg(212)の人口が増えました。cr（人口＋８万人）
+	goto,*addeffectend1
+chk_eveflg_else
+	rnd,10
+	case0
+	case1
+	case2
+		get_mpid,状態=5,覇王!poid_player,,,,,
+		chk_mval,pval=0,,,,
+		chk_mval_then
+			goto,*addhourouend
+		chk_mval_else
+			set_sikan,pval,poid_player
+			set_wjinko,eveflg212,10000
+			zin_reg_qnar,移民局の働きでs_name_eveflg(212)の人口が増えました。cr放浪していたp_name_pvalが仕官しました。cr（人口＋１億人）
+			goto,*addeffectend1
+	case3
+	case4
+	case5
+	case6
+	case7
+	case8
+	case9
+	*addhourouend
+	set_wjinko,eveflg212,10000
+	zin_reg_qnar,移民局の働きでs_name_eveflg(212)の人口が増えました。cr（人口＋１億人）
+*addeffectend1
+zin_reg_button,0
+zin_reg_exit
+end

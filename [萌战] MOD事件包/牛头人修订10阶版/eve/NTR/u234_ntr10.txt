@@ -1,0 +1,84 @@
+/////NTR_ver2.2（仕官 春药）/////
+
+*Start
+
+set_epid1,eveflg108
+set_epid2,yome_player
+set_epid3,player
+
+bgm_chg,64
+zin_reg_event,指挥中心监控室,,pid2,,gzin7
+zin_reg_qnar,这个晚上、p_name2独自一个人在监控室守夜。
+zin_reg_qnar,原来一起加班的女同事因为家里有事所以拜托给了p_name2。
+zin_reg_msg,今天晚上看来也没什么事呢……cr好无聊啊……？,1
+zin_reg_msg,稍微有些口渴了呢……cr去喝点水吧……,1
+zin_reg_qnar,p_name2喝了口水……。
+zin_reg_qnar,半小时后……。
+zin_reg_msg,嗯……为什么……cr感觉这么热……啊……,1
+zin_reg_msg,不行了……嗯……,1
+zin_old_init
+zin_old_img_str,am_ziwei01,20,1
+zin_old_qnar,p_name2脱去了衣服开始自慰起来。
+zin_old_img_str,am_ziwei02,20,1
+zin_old_img_str,am_ziwei03,20,1
+zin_old_img_str,am_ziwei04,20,1
+zin_old_img_str,am_ziwei05,20,1
+zin_old_exit
+zin_reg_event,指挥中心监控室,pid1,pid2,zin116,gzin7
+zin_reg_qnar,这时从黑暗中走出来一个人——p_name1。
+zin_reg_msg,（这种药药性很好呢……cr再清纯的女人都会变成淫妇的）,0
+zin_reg_msg,（而且做完之后对方完全没有记忆！）,0
+zin_reg_msg,（今晚就放松的享用p_name2这块嫩肉吧！）,0
+zin_reg_msg,哎？你……是谁？cr不管怎么样……快来干我……cr好痒啊……,1
+zin_reg_msg,那当然……cr今晚，p_name3的妻子p_name2就是一只人见人骑的小母狗呢,0
+zin_reg_msg,……嗯……cr怎么样都行……cr求求你……我要……,1
+zin_reg_msg,哈哈……！,0
+psn_putsex,1,0,1
+zin_reg_msg,……嗯……cr嗯……,1
+zin_reg_msg,……嗯……cr啊……,1
+zin_reg_msg,……要射了……cr啊……,0
+
+bgm_chg,53
+zin_reg_event,指挥中心监控室,pid1,pid3,zin116,gzin7
+zin_reg_msg,！！！！！cr你在做什么,1
+zin_reg_msg,……p_name3!!!,0
+zin_reg_face,pid3
+zin_reg_face_1,pid2
+zin_reg_msg,哈哈哈！cr如你所见……你最爱的妻子p_name2正求我用鸡巴操她！,0
+psn_putsex,1,0,1
+zin_reg_msg,不要停……啊……cr求求你……用大鸡巴……操我……,1
+zin_reg_msg,快操我这只小母狗……,1
+zin_reg_face_1,pid3
+zin_reg_face,pid2
+zin_reg_msg,哈哈哈！cr听见了吧！,0
+zin_reg_qnar,在p_name3怒目的注视下、p_name1狠狠的抽动了几下正插在p_name2肉穴中的鸡巴cr然后将tane_str射在了里面……
+zin_reg_msg,你这个卑鄙小人！！cr对p_name2用了什么药！！,1
+zin_reg_msg,畜生！！！！cr接招吧！！！,1
+add_eveflg,103,20
+btl_ansatu,pid1,pid3,0,2
+get_resp
+ret_sel2
+    zin_reg_qnar,p_name3被打败了……
+    set_dead,pid1,pid3
+    zin_reg_button,0
+ret_sel3
+    zin_reg_qnar,p_name3一把抓起p_name1，将他扔了出去
+	zin_reg_msg,滚！！cr不要再出现在这个星球上！,1
+
+	set_hourou,pid1
+	zin_reg_qnar,p_name1被流放了……
+    goto,*fin
+
+*fin
+chk_sts,pid2,16,0
+	chk_sts_then
+		set_ninsin,pid2,pid1
+		goto,*ret
+	chk_sts_else
+		goto,*ret
+
+*ret
+set_eveflg,104,10
+zin_reg_button,0
+zin_reg_exit
+end

@@ -1,0 +1,37 @@
+eve_start
+	if_eveflg,3,4
+//ハン、阿古迪巴配下
+	if_poid,313,16
+eve_end
+
+set_eveflg,3,5
+//オウカ捕虜設定
+set_horyo,815,16
+
+chk_exeplayer,16,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,地球衛星軌道基地,313,785,,gzin69
+zin_reg_msg,哈恩大人！！,1
+zin_reg_msg,怎麼了？,0
+zin_reg_msg,就是霍因斯的貨物船雖然到了。．．．,1
+zin_reg_msg,怎了？,0
+zin_reg_msg,那是．．．cr機組員全體死亡．．．,1
+zin_reg_msg,你說甚麼！？cr全體死亡？,0
+zin_reg_msg,啊、不、正確的說還有一個小女孩活著,1
+zin_reg_msg,除了她以外就沒有別的活人了,1
+zin_reg_msg,這．．．cr莫非是傳染病嗎？,0
+zin_reg_msg,不是的、因為所有的死者身上都有外傷．．．,1
+zin_reg_msg,推斷可能是船內的機組員起了內鬨．．．,1
+zin_reg_msg,這樣啊，那就算了,0
+zin_reg_msg,那個活著的小女孩呢,0
+zin_reg_msg,找時間稍微詢問她一下實際發生的狀況吧,0
+zin_reg_msg,總之先把那個小女還給關起來cr等等我也會去看看,0
+zin_reg_msg,是的,1
+zin_reg_button,0
+//zin_reg_exit
+end

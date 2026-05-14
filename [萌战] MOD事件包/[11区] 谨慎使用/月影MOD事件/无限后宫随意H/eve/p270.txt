@@ -1,0 +1,12 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin8
+zin_reg_msg,call_pid21、目前我國的民意是反戰,1
+zin_reg_msg,暫時、控制軍隊的行動比較好,1
+zin_reg_msg,嗯、沒辦法了,0
+zin_reg_msg,全艦隊發出命令撤退,0
+zin_reg_msg,是！！,1
+zin_reg_title,撤退命令已經發布。
+zin_reg_button,0
+zin_reg_exit
+end

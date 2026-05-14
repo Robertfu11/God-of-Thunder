@@ -1,0 +1,28 @@
+zin_reg_msg,連父親的話都不聽麼！！,0
+zin_reg_msg,討厭的東西就是討厭！！,1
+zin_reg_msg,那麼，沒辦法了呢,0
+zin_reg_msg,隻能用武力讓你服從了,0
+zin_reg_msg,啊！不要呀！停下來呀,1
+bgm_chg,56
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,嗚！為什麼會這樣．．．,pid2
+zin_old_msg,這樣的．．．這樣的感覺好奇怪啊．．．,pid2
+
+chk_mval,初膜:pid2=0,,,,,
+chk_mval_then
+	zin_old_msg,我．．男人的身體什麼的．．還沒有碰過啊！！,pid2
+	goto,*next_proc
+chk_mval_else
+	zin_old_msg,啊！這樣會有小寶寶的．．．,pid2
+*next_proc
+zin_old_msg,喔！身體已經成長到這樣的地步了麼,pid1
+zin_old_msg,那麼！給你獎勵,pid1
+zin_old_msg,恩！不能說謊啊．．．,pid2
+zin_old_msg,是時候該讓你接收父親的精液了,pid1
+zin_old_msg,那樣的不行，停下來呀call_pid21！！,pid2
+zin_old_msg,不用擔心，馬上就會結束的,pid1
+zin_old_msg,啊！要去了、要去了呀啊啊啊啊啊啊啊！！,pid2
+zin_flush,pid2
+end
+

@@ -1,0 +1,87 @@
+auth_uid,123D
+//	施設建設　秘密警察
+bgm_chg,60
+get_rndhao,poid_player
+zin_reg_event,秘密警察,844,845,,gzin25
+zin_reg_msg,はあ、給料安くてやってられんな,0
+zin_reg_msg,p_name_pvalのとこはもっともらえるらしいし移籍するか,0
+zin_reg_msg,お、おい！,1
+zin_reg_msg,冗談だよ、冗談,0
+zin_reg_msg,冗談でも密告されたらタダではすまんぞ．．．,1
+set_eveflg,212,pval
+chk_eveflg,211,1
+chk_eveflg_then
+	ploy_up,poid_player,0,5
+	ploy_up,poid_player,1,5
+	zin_reg_qnar,秘密警察の影響で部下の忠誠が上がりました。cr（忠誠＋５）
+	goto,*addeffectend5
+chk_eveflg_else
+chk_eveflg,211,2
+chk_eveflg_then
+	ploy_up,poid_player,0,5
+	ploy_up,poid_player,1,5
+	rnd,2
+	case0
+		zin_reg_qnar,秘密警察の影響で部下の忠誠が上がりました。cr（忠誠＋５）
+		goto,*addeffectend5
+	case1
+		get_item,player,0,鉄アレー
+		zin_reg_qnar,秘密警察の影響で部下の忠誠が上がりました。cr防諜ノウハウの蓄積により教訓を得ました。cr（忠誠＋５、鉄アレー）
+		goto,*addeffectend5
+chk_eveflg_else
+chk_eveflg,211,3
+chk_eveflg_then
+	ploy_up,poid_player,0,10
+	ploy_up,poid_player,1,10
+	rnd,2
+	case0
+		zin_reg_qnar,秘密警察の影響で部下の忠誠が上がりました。cr（忠誠＋１０）
+		goto,*addeffectend5
+	case1
+		get_item,player,0,鉄アレー
+		zin_reg_qnar,秘密警察の影響で部下の忠誠が上がりました。cr防諜ノウハウの蓄積により教訓を得ました。cr（忠誠＋１０、鉄アレー）
+		goto,*addeffectend5
+chk_eveflg_else
+chk_eveflg,211,4
+chk_eveflg_then
+	ploy_up,poid_player,0,10
+	ploy_up,poid_player,1,10
+	get_item,player,0,鉄アレー
+	zin_reg_qnar,秘密警察の影響で部下の忠誠が上がりました。cr防諜ノウハウの蓄積により教訓を得ました。cr（忠誠＋１０、鉄アレー）
+	goto,*addeffectend5
+chk_eveflg_else
+	ploy_up,poid_player,0,15
+	ploy_up,poid_player,1,15
+	rnd,2
+	case0
+	case1
+	case2
+		gosub,*getspyproc
+	case3
+	case4
+	case5
+	case6
+	case7
+	case8
+	case9
+		get_item,player,0,ジャスト手裏剣
+		zin_reg_qnar,秘密警察の影響で部下の忠誠が上がりました。cr防諜ノウハウの蓄積により教訓を得ました。cr（忠誠＋１５、ジャスト手裏剣）
+		goto,*addeffectend5
+*addeffectend5
+zin_reg_button,0
+zin_reg_exit
+end
+
+*getspyproc
+	//他勢力の諜報担当を取得
+	get_mpid,覇王!poid_player,役職=5,状態=2,,,,
+	chk_mval,pval=0,,,,
+	chk_mval_then
+		return
+	chk_mval_else
+		set_eveflg,212,pval
+		set_horyo,eveflg212,poid_player
+		zin_reg_qnar,秘密警察の影響で部下の忠誠が上がりました。cr敵の諜報員、p_name_eveflg(212)を逮捕しました。cr（忠誠＋１０、捕虜）
+		zin_reg_button,0
+		zin_reg_exit
+		end

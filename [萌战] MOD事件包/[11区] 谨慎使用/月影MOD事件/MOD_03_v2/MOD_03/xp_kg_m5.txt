@@ -1,0 +1,41 @@
+bgm_chg,53
+zin_reg_init
+zin_reg_event,µÿœ¬¿Œ,pid1,pid2,,gzin35
+zin_reg_event,,pid1,pid2,,
+select_pid,pid2
+        case_194
+		case_287
+		case_486
+		case_1369
+		case_2180
+		txtload,xp_horyo_b
+	    end
+		default
+rnd,9
+case0
+txtload,xp_kg_m1
+	end
+case1
+txtload,xp_kg_m1_r
+	end
+case2
+txtload,xp_kg_m2
+	end
+case3
+txtload,xp_kg_m2_r
+	end
+case4
+txtload,xp_kg_m3
+	end
+case5
+txtload,xp_kg_m3_r
+	end
+case6
+txtload,xp_kg_m4
+	end
+case7
+txtload,xp_horyo_a
+	end
+case8
+txtload,xp_horyo_b
+	end

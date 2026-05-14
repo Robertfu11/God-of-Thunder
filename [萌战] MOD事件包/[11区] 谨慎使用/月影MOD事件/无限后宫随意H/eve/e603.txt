@@ -1,0 +1,61 @@
+//ショーンとアーメイを合流
+eve_start
+	if_eveflg,73,3
+	if_haou,571
+	//ショーン、アーメイsts6
+	if_val,状態:671=6
+	if_val,状態:620=6
+	if_val,状態:607=6
+	if_val,状態:583=6
+eve_end
+set_eveflg,73,4
+
+chk_exeplayer,571,0,0,0
+chk_exeplayer_else
+set_sikan,671,571
+upd_sts,671,勲功,7000
+upd_sts,671,派閥,620
+set_sikan,620,571
+upd_sts,620,勲功,9000
+upd_sts,620,派閥,620
+set_sikan,607,571
+upd_sts,607,勲功,5000
+upd_sts,607,派閥,620
+set_sikan,583,571
+upd_sts,583,勲功,3000
+upd_sts,583,派閥,620
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,,571,620,,gzin8
+zin_reg_qnar,肖恩響應了多拉的召喚來到了哈根星。
+zin_reg_msg,肖恩閣下、我們的目標是王權的廢除,0
+zin_reg_msg,最終實現平民主導的民主制,0
+zin_reg_msg,我可以認為你是認同了我們的觀點才來到這裏的吧？,0
+zin_reg_msg,我們之中既有原王族、也有一般民眾,1
+zin_reg_msg,但是、我們今天都是抱著協力共進的想法來到這裏的,1
+zin_reg_msg,現在我們既不是王族也不是平民,1
+zin_reg_msg,而是、和你們心意相通的同志,1
+zin_reg_msg,聽聞閣下原是洛根王的軍官、難道沒有複興洛根王朝的想法嗎？,0
+zin_reg_msg,如今我們之中早已沒有洛根王的血脈了,1
+zin_reg_msg,我們需要的是一個各勢力都可和平共處的理想世界,1
+zin_reg_msg,而這正是、你們正在做著的事情,1
+zin_reg_msg,太好了、歡迎你的加入、肖恩閣下,0
+zin_reg_msg,非常榮幸,1
+zin_reg_button,0
+//zin_reg_exit
+set_sikan,671,571
+upd_sts,671,勲功,7000
+upd_sts,671,派閥,620
+set_sikan,620,571
+upd_sts,620,勲功,9000
+upd_sts,620,派閥,620
+set_sikan,607,571
+upd_sts,607,勲功,5000
+upd_sts,607,派閥,620
+set_sikan,583,571
+upd_sts,583,勲功,3000
+upd_sts,583,派閥,620
+end

@@ -1,0 +1,13 @@
+eve_start
+	if_eveflg,5,2
+	if_aft_date,71,5
+	//阿貝莫伊卡が覇王である
+	if_pkun,3,13000
+	if_cwpos,7
+eve_end
+
+set_eveflg,5,3
+
+put_wakusei,7
+set_winfo,7,3,0,0,80,3000,-1,-1
+set_run_msg,惑星コザイク被发现了。

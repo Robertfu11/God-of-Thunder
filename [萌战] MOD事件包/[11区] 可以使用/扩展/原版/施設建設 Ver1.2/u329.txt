@@ -1,0 +1,347 @@
+auth_uid,123D
+//	施設建設　年設定部
+//	最大で5つの施設を建設
+//	110番に施設種類、111番に施設レベル
+//	条件
+//	プレイヤーが覇王か最大派閥長
+//	仕官中のみ
+//	毎年2月
+
+//最大派閥長を取得
+get_bgst_habatu,poid_player,0
+set_epid1,pval
+//初期チェック
+gosub,*chkplanet
+chk_eveflg,110,0
+chk_eveflg_then
+	set_eveflg,111,0
+chk_eveflg_else
+///////////////////////////////////////	発生ブロック	///////////////////////
+eve_start
+	if_orval,勲功:player=13000,pid1=player,,,
+	if_val,状態:player=2
+	if_month,2
+eve_end
+///////////////////////////////////////	実行ブロック	///////////////////////
+bgm_chg,60
+//一時フラグを初期化
+set_eveflg,210,0
+set_eveflg,211,0
+set_eveflg,212,0
+//覇王
+chk_mval,勲功:player=13000,,,,
+chk_mval_then
+	goto,*haouroute
+chk_mval_else
+//最大派閥長（決定には覇王の裁定が必要）
+	goto,*habatutyoroute
+end
+
+*haouroute
+	set_epid1,player
+	get_kunpsn2,player,0
+	set_epid2,pval
+	dbg_print,現在の施設Lv =,eveflg111
+	chk_eveflg,111,>0
+	chk_eveflg_then
+		//破壊？
+		gosub,*chkbreak
+	chk_eveflg_else
+	chk_eveflg,110,0
+	chk_eveflg_then
+		//新設
+		gosub,*buildfacilities
+		goto,*haouendproc
+	chk_eveflg_else
+		//増設
+		chk_mval,eveflg111<eveflg214,,,,
+		chk_mval_then
+			gosub,*extendfac
+			goto,*haouendproc
+		chk_mval_else
+		end
+
+*habatutyoroute
+	get_habatu2,player
+	set_epid2,pval
+	set_epid3,poid_player
+	dbg_print,現在の施設Lv =,eveflg111
+	chk_eveflg,110,>0
+	chk_eveflg_then
+		//破壊？
+		gosub,*chkbreak
+	chk_eveflg_else
+	chk_eveflg,110,0
+	chk_eveflg_then
+		gosub,*buildfacilities
+		goto,*haousaitei
+	chk_eveflg_else
+		//増設
+		chk_mval,eveflg111<eveflg214,,,,
+		chk_mval_then
+			gosub,*extendfac
+			goto,*haousaitei
+		chk_mval_else
+		end
+
+*chkplanet
+	set_eveflg,214,0
+	for,SMAX,210,1
+		chk_mval,領王:eveflg210=poid_player,,,,
+		chk_mval_then
+			add_eveflg,214,1
+		chk_mval_else
+		continue
+	next
+	chk_mval,eveflg214>4,,,,
+	chk_mval_then
+		set_eveflg,214,9
+		goto,*chkplanetcntstg
+	chk_mval_else
+	chk_mval,eveflg214>1,,,,
+	chk_mval_then
+		set_eveflg,214,6
+		goto,*chkplanetcntstg
+	chk_mval_else
+		set_eveflg,214,4
+	*chkplanetcntstg
+//	chk_mval,eveflg111>eveflg214,,,,
+//	chk_mval_then
+//		//#
+//		set_eveflg,211,eveflg214
+//	chk_mval_else
+		return
+
+*chkbreak
+	zin_reg_event,施設解体,pid1,,,gzin30
+	zin_reg_msg,（建設済みの施設を解体するか？）,0
+	zin_reg_2sel,解体しない,解体する
+	get_resp
+	ret_sel2
+		zin_reg_title,建設されていた施設を解体しました。
+		zin_reg_button,0
+		zin_reg_exit
+		set_eveflg,110,0
+		set_eveflg,111,0
+		return
+	ret_sel1
+		return
+
+*buildfacilities
+	zin_reg_event,施設建設,pid1,pid2,,gzin30
+	zin_reg_msg,call_pid21、次の案件ですが．．．,1
+	zin_reg_msg,内政強化のための施設建設だな,0
+	zin_reg_msg,確か惑星、経済、軍事であったか,0
+	zin_reg_msg,惑星は人口と民忠、経済は資金とアイテム、軍事は防諜と技術を強化できるようです,1
+	zin_reg_msg,コストは金２０万ほどかかるのではないかとの試算です,1
+	zin_reg_msg,ふぅむ．．．いかがしたものか,0
+	zin_reg_3sel,惑星関連,経済関連,軍事関連
+	get_resp
+	ret_sel1
+		goto,*planetdev
+		return
+	ret_sel2
+		goto,*economydev
+		return
+	ret_sel3
+		goto,*militarydev
+		return
+
+*extendfac
+	zin_reg_event,施設拡張,pid1,pid2,,gzin30
+	zin_reg_msg,call_pid21、次の案件ですが．．．,1
+	zin_reg_msg,建設済み施設の拡張だったな,0
+	zin_reg_msg,はい、金２０万を投じて施設を拡張することができます,1
+	zin_reg_2sel,拡張する,見送る
+	get_resp
+	ret_sel1
+		zin_reg_msg,より効果的になるように拡張しよう,0
+		return
+	ret_sel2
+		zin_reg_msg,今回はやめておこう,0
+		zin_reg_msg,はっ、それでは次の案件は．．．,1
+		zin_reg_title,施設建設を見送りました。
+		zin_reg_button,0
+		zin_reg_exit
+		end
+
+*planetdev
+	zin_reg_3sel,移民局（人口）,モニュメント（民忠）,やめる
+	get_resp
+	ret_sel1
+		zin_reg_msg,移民局を建設して人口増加策を強化させることとする,0
+		set_eveflg,110,1
+		set_eveflg,211,1
+		return
+	ret_sel2
+		zin_reg_msg,モニュメントを建設して民忠を高めることとする,0
+		set_eveflg,110,2
+		set_eveflg,211,1
+		return
+	ret_sel3
+		set_eveflg,211,4
+		return
+
+*economydev
+	zin_reg_3sel,中央銀行（資金）,製薬工場（アイテム）,やめる
+	get_resp
+	ret_sel1
+		zin_reg_msg,中央銀行を建設し資金力を強化することとする,0
+		set_eveflg,110,3
+		set_eveflg,211,2
+		return
+	ret_sel2
+		zin_reg_msg,製薬工場を建設してアイテム増産を図ることとする,0
+		set_eveflg,110,4
+		set_eveflg,211,2
+		return
+	ret_sel3
+		set_eveflg,211,4
+		return
+
+*militarydev
+	zin_reg_3sel,秘密警察（防諜）,技術研究所（開発）,やめる
+	get_resp
+	ret_sel1
+		zin_reg_msg,秘密警察を設立し防諜を強化することとする,0
+		set_eveflg,110,5
+		set_eveflg,211,3
+		return
+	ret_sel2
+		zin_reg_msg,技術研究所を設立して開発を強化することとする,0
+		set_eveflg,110,6
+		set_eveflg,211,3
+		return
+	ret_sel3
+		set_eveflg,211,4
+		return
+
+*haousaitei
+	chk_eveflg,211,4
+	chk_eveflg_then
+		zin_reg_msg,今は他にやるべきことがあろう,0
+		zin_reg_msg,かしこまりましたcrでは次の案件は．．．,1
+		zin_reg_title,施設建設が見送られました。
+		zin_reg_button,0
+		zin_reg_exit
+		set_eveflg,110,0
+		end
+	chk_eveflg_else
+	zin_reg_msg,はっ、直ちに資料をまとめます,1
+	zin_reg_msg,まとまり次第、call_pid13の御判断を仰ぐとしよう,0
+	zin_reg_event,施設建設の可否,pid3,pid1,,gzin8
+	zin_reg_msg,施設建設の可否、であるか,0
+	zin_reg_msg,はっ、お許しをいただければ必ずや成果を上げるでしょう,1
+	//資金チェック、足りなければ却下
+	chk_mval,資金:poid_player<200000,,,,
+	chk_mval_then
+		goto,*saiteifaild
+	chk_mval_else
+	//知力と交渉の合計値で判定させるため212番に設定
+	set_eveflg,212,知力:player
+	add_eveflg,212,交渉:player
+	//覇王の性格で分岐
+	switch_seikaku,poid_player
+	case_seikaku13
+	case_seikaku22
+		//コアラ、ゾウ→ランダム（ただし、経済優遇）
+		rnd,5
+		case0
+		case1
+		case2
+			goto,*rndkeizai
+		case3
+			goto,*rndsizai
+		case4
+			goto,*rndplanet
+	case_seikaku24
+	case_seikaku31
+		//チータ、黒ヒョウ→経済
+		*rndkeizai
+		chk_mval,eveflg211=2,,,,
+		chk_mval_then
+			//覇王の内政嗜好と一致すると必要な能力値が相対的に低くなる
+			goto,*chksaiteimatch
+		chk_mval_else
+			goto,*chksaiteinomatch
+	case_seikaku12
+	case_seikaku21
+	case_seikaku32
+	case_seikaku41
+		//サル、ペガサス、ヒツジ、コジカ→軍事
+		*rndsizai
+		chk_mval,eveflg211=3,,,,
+		chk_mval_then
+			goto,*chksaiteimatch
+		chk_mval_else
+			goto,*chksaiteinomatch
+	default_seikaku
+		//トラ、オオカミ、ライオン、タヌキ→惑星
+		*rndplanet
+		chk_mval,eveflg211=1,,,,
+		chk_mval_then
+			goto,*chksaiteimatch
+		chk_mval_else
+			goto,*chksaiteinomatch
+	*switch_seikaku_end
+return
+
+*chksaiteimatch
+	chk_mval,eveflg212>=100,,,,
+	chk_mval_then
+		goto,*saiteisuccess
+	chk_mval_else
+		goto,*saiteifaild
+*chksaiteinomatch
+	chk_mval,eveflg212>=130,,,,
+	chk_mval_then
+		goto,*saiteisuccess
+	chk_mval_else
+		goto,*saiteifaild
+
+*haouendproc
+	chk_eveflg,211,4
+	chk_eveflg_then
+		zin_reg_msg,今は他にやるべきことがあろう,0
+		zin_reg_msg,かしこまりました,1
+		zin_reg_title,施設建設が見送られました。
+		zin_reg_button,0
+		zin_reg_exit
+		set_eveflg,110,0
+		end
+	chk_eveflg_else
+	//資金チェック、足りなければ却下
+	chk_mval,資金:poid_player<200000,,,,
+	chk_mval_then
+		zin_reg_msg,call_pid21．．．資金が足りません,1
+		zin_reg_msg,なんということだ．．．,0
+		zin_reg_title,施設建設が見送られました。
+		zin_reg_button,0
+		zin_reg_exit
+		set_eveflg,110,0
+		end
+	chk_mval_else
+	zin_reg_msg,はっ、直ちに準備を開始します,1
+	zin_reg_title,施設建設が承認されました。
+	zin_reg_button,0
+	zin_reg_exit
+	add_money,poid_haou,-200000
+	add_eveflg,111,1
+	end
+*saiteisuccess
+	zin_reg_msg,よかろう、call_pid31に任せるcr未来のために尽くすがよい,0
+	zin_reg_msg,かしこまりました、ご期待ください,1
+	zin_reg_title,施設建設が承認されました。
+	zin_reg_button,0
+	zin_reg_exit
+	add_money,poid_haou,-200000
+	add_eveflg,111,1
+	end
+*saiteifaild
+	zin_reg_msg,call_pid31の言うこともわかるが今は他にすべきことがあろう,0
+	zin_reg_msg,．．．かしこまりました,1
+	zin_reg_title,施設建設は却下されました。
+	zin_reg_button,0
+	zin_reg_exit
+	set_eveflg,110,0
+	end

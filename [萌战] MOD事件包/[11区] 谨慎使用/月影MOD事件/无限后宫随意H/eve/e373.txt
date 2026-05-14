@@ -1,0 +1,30 @@
+eve_start
+	if_date,92,11
+	if_psts,368,2
+eve_end
+
+set_eveflg,37,5
+
+set_sikan,620,poid0368
+//upd_sts,368,19,0
+//upd_sts,620,19,0
+
+chk_exeplayer,poid0368,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+set_epid1,poid0368
+get_capwid,poid0368
+//zin_reg_init
+zin_reg_event,西恩的家,368,620,,gzin18
+zin_reg_msg,老爸、我終於畢業了哦,1
+zin_reg_msg,嗯、你竟然能從士官學校畢業真是奇跡啊,0
+zin_reg_msg,下月就是參軍典禮了,1
+zin_reg_msg,老爸也一定要來啊,1
+zin_reg_msg,啊啊、知道了,0
+zin_reg_title,西恩仕官了。
+zin_reg_button,0
+//zin_reg_exit
+end

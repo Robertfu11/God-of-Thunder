@@ -1,0 +1,31 @@
+eve_start
+	if_eveflg,14,4
+	if_pkun,16,13000
+eve_end
+
+chk_exeplayer,16,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,阿古迪巴的辦公室,16,625,,gzin33
+zin_reg_msg,兄長，茲烏蓋似乎已經死了,1
+zin_reg_msg,貌似沒錯,0
+zin_reg_msg,應該是被自己人下的黑手,0
+zin_reg_msg,恩，王位應該是由茲魯曼繼承,1
+zin_reg_msg,茲魯曼．．．cr他不還是個孩子嗎？,0
+zin_reg_msg,是啊,1
+zin_reg_msg,可是，那孩子的禮物已經送到了,1
+zin_reg_msg,禮物？,0
+zin_reg_msg,一個女孩,1
+zin_reg_msg,她的名字叫莉莉 罕,1
+zin_reg_msg,說是兄長你的女兒．．．,1
+zin_reg_msg,什麼？莉莉．．．．．,0
+zin_reg_msg,唔，那是桑美的女兒啊,0
+zin_reg_msg,但是必須承認是我的女兒,0
+zin_reg_msg,去辦些適當的手續，布朗,0
+zin_reg_msg,明白,1
+zin_reg_button,0
+//zin_reg_exit

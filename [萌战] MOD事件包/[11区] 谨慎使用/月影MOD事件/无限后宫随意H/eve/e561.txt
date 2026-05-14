@@ -1,0 +1,29 @@
+eve_start
+	if_date,95,7
+	//カンシ　sts6である
+	if_psts,356,6
+	if_psts,813,6
+	if_psts,843,6
+eve_end
+
+bgm_chg,69
+//zin_reg_init
+zin_reg_event,,813,356,,gzin50
+zin_reg_qnar,瓦德和坎西去政府機關裏尋找下次賞金的目標。
+zin_reg_msg,瓦德大人，下面是這個女人可以嗎？,1
+zin_reg_qnar,坎西和瓦德看見一個女人的賞金
+zin_reg_msg,什麼啊，是女人？,0
+zin_reg_msg,連這樣的小孩子也被放在上面,0
+zin_reg_msg,但是賞金的卻很多。,1
+zin_reg_msg,難道是因為是這個掛著賞金的傢伙相當強大？,1
+zin_reg_msg,嗯，也許是的．．.,0
+zin_reg_msg,但是外表看起來一點不像強的樣子,0
+zin_reg_msg,不要以貌取人好嗎？,1
+zin_reg_msg,知道了，我們快去接了任務吧,0
+zin_reg_msg,然後立即動身去尋找,0
+zin_reg_msg,好！！,1
+zin_reg_msg,但是，這個女人，好想哪裏聽到過她的名字。,1
+zin_reg_msg,莉莉罕．．．cr到底是誰呢？,1
+zin_reg_button,0
+//zin_reg_exit
+end

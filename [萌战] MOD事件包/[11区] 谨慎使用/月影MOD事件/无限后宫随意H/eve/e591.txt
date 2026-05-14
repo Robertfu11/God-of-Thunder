@@ -1,0 +1,38 @@
+eve_start
+	if_date,109,9
+	//詹妮弗がラー配下
+	if_poid,340,626
+	//王子がいる
+	if_ouzoku,626,12300,0
+	set_epid2,pval
+eve_end
+
+chk_exeplayer,626,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+set_epid1,626
+get_kunpsn,626
+set_epid3,pval
+bgm_chg,64
+//zin_reg_init
+zin_reg_event,雷的執務室,626,pid3,,gzin33
+zin_reg_msg,call_pid31，您找我?,1
+zin_reg_msg,恩，我想和你聊聊,0
+zin_reg_msg,怎麼了?,1
+zin_reg_msg,實際上我活不長了cr我患了不治之症,0
+zin_reg_msg,啊，怎麼會,1
+zin_reg_msg,我叫你來而不是別人,0
+zin_reg_msg,是希望你幫我料理後事,0
+zin_reg_msg,我希望你能幫助的我兒子p_name2,0
+zin_reg_msg,當然，call_pid31,1
+zin_reg_msg,是嗎，聽到這句話就放心了。,0
+zin_reg_msg,這件事先不要外傳,0
+zin_reg_msg,以防止被敵國的諜報員知道,0
+zin_reg_msg,知道了。,1
+zin_reg_msg,千萬，拜託你了,0
+zin_reg_msg,是！！,1
+zin_reg_button,0
+//zin_reg_exit
+end

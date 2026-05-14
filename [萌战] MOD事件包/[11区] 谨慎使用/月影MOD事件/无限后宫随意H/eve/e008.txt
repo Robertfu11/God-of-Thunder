@@ -1,0 +1,12 @@
+eve_start
+	if_date,70,2
+	if_cwpos,5
+eve_end
+
+dokuritu,796,5,0
+put_wakusei,5
+set_winfo,5,0,0,150000,85,0,-1,-1
+set_run_msg,¿¨ô”¹þ¶÷ì¶ÐÐÐÇË¹ÅËÅe±ø¡£
+add_union,805,796,0
+set_winfo,5,0,0,0,0,8000,-1,-1
+end

@@ -1,0 +1,8 @@
+bgm_chg,60
+zin_reg_event,,152,0,,gzin31
+zin_reg_msg,哈哈、不錯的工作,0
+zin_reg_qnar,技術士官突然有新的靈感。
+zin_reg_msg,將這個想法應用的話，我軍的陸戰武器會提高性能,0
+zin_reg_title,陸戦技術提高了。
+zin_reg_button,0
+end

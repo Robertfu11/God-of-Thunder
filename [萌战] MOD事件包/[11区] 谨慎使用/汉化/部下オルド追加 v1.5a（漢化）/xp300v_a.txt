@@ -1,0 +1,83 @@
+//部下オルド　処女
+chk_kunko,pid1,pid2
+case_kun_部下
+	rnd,2
+	case0
+		zin_old_msg,啊啊嗯．．．更．．．溫柔點．．．crcf_pid2．．．還是第一次．．．,pid2
+		zin_old_msg,是、是嗎．．．對不起呢．．．,pid1
+		zin_old_msg,但是、已經順利的全部都進去了喲,pid1
+		zin_old_msg,你看看！！,pid1
+		zin_old_msg,啊啊嗯！！　啊、不行了！！　裡面．．．裏面的感覺傳來了！！！,pid2
+		zin_old_msg,呵呵．．．cf_pid1的味道．．．會好好教你記住被插入的感覺喲,pid1
+		zin_old_msg,從此以後、cf_pid1以外的男人、身體一生都會無法再接受別人哦,pid1
+		zin_old_msg,啊啊嗯！！　好的．．．call_pid21的味道．．．更多的．．．啊、告訴我！！！！,pid2
+		zin_flush,pid2
+		end
+	case1
+		zin_old_msg,唔啊啊啊啊啊！！　cf_pid2．．．的tin_str插進來了．．．明明還是第一次．．．,pid2
+		zin_old_msg,慢、慢一點．．．插、進來．．．啊啊啊啊啊！！,pid2
+		zin_old_msg,原來如此、怪不得tin_str的前端像是捅破了初膜的感覺呢．．．,pid1
+		zin_old_msg,不過、能拿到call_pid12的初膜、還真是感到無上的光榮呢！！,pid1
+		zin_old_msg,啊啊嗯！！吶、怎麼樣？　cf_pid2的man_str．．．啊、舒服嗎？,pid2
+		zin_old_msg,當然是最棒的啊！！,pid1
+		zin_old_msg,啊、啊啊嗯、太高興了呢！！crcall_pid21．．．做可以這樣的舒服．．．,pid2
+		zin_old_msg,call_pid21．．．call_pid21！！！！！,pid2
+		zin_old_msg,嗯唔唔啊！！處女的感覺果然是最棒的啊。cr已經．．．高潮了！！,pid1
+		zin_old_msg,好、好啊．．．裡面．．．中出吧！！,pid2
+		zin_old_msg,呵呵、即使你不這樣說cr也打算將tane_str灌滿call_pid12的處女man_str喲！！,pid1
+		zin_flush,pid2
+		end
+case_kun_同僚
+	rnd,2
+	case0
+		zin_old_msg,啊啊嗯．．．更．．．溫柔點．．．crcf_pid2．．．還是第一次．．．,pid2
+		zin_old_msg,是、是嗎．．．對不起呢．．．,pid1
+		zin_old_msg,但是、已經順利的全部都進去了喲,pid1
+		zin_old_msg,你看看！！,pid1
+		zin_old_msg,啊啊嗯！！　啊、不行了！！　裡面．．．裏面的感覺傳來了！！！,pid2
+		zin_old_msg,呵呵．．．cf_pid1的味道．．．會好好教你記住被插入的感覺喲,pid1
+		zin_old_msg,從此以後、cf_pid1以外的男人、身體一生都會無法再接受別人哦,pid1
+		zin_old_msg,啊啊嗯！！　好的．．．call_pid21的味道．．．更多的．．．啊、告訴我！！！！,pid2
+		zin_flush,pid2
+		end
+	case1
+		zin_old_msg,唔啊啊啊啊啊！！　cf_pid2．．．的tin_str插進來了．．．明明還是第一次．．．,pid2
+		zin_old_msg,慢、慢一點．．．插、進來．．．啊啊啊啊啊！！,pid2
+		zin_old_msg,原來如此、怪不得tin_str的前端像是捅破了初膜的感覺呢．．．,pid1
+		zin_old_msg,不過、能拿到call_pid12的初膜、還真是感到無上的光榮呢！！,pid1
+		zin_old_msg,啊啊嗯！！吶、怎麼樣？　cf_pid2的man_str．．．啊、舒服嗎？,pid2
+		zin_old_msg,當然是最棒的啊！！,pid1
+		zin_old_msg,啊、啊啊嗯、太高興了呢！！crcall_pid21．．．做可以這樣的舒服．．．,pid2
+		zin_old_msg,call_pid21．．．call_pid21！！！！！,pid2
+		zin_old_msg,嗯唔唔啊！！處女的感覺果然是最棒的啊。cr已經．．．高潮了！！,pid1
+		zin_old_msg,好、好啊．．．裡面．．．中出吧！！,pid2
+		zin_old_msg,呵呵、即使你不這樣說cr也打算將tane_str灌滿call_pid12的處女man_str喲！！,pid1
+		zin_flush,pid2
+		end
+case_kun_上司
+	rnd,2
+	case0
+		zin_old_msg,啊啊嗯．．．更．．．溫柔點．．．crcf_pid2．．．還是第一次．．．,pid2
+		zin_old_msg,是、是嗎．．．對不起呢．．．,pid1
+		zin_old_msg,但是、已經順利的全部都進去了喲,pid1
+		zin_old_msg,你看看！！,pid1
+		zin_old_msg,啊啊嗯！！　啊、不行了！！　裡面．．．裏面的感覺傳來了！！！,pid2
+		zin_old_msg,呵呵．．．cf_pid1的味道．．．會好好教你記住被插入的感覺喲,pid1
+		zin_old_msg,從此以後、cf_pid1以外的男人、身體一生都會無法再接受別人哦,pid1
+		zin_old_msg,啊啊嗯！！　好的．．．call_pid21的味道．．．更多的．．．啊、告訴我！！！！,pid2
+		zin_flush,pid2
+		end
+	case1
+		zin_old_msg,唔啊啊啊啊啊！！　cf_pid2．．．的tin_str插進來了．．．明明還是第一次．．．,pid2
+		zin_old_msg,慢、慢一點．．．插、進來．．．啊啊啊啊啊！！,pid2
+		zin_old_msg,原來如此、怪不得tin_str的前端像是捅破了初膜的感覺呢．．．,pid1
+		zin_old_msg,不過、能拿到call_pid12的初膜、還真是感到無上的光榮呢！！,pid1
+		zin_old_msg,啊啊嗯！！吶、怎麼樣？　cf_pid2的man_str．．．啊、舒服嗎？,pid2
+		zin_old_msg,當然是最棒的啊！！,pid1
+		zin_old_msg,啊、啊啊嗯、太高興了呢！！crcall_pid21．．．做可以這樣的舒服．．．,pid2
+		zin_old_msg,call_pid21．．．call_pid21！！！！！,pid2
+		zin_old_msg,嗯唔唔啊！！處女的感覺果然是最棒的啊。cr已經．．．高潮了！！,pid1
+		zin_old_msg,好、好啊．．．裡面．．．中出吧！！,pid2
+		zin_old_msg,呵呵、即使你不這樣說cr也打算將tane_str灌滿call_pid12的處女man_str喲！！,pid1
+		zin_flush,pid2
+		end

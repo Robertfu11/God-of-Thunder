@@ -1,0 +1,258 @@
+//宇宙超昂閃忍三人組
+
+eve_start
+	//遙，鳴香，昂 ,主角仕官，且同勢力．三人非處女
+	if_val,状態:1250=2
+	if_val,状態:1251=2
+	if_val,状態:1252=2
+	if_val,状態:player=2
+	if_same_oid,player,1250
+	if_same_oid,player,1251
+	if_same_oid,player,1252
+	if_val,初膜:1250=1
+	if_val,初膜:1251=1
+	if_val,初膜:1252=1
+	if_eveflg,176,13
+	if_rnd,3
+eve_end
+
+eve_start
+	//遙，鳴香，昂 ,主角仕官，且同勢力．三人非處女
+	if_val,状態:1250=2
+	if_val,状態:1251=2
+	if_val,状態:1252=2
+	if_val,状態:player=2
+	if_same_oid,player,1250
+	if_same_oid,player,1251
+	if_same_oid,player,1252
+	if_val,初膜:1250=1
+	if_val,初膜:1251=1
+	if_val,初膜:1252=1
+	if_eveflg,176,13
+	if_rnd,3
+eve_end
+
+set_epid1,player
+
+rnd,5
+	case0
+		goto,*serve1
+	case1
+		goto,*serve1
+	case2
+		goto,*serve1
+	case3
+		goto,*colle1
+	case4
+		goto,*enemy1
+
+*serve1
+set_epid2,1250
+set_epid3,1251
+set_epid4,1252
+
+
+	bgm_chg,54
+	zin_reg_event,p_name1家中,pid1,1251,,gzin9
+	zin_reg_msg,哦？cr妳們三個都在啊？,0
+	zin_reg_msg,吶吶～～cr難得主人今天有空～,1
+	zin_reg_msg,就好好陪我們玩一玩嘛～,1
+	zin_reg_face_1,1250
+	zin_reg_msg,求主人准許cr讓我們今天好好服侍主人一下
+	zin_reg_face_1,1252
+	zin_reg_msg,嗯．．嗯cr主，主人還請務必接受我們的一番心意．．．
+	zin_reg_msg,．．．,0
+	bl_fadeout
+
+	bgm_chg,59
+	zin_old_init
+	zin_old_img_str,eu315a,5,1
+	zin_old_msg,唔嗯～～cr唔嗯～～～～cr主人的這根大tin_str，p_name3最～喜～歡～了～,pid3
+	zin_old_qnar,p_name2和p_name3並排的伏在p_name1的胯下，輪流用嘴舔弄着p_name1的tin_str．
+	zin_old_msg,唔嗯～～～cr主人的大tin_str在人家嘴裏一蹦一蹦的cr好好玩哦～,pid3
+
+	zin_flush_file_one,eu315a,5
+	zin_old_msg,唔唔～～cr唔嗯嗯～～～～,pid3
+	zin_old_msg,唔嗯～～cr主人濃濃的tane_str～好好吃啊～～,pid3
+	zin_old_msg,嗚．．．cr那，那個．．．cr我，我也好想．．．好想吃啊～．．．．,pid2
+	zin_old_qnar,p_name2盯着從p_name3嘴角溢出來的tane_str，眼睛裏充滿了羨慕和渴望．
+	zin_old_qnar,她似乎完全忘記了．．．cr自己的嘴角邊也還流淌着上一回合p_name1才射出來的tane_str
+	zin_old_msg,讓，讓我也舔一舔嘛～cr好不好．．．,pid2
+	zin_old_msg,不要啦～cr好不容易才輪到p_name3的！cr姐姐也太貪心了～～,pid3
+	zin_old_msg,唔．．．cr那個．．．cr主，主人．．．,pid4
+	zin_old_qnar,站在邊上的p_name4開始還有些矜持，不肯加入p_name2和p_name3她們激烈的tin_str爭奪戰中
+	zin_old_qnar,然而看着在她們口中交替脈動着的tin_str．．.cr聞着噴發出的白濁tane_str的濃厚氣息．．．crp_name4也開始春心蕩漾，慾火難耐起來．．
+	zin_old_qnar,但是，p_name1的胯下顯然已經沒有了位置，p_name4只好尋找其他方法．crp_name4脫下貼身內褲，將已經溼潤了的花瓣湊到p_name1眼前
+	zin_old_msg,主，主人．．．cr非常抱歉，失，失禮了．．．cr還請主人幫我舔，舔一下．．．．．．,pid4
+	zin_old_msg,．．．cr（吸嚕．．吸嚕．．．．）,pid1
+	zin_old_msg,啊～～cr啊～～～～cr好，好舒服啊～～～,pid4
+	zin_old_msg,主人～cr最愛的主人～～cr求您更深，更用力的．．．,pid4
+	zin_old_msg,（吸．．．cr吸嚕．．．．cr吸嚕吸嚕～～～）,pid1
+	zin_old_msg,咿啊啊啊～～～cr太，太舒服了！主，主人！cr啊啊啊！要，要去，要去了啊啊啊～～,pid4
+	zin_old_qnar,p_name4在p_name1的舔弄下迅速的達到了高潮cr潮吹出的淫水濺了p_name1滿滿一臉．．．
+	zin_old_msg,啊～～～crp_name4姐太狡猾了！cr居然讓p_name1主人幫妳舔～～,pid3
+	zin_old_msg,！！．．．cr唔嗯～～cr唔嗯嗯嗯～～～～～,pid2
+	zin_old_qnar,p_name2看到p_name3張嘴說話，立刻趁她不注意，一口就將p_name1的tin_str搶去含進自己嘴裏
+	zin_old_msg,嗚～～～cr姐姐，姐姐你們都欺負我～～,pid3
+	zin_old_msg,嗚嗚嗚～～～～,pid3
+	zin_old_msg,唔嗯～～cr哈．．．cr吶～吶～～妹妹別哭～～我們一起舔好不好？,pid2
+	zin_old_msg,嗚嗚～～～cr嗚．．．cr嗯．．．．．．cr好，好的．．．唔嗯～～～,pid3
+
+	zin_flush_file,eu315b,5
+	zin_old_qnar,在p_name2和p_name3的兩面夾攻下，p_name1的tin_str再一次猛烈的躍動噴發起來．cr跳動的tin_str將白濁的tane_str射的p_name2和p_name3她們滿臉都是
+	zin_old_msg,啊啊～～cr主人的tane_str！！,pid3
+	zin_old_msg,嗚．．．cr好，好可惜啊～～～,pid2
+	zin_old_msg,嗯唔～～～cr（舔～～舔～～～～）,pid3
+	zin_old_msg,哈啊～cr嗯～～～cr不，不能浪費了～～～cr（舔～～舔～～～～）,pid2
+	zin_old_qnar,p_name2和p_name3兩人互相仔細舔拭着對方臉頰上的tane_strcr舔着舔着，兩人的舌頭就糾纏在了一起，互相品味着對方口腔中的唾液和tane_str的美味
+	zin_old_msg,嗯～～～cr唔～～～唔唔～～～～crp_name3的舌頭，好柔軟啊．．．,pid2
+	zin_old_msg,嗯～～cr唔嗯～唔～～～crp_name2姐的口水，好好吃啊～cr唔嗯～～～,pid3
+	zin_old_qnar,另一邊cr高潮過後的p_name4，也在認真的舔拭着自己剛才噴在p_name1臉上的淫水
+	zin_old_msg,非，非常抱歉．．cr主人，弄髒您了．．．cr請讓我仔細幫您清理乾淨～,pid4
+	zin_old_msg,嗯～～cr嗯啊～～～～cr主人的舌頭，和我的糾纏在一起．．．cr好，好舒服啊～～～～,pid4
+	zin_old_fadeout
+	zin_old_qnar,之後，p_name1和三姐妹們盡情的激戰了十幾個小時．．．cr直到弄得所有人滿身都是tane_str，siru_str，汗水和唾液的混合物，才終於肯稍事休息，一同走進了浴室
+
+	zin_old_img_str,eu315c,5,1
+	zin_old_msg,嘻嘻～～～cr主人的這個又有精神了哦～～,pid3
+	zin_old_qnar,p_name3用沾滿肥皂泡的雙手興致勃勃的把玩着p_name1的陰囊和竿狀部分．crp_name1本已偃旗息鼓的tin_str再一次慢慢的勃起了．．．
+	zin_old_msg,嘻嘻嘻～cr還是p_name3的技術最厲害吧～嘻～cr等下洗完了，我們再～～．．．,pid3
+	zin_old_msg,嗯嗯～～cr主人～cr也請和我再激烈的～～．．．．,pid2
+	zin_old_msg,主，主人．．．cr那個．．．cr我，我也還想要．．．．．,pid4
+	zin_old_msg,嗚．．．．．．,pid1
+	zin_old_qnar,被p_name2和p_name4左右緊緊擁抱住的p_name1發出了無奈的苦笑．
+	zin_old_qnar,p_name2和p_name4分別緊緊摟住p_name1的左右臂，用自己的雙乳搓揉着p_name1的軀體
+	zin_old_msg,嗯～cr主人～～cr好嘛～～～～～,pid2
+	zin_old_msg,主，主人．．．cr請務必答應我們的請求．．．,pid4
+	zin_old_msg,哼～cr都是p_name3的功勞啦～～crp_name3要第一個！,pid3
+	zin_old_msg,呼．．．．．．,pid1
+	zin_old_fadeout
+	zin_old_qnar,在美女三人組的整晚再三夾攻下，p_name1終於徹底的繳械，彈盡糧絕了．．．
+	zin_reg_button,16
+	zin_old_exit
+
+
+end
+*colle1
+
+get_mpid,状態=2,性別=1,覇王=poid_player,友好<30,勲功<5000,,
+chk_ormval,pval=0,pval=player,,,
+chk_ormval_then
+	goto,*enemy1
+chk_ormval_else
+	set_epid2,pval
+rnd,3
+	case0
+		goto,*k1
+	case1
+		goto,*k2
+	case2
+		goto,*k2
+
+*enemy1
+
+get_mpid,状態=2,性別=1,覇王!poid_player,年齢>30,勲功<4000,,
+chk_ormval,pval=0,pval=player,,,
+chk_ormval_then
+	end
+chk_ormval_else
+	set_epid2,pval
+rnd,3
+	case0
+		goto,*k1
+	case1
+		goto,*k2
+	case2
+		goto,*k3
+
+
+*k1
+set_epid3,1250
+
+	bgm_chg,53
+	zin_reg_event,伸手不見五指的漆黑夜晚,pid3,0,,gzin44
+	zin_reg_msg,就是這個人了！,0
+	zin_reg_face,pid2
+	zin_reg_msg,據我暗中調查crp_name2最近似乎在進行不利於主人的計劃！,0
+	zin_reg_msg,主人的敵人．．．cr就是我的敵人！,0
+	zin_reg_msg,絕對不能饒恕！,0
+	bl_fadeout
+
+	bgm_chg,35
+	zin_old_init
+	zin_old_img_str,eu316a,5,1
+	zin_old_msg,呵呵．．．cr爲了主人，就請你乖乖的下地獄去吧！,pid3
+	zin_old_qnar,p_name3神情悠然的揮舞着手中雙刀，血花四濺．．．
+	zin_old_qnar,在她周圍，p_name2和他的護衛們的殘肢斷臂在空中飛舞．cr地上的亡骸還在不停抽搐抖動．．．
+	zin_old_msg,要怪cr只能怪你們選錯了目標！,pid3
+	zin_old_msg,主人的敵人，一個都不能活！,pid3
+	zin_old_fadeout
+	zin_old_qnar,p_name3邁着輕快的步伐，愉悅的離開了這血腥的修羅場．cr沒有任何其他活人，知道今晚這裏到底發生了什麼．．．
+	zin_reg_button,16
+	zin_old_exit
+
+	set_dead,pid2,0
+
+	end
+
+*k2
+set_epid3,1251
+
+	bgm_chg,53
+	zin_reg_event,伸手不見五指的漆黑夜晚,pid3,0,,gzin44
+	zin_reg_msg,就是這個人了！,0
+	zin_reg_face,pid2
+	zin_reg_msg,據我暗中調查crp_name2最近似乎在進行不利於主人的計劃！,0
+	zin_reg_msg,主人的敵人．．．cr就是我的敵人！,0
+	zin_reg_msg,絕對不能饒恕！,0
+	bl_fadeout
+
+	bgm_chg,35
+	zin_old_init
+	zin_old_img_str,eu316b,5,1
+	zin_old_msg,嘻嘻～主人看到你現在的臉，肯定會很高興的～～,pid3
+	zin_old_qnar,p_name3穿着大膽暴露的服裝，露出了帶着邪氣的笑容
+	zin_old_qnar,在她的手中，還在滴血的p_name2的頭顱，依然睜着空洞的雙眼．．．．
+	zin_old_msg,嘻嘻嘻～～cr真是個可憐的傢伙啊～,pid3
+	zin_old_msg,主人的敵人什麼的，一個都不能活！,pid3
+	zin_old_fadeout
+	zin_old_qnar,p_name3邁着輕快的步伐，愉悅的帶着p_name2的頭顱離開了．cr沒有任何其他活人，知道今晚這裏到底發生了什麼．．．
+	zin_reg_button,16
+	zin_old_exit
+
+	set_dead,pid2,0
+
+	end
+
+*k3
+set_epid3,1252
+
+	bgm_chg,53
+	zin_reg_event,伸手不見五指的漆黑夜晚,pid3,0,,gzin44
+	zin_reg_msg,就是這個人了！,0
+	zin_reg_face,pid2
+	zin_reg_msg,據我暗中調查crp_name2最近似乎在進行不利於主人的計劃！,0
+	zin_reg_msg,主人的敵人．．．cr就是我的敵人！,0
+	zin_reg_msg,絕對不能饒恕！,0
+	bl_fadeout
+
+	bgm_chg,35
+	zin_old_init
+	zin_old_img_str,eu316c,5,1
+	zin_old_msg,哼．．．一羣烏合之衆．．．毫無價值！,pid3
+	zin_old_qnar,p_name3冷漠的漫步在從地底穿出的無數冰柱之間，
+	zin_old_qnar,每根冰柱上，都穿刺着一個凍僵的亡骸，那是p_name2和他的護衛們．．．
+	zin_old_msg,就這種程度，也敢與主人爲敵．．．,pid3
+	zin_old_msg,真是自尋死路！．．．．．．,pid3
+	zin_old_fadeout
+	zin_old_qnar,p_name3邁着飄渺的步伐，默默的離開了這片冰冷的怨恨之森．cr沒有任何其他活人，知道今晚這裏到底發生了什麼．．．
+	zin_reg_button,16
+	zin_old_exit
+
+	set_dead,pid2,0
+
+	end
+
+end
+
+

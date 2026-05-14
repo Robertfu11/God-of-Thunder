@@ -1,0 +1,49 @@
+eve_start
+	if_eveflg,31,9
+	//プレイヤーが非覇王である
+	if_pkun,player,<13000
+	if_pkun,player,>6999
+eve_end
+
+set_eveflg,31,10
+set_epid1,poid_player
+set_epid2,player
+
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,p_name1の王宮,poid_player,846,,gzin8
+zin_reg_msg,p_name1大人、這次的演唱會大獲成功,1
+zin_reg_msg,衷心感謝您的支持,1
+zin_reg_face_1,847
+zin_reg_msg,p_name1王、非常感謝,1
+zin_reg_face_1,846
+zin_reg_msg,你們一定賺了個盆滿缽滿吧,0
+zin_reg_msg,馬馬虎虎啦、咱可不是志願者呢,1
+zin_reg_msg,下次公演、還要請您多多指教,1
+zin_reg_msg,哼、厚臉皮的傢伙．．．,0
+zin_reg_msg,那就先行告退,1
+	zin_reg_msg,等等！！,0
+	zin_reg_msg,啊？cr什麼事？．．．,1
+	zin_reg_msg,你們不能就這麼走了,0
+	zin_reg_msg,你們有間諜的嫌疑,0
+	zin_reg_msg,暫時先扣下,0
+	zin_reg_msg,把它們都關起來！！,0
+	zin_reg_msg,什、您說什麼！！,1
+zin_reg_face_1,847
+	zin_reg_msg,p_name1王、一定有什麼誤會！！,1
+	zin_reg_msg,趕快帶去！！,0
+	zin_reg_msg,啊、不要！！,1
+zin_reg_face_1,0
+	zin_reg_msg,哈哈哈,0
+zin_reg_face_1,pval
+	zin_reg_msg,這樣做好嗎？,1
+	zin_reg_msg,把人氣歌娘下了大牢、將士們的士氣沒問題吧？,1
+	zin_reg_msg,沒關系,0
+	zin_reg_msg,那個小妞待會由你審問,0
+	zin_reg_msg,了解,1
+	zin_reg_title,部下的忠誠度降低了。
+	zin_reg_button,0
+dwn_ploy,poid_player,0,10
+set_eveflg,31,10
+	//zin_reg_exit
+	end

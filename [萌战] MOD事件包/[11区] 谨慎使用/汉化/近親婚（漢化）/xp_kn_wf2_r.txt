@@ -1,0 +1,91 @@
+chk_mval,母:pid1=pid2,,,,
+chk_mval_then
+	txtload,xp_kn_mt_r
+	end
+chk_mval_else
+	chk_mval,父:pid2=pid1,,,,
+		chk_mval_then
+			txtload,xp_kn_dt2_r
+			end
+		chk_mval_else
+			chk_mval,父:pid2=0,母pid2=0,,,
+			chk_mval_then
+				goto,*sonomama
+			chk_mval_else
+				chk_ormval,父:pid1=父:pid2,母:pid1=母:pid2,,,
+				chk_ormval_then
+					chk_mval,年齢:pid1<年齢:pid2,,,,
+					chk_mval_then
+						txtload,xp_kn_ane2_r
+					end
+					chk_mval_else
+						txtload,xp_kn_imo2_r
+					end
+				chk_ormval_else
+					goto,*sonomama
+		
+
+
+*sonomama
+//■和姦
+//■相手：妻（妃）
+//■Ｈ体位：バック
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_msg,嗯嗯啊．．．啊啊嗯．．．這樣的姿勢．．．深處被．．．頂到了．．．進來了．．．嗯嗯啊．．．,pid2
+	zin_old_msg,不、不好意思．．．穿成這個樣子．．．變成一個什麼的．．．,pid2
+	zin_old_msg,這樣難為情的樣子．．．真的沒辦法做事了的說．．．,pid2
+	zin_old_msg,呵呵呵、是啊．．．cr可愛的屁股、可以一覽無餘呢,pid1
+	zin_old_msg,啊、真的．．．好害羞啊．．．,pid2
+	zin_old_msg,是嗎．．．這樣的話、就忘掉羞恥、好好的讓我感受一下吧,pid1
+	zin_old_msg,啊啊．．．嗚啊．．嗯嗯啊．．．啊嗯．．．,pid2
+	zin_old_msg,很害羞的．．．啊嗯．．．cr這樣的．．．像狗一樣的樣子．．．從後面的說．．．啊啊啊啊,pid2
+	zin_old_msg,你看、看見了嗎．．．黏黏糊糊的siru_str在、往下滴淌著喲？,pid1
+	zin_old_msg,嗯嗯啊．．．哈啊．．．哈啊．．．啊啊．．．不要再說了啊．．．,pid2
+	zin_old_msg,自已也聞到．．．自己的咸味．．．了解、的說．．．,pid2
+	zin_old_msg,真是的、call_pid2也是沒辦法的吧．．．cr嗚嗯啊！,pid1
+	zin_old_msg,啊啊啊．．．嗯嗯．．．嗯．．．嗯嗯．．．嗯啊啊啊啊嗯！,pid2
+	zin_old_msg,作為懲罰、就在色色的你的裡面充分的爆發吧,pid1
+	zin_old_msg,這樣的、啊．．．啊啊．．．啊啊．．．激烈、嗯嗯．．．啊．．．啊啊啊啊啊啊啊嗯！,pid2
+	zin_flush,pid2
+	end
+//初膜パターン
+case_hatumaku
+	zin_old_msg,怎麼樣、對成為一個女人的感想是？,pid1
+	zin_old_msg,痛．．的說、有點．．．另外、也很高興．．．cr能和喜歡的人．．合二為一．．也會習慣的吧．．．,pid2
+	zin_old_msg,但是．．．這樣的樣子．．．callself_pid2的屁股．．．和髒髒的地方．．．,pid2
+	zin_old_msg,都被call_pid1一覽無餘了呢．．．,pid2
+	zin_old_msg,這不是問題吧？cr你的這裡、実在是可愛至極呢．．．？,pid1
+	zin_old_msg,．．．嗯嗯．．．啊．．．嗯嗯啊．．．哈啊．．．哈啊．．．啊啊嗯．．．真的、是．．．好害羞的呢,pid2
+	zin_old_msg,那麼、暫時忘記害羞、好好的讓我感受一下吧．．．,pid1
+	zin_old_msg,嗯嗯．．．嗯啊啊啊嗯．．．哦．．．深處．．．call_pid1被．．．玩弄的．．．麻痹了．．．哇嗯．．．,pid2
+	zin_old_msg,啊啊．．．啊．．．啊．．．嗯嗯嗯．．．再往上．．．繼續的話．．．,pid2
+	zin_old_msg,callself_pid2．．．callself_pid2．．．快要消失了啊,pid2
+	zin_old_msg,啊啊、把什麼都忘掉吧、慢慢感受就好了啊．．．,pid1
+	zin_old_msg,不行、不行、的啊．．．真的要．．．啊啊．．．真的要．．．不行了啊啊啊．．．,pid2
+	zin_old_msg,啊啊啊．．．嗯嗯．．．嗯啊啊．．．啊．．．嗚啊啊啊啊啊嗯！,pid2
+	zin_flush,pid2
+	end
+//孕みパターン
+case_botebara
+	zin_old_msg,嗯嗯嗯嗯嗯嗯啊！cr哈啊．．．啊嗯．．．嗯啊．．．進來了、啊．．．,pid2
+	zin_old_msg,callself_pid2．．．明明還懷著孩子．．．卻被．．．打扮成、這個樣子．．．,pid2
+	zin_old_msg,呵呵呵．．．動了喲、call_pid2．．．,pid1
+	zin_old_msg,啊啊啊．．．裡面．．．不行、的啊．．．嬰兒、明明還在．．．這樣強烈．．．的話、不行啊啊,pid2
+	zin_old_msg,其實是喜歡這樣激烈的吧？,pid1
+	zin_old_msg,久違了的性交、就要好好的享受樂趣嘛,pid1
+	zin_old_msg,這樣的、啊．．．啊啊啊．．．嗯．．．啊．．．啊．．．啊啊啊嗯．．．,pid2
+	zin_old_msg,和call_pid1．．．合二為一的事．．．很高興的說．．．,pid2
+	zin_old_msg,但是．．但是啊．．．再這樣往上、繼續的話,pid2
+	zin_old_msg,callself_pid2、懷著寶寶這樣的事．．．會忘掉的啊．．．,pid2
+	zin_old_msg,啊、好舒服．．．心情．．．現在,pid2
+	zin_old_msg,啊啊、心情舒暢很多了吧．．．,pid1
+	zin_old_msg,嗚啊啊啊嗯．．．請原諒．．．寶寶．．．對不起啊,pid2
+	zin_old_msg,討厭這樣的、媽媽．．．對不起、不要說．．．啊啊啊嗯．．．,pid2
+	zin_old_msg,call_pid1．．．已經．．．已經．．．嗯嗯．．．嗚啊啊啊啊啊啊嗯！,pid2
+	zin_flush,pid2
+	zin_old_msg,啊啊．．．裡面．．．call_pid1在．．．顫抖著．．．call_pid2．．．啊啊．．．天啊啊啊啊啊．．．,pid2
+	end

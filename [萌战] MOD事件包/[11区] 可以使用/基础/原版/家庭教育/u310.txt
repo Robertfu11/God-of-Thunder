@@ -1,0 +1,112 @@
+// 家庭教育
+// 条件
+// 仕官中か平民のプレイヤーの子がいる
+set_eveflg,211,0
+for,PMAX,210,1
+	set_eveflg,212,0
+	chk_mval,覇王:eveflg210=poid_player,,,,
+	chk_mval_then
+		chk_sts,eveflg210,24,player
+		chk_sts_then
+			chk_ormval,状態:eveflg210=2,状態:eveflg210=18,,,
+			chk_ormval_then
+				add_eveflg,211,1
+			chk_ormval_else
+		chk_sts_else
+	chk_mval_else
+	continue
+next
+eve_start
+	if_val,eveflg211>0
+eve_end
+for,PMAX,210,1
+	set_eveflg,212,0
+	chk_mval,覇王:eveflg210=poid_player,,,,
+	chk_mval_then
+		chk_sts,eveflg210,24,player
+		chk_sts_then
+			chk_ormval,状態:eveflg210=2,状態:eveflg210=18,,,
+			chk_ormval_then
+				gosub,*chkchildold
+				gosub,*stsupexeproc
+			chk_ormval_else
+		chk_sts_else
+	chk_mval_else
+	continue
+next
+end
+*chkchildold
+	chk_mval,年齢:eveflg210<5,,,,
+	chk_mval_then
+		rnd,5
+		case0
+		case1
+		case2
+		case3
+			set_eveflg,211,1
+			return
+		case4
+			set_eveflg,211,2
+			return
+	chk_mval_else
+	chk_mval,年齢:eveflg210<12,,,,
+	chk_mval_then
+		rnd,3
+		case0
+			set_eveflg,211,1
+			return
+		case1
+		case2
+			set_eveflg,211,2
+			return
+	chk_mval_else
+		set_eveflg,211,1
+		return
+*stsupexeproc
+	chk_eveflg,211,2
+	chk_eveflg_then
+		rnd,5
+		case0
+			//艦隊攻撃
+			//父と子の攻撃を比べて父が勝っていた場合、子に+1、同じか負けなら失敗
+			chk_mval,攻撃:player>攻撃:eveflg210,,,,
+			chk_mval_then
+				//親の能力が↑
+				upd_sts,eveflg210,6,1
+				return
+			chk_mval_else
+				return
+		case1
+			//艦隊防御
+			chk_mval,防御:player>防御:eveflg210,,,,
+			chk_mval_then
+				upd_sts,eveflg210,7,1
+				return
+			chk_mval_else
+				return
+		case2
+			//知力
+			chk_mval,知力:player>知力:eveflg210,,,,
+			chk_mval_then
+				upd_sts,eveflg210,5,1
+				return
+			chk_mval_else
+				return
+		case3
+			//格技
+			chk_mval,格闘:player>格闘:eveflg210,,,,
+			chk_mval_then
+				upd_sts,eveflg210,8,1
+				return
+			chk_mval_else
+				return
+		case4
+			//交渉
+			chk_mval,交渉:player>交渉:eveflg210,,,,
+			chk_mval_then
+				upd_sts,eveflg210,9,1
+				return
+			chk_mval_else
+				return
+	chk_eveflg_else
+		return

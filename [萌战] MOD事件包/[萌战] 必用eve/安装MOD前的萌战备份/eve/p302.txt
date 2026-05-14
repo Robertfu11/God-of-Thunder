@@ -1,0 +1,11 @@
+bgm_chg,107
+zin_reg_event,,pid1,pid2,,gzin19
+zin_reg_title,p_name1直営艦隊
+zin_reg_qnar,p_name1收到p_name3軍艦隊接近的報告、於是在附近警戒。
+zin_reg_msg,司令！！cr前方發現敵方艦隊,1
+zin_reg_msg,數量呢？,0
+zin_reg_msg,雷達上的艦影並不多,1
+zin_reg_msg,這樣呀、看來是偵察部隊呢,0
+zin_reg_msg,不能讓敵方得到情報cr一口氣把他們擊沉！！,0
+zin_reg_qnar,勝利條件：擊滅敵方偵察艦隊
+end

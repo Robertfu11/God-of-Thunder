@@ -1,0 +1,348 @@
+//虜囚哀歌
+eve_start
+eve_end
+
+//状態捕虜、初膜あり、旧覇王プレイヤー勢力、現覇王プレイヤー勢力外を取得
+get_mpid,状態=8,性別=2,初膜=0,旧覇王=poid_player,覇王!piod_player,,
+chk_mval,pval=0,,,,
+chk_mval_then
+//いなければエンド
+	end
+chk_mval_else
+//虜囚をpid1にセット
+	set_epid1,pval
+//バイオノイドだったらイベント終了
+chk_mval,特殊:pid1=1,,,,
+chk_mval_then
+	end
+chk_mval_else
+//ACT0オウカだったらイベント終了
+chk_mval,pid1=815,,,,
+chk_mval_then
+	end
+chk_mval_else
+//捕まえた勢力の覇王を取得
+for,PMAX,222,1
+chk_msts,eveflg222,覇王,覇王:pid1,状態,2,勲功,13000,NON,0,NON,0
+chk_msts_then
+set_epid2,eveflg222
+break
+chk_msts_else
+continue
+next
+//女覇王ではないか
+chk_mval,性別:pid2=2,,,,
+chk_mval_then
+//女覇王ならエンド
+	end
+chk_mval_else
+//プレイヤー勢覇王をpid3にセット
+	set_epid3,poid_player
+//プレイヤー勢覇王から見て虜囚の関係は
+chk_family,pid1,pid3
+case_fam_妻
+//虜囚は妃
+	goto,*kisaki
+case_fam_娘
+case_fam_娘(養)
+//虜囚は姫
+	goto,*hime
+default_fam
+//それ以外の処理
+	goto,*hoka
+
+*kisaki
+	bgm_chg,58
+	bl_fadein,gzin8
+	zin_reg_event,p_name3の王宮,pid3,,,gzin8
+	zin_reg_msg,よもやcall_pid31がcrp_name2軍の手に落ちるとは．．．,0
+	zin_reg_msg,無事でいてくれ．．．cr．．．call_pid31．．,0
+	bl_fadeout
+	bgm_chg,61
+	bl_fadein,gzin6
+	zin_reg_event,特別室,pid2,pid1,,gzin6
+	zin_reg_qnar,捕虜となったp_name1はp_name2の特別室に囚われていた。
+	zin_reg_msg,沒想到p_name3的妻子被我抓到了阿．．．,0
+	zin_reg_msg,真是運氣不錯,cr早就想操p_name3的妻子了,0
+	zin_reg_msg,不要靠近我！cr再靠近我我就咬舌自盡！,1
+	zin_reg_msg,哈哈,如果祢敢這樣就不會讓的手下抓到了,0
+	bgm_se,32
+	zin_reg_event,特別室,pid2,pid1,zin3,gzin6
+	zin_reg_msg,不要！　放開我！cr不要阿、別看那裡！,1
+	zin_reg_msg,黑黑、好不容易才能抓到祢,怎能不讓我爽一爽吶,0
+	zin_reg_msg,終於能肆意玩弄p_name3一直獨享的美人了,0
+	zin_reg_msg,ひうっ．．．！,1
+	zin_reg_msg,ううっ．．．cr請不要操我．．．crcf_pid1、我還沒有過．．．,1
+	zin_reg_msg,沒有過？,0
+	zin_reg_msg,我還．．．我還是個處女．．．,1
+	zin_reg_msg,他還沒操過我的小穴．．．,1
+	zin_reg_msg,p_name3居然還沒有享用過祢的身體?！,0
+	zin_reg_msg,這真是太令我吃驚了！crp_name3難道是笨蛋麼！,0
+	zin_reg_msg,這就是説第一個干祢的男人不是p_name3而是我p_name2阿！,0
+	zin_reg_msg,ひっ．．．,1
+	bl_fadeout
+	zin_reg_msg,不要阿阿阿――！！,1
+	zin_old_init
+	bgm_chg,55
+	zin_old_img_pid,pid1,1
+	zin_old_msg,くっ．．．真舒服．．．,pid2
+	zin_old_msg,阿！！！　疼、疼死了！！！,pid1
+	zin_old_msg,不要阿！！　call_pid13救救我、救救我！！！,pid1
+	zin_old_msg,哦哦、這種感觸真不愧是處女穴阿．．．真是太爽了,pid2
+	zin_old_msg,哦！！　哦！！　哦．．．哦疼！！,pid1
+	zin_old_msg,呵呵呵、祢的處女我確實收到了,pid2
+	zin_old_msg,ひっ．．．ひぐっ．．．cr痛い．．．痛い．．．,pid1
+	zin_old_msg,不愧是處女人妻穴阿,真緊阿．．．,pid2
+	zin_old_msg,哦！　痛阿、求求祢、不要再動了！,pid1
+	zin_old_msg,好痛阿．．．要死掉了．．．！！cr．．．恩、阿、阿阿！！,pid1
+	zin_old_msg,真爽阿？　插到p_name1的子宮里了！,pid2
+	zin_old_msg,一直裝出一副純潔的樣子、cr現在還不是乖乖的在被我干．．．,pid2
+	zin_old_msg,別想回到p_name3的身邊去了、p_name1乖乖做我的性奴隸巴,pid2
+	zin_old_msg,ううっ．．．call_pid13．．．cr對不起．．．對不起．．．,pid1
+	zin_old_msg,以後乖乖當我的性奴隸巴。cr乖乖給我生女兒,等女兒長大了又是一個好性奴,pid2
+	zin_old_msg,現在、讓我射滿祢的子宮巴！！！,pid2
+	zin_old_msg,不！不要！！　只有這個請不要！！！,pid1
+	zin_old_msg,不行、不要射在裏面阿！！　會懷孕的！！！,pid1
+	zin_old_msg,笨蛋！就是要讓祢懷上我的種阿！,pid2
+	zin_old_msg,哈哈、看到這幅表情！cr真是太有征服感了！,pid2
+	zin_old_msg,不會原諒祢！　不會原諒祢的！cr我不要懷上老公以外人的孩子阿――！crひぐっ、ひぎぃぃぃ！！,pid1
+	zin_old_msg,えぐっ、痛、痛阿！！cr插的太深了！！！　快拔出來！！,pid1
+	zin_old_msg,高潮巴！cr被侵犯而懷孕的賤人p_name1っ！！,pid2
+	zin_old_msg,不要阿阿阿阿阿阿阿阿阿阿阿阿――――――！！！,pid1
+	zin_flush,pid1
+	zin_old_msg,はぁ、はぁ、はぁ．．．　う、うそ、ひどい．．．crcf_pid1の中に．．．いっぱい．．．,pid1
+	zin_old_msg,cf_pid1、cf_pid1、に、にんっ、し、しちゃ．．．,pid1
+	//種の枯渇を防ぐため、妊娠はしませんm(__)m
+	zin_old_msg,ふふふ、p_name3を捕らえたら、処刑する前にcrcf_pid2の子を孕んで腹の膨れたお前と対面させてやる,pid2
+	zin_old_msg,p_name3との戦の愉しみが増えたわ、crわははははは――！！,pid2
+	zin_old_msg,ううっ．．．ひくっ、ひぐっ．．．,pid1
+	zin_old_qnar,p_name1はp_name2に処女を奪われ。
+	set_non_virgin,pid1
+        goto,*tiaojiao
+
+*tiaojiao
+        zin_reg_init
+        zin_old_init
+        zin_old_fadeout,0,       
+        zin_reg_qnar,		一個月後
+	zin_old_img_pid,pid1,1
+        zin_old_msg,一個房間里架設著攝像機crp_name2正在調教著p_name1。
+        zin_old_msg,看起來已經調教的差不多了．．．,pid2
+	zin_old_msg,恩……阿……阿……好……好大……cr主人，祢的肉棒好大……阿！阿阿！,pid1
+        zin_reg_qnar,p_name2一把将p_name1抱了起来，以小孩撒尿的姿勢将p_name1的双腿分開，将里面誘人的蜜處呈現在攝像機面前，而p_name1的陰毛已消失不見，取而代之的穿在凸起陰蒂上的金色圓環，上面還刻着p_name2的性奴隸的字樣。
+	zin_old_msg,爽麼、母狗？我的大肉棒干的祢爽麼？,pid2
+	zin_old_msg,哦！　哦！！　哦．．．真爽！！實在太爽了！！！,pid1
+	zin_old_msg,我的騷穴被p_name2主人的大肉棒插得爽飛了！,pid1
+	zin_old_msg,祢一個月前可不是這麼説的阿cr現在怎変的這麼騒了？,pid2
+	zin_old_msg,哦哦……那時候我還不知道……哦哦……主人的厲害……,pid1
+	zin_old_msg,哦哦……p_name1的穴以后只能讓p_name2主人操了……用力…再用力……阿阿阿……阿阿阿……阿阿阿…阿阿阿………哦哦哦！,pid1
+        zin_reg_qnar,p_name1一邊看著攝像機的屏幕一邊被p_name2狂插。
+        zin_old_msg,唔阿阿…好深…好大…要死了…肉便器p_name1要死了…對不起p_name3，p_name1的處女已經被p_name2主人拿走了，以后只能讓祢看到p_name1被p_name2主人大肉棒破處的影像了…阿…
+        zin_old_msg,阿……阿……主人……頂……頂的好深……主人……快……快一点，快一点射到p_name1的子宮里……我要懐上p_name2的孩子……阿……
+	zin_old_msg,親主人……好夫君……p_name1的穴……舒服……死了……花……心都……被祢插碎了……p_name1……要上天了……阿……阿……阿……,pid1
+	zin_old_msg,p_name2主人的……大肉棒……好棒……阿……阿…小穴……阿……好滿足……阿……！,pid1
+        zin_old_qnar,p_name1はp_name2の妾にされた。
+        zin_old_exit
+        zin_reg_msg,都拍下來了巴cr把數據給我發到p_name3的宮殿去．,pid2
+	zin_reg_msg,告訴他送美女過來cr不然我就要讓他成為整個宇宙的小丑！,pid2
+	//敵覇王に仕官
+	set_sikan,pid1,pid2
+	//役職を妾に
+	set_yaku,pid1,3
+	zin_reg_button,16
+	zin_old_exit
+	end
+
+*hime
+	bgm_chg,58
+	bl_fadein,gzin8
+	zin_reg_event,p_name3の王宮,pid3,,,gzin8
+	zin_reg_msg,よもやcall_pid31がcrp_name2軍の手に落ちるとは．．．,0
+	zin_reg_msg,無事でいてくれ．．．cr．．．call_pid31．．,0
+	bl_fadeout
+	bgm_chg,61
+	bl_fadein,gzin6
+	zin_reg_event,特別室,pid2,pid1,,gzin6
+	zin_reg_qnar,捕虜となったp_name1はp_name2の特別室に囚われていた。
+	zin_reg_msg,沒想到p_name3的女兒被我抓到了阿．．．,0
+	zin_reg_msg,真是運氣不錯,cr早就想操p_name3的女兒了,0
+	zin_reg_msg,不要靠近我！cr再靠近我我就咬舌自盡！,1
+	zin_reg_msg,哈哈,如果祢敢這樣就不會讓的手下抓到了,0
+	bgm_se,32
+	zin_reg_event,特別室,pid2,pid1,zin3,gzin6
+	zin_reg_msg,不要！　放開我！cr不要阿、別看那裡！,1
+	zin_reg_msg,黑黑、好不容易才能抓到祢,怎能不讓我爽一爽吶,0
+	zin_reg_msg,祢可是p_name3的女兒阿、連我也覺得非常性奮阿,0
+	zin_reg_msg,ひうっ．．．！,1
+	zin_reg_msg,不愧是公主、連喘息聲都非常動聽阿,0
+	zin_reg_msg,ひっ．．．,1
+	bl_fadeout
+	zin_reg_msg,不要阿阿阿――！！,1
+	zin_old_init
+	bgm_chg,55
+	zin_old_img_pid,pid1,1
+	zin_old_msg,くっ．．．キツいっ．．．,pid2
+	zin_old_msg,阿！！！　疼、疼死了！！！,pid1
+	zin_old_msg,呵呵呵、果然還是處女阿。cr想必是p_name3珍惜了很久的巴,pid2
+	zin_old_msg,不要阿！！　call_pid13救救我、救救我！！！,pid1
+	zin_old_msg,黑黑、好不容易才能抓到祢,怎能不讓我爽一爽吶！,pid2
+	zin_old_msg,阿！！　阿！！　．痛！！,pid1
+	zin_old_msg,呵呵呵、p_name3的女兒的處女我確實收到了,pid2
+	zin_old_msg,ひっ．．．ひぐっ．．．cr痛い．．．痛い．．．,pid1
+	zin_old_msg,不愧是處女公主穴阿,真緊阿,pid2
+	zin_old_msg,哦！　痛阿、求求祢、不要再動了！,pid1
+	zin_old_msg,好痛阿．．．要死掉了．．．！！cr．．．恩、阿、阿阿！！,pid1
+	zin_old_msg,真爽阿？　插到p_name1的子宮里了！,pid2
+	zin_old_msg,一直裝出一副純潔的樣子、cr現在還不是乖乖的在被我干．．．,pid2
+	zin_old_msg,別想回到p_name3的身邊去了、p_name1乖乖做我的性奴隸巴,pid2
+	zin_old_msg,ううっ．．．call_pid13．．．cr對不起．．．對不起．．．,pid1
+	zin_old_msg,以後乖乖當我的性奴隸巴。cr乖乖給我生女兒,等女兒長大了又是一個好性奴,pid2
+	zin_old_msg,現在、讓我射滿祢的子宮巴！！！,pid2
+	zin_old_msg,不！不要！！　只有這個請不要！！！,pid1
+	zin_old_msg,不行、不要射在裏面阿！！　會懷孕的！！！,pid1
+	zin_old_msg,笨蛋！就是要讓祢懷上我的種阿！,pid2
+	zin_old_msg,哈哈、看到這幅表情！cr真是太有征服感了！,pid2
+	zin_old_msg,不會原諒祢！　不會原諒祢的！　寶寶之類的討厭阿！crひぐっ、ひぎぃぃぃ！！,pid1
+	zin_old_msg,えぐっ、痛、痛阿！！cr插的太深了！！！　快拔出來！！,pid1
+	zin_old_msg,高潮巴！cr被侵犯而懷孕的賤人p_name1っ！！,pid2
+	zin_old_msg,不要阿阿阿阿阿阿阿阿阿阿阿阿――――――！！！,pid1
+	zin_flush,pid1
+	zin_old_msg,はぁ、はぁ、はぁ．．．　う、うそ、ひどい．．．crcf_pid1の中に．．．いっぱい．．．,pid1
+	zin_old_msg,cf_pid1、cf_pid1、に、にんっ、し、しちゃ．．．,pid1
+	//種の枯渇を防ぐため、妊娠はしませんm(__)m
+	zin_old_msg,ふふふ、p_name3を捕らえたら、処刑する前にcrcf_pid2の子を孕んで腹の膨れたお前と対面させてやる,pid2
+	zin_old_msg,p_name3との戦の愉しみが増えたわ、crははははは――！！,pid2
+	zin_old_msg,ううっ．．．ひくっ、ひぐっ．．．,pid1
+	zin_old_qnar,p_name1はp_name2に処女を奪われ。
+	set_non_virgin,pid1
+                goto,*tiaojiao
+
+*tiaojiao
+        zin_reg_init
+        zin_old_init
+        zin_old_fadeout,0,       
+        zin_reg_qnar,		一個月後
+	zin_old_img_pid,pid1,1
+        zin_old_msg,一個房間里架設著攝像機crp_name2正在調教著p_name1。
+        zin_old_msg,看起來已經調教的差不多了．．．,pid2
+	zin_old_msg,恩……阿……阿……好……好大……cr主人，祢的肉棒好大……阿！阿阿！,pid1
+        zin_reg_qnar,p_name2一把将p_name1抱了起来，以小孩撒尿的姿勢将p_name1的双腿分開，将里面誘人的蜜處呈現在攝像機面前，而p_name1的陰毛已消失不見，取而代之的穿在凸起陰蒂上的金色圓環，上面還刻着p_name2的性奴隸的字樣。
+	zin_old_msg,爽麼、母狗？我的大肉棒干的祢爽麼？,pid2
+	zin_old_msg,哦！　哦！！　哦．．．真爽！！實在太爽了！！！,pid1
+	zin_old_msg,我的騷穴被p_name2主人的大肉棒插得爽飛了！,pid1
+	zin_old_msg,祢一個月前可不是這麼説的阿cr現在怎変的這麼騒了？,pid2
+	zin_old_msg,哦哦……那時候我還不知道……哦哦……主人的厲害……,pid1
+	zin_old_msg,哦哦……p_name1的穴以后只能讓p_name2主人操了……用力…再用力……阿阿阿……阿阿阿……阿阿阿…阿阿阿………哦哦哦！,pid1
+        zin_reg_qnar,p_name1一邊看著攝像機的屏幕一邊被p_name2狂插。
+        zin_old_msg,唔阿阿…好深…好大…要死了…肉便器p_name1要死了…對不起父皇，p_name1的處女已經被p_name2主人拿走了，以后只能讓祢看到p_name1被p_name2主人大肉棒破處的影像了…阿…
+        zin_old_msg,阿……阿……主人……頂……頂的好深……主人……快……快一点，快一点射到p_name1的子宮里……我要懐上p_name2的孩子……阿……
+	zin_old_msg,親主人……好夫君……p_name1的穴……舒服……死了……花……心都……被祢插碎了……p_name1……要上天了……阿……阿……阿……,pid1
+	zin_old_msg,p_name2主人的……大肉棒……好棒……阿……阿…小穴……阿……好滿足……阿……！,pid1
+        zin_old_qnar,p_name1はp_name2の妾にされた。
+        zin_old_exit
+        zin_reg_msg,都拍下來了巴cr把數據給我發到p_name3的宮殿去．,pid2
+	zin_reg_msg,告訴他送美女過來cr不然我就要讓他成為整個宇宙的小丑！,pid2
+	//敵覇王に仕官
+	set_sikan,pid1,pid2
+	//役職を妾に
+	set_yaku,pid1,3
+	zin_reg_button,16
+	zin_old_exit
+	end
+
+*hoka
+//敵覇王から見て虜囚の関係は(敵覇王の血縁だったらエンド)
+chk_family,pid1,pid2
+case_fam_妻
+//虜囚は敵覇王の元妃
+	end
+case_fam_娘
+case_fam_娘(養)
+//虜囚は敵覇王の元姫
+	end
+case_fam_姉
+case_fam_妹
+//虜囚は敵覇王の元王族
+	end
+default_fam
+//それ以外の処理
+	bgm_chg,61
+	bl_fadein,gzin40
+	zin_reg_event,特別地下牢,844,pid1,zin3,gzin40
+	zin_reg_qnar,捕虜となったp_name1はp_name2軍の下士官たちに嬲られていた。
+	bgm_se,32
+	zin_reg_msg,不要！　放開我！cr不要阿、別看那裡！,1
+	zin_reg_msg,挨呀、這個人還是處女阿,0
+	zin_reg_face_0,845
+	zin_reg_msg,誰來給p_name1破個處麼cr還是一起上巴,0
+	zin_reg_msg,不要阿！　誰來救救我！cr那裡不行阿！,1
+	zin_reg_face_0,844
+	zin_reg_msg,呵呵呵、cr我來第一個上巴,0
+	zin_reg_face_0,845
+	zin_reg_msg,切、沒法子了、祢先上巴,0
+	zin_reg_face_0,844
+	zin_reg_msg,做好覺悟巴、乖乖做我們的性奴隸．．．,0
+	zin_reg_msg,ひっ．．．,1
+	bl_fadeout
+	zin_reg_msg,不要阿阿阿――！！,1
+	zin_old_init
+	bgm_chg,55
+	zin_old_img_pid,pid1,1
+	zin_old_msg,くっ．．．真舒服．．．,844
+	zin_old_msg,阿！！！　疼、疼死了！！！,pid1
+	zin_old_msg,不要阿！！　call_pid13救救我、救救我！！！,pid1
+	zin_old_msg,哦哦、這種感觸真不愧是處女穴阿．．．真是太爽了,844
+	zin_old_msg,哦！！　哦！！　哦．．．哦疼！！,pid1
+	zin_old_msg,呵呵呵、祢的處女我確實收到了。cr看看巴、這就是祢自己的處女血,844
+	zin_old_msg,ひっ．．．ひぐっ．．．cr痛い．．．痛いよぉ．．．,pid1
+	zin_old_msg,不愧是處女穴阿,真緊阿,我還是第一次干處女阿．．．,844
+	zin_old_msg,哦！　痛阿、求求祢、不要再動了！,pid1
+	zin_old_msg,好痛阿．．．要死掉了．．．！！cr．．．恩、阿、阿阿！！,pid1
+	zin_old_msg,ほれほれ、我的肉棒插到祢的子宮了阿？,844
+	zin_old_msg,沒想到我們這些低級軍官還能干到祢這麼漂亮的美女阿、而且還是處女,844
+	zin_old_msg,ううっ．．．cf_pid1の．．．処女．．．,pid1
+	zin_old_msg,這不是真的．．．cf_pid1．．．ひぐっ、ううっ,pid1
+	zin_old_msg,無論祢怎麼哭、祢的處女膜也不會在回來了,844
+	zin_old_msg,乖乖讓我插、然後讓我的熱tane_strcr直接注入祢的子宮巴,844
+	zin_old_msg,不！不要！！　只有這個請不要！！！,pid1
+	zin_old_msg,不行、不要射在裏面阿！！　會懷孕的！！！,pid1
+	zin_old_msg,笨蛋！就是要讓祢懷上我的種阿！,845
+	zin_old_msg,哈哈、看到這幅表情！cr真是太想凌辱了！,845
+	zin_old_msg,不會原諒祢！　不會原諒祢的！　寶寶之類的討厭阿！crひぐっ、ひぎぃぃぃ！！,pid1
+	zin_old_msg,えぐっ、痛、痛阿！！cr插的太深了！！！　快拔出來！！,pid1
+	zin_old_msg,射了！ 就這樣給我懷孕巴！！,844
+	zin_old_msg,不要阿阿阿阿阿阿阿阿阿阿阿阿――――――！！！,pid1
+	zin_flush,pid1
+	zin_old_msg,はぁ、はぁ、はぁ．．．　う、うそ、ひどい．．．crcf_pid1的裏面．．．好多．．．,pid1
+	zin_old_msg,cf_pid1、cf_pid1、に、にんっ、し、しちゃ．．．,pid1
+	//種の枯渇を防ぐため、妊娠はしませんm(__)m
+	zin_old_qnar,p_name1は処女を奪われ、気を失うまで何度も犯され続けた。
+	set_non_virgin,pid1
+        goto,*tiaojiao
+
+*tiaojiao
+        zin_reg_init
+        zin_old_init
+        zin_old_fadeout,0,       
+        zin_reg_qnar,		一個月後
+	zin_old_img_pid,pid1,1
+        zin_old_msg,一個房間里架設著攝像機cr下級軍官正在調教著p_name1。
+        zin_old_msg,看起來已經調教的差不多了．．．,844
+	zin_old_msg,恩……阿……阿……好……好大……cr主人，祢的肉棒好大……阿！阿阿！,pid1
+        zin_reg_qnar,p_name1以小孩撒尿的姿勢将p_name1的双腿分開，将里面誘人的蜜處呈現在攝像機面前，而p_name1的陰毛已消失不見，取而代之的穿在凸起陰蒂上的金色圓環，上面還刻着公共性奴隸的字樣。
+	zin_old_msg,爽麼、母狗？我們的大肉棒干的祢爽麼？,845
+	zin_old_msg,哦！　哦！！　哦．．．真爽！！實在太爽了！！！,pid1
+	zin_old_msg,我的騷穴被主人的大肉棒插得爽飛了！,pid1
+        zin_reg_qnar,其他的下級軍官也紛紛靠了過去，七手八脚的将p_name1的身上的衣服脱光，挺着爭獰的肉棒紛紛插進p_name1的菊穴和嘴中，肆意玩弄着p_name1的肉体，發泄着自己沸騰的欲火。
+	zin_old_msg,祢一個月前可不是這麼説的阿cr現在変的這麼騒了阿？,844
+	zin_old_msg,哦阿～是阿……精液便所p_name1很希望在大庭广衆之下被所有人輪奸，在路上只要想到自己没有穿内衣，整个人都快要高潮了……唔～”p_name1發出淫亂的声音，美麗的臉上沾満了精液。,pid1
+	zin_old_msg,哦哦……p_name1的穴被大家操的好爽！……用力…再用力……阿阿阿……阿阿阿……阿阿阿…阿阿阿………哦哦哦！,pid1
+        zin_reg_qnar,一批又一批的人在p_name1美麗的身體上射了精。
+        zin_old_msg,原本清純可愛的少女現在渾身沾満精液和尿水，柔軟的長髮已経看不出原来的顔色，光滑平坦的小腹此刻高高鼓起，不時有精液从p_name1的嘴中溢出，那明亮的眼眸不住上翻，身体更是宛如死人一般，一動不動。
+	zin_old_msg,即使如此，男生們也没有放過可憐的p_name1，一根又一根的肉棒不断蹂躪着嬌嫩的蜜穴和肛菊，原本小巧的穴口被肉棒擴大了数倍，却依然緊緊包裹着侵犯自己的肉棒。
+        zin_old_msg,幾小時之後，p_name1失神的倒在牢房里，身上満是干涸的精液，陰道口不住収縮，連帯肛門也微微開合，嘴里、蜜穴、後庭等数処洞口不停流淌着渾濁濃白的淫液……
+	zin_old_msg,就這樣，p_name1成爲了下級士官的肉便器。
+        zin_old_exit
+	zin_reg_button,16
+	zin_old_exit
+end

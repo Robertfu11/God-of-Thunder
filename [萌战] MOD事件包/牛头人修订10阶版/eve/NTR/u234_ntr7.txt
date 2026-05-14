@@ -1,0 +1,81 @@
+/////NTR_ver2.2（仕官 春药）/////
+*Start
+
+set_epid1,eveflg108
+set_epid2,yome_player
+set_epid3,player
+
+bgm_chg,64
+zin_reg_event,指挥中心监控室,,pid2,,gzin7
+zin_reg_qnar,这个晚上、p_name2独自一个人在监控室守夜。
+zin_reg_qnar,原来一起加班的女同事因为家里有事所以拜托给了p_name2。
+zin_reg_msg,今天晚上看来也没什么事呢……cr好无聊啊……？,1
+zin_reg_msg,稍微有些口渴了呢……cr去喝点水吧……,1
+zin_reg_qnar,p_name2喝了口水……。
+zin_reg_qnar,半小时后……。
+zin_reg_msg,嗯……为什么……cr感觉这么热……啊……,1
+zin_reg_msg,不行了……嗯……,1
+zin_old_init
+zin_old_img_str,am_ziwei01,20,1
+zin_old_qnar,p_name2脱去了衣服开始自慰起来。
+zin_old_img_str,am_ziwei02,20,1
+zin_old_img_str,am_ziwei03,20,1
+zin_old_img_str,am_ziwei04,20,1
+zin_old_img_str,am_ziwei05,20,1
+zin_old_exit
+zin_reg_event,指挥中心监控室,pid1,pid2,zin116,gzin7
+zin_reg_qnar,这时从黑暗中走出来一个人——p_name1。
+zin_reg_msg,（这种药药性很好呢……cr再清纯的女人都会变成淫妇的cr而且对方完全没有记忆！）,0
+zin_reg_msg,（今晚就放松的享用p_name2 这块嫩肉吧！）,0
+zin_reg_msg,哎？你……是谁？cr不管怎样……快来干我……cr好痒啊……,1
+zin_reg_msg,那当然……cr今晚，p_name3的妻子p_name2就是一只人见人骑的小母狗呢,0
+zin_reg_msg,……嗯……cr怎样都行……cr求求你……我要……,1
+zin_reg_msg,哈哈……cr那么……卫兵们一起来吧！,0
+psn_putsex,1,0,1
+zin_reg_msg,……嗯……cr嗯……,1
+zin_reg_msg,……嗯……cr啊……,1
+zin_reg_msg,……射了……cr啊……,0
+zin_old_init
+zin_old_img_str,p7_chunyao,22,1
+zin_old_qnar,p_name1和守卫就这么干了p_name2整整一夜……
+add_eveflg,103,30
+add_eveflg,110,10
+dec_sinmitu,pid2,10
+rnd,6
+case0
+	chk_sts,pid2,16,0
+	chk_sts_then
+		set_ninsin,pid2,pid1
+		goto,*ret
+	chk_sts_else
+		goto,*ret
+case1
+	chk_sts,pid2,16,0
+	chk_sts_then
+		set_ninsin,pid2,840
+		goto,*ret
+	chk_sts_else
+		goto,*ret
+
+case2
+goto,*ret
+case3
+goto,*ret
+case4
+goto,*ret
+case5
+	goto,*ret
+*ret
+zin_old_exit
+zin_reg_event,指挥中心监控室,pid1,pid2,,gzin7
+zin_reg_qnar,天亮后、p_name2在座位上醒了过来……
+zin_reg_msg,（睡得好香、昨天晚上怎麼突然睡着了）,1
+zin_reg_msg,早上好啊！p_name2,0
+zin_reg_msg,p_name1先生早！,1
+zin_reg_msg,（嘴里怎么有种怪怪的味道？cr错觉吧~）,1
+zin_reg_msg,那我先回去了！cr今天也要加油工作啊！,1
+zin_reg_msg,好！cr（嘿嘿，就这樣夹着这包我送你的精液给你老公干吧！）,0
+set_eveflg,104,7
+zin_reg_button,0
+zin_reg_exit
+end

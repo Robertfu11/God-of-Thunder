@@ -1,0 +1,19 @@
+eve_start
+if_val,„ë¹¦:player=13000
+//if_amon,2
+if_val,×´‘B:player=3
+eve_end
+set_eveflg,196,0
+for,PMAX,196,1
+                chk_msts,eveflg196,Ò†Íõ,poid_player,Èõ¤ß,1,×´‘B,2,NON,0,NON,0
+                chk_msts_then
+				set_epid2,eveflg196
+				//bl_fadein,gzin8
+                    //zin_reg_event,,player,pid2,,
+                    //zin_reg_msg,ÏÂªz,0
+                   set_horyo,pid2,poid_player
+                 chk_msts_else
+                    continue
+                 next
+set_eveflg,196,0
+end

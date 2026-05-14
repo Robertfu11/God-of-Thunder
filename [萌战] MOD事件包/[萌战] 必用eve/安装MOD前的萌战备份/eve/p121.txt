@@ -1,0 +1,22 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,機庫,pid1,0,,gzin15
+zin_reg_msg,p_name3大人、p_name1往那邊走了,0
+zin_reg_msg,無論無何也無法控制自己的情緒啊,0
+zin_reg_qnar,p_name1從行星出逃 在p_name3首星附近被抓獲了。
+bl_fadeout
+bl_fadein,gzin8
+zin_reg_event,p_name3的王宮,pid3,pid1,,gzin8
+zin_reg_msg,這不是p_name1殿下嘛、來此有何貴幹？,0
+zin_reg_msg,仰慕p_name3大人而流亡至此,1
+zin_reg_msg,啥、你舍棄了自己的國家！！,0
+zin_reg_msg,是的、已經沒有半點留戀,1
+zin_reg_msg,唔、居然做到這一步．．．,0
+zin_reg_msg,知道了、我承認你的流亡,0
+zin_reg_msg,今日旅途勞頓cr還請好好休息,0
+zin_reg_msg,非常感謝、p_name3大人,1
+zin_reg_title,p_name1成為了部下。
+zin_reg_button,0
+zin_reg_exit
+set_pmov,pid1,pid3
+end

@@ -1,0 +1,85 @@
+//王族オルド襲う　相手：妹
+//■Ｈ体位：正常位
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,今日だけは我慢できないんだ,0
+	zin_reg_msg,兄の思いを汲んでくれ,0
+	zin_reg_msg,だって．．．アレ、痛いんだもの,1
+	zin_reg_msg,大丈夫だ、今日は痛くないようにするから,0
+	zin_reg_msg,あ、call_pid1！！,1
+	zin_reg_msg,フフ、かわいいなp_name2は,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,うううっ．．．こんなの、ひどい、の．．．いたい、の．．．,pid2
+	zin_old_msg,大丈夫だよ、すぐに気持ちよくしてあげるから,pid1
+	zin_old_msg,んん．．んぅう．．ぁ．．ああああっ．．．,pid2
+	zin_old_msg,はぁ．．ひぅ．．おねがい、なのっ．．．もう、やめて、ほしいのっ．．．,pid2
+	zin_old_msg,やめられないよ．．．だって、call_pid2の身体はこんなに気持ちいいんだから,pid1
+	zin_old_msg,んん．．んああ．．ひ．．ひん．．ひぅううっ．．．,pid2
+	zin_old_msg,嫌だって言いながら、call_pid2もしっかり感じてきているじゃないか？,pid1
+	zin_old_msg,気持ちいいんだろう？,pid1
+	zin_old_msg,ちがう、の．．んん．．ちがう、の．．ほんとうに．．いや、なのっ．．．,pid2
+	zin_old_msg,そうかな？じゃあ、試してあげるよ,pid1
+	zin_old_msg,んん．．ひぅうう．．ふああ．．ぁ．．あああっ．．．,pid2
+	zin_old_msg,おく．．おく．．ずんずん、しないで．．なのっ．．．おかしく、おかしく．．なるのっ．．．,pid2
+	zin_old_msg,ああ、たくさんおかしくしてあげるよ,pid1
+	zin_old_msg,ひん．．ひぅう．．んん．．もう．．もう．．callself_pid2．．ふああああああっ！,pid2
+	zin_flush,pid2
+	zin_old_msg,めの、まえ．．まっしろに．．なって、るのっ．．．んんんっ．．．あついっ．．．あつい、のっ．．．,pid2
+	zin_old_msg,あああ．．ひぅ．．ひぅううん．．んんんんんんっ．．．,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,兄の言うことを聞くんだ,0
+	zin_reg_msg,ダメ、お願いだから変なことしないで！,1
+	zin_reg_msg,お前、初めてなんだろ？,0
+	zin_reg_msg,心配することはない,0
+	zin_reg_msg,さあ、すべてを兄に任せるのだ,0
+	zin_reg_msg,だって、だって．．．,1
+	zin_reg_msg,怖いよ．．．call_pid1,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,ひぐっ．．．あっ．．．い、たいっ．．．いたい、のっ．．．,pid2
+	zin_old_msg,call_pid2の身体に、一生消えない傷を刻みつけてあげたよ．．．,pid1
+	zin_old_msg,これでcall_pid2は、callself_pid1のものだ,pid1
+	zin_old_msg,ちがう、のっ．．．こんな．．．いたくて、かなしいの．．．,pid2
+	zin_old_msg,大丈夫、すぐに気持ちよくしてあげるよ,pid1
+	zin_old_msg,んんんっ．．んぅう．．ひぐ．．い、たい．．いたい、の．．．,pid2
+	zin_old_msg,うごいちゃ．．うごいちゃ．．だめ．．だめなのっ．．．,pid2
+	zin_old_msg,痛いのは今だけさ。すぐに気持ちよくしてあげる．．．,pid1
+	zin_old_msg,ひ．．ひん．．ああ．．ひぅ．．ううううっ．．．,pid2
+	zin_old_msg,おかしい、のっ．．．いやなのに．．おなかのなか、ジンジン．．するのっ．．．,pid2
+	zin_old_msg,でも．．やなの．．call_pid1．．こわいの．．やめて、ほしいのっ．．．,pid2
+	zin_old_msg,やめられないよ．．．そろそろ、たっぷりと中に出してあげるよ,pid1
+	zin_old_msg,んん．．な、なかって．．なにっ？なんのことか．．んん．．わかん、ないのっ．．．,pid2
+	zin_old_msg,すぐにわかるよ．．．,pid1
+	zin_old_msg,あああ．．ズブズブ．．い、た．．ああ．．あ．．ああ．．んんんんっ！,pid2
+	zin_flush,pid2
+	zin_old_msg,ひぅううっ！なにか．．でてるのっ．．．おなかの、なかっ．．．あつい、のっ．．．,pid2
+	zin_old_msg,ぁ．．．ぁ．．．こんなのっ．．．こんなの、いや、なのっ．．．,pid2
+	end
+//孕みパターン
+case_botebara
+	zin_reg_msg,フフ、我慢しているのではないのか？,0
+	zin_reg_msg,本当はほしくて仕方ないのであろう？,0
+	zin_reg_msg,そ、そんなこと．．．ないもん,1
+	zin_reg_msg,大丈夫だ、お腹の赤子には気をつけるから,0
+	zin_reg_msg,で、でも．．．,1
+	zin_reg_msg,さあ、こっちへ来なさい,0
+	zin_reg_msg,う、うん．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,んん．．だめ．．うごいちゃ．．だめ．．だめだよっ．．．,pid2
+	zin_old_msg,ひううう．．ひぅん．．ああ．．うん．．んんんっ．．．,pid2
+	zin_old_msg,あの小さかった胸が、こんなに大きくなって．．．興奮するよ,pid1
+	zin_old_msg,母乳は出るのか？　どれ試してみるとしよう．．．,pid1
+	zin_old_msg,ふあああ．．おっぱい．．おっぱい、かぷかぷするの．．だめぇっ．．．,pid2
+	zin_old_msg,まだ出ないみたいだな、残念だ。けど、しっかり感じてるみたいだな,pid1
+	zin_old_msg,フフッ．．．そろそろ、man_strの中に、call_pid12が大好きなものをたくさん出してやろう,pid1
+	zin_old_msg,ひぅ．．ひぅん．．だめなの．．ドロドロ．．おなかの、おくで．．ドピュドピュするの．．だめえええっ！,pid2
+	zin_flush,pid2
+	end

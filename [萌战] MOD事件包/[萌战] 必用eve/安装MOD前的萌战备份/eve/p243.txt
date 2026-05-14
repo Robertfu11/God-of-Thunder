@@ -1,0 +1,47 @@
+bgm_chg,54
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin18
+zin_reg_qnar,p_name1訪問了p_name2的住所。
+chk_pterm,pid2
+case_pterm0
+	zin_reg_msg,嘛、p_name1！！,1
+	zin_reg_msg,p_name2、我又過來了,0
+	zin_reg_msg,忘不了我的身體嗎？,1
+	zin_reg_msg,那好喔、今天會好好服侍你喔,1
+	goto,*exec_old
+case_pterm1
+	zin_reg_msg,p_name1、太過分了吧,1
+	zin_reg_msg,好幾個月都沒有聯絡了,1
+	zin_reg_msg,抱歉了cr雖然一直想連絡妳．．．,0
+	zin_reg_msg,真是、還以為你已經厭倦我了,1
+	zin_reg_msg,才沒有那回事,0
+	zin_reg_msg,啊嗯！！,1
+	goto,*exec_old
+case_pterm2
+case_pterm3
+	zin_reg_msg,你哪位？,1
+	zin_reg_msg,p_name1呀cr想不起來嗎？,0
+	zin_reg_msg,抱歉啦、沒印象,1
+	zin_reg_msg,再見,1
+	zin_reg_face_1,0
+	zin_reg_msg,喂、等等！！,0
+	zin_reg_button,0
+	zin_reg_exit
+	set_sinmitu,pid2,5
+	end
+
+*exec_old
+	bgm_chg,21
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,p_name1、如何呀？　這樣舒服嗎？,pid2
+	zin_old_msg,啊、啊啊．．．真是太．．．太爽了,pid1
+	zin_old_msg,呼呼呼、那麼、你也努力動動腰吧,pid2
+	zin_old_msg,了、了～解！！cr運氣好的話、還可以讓我們有個孩子呢,pid1
+	zin_old_msg,已經喝了避妊藥了．．．不可能啦,pid2
+	zin_old_msg,什麼！！,pid1
+	zin_old_qnar,p_name1被狠狠榨汁直到天明。,0
+	zin_reg_button,16
+	zin_reg_exit
+	set_non_virgin,pid2
+	end

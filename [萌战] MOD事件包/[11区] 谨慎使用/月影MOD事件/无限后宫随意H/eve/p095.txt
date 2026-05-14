@@ -1,0 +1,16 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,民眾暴動,pid1,pid2,,gzin8
+zin_reg_msg,p_name1大人、有重大情況,1
+zin_reg_msg,怎麼了,0
+zin_reg_msg,在屬領的各個行星上的民眾都進行了示威遊行,1
+zin_reg_msg,過於好戰的民意會對我軍的部署造成消極的影響,1
+zin_reg_msg,他們想造反嗎！！,0
+zin_reg_msg,有怨氣也是自然的,1
+zin_reg_msg,只要有一次勝利、民眾們就會期望著下一次的勝利,1
+zin_reg_msg,這也應該會讓去敵國增援的艦隊士氣高昂,1
+zin_reg_msg,嗯．．．,0
+zin_reg_title,由於暴動、民忠降低了。
+zin_reg_button,0
+zin_reg_exit
+end

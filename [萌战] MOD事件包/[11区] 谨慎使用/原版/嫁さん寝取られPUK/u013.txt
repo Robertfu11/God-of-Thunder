@@ -1,0 +1,52 @@
+//xeve
+//続ネトラレ妻
+eve_start
+	if_eveflg,160,3
+eve_end
+
+set_eveflg,160,4
+set_epid1,eveflg150,0
+set_epid2,yome_player,0
+set_sinmitu,pid2,25
+
+bgm_chg,60
+zin_reg_init
+zin_reg_event,妻の裏切り,pid1,pid2,,gzin18
+zin_reg_qnar,p_name2は夫に隠れてp_name1と密会していた。
+	zin_reg_msg,まさか奥さんの方から呼び出してくれるとは思わなかったな,0
+	zin_reg_msg,そんなにcf_pid1のこれが気に入ったのかい？,0
+	zin_reg_msg,そ、そんなこと．．．,1
+	zin_reg_msg,まあいい、じゃあまずは口でしてくれよcr（カチャカチャ）,0
+	zin_reg_msg,！！やっぱり．．．おおきい．．．！,1
+	zin_reg_msg,そうか？,0
+	zin_reg_msg,夫とは全然．．．,1
+	zin_reg_msg,cf_pid1のは旦那と比べてどうなんだ？,0
+	zin_reg_msg,．．．．,1
+	zin_reg_msg,はっきり言わないと帰っちまうぜ？,0
+	zin_reg_msg,ま、待って下さい！crいいますっいいますから！！,1
+	zin_reg_msg,長さは．．．３倍．．．ううん．．．４倍ぐらいはあります,1
+	zin_reg_msg,太さなんて多分．．．cr10倍ぐらい．．．cr（ごくっ）,1
+	zin_reg_msg,ハッcrまあcf_pid1のがおおきすぎるんだがな,0
+	zin_reg_msg,（こんなの見せられたら．．．もう我慢なんて出来ないっ）,1
+	zin_reg_msg,はぐっ．．．んん．．．ふご．．．,1
+	zin_reg_msg,おおお．．．cr夢中でしゃぶってやがる．．．,0
+	zin_reg_msg,この間仕込んでやったとおり、根本からしっかりしゃぶれよ,0
+	zin_reg_msg,れろっ．．．ちゅっ,1
+	zin_reg_msg,はむっ．．じゅるるるるる,1
+	zin_reg_msg,よし、もういいぞcr突っ込んでやるから服を脱いで横になれ,0
+	zin_reg_msg,はいっ,1
+psn_putsex,1,pid2,1
+	zin_reg_msg,あう．．あああ．．crすごい．．．大きいわ．．．,1
+	zin_reg_msg,いやぁ．．．．．crさけちゃううう．．．,1
+	zin_reg_msg,フフ、どうだ．．．旦那の粗チンと比べてみろよ！！,0
+	zin_reg_msg,最高です．．．相手になんかならないっ,1
+	zin_reg_msg,このおちんぽ．．．凄すぎます！,1
+	zin_reg_msg,奥さんの膣も最高だcrすっかりcf_pid1のちんぽサイズに広がりやがって,0
+	zin_reg_msg,そうなのっcf_pid2の膣．．．あなたのでかちんぽ専用サイズになったのっ！,1
+	zin_reg_msg,もう夫のじゃあ満足できません！,1
+	zin_reg_msg,オラッ！オラッ！これで．．．フィニッシュだ！！,0
+	zin_reg_msg,あっ、んあああ！！しゅごいいいぃぃぃぃ！,1
+	zin_reg_msg,（ごめんなさい．．．あなた）,1
+zin_reg_button,0
+zin_reg_exit
+end

@@ -1,0 +1,50 @@
+eve_start
+	if_eveflg,56,1
+	//ホスエンの覇王はパグンである
+	if_cap,22,621
+	//ワード、パグン配下
+	if_poid,813,621
+	//カンシ　sts6である
+	if_psts,356,6
+eve_end
+
+set_eveflg,56,2
+
+set_epid1,0
+set_epid2,0
+set_epid3,0
+
+bgm_chg,56
+zin_reg_event,,813,,,gzin12
+zin_reg_qnar,瓦德雖然打算逃離霍斯因，但結果還是沒能下定決心。
+zin_reg_msg,真是的……cr那個吵死人的老頭子不在了的話雖然是舒暢很多啦……,0
+zin_reg_msg,搞什麼啊，這種窒息感……,0
+zin_reg_qnar,忽然，瓦德感覺到背後有人的氣息。
+zin_reg_msg,是誰！！,0
+zin_reg_face_1,356
+zin_reg_msg,瓦德大人……,1
+zin_reg_msg,坎西啊,0
+zin_reg_msg,老頭子命令你來的？,0
+zin_reg_msg,是的cr說是希望我們馬上逃離,1
+zin_reg_msg,…………,0
+zin_reg_msg,果然還是算了,0
+zin_reg_msg,咦？,1
+zin_reg_msg,扔下老頭子跟這顆惑星上的傢伙，就我一個卷著尾巴逃出去什麼的，我可做不到,0
+zin_reg_msg,瓦德大人……cr您這是怎麼了？,1
+zin_reg_msg,不知道啦cr不過，不找個方法讓盡量多的人活下去的話,0
+zin_reg_msg,對了，坎西cr你腦子不是很好嘛，給我想個好辦法,0
+zin_reg_msg,…………cr明白了,1
+zin_reg_msg,哦哦，這麼快就想到了啊cr不愧是你啊！！,0
+zin_reg_msg,我認為這個方法能行,1
+bgm_se,15
+zin_reg_qnar,坎西往瓦德的腹部狠狠打出了一拳。
+zin_reg_msg,哈……哈哈……,0
+zin_reg_msg,膽子……大起來……了啊……,0
+zin_reg_face_0,0
+zin_reg_msg,抱歉失禮了,1
+zin_reg_msg,這是巴庫恩大人的命令,1
+zin_reg_qnar,坎西帶上瓦德逃離了霍斯因。
+zin_reg_button,0
+//ワード仮死設定
+set_kasi,813
+end

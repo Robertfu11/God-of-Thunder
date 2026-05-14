@@ -1,0 +1,14 @@
+eve_start
+	if_date,78,6
+	//阿達姆斯が覇王
+	if_pkun,10,13000
+eve_end
+
+set_sikan,312,10
+
+chk_exeplayer,10,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+set_run_msg,五月在阿達姆斯麾下仕官了。

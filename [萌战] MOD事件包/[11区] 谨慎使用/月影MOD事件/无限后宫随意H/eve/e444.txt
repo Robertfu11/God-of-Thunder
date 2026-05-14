@@ -1,0 +1,31 @@
+eve_start
+    if_date,81,9
+    if_haou,8
+eve_end
+
+add_money,8,100000
+
+chk_exeplayer,8,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,56
+zin_reg_event,,8,810,,gzin33
+zin_reg_qnar,バ財団的代表就資金融資一事前來拜訪阿布拉姆。
+zin_reg_msg,那麼，我們會先把馬上就能送過來的１０萬金准備好,1
+zin_reg_msg,真不好意思，一直以來幫我這麼多,0
+zin_reg_msg,沒這回事，托陛下的福我們財團也賺了不少,1
+zin_reg_msg,要是有什麼能做的事，我們絕對不會有所保留,1
+zin_reg_msg,嗯，話說回來……cr那孩子過得還好嗎？,0
+zin_reg_msg,請盡管放心，陛下,1
+zin_reg_msg,他已經成長為一個非常活潑的孩子了,1
+zin_reg_msg,這樣啊，那就好了,0
+zin_reg_msg,要跟他見上一面嗎？,1
+zin_reg_msg,不，現在還是算了吧,0
+zin_reg_msg,不過，我正想著有一天要把他作為王子接回來呢,0
+zin_reg_msg,是這樣的嗎cr為了那孩子著想的話，這應該是最好的辦法了吧,1
+zin_reg_msg,是啊……,0
+zin_reg_title,獲得了１０萬金的資金提供。
+zin_reg_button,0
+end

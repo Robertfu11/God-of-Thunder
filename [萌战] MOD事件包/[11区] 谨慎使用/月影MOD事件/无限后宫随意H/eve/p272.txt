@@ -1,0 +1,10 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,p_name2艦隊,pid1,pid2,,gzin19
+zin_reg_msg,p_name2、我軍把惑星buf_str1作為攻略目標,0
+zin_reg_msg,一旦準備就緒、直接向惑星buf_str1出發,0
+zin_reg_msg,了解,1
+zin_reg_title,buf_str1作為攻略目標。
+zin_reg_button,0
+zin_reg_exit
+end

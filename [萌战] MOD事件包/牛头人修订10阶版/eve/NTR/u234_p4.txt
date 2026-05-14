@@ -1,0 +1,38 @@
+eve_start
+        if_val,役職:player>0
+        if_val,派閥:player>0
+eve_end
+zin_reg_msg,今天是4号呢……,0
+//无异常1阶直接入剧本 有异常重设角色
+chk_mval,eveflg235=1,,,,
+chk_mval_then
+	goto,*ust
+	end
+chk_mval_else
+
+rnd,7
+case0
+case1
+	txtload,NTR\u234_repeat
+	end
+case2
+case3
+case4
+case5
+case6
+*ust
+get_mpid,性別=1,状態=2,覇王=poid_player,部下!player,友好>55,特殊!1,勲功>=10000
+set_eveflg,234,pval
+chk_mval,eveflg234>0,eveflg234!eveflg106,eveflg234!eveflg107,,
+	chk_mval_then
+	chk_family,eveflg234,player
+		case_fam_兄
+		case_fam_弟
+		case_fam_父
+		case_fam_息子
+		case_fam_息子(养)
+		end
+		default_fam
+		txtload,NTR\u234_ntr4
+	chk_mval_else
+end

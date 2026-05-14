@@ -1,0 +1,15 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,自治獨立 行星buf_str1,pid1,pid2,,gzin8
+zin_reg_msg,p_name1大人！！cr不好了,1
+zin_reg_msg,行星buf_str1的民眾獨立了,1
+zin_reg_msg,你說什麼！！,0
+zin_reg_msg,buf_str1的行星管理是幹什麼吃的！！,0
+zin_reg_msg,真、真的非常抱歉,1
+zin_reg_msg,因為你的過錯、又將給軍隊增加沉重的負擔,0
+zin_reg_msg,你給我小心一點,0
+zin_reg_msg,是、是．．．,1
+zin_reg_title,p_name2的忠誠降低了。
+zin_reg_button,0
+zin_reg_exit
+end

@@ -1,0 +1,8 @@
+upd_sts,poid_player,«Ši,11
+upd_sts,player,«Ši,11
+del_union,poid_player
+ chk_sts,player,ŒMŒ÷,<12080
+chk_sts_then
+                        upd_sts,player,ŒMŒ÷,6000
+chk_sts_else
+                        end

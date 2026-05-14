@@ -1,0 +1,14 @@
+eve_start
+	if_eveflg,4,2
+	if_aft_date,72,1
+//°¢Ø†¿Õ®”ÁË¹Ù
+	if_psts,7,2
+//¥Õ¥¡©`¥êÅRËÀ î‘B
+	if_psts,574,6
+eve_end
+
+set_eveflg,4,3
+set_sikan,574,7
+//°¢Ø†¿Õ ¥Õ¥¡©`¥ê¤È½Y»é
+set_pkon,7,574
+upd_sts,574,1,30

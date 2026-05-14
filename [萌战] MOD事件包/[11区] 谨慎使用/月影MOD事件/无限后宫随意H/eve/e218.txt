@@ -1,0 +1,16 @@
+//阿希、マイスへ遷都する
+eve_start
+	if_eveflg,22,1
+	//阿希は並非玩家腳色
+	if_not_player,432,0
+	//マイスは阿希配下
+	if_hid,21,432
+	//ゼファーは阿希の領地ではない
+	if_not_hid,17,432
+	//マイス並非首都
+	if_not_cap,21,432
+eve_end
+
+set_eveflg,22,2
+//遷都処理
+sento,432,21

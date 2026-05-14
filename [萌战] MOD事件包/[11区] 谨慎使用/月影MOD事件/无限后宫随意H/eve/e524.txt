@@ -1,0 +1,48 @@
+eve_start
+	if_eveflg,68,<10
+	//天王が生きている
+	if_haou,669
+	//ラーが生きている
+	if_haou,626
+	//ラーと天王は同盟していない
+	if_not_uni,669,626
+	//普羅貝特がラーを攻撃目標にしている（同盟狀態ではない）
+	if_target_hao,736,626
+	//阿莫斯、普羅貝特配下
+	if_poid,423,736
+	//阿姆、普羅貝特配下
+	if_poid,751,736
+	if_money,736,>240000
+eve_end
+
+set_eveflg,68,13
+
+chk_exeplayer,736,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+zin_reg_event,普羅貝特的王宮,736,423,,gzin8
+zin_reg_qnar,阿莫斯向成為霸王的普羅貝特提議了與雷同盟的提案。
+zin_reg_msg,陛下、不能和雷開戰啊,1
+zin_reg_msg,如果與雷作戰，因為他的奇謀我們軍隊將承擔巨大的破壞,1
+zin_reg_msg,阿莫斯啊，雷有這麼可怕麼,0
+zin_reg_msg,陛下，雷是這宇宙中戰謀最出色的男人。,1
+zin_reg_msg,不要輕視那個男人,1
+zin_reg_msg,啊、母親．．.,0
+zin_reg_face_0,751
+zin_reg_msg,阿莫斯先生,0
+zin_reg_msg,與雷締結同盟有什麼利益？,0
+zin_reg_msg,而我們有多少損失?,0
+zin_reg_msg,最好是同盟後進行壓制成為我國的領土不是麼？,0
+zin_reg_msg,不只是與雷,1
+zin_reg_msg,即使雷勝利了，下次天王來了又如何處置呢,1
+zin_reg_msg,雷和天王雙方都不能與他們交戰,1
+zin_reg_msg,天王一直希望我們滅亡的，現在我們只有與雷聯手。,1
+zin_reg_msg,我知道了cr你說的對。,0
+zin_reg_msg,那麼一切與雷交涉就交給阿莫斯先生了。,0
+zin_reg_msg,好的,1
+zin_reg_button,0
+//zin_reg_exit
+end

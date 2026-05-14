@@ -1,0 +1,399 @@
+auth_uid,123D
+//プレイヤー勢力開始
+chk_mval,状態:player!2,,,,
+chk_mval_then
+	//プレイヤーが覇王か部下プレイでなければここで終了
+	end
+chk_mval_else
+set_eveflg,212,0
+set_eveflg,213,0
+//プレイヤー勢力は特別枠
+chk_eveflg,114,0
+chk_eveflg_then
+	set_eveflg,114,poid_player
+	set_eveflg,115,信念:poid_player
+chk_eveflg_else
+chk_eveflg,114,!poid_player
+chk_eveflg_then
+	//現在の覇王と設定の覇王が異なる→覇王が交代した
+	upd_sts,eveflg114,信念,-200
+	upd_sts,eveflg114,信念,eveflg115
+	set_eveflg,114,poid_player
+	set_eveflg,115,信念:poid_player
+chk_eveflg_else
+chk_mval,状態:eveflg114!2,,,,
+chk_mval_then
+	//プレイヤー覇王が君臨していなければ終了
+	end
+chk_mval_else
+set_eveflg,212,世論:eveflg114
+set_eveflg,214,poid_player
+set_eveflg,219,eveflg212
+set_epid1,poid_player
+set_epid2,781
+//惑星の保有数をチェック
+set_eveflg,220,0
+for,SMAX,210,1
+	chk_mval,領王:eveflg210=poid_player,,,,
+	chk_mval_then
+		add_eveflg,220,1
+	chk_mval_else
+	continue
+next
+chk_eveflg,117,0
+chk_eveflg_then
+	set_eveflg,117,eveflg220
+chk_eveflg_else
+chk_mval,eveflg117>eveflg220,,,,
+chk_mval_then
+	//前ターンの保有数より減っていれば好戦モード
+	set_run_msg,[世論拡張] 惑星を失ったことで国内世論が好戦になりました
+	set_seron,poid_player,0
+	//goto,*endplayerseron
+chk_mval_else
+//今回の惑星数を格納
+set_eveflg,117,eveflg220
+chk_eveflg,212,>55
+chk_eveflg_then
+	//反戦
+	//最大派閥長の信念が武闘かどうか
+	get_bgst_habatu,eveflg214,0
+	chk_mval,pval!0,信念:pval>60,,,
+	chk_mval_then
+		//武闘派の活動により世論を好戦へ
+		add_eveflg,212,-2
+		// 1/2で大成功
+		rnd,2
+		case0
+			add_eveflg,212,-1
+		case1
+		set_seron,poid_player,eveflg212
+		set_run_msg,[世論拡張] 好戦派が活発に活動中
+	chk_mval_else
+		//イベント中に世論が変わったか
+		gosub,*chkchgseron
+		//信義派の躍進
+		gosub,*addsingihabatumem
+		//覇王の信念を信義派へ近づける
+		upd_sts,poid_player,信念,-1
+		//資金増加
+		gosub,*addmoney
+		//民忠増加
+		gosub,*decmintyu
+		set_run_msg,[世論拡張] 経済活性により民忠と資金が増加します
+		//技術減少
+		set_eveflg,219,0
+		gosub,*decdevproc
+		chk_mval,eveflg219>0,,,,
+		chk_mval_then
+			set_run_msg,[世論拡張] 技術値が低下しています
+		chk_mval_else
+		goto,*endplayerseron
+chk_eveflg_else
+chk_eveflg,212,>44
+chk_eveflg_then
+	//中立
+	//武闘派、信義派拡張
+	gosub,*addbutouhabatumem
+	gosub,*addsingihabatumem
+	goto,*endplayerseron
+chk_eveflg_else
+	//好戦
+	//最大派閥長の信念が信義か
+	get_bgst_habatu,eveflg214,0
+	chk_mval,pval!0,信念:pval<40,,,
+	chk_mval_then
+		//信義派の活動により世論を反戦へ
+		add_eveflg,212,2
+		// 1/2で大成功
+		rnd,2
+		case0
+			add_eveflg,212,1
+		case1
+		set_seron,poid_player,eveflg212
+		set_run_msg,[世論拡張] 反戦派が活発に活動中
+	chk_mval_else
+		//イベント中に世論が変わったか
+		gosub,*chkchgseron
+		//武闘派の躍進
+		gosub,*addbutouhabatumem
+		//資金減少
+		gosub,*decmoney
+		//民忠減少
+		set_run_msg,[世論拡張] 戦時体制への不満と出費が高まっています
+		gosub,*decmintyu
+		//技術増加
+		set_eveflg,219,0
+		gosub,*adddevproc
+		chk_mval,eveflg219>0,,,,
+		chk_mval_then
+			set_run_msg,[世論拡張] 技術値が向上しています
+		chk_mval_else
+		rnd,4
+		case0
+			txtload,u336_1
+		case1
+		case2
+		case3
+*endplayerseron
+end
+////////////////////	サブルーチン	////////////////////
+*chkchgseron
+	chk_ormval,eveflg219<45,eveflg219>55,,,
+	chk_ormval_then
+		chk_mval,eveflg212>=45,eveflg212<=55,,,
+		chk_mval_then
+			set_run_msg,[世論拡張] 世論が中立になりました
+		chk_mval_else
+	chk_ormval_else
+	//ありえないけど一応
+	chk_mval,eveflg219>=45,eveflg219<=55,,,
+	chk_mval_then
+		//中立状態から反戦
+		chk_eveflg,212,>55
+		chk_eveflg_then
+			set_run_msg,[世論拡張] 世論が反戦へ傾きました
+			return
+		chk_eveflg_else
+		//中立から好戦
+		chk_eveflg,212,<45
+		chk_eveflg_then
+			set_run_msg,[世論拡張] 世論が好戦へ傾きました
+			return
+		chk_eveflg_else
+			return
+	chk_mval_else
+	return
+*addbutouhabatumem
+	//武闘派の派閥長を取得
+	for,PMAX,210,1
+		chk_mval,状態:eveflg210=2,勲功:eveflg210<12080,派閥:eveflg210=eveflg210,覇王:eveflg210=eveflg214,信念:eveflg210>60
+		chk_mval_then
+			set_eveflg,213,eveflg210
+			break
+		chk_mval_else
+		continue
+	next
+	//取得できなければ何もせずに戻る
+	chk_eveflg,213,0
+	chk_eveflg_then
+		return
+	chk_eveflg_else
+	//派閥転向
+	for,PMAX,210,1
+		chk_mval,状態:eveflg210=2,勲功:eveflg210<12080,派閥:eveflg210!eveflg210,覇王:eveflg210=eveflg214,
+		chk_mval_then
+			rnd,2
+			case0
+				upd_sts,eveflg210,派閥,eveflg213
+				break
+			case1
+		chk_mval_else
+		continue
+	next
+	return
+*addsingihabatumem
+	//信義派の派閥長を取得
+	for,PMAX,210,1
+		chk_mval,状態:eveflg210=2,勲功:eveflg210<12080,派閥:eveflg210=eveflg210,覇王:eveflg210=eveflg214,信念:eveflg210<40
+		chk_mval_then
+			set_eveflg,213,eveflg210
+			break
+		chk_mval_else
+		continue
+	next
+	//取得できなければ何もせずに戻る
+	chk_eveflg,213,0
+	chk_eveflg_then
+		return
+	chk_eveflg_else
+	//派閥転向
+	for,PMAX,210,1
+		chk_mval,状態:eveflg210=2,勲功:eveflg210<12080,派閥:eveflg210!eveflg210,覇王:eveflg210=eveflg214,
+		chk_mval_then
+			rnd,2
+			case0
+				upd_sts,eveflg210,派閥,eveflg213
+				break
+			case1
+		chk_mval_else
+		continue
+	next
+	return
+*addmoney
+	set_eveflg,216,0
+	for,SMAX,210,1
+		//指定覇王の惑星人口により増加額変更
+		chk_mval,領王:eveflg210=eveflg214,,,,
+		chk_mval_then
+			set_eveflg,217,人口:eveflg210
+			chk_eveflg,217,>100000
+			chk_eveflg_then
+				add_money,eveflg214,8000
+				goto,*addmoneyloop
+			chk_eveflg_else
+			chk_eveflg,217,>50000
+			chk_eveflg_then
+				add_money,eveflg214,4000
+				goto,*addmoneyloop
+			chk_eveflg_else
+				add_money,eveflg214,2000
+		chk_mval_else
+		*addmoneyloop
+		continue
+	next
+	return
+*decmoney
+	set_eveflg,216,0
+	for,SMAX,210,1
+		//指定覇王の惑星人口により増加額変更
+		chk_mval,領王:eveflg210=eveflg214,,,,
+		chk_mval_then
+			set_eveflg,217,人口:eveflg210
+			//10
+			chk_eveflg,217,>100000
+			chk_eveflg_then
+				add_money,eveflg214,-5000
+				goto,*decmoneyloop
+			chk_eveflg_else
+			chk_eveflg,217,>50000
+			chk_eveflg_then
+				add_money,eveflg214,-2000
+				goto,*decmoneyloop
+			chk_eveflg_else
+				add_money,eveflg214,-1000
+		chk_mval_else
+		*decmoneyloop
+		continue
+	next
+	return
+*addmintyu
+	set_eveflg,216,0
+	for,SMAX,210,1
+		chk_mval,領王:eveflg210=eveflg214,民忠:eveflg210<95,,,
+		chk_mval_then
+			rnd,2
+			case0
+				upd_winfo,eveflg210,0,0,0,2,0,0,0
+			case1
+		chk_mval_else
+		continue
+	next
+	return
+*decmintyu
+	set_eveflg,216,0
+	for,SMAX,210,1
+		chk_mval,領王:eveflg210=eveflg214,,,,
+		chk_mval_then
+			rnd,2
+			case0
+				upd_winfo,eveflg210,0,0,0,-2,0,0,0
+			case1
+		chk_mval_else
+		continue
+	next
+	return
+*adddevproc
+	rnd,2
+	case0
+		add_sdev,eveflg214,0,1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,1,1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,2,1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,3,1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,4,1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,5,1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,6,1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,7,1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,8,1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,9,1
+		add_eveflg,219,1
+	case1
+		return
+*decdevproc
+	rnd,2
+	case0
+		add_sdev,eveflg214,0,-1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,1,-1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,2,-1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,3,-1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,4,-1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,5,-1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,6,-1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,7,-1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,8,-1
+		add_eveflg,219,1
+	case1
+	rnd,2
+	case0
+		add_sdev,eveflg214,9,-1
+		add_eveflg,219,1
+	case1
+		return

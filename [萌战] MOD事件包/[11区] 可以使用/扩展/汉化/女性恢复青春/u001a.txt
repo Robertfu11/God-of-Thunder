@@ -1,0 +1,12 @@
+// 同派閥男性延緩衰老
+set_eveflg,190,0
+for,PMAX,190,1
+chk_msts,eveflg190,派閥,player,性別,1,年齢,>45,NON,0,NON,0
+chk_msts_then
+	set_pnen,eveflg190,25
+	continue
+chk_msts_else
+	continue
+next
+txtload,u001b
+end

@@ -1,0 +1,27 @@
+//ドミナンス仕官
+eve_start
+	if_date,74,6
+	if_poid,688,624
+	if_psts,161,6
+eve_end
+
+chk_exeplayer,624,0,0,0
+chk_exeplayer_else
+	set_sikan,161,624
+	end
+
+chk_exeplayer_then
+	bgm_chg,60
+	//zin_reg_init
+	zin_reg_event,斯庫洛克的王宮,624,161,,gzin8
+	zin_reg_msg,是你嗎？cr想在我這仕官的？,0
+	zin_reg_msg,是、我叫德米南斯,1
+	zin_reg_msg,嗯、聽說對兵器開發很在行？,0
+	zin_reg_msg,是的、特別是對要塞的建設方面有些心得,1
+	zin_reg_msg,哦、要塞嗎．．．．,0
+	zin_reg_msg,很好、對我宣誓效忠吧,0
+	zin_reg_msg,是！！,1
+	zin_reg_title,德米南斯仕官了。
+	zin_reg_button,0
+	//zin_reg_exit
+	set_sikan,161,624

@@ -1,0 +1,87 @@
+/////ねとられプラス_ver2.2（前十阶目录）/////
+
+eve_start
+	if_val,状態:player=2
+	if_val,勲功:player!13000
+	if_val,婚姻:player>0
+        if_val,懐妊:yome_player=0
+        if_val,覇王:yome_player=poid_player
+        if_val,オルド回数:yome_player>4
+eve_end
+
+*start
+
+chk_mval,eveflg104>=9,,,,
+chk_mval_then
+	txtload,NTR\u234_p10
+chk_mval_else
+        goto,*n7
+
+*n7
+chk_mval,eveflg104=8,,,,
+chk_mval_then
+	txtload,NTR\u234_p9
+chk_mval_else
+        goto,*n6
+
+*n6
+chk_mval,eveflg104=7,,,,
+chk_mval_then
+	txtload,NTR\u234_p8
+chk_mval_else
+        goto,*n5
+
+*n5
+chk_mval,eveflg104=6,,,,
+chk_mval_then
+	txtload,NTR\u234_p7
+chk_mval_else
+        goto,*n4
+
+*n4
+
+chk_mval,eveflg104=5,,,,
+chk_mval_then
+	txtload,NTR\u234_p6
+chk_mval_else
+        goto,*n3
+
+*n3
+chk_mval,eveflg104=4,,,,
+chk_mval_then
+	txtload,NTR\u234_p5
+chk_mval_else
+        goto,*n3a
+
+*n3a
+chk_mval,eveflg104=3,,,,
+chk_mval_then
+	txtload,NTR\u234_p4
+chk_mval_else
+        goto,*n3b
+
+*n3b
+chk_mval,eveflg104=2,,,,
+chk_mval_then
+	txtload,NTR\u234_repeat
+chk_mval_else
+        goto,*n2
+
+*n2
+chk_mval,eveflg104=1,,,,
+chk_mval_then
+	txtload,NTR\u234_p2
+chk_mval_else
+        goto,*n1
+
+*n1
+chk_mval,eveflg104=0,,,,
+chk_mval_then
+	txtload,NTR\u234_p1
+chk_mval_else
+end
+
+end
+
+
+

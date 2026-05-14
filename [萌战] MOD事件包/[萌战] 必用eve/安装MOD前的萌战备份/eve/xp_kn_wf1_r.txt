@@ -1,0 +1,67 @@
+//■和姦
+//■相手：妻（妃）
+//■Ｈ体位：正常位
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_msg,啊啊啊啊．．．進來了．．．callself_pid2的、裡面．．．被call_pid1．．．插進來了啊．．．,pid2
+	zin_old_msg,呵呵．．．這麼興奮的嗎、call_pid2？,pid1
+	zin_old_msg,那、那種事情、不要問我．．．會覺得不好意思的．．．,pid2
+	zin_old_msg,嘛、call_pid2的反應來看、還是很興奮的嘛．．．嗯啊！,pid1
+	zin_old_msg,嗯嗯啊！啊嗯．．．啊啊啊啊嗯．．．還、還要．．．強烈．．不要說了．．．,pid2
+	zin_old_msg,現在．．．被如些強烈的．．．啊啊啊．．．啊．．．啊嗯！,pid2
+	zin_old_msg,激烈的話、會怎麼樣呢？,pid1
+	zin_old_msg,討厭．．．嗯嗯．．．過分．．．call_pid1．．．每次都是這樣．．．,pid2
+	zin_old_msg,這麼．．．強烈的話．．．如果是．．．會舒服的．．．無法忍耐了呢．．．也說不定,pid2
+	zin_old_msg,沒有必要忍耐的吧？,pid1
+	zin_old_msg,但是．．．這麼早．．．不行、會變成怎麼樣．．．不行的．．．啊啊．．．已經．．．不行了！,pid2
+	zin_old_msg,callself_pid2．．．啊．．．啊．．．不行．．．不行．．．嗯嗯嗯嗯嗯嗯嗯嗯嗯啊！,pid2
+	zin_flush,pid2
+	zin_old_msg,嗯啊啊啊．．．call_pid1把．．．熱熱．．．的．．．在肚子裡灌滿了啊啊啊啊．．．,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_old_msg,嗯嗯啊．．．痛、啊．．．不過．．．終於也、習慣了呢．．．,pid2
+	zin_old_msg,好高興啊、call_pid1．．．,pid2
+	zin_old_msg,啊啊、callself_pid1也、是同樣的心情．．．,pid1
+	zin_old_msg,動了喲、call_pid2．．．,pid1
+	zin_old_msg,啊嗯．．．啊嗯嗯啊．．．哈啊啊嗯．．．嗯嗯啊．．．,pid2
+	zin_old_msg,痛、但是．．．很高興．．．能和．．．喜歡的人．．．結合、感覚很舒服啊．．．,pid2
+	zin_old_msg,更多．．．更多的．．．call_pid1．．．讓我感受吧．．．,pid2
+	zin_old_msg,啊啊、身体的深處、合二為一吧．．．,pid1
+	zin_old_msg,嗯嗯嗯．．．callself_pid2的．．．裡面．．．call_pid1在．．．膨脹．．．變大了、啊啊啊啊．．．,pid2
+	zin_old_msg,已經．．．已經．．．啊啊啊．．．有什麼．．．比方說是什麼．．．來著．．．,pid2
+	zin_old_msg,就是這樣的、把身体放任的交給感覺吧．．．,pid1
+	zin_old_msg,哈．．．嗯嗯．．．啊．．．啊啊啊．．．來．．．來吧．．．嗯嗯嗯嗯嗯嗯嗯啊！,pid2
+	zin_flush,pid2
+	zin_old_msg,啊啊．．．天啊．．．進來了．．．了啊啊．．．call_pid1在．．．肚子的深處．．．變成一個．．．了啊啊啊啊．．．,pid2
+	zin_old_msg,嗯嗯嗯啊．．．哈啊．．．哈啊．．．也是．．．call_pid1的事．．．不要放開啊．．．,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_old_msg,嗯嗯嗯嗯啊．．．啊啊啊．．．callself_pid2．．．,pid2
+	zin_old_msg,還有孩子．．．明明是這樣的．．．還被call_pid1的東西．．．插進來了．．．,pid2
+	zin_old_msg,身体真是．．．隨意．．就滿足了．．啊．．,pid2
+	zin_old_msg,真是的、call_pid2是、是個色情的女人哦．．．,pid1
+	zin_old_msg,不要說．．．不要說、下去了．．．,pid2
+	zin_old_msg,因為、callself_pid2．．．一直被．．．call_pid1君．．．重疊著壓著身体的說．．．,pid2
+	zin_old_msg,呵呵．．．cr身子裡還孕育著孩子呢．．．,pid1
+	zin_old_msg,嗯嗯嗯．．．啊啊．．．好、舒服．．．在那裡．．．摩擦著是．．．不行、了啊啊啊．．．,pid2
+	zin_old_msg,什麼啊、那這裡可以嗎？,pid1
+	zin_old_msg,嗯嗯．．．因為．．．callself_pid2．．．那裡．．．很柔弱．．．要溫柔呢．．．,pid2
+	zin_old_msg,那裡．．．不行啊．．．停下．．．快停下．．．不行．．．啊啊啊嗯．．．,pid2
+	zin_old_msg,從剛才就開始有siru_str在垂流了嘛？,pid1
+	zin_old_msg,嗯嗯．．．因為．．．柔弱的．．．地方被．．．多次．．．多次．．．的摩擦著嘛．．．,pid2
+	zin_old_msg,已經．．．已經．．．這樣的話．．．一個人．．．到達、尾聲、了呢啊啊啊啊．．．,pid2
+	zin_old_msg,放心吧、會一起達到高潮的。callself_pid1也是、再稍稍一會兒．．．,pid1
+	zin_old_msg,啊啊．．．好高興、的說．．．想一起．．．到達、的說．．．,pid2
+	zin_old_msg,啊啊．．．請讓．．．callself_pid2．．．call_pid1的事情．．．再更多的．．．感受到啊啊啊．．．,pid2
+	zin_old_msg,嗯嗯嗯．．．啊．．．啊．．．嗯嗯．．．嗯啊啊啊啊啊啊啊啊啊啊嗯啊！,pid2
+	zin_flush,pid2
+	zin_old_msg,啊啊啊．．．來了、來了．．．嗯嗯．．．嗯．．．嗯啊．．．明明已經有了、孩子的說．．．,pid2
+	zin_old_msg,callself_pid2．．．好開心．．．call_pid1的東西．．．接受為止、現在．．．,pid2
+	end

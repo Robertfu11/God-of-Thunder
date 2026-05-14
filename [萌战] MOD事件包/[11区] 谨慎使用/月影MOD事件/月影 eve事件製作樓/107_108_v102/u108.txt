@@ -1,0 +1,56 @@
+eve_start
+    //if_date,95,03
+	if_pkun,player,13000
+    if_is_habatu,poid_player  
+eve_end
+get_bgst_habatu,player,0
+set_epid2,pval
+  chk_msts,pid2,役職,5,性別,1,NON,0,NON,0,NON,0
+    chk_msts_then
+        goto,*go
+    chk_msts_else
+        end
+        *go
+set_eveflg,192,0
+for,PMAX,192,1  
+chk_msts,eveflg192,父,player,覇王,poid_player,性別,2,NON,0,NON,0
+                chk_msts_then
+                    set_epid1,eveflg192
+                    bgm_chg,61
+                    zin_reg_init
+                    zin_reg_event,,pid1,pid2,,gzin6
+                    zin_reg_msg,call_pid2、私に何か用ですか？,0
+                    zin_reg_msg,おぉ姫、よく来られたcrお待ちしておりましたぞ,1
+                    zin_reg_msg,用があるなら早くしてください,0
+                    zin_reg_msg,よろしい、では単刀直入にいきましょう,1
+                    zin_reg_msg,着ている物をお脱ぎなさい,1
+                    zin_reg_msg,なんですって！？,0
+                    zin_reg_msg,言うことを聞かねば父上がどうなっても知りませぬぞ,1
+                    zin_reg_msg,あなた・・・何ということを・・・,0
+                    zin_reg_msg,さあ、早く済ませたいのでしょう？,1
+                    zin_old_init
+                    zin_old_img_pid,pid1,1
+                    zin_old_msg,ウハハハ、やはり若い娘は違いますな,pid2
+                    zin_old_msg,p_name3の娘だと思うと、また格別だわい！！,pid2
+                    zin_old_msg,こ、この卑怯者！！・・・ううっ！！,pid1
+                    zin_old_msg,フフフ、なんとでも言われるがよい,pid2
+                    zin_old_msg,すべてが褒め言葉に聞こえるわ、アハハハハ！！！,pid2
+                    zin_old_msg,ううう・・・・も、もうイヤあぁ・・・・,pid1
+                    zin_reg_button,16
+                    zin_reg_exit
+                    set_non_virgin,pid1
+                    zin_old_fadeout,0,5
+                    bl_fadein,gzin8
+                    zin_reg_event,,player,,,
+                    zin_reg_msg,p_name2派閥を解体?,0
+                    zin_reg_2sel,派閥を解体,いや
+                    get_resp
+                    ret_sel1
+                    habatu_kaitai,pid2
+                    end
+                chk_msts_else
+                    continue
+                 next
+set_eveflg,192,0
+end
+

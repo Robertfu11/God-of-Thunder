@@ -1,0 +1,186 @@
+auth_uid,123D
+//	施設建設　技術研究所
+bgm_chg,60
+zin_reg_event,技術研究所,837,840,,gzin28
+zin_reg_msg,なにかご用ですか？,1
+rnd,2
+case0
+	zin_reg_msg,新しい研究を思いついたので暫く誰も近づけないように,0
+	zin_reg_msg,ははっ,1
+	goto,*konetaend
+case1
+	zin_reg_msg,ちょっと実験につきあってくれんか,0
+	zin_reg_msg,なんの実験です？,1
+	zin_reg_msg,人体の一部をバイオノイド化する研究をしていたんだがね,0
+	zin_reg_msg,私のtin_strが正常に働くか．．．,0
+	zin_reg_msg,えっ．．．ちょっ．．．あっ．．．あーーーーーーっ！！,1
+	bl_fadeout
+*konetaend
+chk_mval,eveflg211=5,,,,
+chk_mval_then
+	gosub,*getitemproc
+	rnd,5
+	case0
+		add_sdev,poid_player,0,150
+		add_sdev,poid_player,1,150
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr研究所から荷物が届いています。cr（艦隊攻撃、対空攻撃＋１５０、アイテム）
+		goto,*addeffectend6
+	case1
+		add_sdev,poid_player,2,150
+		add_sdev,poid_player,5,150
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr研究所から荷物が届いています。cr（艦隊防御、機動技術＋１５０、アイテム）
+		goto,*addeffectend6
+	case2
+		add_sdev,poid_player,3,150
+		add_sdev,poid_player,4,150
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr研究所から荷物が届いています。cr（掃海技術、建設技術＋１５０、アイテム）
+		goto,*addeffectend6
+	case3
+		add_sdev,poid_player,6,150
+		add_sdev,poid_player,7,150
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr研究所から荷物が届いています。cr（艦載機攻撃、艦載機防御＋１５０、アイテム）
+		goto,*addeffectend6
+	case4
+		add_sdev,poid_player,8,150
+		add_sdev,poid_player,9,150
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr研究所から荷物が届いています。cr（陸戦攻撃、陸戦防御＋１５０、アイテム）
+		goto,*addeffectend6
+chk_mval_else
+chk_mval,eveflg211=4,,,,
+chk_mval_then
+	rnd,5
+	case0
+		add_sdev,poid_player,0,120
+		add_sdev,poid_player,1,120
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（艦隊攻撃、対空攻撃＋１２０）
+		goto,*addeffectend6
+	case1
+		add_sdev,poid_player,2,120
+		add_sdev,poid_player,5,120
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（艦隊防御、機動技術＋１２０）
+		goto,*addeffectend6
+	case2
+		add_sdev,poid_player,3,120
+		add_sdev,poid_player,4,120
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（掃海技術、建設技術＋１２０）
+		goto,*addeffectend6
+	case3
+		add_sdev,poid_player,6,120
+		add_sdev,poid_player,7,120
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（艦載機攻撃、艦載機防御＋１２０）
+		goto,*addeffectend6
+	case4
+		add_sdev,poid_player,8,120
+		add_sdev,poid_player,9,120
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（陸戦攻撃、陸戦防御＋１２０）
+		goto,*addeffectend6
+chk_mval_else
+chk_mval,eveflg211=3,,,,
+chk_mval_then
+	rnd,5
+	case0
+		add_sdev,poid_player,0,100
+		add_sdev,poid_player,1,100
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（艦隊攻撃、対空攻撃＋１００）
+		goto,*addeffectend6
+	case1
+		add_sdev,poid_player,2,100
+		add_sdev,poid_player,5,100
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（艦隊防御、機動技術＋１００）
+		goto,*addeffectend6
+	case2
+		add_sdev,poid_player,3,100
+		add_sdev,poid_player,4,100
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（掃海技術、建設技術＋１００）
+		goto,*addeffectend6
+	case3
+		add_sdev,poid_player,6,100
+		add_sdev,poid_player,7,100
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（艦載機攻撃、艦載機防御＋１００）
+		goto,*addeffectend6
+	case4
+		add_sdev,poid_player,8,100
+		add_sdev,poid_player,9,100
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（陸戦攻撃、陸戦防御＋１００）
+		goto,*addeffectend6
+chk_mval_else
+chk_mval,eveflg211=2,,,
+chk_mval_then
+	rnd,5
+	case0
+		add_sdev,poid_player,0,80
+		add_sdev,poid_player,1,80
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（艦隊攻撃、対空攻撃＋８０）
+		goto,*addeffectend6
+	case1
+		add_sdev,poid_player,2,80
+		add_sdev,poid_player,5,80
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（艦隊防御、機動技術＋８０）
+		goto,*addeffectend6
+	case2
+		add_sdev,poid_player,3,80
+		add_sdev,poid_player,4,80
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（掃海技術、建設技術＋８０）
+		goto,*addeffectend6
+	case3
+		add_sdev,poid_player,6,80
+		add_sdev,poid_player,7,80
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（艦載機攻撃、艦載機防御＋８０）
+		goto,*addeffectend6
+	case4
+		add_sdev,poid_player,8,80
+		add_sdev,poid_player,9,80
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（陸戦攻撃、陸戦防御＋８０）
+		goto,*addeffectend6
+chk_mval_else
+	rnd,5
+	case0
+		add_sdev,poid_player,0,50
+		add_sdev,poid_player,1,50
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（艦隊攻撃、対空攻撃＋５０）
+		goto,*addeffectend6
+	case1
+		add_sdev,poid_player,2,50
+		add_sdev,poid_player,5,50
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（艦隊防御、機動技術＋５０）
+		goto,*addeffectend6
+	case2
+		add_sdev,poid_player,3,50
+		add_sdev,poid_player,4,50
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（掃海技術、建設技術＋５０）
+		goto,*addeffectend6
+	case3
+		add_sdev,poid_player,6,50
+		add_sdev,poid_player,7,50
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（艦載機攻撃、艦載機防御＋５０）
+		goto,*addeffectend6
+	case4
+		add_sdev,poid_player,8,50
+		add_sdev,poid_player,9,50
+		zin_reg_qnar,技術研究所の働きで技術が向上しました。cr（陸戦攻撃、陸戦防御＋５０）
+*addeffectend6
+zin_reg_button,0
+zin_reg_exit
+end
+*getitemproc
+	rnd,10
+	case0
+	case1
+	case2
+	case3
+	case4
+		get_item,player,0,脱出ポッド
+		return
+	case5
+	case6
+		get_item,player,0,要塞攻略書
+		return
+	case7
+		get_item,player,0,技術解説書
+		return
+	case8
+		get_item,player,0,飛行戦術書
+		return
+	case9
+		get_item,player,0,要塞極秘資料
+		return

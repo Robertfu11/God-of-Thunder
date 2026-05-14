@@ -1,0 +1,15 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,p_name1艦隊,pid1,pid2,,gzin29
+zin_regs_msg,p_name2！！,p_name2！！,0
+zin_reg_msg,是！！,1
+zin_regs_msg,你呀、到這艦隊後都沒啥表現,感覺不到你想努力的心態呢,0
+zin_reg_msg,這、沒這．．．,1
+zin_regs_msg,你太沒用了,有這種無能軍官太礙眼了,0
+zin_regs_msg,今後、禁止你出入司令室,今後、別在我眼前出現,0
+zin_regs_msg,懂了吧！！,知道了吧！！,0
+zin_reg_msg,是．．．．,1
+zin_reg_title,p_name2受到了差別待遇。
+zin_reg_button,0
+zin_reg_exit
+end

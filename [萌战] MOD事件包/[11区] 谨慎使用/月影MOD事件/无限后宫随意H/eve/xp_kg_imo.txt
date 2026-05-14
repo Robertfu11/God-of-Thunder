@@ -1,0 +1,153 @@
+//王族オルド襲う　相手：妹
+//状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+rnd,2
+case0
+	zin_reg_msg,趕緊脫光！,0
+	zin_reg_msg,不行就是不行！！,1
+	zin_reg_msg,放棄無謂的抵抗吧！！,0
+	zin_reg_msg,不．．．不要．．．cr求你了、call_pid1．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,怎麼、被哥哥侵犯的感覺？,pid1
+	zin_old_msg,call_pid1．．．住手啊．．．趕快住手．．．,pid2
+	zin_old_msg,這可不行,pid1
+	zin_old_msg,我把你冊封為妾、是要和你生孩子的,pid1
+	zin_old_msg,怎麼、怎麼這樣．．．好過分．．．,pid2
+	zin_old_msg,那麼、張開子宮、接受我的種子吧！！,pid1
+	zin_old_msg,啊啊、怎麼會這樣．．．怎麼會這麼深！！！,pid2
+	zin_flush,pid2
+	end
+case1
+	zin_reg_msg,不、不可以、call_pid1,1
+	zin_reg_msg,你冷靜一點！！,1
+	zin_reg_msg,callself_pid1很冷靜,0
+	zin_reg_msg,再次和哥哥融為一體吧,0
+	zin_reg_msg,啊、不行、不行啊、call_pid1！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊、怎麼會．．call_pid1的肉棒．．．進來了．．．唔嗯嗯！！,pid2
+	zin_old_msg,哦哦．．．call_pid2的裡面．．．好溫暖、感覺也很棒．．．,pid1
+	zin_old_msg,call_pid1．．．已經夠了啊．．．拔、拔出來．．．,pid2
+	zin_old_msg,這種事怎麼可能！！　根本停不下來！！,pid1
+	zin_old_msg,p_name1開始用盡全力抽插著。,0
+	zin_old_msg,啊啊、call_pid1．．．不行．．不行啊．．．不、快停下！！,pid2
+	zin_old_msg,call_pid2、要、要射了．．．裡面、內射哦！！,pid1
+	zin_old_msg,那、只有那個不可以啊．．．外面．．．請射在．．．外面、call_pid1！！,pid2
+	zin_old_msg,咕唔唔唔！！！,pid1
+	zin_old_msg,呀啊、不行啊．．．裡面．．．裡面、不、不、不行啊啊啊！！！！,pid2
+	zin_flush,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+rnd,3
+case0
+	zin_reg_msg,你太任性了,0
+	zin_reg_msg,你、還是處女吧,0
+	zin_reg_msg,那、那個．．．,1
+	zin_reg_msg,不過和call_pid1沒有半點關系！！,1
+	zin_reg_msg,這太難為情了、不能和callself_pid1做這種事,0
+	zin_reg_msg,不要用那種理由來搪塞,1
+	zin_reg_msg,這不是很好麼,0
+	zin_reg_msg,床都準備好了,0
+	zin_reg_msg,這、這麼．．．強行的．．．,1
+	zin_reg_msg,到這裡來,0
+	zin_reg_msg,啊、不行、不要啊啊啊！！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,嗬．．．ずいぶんとすんなり入ったな,pid1
+	zin_old_msg,や、やだ　いたい！！　だめっ、ぬいて！！,pid2
+	zin_old_msg,そうはいかぬ、callself_pid1の子を産んでもらうまではな,pid1
+	zin_old_msg,そ、そんな．．．冗談でしょ、どうしてp_name2が．．．,pid2
+	zin_old_msg,私．．妹なのに．．．子を作るロボットじゃないのよ．．．,pid2
+	zin_old_msg,妹なら當然の義務だ、さあ兄の濃厚種をしっかり受け取れ！！,pid1
+	zin_old_msg,ああっ、そ、そんなの、い、いやああああ！！！,pid2
+	zin_flush,pid2
+	zin_old_msg,ひぐっ．．．ううう．．．,pid2
+	end
+case1
+	zin_reg_msg,では、近親相姦といくか．．,0
+	zin_reg_msg,そんな、おやめください,1
+	zin_reg_msg,妹なら兄の言うことに逆らうでない,0
+	zin_reg_msg,だめ、私まだ．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,小さいマンコだな、まだ半分しか入っておらぬぞ,pid1
+	zin_old_msg,あうっ．．．ああっ．．．ひくん．．．,pid2
+	zin_old_msg,call_pid2は処女であろう？　どうだ？　兄に初膜を破られた気分は,pid1
+	zin_old_msg,ううっ．．．ひどい．．．call_pid1、ひどいよぉ．．．．,pid2
+	zin_old_msg,ならば、もっと酷い兄になってやろう。これでどうだ！！,pid1
+	zin_old_msg,p_name1はすべてのモノをp_name2に突き入れた。,0
+	zin_old_msg,かはあああっ！！　ひいいいいい！！,pid2
+	zin_old_msg,フフフ、子宮膜まで破ってしまったかな？,pid1
+	zin_old_msg,ひああ．．．も、もう．．．らめえ．．．お嫁に、お嫁にいなぐなっちゃった．．．,pid2
+	zin_old_msg,嫁になどやらぬ、call_pid2は私のものだ。誰にも譲らぬ,pid1
+	zin_old_msg,さあ、子宮に種をくれてやる,pid1
+	zin_old_msg,これで完全に私のものだっ！！,pid1
+	zin_old_msg,あがあ．．．あん、あん．．あひっ．．．もう．．．何も．．．考えられない．．．,pid2
+	zin_flush,pid2
+	end
+case2
+	zin_reg_msg,妹なら兄の言うことを聞くものだ,0
+	zin_reg_msg,call_pid1、お願いです、ヤめて．．．,1
+	zin_reg_msg,さあ、おとなしくせよ、p_name2,0
+	zin_reg_msg,あ、そんな．．．い、イヤあ．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,おお、さすが我が妹、他の女とは違うな！！,pid1
+	zin_old_msg,はうっ．．．お、大きい．．．こんなの．．．は、はじめて．．．,pid2
+	zin_old_msg,ああっ．．．ダメ．．．call_pid1．．．感じちゃう．．．,pid2
+	zin_old_msg,妹を犯すとはなんたる至極、早くも出そうだ！！,pid1
+	zin_old_msg,ハッ．．．ダメ、中はダメです、call_pid1,pid2
+	zin_old_msg,おうっ！！,pid1
+	zin_flush,pid2
+	zin_old_msg,こんなの．．．call_pid1じゃない．．．,pid2
+	end
+
+
+//孕みパターン
+case_botebara
+rnd,2
+case0
+	zin_reg_msg,もうcall_pid1の子を身ごもっているのよ,1
+	zin_reg_msg,これ以上、何がお望みなのですか,1
+	zin_reg_msg,その今のお前を抱いてみたいのだ,0
+	zin_reg_msg,そんな、こんな身體ではできません,1
+	zin_reg_msg,やってみなければわからんぞ,0
+	zin_reg_msg,ああっ、無理です、call_pid1！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,ウホホ、見ろ、なかなか良い感じではないか,pid1
+	zin_old_msg,孕んだ妹を抱くというもの良いモノよ,pid1
+	zin_old_msg,ああ．．．call_pid1の子を孕んだのに．．．さらにcall_pid1に犯されるなんて．．．,pid2
+	zin_old_msg,何を言う、孕んだ女を抱いてもらえるのだ。もっと喜ばぬか,pid1
+	zin_old_msg,そんな．．．ひどいです．．．call_pid1．．．,pid2
+	zin_old_msg,妹を孕ませたと思うと興奮して、もうイキそうだ,pid1
+	zin_old_msg,きょ、今日は外に．．．外に出してください．．．,pid2
+	zin_old_msg,孕んでいるのですから、中に出す必要はありません,pid2
+	zin_old_msg,愚かな．．．だからこそ、膣內出しするのだ。crさあ、たっぷり受け取るがいい！！,pid1
+	zin_old_msg,ああ、ダメ、ダメだって言ってるのにぃぃ！！,pid2
+	zin_flush,pid2
+	end
+case1
+	zin_reg_msg,call_pid1、今日はそのような気分ではないのです,1
+	zin_reg_msg,お前の気分など、どうでもよいこと,0
+	zin_reg_msg,callself_pid1がヤりたいからヤる、それだけだ,0
+	zin_reg_msg,さあ、問答はこれで終わりだ,0
+	zin_reg_msg,マタを開いて待っておれ,0
+	zin_reg_msg,．．．．call_pid1,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,ああ．．．call_pid1のおちんぽ．．．いつもより感じる．．．ひああっ．．．,pid2
+	zin_old_msg,どうだ、いいだろう？,pid1
+	zin_old_msg,妊娠中は感度も高まるのだ、さあ、理性を捨てて気持ちよくなることだけを考えるのだ,pid1
+	zin_old_msg,そ、そんなあ．．．だ、だめぇ．．．,pid2
+	zin_old_msg,まだ、理性が殘っておるな、全部吐き出させてくれる、ぬんっ！！！,pid1
+	zin_old_msg,ああっ、だ、ダメ、call_pid1！！　今そんなに深く突かれたら．．．すぐイっちゃう！！,pid2
+	zin_old_msg,call_pid1、お願い．．．そ、そんなに激しく、突かないでぇ！！！,pid2
+	zin_old_msg,さあ、大量の種を赤子と二人で飲み干せえぃ！！！,pid1
+	zin_flush,pid2
+	end

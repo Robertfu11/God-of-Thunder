@@ -1,0 +1,56 @@
+bgm_chg,21
+zin_reg_init
+zin_old_init
+zin_old_img_pid,pid2,1
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_msg,怎麼樣、我的愛馬喲、舒服麼？,pid1
+	zin_old_msg,舒、舒服．．．啊嗚．．．,pid2
+	zin_old_msg,那就請你、像馬兒一樣歡叫吧！！,pid1
+	zin_old_msg,嗨、嗨咿咿咿咿咿咿咿．．．恩恩．．．咿咿、啊啊．．．,pid2
+	zin_old_msg,呵呵呵、有趣的女人喲,pid1
+	zin_old_msg,表現不錯、馬上就獎勵你飼料,pid1
+	zin_old_msg,是、是的、非常感謝．．．嗨、嗨咿咿咿咿．．．,pid2
+	zin_old_msg,趕緊吃吧！！,pid1
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_old_msg,啊啊、那麼、別那樣．．別、請不要．．．拉頭發,pid2
+	zin_old_msg,呵呵、疼嗎？　call_pid2不是處女麼？,pid1
+	zin_old_msg,和你下面比起來、哪個更疼？,pid1
+	zin_old_msg,嗚嗚．．．兩個地方都．．．疼、疼的．．,pid2
+	zin_old_msg,call_pid2只是一匹馬,pid1
+	zin_old_msg,是馬兒的話、就學著像馬兒一樣歡叫吧,pid1
+	zin_old_msg,嗚嗚．．．嗨、嗨咿咿咿咿咿咿！！！,pid2
+	zin_old_msg,哈哈哈、好馬！好馬！！,pid1
+	zin_old_msg,很好、那就請收下我贊美的種子吧,pid1
+	zin_old_msg,孕育下純種的后代吧！！,pid1
+	zin_old_msg,啊、啊啊．．．吥嗨咿咿咿咿咿咿！！！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end
+
+//孕みパターン
+case_botebara
+	zin_old_msg,肚子已經很大了呢,pid1
+	zin_old_msg,比起馬更像奶牛不是麼？,pid1
+	zin_old_msg,你在哪裡、call_pid2,pid1
+	zin_old_msg,是、是的．．．p_name2是．．．是、奶牛．．．的說．．．cr嗨咿咿！！,pid2
+	zin_old_msg,是嗎、那叫一個,pid1
+	zin_old_msg,是、是的．．．哞、哞噢噢噢噢！！！．．嗚嗚嗚！！,pid2
+	zin_old_msg,真是的、什麼女人嘛,pid1
+	zin_old_msg,讓我好好給你增加一點人形種子儲備量吧,pid1
+	zin_old_msg,非常、非常感謝．．．,pid2
+	zin_old_msg,那就、滿飲此杯！！,pid1
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end

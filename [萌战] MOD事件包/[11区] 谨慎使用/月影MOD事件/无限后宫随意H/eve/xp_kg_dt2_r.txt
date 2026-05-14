@@ -1,0 +1,131 @@
+//王族オルド強引　相手：娘
+//■Ｈ體位：バック
+
+//女の狀態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,真是的、為什麼不聽父親的話！！,0
+	zin_reg_msg,因為．．．今日のcall_pid1、看起來好可怕啊,1
+	zin_reg_msg,唉、在那裏老實的躺著等著我,0
+	zin_reg_msg,那個、不懲罰女兒我嗎？,1
+	zin_reg_msg,那是當然的、父親我怎麼忍心呢,0
+	zin_reg_msg,嗯、女兒最聽話了．．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,好害羞啊．．．這樣子的．．．這種姿勢．．．,pid2
+	zin_old_msg,呼呼．．．這風景．．．這動作、call_pid2,pid1
+	zin_old_msg,父親大人．．．請．．不要．．不要一直看．．．,pid2
+	zin_old_msg,呼呼呼．．．雖然嘴裏說著不要、可你的下面可是很誠實的呢．．．,pid1
+	zin_old_msg,不、不是這樣子的．．．這是因為．．．我的身體．．自己隨便．．．,pid2
+	zin_old_msg,是不是想要快樂啊我的乖女兒？,pid1
+	zin_old_msg,嗚．．啊啊啊．．啊……啊……呼啊啊啊啊啊！,pid2
+	zin_old_msg,拜託了父親大人．．請停一下．．請停一下．．求求您．．這樣子的．．．,pid2
+	zin_old_msg,差不多也該發射我們的孩子了．．．好好接受吧．．．,pid1
+	zin_old_msg,啊啊．．嗚嗚．．呀．．呀啊啊啊啊啊！,pid2
+	zin_flush,pid2
+	goto,*check
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,聽我說孩子、p_name2,0
+	zin_reg_msg,可是．．．call_pid1到底要說什麼呢？,1
+	zin_reg_msg,當然是很舒服的事情嘍,0
+	zin_reg_msg,謊、謊言．．．cr是很痛的事情吧,1
+	zin_reg_msg,只是有那麼一點點了cr放心你慢慢會習慣的,0
+	zin_reg_msg,來吧、相信父親的轉過身彎下腰,0
+	zin_reg_msg,真的嗎．．．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,可、可是．．人家．．．這樣子的．．．這樣子的樣子好害羞哦．．．,pid2
+	zin_old_msg,而且．．．callself_pid2っ．．．為什麼．．．父親大人的那裏．．．,pid2
+	zin_old_msg,呼呼呼、乖女兒的初膜、我就不客氣的收下了．．．,pid1
+	zin_old_msg,啊啊啊噢．．．call_pid1父．．．父親大人的那裏．．．進．．．進來了．．．,pid2
+	zin_old_msg,一生只有一次的初體驗、callself_pid1的小穴還真是緊緊的包圍著咱舒服的地方呢,pid1
+	zin_old_msg,呀、呀啊．．不要．．父親大人．．．不要、不要動．．．,pid2
+	zin_old_msg,不行哦乖女兒、聽父親的話、一會你就會感覺到舒服了．．．,pid1
+	zin_old_msg,那樣子的．．．啊啊啊．．呀、呀．．噢噢．．噢噢．．這麼．．這麼激烈的．．．,pid2
+	zin_old_msg,如此的緊、實在堅持不住了啊、來吧女兒、用你的子宮來承接我們的下一代吧,pid1
+	zin_old_msg,啊、有什麼要出來？　是、什麼．．．．啊啊啊．．呼啊啊啊啊啊！！,pid2
+	zin_flush,pid2
+	zin_old_msg,啊啊啊．．好熱的感覺．．．在我的肚子了．．．是什麼呢．．．,pid2
+	goto,*check
+
+//孕みパターン
+case_botebara
+	zin_reg_msg,看到這麼豐滿的女兒真的無法讓自己離開呢,0
+	zin_reg_msg,求求您、call_pid1,1
+	zin_reg_msg,今天真的不行！！,1
+	zin_reg_msg,不要這麼說啊、想想我們愛情的結晶、偶爾也是需要精液的滋潤的,0
+	zin_reg_msg,那樣子的．．．,1
+	zin_reg_msg,來吧、聽父親的話,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,callself_pid2っ．．．肚子裏．．．我們的孩子在動．．．,pid2
+	zin_old_msg,所．．．所以說、父親大人．．．今天．．．,pid2
+	zin_old_msg,那麼、要不開試試後面的那裏？,pid1
+	zin_old_msg,真是的！　那、那邊．．也不行．．．不．．不要啊,pid2
+	zin_old_msg,呼呼．．．才僅僅手指、就已經吸的不忍防下了呢．．．,pid1
+	zin_old_msg,後面什麼的還是算了．．．call_pid2的前面已經濕得不象話了呢．．．,pid1
+	zin_old_msg,不、不是的．．．、callself_pid2是．．不一樣的．．這裏．．．,pid2
+	zin_old_msg,是嗎、已經忍不住了、趕緊來做吧．．．呼呼！,pid1
+	zin_old_msg,んんんんん．．あ．．あ．．あ．．んんんんっ！,pid2
+	zin_old_msg,不行．．子宮．．不要頂到．．慢一些．．求求您慢一些．．,pid2
+	zin_old_msg,今天必須要快一點、放心為了咱們父女的孩子一定放足了量的．．．,pid1
+	zin_old_msg,不要啊．．不可以的、這種事．．我們的孩子．．我們的孩子．．．,pid2
+	zin_old_msg,繼續中出什麼的．．不可以的．．不行不行．．不要啊啊啊啊啊啊啊啊啊！,pid2
+	zin_flush,pid2
+	goto,*check
+*check
+bl_fadeout
+zin_reg_event,日常调教,pid1,pid2,,gzin32
+zin_reg_msg,今夜cf_pid1也干了个爽,0
+zin_reg_3sel,已经满足了,再来一次,我爱你
+get_resp
+
+ret_sel1
+upd_sts,pid2,1,5 
+upd_sts,pid2,5,5 
+upd_sts,pid2,6,5 
+upd_sts,pid2,7,5 
+upd_sts,pid2,8,5 
+upd_sts,pid2,9,5
+add_kunkou,pid2,50
+set_sinmitu,pid2,110
+zin_reg_msg,啊啊，您高兴就好，肉便器p_name2随时为call_pid21准备着！,1
+zin_reg_qnar,p_name2的忠诚，知力，攻击，防御，格斗，交涉提升
+zin_reg_button,0
+zin_reg_exit
+end
+
+
+ret_sel2
+upd_sts,pid2,1,5 
+upd_sts,pid2,5,5 
+upd_sts,pid2,6,5 
+upd_sts,pid2,7,5 
+upd_sts,pid2,8,5 
+upd_sts,pid2,9,5
+add_kunkou,pid2,100
+set_sinmitu,pid2,110
+zin_reg_msg,太好了，被call_pid21随意使用是肉便器p_name2的使命！,1
+zin_reg_qnar,p_name2的功勋双倍提升
+zin_reg_button,0
+zin_reg_exit
+end
+
+
+ret_sel3
+upd_sts,pid2,1,100 
+upd_sts,pid2,5,100 
+upd_sts,pid2,6,100 
+upd_sts,pid2,7,100 
+upd_sts,pid2,8,100 
+upd_sts,pid2,9,100
+add_kunkou,pid2,100
+set_sinmitu,pid2,110
+zin_reg_msg,能够成为call_pid21的女儿真是太好了,1
+zin_reg_qnar,p_name2全属性大幅提升
+zin_reg_button,0
+zin_reg_exit
+end

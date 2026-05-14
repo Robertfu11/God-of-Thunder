@@ -1,0 +1,17 @@
+eve_start
+	if_val,ĞÔ„e:player=2
+	if_val,×´‘B:player=2
+	if_val,»éÒö:player>0
+	if_eveflg,169,10
+eve_end
+
+//dbg_print,[eveflg169]=,eveflg169
+
+chk_sts,player,³õÄ¤,!1
+chk_sts_then
+	set_non_virgin,player
+chk_sts_else
+
+set_eveflg,169,0
+
+end

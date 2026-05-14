@@ -1,0 +1,60 @@
+eve_start
+	if_date,70,5
+	//斯庫洛克為　歐瓦南部下
+	if_poid,624,380
+eve_end
+
+//玩家扮演歐瓦南時
+chk_exeplayer,0,380,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,65
+//zin_reg_init
+zin_reg_event,歐瓦南王宮　內室,667,599,zin1,gzin9
+	zin_reg_msg,終於生了,0
+	zin_reg_msg,不多見的難產呢,1
+	zin_reg_msg,但是，還是非常的健康,0
+	zin_reg_msg,孩子真的很可愛呢，跟凱莉大人長得很像,1
+	zin_reg_msg,名字呢，要叫做甚麼呢？,1
+	zin_reg_msg,琳希．．．cr女孩子的話，一開始就這麼決定了,0
+	zin_reg_msg,恩．．．真是一個好名字呢、琳希,1
+
+bgm_chg,61
+zin_reg_face_1,624
+	zin_reg_msg,哼哼．．．cr失禮了,1
+	zin_reg_msg,你，你是誰cr你做甚麼！？,0
+	zin_reg_msg,這位是這位是cr凱莉大人是吧,1
+	zin_reg_msg,我是斯庫洛克cr雖說如此，我也是王族的其中一份子,1
+zin_reg_face_0,599
+	zin_reg_msg,斯庫洛克！！cr你怎麼可以對客人無禮！！,0
+	zin_reg_msg,這是艾露芭小姐啊cr真想不到您在這個地方,1
+	zin_reg_msg,這裡除了國王以外，誰都禁止進入的,0
+	zin_reg_msg,而你居然還帶著武器．．．,0
+	zin_reg_msg,衛兵到底在做甚麼！！,0
+	zin_reg_msg,艾露芭小姐cr妳認為衛兵能夠違抗身為這個國家第一大派系之長的我嗎？,1
+	zin_reg_msg,您又不是不知道我國的內部情況,1
+	zin_reg_msg,你，你這無禮的人！！cr還不趕快給我退下！！,0
+	zin_reg_msg,呵呵．．．cr妳居然對我用這樣的態度．．．,1
+	zin_reg_msg,你．．．,0
+	zin_reg_msg,哼，今天就不跟您計較了,1
+	zin_reg_msg,就先跟凱莉大人打個招呼就好了,1
+	zin_reg_msg,那麼，我會擇日再來拜訪,1
+zin_reg_face_1,0
+	zin_reg_msg,這到底是怎樣的一個男人啊．．．,0
+zin_reg_face_0,667
+	zin_reg_msg,．．．．．,0
+
+bl_fadeout
+bl_fadein,gzin24
+zin_reg_event,,624,163,,gzin24
+	zin_reg_msg,大人沒有將那個小孩給帶回來嗎？,1
+	zin_reg_msg,艾露芭那小姑娘在那邊cr算是個性挺強硬的女人呢,0
+	zin_reg_msg,哼，總有一天要讓那小姑娘嚐嚐我的手段,0
+	zin_reg_msg,一定能夠如大人的意的．．．,1
+	zin_reg_msg,那嬰兒也不能放過,0
+	zin_reg_msg,在那之前一定還有機會的,0
+zin_reg_button,0
+//zin_reg_exit
+end

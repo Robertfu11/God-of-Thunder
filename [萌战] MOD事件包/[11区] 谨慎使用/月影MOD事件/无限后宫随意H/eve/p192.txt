@@ -1,0 +1,22 @@
+bgm_chg,54
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin33
+zin_reg_qnar,p_name2突然接到p_name1的傳喚。
+    zin_reg_msg,p_name2參見！,1
+    zin_reg_msg,嗯嗯，辛苦了,0
+    zin_reg_msg,實際上是有事拜託，能聽下不？,0
+    zin_reg_msg,請問是什麼事？,1
+    zin_reg_msg,嗯嗯，實際上啊．．．,0
+    zin_reg_msg,那個．．．．,0
+    zin_reg_msg,．．．．,1
+    zin_reg_msg,給我去當cf_pid1的妃子！？,0
+    zin_reg_msg,現、現在、怎麼會．．．,1
+    zin_reg_msg,我的妻子call_pid只有12個,0
+    zin_reg_msg,可否作為妃子與cf_pid1同行？,0
+    zin_reg_msg,聞言不勝榮幸,1
+    zin_reg_msg,妃子重任，我將將竭盡全力,1
+    zin_reg_msg,噢噢，難得下定決心！！,0
+	zin_reg_title,p_name1結婚了。
+zin_reg_button,0
+zin_reg_exit
+end

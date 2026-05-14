@@ -1,0 +1,32 @@
+bgm_chg,54
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin18
+zin_reg_qnar,p_name1訪問了p_name2的住所。
+chk_pterm,pid2
+case_pterm0
+	zin_reg_msg,p_name1、又過來了呀,1
+	zin_reg_msg,沒看到你的臉、會覺得寂寞呢,0
+	zin_reg_msg,p_name1的嘴還真甜呢,1
+	set_eveflg,52,1
+	end
+case_pterm1
+	zin_reg_msg,啊啦p_name1、有段時間沒見了,1
+	zin_reg_msg,還以為你已經忘了我呢,1
+	zin_reg_msg,怎可能呢,0
+	zin_reg_msg,這段時間可是毫無聯絡呢,1
+	zin_reg_msg,抱歉啦、我認錯,0
+	zin_reg_msg,真是．．．,1
+	set_eveflg,52,1
+	end
+case_pterm2
+case_pterm3
+	zin_reg_msg,那個．．．cr您是？,1
+	zin_reg_msg,你忘了嗎？crp_name1呀,0
+	zin_reg_msg,．．．．．cr抱歉、我們有在哪遇過嗎？,1
+	zin_reg_msg,抱歉、失禮了,1
+	zin_reg_face_1,0
+	zin_reg_msg,喂、喂！！,0
+	zin_reg_button,0
+	zin_reg_exit
+	set_sinmitu,pid2,5
+	end

@@ -1,0 +1,153 @@
+//	内助の功
+//	条件
+//	プレイヤーに妻がいる
+//	プレイヤーと妻が同じ陣営である
+//	ランダム5
+//	さらに2/7でアイテム、4/7功績、1/7で養子
+
+eve_start
+	if_val,勲功:player<12080
+	if_exist_fam,player,妻
+	set_epid2,pval
+	if_same_oid,player,pid2
+	if_rnd,5
+eve_end
+
+bgm_chg,60
+set_epid1,player
+chk_mval,勲功:pid1>=11000,,,,
+chk_mval_then
+	rnd,3
+	goto,*chkkunkorndend
+chk_mval_else
+	rnd,7
+*chkkunkorndend
+case0
+//養子
+	//5～12歳で海賊、放浪、村娘、平民の子をランダムで抽出
+	get_mpid,年齢<=12,年齢>=5,状態=4|5|7|18|,父!pid1,母!pid2,,
+	set_epid3,pval
+	chk_mval,pid3=0,,,,
+	chk_mval_then
+		end
+	chk_mval_else
+	zin_reg_init
+	zin_reg_event,内助の功　養子編,pid1,pid2,zin23,gzin18
+	zin_reg_msg,call_pid21、ちょっと相談したいことがあるの,1
+	zin_reg_msg,相談？　何か欲しいものでもあるのか？,0
+	zin_reg_msg,実はね．．．、養子を引き取ってくれないかって話がきてるの,1
+	zin_reg_msg,養子？,0
+	zin_reg_msg,養護施設に勤めてる友達が良い子がいるからどうかって．．．,1
+	zin_reg_msg,この子なんだけど．．．,1
+	zin_reg_face,pid3
+	zin_reg_msg,実際に会ってみてcf_pid2も良い子だと思うの,1
+	zin_reg_msg,．．．call_pid12が良い子だというのならそうなんだろう,0
+	zin_reg_msg,そ、それじゃあ！,1
+	zin_reg_msg,まあ、落ち着け。cr一度会ってみよう,0
+	zin_reg_msg,そうね、そうしましょう,1
+	bl_fadeout
+	set_epid4,814
+	chg_pname,pid4,施設職員
+	zin_reg_qnar,後日、p_name1夫婦は孤児院を訪れた。
+	zin_reg_event,養護施設,pid1,pid4,,gzin81
+	zin_reg_msg,よくいらっしゃいました,1
+	zin_reg_msg,あの子もすぐに参りますのでごゆっくり話し合って下さいね,1
+	chg_pname,pid4,一般市民
+	zin_reg_face_1,pid3
+	zin_reg_msg,はじめまして、p_name1様,1
+	zin_reg_qnar,p_name1達はいろいろな話をした。
+	zin_reg_msg,（んん．．．、どうしたものか）,0
+	chg_pname,814,一般市民
+	zin_reg_2sel,養子にする,養子にしない
+	get_resp
+	ret_sel1
+		set_yousi,pid3,player
+		zin_reg_event,養護施設,pid1,pid2,,gzin81
+		zin_reg_msg,よし、決めたぞ！crp_name3は今日からうちの子だ！,0
+		zin_reg_msg,call_pid21！,1
+		zin_reg_face_1,pid3
+		zin_reg_msg,ほ、本当ですか？！crじゃあ、call_pid31と呼んでも．．．,1
+		zin_reg_msg,もちろんだcrさあ、一緒に帰ろう、call_pid13,0
+		zin_reg_msg,は、はい！crcall_pid31！！,1
+		zin_reg_title,p_name3はp_name1の養子になりました。
+		zin_reg_button,0
+		zin_reg_exit
+		upd_sts,pid3,0,18
+		upd_sts,pid3,24,pid1
+		upd_sts,pid3,26,pid2
+		end
+	ret_sel2
+		zin_reg_event,養護施設,pid1,pid2,,gzin81
+		zin_reg_msg,やはり今回はやめておこう,0
+		zin_reg_msg,call_pid21．．．,1
+		zin_reg_msg,そうね、call_pid21の意見に従うわ,1
+		zin_reg_title,養子縁組を見送りました。
+		zin_reg_button,0
+		zin_reg_exit
+		end
+case1
+case2
+//アイテム
+	zin_reg_init
+	zin_reg_event,内助の功　アイテム編,pid2,,,gzin18
+	zin_reg_msg,この懸賞、なかなか良い物がもらえるのね,0
+	zin_reg_msg,あの人喜んでくれるかしらcr応募してみよう,0
+	zin_reg_qnar,p_name2の懸賞が当たりました。
+	zin_reg_button,0
+	zin_reg_exit
+	gosub,*itemget
+	end
+case3
+case4
+case5
+case6
+//功績値
+	get_mpid,勲功<12080,勲功>勲功:player,覇王=覇王:player,婚姻!pid1,状態=2,,
+	chk_mval,pval=0,,,,
+	chk_mval_then
+		set_epid3,poid_player
+		goto,*pid3selend
+	chk_mval_else
+		set_epid3,pval
+	*pid3selend
+	zin_reg_init
+	zin_reg_event,内助の功　功績編,pid1,,,gzin43
+	zin_reg_msg,あれ．．．crあの書類どこやったかな．．．,0
+	zin_reg_face_1,pid2
+	zin_reg_msg,はい、うちに忘れてたわよ,1
+	zin_reg_msg,あ、ああ。　ありがとう,0
+	bl_fadeout
+	zin_reg_event,内助の功　功績編,pid3,pid1,,gzin15
+	zin_regs_msg,状況はどうなっている？,状況はどうなっているの？,0
+	zin_reg_msg,ええと．．．,1
+	zin_reg_face_1,pid2
+	zin_reg_msg,．．．の通り、順調です,1
+	zin_regs_msg,そうか,そう,0
+	zin_reg_face_0,pid1
+	zin_reg_msg,助かったよ,0
+	zin_reg_msg,気にしないで,1
+	zin_reg_qnar,p_name2の内助の功により仕事が捗った。（功績＋５０）
+	zin_reg_button,0
+	zin_reg_exit
+	add_kunkou,player,50
+	end
+end
+
+*itemget
+	rnd,5
+	case0
+		get_item,player,0,精力剤
+		return
+	case1
+		get_item,player,0,一族の家宝
+		return
+	case2
+		get_item,player,0,脱出ポッド
+		return
+	case3
+		get_item,player,0,純愛の証
+		return
+	case4
+		get_item,player,0,派閥加入券
+		return
+return

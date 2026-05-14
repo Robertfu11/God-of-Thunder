@@ -1,0 +1,319 @@
+/////ねとられプラス_ver2.2（仕官 医生）/////
+
+eve_start
+        if_val,種父:yome_player!player
+eve_end
+
+
+set_epid1,839
+set_epid2,yome_player
+set_epid3,player
+set_epid4,種父:yome_player
+bgm_chg,64
+zin_reg_event,家里,,pid2,,gzin54
+zin_reg_msg,(肚子一天天变大了……cr被p_name3看到的话……),1
+//打胎
+chk_ormval,種父:yome_player=eveflg106,種父:yome_player=eveflg107,種父:yome_player=eveflg108,種父:yome_player=eveflg109,
+chk_ormval_then
+       goto,*start
+chk_ormval_else
+       rnd,10
+       case0
+       case1
+       case2
+       case3
+       case4
+       case5
+	end
+       case6
+       case7
+       case8
+       case9
+
+*start
+chk_mval,友好:yome_player<=50,,,,
+chk_mval_then
+goto,*br
+chk_mval_else
+
+chk_mval,eveflg103>150,eveflg104>=2,,,
+chk_mval_then
+  txtload,NTR\u234_ntr3u
+chk_mval_else
+
+chk_mval,eveflg103>80,eveflg104>=2,,,
+chk_mval_then
+goto,*yl
+chk_mval_else
+
+zin_reg_event,妇产科办公室,pid1,pid2,,gzin37
+zin_reg_qnar,知道了意外怀孕的p_name2在丈夫不在的一天来到了妇产科。
+zin_reg_msg,请、请问……cr要打胎的话去哪里？,1
+zin_reg_msg,啊……cr夫人不要孩子了吗？,0
+zin_reg_msg,是……cr因为家里已经有了……所以……,1
+zin_reg_msg,那真是可惜……,0
+zin_reg_msg,这里来吧……,0
+zin_reg_event,妇产科手术室,pid1,pid2,,gzin97
+zin_reg_msg,那么夫人请把衣服都脱了吧……cr先来检查下有没有不能打胎的疾病,0
+zin_reg_msg,是……,1
+zin_reg_msg,全都脱了哦，穿上这件打胎专用的病服cr到被子里躺下吧……,0
+zin_reg_qnar,p_name2脱下了衣服。
+zin_reg_event,妇产科手术室,pid1,pid2,zin112,gzin62
+zin_reg_qnar,p_name2穿着奇怪的丝制半透明病服躺在手术床上
+zin_reg_event,妇产科手术室,pid1,pid2,,gzin97
+
+chk_mval,eveflg104=2,,,,
+chk_mval_then
+set_eveflg,104,3
+goto,*old0
+chk_mval_else
+
+zin_reg_qnar,医生给p_name2打了麻药后，p_name2就睡着了。
+goto,*rs
+
+*rs
+rnd,3
+case0
+  goto,*fin
+case1
+  zin_reg_qnar,在睡梦中p_name2感觉到一根粗大的肉棒在自己的穴腔里猛烈地驰骋着。
+  goto,*xin
+case2
+  goto,*fin
+end
+
+*old0
+bgm_chg,64
+zin_reg_qnar,病服过于透明看起来就像没穿一样cr而且旁边医生异样的目光让她觉得很不舒服。
+zin_reg_msg,哦……夫人的身材保养的很好呢,0
+zin_reg_msg,……,0
+zin_reg_qnar,医生在p_name2的身上乱摸了一会、cr然后开始揉弄她的双乳。
+zin_reg_event,妇产科手术室,pid1,pid2,zin101,gzin62
+zin_reg_msg,嗯……看起来没有什么乳房病呢cr那么来看看下面吧,0
+zin_reg_event,妇产科手术室,pid1,pid2,,gzin62
+zin_reg_qnar,说完、医生向着p_name2的蜜处探去。
+zin_reg_qnar,p_name2早已羞红了脸、不知所措。
+zin_reg_qnar,医生将手指插入了p_name2的man_str。cr来回的抽弄着她的man_str。
+zin_reg_msg,……啊……嗯,1
+zin_reg_qnar,快感淹没了p_name2的脑海、cr很快，man_str里流出了淫水沾了医生一手。
+zin_reg_msg,嗯……夫人很健康呢，水也这么的多……呵呵,0
+zin_reg_qnar,医生怪笑着，回头拿起来一个针筒。
+zin_reg_msg,……打了麻药就可以打胎了……,0
+zin_reg_qnar,医生给p_name2打了麻药后，p_name2就睡着了
+zin_reg_qnar,在睡梦中p_name2感觉到一根粗大的肉棒在自己的穴腔里猛烈地驰骋着。
+
+*xin
+add_eveflg,110,1
+  zin_reg_qnar,过于激烈的冲刺使p_name2变得有些清醒。cr她迷糊地睁开眼睛，看到那名医生正趴在她的身上。
+  zin_reg_qnar,p_name2仍然全身无力，任由医生在自己的身体上发泄着欲望。
+
+chk_mval,eveflg104=2,,,,
+chk_mval_then
+set_eveflg,104,3
+goto,*old1
+chk_mval_else
+goto,*old1
+end
+
+*old1
+  zin_old_init
+  zin_old_img_str,am_ltwa01,20,1
+  zin_old_img_str,am_ltwa02,20,1
+  zin_old_img_str,am_ltwa03,20,1
+  zin_old_img_str,am_ltwa04,20,1
+  zin_old_img_str,am_ltwa05,20,1
+  zin_old_img_str,am_ltwa06,20,1
+
+zin_old_msg,……啊……啊……太爽了…这么极品的小穴…,pid1
+
+  zin_old_img_str,am_ltwa01,20,1
+  zin_old_img_str,am_ltwa02,20,1
+  zin_old_img_str,am_ltwa03,20,1
+  zin_old_img_str,am_ltwa04,20,1
+  zin_old_img_str,am_ltwa05,20,1
+  zin_old_img_str,am_ltwa06,20,1
+
+
+zin_old_msg,……啊……要去了…………,pid1
+
+
+  add_eveflg,103,2
+  zin_flush,pid2
+  zin_old_qnar,tane_str一股脑地冲进了p_name2的穴腔中crp_name2被tane_str激烈的冲击又弄昏迷了过去。
+  zin_old_exit
+goto,*fin
+
+
+*fin
+  zin_reg_qnar,醒来过后，p_name2被告知胎被顺利的打掉了。
+  zin_reg_event,妇产科手术室,pid1,pid2,,gzin62
+  zin_reg_msg,(刚刚做了一个奇怪的梦呢),1
+  set_datai,pid2
+  zin_reg_msg,(真是太棒了……),0
+chk_mval,eveflg104=5,,,,
+chk_mval_then
+goto,*p5
+chk_mval_else
+end
+
+*yl
+bgm_chg,64
+zin_reg_event,妇产科办公室,pid1,pid2,,gzin37
+zin_reg_qnar,知道了意外怀孕的p_name2在丈夫不在的一天来到了妇产科。
+zin_reg_msg,请、请问……cr要打胎的话去哪里？,1
+zin_reg_msg,啊……cr夫人不要孩子了吗？,0
+zin_reg_msg,是……cr因为家里已经有了……所以……,1
+zin_reg_msg,那真是可惜……,0
+zin_reg_msg,这里来吧……,0
+zin_reg_event,妇产科手术室,pid1,pid2,,gzin97
+zin_reg_msg,那么夫人请把衣服都脱了吧……cr先来检查下有没有不能打胎的疾病。
+zin_reg_msg,是……,1
+zin_reg_qnar,p_name2径直就开始解开了上衣纽扣、灼热的视线有一种莫名的快感冲击着她的内心
+zin_reg_msg,夫人的身材保养得很好呢cr丈夫少不了疼爱你吧,0
+zin_reg_msg,哪里的话……cr他也有自己的工作……,1
+zin_reg_qnar,说着p_name2缓缓解开了胸罩。医生的目光更加肆无忌惮地盯着她那洁白的双乳
+zin_reg_qnar,鲜红的乳头在陌生人的视线下昂首挺立
+zin_reg_msg,嗯……这对乳头这么红……cr应该没什么毛病……,0
+zin_reg_qnar,医生的话更是让p_name2浑身燥热忍不住自己用手划过乳房cr刹那间的巨大快感让她浑身一颤下身竟有些湿了
+zin_reg_msg,要不……要不请您帮我检查一下吧？,1
+zin_reg_msg,既然夫人都这样说了cr我就帮你看看吧,0
+zin_reg_qnar,说着医生伸出手捏住p_name2的右乳轻轻揉动
+zin_reg_msg,……嗯……嗯……cr（好舒服）,1
+zin_reg_msg,(真是滑嫩呢……),0
+zin_reg_qnar,p_name2的乳房在医生手里不断变换着各种形状。她的脑子越来越混乱了
+zin_reg_msg,……嗯……啊……啊……cr好厉害……,1
+zin_reg_qnar,医生突然用两根手指夹住了p_name2的乳头往上一提一按
+zin_reg_msg,……啊啊……好棒……cr要……要去了……,1
+zin_reg_qnar,随着p_name2高亢的呻吟。一股淫水顺着内裤流到了大腿上
+zin_reg_msg,夫人还真是敏感呢cr摸几下就高潮了,0
+zin_reg_msg,……嗯啊……是……cr是……医生您厉害……啊啊……,1
+zin_reg_msg,夫人都这样说了cr我顺便也帮你查一下其他地方吧？,0
+zin_reg_msg,……啊……请……cr请您帮我检查下面……cr下面痒死了……,1
+zin_reg_qnar,说完p_name2主动帮医生脱起了裤子……
+
+chk_mval,eveflg104=2,,,,
+chk_mval_then
+set_eveflg,104,3
+goto,*old0
+chk_mval_else
+
+zin_reg_exit
+bgm_chg,21
+zin_reg_event,妇产科手术室,pid1,pid2,,gzin97
+zin_reg_qnar,医生赤裸着身体平躺在病床上……
+zin_reg_qnar,p_name2褪掉内裤迫不及待跨到医生的身上。小穴对准那根早已勃起的大肉棒坐了下去……
+zin_old_init
+zin_old_img_str,fu_0_01,22,1
+zin_old_msg,啊……啊……cr肉棒……好舒服……,pid2
+zin_old_img_str,fu_0_02,22,1
+zin_old_img_str,fu_0_01,22,1
+zin_old_img_str,fu_0_02,22,1
+zin_old_qnar,p_name2如同一只发情的母狗卖力地在男人的身上起伏。嘴里不住地浪叫
+zin_old_msg,夫人的小穴真是极品啊cr弄得cf_pid1也好爽,pid1
+zin_old_msg,啊哈哈啊……又……cr啊……又要去了……,pid2
+zin_old_msg,那就再加把劲啊,pid1
+bgm_se,14
+zin_old_qnar,说着医生对着p_name2的屁股用力抽了一巴掌使得她动作更加剧烈
+zin_old_img_str,fu_0_01,22,1
+zin_old_img_str,fu_0_02,22,1
+zin_old_img_str,fu_0_01,22,1
+zin_old_img_str,fu_0_02,22,1
+zin_old_msg,嗯……啊……cr啊……去……cr去了……啊……,pid2
+zin_old_msg,啊……我也要射了……一起吧,pid1
+zin_old_img_str,fu_0_03,22,1
+zin_old_qnar,浓烈的精液混合着p_name2的淫水从两人结合处流了出来
+zin_old_qnar,p_name2停了下来回味着高潮带来的快感……
+zin_old_msg,快继续crcf_pid1还没爽够呢,pid1
+bgm_se,14
+zin_old_qnar,男人又向她的屁股抽了一巴掌逼着她继续动作……
+zin_old_img_str,fu_0_04,22,1
+zin_old_img_str,fu_0_05,22,1
+zin_old_img_str,fu_0_06,22,1
+zin_old_msg,啊……啊……cr哈……哈啊……,pid2
+zin_old_msg,夫人这对奶子真是我见过最美的。这次要玩个够呢,pid1
+zin_old_qnar,男人又伸手抓住了一只上下摆动的巨乳cr有些粗暴地揉搓起来
+zin_old_img_str,fu_0_04,22,1
+zin_old_img_str,fu_0_05,22,1
+zin_old_img_str,fu_0_06,22,1
+zin_old_qnar,乳房的疼痛更是有种变态的快感刺激着p_name2更加卖力地耸动
+zin_old_msg,啊……啊……cr又要丢了……啊……cr好快乐……啊……,pid2
+zin_old_msg,大肚子的女人操起来真爽……cr就让cf_pid1的精液让你肚子更大些吧……,pid1
+zin_old_img_str,fu_0_04,22,1
+zin_old_img_str,fu_0_05,22,1
+zin_old_img_str,fu_0_06,22,1
+zin_old_img_str,fu_0_07,22,1
+zin_old_qnar,汁水横飞中两人再一次达到了高潮……天色渐渐变暗了……
+zin_reg_exit
+zin_old_exit
+
+zin_reg_event,妇产科手术室,pid1,pid2,,gzin97
+zin_old_qnar,两人不知道做了多少次……
+zin_old_init
+zin_old_img_str,fu_0_08,22,1
+zin_old_msg,母狗再用点力别让cf_pid1不高兴了,pid1
+zin_old_img_str,fu_0_08a,22,1
+bgm_se,14
+bgm_se,14
+zin_old_qnar,男人大力抽打着p_name2的臀部。洁白的臀部上面几个红掌印已经清晰可见
+zin_old_msg,啊……好棒……好舒服……,pid2
+zin_old_img_str,fu_0_08,22,1
+zin_old_img_str,fu_0_08a,22,1
+zin_old_img_str,fu_0_08,22,1
+zin_old_img_str,fu_0_08a,22,1
+bgm_se,14
+bgm_se,14
+zin_old_qnar,男人每抽一巴掌p_name2便耸动几下。沾满全身的精液使她更加兴奋
+zin_old_msg,精液……啊……cr好多……好厉害……,pid2
+zin_old_img_str,fu_0_08,22,1
+zin_old_img_str,fu_0_08a,22,1
+zin_old_img_str,fu_0_08,22,1
+zin_old_img_str,fu_0_08a,22,1
+zin_old_msg,你这只母狗真是下贱cr不教训一下就不知道出力,pid1
+zin_old_msg,嗯嗯……啊啊……cr又要高潮了……啊啊,pid2
+zin_old_img_str,fu_0_08,22,1
+zin_old_img_str,fu_0_08a,22,1
+zin_old_img_str,fu_0_08,22,1
+zin_old_img_str,fu_0_08a,22,1
+zin_old_img_str,fu_0_09,22,1
+zin_old_qnar,p_name2再一次高潮了……她的体力终于支撑不住随后沉沉睡去……
+add_eveflg,103,5
+
+zin_old_exit
+zin_reg_qnar,醒来过后，p_name2被告知胎被顺利的打掉了。
+  zin_reg_event,妇产科手术室,pid1,pid2,,gzin97
+  zin_reg_msg,(刚刚做了一个奇怪的梦呢),1
+  set_datai,pid2
+  zin_reg_msg,(真是太棒了……),0
+chk_mval,eveflg104=5,,,,
+chk_mval_then
+goto,*p5
+chk_mval_else
+end
+
+*p5
+
+//第5阶段的话会发生第六阶事件
+
+get_mpid,性別=1,状態=2,覇王=poid_player,部下!player,友好<35,,
+set_eveflg,234,pval
+chk_mval,eveflg234>0,eveflg104=5,eveflg234!eveflg106,eveflg234!eveflg107,eveflg234!eveflg109
+	chk_mval_then
+	chk_family,eveflg234,player
+		case_fam_兄
+		case_fam_弟
+		case_fam_父
+		case_fam_息子
+		case_fam_息子(养)
+		end
+		default_fam
+                set_eveflg,235,0
+                zin_reg_qnar,p_name2离开了诊所、窗外一个人影跟了上去。
+                txtload,NTR\u234_ntr6
+	chk_mval_else
+end
+
+*br
+zin_reg_msg,(p_name3好像对我失去了兴趣……cr可是这是p_name4的孩子……),1
+zin_reg_msg,(过一天是一天吧……),1
+zin_reg_button,0
+zin_reg_exit

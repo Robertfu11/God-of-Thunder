@@ -1,0 +1,526 @@
+set_epid1,0
+set_epid2,player
+
+for,PMAX,280,1
+chk_mval,種父:eveflg280!player,覇王:eveflg280=poid_player,婚姻:eveflg280=player,,
+chk_mval_then
+set_epid1,eveflg280
+set_epid3,種父:eveflg280
+	goto,*Hitozumano
+	break
+chk_mval_else
+continue
+next
+end
+*Hitozumano
+
+//////////////////種父の生死確認(仕官中である）
+chk_msts,pid3,状態,2,NON,0,NON,0,NON,0,NON,0
+chk_msts_else
+end
+chk_msts_then
+////////////////////妻か調査
+chk_family,pid1,pid2
+case_fam_妻
+goto,*hitozuo
+break
+default_fam
+end
+*hitozuo
+
+//////////////////
+eve_start
+	if_kainin,eveflg280,8
+////    if_pid1,>0
+eve_end
+
+////////////イベント開始
+
+bgm_chg,60
+zin_reg_event,執務室,pid2,pid1,,gzin33
+    zin_reg_msg,．．．．,0
+    zin_reg_msg,．．．なに？,1
+    zin_reg_msg,いや、お腹も大きくなってきたな,0
+    zin_reg_msg,え？ええ．．．crもう半年を超えたから．．．,1
+    zin_reg_msg,．．．cr（そわそわ．．．,1
+    zin_reg_msg,（妙だなcrあの態度．．．）,0
+    zin_reg_msg,（何か変だcrそもそも身にcr覚えが無い．．．）,0
+    zin_reg_msg,（本当にお腹の子はcrcf_pid2の子なのか？）,0
+    zin_reg_msg,（．．．．）,0
+    zin_reg_msg,（問い詰めてみるか？）,0
+zin_reg_2sel,止めておこう,妻を問い詰める
+get_resp
+ret_sel1
+    zin_reg_msg,止めておくか．．．,0
+    end
+ret_sel2
+bgm_chg,67
+    zin_reg_event,執務室,pid2,pid1,,gzin33
+////////////////////////////////////////////////
+rnd,5
+case0
+    zin_reg_msg,．．．？,1
+	goto,*NetorareMasita01
+case1
+    zin_reg_msg,．．．あなた？,1
+	goto,*NetorareMasita01
+case2
+    zin_reg_msg,．．．どうしたの？,1
+	goto,*NetorareMasita01
+case3
+    zin_reg_msg,．．．ご用かしら？,1
+	goto,*NetorareMasita01
+case4
+    zin_reg_msg,．．．何？,1
+	*NetorareMasita01
+////////////////////////////////////////////////
+rnd,5
+case0
+    zin_reg_msg,．．．単刀直入に言おう,0
+	goto,*NetorareMasita02
+case1
+    zin_reg_msg,．．．,0
+	goto,*NetorareMasita02
+case2
+    zin_reg_msg,一つ聞く．．．,0
+	goto,*NetorareMasita02
+case3
+    zin_reg_msg,．．．こんな事は言いたく無いが,0
+	goto,*NetorareMasita02
+case4
+    zin_reg_msg,．．．p_name1,0
+	*NetorareMasita02
+////////////////////////////////////////////////
+rnd,5
+case0
+    zin_reg_msg,．．．お腹の子はcr誰の子だ？,0
+	goto,*NetorareMasita03
+case1
+    zin_reg_msg,．．．俺以外と交渉を持ったことは無いんだな？,0
+	goto,*NetorareMasita03
+case2
+    zin_reg_msg,．．．そのお腹の子の父親は誰だ？,0
+	goto,*NetorareMasita03
+case3
+    zin_reg_msg,．．．遺伝子検査をしても問題ないな？,0
+	goto,*NetorareMasita03
+case4
+    zin_reg_msg,．．．p_name1cr浮気をしたな？,0
+	*NetorareMasita03
+////////////////////////////////////////////////
+rnd,5
+case0
+    zin_reg_msg,なっ！？,1
+	goto,*NetorareMasita04
+case1
+    zin_reg_msg,．．．！？,1
+	goto,*NetorareMasita04
+case2
+    zin_reg_msg,．．．あ、ああ,1
+	goto,*NetorareMasita04
+case3
+    zin_reg_msg,あ、あなた．．．,1
+	goto,*NetorareMasita04
+case4
+    zin_reg_msg,．．．ひっ！？,1
+	*NetorareMasita04
+////////////////////////////////////////////////
+rnd,5
+case0
+    zin_reg_msg,．．．callself_pid1を、し、信じていないのですか,1
+    zin_reg_msg,それほど、動揺するとは．．．,0
+	goto,*NetorareMasita05
+case1
+    zin_reg_msg,こ、この子は、あなたの子です！あ、あ、あなたの子です！,1
+	goto,*NetorareMasita05
+case2
+    zin_reg_msg,．．．ち、違うんです．．．違うんです．．．,1
+	goto,*NetorareMasita05
+case3
+    zin_reg_msg,あ、ぐ、あぁ．．．,1
+	goto,*NetorareMasita05
+case4
+    zin_reg_msg,．．．い、嫌、いやぁ．．．,1
+	*NetorareMasita05
+////////////////////////////////////////////////
+rnd,5
+case0
+    zin_reg_msg,やはり、そうか！,0
+	goto,*NetorareMasita06
+case1
+    zin_reg_msg,この．．．売女が！！,0
+	goto,*NetorareMasita06
+case2
+    zin_reg_msg,所詮は女というわけか．．．はっ！！,0
+	goto,*NetorareMasita06
+case3
+    zin_reg_msg,．．．ゲスが,0
+	goto,*NetorareMasita06
+case4
+    zin_reg_msg,．．．p_name1cr貴様だけは違うと思ったがな,0
+    zin_reg_msg,所詮、男を欲しがるcr淫売だったとはな！,0
+	*NetorareMasita06
+////////////////////////////////////////////////
+rnd,5
+case0
+    zin_reg_msg,なぜ、callself_pid2をcr裏切ったのだっ！！,0
+    zin_reg_msg,お前は、このp_name2の妻なんだぞ！！,0
+	goto,*NetorareMasita07
+case1
+    zin_reg_msg,p_name1、よく、のこのことと顔を見せられたものだな！！,0
+	goto,*NetorareMasita07
+case2
+    zin_reg_msg,これ見よがしに、その腹を見せて．．．,0
+    zin_reg_msg,このcallself_pid2に対するあてつけか！！,0
+	goto,*NetorareMasita07
+case3
+    zin_reg_msg,ハッ！callself_pid2がcr気づかぬほど愚かだと思ったか！,0
+	goto,*NetorareMasita07
+case4
+    zin_reg_msg,いるのか．．．crお腹に浮気相手の子が！,0
+	*NetorareMasita07
+
+    zin_reg_msg,あ、あぁ．．．,1
+////////////////////////////////////////////////
+rnd,5
+case0
+    zin_reg_msg,貞操観念の欠片も無い雌豚め！！,0
+    zin_reg_msg,そんなに誰構わず、またがられて鳴きたいのか！,0
+	goto,*NetorareMasita08
+case1
+    zin_reg_msg,今の自分の姿を鏡で見てみろ！どれだけ自分が醜いか．．．直視してみろ！！,0
+	goto,*NetorareMasita08
+case2
+    zin_reg_msg,気持ち良かったか、ヤツとのセックスは！,0
+    zin_reg_msg,子供が出来るほどだからな！！！満足できただろう！,0
+	goto,*NetorareMasita08
+case3
+    zin_reg_msg,どうせ、そいつの気を引くために自分から腰をふったんだろう！！違うか！,0
+	goto,*NetorareMasita08
+case4
+    zin_reg_msg,この程度の女だったとはな！男に簡単に股を開く屑め！！,0
+	*NetorareMasita08
+
+//////////////////////////////////////
+    zin_reg_msg,相手は誰だ！cr答えろ！！！,0
+    zin_reg_msg,p_name3．．．crp_name3です．．．,1
+    zin_reg_face,pid3
+    zin_reg_msg,p_name3．．．だと！？,0
+    zin_reg_msg,おのれぇっ！cr人の妻に手をだすとは！,0
+    zin_reg_msg,う、うう．．．,1
+////////////////////////////////////////////////
+rnd,5
+case0
+    zin_reg_msg,仕方が．．．cr仕方が無かったの,1
+	goto,*NetorareMasita09
+case1
+    zin_reg_msg,．．．そ、そんな．．．callself_pid1どうしたらcrどうしたらよかったの．．．,1
+	goto,*NetorareMasita09
+case2
+    zin_reg_msg,．．．ああ、愛しているの．．．貴方の事を．．本当よ．．．でも．．．,1
+	goto,*NetorareMasita09
+case3
+    zin_reg_msg,うう．．．何も．．．cr何も弁明致しません．．．ああ．．．,1
+	goto,*NetorareMasita09
+case4
+    zin_reg_msg,お願い．．．あなた、見捨てないで．．．お願い．．．,1
+	*NetorareMasita09
+
+//////////////////////////////////////
+rnd,6
+case0
+    zin_reg_msg,ああ．．許して．．．許して．．．,1
+	goto,*NetorareMasita10
+case1
+    zin_reg_msg,うう．．．全て妊娠したcallself_pid1が悪い．．．の．．．,1
+	goto,*NetorareMasita10
+case2
+    zin_reg_msg,ごめんなさい、ごめんなさい．．．．,1
+	goto,*NetorareMasita10
+case3
+	bgm_se,15
+    zin_reg_msg,ああ、お願い！crお腹は、お腹は殴らないで！！,1
+	goto,*NetorareMasita10
+case4
+    zin_reg_msg,本当は、違う、違うの．．．crああ．．．,1
+	goto,*NetorareMasita10
+//////////////////////自決する
+case5
+
+    zin_reg_msg,．．．もう、言葉では．．．弁明できません．．．,1
+    zin_reg_msg,．．．だから,1
+    zin_reg_msg,自死をもってcr身の証しとします！,1
+bgm_chg,53
+bgm_se,13
+    zin_reg_face_1,0
+    zin_reg_msg,p_name1！？,0
+    zin_reg_qnar,p_name1は自決した
+    zin_reg_msg,．．．．．．,0
+    zin_reg_msg,ぐ、ぐぅうう．．．,0
+    set_dead,pid1,0
+//////////////愛人は部下の男/////////
+chk_msts,pid3,覇王,pid2,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+	goto,*NetorareMasita15
+chk_msts_else
+	goto,*NetorareMasita099
+//////////////////////////////////////
+//////////////////////////////////////
+	*NetorareMasita10
+    zin_reg_msg,．．．．．．,0
+//////////////////////////////////////
+zin_reg_event,執務室,pid2,pid1,,gzin33
+zin_reg_3sel,妻と離縁する,妻を処分する,妻を許す
+get_resp
+//////////////////////////////////////
+ret_sel1
+bgm_chg,53
+    zin_reg_msg,．．．離縁だ,0
+    zin_reg_msg,ヤツの愛人でも妾でも、好きなように生きれば良い！,0
+    zin_reg_msg,あ、あなた！crあなたぁあああ！！！,1
+    zin_reg_qnar,妻と離縁した．．．
+set_rikon,player
+upd_sts,pid1,4,2000
+//////////////愛人は部下の男/////////
+chk_msts,pid3,覇王,pid2,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+	goto,*NetorareMasita15
+chk_msts_else
+	goto,*NetorareMasita099
+//////////////////////////////////////
+//////////////////////////////////////
+ret_sel2
+zin_reg_qnar,激しい衝撃がp_name1を襲った
+bgm_chg,53
+bgm_se,13
+    zin_reg_msg,．．．あ、あなた！？,1
+    zin_reg_face_1,0
+    zin_reg_msg,ハァ、ハァ．．．,0
+    zin_reg_msg,．．．．．．,0
+zin_reg_qnar,p_name1は死亡した
+set_dead,pid1,0
+//////////////愛人は部下の男/////////
+chk_msts,pid3,覇王,pid2,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+	goto,*NetorareMasita15
+chk_msts_else
+	goto,*NetorareMasita099
+//////////////////////////////////////
+//////////////////////////////////////
+ret_sel3
+bgm_chg,54
+upd_sts,pid1,1,100
+rnd,6
+case0
+    zin_reg_msg,．．．ハァハァcr．．．こうなった以上、仕方が無い、な,0
+	goto,*NetorareMasita11
+case1
+    zin_reg_msg,．．．くそ,0
+    zin_reg_msg,．．．もう良い！,0
+	goto,*NetorareMasita11
+case2
+    zin_reg_msg,．．．,0
+    zin_reg_msg,p_name1、愛している．．．お前の事を．．．,0
+	goto,*NetorareMasita11
+case3
+   zin_reg_msg,．．．．もう良い。,0
+    zin_reg_msg,p_name1、もう良い、わかった．．．,0
+	goto,*NetorareMasita11
+case4
+   zin_reg_msg,．．．．．．,0
+    zin_reg_msg,怒鳴ったりしてすまないp_name1．．．,0
+	goto,*NetorareMasita11
+case5
+    zin_reg_msg,．．．．．．cr．．．そうだな,0
+    zin_reg_msg,callself_pid2のcr甲斐性が無いのも悪いのだ．．．,0
+	*NetorareMasita11
+//////////////////////////////////////
+rnd,5
+case0
+    zin_reg_msg,．．．ああ、では、お側にいても？,1
+	goto,*NetorareMasita12
+case1
+    zin_reg_msg,．．．許してcrくれるのですか？,1
+	goto,*NetorareMasita12
+case2
+    zin_reg_msg,．．．こんな、こんなcallself_pid1でも、受け入れてくれるのですか？,1
+	goto,*NetorareMasita12
+case3
+    zin_reg_msg,ここにいても良いのですか．．．？,1
+	goto,*NetorareMasita12
+case4
+    zin_reg_msg,．．．では！？,1
+	*NetorareMasita12
+//////////////////////////////////////
+rnd,5
+case0
+    zin_reg_msg,p_name1、泣くな．．．,0
+	goto,*NetorareMasita13
+case1
+    zin_reg_msg,（お前は許しても、お腹の子は別だがな．．．）,0
+	goto,*NetorareMasita13
+case2
+    zin_reg_msg,p_name1、お前は、私の妻だ。そうだろう？,0
+	goto,*NetorareMasita13
+case3
+    zin_reg_msg,妻を見捨てるcr夫はいない．．．,0
+	goto,*NetorareMasita13
+case4
+    zin_reg_msg,妻が汚れたのなら、清めてやるのが夫の役割だ．．．,0
+	*NetorareMasita13
+//////////////////////////////////////
+rnd,5
+case0
+    zin_reg_msg,ああ．．．あなた．．．愛してる！,1
+	goto,*NetorareMasita14
+case1
+    zin_reg_msg,愛しています。心の底から、愛しています,1
+	goto,*NetorareMasita14
+case2
+    zin_reg_msg,ああ、あなた！crあなたぁ！！！,1
+	goto,*NetorareMasita14
+case3
+    zin_reg_msg,なんて．．．なんていったら．．．ああ．．．！,1
+	goto,*NetorareMasita14
+case4
+    zin_reg_msg,．．．うう、ごめんなさい．．．ごめんなさい,1
+	*NetorareMasita14
+
+//////////////////////////////////////
+//////////////愛人は部下の男/////////
+chk_msts,pid3,覇王,pid2,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+	goto,*NetorareMasita15
+chk_msts_else
+	goto,*NetorareMasita099
+//////////////////////////////////////
+*NetorareMasita15
+bgm_chg,53
+    zin_reg_msg,．．．,0
+    zin_reg_msg,（さて、p_name3のヤツはどうしてくれよう．．．）,0
+    zin_reg_msg,（痴情での失敗を許せば、身を粉にして働く．．．とは言うが、な）,
+    zin_reg_event,謁見の間,pid2,pid3,,gzin5
+    zin_reg_msg,(．．．ま、まさかバレたのか？),1
+    zin_reg_msg,(．．．だとしたら),1
+    zin_reg_msg,p_name3．．．,0
+    zin_reg_msg,ハッ！,1
+zin_reg_2sel,処断する,部下を許す
+get_resp
+ret_sel1
+	goto,*NetorareMasita16A
+ret_sel2
+	goto,*NetorareMasita16B
+//////////////////////////////////////
+	*NetorareMasita16A
+    zin_reg_msg,．．．呼び出した理由はわかるな？,0
+    zin_reg_msg,．．．か、閣下,1
+    zin_reg_msg,人の伴侶に手を出して、無事にすむと思っていたか！,0
+    zin_reg_msg,憲兵！crこやつを捕縛せよ！,0
+//////////////////////////////////////
+rnd,2
+case0
+	goto,*NetorareMasita17A
+//////////////////////////////////////
+case1
+	goto,*NetorareMasita17B
+//////////////////////////////////////
+*NetorareMasita17A
+    zin_reg_event,謁見の間,pid2,756,,gzin5
+    zin_reg_msg,こい！,1
+    zin_reg_event,謁見の間,pid2,pid3,,gzin5
+    zin_reg_msg,閣下、お、お慈悲を！,1
+    zin_reg_event,謁見の間,pid2,pid3,zin80,gzin5
+    bgm_se,13
+    zin_reg_msg,ギャァアアア！！,1
+    zin_reg_face_1,0
+zin_reg_qnar,不埒者を処刑した
+set_dead,pid3,0
+zin_reg_msg,．．．ふ、ふふふ,0
+zin_reg_msg,ふはははcrははははははは！,0
+zin_reg_button,0
+zin_reg_exit
+end
+//////////////////////////////////////
+*NetorareMasita17B
+zin_reg_msg,こうなればヤケだ！,1
+zin_reg_msg,乱心したか！cr者ども、出会え！出会え！,0
+hao_ansatu,pid2,pid3
+get_resp
+//////////////////////////
+ret_sel1
+zin_reg_msg,くそぉおおお！,1
+zin_reg_msg,．．．ふんcr処刑する手間が省けたわ！,0
+bgm_se,13
+zin_reg_face_1,0
+zin_reg_msg,うぎゃっ！,1
+zin_reg_qnar,不埒者を葬った
+set_dead,pid3,0
+zin_reg_msg,．．．ふ、ふふふ,0
+	zin_reg_msg,ふはははcrははははははは！,0
+zin_reg_button,0
+zin_reg_exit
+end
+/////////////////////////////
+ret_sel2
+zin_reg_msg,ば、バカな．．．,0
+zin_reg_msg,は、ははは！覇王を殺したぞ！crひゃーはははは！,1
+zin_reg_qnar,覇王は痴情のもつれの末に死亡した．．．
+zin_reg_event,謁見の間,756,pid3,,gzin5
+zin_reg_msg,おのれ！撃て！cr撃ち殺せ！！！,0
+bgm_se,1
+zin_reg_msg,はぎゅあっ！！！,1
+zin_reg_face_1,0
+set_dead,pid3,0
+set_dead,pid2,0
+zin_reg_button,0
+zin_reg_exit
+end
+//////////////////////////////////////
+	*NetorareMasita16B
+    zin_reg_msg,．．．呼び出した理由はわかるな？,0
+    zin_reg_msg,．．．か、閣下,1
+    zin_reg_msg,．．．良かったろう？crおかげでcallself_pid2は、子に恵まれそうだ,0
+    zin_reg_msg,．．．そ！？,1
+    zin_reg_msg,．．．,0
+    zin_reg_msg,じ、自分は．．．,1
+    zin_reg_msg,．．．,0
+    zin_reg_msg,．．．,1
+    zin_reg_msg,．．．ハァハァ,1
+    zin_reg_msg,．．．お前は,0
+    zin_reg_msg,．．．ハッ！,1
+    zin_reg_msg,．．．callself_pid2のためにcr死ねるな？,0
+    zin_reg_msg,．．．は、ハハッ！,1
+    zin_reg_msg,．．．生涯、尽くせcrわかったな？,0
+    zin_reg_msg,この命cr燃え尽きるまで！,1
+    zin_reg_msg,（ふふ、少し演技が過剰すぎたかな．．．）,0
+zin_reg_qnar,p_name3の忠誠度が激しく上がった
+upd_sts,pid3,1,100
+zin_reg_button,0
+zin_reg_exit
+end
+//////////////////////////////////////
+*NetorareMasita099
+rnd,5
+case0
+    zin_reg_msg,（p_name3．．．ゆるさん、許さんぞ！）,0
+	goto,*NetorareMasita100
+case1
+    zin_reg_msg,（この屈辱．．．cr万倍にして返してやるぞp_name3！）,0
+	goto,*NetorareMasita100
+case2
+    zin_reg_msg,（p_name3覚えておけよ．．．）,0
+    zin_reg_msg,（貴様の眷属、皆殺しにしてやるぞ．．．）,0
+	goto,*NetorareMasita100
+case3
+    zin_reg_msg,（殺してやるぞcrp_name3．．．八つ裂きにしてやる）,0
+	goto,*NetorareMasita100
+case4
+    zin_reg_msg,（p_name3．．．この報い、必ず受けさせてやる！）,0
+	*NetorareMasita100
+
+zin_reg_button,0
+zin_reg_exit
+end
+浮気相手
+
+

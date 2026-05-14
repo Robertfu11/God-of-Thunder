@@ -1,0 +1,204 @@
+//宇宙超昂閃忍三人組
+
+eve_start
+	//遙，鳴香，昂被俘（假死狀態），主角仕官，霸王非三人組之前的霸王，鋼一刀仕官，與主角同勢力
+	if_val,状態:1250=6
+	if_val,状態:1250=6
+	if_val,状態:1250=6
+	if_val,状態:player=2
+	if_val,状態:1288=2
+	if_val,覇王:player!eveflg174
+	if_same_oid,player,1288
+eve_end
+
+set_epid1,player
+set_epid2,1288
+set_epid3,1252
+
+	bgm_chg,68
+	zin_reg_event,詛咒一黨的據點,pid1,pid2,,gzin78
+	zin_reg_msg,歡迎大人大駕光臨！cr屬下已經恭候多時了,1
+	zin_reg_msg,嗯．．cr要再次麻煩你了．．,0
+	zin_reg_qnar,即使最近已經來過了許多次，p_name1依然小心翼翼的打量着四周的情形．
+	zin_reg_qnar,詛咒一黨的據點入口就在眼前，顯得格外的幽暗陰森cr周圍冰冷的氣氛令人覺得毛骨悚然，不寒而慄
+	zin_reg_msg,．．．．．．,0
+	zin_reg_msg,我接到報告cr說調教即將完成？,0
+	zin_reg_msg,是的，大人！cr儀式的整個過程已接近尾聲！,1
+	zin_reg_msg,今天要進行的儀式cr就是最後的部分了！,1
+	zin_reg_msg,哦？cr真是太好了！,0
+	zin_reg_msg,現在還請煩勞大人親自前往牢房監督，見證儀式的完成吧,1
+	zin_reg_msg,好！前面帶路吧！,0
+	bl_fadeout
+	zin_reg_qnar,在p_name2等人的陪同下crp_name1穿過黝黯的通道及數重冰冷厚重的鐵門，來到了據點內部的恐怖囚室中
+
+
+	bgm_chg,55
+	zin_old_init
+	zin_old_img_str,eu310a,5,1
+	zin_old_qnar,
+	zin_old_qnar,牢房裏，衣衫襤褸的p_name3雙眼被黑布矇住，正在被幾隻身形巨大，皮膚赤紅的＂赤鬼＂無情的輪姦着
+	zin_old_msg,．．．．．．,pid1
+	zin_old_msg,咿～～cr咿呀～～～～,pid3
+	zin_old_msg,不，不要再來了．．．cr已經．．．夠了．．．．．．,pid3
+	zin_old_msg,裏面已經滿了．．cr再也裝，裝不下了啊．．．cr咿～～咿呀～咿呀啊啊啊啊！！,pid3
+	zin_old_qnar,p_name1之前已經見過這種半人半獸，力大無窮的＂赤鬼＂幾次，見怪不驚了．
+	zin_old_qnar,長着黑色犄角和金黃色眼瞳的＂赤鬼＂們，毫不留情的將碩大無比的生殖器輪番插入p_name3的體內，盡情的發泄着無窮的慾望
+	zin_old_qnar,p_name3的腹部明顯隆起，乳房的大小也異常的增大了許多，前端還不時有乳白的汁液噴射出來
+	zin_old_msg,大人！crp_name3及其他二人現在都處於擬似妊娠的狀態cr腹部的隆起是由子宮內填充的tane_str所致,pid2
+	zin_old_msg,藉由她們精神上對懷孕後即將生產的錯覺認知cr可以徹底完全的粉碎她們最後的意志防禦！,pid2
+	zin_old_msg,．．．．．．,pid1
+	zin_old_msg,大人無需擔心cr待到儀式成功之後，我會負責將她們的身體完全恢復至初始狀態的,pid2
+	zin_old_msg,只要能夠確保達成對她們的徹底控制cr方法手段隨你使用．．．,pid1
+	zin_old_msg,大人英明！,pid2
+	zin_old_qnar,巨碩的＂赤鬼＂們發出陣陣咆哮，接二連三的將白濁腥臭的漿液滿滿灌進p_name3身體的所有可用孔穴之中
+	zin_old_msg,嗚！～～～,pid3
+	zin_old_msg,不，不行！～～cr不能再．．．嗚！～～～～,pid3
+	zin_old_msg,裏面要被漲，漲破了啊！cr要．．要死了啊啊啊！！！,pid3
+	zin_old_msg,．．．,pid1
+	zin_old_msg,（啪！）,pid2
+	zin_old_qnar,p_name2打了個響指．這幾隻＂赤鬼＂聽到信號之後，停下了動作cr它們戀戀不捨的鬆開p_name3的身體，乖乖的退出了房間
+
+	zin_old_img_str,eu310b,5,1
+	zin_old_qnar,與此同時，另一大羣體型較小，皮膚慘白的＂青鬼＂從門外魚貫而入，迅速的接替了剛剛離去的＂赤鬼＂的位置
+	zin_old_msg,嗚～～～,pid3
+	zin_old_msg,不，不要再．．．cr嗚！～嗚！～～～,pid3
+	zin_old_qnar,不知何時，矇住p_name3雙眼的黑布已經被扯落了下來．
+	zin_old_qnar,p_name3透過眼前晃動着的大羣醜陋＂青鬼＂邪惡面龐的間隙，認出了正凝視着自己的p_name1與身後的p_name2等人
+	zin_old_msg,嗚～．．cr求．．．．．．．,pid3
+	zin_old_msg,求求你！．．．cr已，已經．．已經．．夠了．．．．,pid3
+	zin_old_msg,我已經．．．cr再也．．．cr再也．．受不了了．．．求求你們．．．．,pid3
+	zin_old_msg,．．．,pid1
+	zin_old_qnar,p_name3絕望屈服的乞求，不時的被身邊舔弄自己舌頭的＂青鬼＂打斷，以致無法完整的說出一句話來
+	zin_old_qnar,一旁的p_name2冷冷的看着p_name3那悲慘絕望的表情cr示意＂青鬼＂們繼續他們的行爲
+	zin_old_msg,大人！cr現在已經進入關鍵時刻了,pid2
+	zin_old_msg,還差一點就能徹底完成cr還請大人稍安勿躁，耐心等候片刻！,pid2
+	zin_old_msg,．．．嗯cr既然我已經全權委託於你．．．,pid1
+	zin_old_msg,就按你自己的判斷去做吧！,pid1
+	zin_old_msg,謝謝大人的信任！,pid2
+	zin_old_qnar,圍繞在p_name3身邊的＂青鬼＂們，有的貪婪的吸吮着從乳房裏擠出的乳汁cr有些則用細長的舌頭探入p_name3口腔中品嚐唾液的美味
+	zin_old_qnar,其餘的大量＂青鬼＂，則排在p_name3下體前，一個接一個的輪番用自己尖細狹長的生殖器穿刺進p_name3體內子宮深處，源源不斷的補充進大量的新鮮體液
+	zin_old_msg,嗚．．．．,pid3
+	zin_old_msg,唔唔～～cr哈啊．．．哈啊．．．．．．,pid3
+	zin_old_msg,求，求你．．．．cr饒了．．．．唔唔～～～,pid3
+	zin_old_msg,哈啊．．．cr哈啊．．．．．我．．．cr我吧．．．．．嗚咿啊啊啊啊！！,pid3
+	zin_old_msg,不，不要！cr唔唔～～～cr噗～～咳．．．咳．．．．嗚嗚嗚．．．,pid3
+	zin_old_qnar,p_name2冷眼旁觀着＂青鬼＂們肆意玩弄p_name3的軀體，不斷的將新鮮惡臭的tane_str填充進p_name3鼓脹的腹部
+	zin_old_qnar,眼看p_name3即將達到極限，p_name2轉頭低聲向邊上的部下詢問着什麼cr隨後，p_name2走向牢房入口方向，示意p_name1跟隨他前往其他區域
+	zin_old_msg,大人！cr這邊已經準備的差不多了．．．,pid2
+	zin_old_msg,還請煩勞大人隨我到隔壁cr一起見證儀式的完成！,pid2
+	zin_old_msg,．．．cr好！cr前面帶路！,pid1
+	zin_old_fadeout,0,30
+	zin_old_qnar,p_name1跟隨着p_name2穿過狹長的通道，來到了另一間囚室內
+
+
+set_epid2,1251
+set_epid4,1250
+
+	zin_old_img_str,eu311a,5,1
+	zin_old_msg,唔！！！,pid1
+	zin_old_qnar,打開房門的一瞬間，一股刺鼻腥臭的濃烈氣息撲面而來！
+	zin_old_qnar,房間裏，大羣的＂赤鬼＂正興致勃勃的輪姦着p_name4和p_name2
+	zin_old_qnar,p_name4和p_name2渾身上下沾滿了惡臭的tane_strcr和剛才的p_name3一樣，兩人的腹部也是高高隆起，脹大的乳房不停的分泌着乳汁
+	zin_old_msg,嗯啊～～cr嗯～～啊！～～～～cr又，又滿滿的灌進來了！！好，好舒服啊～～～,pid4
+	zin_old_msg,討，討厭～～～cr人家的裏，裏面已經裝不下啦！cr又，又溢出來了．．．,pid2
+	zin_old_msg,更多．．cr我要更多的．．．！！cr啊～～又，又一根堅硬，粗大的東西進來了！！cr好．好．．好舒服，好舒服啊～～～,pid4
+	zin_old_msg,哈啊～～cr哈～～啊～～～～cr又粗，又長，又滾燙的東西什麼的．．．人，人家最喜歡啦！,pid2
+	zin_old_qnar,眼前的兩人，顯然已經完全沉湎於肉慾之中．她們自己扭動着腰肢，盡情的享受着＂赤鬼＂那碩大無比的生殖器抽插帶來的強烈快感
+	zin_old_msg,．．．．．．,pid1
+	zin_old_msg,（看起來．．cr這兩個已經．．．．．．）,pid1
+
+bgm_se,34
+	zin_old_img_str,eu311b,5,1
+	zin_old_qnar,突然間，囚室的門被重重推開，幾個新的＂赤鬼＂涌了進來．cr帶頭的＂赤鬼＂身上還抱着p_name3，一邊走動一邊進行着抽插運動
+	zin_old_msg,p_name4！crp_name2！cr妳們，妳們也！！．．．,pid3
+	zin_old_msg,呵．．呵．．．．crp_name3，妳也來啦．．．．．cr看．．起來．．．妳．．哈啊～哈啊～～cr也．．也很舒服啊～～～～,pid4
+	zin_old_msg,p_name3姐～cr哈啊～哈～哈啊～～～cr妳和我們一樣，也大肚子了呢～～～cr嘻嘻～,pid2
+	zin_old_msg,p_name3姐的乳房，越來越大了哦～～cr好，好羨慕啊～～～～cr這樣一定，一定能生出好多好多的小寶寶的！,pid2
+	zin_old_msg,嗚～～～,pid3
+	zin_old_qnar,＂赤鬼＂將p_name3的雙手吊在了天井的鐵鏈上之後，再次開始輪番的抽插起p_name3的man_str
+	zin_old_msg,嗚～～～～cr既然，既然已經成這樣了．．．cr那麼不如．．大家一起．．．．,pid3
+	zin_old_msg,哈啊～～～哈～～啊～～～～crp_name3的大乳房，晃動的好厲害啊，一邊晃還一邊噴着乳汁．．．cr好，好像嚐嚐看啊．．．,pid4
+	zin_old_msg,嘻嘻～～crp_name4姐的乳汁，我已經美美的嘗過了cr這下可以好好吸p_name3姐的奶了，好高興～,pid2
+	zin_old_msg,飽飽喝下姐姐們的乳汁cr我的胸部一定也會長的和姐姐們一樣大了！cr嘻嘻～～,pid2
+	zin_old_msg,哈啊～cr哈啊，哈啊～～～crp_name2的胸部，以後一，一定也會長得像p_name3姐那麼大的．．．．,pid4
+	zin_old_msg,而，而且．．cr哈啊～哈啊～～cr而且，p_name2的乳汁味道也一點都不差呢．．．cr甜甜的，好好喝啊．．．．,pid4
+	zin_old_msg,吶～cr哈啊～～哈啊～～～～crp_name3姐～現，現在就讓我嚐嚐妳的乳汁的味道吧～～,pid4
+	zin_old_msg,我～我也要嘛！cr也讓我一起吸吸看嘛～～,pid2
+	zin_old_msg,那．．．cr哈～～～哈啊啊！！～好，好舒服～～～cr腰．．都快化掉了．．．．cr一．．一起，我們一起吸吧～～,pid4
+	zin_old_qnar,p_name4和p_name2兩人掙扎扭動着身體，來到p_name3身邊cr兩人扭腰迎合着身後＂赤鬼＂的抽送的同時，一左一右的開始吸吮p_name3的乳房
+	zin_old_msg,好．．cr好美味啊～～,pid4
+	zin_old_msg,嘻嘻～～crp_name3姐的奶，真是太好喝了～～,pid2
+	zin_old_msg,嗚嗚嗚～～～cr妳妳們兩個．．．不要吸，吸的那麼用力啊！cr哈～哈啊～～,pid3
+	zin_old_msg,p_name3姐的甜甜的乳汁，混上臭臭的白漿～cr呼啊～～呼呼～～～cr真是，真是太美味了啊！,pid2
+	zin_old_msg,p_name3姐的乳房這麼大，都可以自己喝到自己的呢～cr好羨慕～～好嫉妒啊～～～～,pid2
+	zin_old_msg,吶～cr哈啊～～哈啊～～～～cr讓我來幫妳一下～,pid4
+	zin_old_qnar,p_name4探身用嘴含住p_name2的嬌小乳頭cr在用力的吸吮了幾下之後，擡頭與p_name2口對口的吻在了一起
+	zin_old_msg,唔嗯～～唔嗯嗯嗯～～～cr哈啊～～哈～哈啊～～～cr自己的乳汁，味道如何～,pid4
+	zin_old_msg,也，也好好喝哦．．．cr但是，p_name4姐的口水，味道更好呢！cr唔嗯～～唔嗯嗯～～～,pid2
+	zin_old_qnar,p_name4和p_name2兩人四目相望，又一次充滿慾情的熱吻起來cr一邊的p_name3看着二人熱吻，心癢難耐，慾火中燒cr她終於下定決心，將自己心底最後一絲矜持徹底的拋棄了
+	zin_old_msg,那，那個．．．cr好妹妹們～cr也，也讓我嚐嚐看嘛～～,pid3
+	zin_old_msg,我．．我也好想喝．．．cr哈啊～～哈～．．．哈～．．．,pid3
+	zin_old_msg,好～的～～cr那～輪到讓我來幫妳品嚐p_name4姐的味道好了cr嘻嘻～,pid2
+	zin_old_msg,呀啊！cr哈～哈哈～～cr好，好養～好舒服啊！！！,pid4
+	zin_old_msg,唔嗯～～cr唔嗯～嗯嗯～～～～～,pid2
+	zin_old_msg,唔～～唔～～唔嗯啊～～～cr好，好美味啊～～cr我的，我的舌頭，我的身體，都感覺要融化掉了一樣．．．．,pid3
+	zin_old_msg,太，太好了．．．cr能和妹妹們一起，一起徹底的墮落下去．．．,pid3
+	zin_old_msg,我，我真的好幸福啊．．．．．．．,pid3
+	zin_old_fadeout,0,30
+
+
+set_epid2,1288
+
+	bgm_chg,68
+	zin_reg_event,詛咒一黨的據點,pid1,pid2,,gzin78
+	zin_reg_msg,大人！cr託大人的福，儀式已經順利的完成了！,1
+	zin_reg_msg,嗯！cr很好，辛苦你了！,0
+	zin_reg_msg,她們三個已經徹底的屈服了,1
+	zin_reg_msg,現在只要稍加調整cr她們就會完全的聽命於您了！,1
+	zin_reg_msg,這次你又立下如此大功，真是前途無量啊！,0
+	zin_reg_msg,我定會重重賞賜你的！,0
+	zin_reg_msg,屬下不敢當！,1
+	zin_reg_msg,大人的知遇之恩cr屬下沒齒難忘！！,1
+	zin_reg_msg,後面的事情．．．cr還有勞你費心了,0
+	zin_reg_msg,還請大人放心！,1
+	zin_reg_msg,對了，大人！cr等到她們三人調整完畢，我會將她們的處女膜再生修復,1
+	zin_reg_msg,還請大人務必親自爲她們三人開苞．．．,1
+	zin_reg_msg,如此方能獲得她們三人的絕對服從！,1
+	zin_reg_msg,哦？cr還有這種事．．,0
+	zin_reg_msg,哈哈！cr那我就恭敬不如從命，萬分期待你的傑作了！,0
+	zin_reg_msg,屬下一定不辜負大人的期待！,1
+	bl_fadeout
+	zin_reg_qnar,之後，重生的閃忍三人組加入了p_name1的麾下cr成爲了p_name1的心腹兼性奴．．．
+	zin_reg_button,0
+	zin_reg_exit
+
+
+	set_sikan,1250,poid_player
+	set_sikan,1251,poid_player
+	set_sikan,1252,poid_player
+
+	upd_sts,1250,12,110
+	upd_sts,1251,12,110
+	upd_sts,1252,12,110
+
+	upd_sts,1250,1,99
+	upd_sts,1251,1,99
+	upd_sts,1252,1,99
+
+	set_virgin,1250
+	set_virgin,1251
+	set_virgin,1252
+
+	set_eveflg,176,13
+
+
+	chk_sts,pid1,4,<13000
+		chk_sts_then
+			set_pbuka,1250,0
+			set_pbuka,1251,0
+			set_pbuka,1252,0
+		chk_sts_else
+
+end
+
+

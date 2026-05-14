@@ -1,0 +1,255 @@
+//	海賊娼館
+//	160-164番
+//	条件
+//	プレイヤーが海賊のカシラ
+//	女の手下がいる
+//	初回翌1月、以後3ヶ月に1回
+set_eveflg,211,0
+for,PMAX,210,1
+	//標準オルド年齢以上のプレイヤー所属の女海賊
+	chk_mval,状態:eveflg210=4,覇王:eveflg210=player,年齢:eveflg210>17,性別:eveflg210=2,
+	chk_mval_then
+		//フラグ設定済みの場合は除く
+		chk_ormval,eveflg210=eveflg160,eveflg210=eveflg161,eveflg210=eveflg162,eveflg210=eveflg163,eveflg210=eveflg164
+		chk_ormval_then
+			continue
+		chk_ormval_else
+			add_eveflg,211,1
+	chk_mval_else
+		continue
+next
+//初回発生後、毎月165番へ1を追加
+chk_eveflg,165,>0
+chk_eveflg_then
+	add_eveflg,165,1
+chk_eveflg_else
+//3ヶ月に1回実行ブロックへ飛ばしてイベントを発生させる
+chk_eveflg,165,4
+chk_eveflg_then
+	goto,*eventstart
+chk_eveflg_else
+//	発生条件ブロックここから	///////////////////////////////////////////////////////////////////
+eve_start
+	if_val,状態:player=4
+	if_val,勲功:player=13000
+	if_eveflg,211,>0
+	if_month,1
+eve_end
+//	実行ブロックここから		///////////////////////////////////////////////////////////////////
+*eventstart
+set_eveflg,165,0
+add_eveflg,165,1
+
+bgm_chg,60
+set_epid1,player
+
+//娼婦フラグが存在する場合は解除イベント
+chk_ormval,eveflg160!0,eveflg161!0,eveflg162!0,eveflg163!0,eveflg164!0
+chk_ormval_then
+	zin_reg_event,娼婦解任,pid1,,,gzin54
+	zin_reg_msg,现在要解除娼妇的任命嘛？,0
+	zin_reg_2sel,是,不是
+	get_resp
+	ret_sel1
+		set_eveflg,210,0
+		gosub,*dischargeproc
+		goto,*dischargeend
+	ret_sel2
+chk_ormval_else
+*dischargeend
+//娼婦フラグを調べて未設定なら任命
+chk_eveflg,160,0
+chk_eveflg_then
+	//娼婦任命へ
+	gosub,*prostitutekohochk
+chk_eveflg_else
+chk_eveflg,161,0
+chk_eveflg_then
+	gosub,*prostitutekohochk
+chk_eveflg_else
+chk_eveflg,162,0
+chk_eveflg_then
+	gosub,*prostitutekohochk
+chk_eveflg_else
+chk_eveflg,163,0
+chk_eveflg_then
+	gosub,*prostitutekohochk
+chk_eveflg_else
+chk_eveflg,164,0
+chk_eveflg_then
+	gosub,*prostitutekohochk
+chk_eveflg_else
+end
+
+*prostitutekohochk
+	//娼婦設定者以外に候補がいれば任命イベントへ
+	chk_eveflg,211,>0
+	chk_eveflg_then
+		goto,*prostitutemainproc
+	chk_eveflg_else
+		end
+
+*dischargeproc
+	chk_eveflg,164,>0
+	chk_eveflg_then
+		set_eveflg,210,164
+		set_epid3,eveflg164
+		gosub,*dischargeexe
+	chk_eveflg_else
+	chk_eveflg,163,>0
+	chk_eveflg_then
+		set_eveflg,210,163
+		set_epid3,eveflg163
+		gosub,*dischargeexe
+	chk_eveflg_else
+	chk_eveflg,162,>0
+	chk_eveflg_then
+		set_eveflg,210,162
+		set_epid3,eveflg162
+		gosub,*dischargeexe
+	chk_eveflg_else
+	chk_eveflg,161,>0
+	chk_eveflg_then
+		set_eveflg,210,161
+		set_epid3,eveflg161
+		gosub,*dischargeexe
+	chk_eveflg_else
+		set_eveflg,210,160
+		set_epid3,eveflg160
+		gosub,*dischargeexe
+		return
+
+*dischargeexe
+	zin_reg_event,娼婦解任,pid1,,,gzin54
+	zin_reg_face,pid3
+	zin_reg_msg,把p_name3解任可以嘛？
+	zin_reg_2sel,是的,不是
+	get_resp
+	ret_sel1
+		zin_reg_qnar,p_name3を解任しました。
+		set_eveflg,eveflg210,0
+		return
+	ret_sel2
+		return
+
+*prostitutemainproc
+set_eveflg,212,0
+zin_reg_event,娼婦任命,pid1,,,gzin54
+zin_reg_msg,要赚快钱还是搞个娼馆吧,0
+zin_reg_msg,那么、让谁去当娼妇呢,0
+for,PMAX,210,1
+	//標準オルド年齢以上のプレイヤー所属の女海賊
+	chk_mval,状態:eveflg210=4,覇王:eveflg210=player,年齢:eveflg210>17,性別:eveflg210=2,
+	chk_mval_then
+		//フラグ設定済みの場合は除く
+		chk_ormval,eveflg210=eveflg160,eveflg210=eveflg161,eveflg210=eveflg162,eveflg210=eveflg163,eveflg210=eveflg164
+		chk_ormval_then
+			continue
+		chk_ormval_else
+		zin_reg_event,娼婦任命,pid1,,,gzin54
+		zin_reg_face,eveflg210
+		zin_reg_msg,p_name_eveflg(210)にするか？,0
+		zin_reg_3sel,娼婦にする,しない,やめる
+		get_resp
+		ret_sel1
+			set_epid2,eveflg210
+			set_eveflg,213,0
+			set_eveflg,212,1
+			gosub,*selectprostitute1
+			gosub,*selectloop
+			chk_eveflg,213,1
+			chk_eveflg_then
+				break
+			chk_eveflg_else
+				set_eveflg,210,0
+				continue
+		ret_sel2
+			continue
+		ret_sel3
+			chk_eveflg,212,1
+			chk_eveflg_then
+				break
+			chk_eveflg_else
+				zin_reg_event,娼婦任命,pid1,,,gzin54
+				zin_reg_msg,やっぱやめるか,0
+				zin_reg_button,0
+				zin_reg_exit
+				end
+	chk_mval_else
+	continue
+next
+	zin_reg_event,娼婦任命,pid1,,,gzin54
+	chk_eveflg,212,1
+	chk_eveflg_then
+		zin_reg_msg,こんなもんかなcrへへ、がっぽり稼いでもらわねえと,0
+		goto,*selectendproc
+	chk_eveflg_else
+		zin_reg_msg,やっぱやめるか,0
+		*selectendproc
+		zin_reg_button,0
+		zin_reg_exit
+		end
+
+*selectprostitute1
+	zin_reg_event,娼婦任命,pid1,pid2,,gzin54
+	zin_reg_msg,有什么事情吗、call_pid21,1
+	zin_reg_msg,啊啊、是这样的call_pid12我想让你从事一份新工作,0
+	zin_reg_msg,在娼馆里做娼妇的新工作,0
+	zin_reg_msg,什么！！开玩笑的吧？,1
+	zin_reg_msg,这不是开玩笑！！要是讨厌的话，现在就从这里滚出去,0
+	zin_reg_msg,呜呜...好可怕！我明白了...只能这么做了,1
+	zin_reg_msg,嘛、那就交给你了,0
+	zin_reg_face_1,0
+	zin_reg_qnar,p_name2当上了娼妇。
+	gosub,*setprostitute
+	//能力を一律10下げる
+	upd_sts,pid2,攻撃,-10
+	upd_sts,pid2,防御,-10
+	upd_sts,pid2,知力,-10
+	upd_sts,pid2,格闘,-10
+	upd_sts,pid2,交渉,-10
+	upd_sts,pid2,忠誠,-30
+	//upd_sts,pid2,状態,6
+	//upd_sts,pid2,不妊,1
+	return
+
+*selectloop
+	chk_eveflg,164,>0
+	chk_eveflg_then
+		set_eveflg,213,1
+		return
+	chk_eveflg_else
+		zin_reg_event,娼婦任命,pid1,,,gzin54
+		zin_reg_msg,让她去当娼妇是嘛？
+		zin_reg_2sel,是的,不是
+		get_resp
+		ret_sel1
+			set_eveflg,213,2
+			return
+		ret_sel2
+			set_eveflg,213,1
+			return
+
+*setprostitute
+	chk_eveflg,160,0
+	chk_eveflg_then
+		set_eveflg,160,pid2
+		return
+	chk_eveflg_else
+	chk_eveflg,161,0
+	chk_eveflg_then
+		set_eveflg,161,pid2
+		return
+	chk_eveflg_else
+	chk_eveflg,162,0
+	chk_eveflg_then
+		set_eveflg,162,pid2
+		return
+	chk_eveflg_else
+	chk_eveflg,163,0
+	chk_eveflg_then
+		set_eveflg,163,pid2
+		return
+	chk_eveflg_else
+		set_eveflg,164,pid2
+		return

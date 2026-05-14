@@ -1,0 +1,119 @@
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,你就這麼討厭被buf_str1抱的感覺？,0
+	zin_reg_msg,這當然了、我為什麼要和你做這種事！！,1
+	zin_reg_msg,倔強的女人喲、我越來越喜歡你了,0
+	zin_reg_msg,就讓callself_pid1在這倔強的身體裡注入種子吧,0
+	zin_reg_msg,為、為什麼要做這種討厭的事情．．．,1
+	zin_reg_msg,喂、把這傢伙摁住了！！,0
+	zin_reg_face_1,756
+	zin_reg_msg,是的！！,1
+	zin_reg_msg,給她注射這種藥水,0
+	zin_reg_msg,遵命,1
+	zin_reg_face_1,pid2
+	zin_reg_msg,不、不要啊、不要做奇怪的事情！！,1
+	zin_reg_msg,呵呵呵,0
+	zin_reg_qnar,10分鐘后
+	zin_reg_msg,啊啊．．．身體、身體．．．使不上力氣．．．,1
+	zin_reg_msg,那麼、首先就讓我一件一件把你的衣服脫掉吧,0
+	zin_reg_msg,啊啊．．．不要啊．．．不要碰我．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,不、不要啊！！　快、快住手！！　不要．．不、不要這樣啊ーーー！！,pid2
+	zin_old_msg,唔呵呵呵呵、好穴啊,pid1
+	zin_old_msg,好、好過分．．．拜託了、快住手．．．,pid2
+	zin_old_msg,怎麼？　身體不聽使喚了居然還有主觀意識？,pid1
+	zin_old_msg,像人偶一樣被我肆意侵犯著,pid1
+	zin_old_msg,況且剛才用了媚藥。是不是差不多該有點快感了？,pid1
+	zin_old_msg,沒、沒有．．．這種、事情．．．啊啊．．．！！,pid2
+	zin_old_msg,那知道你神志不清為止、我就不會停！！,pid1
+	zin_old_msg,啊啊、怎麼會這樣！！　不行啊！！　不要這麼粗暴！！　要、要去了！！,pid2
+	zin_old_msg,不管幾次都會讓你高潮的,pid1
+	zin_old_msg,讓仇人的肉棒送你上天吧！！,pid1
+	zin_old_msg,啊啊、不行！！　就、就要．．．要高潮了！！,pid2
+	zin_old_msg,唔唔！！　要出來了！！　滿滿的灌進子宮吧！！,pid1
+	zin_old_msg,不、不行啊！！　仇人的種子、我才不想要ーーー！！,pid2
+	zin_flush,pid2
+	zin_old_msg,啊啊．．．被．．．被仇人、中出了．．．,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,開什麼玩笑、我才不會把我的第一次給你,1
+	zin_reg_msg,嗬、處女？,0
+	zin_reg_msg,這妥妥的必須嘗嘗鮮啊,0
+	zin_reg_msg,撕裂初膜的那種快感是難以形容的,0
+	zin_reg_msg,胡說八道！！　誰要和你那個！！,1
+	zin_reg_msg,是麼、那就只能用那個我不怎麼喜歡的手段了,0
+	zin_reg_msg,暫時讓她稍微安靜一些,0
+	zin_reg_face_1,756
+	zin_reg_msg,是！！,1
+	zin_reg_msg,給他注射這個藥水,0
+	zin_reg_msg,遵命,1
+	zin_reg_face_1,pid2
+	zin_reg_msg,不、不要、不要做這種奇怪的事情！！,1
+	zin_reg_msg,呵呵呵,0
+	zin_reg_qnar,10分鐘后
+	zin_reg_msg,啊啊．．．身體、身體．．．使不上勁．．．,1
+	zin_reg_msg,呵呵呵、看起來藥勁兒上來了,0
+	zin_reg_msg,這、這種事情．．．,1
+	zin_reg_msg,那、你的初膜我就收下了,0
+	zin_reg_msg,啊啊．．．住手啊．．．不要碰我．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,不、不要！！　不、不行．．．啵滋啵嗞的．．．就這樣進來了！！,pid2
+	zin_old_msg,哦哦、這種感觸．．．不愧是原封貨,pid1
+	zin_old_msg,不、不要！！　拔出來！！　這樣下去會、拜、拜託了！！,pid2
+	zin_old_msg,你說什麼呢、這就讓你做完整的女人。覺悟吧！！,pid1
+	zin_old_msg,這樣、不行、討厭啊啊！！,pid2
+	zin_old_msg,沖啊啊啊啊啊啊啊！！,pid1
+	zin_old_msg,呀啊啊啊啊啊啊啊ーーーーーー！！！！,pid2
+	zin_flush_one,pid2
+	zin_old_msg,哦哦、這種感觸．．．我已經愛上破瓜的感覺了！！,pid1
+	zin_old_msg,呵呵呵、你的初膜我就愧領了,pid1
+	zin_old_msg,你、你這個．．．野獸！！．．．！！,pid2
+	zin_old_msg,你、你給我記住．．．以后．．．我一定會．．殺了你的！！,pid2
+	zin_old_msg,啰嗦的女人,pid1
+	zin_old_msg,不過、即便你這麼不配合、可還是有快感、呵呵呵,pid1
+	zin_old_msg,撒、大仇當前、爽飛起來吧！！,pid1
+	zin_old_msg,啊啊、不行．．．為什麼．．．會對這個男人、這頭野獸有感覺！！,pid2
+	zin_old_msg,這是秘藥的效果哦。這藥很好的。感覺不錯吧,pid1
+	zin_old_msg,那就再接著來、哦啦啊啊！！,pid1
+	zin_old_msg,啊呀呀呀啊！！　不、不行！！　這樣不行！！　要、要高潮了！！　要被高潮了！！,pid2
+	zin_old_msg,差不多到終點了。沉溺于初次的快感之海吧！！,pid1
+	zin_old_msg,啊啊、不行．．．這個！！　要、要去了ーーーーー！！,pid2
+	zin_flush,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_reg_msg,本以為你懷孕了就會乖一點的、倔強的女人呢,0
+	zin_reg_msg,我不會為了這種事情而屈服的,1
+	zin_reg_msg,沒辦法、那是用那個吧,0
+	zin_reg_msg,喂、把她抓住！！,0
+	zin_reg_face_1,756
+	zin_reg_msg,是！！,1
+	zin_reg_face_1,pid2
+	zin_reg_msg,怎、怎麼．．．不、不要啊、不要再做那種事情了！！,1
+	zin_reg_msg,呵呵呵,0
+	zin_reg_qnar,10分后
+	zin_reg_msg,嗚嗚．．．你這個卑鄙小人．．．,1
+	zin_reg_msg,沒一句好話,0
+	zin_reg_msg,那、今晚我們就合為一體吧,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,呵呵、怎麼樣、懷著buf_str1孩子的感覺怎麼樣？,pid1
+	zin_old_msg,不、不要開玩笑了．．．這、這東西．．．生下來的話．．我、我馬上就．．殺掉它．．嗚嗚,pid2
+	zin_old_msg,女人真是個可悲的物種。不管嘴上怎麼拒絕、身體還是這麼誠實,pid1
+	zin_old_msg,你也不例外,pid1
+	zin_old_msg,嗚嗚．．．這種．．．這種事情．．．我是不會屈服的．．．啊啊！！,pid2
+	zin_old_msg,差不多到了該下奶的時候了？　乳房是不是很敏感呢？,pid1
+	zin_old_msg,啊啊啊啊！！　不、不要．．．奶頭．．．奶頭不可以啊！！,pid2
+	zin_old_msg,呵呵呵、看起來藥效已經發揮了。傳說中的4倍敏感度？,pid1
+	zin_old_msg,啊啊．．．怎麼會這樣．．．又對、這傢伙．．．有感覺了．．．,pid2
+	zin_old_msg,你差不多也應該稍微順從一點了吧。從心底裡接受callself_pid1吧,pid1
+	zin_old_msg,不、不會的．．．只有、只有這件事．．．絕對、不會的！！,pid2
+	zin_flush,pid2
+	end

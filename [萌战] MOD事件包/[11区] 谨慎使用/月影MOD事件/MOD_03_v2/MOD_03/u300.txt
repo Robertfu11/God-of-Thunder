@@ -1,0 +1,40 @@
+eve_start
+if_val,状態:player=5
+if_not_haou,player
+eve_end
+set_eveflg,193,0
+set_eveflg,193,0
+                for,PMAX,193,1
+                chk_msts_then
+                chk_eveflg,193,player
+                chk_eveflg_then
+                continue
+                chk_eveflg_else
+                chk_msts,eveflg193,年齢,>15,状態,5,攻撃,>80,NON,0,NON,0
+                chk_msts_then
+                add_menkai,eveflg193
+                add_menkai,eveflg193
+                set_sinmitu,eveflg193,100
+                //upd_sts,eveflg193,部下,player
+                set_pbuka,eveflg193,0
+                chk_msts_else
+                chk_msts,eveflg193,年齢,>15,状態,5,外交,>80,NON,0,NON,0
+                chk_msts_then
+                add_menkai,eveflg193
+                add_menkai,eveflg193
+                set_sinmitu,eveflg193,100
+                //upd_sts,eveflg193,部下,player
+                set_pbuka,eveflg193,0
+                chk_msts_else
+				chk_msts,eveflg193,年齢,>15,状態,5,知力,>80,NON,0,NON,0
+                chk_msts_then
+                add_menkai,eveflg193
+                add_menkai,eveflg193
+                set_sinmitu,eveflg193,100
+                //upd_sts,eveflg193,部下,player
+                set_pbuka,eveflg193,0
+                chk_msts_else
+                continue
+                 next
+                set_eveflg,193,0
+end

@@ -1,0 +1,11 @@
+bgm_chg,35
+zin_reg_init
+zin_reg_event,,pid1,,,gzin54
+zin_reg_msg,啊啊呀！！,0
+zin_reg_qnar,p_name1突然吐血倒下。
+zin_reg_msg,可惡．．．．,0
+zin_reg_msg,呿、吐血什麼的、太不像樣了．．．,0
+zin_reg_msg,看來、cf_pid1也沒多少時間了,0
+zin_reg_button,0
+zin_reg_exit
+end

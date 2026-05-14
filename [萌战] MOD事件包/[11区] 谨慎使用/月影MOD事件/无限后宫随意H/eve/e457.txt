@@ -1,0 +1,56 @@
+eve_start
+    if_date,100,12
+    if_eveflg,62,4
+    if_poid,429,eveflg064
+    if_poid,606,eveflg064
+eve_end
+
+chk_exeplayer,eveflg064,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+set_epid1,eveflg064
+set_epid2,606
+
+bgm_chg,69
+zin_reg_event,,606,429,,gzin72
+zin_reg_qnar,從王宮裏突然傳出了召見巴尼亞瓦。
+zin_reg_msg,巴尼亞瓦、進來了,1
+zin_reg_msg,好久不見了啊巴尼亞瓦,0
+zin_reg_msg,啊是？,1
+zin_reg_msg,記得嗎？cr５年前我們在牢獄裏見過,0
+zin_reg_msg,難道、那個時候的少女？,1
+zin_reg_msg,沒自我介紹真是對不起了、我叫帕米拉,0
+zin_reg_msg,怎麼回事？cr為什麼你會在這裏？,1
+zin_reg_msg,我說過的cr靠自己的力量走出來的,0
+zin_reg_msg,還有要注意用詞,0
+zin_reg_msg,現在、我可是王族,0
+zin_reg_msg,和以前不一樣了,0
+zin_reg_msg,嗯嗯．．．．cr那麼叫我來有什麼事嗎？,1
+zin_reg_msg,我想讓你做將軍,0
+zin_reg_msg,你說將軍！？,1
+zin_reg_msg,是啊、成為將軍來保護我和我的孩子,0
+zin_reg_msg,要我當保鑣嗎？,1
+zin_reg_msg,呼呼呼、嘛就是這樣,0
+zin_reg_msg,但是、另一個、你的願望我一定會幫你實現的,0
+bgm_chg,67
+zin_reg_msg,我的願望？,1
+zin_reg_msg,我知道的哦cr你身上也有著王族的血,0
+zin_reg_msg,什麼．．．,1
+zin_reg_msg,你進入軍隊的目的p_name1是為了暗殺的吧？,0
+zin_reg_msg,你．．．．cr到底是什麼人啊！,1
+zin_reg_msg,５年前我還只是一個村姑cr從那以後我也遇到了很多很多事,0
+zin_reg_msg,只要成為將軍的話就有很多機會接近p_name1不是嗎？,0
+zin_reg_msg,你的目的到底是啊什麼啊,1
+zin_reg_msg,和我聯手吧、巴尼亞瓦,0
+zin_reg_msg,一起把宇宙收入手中把,0
+zin_reg_msg,只要有你在就有可能,0
+zin_reg_msg,哈哈哈、我都聽呆了,1
+zin_reg_msg,我可沒這種野心cr想要做的話，也請靠自己的力量吧,1
+zin_reg_msg,如果沒有其他的事、那我就告退了,1
+zin_reg_face_r,0
+zin_reg_msg,我還以為你是一個為了目的而不擇手段的人．．．,0
+zin_reg_msg,算了、我可是不會放棄的哦、巴尼亞瓦,0
+zin_reg_button,0
+end

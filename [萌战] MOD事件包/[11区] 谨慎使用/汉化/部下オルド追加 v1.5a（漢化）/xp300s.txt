@@ -1,0 +1,6 @@
+//部下オルド　正常位 20%
+chk_wsts,pid2
+case_normal
+	txtload,xp300s_a
+case_botebara
+	txtload,xp300s_b

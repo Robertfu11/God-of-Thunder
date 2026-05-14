@@ -1,0 +1,17 @@
+bgm_chg,54
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin21
+zin_reg_qnar,p_name1在大街上閑逛的時候和一個女人不小心撞在了一起。
+zin_reg_msg,——呀！！！！,1
+zin_reg_msg,哎呀，真是抱歉，沒事吧,0
+zin_reg_msg,恩，謝謝。我沒事,1
+zin_reg_msg,真是對不起，怪我太心急了,1
+zin_reg_msg,發生什麼了嗎？,0
+zin_reg_msg,和我一起的朋友走散了,1
+zin_reg_msg,這還真是讓人擔心啊,0
+zin_reg_msg,我知道了，我來幫忙找他吧,0
+zin_reg_msg,啊，真是幫大忙了,1
+zin_reg_title,和p_name2成為朋友了。
+zin_reg_button,0
+zin_reg_exit
+end

@@ -1,0 +1,26 @@
+//オンゴゴを部下にする
+eve_start
+    if_date,102,12
+    if_eveflg,62,4
+    if_poid,606,870
+eve_end
+
+chk_exeplayer,870,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,,606,896,,gzin33
+zin_reg_qnar,帕米拉は實行了戰略。
+zin_reg_msg,梅蘿、這是第一份工作,0
+zin_reg_msg,哈哈,1
+zin_reg_msg,我想要一個海盜,0
+zin_reg_msg,誰都可以cr腕の立つ海賊を仲間にするのだ,0
+zin_reg_msg,知道了,1
+zin_reg_msg,我期待你的表現,0
+zin_reg_msg,ハハッ！！,1
+zin_reg_button,0
+//zin_reg_exit
+end

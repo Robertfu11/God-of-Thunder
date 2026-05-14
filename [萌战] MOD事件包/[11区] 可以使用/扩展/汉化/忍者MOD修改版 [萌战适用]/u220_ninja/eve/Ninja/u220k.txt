@@ -1,0 +1,116 @@
+//宇宙超昂閃忍三人組
+
+eve_start
+	//遙，鳴香，昂被俘（假死狀態），主角仕官，霸王非三人組之前的霸王，鋼一刀仕官，與主角同勢力
+	if_val,状態:1250=6
+	if_val,状態:1250=6
+	if_val,状態:1250=6
+	if_val,状態:player=2
+	if_val,状態:1288=2
+	if_val,覇王:player!eveflg174
+	if_same_oid,player,1288
+eve_end
+
+set_epid1,player
+set_epid2,1288
+set_epid3,1250
+
+	bgm_chg,68
+	zin_reg_event,詛咒一黨的據點,pid1,pid2,,gzin78
+	zin_reg_msg,歡迎大人大駕光臨！cr屬下已經恭候多時了,1
+	zin_reg_msg,抱歉cr讓你久等了．．．,0
+	zin_reg_qnar,p_name1警惕的打量着四周的情形．
+	zin_reg_qnar,詛咒一黨的據點入口就在眼前，顯得格外的幽暗陰森cr周圍冰冷的氣氛令人覺得毛骨悚然，不寒而慄
+	zin_reg_msg,．．．．．．,0
+	zin_reg_msg,非常抱歉！cr此地過於寒磣，引得大人不快了．．,1
+	zin_reg_msg,不，沒什麼．．．,0
+	zin_reg_msg,我們詛咒一族歷代都是生存於暗影之中，此處環境對我們倒是再合適不過了,1
+	zin_reg_msg,既然這裏是適合你們的天性的環境，那也無可厚非,0
+	zin_reg_msg,好了，言歸正傳,0
+	zin_reg_msg,交給你們的閃人三人組，現在怎麼樣了？,0
+	zin_reg_msg,報告大人！cr儀式的過程目前還在循序漸進之中．．,1
+	zin_reg_msg,還望大人能夠耐心等待．,1
+	zin_reg_msg,現在就煩勞大人親自前往牢房監督，觀摩儀式的進行吧,1
+	zin_reg_msg,好！前面帶路吧！,0
+	bl_fadeout
+	zin_reg_qnar,在p_name2等人的陪同下crp_name1穿過黝黯的通道及數重冰冷厚重的鐵門，來到了據點內部的恐怖囚室中
+
+
+	bgm_chg,55
+	zin_old_init
+	zin_old_img_str,eu308a,5,1
+	zin_old_qnar,陰森的牢房內，p_name3被繩索層層捆綁，懸吊在天井之上
+	zin_old_msg,嗚．．．．．．,pid3
+	zin_old_msg,．．．,pid1
+	zin_old_qnar,雖然p_name3身上還穿着平時的衣物，但是乳房，陰部這些敏感隱私之處都被毫無遮蔽的暴露在外
+	zin_old_qnar,p_name3終於察覺到了有人到來，微微睜開雙眼望向p_name1等人，她的臉上滿是苦悶的神情
+	zin_old_msg,嗚．．．．．．,pid3
+	zin_old_msg,大人，儀式的一部分即將開始cr還請大人稍稍退後，以免不測發生！,pid2
+	zin_old_msg,．．．．．．,pid1
+	zin_old_msg,謝謝大人的配合！,pid2
+	zin_old_msg,那麼cr現在，儀式開始！,pid2
+	zin_old_qnar,p_name2打了一個響指，周圍的部下立刻行動起來，操控起邊上的怪異儀器
+	zin_old_qnar,房間正中央，p_name3所處位置下方的地板緩緩打開，露出了一個深不見底的黑洞．．．cr一個令人極度不快的噁心異形生物慢慢鑽了上來！
+	zin_old_msg,！！！,pid1
+	zin_old_msg,這，這是！,pid1
+
+	zin_old_img_str,eu308b,5,1
+	zin_old_qnar,從洞裏出現的生物舞動着無數粉紅色的肉質觸手，將p_name3的身體緊緊的纏繞起來
+	zin_old_msg,大人不必驚慌！,pid2
+	zin_old_msg,這是我們一族祕密培養的異獸，專門用於洗腦拷問之用,pid2
+	zin_old_msg,它分泌的體液會讓女性產生性衝動，並且有效的刺激快感神經，瓦解她的意志防禦,pid2
+	zin_old_msg,然而其本身並無多大威脅性cr還請大人放心！,pid2
+	zin_old_msg,．．．．．．,pid1
+	zin_old_msg,抱歉cr有點失態了！,pid1
+	zin_old_msg,沒事，不用擔心我這邊．cr繼續吧,pid1
+	zin_old_msg,是，大人！,pid2
+	zin_old_qnar,纏繞在p_name3身上的觸手緩慢而有力的蠕動着，漸漸開始勒緊p_name3的身體
+	zin_old_qnar,其中一根觸手蠕動着形似龜頭的尖端，深深的貫穿進了p_name3的man_str內．
+	zin_old_qnar,尖端後面的巨大瘤狀物上長滿了密密麻麻的肉質突起，不停的摩擦刺激着p_name3的外陰敏感器官
+	zin_old_msg,嗚．．．cr嗯～～嗯啊．．．．．,pid3
+	zin_old_msg,哈．．．cr哈啊．．．哈啊．．．．．,pid3
+	zin_old_msg,嗯啊～～cr哈．．．cr咿啊啊！！．．．．．．．,pid3
+	zin_old_qnar,p_name3被緊緊纏繞着的觸手勒的喘不過氣來，張大了口發出苦悶的的嗚咽喘息之聲
+	zin_old_qnar,在體內深處不停蠕動着的龜頭狀尖端，配合着外面持續摩擦的帶刺肉瘤，帶給p_name3一波又一波強烈無比的快感，使得p_name3本已缺氧的臉頰泛起陣陣紅潮
+	zin_old_msg,p_name2，這樣真的沒事麼？,pid1
+	zin_old_msg,大人不必擔心cr我們在p_name3身上裝有各種監測裝置,pid2
+	zin_old_msg,她的心跳，體溫，興奮程度等等都在我們的監控之下cr生命不會有任何危險的,pid2
+	zin_old_msg,哦？cr那就好．．．,pid1
+	zin_old_msg,看來我的擔心是多餘的了cr你們繼續專心控制吧,pid1
+	zin_old_msg,遵命，大人！,pid2
+	zin_old_qnar,纏繞住p_name3雪白豐滿的乳房的觸手，開始有節奏的收縮律動起來cr乳房尖端的粉紅乳頭在擠壓之下開始噴出一股股白色的乳汁
+	zin_old_msg,嗯啊～～～cr唔～～cr唔唔唔～～～～,pid3
+	zin_old_msg,哈啊．．．cr哈．．哈．．咿呀啊！！．．．．．,pid3
+	zin_old_msg,嗯？cr這是．．．cr難道她．．．．．．？,pid1
+	zin_old_msg,報告大人！,pid2
+	zin_old_msg,這種泌乳只是在長期的淫獸體液刺激下，p_name3身體產生的特異變化現象,pid2
+	zin_old_msg,並非是妊娠所致cr這點還請大人寬心！,pid2
+	zin_old_msg,．．．．．．,pid1
+	zin_old_qnar,隨着觸手的蠕動收縮頻率越來越快，p_name3的喘息聲也越來越急促cr白色的乳汁源源不斷的從乳尖涌出，滴落下來．cr突然之間！！．．．．．．
+
+	zin_flush_file,eu308c,5
+	zin_old_qnar,纏繞在p_name3身上的無數觸手，從尖端的龜頭狀物裏噴出大量白濁腥臭的液體，濺滿了p_name3全身上下各處肌膚
+	zin_old_msg,唔咿咿咿～～～,pid3
+	zin_old_msg,咿呀～～cr咿呀啊啊啊啊啊！！！,pid3
+	zin_old_msg,呀啊．．．．,pid3
+	zin_old_msg,．．．,pid3
+	zin_old_qnar,p_name3全身痙攣的顫抖着，顯然是達到了性高潮．cr她的man_str劇烈收縮，使得充滿子宮的白濁粘液被大量擠出陰部與觸手肉瘤的結合縫隙，滴落在了地板上
+	zin_old_qnar,在絕頂之後，p_name3身體的痙攣漸漸停止了下來．cr她雙目緊閉，頭頸低垂，透明的唾液順着微微顫抖的嘴脣邊垂涎下來cr顯然是失神昏迷過去了．．．
+	zin_old_msg,大人cr今天的儀式到這裏就暫時告一段落了,pid2
+	zin_old_msg,嗯．．．,pid1
+	zin_old_msg,想要完全瓦解她們的意志，使她們能完全服從於我們cr尚需一些時日．．．,pid2
+	zin_old_msg,還請大人今後多多前來監督了！,pid2
+	zin_old_msg,嗯！cr我瞭解了．．．,pid1
+	zin_old_msg,那麼，還有勞p_name2你繼續調教她們三個了,pid1
+	zin_old_msg,請務必抓緊時間，爭取早日完成儀式,pid1
+	zin_old_msg,是，大人！cr屬下必定竭盡全力！,pid2
+	zin_old_fadeout,0,30
+	zin_old_qnar,p_name1在與p_name2簡單道別之後，匆匆離開了這間充斥着刺鼻腥臭異味的陰森囚籠
+	zin_reg_button,16
+	zin_reg_exit
+
+		set_eveflg,176,11
+		end
+
+end
+

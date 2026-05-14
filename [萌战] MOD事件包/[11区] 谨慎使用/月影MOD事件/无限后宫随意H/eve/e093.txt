@@ -1,0 +1,32 @@
+eve_start
+	if_date,70,6
+	//ラブ 阿希配下
+	if_poid,585,432
+eve_end
+
+chk_exeplayer,432,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+//もっとも勲功の高い部下を検索pvalに戻り値
+get_kunpsn,432
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,阿希的王宮,432,pval,,gzin8
+zin_reg_msg,阿希大人、剛剛有緊急聯絡．．．,1
+zin_reg_msg,什麼事？,0
+zin_reg_msg,是的、惑星斯潘被一個叫阿比的新興勢力奪取政權了,1
+zin_reg_msg,什麼、內亂嗎？,0
+zin_reg_msg,看來是那樣,1
+zin_reg_face_0,585
+zin_reg_msg,怎麼會！！！,0
+zin_reg_msg,父親．．．．cr卡爾漢大人怎樣了？,0
+zin_reg_msg,是、卡爾漢大人的艦隊在返回的途中交戰被全滅的樣子,1
+zin_reg_msg,那之後的消息就不清楚了,1
+zin_reg_msg,什、什麼．．．．,0
+zin_reg_face_0,432
+zin_reg_msg,這算什麼啊cr偏偏在這種時候．．．,0
+zin_reg_button,0
+//zin_reg_exit
+end

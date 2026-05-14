@@ -1,0 +1,33 @@
+eve_start
+	if_date,81,1
+//フィリア　阿貝莫伊卡配下
+	if_poid,226,3
+//布拉卡斯　阿達姆斯配下
+	if_poid,110,10
+//五月、阿達姆斯配下
+	if_poid,312,10
+eve_end
+
+set_eveflg,42,1
+
+chk_exeplayer,10,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,阿達姆斯的王宮,10,110,,gzin8
+zin_reg_msg,布拉卡斯啊，果然還是阿貝莫伊卡比較難對付呐,0
+zin_reg_msg,這樣下去，事情就沒有進展了,0
+zin_reg_msg,只會徒增我軍的損傷,0
+zin_reg_msg,阿貝莫伊卡是作為猛將而聞名於世的,1
+zin_reg_msg,曾經作為霸王阿斯蘭養子的存在,1
+zin_reg_msg,這些我都知道,0
+zin_reg_msg,你有什麼好辦法嗎？,0
+zin_reg_msg,我們有正面挑起爭端的必要嗎？,1
+zin_reg_msg,有何良策？,0
+zin_reg_msg,就請交與在下cr在下自有妙計,1
+zin_reg_msg,恩，好吧．．．．．,0
+zin_reg_button,0
+//zin_reg_exit

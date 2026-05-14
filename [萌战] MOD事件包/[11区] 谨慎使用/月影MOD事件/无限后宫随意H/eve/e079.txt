@@ -1,0 +1,8 @@
+eve_start
+	if_not_wexist,10
+	if_aft_date,73,9
+	if_cwpos,10
+eve_end
+
+put_wakusei,10
+set_run_msg,惑星拉波路被发现了。

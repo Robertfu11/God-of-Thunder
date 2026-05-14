@@ -1,0 +1,35 @@
+zin_reg_msg,來、再讓哥哥好好疼愛你吧,0
+zin_reg_msg,可以啊、call_pid21,1
+zin_reg_msg,一起做些色色的事情吧、call_pid21！！,1
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_msg,呐呐、也,pid2
+	zin_old_msg,啊、我知道了呢,pid1
+	zin_old_msg,可愛麼？p_name2的胸部可愛麼？,pid2
+	zin_old_msg,啊啊、很好的形狀,pid1
+	zin_old_msg,現在差不多該．．．,pid2
+	zin_old_msg,想要了嘛？,pid1
+	zin_old_msg,嗯嗯,pid2
+	zin_old_msg,那麼、我就插進來了,pid1
+	zin_old_msg,好、好的．．．啊，啊啊啊啊啊、哥哥的tane_str灌進來了！！,pid2
+	zin_flush,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_old_msg,啊、一陣子不見、妹妹的肚子都這麼大了啊？,pid1
+	zin_old_msg,啊啊？肚子這樣的膨脹著、很丑哦？,pid2
+	zin_old_msg,啊、才不是啊、很好的形狀呢,pid1
+	zin_old_msg,圓滾滾的、會是個健康的寶寶呢,pid1
+	zin_old_msg,吶、差不多該,pid1
+	zin_old_msg,想要了？．．．,pid2
+	zin_old_msg,嗯嗯．．．啊、一看到p_name2這個樣子、就興奮起來了。,pid1
+	zin_old_msg,哈哈、哥哥、也是色色的呢,pid2
+	zin_old_msg,啊，啊啊啊啊啊、哥哥的tin_str、進來了！！,pid2
+	zin_flush,pid2
+	end

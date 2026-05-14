@@ -1,0 +1,13 @@
+eve_start
+	if_eveflg,9,1
+	if_not_wexist,11
+	if_aft_date,71,8
+	//洛根が覇王である
+	if_pkun,9,13000
+	if_cwpos,11
+eve_end
+
+set_eveflg,9,2
+put_wakusei,11
+set_winfo,11,9,60000,0,90,5000,-1,-1
+set_run_msg,惑星馬林格被发现了。

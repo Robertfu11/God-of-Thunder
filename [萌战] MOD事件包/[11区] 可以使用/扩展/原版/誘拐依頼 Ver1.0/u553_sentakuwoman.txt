@@ -1,0 +1,172 @@
+//一時フラグを初期化
+set_eveflg,211,0
+
+//eveflg210は覇王ＩＤ、eveflg211は誘拐する女性ＩＤ
+
+zin_reg_event,誘拐依頼,pid1,,,
+zin_reg_msg,誰を誘拐しようか？,0
+for,PMAX,211,1
+	//eveflg210所属の女性抽出
+	chk_mval,覇王:eveflg211=eveflg210,状態:eveflg211=2,性別:eveflg211=2,特殊:eveflg211!2,
+	chk_mval_then
+		zin_reg_face,eveflg211
+		zin_reg_msg,（p_name_eveflg(211)か？）,0
+		zin_reg_3sel,はい,いいえ,他勢力にする
+			get_resp
+			ret_sel1
+				break
+			ret_sel3
+				//外部ファイル読み込み
+				txtload,u553_sentakuhao
+			ret_sel2
+	chk_mval_else
+		chk_eveflg,211,3599
+		chk_eveflg_then
+			set_eveflg,211,1
+		chk_eveflg_else
+			continue
+next
+
+bl_fadeout
+zin_reg_event,誘拐依頼,pid2,pid1,,gzin69
+zin_reg_face,eveflg211
+zin_reg_msg,p_name_eveflg(211)だなcrＯＫ！　まかせときな！,0
+
+bgm_chg,35
+bl_fadeout
+zin_reg_event,誘拐依頼,pid2,,,gzin20
+zin_reg_msg,p_name_eveflg(210)軍の防衛網を突破する！！,0
+zin_reg_msg,気を引き締めていけ！！,0
+
+get_mpid,覇王=eveflg210,状態=2,役職=18,,,,
+set_epid3,pval
+chk_ormval,pval=0,pval=eveflg211,,,
+chk_ormval_then
+	zin_reg_event,誘拐依頼,pid2,844,,gzin20
+	zin_reg_msg,海賊め！cr我が艦隊をなめるな！,1
+	bl_fadeout
+	bgm_se,81
+	bgm_se,84
+	zin_reg_qnar,p_name2はp_name_eveflg(210)軍の防衛網を突破した。
+	zin_reg_event,誘拐依頼,,844,,gzin20
+	zin_reg_msg,くっ．．cr海賊め！,1
+	goto,*tokumei
+chk_ormval_else
+	zin_reg_event,誘拐依頼,pid2,pid3,,gzin20
+	zin_reg_msg,海賊め！cr我が艦隊をなめるな！,1
+	bl_fadeout
+	bgm_se,81
+	bgm_se,84
+	goto,*hanteia
+
+*hanteia
+chk_mval,攻撃:pid2>防御:pid3,,,,
+chk_mval_then
+	goto,*kathia
+chk_mval_else
+	rnd,3
+	case0
+		goto,*kathia
+	case1
+	case2
+		zin_reg_event,誘拐依頼,pid2,pid3,,gzin20
+		zin_reg_msg,このままではやられる！ずらかるぞ！！,0
+		zin_reg_event,誘拐依頼,,pid3,,gzin20
+		zin_reg_msg,逃がすな、追え！！,1
+		goto,*shippai
+
+*kathia
+	zin_reg_qnar,p_name2はp_name_eveflg(210)軍の防衛網を突破した。
+	zin_reg_event,誘拐依頼,,pid3,,gzin20
+	zin_reg_msg,くっ．．cr海賊め！,1
+	goto,*tokumei
+
+*tokumei
+get_mpid,覇王=eveflg210,状態=2,役職=4,,,,
+set_epid3,pval
+zin_reg_event,誘拐依頼,pid2,,,gzin11
+zin_reg_msg,潜入成功、crちょろいぜ！,0
+chk_ormval,pval=0,pval=eveflg211,,,
+chk_ormval_then
+	goto,*onna
+chk_ormval_else
+	rnd,3
+	case0
+	case1
+		zin_reg_event,誘拐依頼,pid2,pid3,,gzin11
+		zin_reg_msg,見つけたぞ、海賊！！,1
+		zin_reg_msg,ちぃ,0
+		goto,*hanteib
+	case2
+		goto,*onna
+*hanteib
+btl_ansatu,pid2,pid3,0,2
+get_resp
+ret_sel2
+	zin_reg_msg,よっしょあ！！,0
+	zin_reg_event,誘拐依頼,,pid3,,gzin11
+	zin_reg_msg,ま．待てぇ！！,1
+	goto,*onna
+ret_sel3
+	zin_reg_msg,ちぃ、退却だ！,0
+	zin_reg_event,誘拐依頼,,pid3,,gzin11
+	zin_reg_msg,待てぇ！！,1
+	goto,*shippai
+
+*onna
+set_epid3,eveflg211
+set_epid4,781
+bl_fadeout
+zin_reg_event,誘拐依頼,pid4,pid3,,gzin29
+zin_reg_msg,海賊が侵入しました。,0
+zin_reg_msg,狙いはp_name3様のようです。,0
+zin_reg_msg,！！,1
+zin_reg_msg,p_name3様は危険ですので身を隠してください。,0
+zin_reg_msg,嫌、cf_pid3も戦うわ！,1
+zin_reg_msg,駄目です。p_name_eveflg(210)様から命令です。従ってください。,0
+zin_reg_msg,うっ,1
+zin_reg_msg,わかったわ．．．,1
+bl_fadeout
+zin_reg_event,誘拐依頼,pid2,666,,gzin70
+zin_reg_msg,野郎ども！crp_name3を探せ！！,0
+zin_reg_msg,へい！！,1
+bl_fadeout
+
+chk_ormval,知力:pid2>知力:pid3,,,,
+chk_ormval_then
+	goto,*kathib
+chk_ormval_else
+	rnd,3
+	case0
+		goto,*kathib
+	case1
+	case2
+		bl_fadeout
+		zin_reg_event,誘拐依頼,pid2,666,,gzin15
+		zin_reg_msg,ちくしょーcrp_name3はどこだ！,0
+		zin_reg_msg,カシラ！cr警備兵が集まってきますぜ！,1
+		zin_reg_msg,ちぃcr仕方ねー、ずらかるぞ！！,0
+		goto,*shippai
+
+*kathib
+bgm_chg,53
+zin_reg_event,誘拐依頼,,pid3,,gzin42
+zin_reg_msg,ここなら、見つからないはず．．．,1
+zin_reg_event,誘拐依頼,pid2,pid3,,gzin42
+zin_reg_msg,そりゃあ、cr何かの間違いだ！,0
+zin_reg_msg,p_name2！！,1
+bgm_chg,62
+bl_fadeout
+zin_reg_qnar,誘拐は成功し、crp_name3はpo_name1軍の捕虜になった。
+zin_reg_button,0
+zin_reg_exit
+drop_item,pid1,金塊
+set_horyo,pid3,poid_player
+end
+
+*shippai
+bl_fadeout
+zin_reg_qnar,誘拐は失敗した。
+zin_reg_button,0
+zin_reg_exit
+end

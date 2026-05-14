@@ -1,0 +1,43 @@
+//夜這い　弱みオルド 姉
+chk_mval,オルド回数:pid2=0,,,,,
+//初回
+chk_mval_then
+	zin_old_msg,こ、これっきりよ。crこんなの．．こ、これで．．終わりにしてちょうだい,pid2
+	zin_old_msg,フフ、いいですよ、あなたが私を満足させることができればね,pid1
+	zin_old_msg,わ、わかったわよ,pid2
+	goto,*np1
+//2回目以降
+chk_mval_else
+	zin_old_msg,この前で終わりって言ったのに．．．どうして．．．,pid2
+	zin_old_msg,まだまだ満足しておりませんからなぁ。cr陛下の姉君にはもっと奉仕をしてもらわなければ,pid1
+	zin_old_msg,そ、そんな．．．,pid2
+
+*np1
+
+//体位ごとに分岐
+switch_otaii,pid2
+//騎乗位
+case_okijo
+	zin_old_qnar,p_name2はp_name1の上で激しく腰を振り始めた。,0
+	zin_old_msg,これはこれは．．．陛下の姉君とは思えぬ乱れっぷりですな。crしかも絶妙な腰使い。いったいどこで覚えられたのやら、ククク,pid1
+	zin_old_msg,さ、さあ．．．無駄口なんか叩かないで．．．crは、はやく．．．イキなさい．．．,pid2
+	zin_old_msg,おやおや、立場が逆なのがわかっていないようだな。crバラされたくなかったらお願いしてもらおうか,pid1
+	zin_old_msg,お、お願いです．．．イッて．．．イッて．．くだ．．さい．．ああっ！！,pid2
+	zin_old_msg,フハハハ、自分で腰を振って自ら感じているようだな。crいいでしょう、私もそろそろ限界だ。イかせてもらいましょう,pid1
+	zin_old_msg,あふっ、ふうっ．．ひ．．あひ．．んっくうぅーーーっ！,pid2
+	goto,*switch_otaii_end
+default_otaii
+	zin_old_qnar,p_name2は自ら激しく腰を振り始めた。,0
+	zin_old_msg,これはこれは．．．陛下の姉君とは思えぬ乱れっぷりですな。crしかも絶妙な腰使い。いったいどこで覚えられたのやら,pid1
+	zin_old_msg,しかし、こちらも負けてはおれぬ、フン！！,pid1
+	zin_old_qnar,p_name1もさらに激しく腰を振り始める。,0
+	zin_old_msg,うあっ！！　ひくううっ！！　だ、ダメ．．．そこは．．．ああっ！！,pid2
+	zin_old_msg,なんだ、ココが弱いのか？crもう一度試してみるか,pid1
+	zin_old_msg,あんっ！　やだっ！　だ、ダメ．．．お願い．．．crああ、もう．．イグ！　イグ！　イグーーーぅ！　イグのおぉぉぉぉ！！,pid2
+
+*switch_otaii_end
+zin_old_msg,はぁ～～はぁ～～こ、これで代償は払ったわ．．．cr秘密は守ってくれるわね,pid2
+zin_old_msg,いいでしょう。秘密は守ります。crただ、私はまだ満足していませんよ,pid1
+zin_old_msg,そ、それどういう意味？,pid2
+zin_old_msg,さて．．．．フハハハハ！！,pid1
+end

@@ -1,0 +1,27 @@
+//部下オルド　処女
+rnd,2
+case0
+	zin_old_msg,啊啊..請溫柔一點．．．cr我..還是第一次、所以．．．求求你,pid2
+	zin_old_msg,是、是嗎..那對不起了．．．,pid1
+	zin_old_msg,但是、全部都順利的進去了哦,pid1
+	zin_old_msg,看！！,pid1
+	zin_old_msg,啊啊！！　啊、不行！！　裏面．．．裏面的感覺傳來了！！！,pid2
+	zin_old_msg,嘿嘿..我的味道會讓你好好記住的,pid1
+	zin_old_msg,除了我以外的男人、一生都無法接受別人,pid1
+	zin_old_msg,啊啊！！　好吧．．．call_pid21的味道全部都記住了！！！！,pid2
+	zin_flush,pid2
+	end
+case1
+	zin_old_msg,啊啊啊啊！！哇、我被．．．tin_str插進來了..我們開始吧．．．,pid2
+	zin_old_msg,慢慢地..有..啊啊啊啊啊！！,pid2
+	zin_old_msg,原來如此、怪不得、現在是這樣的反應．．．,pid1
+	zin_old_msg,哈哈、call_pid12的處女膜給了我、我還真是光榮！！,pid1
+	zin_old_msg,啊啊！！　怎麼樣？　我的man_str．．．裏面舒服麼？,pid2
+	zin_old_msg,果然是最棒的！！,pid1
+	zin_old_msg,啊、啊啊、太高興了！！crcall_pid21這樣就能讓你舒服．．．,pid2
+	zin_old_msg,call_pid21．．．call_pid21！！！！！,pid2
+	zin_old_msg,謝謝！！　處女果然是最棒的。cr已經..要射了啊！！,pid1
+	zin_old_msg,好、好啊..請..不要在裡面！！,pid2
+	zin_old_msg,呵呵、即使你這樣說。cr我也會把精液全部都射進深處去的喲！！,pid1
+	zin_flush,pid2
+	end

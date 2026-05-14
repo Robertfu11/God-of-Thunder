@@ -1,0 +1,37 @@
+zin_reg_msg,真是令人無奈的孩子呀,1
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_msg,啊啊．．．call_pid12,pid1
+	zin_old_msg,呵呵、不管何時都還像個孩子似的。,pid2
+	zin_old_msg,孩子可不會說出這樣的請求吧？,pid1
+	zin_old_msg,哎呀哎呀、還真是這樣的呢、呵呵,pid2
+	zin_old_msg,那麼、要加油哦,pid2
+	zin_old_msg,當然可以、那開始吧！！,pid1
+	goto,*makelove203_2n2
+//孕みパターン
+case_botebara
+	zin_old_msg,對媽媽、這樣的身體、還有性趣嗎？．．．,pid2
+	zin_old_msg,明明懷有身孕的說、肚子膨脹著．．．,pid2
+	zin_old_msg,call_pid12？是、很有魅力的啊？,pid1
+	zin_old_msg,孕期中的女人、是最有、母性魅力、的說。,pid1
+	zin_old_msg,和這樣的、call_pid12做的話、很興奮的說。,pid1
+	zin_old_msg,所以、拜託、call_pid12、一起做吧,pid1
+	zin_old_msg,啊、真的嗎？這樣的說、好高興呢。,pid2
+	zin_old_msg,那、開始吧！你要小心些、別碰到肚子裡的寶寶！,pid2
+	zin_old_msg,啊、我知道了！！,pid1
+	goto,*makelove203_2n2
+
+*makelove203_2n2
+zin_old_msg,啊、啊啊嗯！！　真、真是的．．．不要那樣．．欺、欺負媽媽啊啊啊啊！！,pid2
+zin_old_msg,呵呵、還真是可愛呢。cr來、call_pid12高潮的臉．．．我想再次看到的啊啊！,pid1
+zin_old_msg,嗚嗯嗯！！　啊嗚嗯嗯嗯嗯！！,pid2
+zin_old_msg,嗯啊、嗯啊！！　彼此．．．都好棒．．．,pid2
+zin_old_msg,嗯啊．．．已經、不行了．．．已經、高潮了啊啊啊啊！！！,pid2
+zin_old_msg,哈啊．．．嗯、嗯啊啊啊！！,pid2
+zin_flush,pid2
+end

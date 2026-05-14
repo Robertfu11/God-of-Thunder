@@ -1,0 +1,40 @@
+bgm_chg,54
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin21
+zin_reg_qnar,p_name1被p_name2約到了街上。
+zin_reg_msg,p_name2主動聯絡我，真是稀奇啊,0
+zin_reg_msg,嗯．．．cr那個．．．．,1
+zin_reg_msg,其實我有了孩子,1
+zin_reg_msg,什麼！！,0
+zin_reg_msg,喂，怎麼辦？,1
+zin_reg_msg,那、那個．．．,0
+zin_reg_3sel,結婚,墮胎,生產
+get_resp
+ret_sel1
+	zin_reg_msg,我們結婚吧cr為了孩子,0
+	zin_reg_msg,是啊cr我也那樣想,1
+	zin_reg_title,與p_name2結婚了。
+	zin_reg_button,0
+	set_pkon,pid1,pid2
+	upd_sts,pid2,0,18
+	zin_reg_exit
+	end
+ret_sel2
+	zin_reg_msg,對不起，打掉算了,0
+	zin_reg_msg,我們現在無法養育一個孩子,0
+	zin_reg_msg,是啊．．．．cr沒辦法了．．,1
+	zin_reg_title,p_name2打掉了孩子。
+	zin_reg_button,0
+	zin_reg_exit
+	set_datai,pid2
+	end
+ret_sel3
+	zin_reg_msg,果然只有生下來了,0
+	zin_reg_msg,生下來可以嗎？,1
+	zin_reg_msg,當然cr不可以墮胎,0
+	zin_reg_msg,因為這是我們的孩子,0
+	zin_reg_msg,但是需要等待結婚cr現在不能結婚,0
+	zin_reg_msg,我明白了cr等待著,1
+	zin_reg_button,0
+	zin_reg_exit
+	end

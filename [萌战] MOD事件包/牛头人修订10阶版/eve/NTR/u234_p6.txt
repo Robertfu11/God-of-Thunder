@@ -1,0 +1,9 @@
+eve_start
+        if_val,ÒÛÂš:player>0
+eve_end
+zin_reg_msg,½ñÌìÊÇ6ºÅÄØ¡­¡­,0
+
+	txtload,NTR\u234_repeat
+	end
+
+end

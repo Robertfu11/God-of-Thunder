@@ -1,0 +1,31 @@
+eve_start
+    if_date,96,12
+    if_eveflg,62,4
+    if_poid,429,eveflg064
+eve_end
+
+chk_exeplayer,eveflg064,0,0,0
+chk_exeplayer_else
+//巴尼亞瓦2階級特進
+add_kunkou,429,2000
+end
+
+chk_exeplayer_then
+get_kunpsn,eveflg064
+set_epid1,pval
+
+bgm_chg,60
+zin_reg_event,,pid1,429,,gzin33
+zin_reg_qnar,巴尼亞瓦は參加了反亂軍的討伐、取得了重大的功績。
+zin_reg_msg,巴尼亞瓦、這次的功績正是驚人啊,0
+zin_reg_msg,是、多謝誇獎,1
+zin_reg_msg,看來傳聞是真的啊,0
+zin_reg_msg,這次作為特例進階二級,0
+zin_reg_msg,正式的委任書很快就會來的吧,0
+zin_reg_msg,之後也請大家多多努力吧,0
+zin_reg_msg,哈哈,1
+zin_reg_title,巴尼亞瓦進階二級。
+zin_reg_button,0
+//巴尼亞瓦2階級特進
+add_kunkou,429,2000
+end

@@ -1,0 +1,31 @@
+//シナリオ5　初期設定ファイル
+//eNNNイベントを発生させない uNNNのみ発生するようになる
+set_event_off
+//要塞建設
+set_fort,830,12,3,1,ハーゲル
+//奇策
+upd_sts,14,10,3
+upd_sts,15,10,4
+upd_sts,563,10,3
+
+
+upd_sts,805,10,6
+upd_sts,843,10,10
+upd_sts,732,10,7
+upd_sts,667,10,8
+
+//年齢調整
+set_pnen,843,18
+set_pnen,586,19
+set_pnen,805,53
+
+set_pnen,732,21
+upd_sts,732,状態,2
+set_pnen,580,17
+upd_sts,580,状態,2
+
+//ツルマ
+set_pnen,15,20
+//オリビア
+upd_sts,847,10,8
+end

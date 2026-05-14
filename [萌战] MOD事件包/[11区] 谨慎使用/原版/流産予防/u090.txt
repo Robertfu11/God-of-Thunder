@@ -1,0 +1,34 @@
+/////流産予防（子種5へ変換）/////
+
+eve_start
+	if_aft_date,115
+	if_month,9
+eve_end
+
+set_eveflg,298,0
+//一般子種5の残数をチェック
+for,PMAX,299,1
+	chk_mval,状態:eveflg299=5,特殊:eveflg299=0,父:eveflg299=0,母:eveflg299=0,年齢:eveflg299<1
+	chk_mval_then
+		add_eveflg,298,1
+		continue
+	chk_mval_else
+		continue
+next
+//フラグ298でカウントした一般子種5の残数が20以上残ってれば終了
+chk_eveflg,298,>19
+chk_eveflg_then
+	end
+chk_eveflg_else
+	set_eveflg,299,0
+	//覇王子種1と部下プレー子種13から一般子種5へ最大20回書き換える
+	for,20,299,1
+		get_mpid,状態=1|13,特殊=0,父=0,母=0,,,
+		chk_mval,pval=0,,,,
+		chk_mval_then
+			break
+		chk_mval_else
+			upd_sts,pval,4,1000
+			set_hourou,pval
+	next
+	end

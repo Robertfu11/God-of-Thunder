@@ -1,0 +1,41 @@
+eve_start
+	if_date,70,4
+	if_pkun,432,13000
+	if_poid,153,796
+	if_poid,574,796
+	if_poid,585,796
+eve_end
+
+chk_exeplayer,432,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,54
+//zin_reg_init
+zin_reg_event,卡爾漢的王宮,574,585,,gzin61
+zin_reg_msg,拉芙姐姐大人、聽說了嗎？,0
+zin_reg_msg,下個月、作為同盟國要去阿希大人那裏拜會哦,0
+zin_reg_msg,真、真的嗎法莉？,1
+zin_reg_msg,父親大人是這樣告訴我的所以不會錯的哇,0
+zin_reg_face_0,153
+zin_reg_msg,太好了呢、拉芙,0
+zin_reg_msg,妮娜姐姐．．．,1
+zin_reg_face_0,574
+zin_reg_msg,拉芙姐姐、臉都紅了！！,0
+zin_reg_msg,夠啦、法莉真是的．．．,1
+zin_reg_msg,這是超好的機會哦,0
+zin_reg_msg,不好好考慮作戰計劃是不行的呢,0
+zin_reg_msg,作、作戰是．．．,1
+zin_reg_face_0,153
+zin_reg_msg,打算單相思到什麼時候哦？,0
+zin_reg_msg,老實的傳達感情才是最好的噢,0
+zin_reg_msg,妮娜姐姐大人．．．,1
+zin_reg_msg,可是、阿希大人比我還小更重要的是身份也．．．,1
+zin_reg_msg,我們現在也是王族,0
+zin_reg_msg,身份是對等的哇,0
+zin_reg_face_0,574
+zin_reg_msg,就是、好好的考慮作戰啦、cr拉芙姐姐大人,0
+zin_reg_msg,怎麼那樣．．．．,1
+zin_reg_button,0
+//zin_reg_exit

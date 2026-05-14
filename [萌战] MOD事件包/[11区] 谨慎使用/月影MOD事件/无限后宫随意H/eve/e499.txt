@@ -1,0 +1,19 @@
+//基斯を仮死設定
+eve_start
+    if_eveflg,62,2
+	if_psts,835,2
+eve_end
+
+chk_exeplayer,poid0835,0,0,0
+chk_exeplayer_else
+set_kasi,835
+end
+
+chk_exeplayer_then
+zin_reg_event,,835,0,,gzin25
+zin_reg_msg,王には悪いが私にはやることがある,0
+zin_reg_msg,我們就在這裏辭別吧。,0
+zin_reg_title,基斯は脫走しました。
+zin_reg_button,0
+set_kasi,835
+end

@@ -1,0 +1,48 @@
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,啊啊．．．call_pid12,pid1
+zin_old_msg,呵呵、不管何時都還像個孩子似的,pid2
+zin_old_msg,才不是呢。那、不像孩子的地方、我就讓你看看吧！,pid1
+zin_old_msg,啊．．．你、什麼時候已經成長成這樣的說．．．,pid2
+zin_old_msg,call_pid12、快來嘛,pid1
+zin_old_msg,好好好．．．來了．．．慢、慢點的啊,pid2
+zin_old_msg,謝謝！！call_pid12,pid1
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_qnar,p_name1將tin_str對准p_name2那水淋淋的man_str一頂、tin_str馬上進去了一半。
+	zin_old_msg,嗯．．．好棒．．．進來了．．．嗯啊。,pid2
+	zin_old_msg,啊．．．嗯．．．好兒子．．．媽媽．．．好舒服啊．．．啊．．．,pid2
+	zin_old_msg,媽媽、我愛你、好舒服．．．兒子好喜歡媽媽的man_str呢,pid1
+	zin_old_msg,嗯啊．．．那樣的、下流的話．．．不要說．．．啊,pid2
+	zin_old_msg,媽媽、我覺得和媽媽做愛真舒服．．．我想我已經．．．離不開你了．．．,pid1
+	zin_old_msg,啊啊．．．媽媽也、覺得．．．好幸福．．．啊,pid2
+	goto,*makelove203_1n1
+//孕みパターン
+case_botebara
+	zin_old_msg,抱歉、媽媽、這樣的身體、肚子裡還有寶寶．．．,pid2
+	zin_old_msg,就、先給你口一下吧？．．．,pid2
+	zin_old_msg,call_pid12的？口交？,pid1
+	zin_reg_qnar,p_name2低下頭、在p_name1的tin_str上親了兩下、張開嘴含住、輕輕地吸吮起來。
+	zin_old_msg,嗯啊、啊啊、嗯嗯．．．call_pid12啊．．．,pid1
+	zin_old_msg,啊啊、好溫暖．．．好、舒服、的、感覺．．．。,pid1
+	zin_reg_qnar,p_name2看著p_name1享受的模樣、漸漸加重了力道、對tin_str用力的吸吮舔吻起來。
+	zin_old_msg,和這樣的、call_pid12做的話、很興奮的說。,pid1
+	zin_old_msg,所以、拜託、call_pid12、一起做吧,pid1
+	zin_old_msg,好兒子．．．小心啊、肚子裡還有寶寶呢．．．,pid2
+	zin_old_msg,啊、我知道了！！,pid1
+	goto,*makelove203_1n1
+
+*makelove203_1n1
+zin_old_msg,啊啊．．．好棒．．．啊．．．不行了．．．,pid2
+zin_old_msg,啊啊．．．哈、好舒服啊．．．call_pid12．．．,pid1
+zin_old_msg,啊、你也．．．很棒啊．．．cr已經成長的這麼好了．．．媽媽、很高興呢．．．,pid2
+zin_old_msg,哇啊．．．嗯嗚嗚、哈啊．．．怎麼又膨脹起來了！！cr嗯、嗯啊．．．非常的．．．棒、棒啊！！,pid2
+zin_old_msg,唔、對兒子的tin_str．．．進行取悅什麼的．．cr作為母親、真的是．．．失格．．啊．．．啊嗯啊！！,pid2
+zin_old_msg,才不是那樣的說．．．和call_pid12．．．能這樣做、是極好的啊．．．,pid1
+zin_old_msg,嗯啊、啊啊啊啊！　不行了、不行了啊啊啊ーーー已經高潮了啊啊啊！！,pid2
+zin_old_msg,好舒服呢！！好棒的說、啊嗯、啊嗯嗯嗯嗯啊啊啊啊！！,pid2
+zin_flush,pid2
+end

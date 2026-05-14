@@ -1,0 +1,10 @@
+zin_reg_msg,p_name2大人，希望成為你丈夫,0
+zin_reg_msg,嗯、你是在開玩笑嘛,1
+zin_reg_msg,不、不是、玩笑．．．,0
+zin_reg_msg,雖然我喜歡你、但你不足以成為王婿,1
+zin_reg_msg,多立軍功吧,1
+zin_reg_msg,啊、好吧．．．,0
+zin_reg_title,結婚被拒絕了。
+zin_reg_button,0
+zin_reg_exit
+end

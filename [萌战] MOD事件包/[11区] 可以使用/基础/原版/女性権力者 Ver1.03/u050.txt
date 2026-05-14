@@ -1,0 +1,104 @@
+//hao kodomo kazu
+
+////////hao 32 reset
+set_eveflg,240,0
+set_eveflg,241,0
+set_eveflg,242,0
+
+for,PMAX,240,1
+chk_mval,勲功:eveflg240=13000,,,,
+chk_mval_else
+continue
+chk_mval_then
+	upd_sts,eveflg,240,32,0
+	continue
+next
+
+///////prince check
+set_eveflg,240,0
+set_eveflg,241,0
+set_eveflg,242,0
+
+for,PMAX,240,1
+chk_ormval,状態:eveflg240=2,状態:eveflg240=9,状態:eveflg240=8,,
+chk_ormval_else
+continue
+chk_ormval_then
+	set_eveflg,241,父:eveflg240
+	set_eveflg,242,母:eveflg240
+	chk_eveflg,241,!0
+	chk_eveflg_then
+		chk_mval,勲功:eveflg241=13000,覇王:eveflg240=eveflg241,,,
+		chk_mval_else
+		continue
+		chk_mval_then
+			chk_sts,eveflg240,3,1
+			chk_sts_else
+			continue
+			chk_sts_then
+			upd_sts,eveflg241,32,100
+			continue
+	chk_eveflg_else
+		chk_eveflg,242,!0
+		chk_eveflg_then
+		chk_mval,勲功:eveflg242=13000,覇王:eveflg240=eveflg242,,,
+			chk_mval_else
+			continue
+			chk_mval_then
+				chk_sts,eveflg240,3,1
+				chk_sts_else
+				continue
+				chk_sts_then
+				upd_sts,eveflg242,32,100
+				continue
+		chk_eveflg_else
+		continue
+next
+
+
+
+///////princess check
+set_eveflg,240,0
+set_eveflg,241,0
+set_eveflg,242,0
+
+for,PMAX,240,1
+chk_ormval,状態:eveflg240=2,状態:eveflg240=9,状態:eveflg240=8,,,
+chk_ormval_else
+continue
+chk_ormval_then
+	set_eveflg,241,父:eveflg240
+	set_eveflg,242,母:eveflg240
+	chk_eveflg,241,!0
+	chk_eveflg_then
+		chk_mval,勲功:eveflg241=13000,覇王:eveflg240=eveflg241,,,
+		chk_mval_else
+		continue
+		chk_mval_then
+			chk_sts,eveflg240,3,2
+			chk_sts_else
+			continue
+			chk_sts_then
+			upd_sts,eveflg241,32,1
+			continue
+	chk_eveflg_else
+		chk_eveflg,242,!0
+		chk_eveflg_then
+		chk_mval,勲功:eveflg242=13000,覇王:eveflg240=eveflg242,,,
+			chk_mval_else
+			continue
+			chk_mval_then
+				chk_sts,eveflg240,3,2
+				chk_sts_else
+				continue
+				chk_sts_then
+				upd_sts,eveflg242,32,1
+				continue
+		chk_eveflg_else
+		continue
+
+next
+
+//dbg_print,kodomo=,人物汎用:626
+
+end

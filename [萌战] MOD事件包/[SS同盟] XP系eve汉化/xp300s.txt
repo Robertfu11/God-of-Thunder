@@ -1,0 +1,18 @@
+//部下オルド　正常位 20%
+zin_old_msg,難得call_pid12的身體、這麼輕柔真是舒服啊．．．,pid1
+zin_old_msg,今天、可是要盡情品嘗了,pid1
+zin_old_msg,啊啊啊．．．call_pid21．．．,pid2
+zin_old_msg,那樣慢慢的抽送..十分舒服啊．．．,pid2
+zin_old_msg,好厲害．．．tin_str在陰道裡就像插在果凍裡一樣,pid1
+zin_old_msg,原來是...這樣色情的身體呀．．．,pid1
+zin_old_msg,幾乎把tin_str全部都吞進去了呢！！,pid1
+zin_old_msg,好棒！！　嗚、我..明明不是那樣的風流女子！！,pid2
+zin_old_msg,切！！　已經把持不住了啊！！cr全部射進去不錯吧？,pid1
+zin_old_msg,啊、不行！！　今天是危險期啊！！,pid2
+zin_old_msg,要是懷孕了、為call_pid21生個寶寶的話？,pid2
+zin_old_msg,搞不好、軍隊會把我開除！！,pid2
+zin_old_msg,那個時候我會照顧你的,pid1
+zin_old_msg,就這樣、要射了！！,pid1
+zin_old_msg,啊、不行！！　不行的啊啊啊啊啊啊！！！！！,pid2
+zin_flush,pid2
+end

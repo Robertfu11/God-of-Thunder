@@ -1,0 +1,15 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin33
+zin_reg_msg,p_name1大人,1
+zin_reg_msg,諜報員的報告，p_name3被敵人抓住了,1
+zin_reg_msg,是否需要準備救援部隊,1
+zin_reg_msg,p_name3？cr有那樣的人在我的派系？,0
+zin_reg_msg,嗯？,1
+zin_reg_msg,嗯、沒有cr這是我誤會了,1
+zin_reg_msg,這個人是跟我們無關,1
+zin_reg_msg,嗯、沒有去救的必要,0
+zin_reg_msg,明白,1
+zin_reg_button,0
+zin_reg_exit
+end

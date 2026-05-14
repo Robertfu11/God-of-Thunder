@@ -1,0 +1,77 @@
+eve_start
+	//布朗は阿古迪巴的配下
+	if_poid,625,16
+	//阿姆、阿爾比恩、アブター的配下
+	if_poid,751,563
+	if_poid,600,563
+	//アブター首都惑星上に布朗の艦隊がいる
+	if_fltonwid,cap0563,16
+	//阿古迪巴とアブターは同盟ではない
+	if_not_uni,16,563
+	//アブターは並非玩家腳色
+	if_not_player,563,0
+eve_end
+
+chk_exeplayer,16,0,0,0
+chk_exeplayer_else
+//惑星占領
+mov_wid,cap0563,16
+//阿姆捕虜設定
+set_horyo,751,16
+//阿爾比恩sts6仮死状態に変更
+set_kasi,600
+
+upd_sts,600,19,0
+upd_sts,563,19,0
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,阿布塔的王宮,563,751,,gzin8
+zin_reg_msg,阿姆，似乎我的命運已經到此為止了,0
+zin_reg_msg,夫君．．．．,1
+zin_reg_msg,我們再也堅持不下去了麼？,1
+zin_reg_msg,事到如今．．．．．,0
+zin_reg_msg,在這裏,0
+zin_reg_msg,我想向阿古迪巴投降,0
+zin_reg_msg,今天還活著的部下們，請不要再做出無謂的犧牲,0
+zin_reg_msg,這是自殺行為,0
+zin_reg_msg,我明白了,1
+zin_reg_msg,那我和你一起去投降吧,1
+zin_reg_msg,可是阿爾比恩他．．．,1
+zin_reg_msg,我們投降的話，生命安全將沒有保證,1
+zin_reg_msg,一定要想辦法將這個孩子．．．,1
+zin_reg_msg,我知道了,0
+zin_reg_msg,我打算在投降之前讓他逃出去,0
+zin_reg_msg,現在敵人艦隊還在首都上空待命，應該可以設法把他弄出去吧,0
+zin_reg_msg,那就太好了．．．．,1
+zin_reg_msg,可以後，就再也見不著我的小阿爾比恩了．．．,1
+zin_reg_msg,唔，只要阿爾比恩能好好的活著，那就足夠了不是嗎？,0
+zin_reg_msg,是啊．．．．,1
+bl_fadeout
+bl_fadein,gzin8
+zin_reg_event,,16,625,,gzin8
+zin_reg_msg,兄長，阿布塔向我方提出了希望投降的交涉請求,1
+zin_reg_msg,呼，本以為他還會有點節操呢．．．,0
+zin_reg_msg,投降得出乎意料的早呢。,0
+zin_reg_msg,如何答複？,1
+zin_reg_msg,不用問，接受投降請求,0
+zin_reg_msg,還有，如果阿布塔過來投降的話，殺了他,0
+zin_reg_msg,他的家屬呢？,1
+zin_reg_msg,交由你發落,0
+zin_reg_msg,遵命,1
+zin_reg_title,阿布塔向阿古迪巴投降了。
+zin_reg_button,0
+//zin_reg_exit
+//惑星占領
+mov_wid,cap0563,16
+//阿姆捕虜設定
+set_horyo,751,16
+//阿爾比恩sts6に変更
+set_kasi,600
+
+//特殊設定クリア
+upd_sts,600,19,0
+upd_sts,563,19,0
+end

@@ -1,0 +1,23 @@
+eve_start
+	//阿貝莫伊卡　捕虜になる
+	if_psts,3,8
+eve_end
+
+chk_exeplayer,poid0003,0,0,0
+chk_exeplayer_else
+set_dead,3,0
+end
+
+chk_exeplayer_then
+bgm_chg,56
+//zin_reg_init
+zin_reg_event,地牢,3,0,,gzin35
+zin_reg_msg,想不到這一天真的到來了．．．,0
+zin_reg_msg,都是因為我的一時沖動．．．,0
+zin_reg_msg,失去了眾多的部下的性命、也失去了生者的人心,0
+zin_reg_msg,終於、走到了這一步,0
+zin_reg_msg,我沒有敗給我的敵人．．．．cr而是敗給了我自己,0
+zin_reg_title,阿貝莫伊卡自殺了。
+zin_reg_button,0
+//zin_reg_exit
+set_dead,3,0

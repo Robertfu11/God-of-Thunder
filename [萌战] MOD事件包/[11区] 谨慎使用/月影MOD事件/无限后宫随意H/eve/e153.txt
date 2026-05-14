@@ -1,0 +1,37 @@
+eve_start
+	if_eveflg,15,1
+	if_eveflg,44,0
+	if_pkun,15,13000
+eve_end
+
+set_eveflg,44,1
+
+chk_exeplayer,15,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+get_kunpsn,15
+zin_reg_event,茲魯曼的王宮,15,pval,,gzin8
+zin_reg_msg,這有一份茲基利大人亡故的報告,1
+zin_reg_msg,路希總算是反水成功了．．．,1
+zin_reg_msg,是啊,0
+zin_reg_msg,最後一刻都居然都沒能覺察到路希的本心．．．,0
+zin_reg_msg,兄長也是個愚蠢的男人,0
+zin_reg_msg,兄長信義治國，處事優柔寡斷，終落得這步田地,0
+zin_reg_msg,您是什麼時候察覺那傢伙的真實意圖的？,1
+zin_reg_msg,是那時候．．．．,0
+zin_reg_msg,在那傢伙開始刻意的接近母親的時候，我就下令開始調查他了,0
+zin_reg_msg,那在他反水之前．．．,1
+zin_reg_msg,為什麼不讓茲烏蓋王知道呢？,1
+zin_reg_msg,這你都不明白？,0
+zin_reg_msg,是為了能讓老子成為霸王啊！！！,0
+zin_reg_msg,路希毫無疑問的將父親送上了黃泉路,0
+zin_reg_msg,那傢伙背負了弑君的汙名,0
+zin_reg_msg,是這樣啊．．．．,1
+zin_reg_msg,那個男人，到最後一定會向我發起挑戰吧,0
+zin_reg_msg,將年幼的我排在暗殺順位的最後，一定會讓你後悔的,0
+zin_reg_button,0
+//zin_reg_exit

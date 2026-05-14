@@ -1,0 +1,53 @@
+eve_start
+	if_eveflg,24,2
+	//阿莫斯　阿希配下
+	if_poid,423,432
+	if_poid,625,16
+eve_end
+
+set_eveflg,24,3
+
+chk_exeplayer,432,16,0,0
+chk_exeplayer_else
+//阿莫斯、阿古迪巴へ移籍
+set_pmov,423,16
+end
+
+chk_exeplayer_then
+bgm_chg,56
+//zin_reg_init
+zin_reg_event,阿希的宮殿,432,423,,gzin8
+zin_reg_msg,阿希大人、 實在很抱歉,1
+zin_reg_msg,情況已經演變成、不得不分開的樣子了,1
+zin_reg_msg,阿莫斯．．．cr大概情況我已經了解了,0
+zin_reg_msg,阿古迪巴這混蛋、竟然來這麼陰險的一招．．．,0
+zin_reg_msg,阿莫斯啊、我想可以聚集我們這裏優秀的情報員奪回你的母親,0
+zin_reg_msg,如果得以順利的話就可以不需要去地球了,0
+zin_reg_msg,阿希大人、雖然很令人感動，但是不可能的吧,1
+zin_reg_msg,布朗不會讓這種事成功的,1
+zin_reg_msg,在這種高度嚴密的巡查裏面是行不通的,1
+zin_reg_msg,而且萬一失敗的話母親的性命．．．．,1
+zin_reg_msg,唔．．．．cr那樣的話，演變成了不得不去的情況嗎,0
+zin_reg_msg,實在很抱歉,1
+zin_reg_msg,你做到這個地步已經很努力了．．,0
+zin_reg_msg,但是、阿莫斯不在的話、這個國家的未來究竟會變成怎樣的啊．．．,0
+zin_reg_msg,這個不要太多的操心,1
+zin_reg_msg,比我厲害的人還有很多,1
+zin_reg_msg,什麼，怎麼可能有那樣的人,0
+zin_reg_msg,其實在數年前，跟一個類似的人相遇過,1
+zin_reg_msg,說起來非常慚愧，我根本無法和他相比,1
+zin_reg_msg,怎麼說呢！！cr那樣的人真的會有嗎？,0
+zin_reg_msg,有的cr名字叫做雷,1
+zin_reg_msg,雷．．．．,0
+zin_reg_msg,有一個叫做奧爾琴的占卜師,1
+zin_reg_msg,請找到他,1
+zin_reg_msg,雷的住處就知道了,1
+zin_reg_msg,我知道了，試著找一下,0
+zin_reg_msg,那麼、阿希大人．．．．,1
+zin_reg_msg,阿莫斯．．．．cr保重,0
+zin_reg_msg,是,1
+zin_reg_title,阿莫斯奔向地球了。
+zin_reg_button,0
+//zin_reg_exit
+//阿莫斯、阿古迪巴へ移籍
+set_pmov,423,16

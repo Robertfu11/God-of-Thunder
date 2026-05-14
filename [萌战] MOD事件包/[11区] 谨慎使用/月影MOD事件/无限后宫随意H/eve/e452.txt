@@ -1,0 +1,23 @@
+eve_start
+    if_date,96,6
+    if_eveflg,62,4
+	if_poid,429,eveflg064
+eve_end
+
+set_sikan,134,eveflg064
+
+chk_exeplayer,eveflg064,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,54
+zin_reg_event,,429,134,,gzin25
+zin_reg_qnar,金賈從士官學校畢業，正式入伍了。
+zin_reg_msg,金賈、他們來了cr這裏就如同地獄一樣,0
+zin_reg_msg,我可是技術員，和你們不一樣,1
+zin_reg_msg,就讓我躺著回後方吧,1
+zin_reg_msg,陪我一起到早上吧,0
+zin_reg_msg,當然我正是這樣想的,1
+zin_reg_button,0
+end

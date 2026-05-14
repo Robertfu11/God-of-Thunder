@@ -1,0 +1,31 @@
+eve_start
+	if_date,71,7
+	//ユナ士官狀態である
+	if_psts,834,2
+//	if_not_moving,834
+eve_end
+
+
+chk_exeplayer,poid0834,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,54
+//zin_reg_init
+zin_reg_event,尤娜的家,834,726,,gzin18
+zin_reg_msg,老媽、飯准備好了喲！！,1
+zin_reg_msg,辛苦你了、小空,0
+zin_reg_msg,今天吃什麼？,0
+zin_reg_msg,嘿嘿、是燉牛肉哦,1
+zin_reg_msg,啊、好香啊,0
+zin_reg_msg,老媽、今天你又上電視了啊,1
+zin_reg_msg,老媽你可太牛了,1
+zin_reg_msg,啊、原來是之前那批來采訪的人拍的啊．．．,0
+zin_reg_msg,等我長大了也要成為老媽那樣的人,1
+zin_reg_msg,啊啦、我真高興你能這麼說呢,0
+zin_reg_msg,要是、老媽我要是餐館的大廚就好了,0
+zin_reg_msg,真的、味道好極了,0
+zin_reg_msg,真的嗎！！cr欸嘿嘿嘿嘿,1
+zin_reg_button,0
+//zin_reg_exit

@@ -1,0 +1,31 @@
+eve_start
+	if_date,81,5
+//阿茲瑪 阿古迪巴配下
+	if_poid,609,16
+eve_end
+
+set_eveflg,16,1
+
+chk_exeplayer,16,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,地球,613,666,zin83,gzin1
+zin_reg_msg,地球啊．．．cr久違了,0
+zin_reg_msg,卡西拉，你來這顆行星是要做什麼呢？,1
+zin_reg_msg,一個老朋友．．．cr去拜訪一下,0
+zin_reg_msg,朋友？．．．．,1
+zin_reg_msg,啊，是啊．．．cr（大嚼）吧唧吧唧．．．,0
+zin_reg_msg,卡西拉，你剛才吃的，和棉花糖一樣的是什麼東西啊？,1
+zin_reg_msg,啊，這個啊,0
+zin_reg_msg,這是大王蜂的幼蟲,0
+zin_reg_msg,吃點麼，味道不錯,0
+zin_reg_msg,誒~~~~~！！cr不，不用客氣！,1
+zin_reg_msg,切cr真是不識貨的傢伙．．．,0
+zin_reg_msg,這麼好吃的東西居然不吃,0
+zin_reg_button,0
+//zin_reg_exit
+end

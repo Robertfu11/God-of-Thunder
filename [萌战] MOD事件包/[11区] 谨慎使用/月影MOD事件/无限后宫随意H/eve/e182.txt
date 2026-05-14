@@ -1,0 +1,128 @@
+//xeve
+eve_start
+	if_eveflg,17,0
+	//布朗と阿姆が同じ配下にいる
+	if_same_oid,625,751
+	//阿姆は捕虜
+	if_psts,751,8
+	//阿爾比恩仮死状態
+	if_psts,600,6
+eve_end
+
+set_eveflg,17,1
+
+chk_exeplayer,poid0625,0,0,0
+chk_exeplayer_else
+	upd_sts,751,0,2
+	//布朗、阿姆結婚
+	set_pkon,625,751
+	//阿姆王族設定
+	upd_sts,751,4,12080
+	end
+
+chk_exeplayer_then
+bgm_chg,61
+//zin_reg_init
+zin_reg_event,地牢,625,751,,gzin35
+zin_reg_msg,阿姆喲，好久不見了,0
+zin_reg_msg,你．．．cr是布朗．．．,1
+zin_reg_msg,呵，想起來了啊cr沒想到我們居然以這種方式重逢,0
+zin_reg_msg,怎麼樣，阿姆,0
+zin_reg_msg,如果你肯做我妻子的話，我就讓你從這兒出去,0
+zin_reg_msg,我是為了你好！,0
+zin_reg_msg,你在犯什麼糊塗！,1
+zin_reg_msg,不惜性命的前來說服敵將麼．．．,1
+zin_reg_msg,你打算死這這裏嗎？,0
+zin_reg_msg,只求速死！！,1
+zin_reg_msg,呃．．．．,0
+zin_reg_msg,那就沒辦法了cr看看這個孩子吧,0
+zin_reg_msg,誒？．．．．,1
+zin_reg_face_0,600
+zin_reg_msg,阿，阿爾比恩！！！,1
+zin_reg_msg,母，母親．．．．,0
+zin_reg_msg,為什麼！！！,1
+zin_reg_face_0,625
+zin_reg_msg,很可惜呐,0
+zin_reg_msg,用投降轉移我們注意力，似乎打算讓這孩子逃跑是吧,0
+zin_reg_msg,可是非常不巧的是，讓我的巡邏隊逮個正著,0
+zin_reg_msg,怎，怎麼會這樣．．．．．,1
+zin_reg_msg,那這個小鬼的處置．．．,0
+zin_reg_msg,照現在這個樣子，理所應當的會被當做敵將而處決吧。,0
+zin_reg_msg,怎麼能這樣！！cr他還是個孩子！！,1
+zin_reg_msg,雖說只是個孩子，但這孩子是敵人的王族,0
+zin_reg_msg,是個相當優秀的軍官呐,0
+zin_reg_msg,請你想想辦法．．．cr想想辦法幫幫這個孩子吧,1
+zin_reg_msg,可是要怎麼幫才好呢．．．．cr你明白了嗎？,0
+zin_reg_msg,．．．．．cr剛才說的．．．．,1
+zin_reg_msg,接受的話，就就肯幫我是嗎？,1
+zin_reg_msg,當然,0
+zin_reg_msg,決不食言,0
+zin_reg_msg,．．．．．．cr我明白了,1
+zin_reg_msg,我就做你的妻子吧,1
+zin_reg_msg,很好，就做老夫的妻子吧！！,0
+zin_reg_msg,唔哈哈哈哈哈cr這可真令人高興啊,0
+zin_reg_msg,我馬上就放你出來,0
+zin_reg_msg,謝謝,1
+zin_reg_msg,呵呵呵，不必多禮,0
+zin_reg_msg,跟我來吧,0
+zin_reg_msg,去哪兒？,1
+zin_reg_msg,來了就知道了,0
+bl_fadeout
+bl_fadein,gzin6
+zin_reg_event,,625,751,,gzin6
+zin_reg_msg,這，這裏是．．．．,1
+zin_reg_msg,呵呵呵，是我們的新家呢,0
+zin_reg_msg,那麼，我們趕快來做夫妻吧！,0
+zin_reg_msg,啊．．．怎麼cr請等一下！！,1
+zin_reg_msg,為什麼這麼驚慌失措！！,0
+zin_reg_msg,難道你答應做我的妻子是騙我的嗎！！,0
+zin_reg_msg,沒，沒有那樣的事．．．,1
+zin_reg_msg,唔，那麼作為妻子，試著讓你的丈夫獲得滿足吧！！,0
+zin_reg_msg,那，那個．．．．,1
+zin_reg_msg,做不到的話，現在處死你的兒子也還來得及！！,0
+zin_reg_msg,我，我知道了,1
+zin_reg_msg,請不要對那個孩子下毒手！！,1
+zin_reg_msg,那就趕快做！！,0
+zin_reg_msg,．．．．．．．,1
+bgm_chg,55
+set_epid1,625
+set_epid2,751
+zin_old_init
+zin_old_img_str,e182a,0,1
+zin_old_msg,怎麼搞的！！cr腰上再用點力！！,pid1
+zin_old_msg,這種程度，想讓老夫滿足還差的很遠,pid1
+zin_old_msg,唔咕．．．．對，對不起．．．．cr可是．．．這樣，這樣已經．．．啊，啊！！！,pid2
+zin_old_msg,你這貨自己有快感了吧？cr還說要讓老夫滿足．．．,pid1
+zin_old_msg,啊．．．嗯嗯．．．．嗯．．．．咕嗚嗚．．．．,pid2
+zin_old_msg,我讓你腰再使點勁兒！！,pid1
+zin_old_msg,是．．．．是的．．．．．啊啊．．．．嗯嗯．．．．,pid2
+zin_old_msg,唔．．．．cr居然只會這一點點床技．．．．,pid1
+zin_old_msg,看來還有必要好好調教啊．．．,pid1
+zin_old_msg,嘛，沒辦法了。cr今日就讓老將親自上馬吧,pid1
+zin_old_msg,阿姆喲，讓老夫來告訴你，槍是這麼使的！！cr看招！！！！,pid1
+zin_old_msg,咦呀啊．．． 啊 ．．． 啊啊．．． 啊 ．．．啊啊啊！！！！！！,pid2
+zin_old_img_str,e182b,0,1
+zin_old_msg,那樣．．．不行．．．哈啊．．．cr拜託．．．那樣的．．．輕一點！！！,pid2
+zin_old_msg,呵呵呵呵，什麼嘛，這淫蕩的樣子,pid1
+zin_old_msg,看起來你已經進入角色了．．．．cr不過你想做老夫的妃子還需要好好的修身養性啊．．．,pid1
+zin_old_msg,可是．．．這樣的．．．直，直到裏面．．．啊 啊．．．啊 啊 啊 ！！！．．．．,pid2
+zin_old_msg,呵呵呵，是麼，裏面感覺不錯吧？cr阿布塔那傢伙一定只有三厘米吧？cr那麼就讓老夫見識一下你的未開之地吧,pid1
+zin_old_msg,看老夫給你直搗黃龍！！cr哼啊！！！,pid1
+zin_old_msg,啊，啊．．．啊啊啊．．．這麼深．．．cr第，第一次．．．嗯 嗯 啊,pid2
+zin_old_msg,嘿咻．．．嘿咻．．．嘿咻．．．嘿咻！！,pid1
+zin_old_msg,討厭．．．要，要去了．．．cr啊、啊、啊、啊,pid2
+zin_old_msg,嘿嘿、不錯。讓我看看你高潮的樣子！！,pid1
+zin_old_msg,討，討厭．．．那樣的．．．不行．．．的．．．,pid2
+zin_old_msg,不給我看？cr那這樣如何！！　嘿！！,pid1
+zin_old_msg,呀啊啊啊啊啊！！．．．不，不行了．．．cr已經，到極限了！！！！！！,pid2
+zin_old_msg,要去了．．．要去了．．．去了了了了了了了了ーーーーー！！,pid2
+zin_flush_file,e182c,0
+zin_reg_button,16
+zin_old_exit
+//zin_reg_exit
+upd_sts,751,0,2
+//布朗、阿姆結婚
+set_pkon,625,751
+//阿姆王族設定
+upd_sts,751,4,12080
+end

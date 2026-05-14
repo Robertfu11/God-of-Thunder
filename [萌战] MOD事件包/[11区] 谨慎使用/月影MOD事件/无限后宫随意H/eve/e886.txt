@@ -1,0 +1,22 @@
+eve_start
+	if_date,102,8
+eve_end
+
+bgm_chg,53
+get_phao
+set_epid1,pval
+get_kunpsn,pid1
+set_epid2,pval
+
+zin_reg_event,p_name1的王宮,pid1,pid2,,gzin8
+zin_reg_msg,call_pid21,1
+zin_reg_msg,從諜報員那裏發來的聯絡，坐標１４－８處發現了新的航線,1
+zin_reg_msg,謔哦、竟然在那種地方,0
+zin_reg_msg,說不定會對以後的戰略產生重大的影響,1
+zin_reg_msg,嗯 沒錯,0
+zin_reg_button,0
+//マップ変更
+set_hexmap,14,8,0
+set_hexmap,14,9,0
+set_hexmap,13,14,0
+end

@@ -1,0 +1,15 @@
+zin_reg_msg,¤·¤ç¤¦¤¬¤Ê¤¤×Ó¤Í¤¨,1
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,¤¢¤¢£®£®£®call_pid12,pid1
+zin_old_msg,¥Õ¥Õ¡¢¤Û¤ó¤È³à¤ó·»¤ß¤¿¤¤,pid2
+zin_old_msg,³à¤ó·»¤¸¤ã¤Ê¤¤¤Ã¤ÆÑÔ¤Ã¤¿¤À¤í,pid1
+zin_old_msg,¤¢¤é¡¢¤½¤¦¤À¤Ã¤¿¤ï¤Í,pid2
+zin_old_msg,¤¸¤ã¤¢¡¢¤¬¤ó¤Ð¤Ã¤Æ¤â¤é¤ª¤¦¤«¤·¤é,pid2
+zin_old_msg,¤¤¤¤¤È¤â¡¢¤½¤ì£¡£¡,pid1
+zin_old_msg,¤¦¤Ã£¡£¡¡¡¤¢¤¦£®£®£®¤¹¤´¤¤¤ï£®£®£®,pid2
+zin_old_msg,¤Ï¤¢¤¢£®£®£®¤À¤á£®£®£®¤â¤¦¥¤¤Ã¤Á¤ã¤¤¤½¤¦,pid2
+zin_old_msg,¤Ï¤¦£®£®£®¤¢¤Ã¡¢¤¢¤¢¤¢¤¢£¡£¡,pid2
+zin_flush,pid2
+end

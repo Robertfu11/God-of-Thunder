@@ -1,0 +1,42 @@
+eve_start
+	if_eveflg,57,10
+	if_same_oid,eveflg59,eveflg60
+eve_end
+
+chk_exeplayer,poid_pid1,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+set_eveflg,57,20
+set_epid1,eveflg59
+set_epid2,eveflg60
+bgm_chg,58
+zin_reg_event,p_name1的臥室,pid2,pid1,,gzin9
+zin_reg_qnar,p_name2多次被p_name1邀出來幽會。
+zin_reg_msg,啊啊！！　好、好爽！！　再．．．再來！！,1
+psn_putsex,1,pid2,1
+zin_reg_msg,呵呵呵、剛開始真是嚇了一跳啊,0
+zin_reg_msg,沒想到、是你先主動提出要跟我見面,0
+zin_reg_msg,因、因為．．把我．．作為一個女人疼愛的．．只，只有你而已．．,1
+zin_reg_msg,是嗎、明明如此性感撩人的說,0
+zin_reg_msg,啊啊、太棒了．．．再．．．再多誇獎我一些．．．,1
+zin_reg_msg,當然沒問題cr作為交換要不要聽一下我的願望？,0
+zin_reg_msg,什、什麼願望？cr說、說來聽聽,1
+zin_reg_msg,你在霸王面前將我推薦為分將,0
+zin_reg_msg,分、分將．．．啊嗯！！　唔唔！！,1
+zin_reg_msg,如何啊？,0
+zin_reg_msg,一下子．．．就分將．．．不、不好辦啊．．．,1
+zin_reg_msg,再．．．再低一點的．．職位的話．．啊嗯、啊啊！！,1
+zin_reg_msg,不行的哦cr分將以外的職位我都不要,0
+zin_reg_msg,不願意的話、咱們之間的關系就到此為止,0
+zin_reg_msg,我、我知道了cr我知道了、拜託你不要說那種話、啊咿！！,1
+zin_reg_msg,真乖cr那就拜託你了、我可愛的公主殿下,0
+zin_reg_msg,啊、啊啊啊啊！！！！！,1
+zin_reg_button,0
+
+chk_mval,pid2=player,,,,,
+chk_mval_then
+	add_sinmitu,pid1,50
+chk_mval_else
+end

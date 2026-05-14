@@ -1,0 +1,60 @@
+eve_start
+	if_date,71,5
+	if_same_oid,255,834
+eve_end
+
+chk_exeplayer,poid0834,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,54
+//zin_reg_init
+zin_reg_event,兵器試驗場,255,834,,gzin31
+zin_reg_msg,尤娜博士、仿真機器人（BIO NOID）的資料我放著這裏啦,0
+zin_reg_msg,啊、是奧巴爾博士吧cr多謝了,1
+zin_reg_msg,從以前的資料來看、這一次的新型號．．．,1
+zin_reg_msg,看起來和以前的有大不同啊,1
+zin_reg_msg,誒、我們試了從來沒做過的改動嘛,0
+zin_reg_msg,是啊、很有意思啊,1
+zin_reg_msg,能和您這樣優秀的人共事實在令人高興,1
+zin_reg_msg,您才是、能和您這樣的世界權威一起工作才是我的榮幸,0
+zin_reg_msg,過獎、過獎了．．．,1
+zin_reg_msg,上頭對仿真機器人兵器實用化的需求非常迫切,1
+zin_reg_msg,人類付出的犧牲已經太多太多了、讓我們早日終結這一切吧,1
+zin_reg_msg,我是工程師、您是科學家cr我們一起加油幹吧,1
+zin_reg_msg,說的是呐．．．,0
+zin_reg_msg,啊、給你介紹一個人,0
+zin_reg_msg,這次、擔任我助手的人、布拉巴,0
+zin_reg_face_0,794
+zin_reg_msg,我是布拉巴,0
+zin_reg_msg,嘛、初次見面,1
+zin_reg_msg,能夠擔任奧巴爾博士的助手、你也一定是相當優秀的人呐,1
+zin_reg_msg,您過獎了,0
+zin_reg_face_0,255
+zin_reg_msg,他是腦科學的專家,0
+zin_reg_msg,他正在研究仿真機器人的思考回路,0
+zin_reg_msg,哇哦、很厲害的樣子,1
+zin_reg_msg,喲、眼睛有顯示錯誤了．．．cr稍稍失陪一下,1
+zin_reg_face_1,0
+zin_reg_msg,．．．．．．．,0
+zin_reg_face_1,794
+zin_reg_msg,奧爾巴大人、她的眼睛看不見是嗎？,1
+zin_reg_msg,正是,0
+zin_reg_msg,是在一次實驗事故中失明的,0
+zin_reg_msg,要不是那次事故、她也許會有更大的成就,0
+zin_reg_msg,你說她是世界性的權威．．．．,1
+zin_reg_msg,有那麼厲害嗎？,1
+zin_reg_msg,現在、各行星所有的躍遷航行系統（WARP DRIVE SYSTEM）都是她的發明,0
+zin_reg_msg,躍、躍遷系統．．．是她！？,1
+zin_reg_msg,我只是說說原理、就是利用超重力將空間扭曲實用化的技術,0
+zin_reg_msg,要是沒有她的話、人類走出太陽系恐怕還得花費百年時間,0
+zin_reg_msg,那麼厲害．．．,1
+zin_reg_msg,不過、雖然失明了可還是在工作啊,1
+zin_reg_msg,用對正常人來說不怎麼可靠的神經插頭（BIO PLUGIN）、把顯示器的圖像直接投影到大腦裏還是可能的,0
+zin_reg_msg,就連使用電腦都是一件不容易的事情啊,0
+zin_reg_msg,以前因為工作原因、私生活方面相當不容易啊,0
+zin_reg_msg,她還和我說過有一個女兒．．．,0
+zin_reg_msg,是這樣啊．．．．,1
+zin_reg_button,0
+//zin_reg_exit

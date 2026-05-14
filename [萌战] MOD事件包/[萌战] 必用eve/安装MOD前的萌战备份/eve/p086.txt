@@ -1,0 +1,12 @@
+bgm_chg,47
+//zin_reg_init
+zin_reg_event,加冕儀式,pid1,pid2,,gzin8
+	zin_reg_msg,從今開始p_name1大人將作為我們新的霸王,1
+	zin_reg_msg,請為我們指引前進的道路,1
+	zin_reg_msg,嗯,0
+	zin_reg_msg,還要仰仗諸位的努力,0
+	zin_reg_msg,是！！,1
+zin_reg_title,p_name1成為了新的霸王。
+zin_reg_button,0
+//zin_reg_exit
+end

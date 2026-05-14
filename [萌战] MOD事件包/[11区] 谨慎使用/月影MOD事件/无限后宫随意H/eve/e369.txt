@@ -1,0 +1,52 @@
+eve_start
+    if_date,82,10
+//発生確率1/2
+    if_rnd,2
+    if_haou,13
+    if_eveflg,37,2
+//ドミナンスのsts6
+    if_psts,161,6
+//摩西のsts6
+    if_psts,688,6
+eve_end
+
+set_kmdata,624,13,0,0
+//摩西死亡のイベントが発生しないようにするe371
+set_eveflg,37,99
+
+chk_exeplayer,13,624,0,0
+chk_exeplayer_else
+//ドミナンス、摩西、阿多魯塞姆處仕官
+set_sikan,161,13
+upd_sts,161,勲功,5000
+set_sikan,688,13
+upd_sts,688,勲功,5000
+end
+
+chk_exeplayer_then
+bgm_chg,60
+zin_reg_event,,13,161,,gzin8
+zin_reg_qnar,德米南斯和摩西一起逃離斯庫洛克後、決定依靠阿多魯塞姆結束漂流。
+zin_reg_msg,喔喔，德米南斯呀？cr好幾年不見了,0
+zin_reg_msg,好久沒有和你談談、陛下,1
+zin_reg_msg,你今天來銷售新武器的？,0
+zin_reg_msg,不、今天是來推薦人的,1
+zin_reg_msg,嗯、推薦誰啊？,0
+zin_reg_qnar,德米南斯介紹了身旁的摩西。
+zin_reg_msg,摩西是生物技術的權威,1
+zin_reg_msg,是摩西cr那個醫生摩西？,0
+zin_reg_msg,是的、陛下,1
+zin_reg_msg,他離開了斯庫洛克、正在尋找值得自己效忠的人,1
+zin_reg_face_r,688
+zin_reg_msg,我是摩西、阿多魯塞姆大人,1
+zin_reg_msg,就用這殘軀為您效忠吧,1
+zin_reg_msg,求之不得crcf_pid1很高興能得到你的力量,0
+zin_reg_msg,感激不盡,1
+zin_reg_qnar,德米南斯和摩西在阿多魯塞姆手下任官了。
+zin_reg_button,0
+//ドミナンス、摩西、阿多魯塞姆處仕官
+set_sikan,161,13
+upd_sts,161,勲功,5000
+set_sikan,688,13
+upd_sts,688,勲功,5000
+end

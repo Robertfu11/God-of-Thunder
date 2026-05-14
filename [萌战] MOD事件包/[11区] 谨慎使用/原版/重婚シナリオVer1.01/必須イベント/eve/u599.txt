@@ -1,0 +1,12 @@
+auth_uid,E6BE
+//‚PŒ‚©‚Ç‚¤‚©‚ğ”»’è‚·‚éƒCƒxƒ“ƒg‚P
+eve_start
+if_month,1
+if_val,player=eveflg198
+if_val,ŒMŒ÷:player=13000
+if_val,ó‘Ô:player!4
+if_eveflg,199,1
+eve_end
+
+set_eveflg,189,1
+end

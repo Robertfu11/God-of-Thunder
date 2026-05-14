@@ -1,0 +1,55 @@
+eve_start
+	if_eveflg,25,1
+	if_hid,20,13
+	//スクロック　阿多魯塞姆の捕虜
+	if_horyo,624,13
+eve_end
+
+set_eveflg,25,2
+//資金アップ
+add_money,13,1000000
+
+chk_exeplayer,13,0,0,0
+chk_exeplayer_else
+//スクロック処刑
+set_dead,624,13
+end
+
+chk_exeplayer_then
+bgm_chg,68
+//zin_reg_init
+zin_reg_event,拷問部屋,13,624,,gzin40
+zin_reg_msg,斯庫洛克啊、真是悲劇的身影,0
+zin_reg_msg,還不是因為你．．．．．,1
+zin_reg_msg,下次戰斗的話一定勝利的．．．,1
+zin_reg_msg,愚蠢．．．．,0
+zin_reg_msg,你沒有機會了,0
+zin_reg_msg,說起來，寶藏在哪？,0
+zin_reg_msg,寶藏，愚蠢，這個怎麼可能有！！,1
+zin_reg_msg,說謊吞千針,0
+zin_reg_msg,你的部下說的,0
+zin_reg_msg,好像除了然你以外的人都不知道,0
+zin_reg_msg,別．別開玩笑了！！,1
+zin_reg_msg,就算知道了也不說！！,1
+zin_reg_msg,哦．．．．,0
+zin_reg_msg,被帶到自己來知道是什麼意思嗎？,0
+zin_reg_msg,無謂的底坑還是停下來比較好,0
+zin_reg_msg,哦列！！,0
+zin_reg_face_0,756
+zin_reg_msg,哈！！,0
+zin_reg_msg,要．要幹什麼．放開我！！,1
+zin_reg_qnar,斯庫洛克被綁在椅子上面進行著電療。
+zin_reg_msg,啊啊啊啊啊！！！！！！！！,1
+zin_reg_face_0,13
+zin_reg_msg,怎麼樣，是不是又想說什麼呐？,0
+zin_reg_msg,啊啊 我知道了 我說了 不要再刺激我了！！！,1
+zin_reg_msg,什麼呀，意外的很快嘛,0
+zin_reg_msg,沒有骨氣的東西,0
+zin_reg_msg,那麼就請說吧,0
+zin_reg_msg,啊 我明白了  唔．．．,1
+zin_reg_msg,唔 不論怎麼樣都養被殺死的傢伙,0
+zin_reg_qnar,斯庫洛克說了寶藏所在地以後 被處刑了。
+zin_reg_button,0
+//zin_reg_exit
+//スクロック処刑
+set_dead,624,13

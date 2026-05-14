@@ -1,0 +1,35 @@
+eve_start
+	if_pkun,624,13000
+	if_pkun,621,13000
+	//巴庫恩和斯庫洛克處於同盟狀態
+	if_uni,624,621
+eve_end
+
+//同盟解除
+del_union,624
+add_urami,624,621,500
+add_urami,621,624,500
+
+chk_exeplayer,624,621,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,斯庫洛克的王宮,624,621,zin62,gzin8
+zin_reg_msg,巴庫恩閣下，好久不見啊,0
+zin_reg_msg,斯庫洛克麼，有什麼事？,1
+zin_reg_msg,其實我這次是想解除我們長久以來保持的同盟關系,0
+zin_reg_msg,什麼，打算向我們開戰麼？,1
+zin_reg_msg,我們本來可是一族人啊,1
+zin_reg_msg,雖然是這麼說，可是人民開戰的意向很強烈,0
+zin_reg_msg,老子也無能為力再壓制下去,0
+zin_reg_msg,所以，我們的合作關系也就到今天為止了,0
+zin_reg_msg,請做好心理准備,0
+zin_reg_msg,再會,0
+zin_reg_msg,可惡，還真為所欲為了．．．,1
+zin_reg_title,與斯庫洛克的同盟關系破裂。
+zin_reg_button,0
+//zin_reg_exit
+end

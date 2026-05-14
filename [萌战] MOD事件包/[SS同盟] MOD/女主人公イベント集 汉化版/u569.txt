@@ -1,0 +1,615 @@
+//女主用エロシナリオ～王妃編～
+eve_start
+if_eveflg,122,>0
+if_eveflg,122,<2
+if_val,状態:player=2
+if_val,勲功:player>=10000
+if_val,性別:poid_player=1
+if_val,年齢:poid_player>=OLD
+if_val,覇王:player!player
+if_val,年齢:player>OLD
+if_rnd,2
+eve_end
+
+//初期化
+set_epid1,0
+set_epid2,0
+set_epid3,0
+set_epid4,0
+
+//プレイヤーをpid2に格納
+set_epid2,player
+
+//妃かどうか判定
+*queen0
+chk_mval,勲功:player=12200,,,,
+chk_mval_then
+	goto,*queen4
+
+chk_mval_else
+	goto,*queen1
+
+//役職が妾かどうか判定
+*queen1
+chk_mval,役職:player=3,,,,
+chk_mval_then
+	goto,*queen2
+
+chk_mval_else
+	goto,*queen3
+
+//妾から王妃昇格の場合
+*queen2
+	get_phao
+	set_epid1,pval
+	zin_reg_event,王妃昇格,pid1,pid2,,gzin23
+	bgm_chg,68
+//覇王が結婚しているかどうか
+chk_mval,婚姻:pid1>0,,,,
+chk_mval_then
+	get_mpid,覇王=pid1,勲功=12200,,,,,
+	set_epid3,pval
+	zin_reg_msg,最近一直和p_name2你在一起、觉得p_name3有点烦人了。,0
+	zin_reg_msg,想和p_name3离婚了、p_name2你愿意做我的王妃吗？,0
+	zin_reg_2sel,想要成为王妃,离开
+	get_resp
+	ret_sel1
+	zin_reg_msg,还是p_name2适合做王妃。那么和p_name3离婚吧。,0
+	set_rikon,pid1
+	upd_sts,pid3,勲功,12080
+	set_pkon,pid1,pid2
+	set_yaku,player,0
+	zin_reg_qnar,p_name2成为了p_name1的王妃。
+	zin_reg_qnar,不仅只是为霸王生下孩子的义务、在政治上也有了很多责任和义务。
+	bl_fadeout
+	goto,*queen4
+
+	ret_sel2
+	zin_reg_msg,还是再考虑一下。,0
+	end
+
+chk_mval_else
+	zin_reg_msg,近来、p_name2不仅漂亮、人望也越来越高了啊。,0
+	zin_reg_msg,自身性格也不坏、让p_name2成为正室也不错。,0
+	zin_reg_2sel,成为王妃,离开
+	get_resp
+	ret_sel1
+	zin_reg_msg,还是只有p_name2适合做王妃。正式成为我的王妃吧。,0
+	set_pkon,pid1,pid2
+	set_yaku,player,0
+	zin_reg_qnar,p_name2被p_name1任命为王妃了。
+	zin_reg_qnar,不仅只是为霸王生下孩子的义务、在政治上也有了很多责任和义务。
+	bl_fadeout
+	goto,*queen4
+
+	ret_sel2
+	zin_reg_msg,还是再考虑一下。,0
+	end
+
+//妾以外から王妃に抜擢
+*queen3
+	get_phao
+	set_epid1,pval
+	zin_reg_event,王妃就任,pid1,pid2,,gzin23
+	bgm_chg,68
+	zin_reg_msg,p_name2的美貌、只是担任仕官真是可惜了。,0
+	zin_reg_msg,cf_pid1の女にしたいところだが、その地位を鑑みれば妾というわけにもいかぬ。,0
+//覇王が結婚しているかどうか
+chk_mval,婚姻:pid1>0,,,,
+chk_mval_then
+	get_mpid,覇王=pid1,勲功=12200,,,,,
+	set_epid3,pval
+	zin_reg_msg,和p_name3离婚、p_name2想成为王妃么？,0
+	zin_reg_2sel,成为王妃,不要
+	get_resp
+	ret_sel1
+	zin_reg_msg,和p_name3离婚、p_name2成为王妃。,0
+	set_rikon,pid1
+	upd_sts,pid3,勲功,12080
+	set_pkon,pid1,pid2
+	zin_reg_qnar,p_name2被任命为p_name1的王妃。
+	zin_reg_qnar,得到了为国家生下一名优秀的王子的重大使命。
+	bl_fadeout
+	goto,*queen4
+
+	ret_sel2
+	zin_reg_msg,还是再考虑一下。,0
+	end
+
+chk_mval_else
+	zin_reg_msg,迎娶p_name2成为王妃？,0
+	zin_reg_2sel,成为王妃,不行
+	get_resp
+	ret_sel1
+	zin_reg_msg,嗯、p_name2的话、作为王妃无可挑剔。,0
+	zin_reg_msg,p_name2。,0
+	set_pkon,pid1,pid2
+	zin_reg_qnar,p_name2被p_name1任命为王妃。
+	zin_reg_qnar,不仅只是为霸王生下孩子的义务、在政治上也有了很多责任和义务。
+	bl_fadeout
+	goto,*queen4
+
+	ret_sel2
+	zin_reg_msg,还是再考虑一下。,0
+	end
+
+*queen4
+	get_phao
+	set_epid1,pval
+	zin_reg_event,オルド,pid1,pid2,,gzin9
+	bgm_chg,68
+	zin_reg_qnar,夜、在p_name2的寝室p_name1到访了。
+	zin_reg_msg,今晚我会好好疼爱你的,0
+	zin_reg_2sel,很开心,不高兴
+	get_resp
+	ret_sel1
+	zin_reg_msg,（可不能输给其他妾啊。这个人可是callself_pid2一个人的）,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	bgm_chg,21
+	goto,*lovesex
+
+ret_sel2
+	zin_reg_msg,好了、我的妻子啊、让我来好好疼爱你吧。,0
+	zin_reg_msg,．．．．．．,1
+	goto,*rapesex
+
+*lovesex
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+rnd,4
+case0
+	zin_old_msg,call_pid1．．．,pid2
+	zin_old_msg,締まり具合は．．．crい、いかが．．．ですか．．．あん！！,pid2
+	zin_old_msg,さすが我が妻よ,pid1
+	zin_old_msg,callself_pid1の力加減をよく心得ておる,pid1
+	zin_old_msg,call_pid1が．．．私から．．．は、離れないよう．．床技を熱心に．．磨いているのです．．ああっ！！,pid2
+	zin_old_msg,フフ、けなげなヤツ．．．,pid1
+	zin_old_msg,う、浮気は．．．ほ、ほどほどに．．．crし、してくださいましね．．．,pid2
+	zin_old_msg,フフ、そうだな．．．これでは浮気の必要はなさそうだ,pid1
+	zin_old_msg,う、うれしゅう．．．ございます,pid2
+	goto,*after
+case1
+	zin_old_msg,call_pid1．．．こんな感じで．．．い、いかがですか,pid2
+	zin_old_msg,ああ、気持ちよい．．．いい気分だ．．．,pid1
+	zin_old_msg,こ、こういうのも．．．ございますよ．．．,pid2
+	zin_old_msg,ほう．．．なかなか．．．腕をあげたな、p_name2,pid1
+	zin_old_msg,はい．．．あ、call_pid1に．．．仕込まれましたから．．．,pid2
+	zin_old_msg,まだまだ仕込んでやるぞcr爪の先まで俺色に染まるまでな,pid1
+	zin_old_msg,は、はい．．．よ、よろしくお願い．．します,pid2
+	zin_old_msg,フフ、いつまでもかわいいヤツよ,pid1
+	goto,*after
+case2
+	zin_old_msg,さあ、call_pid1、もっと突いてぇ．．．crp_name2のman_str、もっとぐしゃぐしゃにしてぇ．．．．,pid2
+	zin_old_msg,フフフ、いやらしい音を出しおって．．．アソコが大洪水になっているではないか,pid1
+	zin_old_msg,もっと．．．もっと激しくぅ．．．．,pid2
+	zin_old_msg,こ、こうかっ！！,pid1
+	zin_old_msg,はあああ！！　いい、とってもいいわ！！　アソコがえぐれて．．．し、しびれるぅ！！！,pid2
+	zin_old_msg,もっと、もっと、激しく犯してぇ！！！,pid2
+	zin_old_msg,ぬうううっ！！！,pid1
+	zin_old_msg,はあ．．．だ、ダメ．．．もうイク．．．イっちゃう．．．,pid2
+	zin_old_msg,よし、いっしょに．．．いっしょにイクぞ！！,pid1
+	zin_old_msg,は、はい．．．call_pid1．．．ああ、ああっ、ダメッ、イっちゃううううう！！！,pid2
+	zin_flush,pid2
+	goto,*after
+case3
+	zin_old_msg,入れる前からずいぶん濡れていたようだな、はしたないヤツだ,pid1
+	zin_old_msg,あはーーん．．．だって．．．call_pid1の．．．call_pid1のtin_strが．．ずっと．．．ほしくって．．．んあああっ！！,pid2
+	zin_old_msg,そうか、しばらく間が空いたからな、そんなに我慢できなかったか？,pid1
+	zin_old_msg,ああん、そ、そうよ．．．久しぶりのcall_pid1のtin_str．．．は、離さないわ．．．,pid2
+	zin_old_msg,まったく、ネチャネチャといやらしい音を出しおって．．．crこれほどの淫乱になろうとはな．．．．,pid1
+	zin_old_msg,さあ、call_pid1．．．早く、早く中に出して．．．cr私、新しい赤ちゃんがほしい．．．,pid2
+	zin_old_msg,いいだろう、我が一族はもっと強化する必要があるからな．．．い、いくぞ、call_pid2！！,pid1
+	zin_old_msg,ああん、ひああっ．．．いい．．．せーし．．．せーしきてえええ！！！！,pid2
+	zin_flush,pid2
+	goto,*after
+//初膜パターン
+case_hatumaku
+	chk_sts,pid2,2,<30
+	//30歳以下
+	chk_sts_then
+		rnd,2
+		case0
+		zin_old_msg,あぐっ！！ああああ！！,pid2
+		zin_old_msg,むうう．．．さすがに若い女は違う。cr締め付けが根本から先まで、まるで生き物のように場所を変えている,pid1
+		zin_old_msg,これが生娘のman_strか．．．,pid1
+		zin_old_msg,ああ！！,pid2
+		zin_old_msg,痛いのと．．．気持ちいいのが．．．交互に混ざり合って．．．,pid2
+		zin_old_msg,おお、生娘の証、純血が出ている,pid1
+		zin_old_msg,よい妃をもらったな,pid1
+		zin_old_msg,さあ、たっぷり孕め,pid1
+		zin_old_msg,くううっ！！　ひいいいいい！！,pid2
+		zin_flush,pid2
+	goto,*after
+		case1
+		zin_old_msg,ひいっ．．．ああっ．．．くっ！！！,pid2
+		zin_old_msg,痛いか？,pid1
+		zin_old_msg,だ、大丈夫です．．．call_pid1．．．,pid2
+		zin_old_msg,うむ、さすがに綺麗なman_strをしている。よく今日まで男を咥えずに我慢したな。褒めてやるぞ。,pid1
+		zin_old_msg,あ、ありがとうございます．．．ああっ．．．,pid2
+		zin_old_msg,やはり年増女とは違う．．．このtin_strへの吸い付くような絡み方．．．男を初めて知って飢えておるようだ,pid1
+		zin_old_msg,ああん．．．call_pid1のtin_str．．．ゴリゴリして．．き、気持ちいいです．．．,pid2
+		zin_old_msg,そうか、ならばもっと奥までくれてやる！！,pid1
+		zin_old_msg,ああ、そんな．．．そんな突き方したら．．．す、すぐイっちゃう！！,pid2
+		zin_old_msg,フフ、はじめての絶頂を教えてやる。さあ、真っ白になれ！！　心も体も！！,pid1
+		zin_old_msg,ああっ！！　だ、ダメ！！　もう、い、イクッ、イクーーーーッ！！！,pid2
+		zin_flush,pid2
+	goto,*after
+
+	//30歳以上
+	chk_sts_else
+		rnd,2
+		case0
+		zin_old_msg,あ、ああ！！　こ、これが．．．オルド．．．,pid2
+		zin_old_msg,はうううっ！！くっ！！,pid2
+		zin_old_msg,どうした、痛いのか？,pid1
+		zin_old_msg,はい．．．その、オルドは初めてだから,pid2
+		zin_old_msg,なに？　お前は処女か？,pid1
+		zin_old_msg,そうよ,pid2
+		zin_old_msg,結婚するまでは誰にも．．．あ、あげないって誓ったの．．．call_pid1が．．．は、初めてよ．．．,pid2
+		zin_old_msg,今時なんという女だ,pid1
+		zin_old_msg,よかろうcallself_pid1が初めての男になってやる,pid1
+		zin_old_msg,ああ、call_pid1．．．身も心も結ばれるのね．．．うれしい,pid2
+		zin_old_msg,そうだ、最後のこの種付けでな,pid1
+		zin_old_msg,ああ、ほしい．．．call_pid1のtane_str．．．tane_strをください．．．,pid2
+		zin_old_msg,ああ、くれてやるとも．．．これから毎日な！！　ぐううっ！！,pid1
+		zin_old_msg,あ、あはあああん！！！,pid2
+		zin_flush,pid2
+			goto,*after
+		case1
+		zin_old_msg,ああっ．．．こ、こんなに．．．こんなにオルドが．．痛い．．ものだった．．なんて,pid2
+		zin_old_msg,大丈夫か？,pid1
+		zin_old_msg,お前は初めてだったな,pid1
+		zin_old_msg,大丈夫よ、call_pid1．．．ごめんなさい,pid2
+		zin_old_msg,つづけて．．．,pid2
+		zin_old_msg,よかろう、我慢できなくなったら言うのだぞ,pid1
+		zin_old_msg,わかったわ．．．あうっ．．．でも．．．,pid2
+		zin_old_msg,とっても．．．気持ちいい．．．,pid2
+	goto,*after
+
+//孕みパターン
+case_botebara
+chk_mval,種父:pid2=pid1,,,,
+chk_mval_then
+rnd,3
+case0
+	zin_old_msg,ああん、今日のcall_pid1．．．いつもよりは、激しいっ！！！,pid2
+	zin_old_msg,そ、そうだな．．．大きい腹を見て興奮しているようだ,pid1
+	zin_old_msg,ひああんっ！！　コリコリこすれて．．．か、感じちゃう．．．．,pid2
+	zin_old_msg,ああ．．．こんなに擦れると．．．すぐ、イっちゃう！！,pid2
+	zin_old_msg,callself_pid1もイキそうだ．．．,pid1
+	zin_old_msg,やん、深い．．イク．．イク．．イク．イクイクイグぅぅぅぅ！！！,pid2
+	zin_flush,pid2
+	goto,*after
+case1
+	zin_old_msg,しかし、ずいぶん腹がデカくなってきたな,pid1
+	zin_old_msg,もうすぐですよ、call_pid21．．．crこうしてcall_pid21の子を授かることができるなんて．．．p_name2は幸せです,pid2
+	zin_old_msg,うむ、我が継承者となるかもしれぬ赤子だ,pid1
+	zin_old_msg,しっかり産むのだぞ,pid1
+	zin_old_msg,はい．．．ひああっ．．．今日もいっぱいsiru_strが流れ出てきちゃった．．．,pid2
+	zin_old_msg,まったく、いやらしい姫だ,pid1
+	zin_old_msg,まあ、ひどいですわ、call_pid1！！　もう、お仕置きです！！,pid2
+	zin_old_msg,おおっ．．．なんという腰使いか．．．急にman_strも締め付けおって．．．,pid1
+	zin_old_msg,ウフフフ、さあ、call_pid1．．．はやくイってください,pid2
+	zin_old_msg,うむ．．．これは．．．もたんな．．．い、いくぞ！！,pid1
+	zin_flush,pid2
+		goto,*after
+case2
+	zin_old_msg,ああ．．．気持ちいい．．．,pid2
+	zin_old_msg,call_pid1も愛でてやってください、私達の赤ちゃん．．．,pid2
+	zin_old_msg,フフ、そうだな、産まれてくるのが楽しみだ,pid1
+	zin_old_msg,しかし子供ができても、p_name2のman_strは相変わらずからみついてくるな,pid1
+	zin_old_msg,おかげで、もう出そうだ,pid1
+	zin_old_msg,はい．．．いつでも出してください、call_pid1,pid2
+	zin_old_msg,私も、気持ちよくて．．．もう．．．イきます．．．,pid2
+	zin_old_msg,うむ、共にイクとするか．．．ううっ！！,pid1
+	zin_old_msg,は、はい．．．ああっ．．．私も．．．い、イきますううう！！！,pid2
+	zin_flush,pid2
+	goto,*after
+
+chk_mval_else
+        set_epid3,種父:pid2
+	zin_old_msg,よろしいのですか？　callself_pid2、こんなみっともないお腹なのに。,pid2
+	zin_old_msg,call_pid2がp_name3に抱かれて孕まされたと思うと、たまらなく興奮してくるのだ,pid1
+	zin_old_msg,申し訳ありません．．．p_name2はcall_pid21のものなのに．．．,pid2
+	zin_old_msg,良いのだ。次はcallself_pid1がcall_pid2を孕ませてやるがな。,pid1
+	zin_old_msg,うれしゅうございます,pid2
+	zin_old_msg,で、p_name3とはどんなセックスをしたのだ？,pid1
+	zin_old_msg,そんな．．ふああああ．．そんな．．はずかしいこと．．．お聞きなさらないで．．．．,pid2
+	zin_old_msg,p_name3にガンガン突かれて、中出しされて逝ったのだろう？,pid1
+	zin_old_msg,お許しください、エッチなことされると子宮がキュンキュン疼いてしまうんです．．．,pid2
+	zin_old_msg,子宮が精液を欲しがって、どうしようもないんです！　中にだされるのが一番気持ちいいの！,pid2
+	zin_old_msg,そんなに中が好きなら．．．たっぷりと中に出してくれようぞ！,pid1
+	goto,*love_preg
+
+*love_preg
+	zin_old_msg,んん．．あ．．あ．．あああ．．call_pid1の．．おおきいの．．call_pid2のなかっ．．．うごいてっ．．．,pid2
+	zin_old_msg,あかちゃんが、いるのにっ．．．あかちゃんのおへや．．とどいて．．ノックして．．んんんっ．．．,pid2
+	zin_old_msg,call_pid2は、子宮を小突かれるのが好きなんだろう？,pid1
+	zin_old_msg,そんな．．ふああああ．．そんな．．はずかしいこと．．いえない、ですっ．．．,pid2
+	zin_old_msg,call_pid2が言えなくても、call_pid2の中は、涎をドロドロと垂らしながら、大好きだって言っているぞ？,pid1
+	zin_old_msg,んん．．．は、はずかしい．．．,pid2
+	zin_old_msg,こんな．．こんな、いやらしい女で．．callself_pid2っ．．．,pid2
+	zin_old_msg,だが、興奮するぞ．．．たっぷりと中に出してやるから、すべて受け止めろ,pid1
+	zin_old_msg,はい．．うけとめ．．ますっ．．．たくさんたくさん．．うけとめ．．ますっ．．．,pid2
+	zin_old_msg,ああ．．ん．．んん．．ひぁ．．あ．．あああ．．んんんんんんんっ！,pid2
+	zin_flush,pid2
+	zin_old_msg,すごい．．．きもちいいの．．．とまらない．．．,pid2
+	goto,*after
+
+*rapesex
+//覇王 嫁オルド強引
+//状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,何だ、その反抗的な目は？,0
+	zin_reg_msg,どうぞ、callself_pid2のからだをお好きなようにもてあそべばいいでしょう。,1
+	zin_reg_msg,王妃の地位の何が不満なのだ？,0
+	zin_reg_msg,．．．．．．,1
+	zin_reg_msg,ええい、ならばcallself_pid1の好きなようにさせてもらうぞ！,0
+	zin_reg_msg,きゃあっ！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	bgm_chg,55
+		goto,*xpkm_gn
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,お前はいつまで純潔を守るつもりか,0
+	zin_reg_msg,そろそろ妃としての務めを果たしてはどうだ,0
+	zin_reg_msg,まだ．．．,1
+	zin_reg_msg,決心がつきません,1
+	zin_reg_msg,また今度ということで．．．,1
+	zin_reg_msg,ふむ．．．,0
+	zin_reg_msg,callself_pid1を怒らせるなよ,0
+	zin_reg_msg,貴様ごとき女はどうにでもできる,0
+	zin_reg_msg,お前の気分など関係ない,0
+	zin_reg_msg,callself_pid1がやりたい時にやるのだ,0
+	zin_reg_msg,わかったか,pid1
+	zin_reg_msg,は、はい．．．あなた,1
+	zin_reg_msg,よし、ではすべて脱ぐのだ,0
+	zin_reg_msg,callself_pid1にすべてを捧げよ,0
+	zin_reg_msg,は、はい．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	bgm_chg,55
+	zin_old_msg,おお．．．我が妃ながら美しいな,pid1
+	zin_old_msg,汚れを知らぬとは、このような身体か,pid1
+	zin_old_msg,ああ．．．ううう．．．,pid2
+	zin_old_msg,どうだ、処女も失ってみれば、どうということもあるまい,pid1
+	zin_old_msg,ううう．．．,pid2
+	zin_old_msg,フフ、少しは素直になったか。妃としての義務を忘れるでないぞ！！,pid1
+	zin_old_msg,あうっ．．．ううっ．．．,pid2
+	goto,*after
+
+//孕みパターン
+case_botebara
+	zin_reg_msg,今は赤ちゃんに障りますので、ご勘弁ください。,1
+	zin_reg_msg,孕んでいるお前と一夜を過ごしたいのだ,0
+	zin_reg_msg,そんな．．．お願いです、今日は．．．,1
+	zin_reg_msg,ならぬ、これは命令だ,0
+	zin_reg_msg,なんと言われましても．．．,1
+	zin_reg_msg,さあ、さっさと着ている物を脱いでマタを開け,0
+	zin_reg_msg,ああ、お止めください、そんな、乱暴しないで．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	bgm_chg,55
+	goto,*xpkm_gb
+
+*xpkm_gb
+//覇王オルド　強引　ボテ汎用
+chk_mval,種父:pid2=pid1,,,,
+chk_mval_then
+	zin_old_msg,妊婦を抱きたいだなんて、変態じみていますわ！,pid2
+	zin_old_msg,call_pid2のその腹を見ていると、call_pid2に種付けしたあの時のことを思い出して、股間がたぎってくるのだ。,pid1
+	zin_old_msg,無理矢理犯して孕ませたくせに！,pid2
+	zin_old_msg,call_pid2もけっこう感じていたではないか。今だって、こういじると．．．,pid1
+	zin_old_msg,あっ、いやぁっ！　そ、そこは．．．　はぁん！,pid2
+	zin_old_msg,どうだ？　どんどん愛液があふれてくるぞ！,pid1
+
+	goto,*xpkm_gb2
+chk_mval_else
+        set_epid3,種父:pid2
+	zin_old_msg,妊婦を抱きたいだなんて、変態じみていますわ！,pid2
+	zin_old_msg,call_pid2がp_name3に抱かれて孕まされたと思うと、たまらなく興奮してくるのだ,pid1
+	zin_old_msg,お怒りではないのですか？,pid2
+	zin_old_msg,p_name3とはどんなセックスをしたのか？　それが気になるのだ。,pid1
+	zin_old_msg,そ、そんなことを聞くなんて．．．は、破廉恥ですわ．．．,pid2
+	zin_old_msg,p_name3にガンガン突かれて、中出しされて逝ったのだろう？,pid1
+	zin_old_msg,だらしなく愛液を垂れ流し、淫らに喘ぎながら！,pid1
+	zin_old_msg,お、おやめください．．．どこまで私を辱めれば．．．,pid2
+	zin_old_msg,自分に正直になれ！　そら、こうされるとたまらないだろう？！,pid1
+	zin_old_msg,あっ、いやぁっ！　そ、そこは．．．　はぁん！,pid2
+	zin_old_msg,どうだ？　どんどん愛液があふれてくるぞ！,pid1
+	goto,*xpkm_gb2
+
+*xpkm_gb2
+rnd,3
+case0
+	zin_old_msg,ひ、ひきいい！！　call_pid1．．．．お願いです．．．お、お許しください．．．そんなに．．激しくしたら．．．お腹に．．．良く．．ありません．．．,pid2
+	zin_old_msg,なんだかんだ言って、お前も感じているのだろう？crそろそろ堕としてやるとするか,pid1
+	zin_old_msg,ひあああ！！　お、お許しください！！　それ以上動いたら．．．イッて．．．イッてしまいますうう！！,pid2
+	zin_flush,pid2
+	goto,*after
+case1
+	zin_old_msg,そ、そんな．．．ああん．．．んんっ．．．,pid2
+	zin_old_msg,どうだ？　お前も気持ちいいだろう？,pid1
+	zin_old_msg,妊娠すると性感帯がより敏感になるという。ちょうど今頃がもっとも感じる時期ぞ,pid1
+	zin_old_msg,．．．くっ．．．だ、ダメ．．．すごい．．．感じちゃう．．．,pid2
+	zin_old_msg,よーし、ならばクリをもっとこすってやるか,pid1
+	zin_old_msg,ひいいいいーーーっ、だ、ダメ．．．そんな．．．そんな突き方しないでっ！！　すぐ．．．い、イっちゃう！！,pid2
+	zin_old_msg,どうだ、我慢できまい．．．さあ、今度はcallself_pid1もイクとしよう。どんどんtane_strを補給してやるぞ！！,pid1
+	zin_old_msg,ひいいい、イク．．．もう、イってしまいますうーーーっ！！！,pid2
+	zin_flush,pid2
+	goto,*after
+case2
+	zin_old_msg,んん．．あ．．あ．．あああ．．call_pid1の．．おおきい、の．．call_pid2のなかっ．．．うごいてっ．．．,pid2
+	zin_old_msg,あかちゃんが、いるのにっ．．．あかちゃんのおへや．．とどいて．．ノックして．．んんんっ．．．,pid2
+	zin_old_msg,call_pid2は、子宮を小突かれるのが好きなんだろう？,pid1
+	zin_old_msg,そんな．．ふああああ．．そんな．．はずかしいこと．．いえないわっ．．．,pid2
+	zin_old_msg,call_pid2が言えなくても、call_pid2の中は、涎をドロドロと垂らしながら、大好きだって言っているぞ？,pid1
+	zin_old_msg,んん．．．は、はずかしい．．．,pid2
+	zin_old_msg,こんな．．こんな、いやらしい女で．．callself_pid2っ．．．,pid2
+	zin_old_msg,だが、興奮するぞ．．．たっぷりと中に出してやるから、すべて受け止めろ,pid1
+	zin_old_msg,うん．．わかったわ．．．たくさんたくさん．．うけとめるから．．．,pid2
+	zin_old_msg,ああ．．ん．．んん．．ひぁ．．あ．．あああ．．んんんんんんんっ！,pid2
+	zin_flush,pid2
+	zin_old_msg,すごい．．．きもちいいの．．．とまらない．．．,pid2
+	goto,*after
+
+*xpkm_gn
+rnd,4
+case0
+	zin_old_msg,フフフ、どうだ、男の味はもう覚えたか？,pid1
+	zin_old_msg,ひくっ．．．ううう．．．,pid2
+	zin_old_msg,なんだ、気持ちよくて声も出ぬか？,pid1
+	zin_old_msg,そ、そんなこと．．．．,pid2
+	zin_old_msg,今日もたっぷりとtane_strを補充してやるからな,pid1
+	zin_old_msg,そんな．．．．い、いやあ．．．．,pid2
+	zin_old_msg,丹念にクリも愛撫してやる,pid1
+	zin_old_msg,ああ、だめ．．．そ、そこ．．．やめてええ！！！,pid2
+	zin_flush_one,pid2
+	zin_old_msg,なんだ、イッタのか？,pid1
+	zin_old_msg,はぁ～～はぁ～～はぁ～～はぁ～～ひぐううう．．．．．．,pid2
+	zin_old_msg,この程度では終わらせんぞ、そりゃああ、もっと突きまくってやる！！,pid1
+	zin_old_msg,ひああああ！！　だ、だめ、もうやめてえええ！！！,pid2
+	zin_old_msg,だ、ダメ．．．ま、またイっちゃううう！！！,pid2
+	zin_old_msg,いいぞ、何度でもイかせてやる、狂わせてやるぞ！！,pid1
+	zin_old_msg,ああ！！　もう！！　イク、イク、イっちゃううううう！！！,pid2
+	zin_flush,pid2
+	goto,*after
+case1
+	zin_old_msg,ひああ、だ、ダメです、、ぬ、抜いて．．．くだ．．さい,pid2
+	zin_old_msg,フフフ、知っているぞ、口では嫌がっていながら無理矢理されるのが好きであろう？,pid1
+	zin_old_msg,そ、そんなこと．．．あ、ありません．．．,pid2
+	zin_old_msg,ウソをつけ、先ほどから貴様のman_strはヒクヒクしているぞ,pid1
+	zin_old_msg,中はsiru_strでトロトロではないか！！,pid1
+	zin_old_msg,素直に言え、乱暴にされるのが好きだとな！！,pid1
+	zin_old_msg,そんな、す、好きでは．．．あ、ありません．．．,pid2
+	zin_old_msg,強情なヤツ、これでもかっ！！,pid1
+	zin_old_qnar,p_name1はさらに深くp_name2の股間を突き始めた。,0
+	zin_old_msg,か、かはああっ！！！！,pid2
+	zin_old_msg,そ、そんなの．．．だ、ダメええ．．．ああ、イっちゃううう！！,pid2
+	zin_old_msg,イキたいか？　ならば正直に自分の気持ちを言うのだ,pid1
+	zin_old_msg,でなければ、ここでやめるぞ,pid1
+	zin_old_msg,そ、そんな．．．や、やめないで．．．ああっ．．．はああ！！,pid2
+	zin_old_msg,もっと．．．もっと、突いて．．．ください．．．ら、乱暴に．．．p_name2をメチャメチャにしてええっ！！！,pid2
+	zin_old_msg,フフフ、やっと素直に言ったな。crいいだろう、イかせてやる！！,pid1
+	zin_old_msg,ああ、いい．．．そこ．．．ああっ．．．イっちゃう、イっちゃうううう！！！,pid2
+	zin_flush,pid2
+	goto,*after
+case2
+	zin_old_msg,．．．い、いやあ．．．お願い．．やめて．．．,pid2
+	zin_old_msg,やめるわけにはいかんな,pid1
+	zin_old_msg,．．．ひああ．．．こ、こんなの．．．あんんっ．．．,pid2
+	zin_old_msg,なんだ、感じてきたのか？,pid1
+	zin_old_msg,．．．ち、違い．．まうううっ．．．ああっ！！crそんなに．．．強く．．．う、動かないでぇ．．．,pid2
+	zin_old_msg,ひいいっ！！　だ、ダメ．．．私．．．か、感じてる．．．,pid2
+	zin_old_msg,まったく口では拒んでいながら、その痴態はなんだ？,pid1
+	zin_old_msg,．．ひうっ．．．くううっ．．．もう．．．ダメえ．．．こんなんじゃあ．．．い、イっちゃう．．．,pid2
+	zin_old_msg,イかせてやろう、二度と横柄な口をきけぬようにな！！,pid1
+	zin_old_msg,はああっ．．．あん．．．ああん．．．い、いやあ．．．もう．．．く、狂っちゃううう！！,pid2
+	zin_old_msg,フフフ、かまわぬ、そのままよがり狂ってしまえっ！！,pid1
+	zin_old_msg,あ、あひいいいいいーーーーーーっ！！！！,pid2
+	zin_flush,pid2
+	goto,*after
+case3
+	zin_old_msg,ううっ．．．い、痛い．．．やあっ．．．,pid2
+	zin_old_msg,狭い入り口だな、これほど小さな入り口もめずらしい,pid1
+	zin_old_msg,や、やあ．．．い、痛いのお．．．ぬ、ぬいて．．．,pid2
+	zin_old_msg,まるで処女のようだな、何度でも処女気分が味わえるとは、なかなか貴重な女よ,pid1
+	zin_old_msg,さあ、自分の重みで最後まで飲み込むがいい、それいぃ！！！,pid1
+	zin_old_qnar,p_name1ははずみをつけてp_name2を持ち上げ、一気に自分の腰へ突き落とした。,0
+	zin_old_msg,ふ、ふぎょおおおおおーーーーっ！！！　がら．．．ががが．．がっ．．．,pid2
+	zin_old_msg,フフ、どうした、イッタか？,pid1
+	zin_old_msg,お楽しみはこれからよ、それいいいっ！！,pid1
+	zin_old_qnar,p_name1はp_name2を持ち上げ上下運動を繰り返す。もはやp_name2は声も出ない。,0
+	zin_old_msg,．．．ひゃう．．．ふにゃ．．．ううっ．．．ふああ．．．,pid2
+	zin_old_msg,どうやら思考が停止したようだな。無抵抗な女も時には良いものよ,pid1
+	zin_old_msg,さあ、たっぷりを土産を置いていこうぞ、子宮を開けておれよ！！,pid1
+	zin_old_msg,ふううーーーーんっ！！！,pid1
+	zin_flush,pid2
+	goto,*after
+
+//終了処理
+*after
+chk_wsts,pid2
+//通常パターン
+case_normal
+chk_mval,懐妊:player=0,,,,
+chk_mval_then
+	zin_old_qnar,那晚、p_name2被p_name1一直侵犯到深夜。
+	zin_old_qnar,让子孙繁荣也是霸王的重要责任之一。
+	zin_old_qnar,p_name1为了让p_name2懐妊、多次在子宫里注入了精液。
+	zin_old_fadeout,0,5
+	goto,*pregnancy
+
+chk_mval_else
+	zin_old_qnar,那晚、p_name2被p_name1一直侵犯到深夜。
+	zin_old_qnar,p_name2即使已经懐妊了、但还是有着为霸王处理性欲的义务。
+	zin_old_qnar,p_name1仿佛要将他旺盛的性欲一次全发泄出来一样,反复的将精液注入了p_name2懐妊的子宫中。
+	zin_old_fadeout,0,5
+	goto,*pregnancy
+
+case_botebara
+//妊娠6か月以上
+	zin_old_qnar,那晚、p_name2被p_name1一直侵犯到深夜。
+	zin_old_qnar,尽管p_name2的肚子已经高高隆起,但还是抵挡不住霸王的欲火。。
+	zin_old_qnar,p_name1仿佛要将他旺盛的性欲一次全发泄出来一样,反复的将精液注入了p_name2懐妊的子宫中。
+	zin_old_fadeout,0,5
+	goto,*pregnancy
+
+case_hatumaku
+//初膜あり
+	zin_old_qnar,就这样、p_name2为p_name1奉献出了第一次。
+	zin_old_fadeout,0,5
+	set_non_virgin,pid2
+	goto,*pregnancy
+//妊娠判定
+*pregnancy
+//発生確率は５分の１
+rnd,5
+case0
+chk_mval,懐妊:player=0,,,,
+chk_mval_then
+	set_eveflg,122,2
+	zin_reg_event,懐妊,,pid2,,gzin23
+	bgm_chg,65
+	zin_reg_qnar,从那之后过了一个月....
+	set_ninsin,pid2,pid1
+	zin_reg_msg,呜....呕....,1
+	zin_reg_msg,这个恶心的感觉,难道....,1
+	bl_fadeout
+	zin_reg_qnar,p_name2为p_name1怀上了一个孩子。
+	zin_reg_event,懐妊,pid1,pid2,,gzin32
+	zin_reg_qnar,p_name2懐妊的消息被医生传达给了p_name1。
+	zin_reg_msg,太好了callself_pid1你怀孕了。,0
+	zin_reg_2sel,高兴,懊悔
+	get_resp
+	ret_sel1
+	zin_reg_msg,call_pid21怀上这个孩子真是我的荣幸。,1
+	zin_reg_msg,嗯、生下一个健康的孩子吧。,0
+	zin_reg_msg,是。,1
+	end
+
+	ret_sel2
+	zin_reg_msg,嗯....,1
+	zin_reg_msg,为了能生下一个健康的孩子、从现在开始一定要好好照顾自己的身体啊。,0
+	zin_reg_msg,嗯....,1
+	zin_reg_msg,（呵、身体被狠狠玩弄之后、还怀上了那家伙的孩子……）,1
+	zin_reg_msg,（cf_pid2简直像人偶一样）,1
+	end
+chk_mval_else
+	end
+
+case1
+	end
+case2
+	end
+case3
+	end
+case4
+	end

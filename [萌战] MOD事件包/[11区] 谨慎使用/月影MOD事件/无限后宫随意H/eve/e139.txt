@@ -1,0 +1,77 @@
+eve_start
+	if_eveflg,14,5
+	if_pkun,15,13000
+	if_ncwid,15
+eve_end
+
+set_eveflg,14,6
+get_ncwid,15
+set_kasi,832
+upd_sts,832,20,14
+
+chk_exeplayer,15,0,0,0
+chk_exeplayer_else
+	//獨立処理
+	dokuritu,14,pval,0
+	set_winfo,pval,0,0,0,0,7000,-1,-1
+	set_run_msg,茲基利在s_name_pval起兵。
+	//ルーキ派に設定
+	upd_sts,560,20,560
+	upd_sts,832,20,560
+	upd_sts,725,20,560
+	end
+
+chk_exeplayer_then
+	bgm_chg,60
+	//zin_reg_init
+	zin_reg_event,茲基利的艦隊,14,560,,gzin19
+	zin_reg_msg,路希喲、你認為下一步該如何是好？,0
+	zin_reg_msg,我覺得首先應該物色一下適合作為首星的地方,1
+	zin_reg_msg,你覺得占據哪裏的自治行星作為首星比較合適？,0
+	zin_reg_msg,我覺得s_name_pval比較不錯,1
+	zin_reg_msg,什麼！？,0
+	zin_reg_msg,可那裏現在是茲魯曼大人的領地,0
+	zin_reg_msg,請不必擔心,1
+	zin_reg_msg,那裏支持茲基利大人的民眾數量相當多,1
+	zin_reg_msg,聯合他們、裏應外合的一鼓作氣攻占下來,1
+	zin_reg_msg,是麼．．．．,0
+	zin_reg_msg,我知道了cr就按你的意思辦,0
+	zin_reg_msg,我這兒還有一個人想向茲基利大人引薦,1
+	zin_reg_msg,哦．．．是誰？,0
+	zin_reg_face_1,832
+	zin_reg_msg,他叫阿曼多,1
+	zin_reg_msg,你小子可真是．．．,0
+	zin_reg_face_1,560
+	zin_reg_msg,之前、作為抵抗軍的領袖而被逮捕的男人,1
+	zin_reg_msg,被茲烏蓋王下令處死、而我把他私下關了起來,1
+	zin_reg_msg,這可是個相當能幹的男人,1
+	zin_reg_msg,正是如此,0
+	zin_reg_face_1,832
+	zin_reg_msg,在下向手刃茲烏蓋的茲基利大人誓死效忠  ,1
+	zin_reg_msg,請一定讓我做您的部下,1
+	zin_reg_msg,是麼、那就請多多指教,0
+	zin_reg_msg,是,1
+	zin_reg_msg,說起來、你有一個女兒是吧,0
+	zin_reg_msg,現在、她在什麼地方．．．,0
+	zin_reg_face_1,725
+	zin_reg_msg,茲基利大人．．．,1
+	zin_reg_msg,什麼！？,0
+	zin_reg_msg,連女兒也一起帶來了？,0
+	zin_reg_face_1,560
+	zin_reg_msg,出逃的時候、跟著這艘船一起來的,1
+	zin_reg_msg,這這樣啊,0
+	zin_reg_msg,當下正是用人之際,0
+	zin_reg_msg,也請你多多指教,0
+	zin_reg_face_1,725
+	zin_reg_msg,是,1
+	zin_reg_msg,傳令、向s_name_pval進發！！,0
+	zin_reg_title,茲基利壓制了s_name_pval。
+	zin_reg_button,0
+	//zin_reg_exit
+	dokuritu,14,pval,0
+	set_winfo,pval,0,0,0,0,7000,-1,-1
+	//ルーキ派に設定
+	upd_sts,560,20,560
+	upd_sts,832,20,560
+	upd_sts,725,20,560
+	end

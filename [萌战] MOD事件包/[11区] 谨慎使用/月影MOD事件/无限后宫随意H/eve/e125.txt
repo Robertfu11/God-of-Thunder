@@ -1,0 +1,36 @@
+eve_start
+    if_eveflg,63,2
+//静江，阿多魯塞姆麾下
+    if_poid,702,13
+//艾露巴，斯庫洛克麾下
+    if_poid,599,624
+    if_poid,688,624
+    if_poid,161,624
+eve_end
+
+set_eveflg,63,3
+add_sdev,13,4,2000
+
+chk_exeplayer,624,13,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+zin_reg_event,,13,161,,gzin8
+zin_reg_qnar,德米南斯巧妙地利用了阿多魯塞姆的諜報員，以武器商人的身份得到了阿多魯塞姆的接見。
+zin_reg_msg,卿就是卿德米南斯啊cr遠道而來，辛苦你了,0
+zin_reg_msg,聽說陛下對要塞有興趣？,1
+zin_reg_msg,沒錯cr雖然有錢，可是卻沒有制造要塞的技術，能幫我解決這個問題麼？,0
+zin_reg_msg,如果是這樣的話，我這正好有個,1
+zin_reg_msg,目前有個正在建設中的新型要塞，不知陛下意下如何,1
+zin_reg_msg,什麼，此話當真？cr那可是太好了,0
+zin_reg_msg,陛下的軍隊運用此要塞所必須的技術也一並提供,1
+zin_reg_msg,嗯，這可太合我心意了cr你只管開價，我照單全付,0
+zin_reg_msg,哈哈哈，陛下，正價就行了,1
+zin_reg_msg,此要塞一旦完成，敵人的屍體勢必堆積如山吧,1
+zin_reg_msg,就是cr務必盡快完成,0
+zin_reg_msg,明白,1
+zin_reg_qnar,阿多魯塞姆的要塞建設技術提高。
+zin_reg_button,0
+end

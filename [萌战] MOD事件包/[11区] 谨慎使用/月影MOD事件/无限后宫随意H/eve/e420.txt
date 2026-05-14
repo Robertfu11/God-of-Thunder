@@ -1,0 +1,12 @@
+eve_start
+	if_date,98,5
+eve_end
+
+//¥Ö¥ë¥Õ¡¢¥Ñ¥Ë¥ªsp2½â³ý
+upd_sts,434,19,0
+upd_sts,682,19,0
+//¥â¥Ë¥«
+upd_sts,732,19,0
+//°¤´;Ê¦Íø
+upd_sts,32,19,0
+end

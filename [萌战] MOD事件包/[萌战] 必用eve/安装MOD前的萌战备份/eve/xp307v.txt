@@ -1,0 +1,11 @@
+//弱みオルド　一般兵 プレイヤーが上官 膜あり
+zin_old_msg,啊啊嗯！！　不行！！　小穴．．要、裂開了啊！！,pid2
+zin_old_msg,真好啊、朝思暮想的p_name2的處女穴啊,pid1
+zin_old_msg,但是、如果因此而習慣上癮了。還是先不要擔心了,pid1
+zin_old_msg,那樣強硬的．．．粗暴．．．我．．．,pid2
+zin_old_msg,說什麼呢、已經全部插入了哦。cr即便如此、依舊緊窄如故。cf_pid1重要的東西被撕裂了喲,pid1
+zin_old_msg,嗚嗚嗚．．．不、不行啊．．．,pid2
+zin_old_msg,呵呵呵、已經太晚了．．．我已經無法再忍耐下去了。cr直到射出來為止、我要好好的干殘、干翻你才行呢,pid1
+zin_old_msg,呀、哎呀！不要、射出來！　拜、拜託你啊啊啊啊！！,pid2
+zin_flush,pid2
+end

@@ -1,0 +1,63 @@
+eve_start
+if_val,勲功:player=13000
+//if_amon,2
+if_val,状態:player=2
+eve_end
+//upd_sts,3018,10,2
+//set_sikan,2187,poid_player
+set_epid2,0
+//set_epid1,player
+set_eveflg,193,0
+set_eveflg,194,0
+for,PMAX,193,1
+                chk_msts,eveflg193,覇王,poid_player,勲功,<12200,婚姻,>0,性別,2,懐妊,0,状態,2
+                chk_msts_then
+				rnd,5
+					case0
+					case1
+					case2
+					case3
+                    continue
+					case4
+					set_epid2,eveflg193
+					set_epid3,婚姻:eveflg193
+					//bl_fadein,gzin8
+                    //zin_reg_event,,pid2,pid3,,
+                    //zin_reg_msg,p_name2,0
+					//zin_reg_msg,p_name3,1
+                        break
+                chk_msts_else
+                    continue
+                 next
+set_eveflg,193,pid2
+chk_eveflg,193,0
+chk_eveflg_then
+end
+chk_eveflg_else
+for,PMAX,194,1
+                chk_msts,eveflg194,覇王,poid_player,勲功,<13000,婚姻,0,性別,1,NON,0,NON,0
+                chk_msts_then
+					rnd,5
+					case0
+					case1
+					case2
+					case3
+                    continue
+					case4
+					set_epid1,eveflg194
+					set_eveflg,193,0
+                    set_eveflg,194,0
+				    rnd,3
+					case0
+					txtload,xp011
+					case1
+					txtload,xp022S
+					case2
+					txtload,xp010
+                        break
+                chk_msts_else
+                    continue
+                 next
+set_eveflg,193,0
+set_eveflg,194,0
+end

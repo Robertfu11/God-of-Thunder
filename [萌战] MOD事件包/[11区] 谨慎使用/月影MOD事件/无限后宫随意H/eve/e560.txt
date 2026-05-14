@@ -1,0 +1,28 @@
+eve_start
+	if_date,94,9
+	//カンシ　sts6である
+	if_psts,356,6
+	if_psts,813,6
+eve_end
+
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,,813,841,,gzin12
+zin_reg_qnar,瓦德一邊在各國流浪，一邊做著賞金任務
+bgm_se,13
+zin_reg_msg,呸！！,1
+zin_reg_face_1,0
+zin_reg_msg,這東西完全提不動,0
+zin_reg_msg,休息久了現在手臂都遲鈍了,0
+zin_reg_face_1,356
+zin_reg_msg,但是，這次的工作也蓄積了很多錢,1
+zin_reg_msg,如果對方很弱的話能輕鬆掙到巨款,1
+zin_reg_msg,別胡扯了,0
+zin_reg_msg,我們不只是為了錢來做賞金獵人的,0
+zin_reg_msg,與強者戰斗是必須的,0
+zin_reg_msg,是,1
+zin_reg_msg,坎西，下次要找更強的對手,0
+zin_reg_msg,是，知道了,1
+zin_reg_button,0
+//zin_reg_exit
+end

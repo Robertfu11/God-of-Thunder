@@ -1,0 +1,37 @@
+//布朗、阿莫斯を思い出す
+eve_start
+	if_date,86,10
+	if_eveflg,24,0
+	//阿莫斯　阿希配下
+	if_poid,423,432
+	//布朗は阿古迪巴配下
+	if_poid,625,16
+	//布朗は王族以上
+	if_pkun,625,>12000
+eve_end
+
+set_eveflg,24,1
+
+chk_exeplayer,16,423,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+get_habatumem,625,0
+zin_reg_event,布朗的執務室,625,pval,,gzin33
+zin_reg_msg,布朗大人、還沒有到我們稱雄的時間嗎？,1
+zin_reg_msg,恩，這個需要完全的准備,0
+zin_reg_msg,不是已經很好了嗎？,1
+zin_reg_msg,並沒有,0
+zin_reg_msg,大哥並不是好對付的男人,0
+zin_reg_msg,現在、起事被大哥發現的話我們就要變成流浪民了,0
+zin_reg_msg,所以需要再謹慎一點，比較好．．．,0
+zin_reg_msg,那樣的話．．．,1
+zin_reg_msg,說起來阿莫斯還是音信全無嗎？,0
+zin_reg_msg,還是那個樣子的．．．,1
+zin_reg_msg,那樣的男子正是我們需要的,0
+zin_reg_msg,情報員的情報是從阿希的那裏面傳來的嗎,1
+zin_reg_msg,那樣．．．．cr那些人隱瞞了什麼,0
+zin_reg_msg,那個男子，在想些什麼呀．．．,0
+zin_reg_button,0

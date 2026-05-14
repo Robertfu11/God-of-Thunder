@@ -1,0 +1,6 @@
+//¥¤¥Ù¥ó¥ÈÖĞ¶Ï¥Õ¥é¥°¤Î³õÆÚ»¯
+eve_start
+if_eveflg,122,>1
+eve_end
+
+	set_eveflg,122,1

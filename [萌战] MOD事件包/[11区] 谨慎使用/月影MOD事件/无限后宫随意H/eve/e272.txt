@@ -1,0 +1,38 @@
+eve_start
+	if_eveflg,28,1
+	if_poid,163,624
+	if_poid,233,624
+eve_end
+
+chk_exeplayer,624,0,0,0
+chk_exeplayer_else
+//斯庫洛克　信義派忠誠下降
+dwn_ploy,624,2,90
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,斯庫洛克的王宮,624,163,,gzin8
+zin_reg_msg,怎、怎麼可能．．．．,0
+zin_reg_msg,貝塔竟然複活了．．．,0
+zin_reg_msg,那怎麼可能！！,0
+zin_reg_msg,這下大事不妙了,1
+zin_reg_msg,我軍軍心必定大亂,1
+zin_reg_msg,必須想個辦法才行,0
+zin_reg_face_1,233
+zin_reg_msg,這恐怕很難吧,1
+zin_reg_msg,留瓦増閣下,0
+zin_reg_msg,現在哪裏有空說風涼話,0
+zin_reg_msg,這也是沒有辦法,1
+zin_reg_msg,事已至此，只能盡全力打倒貝塔了,1
+zin_reg_msg,現在先和貝塔的敵對勢力結盟好了,1
+zin_reg_msg,哼，打倒貝塔無需借助他國的力量,0
+zin_reg_msg,靠我們自己的軍隊就夠了,0
+zin_reg_msg,可惡．．．．,0
+zin_reg_title,信義派的忠誠度下降了。
+zin_reg_button,0
+//zin_reg_exit
+//斯庫洛克　信義派忠誠下降
+dwn_ploy,624,2,90
+end

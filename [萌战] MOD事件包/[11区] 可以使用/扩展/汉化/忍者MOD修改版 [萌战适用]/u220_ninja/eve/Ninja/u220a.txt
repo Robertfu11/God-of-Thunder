@@ -1,0 +1,86 @@
+//宇宙超昂閃忍三人組
+
+eve_start
+	//遙，鳴香，昂處於浪人狀態
+	if_val,状態:1250=5
+	if_val,状態:1251=5
+	if_val,状態:1252=5
+	if_eveflg,176,0
+eve_end
+
+get_rndhao,poid_player
+chk_sts,pval,3,2
+	chk_sts_then
+		end
+	chk_sts_else
+		set_epid1,pval
+
+set_epid2,1250
+set_epid3,1251
+set_epid4,1252
+
+	bgm_chg,60
+	zin_reg_event,p_name1的王座大殿,pid1,pid2,,gzin8
+	zin_reg_msg,哦？cr妳們就是極密組織上弦衆推薦來的人麼？,0
+	zin_reg_msg,是的！cr我們就是代表上弦衆來爲陛下效力的閃忍三人組,1
+	zin_reg_msg,嗯．．．cr妳們幾個姿色倒還不錯．,0
+	zin_reg_msg,至於實力嘛cr還期待妳們今後能有出色表現了,0
+	zin_reg_msg,．．．．．．,1
+	zin_reg_msg,好吧cr我就恩準妳們三個代表上弦衆爲我效力了！,0
+	zin_reg_msg,從今天起，妳們就是我直屬的特命諜報了cr好好爲我盡忠吧！,0
+	zin_reg_msg,是！cr陛下！,1
+	zin_reg_face_1,pid3
+	zin_reg_msg,是！cr陛下！,1
+	zin_reg_face_1,pid4
+	zin_reg_msg,是！cr陛下！,1
+	zin_reg_face_1,pid2
+	zin_reg_msg,我們閃忍三人組cr一定不會辱沒了上弦衆的威名！,1
+	zin_reg_msg,從今以後cr爲了陛下赴湯蹈火，在所不辭！,1
+	zin_reg_msg,很好！,0
+	zin_reg_msg,另外還有一點．．cr作爲我的直屬部下，妳們同時也要擔負爲我處理性慾的職責，呵呵呵．．．,0
+	zin_reg_msg,今後只要我有吩咐cr妳們必須隨叫隨到．cr明白了沒有？,0
+	zin_reg_msg,．．．．．．cr是！,1
+	zin_reg_qnar,在三人完成了向p_name1宣誓效忠的儀式之後，退出了謁見大廳
+	bl_fadeout
+
+	zin_old_init
+	zin_old_img_str,eu301a,5,1
+	zin_old_msg,呼，總算是出來了．．．,pid2
+	zin_old_msg,哼，真是的．cr爲那個糟老頭效力也就算了cr還要把自己的處女也賠上，太不愉快了！,pid4
+	zin_old_msg,就是就是～cr一想到今後要被那種又丑又肥的胖老頭抱，就覺得好噁心！,pid3
+	zin_old_msg,p_name3，p_name4！cr我們絕對不能辱沒了想破上弦衆的威名！,pid2
+	zin_old_msg,現在唯有一心一意爲p_name1陛下盡忠效力cr才能保住上弦衆一族的名聲．．．,pid2
+	zin_old_msg,就算要將自己的處女心甘情願的奉獻出去．．．cr我也在所不惜！,pid2
+	zin_old_msg,好啦好啦～crp_name2姐總是這麼認真～～～cr一點都不好玩了！,pid3
+	zin_old_msg,實在是非常的抱歉．．．,pid2
+	zin_old_msg,我說，p_name4姐～cr不如我們今天晚上去找個帥哥如何？,pid3
+	zin_old_msg,好歹初夜對象長的帥一點cr留個美好回憶也會感覺好一點呢～,pid3
+	zin_old_msg,我反正無所謂了．cr男人看起來都一個樣．．．,pid4
+	zin_old_msg,p_name3！cr既然我們已經發誓效忠p_name1王了cr將自己的處女奉獻給君主也是應盡的責任之一！,pid2
+	zin_old_msg,討厭啊～～,pid3
+	zin_old_msg,哼，隨便了．cr想想真是太便宜那個糟老頭了,pid4
+	zin_old_msg,還請姊妹們忍耐一下cr一切一切都是爲了上弦衆．．．．．．,pid2
+	zin_old_qnar,就這樣，擁有宇宙一流實力的閃忍三人組加入了p_name1的麾下
+	zin_reg_button,16
+	zin_old_exit
+
+	set_eveflg,176,1
+	set_eveflg,174,pid1
+
+	set_sikan,pid2,eveflg174
+	set_sikan,pid3,eveflg174
+	set_sikan,pid4,eveflg174
+
+	set_yaku,pid2,5
+	set_yaku,pid3,5
+	set_yaku,pid4,5
+
+	set_non_virgin,pid2
+	set_non_virgin,pid3
+	set_non_virgin,pid4
+
+	upd_sts,1288,状態,6
+
+end
+
+

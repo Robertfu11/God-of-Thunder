@@ -1,0 +1,10 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,,pid1,0,,gzin22
+zin_regs_msg,竟然在友軍行星上空待命的時候撕毀盟約,在友軍行星上空待命的時候撕毀盟約這種事,0
+zin_regs_msg,吾王勝之不武,好像是暗算一樣的作戰方式,0
+zin_regs_msg,我們的忠誠受到了考驗,在這樣的人手下工作真的沒問題嗎．．．,0
+zin_reg_title,部下們的忠誠度大幅度下降了。
+zin_reg_button,0
+zin_reg_exit
+end

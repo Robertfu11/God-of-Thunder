@@ -1,0 +1,28 @@
+zin_reg_msg,call_pid12．．．我喜歡你,0
+zin_reg_msg,你．．．認真的嗎？,1
+zin_reg_msg,都這個時候我才不會開玩笑,0
+zin_reg_msg,你也很寂寞啊,1
+zin_reg_msg,沒關係、我來安慰你,1
+zin_reg_msg,call_pid12．．．,0
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+chk_mval,初膜:pid2=0,,,,,
+chk_mval_then
+	zin_old_msg,我、還是處女的．．．,pid2
+	zin_old_msg,call_pid12？　真的嗎？,pid1
+	zin_old_msg,不是謊言哦,pid2
+	zin_old_msg,所以、你要輕點啊,pid2
+	zin_old_msg,啊、我知道了,pid1
+chk_mval_else
+zin_old_msg,call_pid12．．．如何？,pid1
+zin_old_msg,好．．．好痛．．．,pid2
+zin_old_msg,沒、沒事了、我現在好多了,pid2
+zin_old_msg,我要讓你更加舒服,pid1
+zin_old_msg,那麼、嗯啊、嗯啊、啊啊．．．,pid2
+zin_old_msg,p_name1、要升天了．．．,pid2
+zin_old_msg,來吧,pid2
+zin_old_msg,call_pid12．．．出來了,pid1
+zin_old_msg,嗯嗯．．啊、啊啊啊啊啊啊！！！,pid2
+zin_flush,pid2
+end

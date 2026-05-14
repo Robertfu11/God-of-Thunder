@@ -1,0 +1,84 @@
+eve_start
+//ルーキ派閥　支持率60%を超える
+	if_habatuper,560,>60
+//ルーキ ツキリ配下
+	if_poid,560,14
+//アーマンド ツキリ配下
+	if_poid,832,14
+//ルーキ　惑星上にいる
+	if_not_moving,560
+	if_not_moving,14
+eve_end
+
+set_eveflg,15,1
+upd_sts,725,19,0
+upd_sts,832,19,0
+upd_sts,560,19,0
+upd_sts,15,19,0
+
+chk_exeplayer,14,0,0,0
+chk_exeplayer_else
+//ルーキ覇王設定
+chg_haou,14,560
+//ツキリ死亡
+set_dead,14,560
+set_run_msg,ツキリが死亡しルーキが新覇王になりました。
+chg_player,560,14
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,路希的辦公室,560,832,,gzin33
+zin_reg_msg,路希大人，我們的派系已經超過了全體的70%了,1
+zin_reg_msg,情況正向著好的方向發展，不是麼,1
+zin_reg_msg,是的,0
+zin_reg_msg,我的支持者僅有這些的話，還不足以成事,0
+zin_reg_msg,去向茲基利下最後的通牒吧．．．,0
+bl_fadeout
+bl_fadein,gzin8
+zin_reg_event,茲基利的王宮,560,14,,gzin8
+zin_reg_msg,路希喲，你在幹什麼．．．,1
+zin_reg_msg,那兒是我的王座,1
+zin_reg_msg,為什麼你坐在上面！！,1
+zin_reg_msg,茲基利大人．．．cr很可惜，今天就是你我在一起的最後一天了,0
+zin_reg_msg,你說什麼，路希！！！cr放肆！！！！,1
+zin_reg_msg,事情到底是什麼情況,1
+zin_reg_msg,您難道還沒有察覺到嗎？,0
+zin_reg_msg,我對茲族一直懷恨在心,0
+zin_reg_msg,讓三味大人中計和殺死茲烏蓋王的都是區區在下,0
+zin_reg_msg,你，你．．．把母親．．．,1
+zin_reg_msg,混蛋．．．．,1
+zin_reg_msg,來人呐，把路希給我抓起來！！,1
+zin_reg_face_0,832
+zin_reg_msg,阿曼多！！！cr你在幹什麼？,1
+zin_reg_msg,速將路希拿下！！！,1
+zin_reg_msg,茲基利大人，事到如今，我已經不再站在您那邊了,0
+zin_reg_msg,在場的人，也幾乎都是路希派系的,0
+zin_reg_msg,連你也要背叛我嗎？！．．．,1
+zin_reg_msg,我原本就是路希大人的部下,0
+zin_reg_msg,從來就不是茲基利大人您的人,0
+zin_reg_msg,你，你說什麼！！．．．．．．,1
+zin_reg_face_0,560
+zin_reg_msg,和你的王座說再見吧，茲基利大人,0
+zin_reg_msg,你們打算把我怎麼樣？,1
+zin_reg_msg,暫且先請你蹲幾天大牢吧,0
+zin_reg_msg,可，可惡啊，路希．．．,1
+zin_reg_msg,木哈哈哈哈哈哈,0
+bl_fadeout
+bl_fadein,gzin8
+zin_reg_event,,560,832,,gzin8
+zin_reg_msg,路希大人，您大打算如何處置茲基利呢？,1
+zin_reg_msg,恩．．．雖然有點可憐，現在也只有送他上路了,0
+zin_reg_msg,他果然還是難逃一死麼．．．,1
+zin_reg_msg,這事你去辦吧,0
+zin_reg_msg,遵命,1
+zin_reg_title,茲基利被處決了
+zin_reg_button,0
+//zin_reg_exit
+//ルーキ覇王設定
+chg_haou,14,560
+//ツキリ死亡
+set_dead,14,560
+chg_player,560,14
+end

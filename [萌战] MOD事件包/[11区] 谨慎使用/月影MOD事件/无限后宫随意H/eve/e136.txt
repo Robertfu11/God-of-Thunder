@@ -1,0 +1,28 @@
+eve_start
+	if_eveflg,14,2
+	if_poid,14,805
+eve_end
+
+set_eveflg,14,3
+
+chk_exeplayer,805,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+get_habatumem,14,0
+zin_reg_event,茲基利的辦公室,14,pval,,gzin33
+zin_reg_msg,前幾天茲烏蓋王對您的態度、實在是過於太強勢了,1
+zin_reg_msg,難道王上打算將傳位於茲魯曼大人？,1
+zin_reg_msg,這不可能,0
+zin_reg_msg,父親不是那樣的人,0
+zin_reg_msg,可是、現如今王上給予茲魯曼大人的待遇、已經遠超出了一個王子應得的,1
+zin_reg_msg,事情並非如此,0
+zin_reg_msg,這一定是父親給我的試煉,0
+zin_reg_msg,為成王者 別無他法,0
+zin_reg_msg,我已經明白父親的良苦用心了,0
+zin_reg_msg,真、真的是這樣的麼．．．,1
+zin_reg_button,0
+//zin_reg_exit

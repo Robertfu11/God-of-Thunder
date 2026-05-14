@@ -1,0 +1,13 @@
+bgm_chg,29
+zin_reg_init
+zin_reg_event,俘虜謁見,pid1,pid2,zin22,gzin5
+	zin_reg_msg,p_name2 ,0
+	zin_reg_msg,考慮好了嗎、做我的家臣怎麼樣,0
+	zin_reg_msg,一定會有你大展宏圖的機會,0
+	zin_reg_msg,非常榮幸,1
+	zin_reg_msg,今後、將為陛下效力,1
+	zin_reg_msg,很好,0
+	zin_reg_title,p_name1成為了家臣
+zin_reg_button,0
+zin_reg_exit
+end

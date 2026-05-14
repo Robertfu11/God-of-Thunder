@@ -1,0 +1,19 @@
+//夜這い　弱みオルド 妹 膜なし
+//体位ごとに分岐
+switch_otaii,pid2
+//騎乗位
+case_okijo
+	zin_old_msg,男人的tin_str被全根末入．．．cr看來已經很習慣和男人做啊,pid1
+	zin_old_msg,你、你在胡說些什麼啊．．．,pid2
+	zin_old_msg,p_name2大人、居然也會對這種事情感興趣麼。cr看來並不討厭我這樣做嘛,pid1
+	zin_old_msg,請不要說些奇怪的話。我才不是那種水性楊花的女人,pid2
+	zin_old_msg,說謊話可是不對的喲。我那裡可是被你那裡緊緊的糾纏著哦。那麼、就托你的福。期待能夠孕育一個優秀的孩子吧。接受吧！！,pid1
+	zin_flush,pid2
+	end
+default_otaii
+	zin_old_msg,啊、啊啊、嗚嗯、嗚．．啊嗚．．啊啊啊啊啊ーーーーーっ！,pid2
+	zin_old_msg,那麼、全根末入了喲、p_name2大人。cr不愧是陛下的妹妹！小穴都是相當的極品呢,pid1
+	zin_old_msg,啊、不行．．．再深入的話．．．裡面、會壞掉的了啦！！,pid2
+	zin_old_msg,那麼、就加快節奏趕緊結束吧。cr我的種子一定會將你充分的灌飽的！！,pid1
+	zin_flush,pid2
+	end

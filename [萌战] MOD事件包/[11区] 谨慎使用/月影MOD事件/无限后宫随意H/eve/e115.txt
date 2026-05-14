@@ -1,0 +1,47 @@
+eve_start
+    if_eveflg,62,6
+//領馬林格是巴尼亞瓦的領地
+	if_hid,11,429
+//帕米拉　庫爾特尼奧麾下
+	if_poid,606,870
+	if_not_uni,429,870
+eve_end
+
+set_eveflg,62,7
+//同盟設定
+del_union,870
+del_union,429
+set_union,870,429,0,0,0
+
+chk_exeplayer,429,606,870,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,,429,606,,gzin8
+zin_reg_qnar,帕米拉作為和巴尼亞瓦結盟的使者來訪
+zin_reg_msg,久違了啊，巴尼亞瓦,1
+zin_reg_msg,終於成為一國之君了啊,1
+zin_reg_msg,沒想到是當家的親自來,0
+zin_reg_msg,我國的霸王是兒子庫爾特尼奧,1
+zin_reg_msg,不是我,1
+zin_reg_msg,忽悠誰啊cr你這代替年幼的兒子支配國家的傢伙,0
+zin_reg_msg,呵呵呵，還是切入正題吧,1
+zin_reg_msg,我們雙方的國家都還不夠穩固,1
+zin_reg_msg,而周邊都是強敵cr獨自應對的話國家遲早會被拖垮,1
+zin_reg_msg,所以需要結盟．．．對吧,0
+zin_reg_msg,正是,1
+zin_reg_msg,暫時先休戰怎麼樣,1
+zin_reg_msg,這對我們應該都有好處,1
+zin_reg_msg,嗯．．．,0
+zin_reg_msg,也好cr我就贊成你的提案,0
+zin_reg_msg,這才像話，果然夠聰明,1
+zin_reg_msg,話說在前面，只是休戰cr不是同盟,0
+zin_reg_msg,哈哈哈，那都一樣,1
+zin_reg_msg,那就說好了哦，巴尼亞瓦,1
+zin_reg_msg,嗯．．．．,0
+zin_reg_title,巴尼亞瓦和庫爾特尼奧結成了同盟。
+zin_reg_button,0
+end

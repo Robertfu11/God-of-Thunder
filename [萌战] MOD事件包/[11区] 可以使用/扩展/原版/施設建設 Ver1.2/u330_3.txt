@@ -1,0 +1,55 @@
+auth_uid,123D
+//	施設建設　中央銀行
+bgm_chg,60
+zin_reg_event,経済活性,780,782,,gzin39
+zin_reg_msg,儲かりまっか？,0
+zin_reg_msg,ぼちぼちでんな,1
+chk_eveflg,211,1
+chk_eveflg_then
+	add_money,poid_player,10000
+	zin_reg_qnar,中央銀行の政策で経済が活性化しました。cr（資金＋１万）
+	goto,*addeffectend3
+chk_eveflg_else
+chk_eveflg,211,2
+chk_eveflg_then
+	add_money,poid_player,20000
+	zin_reg_qnar,中央銀行の政策で経済が活性化しました。cr（資金＋２万）
+	goto,*addeffectend3
+chk_eveflg_else
+chk_eveflg,211,3
+chk_eveflg_then
+	add_money,poid_player,40000
+	zin_reg_qnar,中央銀行の政策で経済が活性化しました。cr（資金＋４万）
+	goto,*addeffectend3
+chk_eveflg_else
+chk_eveflg,211,4
+chk_eveflg_then
+	add_money,poid_player,60000
+	zin_reg_qnar,中央銀行の政策で経済が活性化しました。cr（資金＋６万）
+	goto,*addeffectend3
+chk_eveflg_else
+	add_money,poid_player,100000
+	rnd,10
+	case0
+	case1
+	case2
+	case3
+		get_item,poid_player,0,とてもいい壺
+		goto,*getitemend
+	case4
+	case5
+	case6
+		get_item,poid_player,0,金塊
+		goto,*getitemend
+	case7
+	case8
+		get_item,poid_player,0,ダイヤ
+		goto,*getitemend
+	case9
+		get_item,poid_player,0,税務署の心得
+	*getitemend
+	zin_reg_qnar,中央銀行の政策で経済が活性化しました。cr商人組合から贈り物が届きました。cr（資金＋１０万、アイテム）
+*addeffectend3
+zin_reg_button,0
+zin_reg_exit
+end

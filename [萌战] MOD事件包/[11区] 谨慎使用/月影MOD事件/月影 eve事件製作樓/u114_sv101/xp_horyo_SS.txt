@@ -1,0 +1,418 @@
+chk_msts,pid2,12,46,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+	goto,*nekubanki
+chk_msts_else
+
+bgm_chg,53
+zin_reg_init
+zin_reg_event,地下牢 ,pid1,pid2,,gzin35
+zin_reg_msg,どうだ？ crここの暮らしも慣れたか？ ,0
+zin_reg_msg,何の用？ ,1
+zin_reg_msg,今日はお前をかわいがってやろうと思ってな ,0
+zin_reg_msg,楽しみにしておれ ,0
+zin_reg_msg,な、何をする気？ ,1
+zin_reg_msg,おい、コイツを私の部屋へ連れて行け ,0
+zin_reg_face_1,756
+zin_reg_msg,ハハッ！！ ,1
+zin_reg_msg,特別室の方だ ,0
+zin_reg_msg,承知しました ,1
+bl_fadeout
+
+
+chk_msts,pid2,12,41,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+	goto,*2nd
+chk_msts_else
+	chk_msts,pid2,12,42,NON,0,NON,0,NON,0,NON,0
+	chk_msts_then
+		goto,*3rd
+	chk_msts_else
+		goto,*1st
+
+//初次
+*1st
+chk_wsts,pid2
+case_normal
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,こ、この．．．ケダモノ！！　ううっ！！ ,pid2
+zin_old_msg,フハハ、思った通り良いモノをもっているな ,pid1
+zin_old_msg,どうだ、 callself_pid1の妾になれば自由にしてやるぞ？ ,pid1
+zin_old_msg,だ、だれが貴様の女になんか．．． crうあああああっ！！ ,pid2
+zin_old_msg,そうか、だがこうやって遊べば同じことだ。 crウハハハ！！ ,pid1
+zin_old_msg,人を．．．お、おもちゃのように．．． crんんっ．．．もてあそぶ．．．なんて．．．さ、最低なヤツ．．． ,pid2
+zin_old_msg,その強がりが、 callself_pid1の股間をますます固くするぞ crそれいぃ！！ ,pid1
+zin_old_msg,ああっ．．．うああっ！！ crや、やめなさいって．．．ひいいいぃ！！ ,pid2
+zin_old_msg,さあ、そろそろ最低なヤツの子を孕むがいい ,pid1
+zin_old_msg,えっ．．．そんな．．．まさか．．． ,pid2
+zin_old_msg,い、イヤよ．．．ダメ．．．膣内は．．．じょ、冗談でしょ．．． ,pid2
+zin_old_msg,お願い！！　中はヤめて！！　お願いだから！！ crや、やめてください！！ ,pid2
+zin_old_msg,さあ、いくぞ！！！！！！ ,pid1
+zin_old_msg,い、いあぁ！！ crな、中は、だ、だめえぇーーーーーーーっ！！ ,pid2
+zin_flush,pid2
+zin_old_msg,ああ．．．ひとい．．．どうして．．．ダメだっていったのに．．． crドクドク．．．出してる．．． ,pid2
+goto,*imprison
+end
+
+case_botebara
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,いやっ！！やめて！私のお腹には ,pid2
+zin_old_msg,子供がいるんだろう？見ればわかる ,pid1
+zin_old_msg,そんなに激しくしたら、お腹の子が死んじゃう！！ ,pid2
+zin_old_msg,そうか、だがそれが良いのだ。腹の子は男か？女か？ハハハ！！ ,pid1
+zin_old_msg,け、けだもの！！．．． crああんっ．．．奥まで．．．やめて．．． ,pid2
+zin_old_msg,callself_pid1のモノが奥まで欲しいのだな？ crむ？これが子宮口か？ ,pid1
+zin_old_msg,あぐっ．．．うああっ！！ crや、やめ．．．ひいいいぃ！！ ,pid2
+zin_old_msg,さあ、子供共々食らうが良い ,pid1
+zin_old_msg,ダメ！！まさか．．． ,pid2
+zin_old_msg,おうっ！？興奮して締め付けてくるとは．．．何という奴だ ,pid1
+zin_old_msg,お願い！！やめて！！お願いだから！！ crや、やめてぇ！！ ,pid2
+zin_old_msg,さあ、いくぞ！！！！！！ ,pid1
+zin_old_msg,い、いあぁ！！ cr赤ちゃんが！！赤ちゃんがぁ！！ ,pid2
+zin_flush,pid2
+zin_old_msg,ううっ．．．ひとでなし．．． ,pid2
+zin_old_msg,くくく、心地よい言葉だ ,pid1
+goto,*imprison
+end
+
+case_hatumaku
+rnd,3
+case0
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,離して！！やめてぇ！！ ,pid2
+zin_old_msg,くくく、この膣のきつさ、 callself_pid1のモノに付く赤いものは．．． ,pid1
+zin_old_msg,そうか、初めてだったか！ ,pid1
+zin_old_msg,うぐっ．．．痛い！！ ,pid2
+zin_old_msg,はははっ、誰も受け入れたことの無い女の奥を ,pid1
+zin_old_msg,無理矢理に蹂躙される気持ちはどうだ？ ,pid1
+zin_old_msg,け、けだもの！ ,pid2
+zin_old_msg,もっとはっきり言ってやろう。犯されて嬉しいか？ ,pid1
+zin_old_msg,ああっ．．．うああっ！！ crや、やめ．．．ひいいいぃ！！ ,pid2
+zin_old_msg,今、凄く興奮しているぞ！初めてを犯す快楽というモノはたまらん ,pid1
+zin_old_msg,callself_pid1まで童貞に戻ってしまったかのようだ ,pid1
+zin_old_msg,ぐっ．．．あうっ！！ ,pid2
+zin_old_msg,こんなに早いのは少し恥ずかしいことではあるが ,pid1
+zin_old_msg,！？まさか．．．お願いだから！！ crや、やめてぇ！！ ,pid2
+zin_old_msg,もう精液が尿道まで来ているぞ？あと少しだ ,pid1
+zin_old_msg,い、いあぁ！！ crやめてぇ！！ ,pid2
+zin_old_msg,ほらっ！！食らえ！！ ,pid1
+zin_flush,pid2
+zin_old_msg,ううっ．．． ,pid2
+zin_old_msg,流れ出る愛液と精液、それに入り交じった朱は芸術だな ,pid1
+zin_old_msg,また犯してやるぞ．．． ,pid1
+goto,*imprison
+end
+
+case1
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,い、いやぁ！！ ,pid2
+zin_old_msg,案外綺麗な色だな？そんなに使い込んでいないのか？ ,pid1
+zin_old_msg,痛い！指を入れないで！！ ,pid2
+zin_old_msg,ん？もしかして貴様、初めてなのか？ ,pid1
+zin_old_msg,うぐっ．．．痛い！！ ,pid2
+zin_old_msg,これはすまなかった。初めてなのなら．．． ,pid1
+zin_old_msg,愛撫なしで強引に突き破ってやろう！！ ,pid1
+zin_old_msg,な．．．や、止めて！！ ,pid2
+zin_old_msg,十分に濡らさずに処女を奪われるというのは、凄まじく痛いらしいぞ？ ,pid1
+zin_old_msg,何度かそうやって女を犯した経験があるが、皆泣き叫んだぞ！！ ,pid1
+zin_old_msg,うぐっ．．．ぐあっ！！ ,pid2
+zin_old_msg,入れるほうも大変なのだぞ？中を濡らさないから強引に突き進むしか無い ,pid1
+zin_old_msg,そうなるとモノが強く擦れて痛いこともあるのだ。お互い様だろう？ ,pid1
+zin_old_msg,ああっ！！入れないでぇ！！ ,pid2
+zin_old_msg,ふふっ、先端に触れているこれが膜だな．．．それっ！！ ,pid1
+zin_old_msg,ああっ！！！い、痛い、痛いぃ！！ ,pid2
+zin_old_msg,心配するな。血で滑れば楽になる ,pid1
+zin_old_msg,ぐぐっ．．．あぐっ．．．いたい．．． ,pid2
+zin_old_msg,ははっ、このきつい締め付けがたまらん ,pid1
+zin_old_msg,ひぃっ！！！ぎぃっ！！ ,pid2
+zin_old_msg,おおっ．．．うおっ！！ ,pid1
+zin_old_msg,や、め．．．抜いて．．． ,pid2
+zin_old_msg,抜いて欲しいのか？もう少し待て ,pid1
+zin_old_msg,中でたっぷりと出してやる！イクぞ！！ ,pid1
+zin_old_msg,い、いやぁぁぁ！！中はダメぇ！！ ,pid2
+zin_flush,pid2
+zin_old_msg,な、中で．．．出てる．．．こんなのいやぁ．．． ,pid2
+zin_old_msg,だが貴様の子宮が喜んでいみたいだぞ？体は受け入れたがっていた訳だ ,pid1
+zin_old_msg,ちがう．．．うそ．．． ,pid2
+zin_old_msg,くくく．．． ,pid1
+goto,*imprison
+end
+
+case2
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,あぁああ、だ、だめぇええ、そんなトコ．．． ,pid2
+zin_old_msg,良い味だ、待ちきれずにこんなに溢れ出てくるとはな ,pid1
+zin_old_msg,いやぁ、言わないで．．． ,pid2
+zin_old_msg,もう準備万端というわけだな。この淫乱が ,pid1
+zin_old_msg,ち、違う．．．私は．．．あっ！！っつ！ ,pid2
+zin_old_msg,んん？ずいぶんと入れにくいな ,pid1
+zin_old_msg,い、痛い．．．初めてなの．．．せめて優しくして ,pid2
+zin_old_msg,そうか、初めてだったのか！それはすまなかったな ,pid1
+zin_old_msg,うぐっ．．．ひぎっ！！ ,pid2
+zin_old_msg,くくく、敵に捕らわれて犯されるというのにあまり抵抗しないのだな？ ,pid1
+zin_old_msg,ぐっ．．．ああっ！！ ,pid2
+zin_old_msg,ふふっ、優しくしてやりたいが、捕虜には優しくはしてやれん．．．それっ！！ ,pid1
+zin_old_msg,ああっ！！！い、痛い、痛いぃ！！ ,pid2
+zin_old_msg,ぬぅぅ．．．中はざらついてく、蠢くように締め付けてくる ,pid1
+zin_old_msg,ぐぐっ．．．あぐっ．．．いたい．．． ,pid2
+zin_old_msg,名器というやつだな。これは良い！！ ,pid1
+zin_old_msg,ひぃっ！！！ぎぃっ！！ ,pid2
+zin_old_msg,使い込めば、さぞかしいい穴になるだろう ,pid1
+zin_old_msg,痛い．．．お願い、もっと優しく．．． ,pid2
+zin_old_msg,貴様の苦悶の表情を見ていると、もっと激しくしてしまいたくなる ,pid1
+zin_old_msg,激しく動くぞ！！ ,pid1
+zin_old_msg,あぐっ！！がぁっ！！ ,pid2
+zin_old_msg,それっ！！うおっ！！ ,pid1
+zin_old_msg,いっ．．．ひぎっ！！ ,pid2
+zin_old_msg,もう．．．やめ．．． ,pid2
+zin_old_msg,もうすぐだ．．．もうすぐ．．． ,pid1
+zin_old_msg,だ、ダメっ！！それだけは！！ ,pid2
+zin_old_msg,もう遅い！！さあ、受け取れ！！ ,pid1
+zin_old_msg,い、いやぁぁぁ！！ ,pid2
+zin_flush,pid2
+zin_old_msg,はぁぁぁあぁぁあぁぁあんっっ．．． ,pid2
+zin_old_msg,かなり良かったぞ。これからも可愛がってやろう ,pid1
+zin_old_msg,ひどい．．． ,pid2
+goto,*imprison
+end
+
+*imprison
+zin_old_msg,(該怎樣處置這女的?) ,pid1
+zin_reg_2sel,調教?? ,不了
+get_resp
+ret_sel1
+	zin_old_msg,(就讓?永遠待在這?),pid1
+	upd_sts,pid2,12,41
+	zin_reg_button,0
+	zin_reg_exit
+    txtload,u114
+	end
+ret_sel2
+	zin_old_msg,(大業為重，別損失寶貴的人才),pid1
+	zin_reg_button,0
+	zin_reg_exit
+    txtload,u114
+	end
+
+*2nd
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,ううっ．．． ,pid2
+	zin_old_msg,なんだ？ずいぶんと大人しいのだな？ ,pid1
+	zin_old_msg,．．． ,pid2
+	zin_old_msg,もっと抵抗してくれないと面白くないのだが ,pid1
+	zin_old_msg,．．．あうっ ,pid2
+	zin_old_msg,それとも強くしないと感じなくないのか？ ,pid1
+	zin_old_msg,ああ．．．ん ,pid2
+	zin_old_msg,それともこうした方が良いのか？ ,pid1
+	zin_old_msg,ああっ！ ,pid2
+	zin_old_msg,くくく、たっぷり濡れている。感じてはいるのか？ ,pid1
+	zin_old_msg,．．． ,pid2
+	zin_old_msg,快楽を無理にでも我慢か？ ,pid1
+	zin_old_msg,くっ！ ,pid2
+	zin_old_msg,いやらしい体を持て余している癖に、こういうときは我慢か？ ,pid1
+	zin_old_msg,．．．外道 ,pid2
+	zin_old_msg,知っているぞ？貴様牢獄の中で何度も自分自身を慰めていただろう？ ,pid1
+	zin_old_msg,！！な、何でそのことを！？ ,pid2
+	zin_old_msg,毛布をかぶってこっそりやっているようだが、皆お見通しよ ,pid1
+	zin_old_msg,うっ．．． ,pid2
+	zin_old_msg,看守たちの報告で、私もその姿をモニターから見せてもらったぞ？ ,pid1
+	zin_old_msg,うっ．．．うっ．．．ああっ、嫌っ！ ,pid2
+	zin_old_msg,陳腐な台詞だが、体は正直なものだ ,pid1
+	zin_old_msg,あっ．．．ああんっ！ ,pid2
+	zin_old_msg,ん？心も正直になってきたか？では私も欲望に正直になるとしよう ,pid1
+	zin_old_msg,な、何．．．ああっ ,pid2
+	zin_old_msg,もうじき出してやる？嬉しいだろう？ ,pid1
+	zin_old_msg,い、いやぁ！中は止めて！！ ,pid2
+	zin_old_msg,そらっ！受け取れ！！ ,pid1
+	zin_flush,pid2
+	zin_old_msg,はっ！あうっ、あう．．． ,pid2
+	zin_old_msg,ふぅ．．．楽しませてもらったぞ。男が欲しくなったらいつでも言え ,pid1
+	zin_old_msg,うっ．．．けだもの．．． ,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	upd_sts,pid2,12,42
+    txtload,u114
+end
+
+*3rd
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,．．． ,pid2
+zin_old_msg,無言の抵抗か？それがいつまで続くかな？ ,pid1
+zin_old_msg,くっ．．． ,pid2
+zin_old_msg,咥えさせてやろうか？ ,pid1
+zin_old_msg,食いちぎってやる．．． ,pid2
+zin_old_msg,ふふふ。いいぞ、その目だ ,pid1
+zin_old_msg,．．．ひいいいぃ！な、何！？ ,pid2
+zin_old_msg,ああ、 callself_pid1のモノには少し改造がしてあってな ,pid1
+zin_old_msg,簡単に言うと電極が埋め込んであるのだ ,pid1
+zin_old_msg,ひぐっ！！動か．．．ないで．．． ,pid2
+zin_old_msg,真珠を埋め込んだモノなどとは訳が違うぞ？そうれ！ ,pid1
+zin_old_msg,ぐあっ．．．ひぃぃぃ！！ ,pid2
+zin_old_msg,ん？声が出るようになってきたな？そんなに気持ちが良いのか？ ,pid1
+zin_old_msg,い、痛い．．．刺激が．．．強いの！ crや、やめて！！ ,pid2
+zin_old_msg,callself_pid1は気持ちが良い。もうじき出てしまうぞ？ ,pid1
+zin_old_msg,い、いあぁ！！ crな、中は、だ、だめえぇーーーーーーーっ！！ ,pid2
+zin_old_msg,一つ教えておいてやろう。射精と同時に電極から更に強い刺激が出る ,pid1
+zin_old_msg,な、なに．．．？ ,pid2
+zin_old_msg,くくく、それが膣内の急所にうまく当たると大変なことになる ,pid1
+zin_old_msg,や、やめて．．．いやっ．．． ,pid2
+zin_old_msg,ほとんどの女はその瞬間、尿やら愛液やらを吹き散らかして、快楽のあまり失神する ,pid1
+zin_old_msg,うぐっ．．．やめてぇ．．． ,pid2
+zin_old_msg,そしてそのまま色狂いになった女も多い ,pid1
+zin_old_msg,貴様がいた牢獄の片隅で喜んで囚人たちの慰み者になっている狂った女がいただろう？ ,pid1
+zin_old_msg,ま、まさか．．． ,pid2
+zin_old_msg,そうだ！私の快楽に耐えきれなかった女のなれの果てだよ！！ ,pid1
+zin_old_msg,あうっ、ああんっ！ ,pid2
+zin_old_msg,さあ、話は終わりだ．．．イクぞ！！ ,pid1
+zin_old_msg,い、いやぁ！！！ ,pid2
+zin_flush,pid2
+zin_old_msg,あひぃ！ひぃん！！あぐあああああああん！！！ ,pid2
+zin_old_msg,あおうっ！！あ．．．あああああん！！！ ,pid2
+zin_old_msg,くくく、いつ見ても女の絶頂はたまらぬものだ ,pid1
+zin_reg_qnar,p_name2は肉便器化しました。
+zin_reg_button,16
+zin_reg_exit
+
+select_pid,pid2
+case_1103
+	set_epid3,1160
+	goto,*change
+case_1104
+	set_epid3,1161
+	goto,*change
+case_1109
+	set_epid3,1162
+	goto,*change
+case_1112
+	set_epid3,1163
+	goto,*change
+case_1114
+	set_epid3,1164
+	goto,*change
+case_1130
+	set_epid3,1165
+	goto,*change
+case_1131
+	set_epid3,1166
+	goto,*change
+case_1132
+	set_epid3,1167
+	goto,*change
+case_1136
+	set_epid3,1168
+	goto,*change
+case_1144
+	set_epid3,1169
+	goto,*change
+case_1147
+	set_epid3,1171
+	goto,*change
+case_1149
+	upd_sts,1150,0,16
+	set_epid3,1172
+	goto,*change
+case_1150
+	upd_sts,1149,0,16
+	set_epid3,1172
+	goto,*change
+case_1155
+	set_epid3,1173
+	goto,*change
+case_1121
+	set_epid3,1174
+	goto,*change
+default
+	upd_sts,pid2,12,46
+    txtload,u114
+	end
+
+*change
+	upd_sts,pid2,12,46
+	set_horyo,pid3,poid_player
+	set_non_virgin,pid3
+	upd_sts,pid3,12,46
+    txtload,u114
+end
+
+*nekubanki
+rnd,3
+case0
+bgm_chg,21
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,ああっ！後ろにも入れてぇ！何でもいいから入れてぇ！！ ,pid2
+zin_old_msg,ふんっ、一本では足らぬか。それ、ご希望のバイブだ！！ ,pid1
+zin_old_msg,ああっ！これよ、これよぉ！入ってきてるぅ！！ ,pid2
+zin_old_msg,乳首にはリング、尻には”豚”の焼き印、クリトリスの皮は切取り済み ,pid1
+zin_old_msg,変態調教のオンパレードだな？ ,pid1
+zin_old_msg,まだなの！まだして貰っていない変態なこと、一杯あるのぉ！！ ,pid2
+zin_old_msg,なんでも．．．なんでもするから気持ちよくしてぇ！！ ,pid2
+zin_old_msg,うおっ、膣壁を通してバイブの振動が．．． ,pid1
+zin_old_msg,い、いいでしょう！あなたも私も気持ちいいの！いいでしょう！？ ,pid2
+zin_old_msg,い、いかん、このままでは．．． ,pid1
+zin_old_msg,いいわ！妊娠レイプ！妊娠レイプしてぇ！！ ,pid2
+zin_old_msg,う、うおおおぉっ！！！！！ ,pid1
+zin_flush,pid2
+zin_old_msg,ああ．．．ドクドク．．．出てる．．． ,pid2
+zin_old_msg,うううっ．．．はぁはぁ ,pid1
+zin_old_msg,誰にでも犯されて．．．中出しされるのって．．． ,pid2
+zin_old_msg,最高．．． ,pid2
+zin_reg_button,16
+zin_reg_exit
+txtload,u114
+end
+
+case1
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,こ、この．．．ケダモノめ！！　ぐうっ！！ ,pid1
+zin_old_msg,うふふ、凄くいいわ．．．ああっ！ ,pid2
+zin_old_msg,どう？callself_pid1を妾にしていただけないかしら？ ,pid2
+zin_old_msg,だ、だれが貴様を妾になんか．．．crうあああああっ！！ ,pid1
+zin_old_msg,そう？でもここは嫌がってはいないみたいよcrうふふっ！！ ,pid2
+zin_old_msg,人を．．．お、おもちゃのように．．．crぐうっ．．．もてあそぶ．．．とは．．．さ、最低なヤツ．．． ,pid1
+zin_old_msg,その強がりが、callself_pid2の股間をますます濡らすのよcrああっ、いいっ！！ ,pid2
+zin_old_msg,ああっ．．．うああっ！！crや、やめろ．．．ひいいいぃ！！ ,pid1
+zin_old_msg,さあ、もう一度よ。今度こそあなたの子を孕ませてちょうだい！！ ,pid2
+zin_old_msg,えっ．．．そんな．．．もう．．． ,pid1
+zin_old_msg,ダメ．．．だ。膣内で．．．絞るな．．．じょ、冗談は．．． ,pid1
+zin_old_msg,締め付けるな！crや、やめろぉぉぉ！！ ,pid1
+zin_old_msg,うふふ、中で果てなさい！！！！！！ ,pid2
+zin_old_msg,うっ、うわぁぁぁぁぁ！！！！！ ,pid1
+zin_flush,pid2
+zin_old_msg,ああ．．．まだ出せるじゃない．．．ダメだなんてことは無いでしょ？．．．crドクドク．．．出てるわよ．．． ,pid2
+zin_old_msg,うううっ．．．くそっ！ ,pid1
+zin_old_msg,さあ．．．まだ出来るでしょ．．． ,pid2
+zin_old_msg,え、衛兵！！衛兵！！ ,pid1
+zin_reg_button,16
+zin_reg_exit
+txtload,u114
+end
+
+case2
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,いいのぉ！！凄くいいのぉ！！．．．ああっ！ ,pid2
+zin_old_msg,な、何という乱れっぷりだ。まるで淫乱狂女では．．． ,pid1
+zin_old_msg,ああっ！！失礼．．．よぉ！！ ,pid2
+zin_old_msg,しかし．．．ここまで乱れるとは．．． ,pid1
+zin_old_msg,久しぶりなの！！ああん！もっとぉ！！ ,pid2
+zin_old_msg,ぐうっ、そんなに腰を使うな．．．また．．． ,pid1
+zin_old_msg,いいわ、もっと中で出して！！。あなたの子を孕ませてちょうだい！！ ,pid2
+zin_old_msg,くそっ！！私がこんなことに．．．負けてたまるか！ ,pid1
+zin_old_msg,いいわ。もっと硬くしてぇ！激しく動いてぇ！奥まで突いてぇ！ ,pid2
+zin_old_msg,う、うおおおぉっ！！！！！ ,pid1
+zin_flush,pid2
+zin_old_msg,ああ．．．出てる．．．中にしみこんでいくぅ．．．ドクドク．．．出てる．．． ,pid2
+zin_old_msg,うううっ．．．はぁはぁ ,pid1
+zin_old_msg,夜明けはまだよ、さぁ、もっとcallself_pid1を犯してちょうだい！！ ,pid2
+zin_reg_button,16
+zin_reg_exit
+txtload,u114
+end

@@ -1,0 +1,42 @@
+eve_start
+	if_date,81,8
+//西伍茲が仮死狀態
+	if_psts,368,6
+	if_poid,576,9
+eve_end
+
+chk_exeplayer,9,10,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,54
+zin_reg_event,,368,576,,gzin34
+zin_reg_qnar,法法塔前來探望前些日子碰到的男人。
+zin_reg_msg,傷勢恢複得還好嗎？,1
+zin_reg_msg,這，這不是王妃殿下嗎……,0
+zin_reg_msg,已經找到你的兒子了,1
+zin_reg_msg,真、真的嗎！！,0
+zin_reg_msg,嗯，好了西恩，去你父親大人的身邊吧,1
+zin_reg_face_r,620
+zin_reg_msg,父、父親！！,1
+zin_reg_msg,啊啊，西恩！！！,0
+zin_reg_msg,沒事吧？cr真對不起啊，才把你托付出去一陣子就……,0
+zin_reg_msg,我沒事的，父親,1
+zin_reg_msg,真是的，我該怎麼報答才好呢……,0
+zin_reg_face_r,576
+zin_reg_msg,呵呵，太好了呢,1
+zin_reg_msg,犯人們都已被捕cr現在你可以安心在這個街道上行走了,1
+zin_reg_msg,感激不盡，不過……為什麼對我這樣的流浪者也花這麼多心思來保護呢,0
+zin_reg_msg,不止是你,1
+zin_reg_msg,我只是不希望這顆星球在旅客心中留下什麼壞的印象啊,1
+zin_reg_msg,這些微小的事積累起來就能維系整個宇宙的和平，我是這麼相信著的,1
+zin_reg_msg,不拿起武器的話就無法保證自身的安全,1
+zin_reg_msg,但是，只會拿起武器的話，不管過多久時間和平都不會到來,1
+zin_reg_msg,那麼祈願舍棄武器的一天能夠到來，就是身為女人的我唯一能做的事了,1
+zin_reg_msg,你，你真是……,0
+zin_reg_msg,那麼，我就此告辭了,1
+zin_reg_msg,在傷勢恢複之前，你就慢慢在這靜養吧,1
+zin_reg_msg,請多加保重,1
+zin_reg_button,0
+end

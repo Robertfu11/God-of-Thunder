@@ -1,0 +1,29 @@
+eve_start
+	if_date,70,7
+//布朗は阿斯蘭配下
+	if_poid,625,743
+	if_poid,423,743
+eve_end
+
+chk_exeplayer,743,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,布朗執務室,625,423,,gzin33
+zin_reg_msg,阿莫斯、有考慮過了嗎？,0
+zin_reg_msg,是的，但是果然要我加入阿古巴迪派是不可能的,1
+zin_reg_msg,哼，頑明不靈的傢伙,0
+zin_reg_msg,我跟兄長都認同你的能力,0
+zin_reg_msg,而在不久的將來，絕對會變成阿古巴迪的王朝的,0
+zin_reg_msg,不覺得現在加入才是聰明的決定嗎？,0
+zin_reg_msg,不管你在怎麼說也是．．．．． ,1
+zin_reg_msg,哼哼,0
+zin_reg_msg,那到時候你就做好覺悟也可以吧,0
+zin_reg_msg,到時就算你後悔，也沒那麼簡單了,0
+zin_reg_msg,．．．．．,1
+zin_reg_button,0
+//zin_reg_exit
+end

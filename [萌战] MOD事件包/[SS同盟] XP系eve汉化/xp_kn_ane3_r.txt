@@ -1,0 +1,79 @@
+//王族オルド通常　相手：姉
+//体位：騎乗位
+//状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,call_pid1、今天從早上就開始一起睡吧,1
+	zin_reg_msg,真是完全、淫乱的call_pid2啊,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊啊啊．．．這個樣子．．好厲害．．．插到深處了．．．肚子的深處．．．傳來的感覺．．．,pid2
+	zin_old_msg,呵呵．．．平時整潔的call_pid2如今變成無法想像的混亂了啊．．．,pid1
+	zin_old_msg,真舒服啊．．．因為這東西．．．,pid2
+	zin_old_msg,被喜歡的人．．插入什麼的．．．向上頂著的樣子．．．,pid2
+	zin_old_msg,女人的話．．還真是容易．．．被快樂．．．所屈服啊．．．,pid2
+	zin_old_msg,那麼、就保持心情舒暢的做吧,pid1
+	zin_old_msg,嗯嗯嗯啊！嗯．．嗯．．嗯．．嗯．．嗯啊啊啊啊！,pid2
+	zin_old_msg,啪啪啪啪．．從下面．．向上撞擊的頂著．．．,pid2
+	zin_old_msg,好大．．call_pid1在．．callself_pid2的裡面．．向上頂著！,pid2
+	zin_old_msg,不行啊．．這樣的．．舒服．．色色的事情被．．callself_pid2．．我．．．,pid2
+	zin_old_msg,我會讓你變得更更混亂的喲．．．,pid1
+	zin_old_msg,嗚啊啊啊！我！色色的聲音．．止不住．．嗚．．嗚．．嗚啊啊啊啊！,pid2
+	zin_old_msg,咻．．．,pid1
+	zin_old_msg,膨脹起來了！callself_pid2的、裡面．．call_pid1在．．膨脹著．．變得更大了．．．,pid2
+	zin_old_msg,我的！拜託．．就這樣．．裡面．．在callself_pid2的肚子深處．．call_pid1的東西．．來了．．來了啊！,pid2
+	zin_flush,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,想在call_pid1那裡睡,1
+	zin_reg_msg,我、自己．．．可以、試著插入,1
+	zin_reg_msg,明白了、請按照call_pid2的喜好來就可以,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,哈哈．．．好棒．．．callself_pid2的裡面．．．call_pid1合二為一了．．．,pid2
+	zin_old_msg,肉棒在callself_pid2的裡面、推開了啊．．．,pid2
+	zin_old_msg,啊啊．．．我還是第一次．．．騎在call_pid1的上面．．．好害羞的樣子．．．callself_pid2啊．．．,pid2
+	zin_old_msg,就這樣動動腰、習慣之後會更舒服的喲．．．,pid1
+	zin_old_msg,嗯嗯．．那麼．．．再深入的話．．心情舒暢什麼的．．．,pid2
+	zin_old_msg,你看、一起在動著吧,pid1
+	zin_old_msg,嗚啊啊啊．．太厲害了．．．深處．．．被突然的向上頂著．．．,pid2
+	zin_old_msg,callself_pid2的裡面進來了．．．大大的call_pid1在．．．callself_pid2的小小的肚子裡面啊．．．啪啪啪的、撞擊著．．．,pid2
+	zin_old_msg,啊啊啊．．腰．．自己在動了．．．快楽．．追求著．．．,pid2
+	zin_old_msg,完全．．．call_pid2變成了色色的女孩子哦．．．,pid1
+	zin_old_msg,第一次、callself_pid1的東西被如此強烈緊固著的感覺．．．,pid1
+	zin_old_msg,因為．．因為．．很舒服啊什麼的．．．這樣的方式．．．,pid2
+	zin_old_msg,那樣的話、今天就在call_pid2的裡面中出吧．．．,pid1
+	zin_old_msg,嗚嗯．．啊啊．．好的．．出來吧．．．出來吧！,pid2
+	zin_old_msg,callself_pid2的裡面．．．callself_pid2的裡面．．在向上的頂著．．．call_pid1的東西．．．callself_pid2請．．給我的說．．．,pid2
+	zin_flush,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_reg_msg,我雖然懷著孩子但我就是無法忍受啊,1
+	zin_reg_msg,呵呵、真是個過分的母親啊,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,呼啊啊啊．．好棒啊．．．寶寶、明明還有．．．,pid2
+	zin_old_msg,callself_pid2．．子宮的附近．．被call_pid1的東西．．進入了．．．,pid2
+	zin_old_msg,真是的、平時一幅整潔的樣子、懷孕了、被男人的東西插弄就成了這幅色色的樣子．．．,pid1
+	zin_old_msg,call_pid12真是、色色的女人啊．．．,pid1
+	zin_old_msg,呵呵．．因為．．因為啊．．做好色的事情．．很喜歡的啊．．．,pid2
+	zin_old_msg,肚子的深處．．被call_pid21．．噗嗤噗嗤、向上頂著．．是很幸福的呢．．．,pid2
+	zin_old_msg,所以．．拜託啊．．．噗喲噗喲中出什麼的．．孕育了．．被callself_pid2的man_str變得放蕩的身體了呢．．．,pid2
+	zin_old_msg,callself_pid2的man_str在深處．．tin_str要．．進來呢！,pid2
+	zin_old_msg,使用這樣下流的話挑釁我什麼的．．．好啊、我這就、讓你混亂啊,pid1
+	zin_old_msg,．．嗚啊啊啊啊！不要不要．．不說了不說了！,pid2
+	zin_old_msg,真的．．．肚子裡還住著孩子呢、會不會覺得太多了．．．,pid1
+	zin_old_msg,call_pid12的肚子裡、能感覺到強烈的重量呢．．．,pid1
+	zin_old_msg,因為、因為．．舒服的．．啊嗯．．啊嗯．．啊．．啊．．啊啊啊啊啊！,pid2
+	zin_old_msg,callself_pid2．．已經．．不行了！！,pid2
+	zin_old_msg,call_pid21的tin_str頂到子宮了．．callself_pid2．．嗚啊啊啊啊！,pid2
+	zin_old_msg,這就已經高潮了嗎．．．這種色色的女人、就是應該注入熱熱的東西、必須進行懲罰的啊．．．,pid1
+	zin_old_msg,嗚．．啊、嗯．．man_str的深處．．被call_pid21的精液懲罰了啊！,pid2
+	zin_old_msg,出來了．．黏黏糊糊的．．熱乎乎的精液．．在man_str的深處．．射精了啊啊啊啊！！！！,pid2
+	zin_flush,pid2
+	end

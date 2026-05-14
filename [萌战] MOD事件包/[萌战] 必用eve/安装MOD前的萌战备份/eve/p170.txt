@@ -1,0 +1,15 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin33
+zin_reg_msg,您叫我嗎？,1
+zin_reg_msg,喔、等你好久了,0
+zin_reg_msg,實際上正考慮要將惑星buf_str1封給你,0
+zin_reg_msg,p_name2派在我軍佔有重要的地位,0
+zin_reg_msg,這是對你們至今為止的工作評價,0
+zin_reg_msg,這真是、謝主隆恩呀、call_pid21,1
+zin_reg_msg,今後也別背叛cf_pid1的期待呀,0
+zin_reg_msg,收到,1
+zin_reg_title,buf_str1成為p_name2的封地了。
+zin_reg_button,0
+zin_reg_exit
+end

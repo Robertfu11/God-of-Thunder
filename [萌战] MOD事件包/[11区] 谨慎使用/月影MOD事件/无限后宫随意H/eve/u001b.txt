@@ -1,0 +1,16 @@
+// 同勢力性奴加能力
+set_eveflg,190,0
+for,PMAX,190,1
+chk_msts,eveflg190,覇王,poid_player,性別,2,友好,110,NON,0,NON,0
+chk_msts_then
+	upd_sts,eveflg190,1,50 
+	upd_sts,eveflg190,5,50
+	upd_sts,eveflg190,6,50 
+	upd_sts,eveflg190,7,50
+	upd_sts,eveflg190,8,50 
+	upd_sts,eveflg190,9,50
+
+chk_msts_else
+	continue
+next
+end

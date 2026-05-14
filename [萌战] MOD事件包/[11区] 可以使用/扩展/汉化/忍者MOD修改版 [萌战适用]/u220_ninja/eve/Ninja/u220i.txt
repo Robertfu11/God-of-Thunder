@@ -1,0 +1,183 @@
+//宇宙超昂閃忍三人組
+
+eve_start
+	//遙，鳴香，昂仕官於同一勢力．主角仕官，七分位以上，与三人不同勢力
+	if_poid,1250,eveflg174
+	if_poid,1251,eveflg174
+	if_poid,1252,eveflg174
+	if_val,状態:player=2
+	if_val,勲功:player>3000
+	if_val,覇王:player!eveflg174
+eve_end
+
+set_epid1,player
+set_epid2,1288
+set_epid3,1252
+
+	bgm_chg,35
+	zin_reg_event,上弦衆的祕密基地,pid1,811,,gzin4
+	zin_reg_msg,報告！cr長官！,1
+	zin_reg_msg,哦？cr你終於來了！,0
+	zin_reg_msg,趕快彙報！cr你那邊的戰況如何了？,0
+	zin_reg_msg,報告長官！cr入口附近已經被我們徹底壓制完畢！,1
+	zin_reg_msg,第一，二小隊正在大廳與上弦衆殘部交火！,1
+	zin_reg_msg,第三，四，五小隊由詛咒一黨的人帶領，正深入內部搜尋剩餘人員！,1
+	zin_reg_face,pid2
+	zin_reg_msg,很好！cr那個p_name2現在在什麼地方？,0
+	zin_reg_qnar,在與上弦衆的世仇詛咒一黨取得聯繫之後，p_name1火速制定了攻擊上弦衆的計劃
+	zin_reg_qnar,詛咒一黨得到了p_name1的大量物資，人員及金錢方面的支援．．
+	zin_reg_qnar,相對的，詛咒一黨的代首領，p_name2下定決心全力配合p_name1的計劃，共同對上弦衆的祕密基地進行突襲
+	zin_reg_qnar,在混合部隊迅雷不及掩耳的攻勢下，上弦衆的基地現在已經基本上被徹底壓制住了
+	zin_reg_msg,報告！p_name2他獨自一人潛入了基地最深處，似乎正在與前來救援的三人組戰鬥,1
+	zin_reg_msg,什麼！cr難道他打算一個人單挑三人組？,0
+	zin_reg_msg,是的crp_name2對此似乎相當有把握的樣子！,1
+	zin_reg_msg,聽說他藉由我們提供的援助，已經完成了專門針對三人組的祕術,1
+	zin_reg_msg,他希望單獨與三人交戰，可能是怕祕術的奧祕被泄露出去吧．．．,1
+	zin_reg_msg,儘快與p_name2取得聯繫！務必確保首要目標的優先達成！,0
+	zin_reg_msg,是！cr屬下這就去辦！,1
+	zin_reg_face_1,0
+	zin_reg_msg,呼呼．．．cr終於等到這個時候了．．,0
+	bl_fadeout
+	zin_reg_qnar,另一邊，已經陷入一片火海的基地深處．．．．．．
+
+	bgm_chg,53
+	zin_old_init
+	zin_old_img_str,eu314a,5,1
+	zin_old_msg,喀．．喀啊！cr可，可恨啊！！,pid3
+	zin_old_qnar,身負重傷的p_name3倒在地上，用一隻手捂住流血不止的傷口，咬緊牙關忍耐着傷口的劇痛
+	zin_old_msg,哼，身爲上弦衆中實力最強之人cr也不過就是這種程度而已了嗎？,pid2
+	zin_old_msg,嗚．．．．．．,pid3
+	zin_old_qnar,站在一片火海前的p_name2手持雙刀，用冰冷的眼神盯着地上的p_name3
+	zin_old_qnar,在離p_name2的腳邊不遠處，躺着同樣身負重傷，已經昏迷不醒了的其餘二人
+	zin_old_msg,哼！cr這千年來的宿怨，今天終於可以做個了結了！,pid2
+	zin_old_msg,呿！cr藉助他人力量．．．cr甚至趁人不備施展邪術！,pid3
+	zin_old_msg,這樣的勝利有什麼值得誇耀的！,pid3
+	zin_old_msg,．．．cr爲了勝利不擇手段，這本來就是生存於暗影之中的我族的至高信條,pid2
+	zin_old_msg,．．．．．．,pid3
+	zin_old_msg,她們兩人的力量已經被我徹底的封印完畢了cr現在，輪到妳了！,pid2
+	zin_old_msg,嗚．．．．．．,pid3
+	zin_reg_qnar,p_name2緩步走到掙扎着的p_name3跟前，舉起了手中長刀．．．
+	zin_old_fadeout,0,30
+
+
+
+	bgm_chg,55
+	zin_old_init
+	zin_old_img_str,eu313a,5,1
+	zin_old_qnar,p_name2將手中長刀架在了p_name3的咽喉旁，俯身在她的大腿上畫下了一個奇異的符號
+	zin_old_msg,嗚！！！．．．．．．．,pid3
+	zin_old_qnar,p_name3停止了掙扎，用怨恨與憤怒的眼神盯着p_name2，咬緊牙關一言不發
+	zin_old_msg,～～．．．cr～～～．．．cr～～．．～～～．．．,pid2
+	zin_old_msg,．．．．．．,pid3
+	zin_old_qnar,p_name2口中低聲唸誦着奇怪的咒語，p_name3的表情開始慢慢變得奇怪起來
+	zin_old_msg,～～．．．cr～～～．．．cr～～．．cr～～～．．．,pid2
+	zin_old_msg,嗚．．．．．．,pid3
+	zin_old_msg,哈．．．cr哈啊．．．．cr哈．．．啊．．．．．．,pid3
+
+	bgm_se,32
+	zin_flush_file_one,eu313b,5
+	zin_old_qnar,突然，p_name2再次俯身，一把扯下了p_name3的貼身內褲
+	zin_old_qnar,p_name3的下體，不知道什麼時候已經是洪水氾濫，泥濘一片了．
+	zin_old_msg,哈啊．．．cr你！．．．．．．,pid3
+	zin_old_msg,～～．．．cr～～～．．．,pid2
+	zin_old_msg,哈．．．cr哈啊～．．．．cr哈啊啊！～～,pid3
+	zin_old_qnar,一股股神祕的力量沿着p_name2手中的長刀傳來，催動着p_name3體內的殘餘力量形成一股渦流
+	zin_old_qnar,這種奇怪的感覺讓p_name3覺得焦躁不安，卻又無法抗拒crp_name3的雙眼開始變得迷離，口涎垂流，臉上露出一副發情的模樣
+	zin_old_msg,哈啊～cr哈啊啊～～～cr哈啊啊啊～～～～～,pid3
+	zin_old_msg,～～．．．cr～～～．．．cr～～．．～～～．．．,pid2
+	zin_old_msg,哈啊～cr哈啊啊～～～cr咿！咿啊啊啊！！～～,pid3
+	zin_old_msg,～．．．cr～～～～．．．cr～～～～．．cr～～．．．,pid2
+	zin_old_msg,咿～～cr咿啊啊！！～～cr不，不要～．．．．,pid3
+	zin_old_qnar,p_name2口中不停的唸誦着咒語，身上開始漸漸發出奇怪的光芒
+	zin_old_msg,～～．．．cr～～～！．．．cr～～．．～～～！．．．,pid2
+	zin_old_msg,咿啊啊！！～～cr這，這是？．．．．,pid3
+	zin_old_msg,～．．．cr～～～～！．．．cr～～～～！．．cr～～．．～～～！！．．．,pid2
+	zin_old_msg,咿～～～cr咿啊啊！！～～～～cr我，我的身體！．．．．,pid3
+	zin_old_qnar,漸漸的，這層光芒沿着p_name2手中的長刀，擴散籠罩住了地上p_name3的身體
+	zin_old_msg,～～！．．．cr～～～！！．．．cr～～！．．～～～！！．．．,pid2
+	zin_old_msg,咿啊啊！！～～cr不，不要啊！！～～～,pid3
+	zin_old_msg,～！．．．cr～～～～！！．．．cr～～～～！！．．cr～～～．．．～～～～～！！！！．．．,pid2
+	zin_old_msg,不，不！！cr求求你！求求你不要這樣！cr停下啊！！～～～～,pid3
+	zin_old_qnar,p_name3無視p_name2的哀求，唸誦聲越來越大，節奏越來越快cr	突然之間！！
+
+	zin_flush_file,eu313c,5
+	zin_old_msg,咿呀啊啊啊！！！,pid3
+	zin_old_msg,咿呀～～～cr咿呀呀呀～～～～～～,pid3
+	zin_old_qnar,躺在地上的p_name3突然尖叫不止，無法閉合的花瓣間猛烈的噴射出一股股奇怪的白色液體
+	zin_old_msg,咿～～～～～～,pid3
+	zin_old_msg,呀啊～～,pid3
+	zin_old_msg,嗚．．．．．．,pid3
+	zin_old_msg,．．．．,pid3
+	zin_old_qnar,p_name2停止了吟誦，喘着氣凝視着地上已經失神昏迷過去的p_name3
+	zin_old_msg,呼呼．．．．．呼．．．,pid2
+	zin_old_msg,．．．cr終於．．．cr世世代代的宿怨終於！,pid2
+	zin_old_msg,哈哈！cr哈哈哈！！！cr哈～哈～～哈哈哈哈！！！！！,pid2
+	zin_old_msg,．．．．．．,pid3
+	zin_old_msg,哈～～哈哈！cr哈～哈．．．cr哈．．．．．．,pid2
+	zin_old_qnar,狂笑着的p_name2漸漸止住了笑聲，俯下身去，開始撕扯p_name2身上殘破的剩餘衣物．．．
+	bgm_se,32
+	zin_old_msg,剩下的cr只需要將我的印記永遠的銘刻在這個女人的身上．．．,pid2
+	zin_old_msg,．．．．．．,pid3
+	zin_old_msg,呵呵呵．．．cr這最後的工作，真是無比的愉快啊．．．,pid2
+	zin_old_msg,呵呵．．cr哈哈哈～～～cr啊哈～哈～～哈哈哈哈！！！！,pid2
+	zin_old_qnar,猛然間，p_name2又開始了高聲的放肆狂笑，彷彿在向地上的p_name3她們做最後的勝利宣言．．．
+	zin_old_fadeout,0,30
+
+	bgm_se,58
+	zin_old_img_str,eu314b,5,1
+	zin_old_qnar,許久之後，p_name3終於悠悠轉醒cr她用朦朧的雙眼迷茫的盯着眼前這個全身赤裸的男人．
+	zin_old_qnar,p_name2渾身上下散發着難以言喻的力量，用冰冷殘忍的眼神凝視着p_name3一絲不掛的身體crp_name3絲毫沒有察覺到自己雪白的身軀上早已沾滿了白濁的精斑
+	zin_old_msg,你是．．．cr主人．．．．．．嗎？,pid3
+	zin_old_msg,哼！cr現在的妳，已經連做我的奴隸都不配了！,pid2
+	zin_old_msg,我要將妳送給p_name1，作爲支援我的謝禮,pid2
+	zin_old_msg,p_name1．．．cr是．．．．．．．誰？,pid3
+	zin_old_msg,是．．．cr主人．．嗎？,pid3
+	zin_old_msg,呵呵．．cr真沒想到，曾經如此強大的閃忍，居然最終也會淪爲這副模樣．．．,pid2
+	zin_old_msg,閃，閃忍？cr那．．．cr那是．．．？,pid3
+	zin_old_msg,．．．．．．,pid2
+	zin_old_fadeout,0,30
+
+
+	bgm_chg,35
+	zin_reg_event,上弦衆的祕密基地,pid1,pid2,,gzin4
+	zin_reg_msg,p_name1大人cr閃人三人組已經帶來了！,1
+	zin_reg_msg,唔．．．,0
+	zin_reg_qnar,p_name1望着赤身裸體的三人身上殘留的斑斑點點的精液痕跡，他皺了皺眉頭，露出一副不快的表情
+	zin_reg_msg,抱歉，大人！cr這是爲了封印她們體內的力量，不得已而爲之．．．．．,1
+	zin_reg_msg,還請大人見諒！,1
+	zin_reg_msg,唔．．．cr既然是必要的手段．．．,0
+	zin_reg_msg,我就當沒有看到好了cr．．．cr你也不必過於介意,0
+	zin_reg_msg,既然已經確保了她們三人的成功捕獲，你算是立下了頭等大功！,0
+	zin_reg_msg,在下不敢當！cr這全是大人的功勞！,1
+	zin_reg_msg,不必謙虛！,0
+	zin_reg_msg,對了cr閣下今後有何打算？,0
+	zin_reg_msg,不如加入我軍cr我也好爲你謀取一份高官厚祿！,0
+	zin_reg_msg,謝謝大人恩典！cr在下感激不盡！,1
+	zin_reg_msg,呵呵．．cr能有你這樣強大的人物加入，我軍如虎添翼啊！,0
+	zin_reg_msg,還有一件事情．．cr聽說你們一族還握有能夠控制她們三人心智的手段？,0
+	zin_reg_msg,是的，大人！cr這三人現在被徹底封印住力量，暫時的喪失了記憶,1
+	zin_reg_msg,唯有通過我們詛咒一族的特殊儀式，才能改寫她們的心智，徹底控制她們,1
+	zin_reg_msg,這個儀式相當的費時．cr但是一旦完成，我們就可以解開封印，讓她們的力量爲我所用,1
+	zin_reg_msg,很好！cr這三人就暫時交給你了！,0
+	zin_reg_msg,希望你能儘快完成對她們的心智控制！,0
+	zin_reg_msg,是！cr在下．．屬下遵命！,1
+	zin_reg_msg,我過一段就會去視察下你們的進度的，還望你抓緊時間努力！,0
+	zin_reg_msg,是！cr屬下必定竭盡全力！,1
+	bl_fadeout
+	zin_reg_qnar,就這樣，藉由詛咒一黨的p_name2的幫助，p_name1成功的摧毀了上弦衆，捕獲了閃忍三人組
+	zin_reg_button,0
+	zin_reg_exit
+
+		set_sikan,pid2,poid_player
+		upd_sts,pid2,1,99
+
+		upd_sts,1250,状態,6
+		upd_sts,1251,状態,6
+		upd_sts,1252,状態,6
+
+		set_eveflg,176,9
+		end
+
+end
+
+

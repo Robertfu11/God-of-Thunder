@@ -1,0 +1,38 @@
+eve_start
+	if_date,96,6
+	if_eveflg,17,4
+	//普羅貝特　斯庫洛克同盟
+	if_uni,736,624
+eve_end
+
+//撤銷同盟
+del_union,624
+//為無法再次同盟設定仇恨值
+add_urami,736,624,500
+add_urami,624,736,500
+
+chk_exeplayer,736,624,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+get_kunpsn,624
+zin_reg_event,斯庫洛克的王宮,624,pval,,gzin8
+zin_reg_qnar,布朗被暗殺的消息也傳到了斯庫洛克的耳中。
+zin_reg_msg,地球那邊布朗死後普羅貝特就成了新的王,1
+zin_reg_msg,普羅貝特？,0
+zin_reg_msg,那不是個連話都還沒學會說的小屁孩麼,0
+zin_reg_msg,我們是否還能繼續信賴地球？,1
+zin_reg_msg,不可能,0
+zin_reg_msg,沒了布朗，就根本不能指望那些傢伙,0
+zin_reg_msg,那麼,1
+zin_reg_msg,同盟關系也就到此為止了,0
+zin_reg_msg,也就是說，是時候跟他們決一勝負了,0
+zin_reg_msg,那麼，是否向他們宣戰？,1
+zin_reg_msg,嗯，對普羅貝特不滿的部下肯定不在少數,0
+zin_reg_msg,要巧妙地把他們拉攏過來,0
+zin_reg_msg,明白,1
+zin_reg_title,斯庫洛克撤銷了同盟。
+zin_reg_button,0
+end

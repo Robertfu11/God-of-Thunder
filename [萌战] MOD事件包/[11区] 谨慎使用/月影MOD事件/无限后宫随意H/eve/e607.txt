@@ -1,0 +1,88 @@
+eve_start
+	if_eveflg,69,8
+	//多拉は覇王
+	if_haou,571
+
+	//カンシ　sts6である
+	if_psts,356,6
+	if_psts,813,6
+	if_psts,843,6
+	//ワード55歳以下
+	if_val,年齢:813<56
+eve_end
+
+set_eveflg,69,9
+
+chk_exeplayer,571,0,0,0
+chk_exeplayer_else
+set_sikan,813,571
+upd_sts,813,勲功,5000
+set_sikan,356,571
+upd_sts,356,勲功,4000
+set_sikan,843,571
+upd_sts,843,勲功,2000
+end
+
+chk_exeplayer_then
+bgm_chg,69
+//zin_reg_init
+zin_reg_event,哈根星,813,356,,gzin21
+zin_reg_qnar,護送琳希一行的瓦德他們留在了哈根星。
+zin_reg_msg,接下來該怎麼辦啊、瓦德殿下,1
+zin_reg_msg,那還用說、當然是繼續尋找強大的傢伙的旅程了,0
+zin_reg_face_1,843
+zin_reg_msg,瓦德啊、你還真是不知疲倦啊,1
+zin_reg_msg,一直做著那種事情、我可是一點都不覺得有趣哦,1
+zin_reg_msg,比起那個沒想過留在這顆星球嗎？,1
+zin_reg_msg,我可是相當中意這裏哦,1
+zin_reg_msg,真是個不錯的城市啊,1
+zin_reg_msg,那可真是太好了,0
+zin_reg_msg,那麼、你就留在這裏,0
+zin_reg_msg,我們可要走了,0
+zin_reg_msg,什、什麼！！,1
+zin_reg_msg,你想把我一個人丟在這裏！！,1
+zin_reg_msg,說的沒錯,0
+zin_reg_msg,保重了,0
+zin_reg_msg,嗚．．．．cr你難道忘記了西門賈說過的話了嗎？,1
+zin_reg_msg,不是說好要守護我的嗎,1
+zin_reg_msg,那都幾十年前的事情了早就忘了,0
+zin_reg_msg,嗚．．．．cr坎西、你呢？,1
+zin_reg_face_1,356
+zin_reg_msg,呃．．．cr私我也很中意這顆星球,1
+zin_reg_msg,瓦德殿下沒意見的話、我也想留在這裏,1
+zin_reg_msg,什、什麼！！,0
+zin_reg_msg,你不來的話、就可只剩我一個人旅行了,0
+zin_reg_face_1,843
+zin_reg_msg,謔謔謔、那就這麼定了,1
+zin_reg_msg,全員都在這顆星球住下來好了,1
+zin_reg_msg,坎西、你、你啊．．．,0
+zin_reg_face_1,356
+zin_reg_msg,非常抱歉、瓦德殿下,1
+zin_reg_msg,只不過我想留在這裏幫琳希公主一把,1
+zin_reg_msg,什麼？,0
+zin_reg_msg,恐怕即使在這裏琳希公主也是有生命危險的,1
+zin_reg_msg,你明明是我的護衛的,0
+zin_reg_msg,求您了,1
+zin_reg_msg,．．．．．．,0
+zin_reg_msg,好吧、那就這麼辦吧,0
+zin_reg_msg,瓦德殿下,1
+zin_reg_msg,但是、你們都得工作,0
+zin_reg_msg,特別是你、莉莉罕,0
+zin_reg_face_1,843
+zin_reg_msg,你說什麼、竟然想讓我工作！,1
+zin_reg_msg,那是當然,0
+zin_reg_msg,不工作者沒飯吃,0
+zin_reg_msg,惡、惡鬼啊．．．,1
+zin_reg_face_0,356
+zin_reg_msg,莉莉罕殿下、我會幫助您的,0
+zin_reg_msg,喔喔、坎西啊cr只有你才是最可靠的,1
+zin_reg_qnar,瓦德、坎西、莉莉罕加入了多拉軍。
+zin_reg_button,0
+set_sikan,813,571
+upd_sts,813,勲功,5000
+set_sikan,356,571
+upd_sts,356,勲功,4000
+set_sikan,843,571
+upd_sts,843,勲功,2000
+//zin_reg_exit
+end

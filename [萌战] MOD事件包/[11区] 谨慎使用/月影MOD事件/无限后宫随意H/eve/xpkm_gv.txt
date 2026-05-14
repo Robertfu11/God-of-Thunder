@@ -1,0 +1,110 @@
+//覇王オルド　強引　初膜汎用
+rnd,4
+case0
+	zin_old_msg,喲嗬．．．這個不錯、久違的軟玉溫香抱滿懷的感覺啊,pid1
+	zin_old_msg,啊．啊啊．．不、不要啊．．．．,pid2
+	zin_old_msg,呵呵、你這厭惡的表情讓我更加興奮了,pid1
+	zin_old_msg,啊啊．．．不行．．．不要、不要啊．．．．,pid2
+	zin_old_msg,我可不覺得你是第一次啊、這麼緊緊的吸著callself_pid1的老二、拔都拔不出啊,pid1
+	zin_old_msg,啊啊．．．好噁心．．．呃呃．．．不要啊．．．,pid2
+	zin_old_msg,你不知道這種話會起到反效果？cr讓我越來越興奮了．．．,pid1
+	zin_old_msg,那麼、直到你高潮之前、要一直發出這種聲音！！,pid1
+	zin_old_msg,啊啊、呀啊啊！！　不要、不要、不要這麼激烈！！！,pid2
+	zin_old_msg,疼、好疼啊！！　拔、拔出去！！　求求你！！,pid2
+	zin_old_msg,哈哈哈、好啊、再叫響一點！！　callself_pid1的絕頂就是這麼來的！！,pid1
+	zin_old_msg,啊啊．．．不、不要．．．我．．．已經．．要泄了．．．,pid2
+	zin_old_msg,已經、不、不行了誒誒誒！！！！！,pid2
+	zin_flush,pid2
+	goto,*check
+case1
+	zin_old_msg,哦哦．．．得到了個極品啊,pid1
+	zin_old_msg,啊呀啊啊啊！！．．．不要、不行．．．痛、痛、好痛啊啊啊啊い！！,pid2
+	zin_old_msg,照你今天破瓜這德行來說、你是怎麼守身到今日的？,pid1
+	zin_old_msg,向你致敬、木哈哈哈哈,pid1
+	zin_old_msg,噫噫噫噫噫．．．．,pid2
+	zin_old_msg,那、第一次就內射也不行嗎？,pid1
+	zin_old_msg,啊啊．．．不行．．．今天不行．．．請外射吧．．．裡面．．．不、不要啊．．．,pid2
+	zin_old_msg,是麼、那今天就大發慈悲原諒你,pid1
+	zin_old_msg,啊．．非常、非常．．．感謝．．．您．．．,pid2
+	zin_old_msg,嗚嗚！！！,pid1
+	zin_flush,pid2
+	zin_old_msg,噫啊啊啊！！．．．誒．．．這．．．裡面、怎麼在裡面．．．射了．．這麼多．．．啊啊．．．好、好過分．．．,pid2
+	zin_old_msg,不好意思、我剛改變主意。唔哈哈哈。,pid1
+	goto,*check
+case2
+	zin_old_msg,呵．．．你有個好東西呢、一件能融化callself_pid1肉棒的名器,pid1
+	zin_old_msg,不、不要不要．．．這樣．．．不要不要．．．,pid2
+	zin_old_msg,呵呵呵、處子的香氣已經飄過來了．．．,pid1
+	zin_old_msg,啊啊啊、不要啊．．．不要亂動啊．．．．,pid2
+	zin_old_msg,怎麼樣、有沒有一點點快感？,pid1
+	zin_old_msg,討、討厭啊．．．好疼．．．好疼誒誒誒誒！！,pid2
+	zin_old_msg,是麼、那這次就沒有辦法了、暫且放你一馬,pid1
+	zin_old_msg,啊．．．怎麼這樣．．．不要啊！！！,pid2
+	zin_old_msg,唔！！　要出來了哦、給你好多好多！！,pid1
+	zin_old_msg,哈啊．．．不行啊．．．只有這個不行啊！！！,pid2
+	zin_flush,pid2
+	goto,*check
+case3
+	zin_old_msg,哈咕．．．呀啊．．．,pid2
+	zin_old_msg,這種事．．．感覺超噁心．．．,pid2
+	zin_old_msg,既然是處那也沒辦法、感覺會慢慢好起來的吧,pid1
+	zin_old_msg,沒有．．．沒有這種事．．．,pid2
+	zin_old_msg,噗、可是到現在為止不是都挺好的麼,pid1
+	zin_old_msg,今天就讓callself_pid1好好地爽一下吧,pid1
+	zin_old_msg,啊啊、不行誒．．．不要誒．．．不要亂動啊ーーー！！,pid2
+	zin_flush,pid2
+	goto,*check
+
+*check
+bl_fadeout
+zin_reg_event,日常调教,pid1,pid2,,gzin32
+zin_reg_msg,今夜cf_pid1也干了个爽,0
+zin_reg_3sel,已经满足了,再来一次,我爱你
+get_resp
+
+ret_sel1
+upd_sts,pid2,1,50 
+upd_sts,pid2,5,50 
+upd_sts,pid2,6,50 
+upd_sts,pid2,7,50 
+upd_sts,pid2,8,50 
+upd_sts,pid2,9,50
+add_kunkou,pid2,500
+set_sinmitu,pid2,110
+zin_reg_msg,啊啊，您高兴就好，肉便器p_name2随时为call_pid21准备着！,1
+zin_reg_qnar,p_name2的忠诚，知力，攻击，防御，格斗，交涉提升
+zin_reg_button,0
+zin_reg_exit
+end
+
+
+ret_sel2
+upd_sts,pid2,1,50 
+upd_sts,pid2,5,50 
+upd_sts,pid2,6,50 
+upd_sts,pid2,7,50 
+upd_sts,pid2,8,50 
+upd_sts,pid2,9,50
+add_kunkou,pid2,1000
+set_sinmitu,pid2,110
+zin_reg_msg,太好了，被call_pid21随意使用是肉便器p_name2的使命！,1
+zin_reg_qnar,p_name2的功勋双倍提升
+zin_reg_button,0
+zin_reg_exit
+end
+
+
+ret_sel3
+upd_sts,pid2,1,100 
+upd_sts,pid2,5,100 
+upd_sts,pid2,6,100 
+upd_sts,pid2,7,100 
+upd_sts,pid2,8,100 
+upd_sts,pid2,9,100
+add_kunkou,pid2,1000
+set_sinmitu,pid2,110
+zin_reg_msg,能够成为call_pid21的妃子真是太好了,1
+zin_reg_qnar,p_name2全属性大幅提升
+zin_reg_button,0
+zin_reg_exit
+end

@@ -1,0 +1,82 @@
+    zin_reg_msg,報酬はcr資金5000かアイテムcrどちらかを選べるのか．．．,1
+
+zin_reg_2sel,報酬金を貰う,アイテムを貰う
+get_resp
+ret_sel1
+    zin_reg_msg,キャシュでよろしいですかな？,1
+zin_reg_qnar,資金5000を手に入れた
+    add_money,player,5000
+    zin_reg_msg,助かるcr海賊は物入りでな,0
+    goto,*aitemuend
+ret_sel2
+////////////////////////
+   zin_reg_msg,アイテムですね？色々ございますが、如何致しましょう,1
+
+zin_reg_3sel,性行為系,能力上昇系,その他
+get_resp
+ret_sel1
+	goto,*aitemu01
+ret_sel2
+	goto,*aitemu02
+ret_sel3
+	goto,*aitemu03
+//////////////////////////////////
+*aitemu01
+zin_reg_3sel,精力剤,不妊薬,全身性感香
+get_resp
+ret_sel1
+get_item,player,0,精力剤
+    zin_reg_msg,精力剤を貰おう,0
+    goto,*aitemuend
+ret_sel2
+get_item,player,0,不妊薬
+    zin_reg_msg,不妊薬を貰おう,0
+    goto,*aitemuend
+ret_sel3
+get_item,player,0,全身性感香
+    zin_reg_msg,全身性感香を貰おう,0
+    goto,*aitemuend
+//////////////////////////////////
+*aitemu02
+zin_reg_3sel,ドコサヘキサエン酸,男女の心理学,鉄アレー
+get_resp
+ret_sel1
+get_item,player,0,ドコサヘキサエン酸
+    zin_reg_msg,ドコサヘキサエン酸を貰おう,0
+    goto,*aitemuend
+ret_sel2
+get_item,player,0,男女の心理学
+    zin_reg_msg,男女の心理学を貰おう,0
+    goto,*aitemuend
+ret_sel3
+get_item,player,0,鉄アレー
+    zin_reg_msg,鉄アレーを貰おう,0
+    goto,*aitemuend
+//////////////////////////////////
+*aitemu03
+zin_reg_3sel,惚れ薬,失念飴,６段玉手箱
+get_resp
+ret_sel1
+get_item,player,0,媚薬
+    zin_reg_msg,惚れ薬を貰おう,0
+    goto,*aitemuend
+ret_sel2
+get_item,player,0,失念飴
+    zin_reg_msg,失念飴を貰おう,0
+    goto,*aitemuend
+ret_sel3
+get_item,player,0,６段玉手箱
+    zin_reg_msg,６段玉手箱を貰おう,0
+    goto,*aitemuend
+/////////////////////////////
+   *aitemuend
+   zin_reg_msg,では、ご用意致しましょう,1
+   zin_reg_event,闇病院,pid2,pid1,,gzin37
+   zin_reg_msg,．．．,1
+   zin_reg_msg,処置が終わったようだなcr帰るぞ,0
+
+    zin_reg_event,闇病院,pid2,850,,gzin37
+    zin_reg_msg,では、またのお越しを,1
+	zin_reg_button,0
+	zin_reg_exit
+	end

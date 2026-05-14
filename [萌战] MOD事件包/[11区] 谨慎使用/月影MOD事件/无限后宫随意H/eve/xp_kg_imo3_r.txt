@@ -1,0 +1,92 @@
+//王族オルド襲う　相手：妹
+//■Ｈ体位：騎乗位
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,今日だけは我慢できないんだ,0
+	zin_reg_msg,兄の思いを汲んでくれ,0
+	zin_reg_msg,だって．．．アレ、痛いんだもの,1
+	zin_reg_msg,大丈夫だ、今日は痛くないようにするから,0
+	zin_reg_msg,あ、call_pid1！！,1
+	zin_reg_msg,フフ、かわいいなp_name2は,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,あああっ．．．はいってる、のっ．．．callself_pid2のなかにっ．．．はいって、るのっ．．．,pid2
+	zin_old_msg,お馬さんの格好っ．．．はずかしいのっ．．．それにっ．．．,pid2
+	zin_old_msg,だめ、なのっ．．．これっ．．．ほんとうに．．好きな人としか．．したら．．だめ、なのっ．．．,pid2
+	zin_old_msg,そうか．．．call_pid2はcallself_pid1のことが嫌いなのかな？,pid1
+	zin_old_msg,そうじゃない、のっ．．．だけどっ．．．だめなのっ．．．,pid2
+	zin_old_msg,だったら、本気で好きになってもらうために、call_pid2を気持ちよくしてあげるよ,pid1
+	zin_old_msg,ああ．．ひぅう．．うごくの．．だめ．．だめなのっ．．．,pid2
+	zin_old_msg,ぁ．．あああ．．ん．．んんんんっ．．．,pid2
+	zin_old_msg,ほら、どんどん奥から蜜が滴ってきた．．．call_pid2も気持ちいいんだね？,pid1
+	zin_old_msg,やあぁ．．ちがう、のっ．．．きもちよく、ない、のっ．．．,pid2
+	zin_old_msg,もう．．もう．．こんなの、やめて、ほしいのっ．．．,pid2
+	zin_old_msg,やめないよ．．．call_pid2の中に、たっぷり射精してあげるまでは、ね,pid1
+	zin_old_msg,そ、そんなの、だめなの．．．あかちゃん．．うまれちゃうのっ,pid2
+	zin_old_msg,大丈夫だよ、そう簡単には妊娠しないさ,pid1
+	zin_old_msg,んん．．あああ．．あうぅう．．ん．．ひぅ．．ひぅううっ！,pid2
+	zin_old_msg,びくびく、してる．．ふくらんでるの．．だめ．．だめなのっ！,pid2
+	zin_old_msg,そろそろ出すよ、call_pid2,pid1
+	zin_old_msg,んん．．おねがい．．なの．．やめて．．やめてなの．．ふああああああっ！,pid2
+	zin_flush,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,兄の言うことを聞くんだ,0
+	zin_reg_msg,ダメ、お願いだから変なことしないで！,1
+	zin_reg_msg,お前、初めてなんだろ？,0
+	zin_reg_msg,心配するとこはない,0
+	zin_reg_msg,さあ、すべてを兄に任せるのだ,0
+	zin_reg_msg,だって、だって．．．,1
+	zin_reg_msg,怖いよ．．．call_pid1,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,ひぐ、いたい、のっ．．．いたいのっ．．．,pid2
+	zin_old_msg,こんなのっ．．．ひどい、のっ．．．,pid2
+	zin_old_msg,予想はしていたけど、こんなにcall_pid2の中が狭いとは．．．,pid1
+	zin_old_msg,気持ちいいよ、call_pid2．．．,pid1
+	zin_old_msg,そ、そんなこといわれても．．．callself_pid2っ．．．わから、ないのっ．．．,pid2
+	zin_old_msg,それより、それよりっ．．．やめて．．．ほしいの．．．こんなの、いや、なの．．．,pid2
+	zin_old_msg,今更やめることはできないよ,pid1
+	zin_old_msg,ひ、ぐっ．．．い、いたい、のっ．．．いたいのっ．．．ひ、ぎっ．．．,pid2
+	zin_old_msg,痛いかい？　でも、callself_pid1は気持ちいいよ,pid1
+	zin_old_msg,んんっ．．．おねがい．．．やめてよっ．．．,pid2
+	zin_old_msg,こんな．．．お馬さんみたいな格好っ．．．いやなのっ．．．,pid2
+	zin_old_msg,フフッ、いい眺めだね．．．子供のような縦筋なのに、callself_pid1をしっかり受け入れてるよ,pid1
+	zin_old_msg,んん．．みないで．．なの．．はずかしい．．はずかしい．．．,pid2
+	zin_old_msg,たまらないよ、call_pid2．．．そろそろ、中に出してあげるよ．．．,pid1
+	zin_old_msg,な、なかっ？なんのことか．．わから、ないの．．こわいの．．おねがい．．やめて．．．,pid2
+	zin_old_msg,出すよ、call_pid2,pid1
+	zin_old_msg,あああ．．い、たい．．いたい．．くる、しい．．んん．．ん．．んんんんんんっ！,pid2
+	zin_flush,pid2
+	end
+//孕みパターン
+case_botebara
+	zin_reg_msg,フフ、我慢しているのではないのか？,0
+	zin_reg_msg,本当はほしくて仕方ないのであろう？,0
+	zin_reg_msg,そ、そんなこと．．．ないもん,1
+	zin_reg_msg,大丈夫だ、お腹の赤子には気をつけるから,0
+	zin_reg_msg,で、でも．．．,1
+	zin_reg_msg,さあ、こっちへ来なさい,0
+	zin_reg_msg,う、うん．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,あん．．．んんっ．．．そんなに突き上げたら．．．子宮破れて．．．出てきちゃうよっ．．．,pid2
+	zin_old_msg,いつもより浅くしておくから．．．心配するな,pid1
+	zin_old_msg,ひあああっ．．．なんだか．．．アソコの入り口．．．き、気持ちいい．．．,pid2
+	zin_old_msg,おいおい、クリトリスがしっかり勃起してるじゃないか,pid1
+	zin_old_msg,や、やだ．．．そんなとこ．．．見ないでよお！！,pid2
+	zin_old_msg,ハハハ、しっかり見えるぞ。お前の一番恥ずかしいところがな,pid1
+	zin_old_msg,あ、ああんっ！！　も、もう．．．call_pid21ったら．．．ああっ．．．でも、ほんとに．．気持ちいい．．．,pid2
+	zin_old_qnar,p_name2は、自分からも腰を使い始めた。
+	zin_old_msg,お、おい．．．そんなに動いて大丈夫か？,pid1
+	zin_old_msg,だ、だって．．．p_name2にも．．．止められないんだよっ！！　とっても．．．気持ちよくって．．．ひあああああっ！！,pid2
+	zin_old_msg,ううっ．．．そんなにすると．．．こっちがイキそうだ．．．,pid1
+	zin_old_msg,ああっ．．．イク．．．p_name2も．．．もう．．．だ．．ダメぇ．．．,pid2
+	zin_old_msg,んんっ．．．い、イッちゃう．．．イク、イク、い、いっくううううう！！！！,pid2
+	zin_flush,pid2
+	end

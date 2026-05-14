@@ -1,0 +1,24 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,大奧配屬,pid1,pid2,,gzin8
+//	zin_reg_msg,,0,1２３４５６７８９,0，1２３４５６７８９，0，1,0
+	zin_reg_msg,是您叫我嗎？,1
+	zin_reg_msg,嗯、你從今天起去大奧（側室居所）報到,0
+	zin_reg_msg,讓我去大奧！！,1
+	zin_reg_msg,我可不能去那種低賤的地方,1
+	zin_reg_msg,您是打算將我掃地出門嗎！！,1
+	zin_reg_msg,就是這樣、 和callself_pid1離婚吧,0
+	zin_reg_msg,您說什麼！！,1
+	zin_reg_msg,這一定．．．cr一定是那個女人吧！？,1
+	zin_reg_msg,你在說什麼？,0
+	zin_reg_msg,一定是這樣的,1
+	zin_reg_msg,把我趕出家門、然後立那個女人為妃不是嗎！！,1
+	zin_reg_msg,哼、以小人之心度君子之腹,0
+	zin_reg_msg,可是為什麼！！,1
+	zin_reg_msg,孤意已絕！,0
+	zin_reg_msg,從今天開始你我就是毫不相干的人了cr知道了嗎！！,0
+	zin_reg_msg,啊、等等、王上！！,1
+zin_reg_title,與p_name2離婚了。
+zin_reg_button,0
+zin_reg_exit
+end

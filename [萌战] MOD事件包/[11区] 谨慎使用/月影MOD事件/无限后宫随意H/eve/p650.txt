@@ -1,0 +1,7 @@
+bgm_chg,60
+zin_reg_event,,pid1,pid2,,gzin61
+zin_reg_qnar,p_name1とp_name2は当面の利害が一致し、同盟を結んだ。
+zin_reg_msg,これからも共に繁栄してゆこうぞ,0
+zin_reg_msg,うむ、我らに刃向かう者はすべて敵だ,1
+zin_reg_button,0
+end

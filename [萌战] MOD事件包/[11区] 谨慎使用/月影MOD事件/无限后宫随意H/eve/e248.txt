@@ -1,0 +1,28 @@
+eve_start
+	if_date,91,7
+	if_poid,576,9
+//已經和阿卡弗利結婚
+//	if_val,婚姻:732=32
+	if_chksts,732,婚姻,32
+eve_end
+
+chk_exeplayer,9,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,54
+//zin_reg_init
+zin_reg_event,洛根的王宮,576,607,,gzin9
+zin_reg_msg,夫人，恭喜莫妮卡大人結婚,1
+zin_reg_msg,謝謝你，艾米伊,0
+zin_reg_msg,可是，那孩子不在身邊，以後就寂寞了,0
+zin_reg_msg,她才１６歲啊,0
+zin_reg_msg,是啊．．．,1
+zin_reg_msg,沒她在，你可得好好陪我說說話啊，艾米伊,0
+zin_reg_msg,不嫌棄的話，我隨時都樂意奉陪,1
+zin_reg_msg,還好有你在啊,0
+zin_reg_msg,夫人，您這是哪裏的話．．．,1
+zin_reg_button,0
+//zin_reg_exit
+end

@@ -1,0 +1,83 @@
+//覇王オルド　妾　強引
+//■Ｈ体位：正常位
+
+//女の状態チェック
+zin_seloop,se137,1
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,今晚是callself_pid1的小覇王展示力量的時刻,0
+	zin_reg_msg,身體都是大人的請使用哦,0
+	zin_reg_msg,嗚啊啊！！,1
+	zin_reg_msg,那、那樣大的東西不可能進得來啊！！,1
+	zin_reg_msg,那麼、先插入這些為止吧！！,0
+	zin_reg_msg,啊啊、那樣的、不行啊！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊．．．tin_str在．．．callself_pid2的裡面．．．跳動著呢．．．,pid2
+	zin_old_msg,呵呵．．．小幅度的抽插著、call_pid2也感到很舒服吧？,pid1
+	zin_old_msg,．．那樣的、事情嗎．．．啊啊、大人．．．嗯嗯．．啊．．啊啊啊嗯！,pid2
+	zin_old_msg,嘴上雖然這麼說著、call_pid2的裡面、可是越來越濕潤了哦？,pid1
+	zin_old_msg,不、不要說．．那樣的．．應該、的說．．．,pid2
+	zin_old_msg,即使嘴上這麼說著、call_pid2其實也對callself_pid1的精液充滿著想要的慾望的吧．．．,pid1
+	zin_old_msg,好的就在這小小的身體裡、充分的做到中出吧,pid1
+	zin_seloop_stop
+	zin_old_msg,哎呀呀．．man_str．．．不要說中出之類的啊．．．,pid2
+	bgm_se,141
+	zin_flush,pid2
+	zin_old_msg,啊啊啊．．．不要再說了．．．cr刺溜刺溜的、已經在不斷進來了啊．．．,pid2
+	end
+//初膜パターン
+case_hatumaku
+zin_seloop_stop
+	zin_reg_msg,今晚是第一次？,0
+	zin_reg_msg,那麼、有這種心情也不難理解,0
+	zin_reg_msg,是、是的．．．,1
+	zin_reg_msg,但是、看著你這個小小的身體、怎麼看慾望都壓抑不住的啊,0
+	zin_reg_msg,再拖延下去的話、那初膜會被其他的男人奪走也說不定啊,0
+	zin_reg_msg,那、那種事情不會的,1
+	zin_reg_msg,callself_pid1可是最好的東西一定要先吃的類型哦,0
+	zin_reg_msg,啊啊、不行cr放開我啊！！！,1
+	zin_seloop,se137,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,嗚嗯嗯嗯嗯！！cr啊啊啊啊嗯．．．嗚．．嗚嗯嗯．．．,pid2
+	zin_old_msg,聽、聽說．．．這種、痛．．．會很劇烈．．．呢．．．,pid2
+	zin_old_msg,很痛？crcall_pid2的任務可是得為callself_pid1孕育個孩子呢？,pid1
+	zin_old_msg,那樣的是．．．錯、錯誤的．．．這樣的．．．強硬、過分、賠．．．,pid2
+	zin_old_msg,啊啊、那樣才不好呢,pid1
+	zin_old_msg,道歉什麼的、不如激烈地侵犯然後早早的結束吧,pid1
+	zin_old_msg,嗚啊啊啊啊！！！cr啊啊啊啊．．不要、啊．．嗯嗯嗯嗯！,pid2
+	zin_old_msg,痛．．啊．．拜託、啊．．cr更．．更．．慢一點啊！！！,pid2
+	zin_old_msg,差不多頂到call_pid2的深處了、那麼就用tane_str充分的做吧,pid1
+	zin_old_msg,那樣的．．啊啊．．啊．．啊啊．．cr不．．不、聽我．．．說啊啊啊啊．．．,pid2
+	zin_seloop_stop
+	zin_old_msg,不要啊．．請停下．．嗚啊、呃．．嗯嗯嗯嗯！,pid2
+	bgm_se,141
+	zin_flush,pid2
+	zin_old_msg,啊啊．．熱熱的．．．嘩嘩．．．灌入了．．．,pid2
+	end
+//孕みパターン
+case_botebara
+zin_seloop_stop
+	zin_reg_msg,呵呵、似乎又變大了呢,0
+	zin_reg_msg,所以啊、今天就請回去吧,1
+	zin_reg_msg,不行喲,0
+	zin_reg_msg,那樣的身体、特別想仔細地品味一下呢,0
+	zin_reg_msg,什、什麼！！,1
+	zin_reg_msg,那麼、今晚也讓小覇王大肆的跳動著做吧,0
+	zin_reg_msg,啊啊、拜、拜託了、請原諒啊！！,1
+	zin_seloop,se137,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊．．．拜託．．．更溫柔的．．．,pid2
+	zin_old_msg,好的．．．這就是懷孕女人的奴像麼．．．cr說起來、這肚子好像一只更大的胸部啊,pid1
+	zin_old_msg,而且、相比懷孕之前敏感度更加上升了、不是嗎？cr只是簡單的交合就已經變得這麼濕了,pid1
+	zin_old_msg,那、那種事情是．．．啊、沒有的．．．真的．．．痛苦．．．,pid2
+	zin_old_msg,說著什麼謊話啊、還真的能比生孩子開宮時更疼痛嗎？,pid1
+	zin_old_msg,真是的、也即將要成為母親了呢、但卻意想不到的奴像啊。cr作為懲罰、就充分的做到中出吧,pid1
+	zin_seloop_stop
+	zin_old_msg,這樣、的．．啊啊啊．．是、啊．．嗯嗯．．嗯啊．．啊．．啊．．不行啊嗯嗯嗯嗯嗯！,pid2
+    bgm_se,141
+	zin_flush,pid2
+	end

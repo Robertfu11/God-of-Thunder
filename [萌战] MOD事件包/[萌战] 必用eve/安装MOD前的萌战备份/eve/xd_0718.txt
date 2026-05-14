@@ -1,0 +1,54 @@
+bgm_chg,21
+zin_reg_init
+zin_old_init
+zin_old_img_pid,pid2,1
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_msg,咕嘰．．咕嘰嘰．．嘰．．．,pid2
+	zin_old_msg,最喜歡call_pid1了．．．．,pid2
+	zin_old_msg,啊啊．．．肉棒、感覺不錯．．．call_pid1,pid2
+	zin_old_msg,這樣的話．．．就能看到call_pid1的臉了．．．好開心．．,pid2
+	zin_old_msg,呵呵、callself_pid1的肉棒就那麼好吃？,pid1
+	zin_old_msg,別人的都不行、只有call_pid1、唯獨call_pid1的最好了,pid2
+	zin_old_msg,是麼、那就好好的享受吧,pid1
+	zin_old_msg,討厭．．．已經要去了．．．啊哈、call_pid1的肉棒．．．出來了！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_old_msg,唔恩恩．．咕啾．．啾．．．嗯嗯．．．,pid2
+	zin_old_msg,誒、這麼激烈地親的話、讓你不能透氣了是吧,pid1
+	zin_old_msg,可、可是．．．p_name2不是最喜歡親吻嗎．．．,pid2
+	zin_old_msg,這是call_pid2的第一次吧？,pid1
+	zin_old_msg,明明是第一次、就玩下面的親親的話問題不大吧？,pid1
+	zin_old_msg,沒、沒問題．．．感覺真的．．．很好．．．唔呃呃呃！！,pid2
+	zin_old_msg,唉．．．沒想到居然是這種H體質的女人．．．,pid1
+	zin_old_msg,下面的小嘴．．．請、請再激烈點、抽插．．．咿呀啊啊啊啊．．．,pid2
+	zin_old_msg,你、說啥呀．．．這分明就是你自己在抖動好吧！！,pid1
+	zin_old_msg,哈啊啊啊、不、不行．．．要高潮了、要高潮了啦啊啊啊啊！！！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end
+//孕みパターン
+case_botebara
+	zin_old_msg,呼．．．咕啾咕啾．．．啾ーーー哈噗．．．,pid2
+	zin_old_msg,嗯．．．call_pid2的吻總是甜甜的呢,pid1
+	zin_old_msg,是呢．．．．因為用了有香味的唇膏嘛．．．哈噗,pid2
+	zin_old_msg,嗯．．．我再、再多動下腰．．．,pid1
+	zin_old_msg,你懷了寶寶了誒、這麼動的話真的沒問題？,pid1
+	zin_old_msg,可、可是．．．call_pid1的肉棒、硬邦邦的．．．感覺、非常好．．．,pid2
+	zin_old_msg,唔．．．撞著軟軟的肚子、感覺當然好啦．．．,pid1
+	zin_old_msg,哈呼．．．讓我好好看看你的臉．．．啊啊嗯！！,pid2
+	zin_old_msg,咕．．．不行、已經要出來了,pid1
+	zin_old_msg,啊啊．．．舒服．．．啊、要去了啦啊啊啊啊！！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end

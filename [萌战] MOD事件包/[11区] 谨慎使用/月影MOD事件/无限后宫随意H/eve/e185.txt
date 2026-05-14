@@ -1,0 +1,11 @@
+eve_start
+	if_date,90,2
+	if_eveflg,17,2
+eve_end
+
+set_eveflg,17,3
+
+//¥Ð¥¤¥¢¥°¥é¡¢°¢ –±È¶÷º£Ù\ÔO¶¨ 
+set_kaizoku,671
+set_dead,600,0
+set_kaizoku,617

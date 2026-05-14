@@ -1,0 +1,86 @@
+//王族オルド通常　相手：妹
+//■Ｈ体位：正常位
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,call_pid1、想要p_name2的身体？,1
+	zin_reg_msg,啊啊、因為忘不掉call_pid2的味道,0
+	zin_reg_msg,真沒辦法啊,1
+	zin_reg_msg,看、call_pid1,1
+	zin_reg_msg,p_name2的小穴都已經這樣了呢．．．,1
+	zin_reg_msg,原來你也想要的不得了嗎,0
+	zin_reg_msg,呵呵呵、快放進來吧．．．call_pid1,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,callself_pid2和．．call_pid1．．．已經、合為一體了呢．．．,pid2
+	zin_old_msg,這是．．．喜歡的東西．．．callself_pid2的裡面．．是call_pid1說過的．．喜歡的東西．．．,pid2
+	zin_old_msg,呵呵．．．我很高興啊,pid1
+	zin_old_msg,但是、如果在call_pid2的裡面動的話、心情愉快的做的話、會更喜歡的吧？,pid1
+	zin_old_msg,嗯嗯．．嗯．．．期待．．．的說．．．,pid2
+	zin_old_msg,心情就得舒爽．．call_pid1的tin_str．．．更多更多、喜歡．．的．．．,pid2
+	zin_old_msg,那麼、動了哦．．．call_pid2的話、會讓你心情舒爽的,pid1
+	zin_old_msg,嗯嗯．．嗯．．吶．．嗚啊啊啊．．那樣的．．．,pid2
+	zin_old_msg,做吧．．call_pid1．．多晚．．都、可以．．好棒、的說．．．,pid2
+	zin_old_msg,啊．．．這緊窄糾纏的感覺．．．,pid1
+	zin_old_msg,call_pid1．．心情．．感覺好了嗎？,pid2
+	zin_old_msg,啊啊、callself_pid1、好舒服啊．．．,pid1
+	zin_old_msg,真的是太舒服了、我已經忍耐不住了啊,pid1
+	zin_old_msg,不用．．．忍耐的、那樣不好的說．．．,pid2
+	zin_old_msg,call_pid1的．．call_pid1的．．喜歡．．想要的．．更多的啊,pid2
+	zin_old_msg,好高興哦、call_pid2．．．那麼、就用中出表達對你的感謝吧,pid1
+	zin_old_msg,嗯．．出來．．出來的話．．就在callself_pid2的裡面．．中出．．中出吧！,pid2
+	zin_flush,pid2
+	zin_old_msg,嗚啊啊啊．．真的、有．．．噗嗤噗嗤．．tin_str．．熱熱的．．．進來了．．．,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,call_pid1．．．,1
+	zin_reg_msg,一起做．．．色色的事吧？,1
+	zin_reg_msg,你、還是第一次吧？,0
+	zin_reg_msg,沒關系的、都交給哥哥吧,0
+	zin_reg_msg,嗚、嗚嗯．．．cr溫柔點啊、call_pid1,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,痛嗎．．．？　不要緊嗎．．．？,pid1
+	zin_old_msg,嗯嗯．．痛、的說．．．不過．．之類的東西、很高興的．．．,pid2
+	zin_old_msg,倒是．．．callself_pid2的東西、進來了．．．很深．．肚子感到充實的感覺．．．,pid2
+	zin_old_msg,是嗎．．．那麼、動了哦。cr痛的話要說哦,pid1
+	zin_old_msg,嗯、嗚、嗚嗚．．嗚嗯．．好啊．．．嗯嗯．．．,pid2
+	zin_old_msg,嗚啊．．嗯嗯．．．變得、奇怪了．．．,pid2
+	zin_old_msg,肚子變得．．簌簌、有點．．．麻麻的、嗚啊啊啊啊啊．．．,pid2
+	zin_old_msg,真的．．．．．．這樣緊窄的感覺．．．,pid1
+	zin_old_msg,call_pid2．．．好舒服啊．．．,pid1
+	zin_old_msg,嗯啊啊啊啊．．tin_str．．callself_pid2的裡面．．．想要．．很好的東西．．嗚啊啊．．．,pid2
+	zin_old_msg,差不多要出來了．．．痛嗎？,pid1
+	zin_old_msg,嗯嗯．．嗚啊啊啊．．嗚．．是的．．出來吧．．．在callself_pid2的、裡面．．出來吧．．想要的東西！,pid2
+	zin_flush,pid2
+	zin_old_msg,啊啊啊．．好熱、的說．．．在肚子的裡面．．熱熱的．．callself_pid2肚子的裡面．．進來了、真的．．．,pid2
+	end
+//孕みパターン
+case_botebara
+	zin_reg_msg,callself_pid2這樣的話．．．嬰兒怎麼辦,1
+	zin_reg_msg,胸部蹦蹦跳跳的、小穴也會受不了吧,1
+	zin_reg_msg,色色的、p_name2,0
+	zin_reg_msg,因為．．．一看到call_pid1、我就再也無法忍耐下去了呢,1
+	zin_reg_msg,真拿你沒辦法啊．．．,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊．．說過的．．也．．tin_str．．不行、的說．．．,pid2
+	zin_old_msg,肚子裡、啊、還有寶寶．．的說．．．,pid2
+	zin_old_msg,沒事的。現在已經是穩定期了哦、所以callself_pid1不會對寶寶產生影響的,pid1
+	zin_old_msg,即便這樣．．．也．．這樣的身體．．被看到的話．．會害羞的說．．．,pid2
+	zin_old_msg,呵呵．．．很可愛呢、call_pid2．．．,pid1
+	zin_old_msg,嗚啊．．嗚呃．．tin_str．．callself_pid2的肚子的裡面．．跳動著呢．．．,pid2
+	zin_old_msg,一邊做著那樣的事、心情也會一邊變得愉悅起來的吧？,pid1
+	zin_old_msg,不要說．．這樣的．．因為．．因為啊．．．,pid2
+	zin_old_msg,tin_str對．．．子宮．．．被努力的頂著．．喜歡．．所以啊．．．,pid2
+	zin_old_msg,是嗎．．．那麼、更加更加的喲．．．,pid1
+	zin_old_msg,不行．．嗚嗯．．呼啊啊啊．．不行．．callself_pid2．．callself_pid2啊．．．,pid2
+	zin_old_msg,tin_str的龜頭．．．溫柔的．．．刺溜刺溜的抽動著．．．心情好好．．．熱呼呼的．．想要、你的！,pid2
+	zin_old_msg,好啊．．．call_pid2的肚子深處、很多很多會出來的哦,pid1
+	zin_old_msg,那樣的．．callself_pid2．．啊．．嗯嗯．．嗯．．不行．．callself_pid2．．已經．．忍耐．．不住的說．．嗯嗯嗯嗯啊！,pid2
+	zin_flush,pid2
+	end

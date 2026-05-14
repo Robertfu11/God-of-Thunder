@@ -1,0 +1,94 @@
+//	内助の功
+//	条件
+//	プレイヤーに妻がいる
+//	プレイヤーと妻が同じ陣営である
+//	ランダム5
+//	さらに2/7でアイテム、4/7功績、1/7で養子
+
+eve_start
+	if_val,勲功:player<12080
+	if_exist_fam,player,妻
+	set_epid2,pval
+	if_same_oid,player,pid2
+	if_rnd,5
+eve_end
+
+bgm_chg,60
+set_epid1,player
+
+chk_mval,勲功:pid1>=11000,,,,
+chk_mval_then
+	rnd,3
+	goto,*chkkunkorndend
+chk_mval_else
+	rnd,7
+*chkkunkorndend
+case0
+//養子
+	txtload,u312_2
+case1
+case2
+//アイテム
+	zin_reg_init
+	zin_reg_event,内助の功　アイテム編,pid2,,,gzin18
+	zin_reg_msg,この懸賞、なかなか良い物がもらえるのね,0
+	zin_reg_msg,あの人喜んでくれるかしらcr応募してみよう,0
+	zin_reg_qnar,p_name2の懸賞が当たりました。
+	zin_reg_button,0
+	zin_reg_exit
+	gosub,*itemget
+	end
+case3
+case4
+case5
+case6
+//功績値
+	get_mpid,勲功<12080,勲功>勲功:player,覇王=覇王:player,婚姻!pid1,状態=2,,
+	chk_mval,pval=0,,,,
+	chk_mval_then
+		set_epid3,poid_player
+		goto,*pid3selend
+	chk_mval_else
+		set_epid3,pval
+	*pid3selend
+	zin_reg_init
+	zin_reg_event,内助の功　功績編,pid1,,,gzin43
+	zin_reg_msg,あれ．．．crあの書類どこやったかな．．．,0
+	zin_reg_face_1,pid2
+	zin_reg_msg,はい、うちに忘れてたわよ,1
+	zin_reg_msg,あ、ああ。　ありがとう,0
+	bl_fadeout
+	zin_reg_event,内助の功　功績編,pid3,pid1,,gzin15
+	zin_regs_msg,状況はどうなっている？,状況はどうなっているの？,0
+	zin_reg_msg,ええと．．．,1
+	zin_reg_face_1,pid2
+	zin_reg_msg,．．．の通り、順調です,1
+	zin_regs_msg,そうか,そう,0
+	zin_reg_face_0,pid1
+	zin_reg_msg,助かったよ,0
+	zin_reg_msg,気にしないで,1
+	zin_reg_qnar,p_name2の内助の功により仕事が捗った。（功績＋５０）
+	zin_reg_button,0
+	zin_reg_exit
+	add_kunkou,player,50
+	end
+end
+
+*itemget
+	rnd,5
+	case0
+		get_item,player,0,精力剤
+		return
+	case1
+		get_item,player,0,一族の家宝
+		return
+	case2
+		get_item,player,0,脱出ポッド
+		return
+	case3
+		get_item,player,0,純愛の証
+		return
+	case4
+		get_item,player,0,派閥加入券
+		return
+return

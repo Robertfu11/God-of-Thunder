@@ -1,0 +1,14 @@
+eve_start
+    if_chksts,429,親仇,!0
+    if_eveflg,62,1
+eve_end
+
+set_eveflg,62,2
+get_kataki_oya,429
+//仇をイベントフラグに設定
+set_eveflg,64,pval
+//カタキにSP2を設定
+upd_sts,pval,特殊,2
+//巴尼亞瓦の仇クリア　→　仇イベントを発生させない
+upd_sts,429,親仇,0
+end

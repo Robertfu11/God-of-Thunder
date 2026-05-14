@@ -1,0 +1,37 @@
+//一時フラグを初期化
+set_eveflg,210,0
+
+zin_reg_event,誘拐依頼,pid1,,,
+zin_reg_msg,どの軍の女性を誘拐しようか？,0
+for,PMAX,210,1
+	//他勢力の覇王抽出
+	chk_mval,覇王:eveflg210!poid_player,覇王:eveflg210=eveflg210,勲功:eveflg210=13000,状態:eveflg210=2,
+	chk_mval_then
+		//対象となる女性がいるか？
+		get_mpid,覇王=eveflg210,状態=2,性別=2,特殊!2,,,
+		chk_ormval,pval>0,,,,
+		chk_ormval_then
+			zin_reg_face,eveflg210
+			zin_reg_msg,（p_name_eveflg(210)軍か？）,0
+			zin_reg_3sel,はい,いいえ,依頼をやめる
+			get_resp
+			ret_sel1
+				//外部ファイル読み込み
+				txtload,u553_sentakuwoman
+				break
+			ret_sel3
+				zin_reg_msg,（やっぱりcr　やめておこう）,0
+				zin_reg_button,0
+				zin_reg_exit
+				end
+			ret_sel2
+		chk_ormval_else
+	chk_mval_else
+		chk_eveflg,210,3599
+		chk_eveflg_then
+			set_eveflg,210,1
+		chk_eveflg_else
+			continue
+next
+
+end

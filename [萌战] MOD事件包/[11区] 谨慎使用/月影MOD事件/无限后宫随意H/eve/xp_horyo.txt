@@ -1,0 +1,34 @@
+bgm_chg,53
+zin_reg_init
+zin_reg_event,地下牢,pid1,pid2,,gzin35
+zin_reg_msg,如何？cr在這住的還習慣吧？,0
+zin_reg_msg,有何貴幹？,1
+zin_reg_msg,今天想好好疼愛妳呢,0
+zin_reg_msg,真讓人期待,0
+zin_reg_msg,你、你在說什麼？,1
+zin_reg_msg,來人、把她送到我的房間去,0
+zin_reg_face_1,756
+zin_reg_msg,了解！！,1
+zin_reg_msg,送到特別室去,0
+zin_reg_msg,知道了,1
+bl_fadeout
+zin_old_init
+zin_old_img_pid,pid2,0
+zin_old_msg,你、你這．．．混蛋！！　嗚嗚！！,pid2
+zin_old_msg,喔喔、比想像中還舒服的小穴呢,pid1
+zin_old_msg,如何、成為callself_pid1的妾就可以自由活動喔？,pid1
+zin_old_msg,誰、誰要當你的女人．．．cr嗚啊啊啊！！,pid2
+zin_old_msg,這樣呀、不過在這邊玩妳也一樣嘛。cr哈哈哈！！,pid1
+zin_old_msg,把別人．．．當成玩具．．．cr．．．玩、玩弄．．．真是．．．最、最糟糕的混蛋．．．,pid2
+zin_old_msg,真掘強呀、讓callself_pid1胯下的東西更硬了呢cr看招！！,pid1
+zin_old_msg,啊啊．．．嗚啊啊！！cr住、住手呀．．．嗚咿！！,pid2
+zin_old_msg,嗯、是時候讓你懷上混蛋的孩子了呢,pid1
+zin_old_msg,咦．．．什麼．．．你難道要．．．,pid2
+zin_old_msg,不、不要呀．．．不行．．．不可以射在裡面．．．,pid2
+zin_old_msg,求求你！！　裡面不行！！　我求你了！！cr請、請不要中出！！,pid2
+zin_old_msg,呼、要去啦！！！！！！,pid1
+zin_old_msg,咿、咿呀！！cr裡、裡面、不不行ーーーーーーー！！,pid2
+zin_flush,pid2
+zin_old_msg,嗚．．．好過分．．．明明說了．．．不能射在裡面的．．．cr還射得．．．這樣多．．．,pid2
+zin_reg_button,16
+end

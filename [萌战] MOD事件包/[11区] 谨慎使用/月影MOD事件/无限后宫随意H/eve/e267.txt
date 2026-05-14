@@ -1,0 +1,32 @@
+eve_start
+	if_date,89,6
+	if_haou,621
+eve_end
+
+chk_exeplayer,621,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,56
+//zin_reg_init
+zin_reg_event,,356,621,,gzin9
+zin_reg_qnar,巴庫恩對瓦德的事很掛心，將坎西叫來了。cr巴庫恩向坎西說明了事情的原委。
+zin_reg_msg,坎西啊，我也活不久了,1
+zin_reg_msg,可是我很擔心犬子，這麼下去我可是死也不瞑目啊,1
+zin_reg_msg,巴庫恩大人，請別如此泄氣．．．,0
+zin_reg_msg,坎西啊，你是和瓦德一起長大的,1
+zin_reg_msg,幫我找到他,1
+zin_reg_msg,有你在他身邊，我也就放心多了,1
+zin_reg_msg,我明白了cr無論如何我都會找到瓦德大人，把他帶回來的,0
+zin_reg_msg,沒有必要把他帶回來,1
+zin_reg_msg,你找到他的時候，估計我已經不在這個世上了,1
+zin_reg_msg,不過，有句話你可要幫我帶到,1
+zin_reg_msg,貝塔大人複活的時刻快要來臨了,1
+zin_reg_msg,貝塔大人如遇國難，務必助其一臂之力,1
+zin_reg_msg,巴庫恩大人．．．．,0
+zin_reg_msg,拜託你了，坎西,1
+zin_reg_msg,遵命！！,0
+zin_reg_button,0
+//zin_reg_exit
+end

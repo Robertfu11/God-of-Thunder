@@ -1,0 +1,104 @@
+//海賊オルド　妹
+zin_old_init
+zin_old_img_pid,pid2,1
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	//体位ごとに分岐
+	switch_otaii,pid2
+	case_okijo
+		zin_old_msg,call_pid21のtin_str、おっきいよ．．．．crp_name2のオマンコ．．．裂けちゃうよっ！,pid2
+		zin_old_msg,お前の中はすげえ締まりだぜ。あっという間にイキそうだ,pid1
+		zin_old_msg,ああん、そんなにすぐイッたらダメだからね。私の気持よくなる暇がなくなっちゃう！,pid2
+		zin_old_msg,大丈夫だよ、お前をイかせるまで、イッたりしないぜ,pid1
+		zin_old_msg,ほんとに？　p_name2の腰技に耐えられるのかしら？,pid2
+		zin_old_qnar,p_name2はp_name1の上で器用に腰をくねらせて、激しく上下に打ちつけた。
+		zin_old_msg,くっ．．．．すげえな．．．．tin_strが．．．吸い取られそうだ．．．,pid1
+		zin_old_msg,まだまだこんなものじゃないわよ！！,pid2
+		zin_old_msg,うくううううっ！！,pid1
+		zin_flush,pid2
+		zin_old_msg,え、なにっ？　もしかして．．．．イッちゃったの？,pid2
+		zin_old_msg,へへ、どうやらそのようだな,pid1
+		zin_old_msg,そんな、まだ私、イッてないのに！！,pid2
+		zin_old_msg,すまねえ、次は我慢するからよ、今日は勘弁な,pid1
+		zin_old_msg,もう、最低っ！！,pid2
+		end
+	case_oback
+	case_oseijo
+	default_otaii
+		zin_old_msg,あんっ．．．call_pid21のtin_str．．．すごく熱い．．．,pid2
+		zin_old_msg,お前の中はトロトロだぜ。とっくに濡れてたみたいだな。スケベな妹だ,pid1
+		zin_old_msg,そ、そんなこと言わないでよ、call_pid21！！,pid2
+		zin_old_msg,悪かったな、でも好きだぜ、エッチな妹は,pid1
+		zin_old_msg,ほ、ほんとに．．．．ああっ．．．すごいよcall_pid21．．．ズンズン来るうっ！！,pid2
+		zin_old_msg,もっと、もっといっぱいかき回して！！,pid2
+		zin_old_msg,いいぜ．．．これでどうだっ！！,pid1
+		zin_old_msg,あひいいいっ．．．深い．．．深いよcall_pid21！！　p_name2の子宮．．．潰れちゃう！！,pid2
+		zin_old_msg,あ、あんっ．．．もう．．．イク．．．call_pid21のtane_str．．．いっぱい．．．いっぱいほしいいいっ！！,pid2
+		zin_old_msg,よし、たっぷり出してやるからな！　元気な子を孕むんだぞ！！,pid1
+		zin_old_msg,う、うん．．．call_pid21の子．．．call_pid21の子孕ませてええええっ！！！！,pid2
+		zin_flush,pid2
+		end
+
+//初膜パターン
+case_hatumaku
+		zin_old_msg,ああっ．．．call_pid21に．．．tin_str．．．ねじ込まれちゃったよぉ．．．,pid2
+		zin_old_msg,ほう．．．これがp_name2の中か．．．crいい締りじゃねえか．．．どうだ？　少しは気持ちいいか？,pid1
+		zin_old_msg,う、うん．．．よくわからないけど．．．気持ちいいと思う．．．,pid2
+		zin_old_msg,よし、それじゃゆっくり動くからな。心配しなくてもだんだん気持ちよくなるって,pid1
+		zin_old_msg,そ、そうかな．．．あっ．．．あんっ．．．んんっ．．．,pid2
+		zin_old_msg,なんだ？　ココがいいのか？,pid1
+		zin_old_msg,あひっ．．．ダ、ダメっ．．．なにこれ．．．そこ．．．い、イイ．．．,pid2
+		zin_old_msg,よーし、わかったぞ、p_name2はココがいいんだな！！,pid1
+		zin_old_msg,あっ．．．ああんっ！！　だ、ダメだよcall_pid21！！　そこばっかり、こすらないでぇ！！,pid2
+		zin_old_msg,p_name2、なんだか．．なんだか、おかしくなっちゃうよぉ！！！,pid2
+		zin_old_msg,そうか、p_name2は．．．初めてにしてイキそうだな,pid1
+		zin_old_msg,い、イク？．．．い。イクって．．．な、なに！！,pid2
+		zin_old_msg,もうすぐわかるよ、ほら！　だんだん変な感じが押し寄せてきただろ？,pid1
+		zin_old_msg,え、なに！　なにか．．．なにかが．．．p_name2の身体．．．あ、だ、ダメ．．．もう．．．我慢できないいいっ！！！！,pid2
+		zin_flush,pid2
+		zin_old_msg,はぁ～～はぁ～～いったい．．．私．．どうしたの．．．はぁ～～,pid2
+		zin_old_msg,いいイキっぷりだったな。気持ちよかっただろ。それがオーガズム、イクってヤツだ,pid1
+		zin_old_msg,はぁ～～はぁ～～私．．．．イッちゃったんだ．．．,pid2
+		end
+
+//孕みパターン
+case_botebara
+	//体位ごとに分岐
+	switch_otaii,pid2
+	case_okijo
+		zin_old_msg,call_pid21のtin_str、おっきいよ．．．．crp_name2のオマンコ．．．裂けちゃうよっ！,pid2
+		zin_old_msg,ガキが出来たのにあんまりp_name2のマンコは大きくなってねえな,pid1
+		zin_old_msg,まあ、いつまでも初物みたいで気持ちいいけどよ,pid1
+		zin_old_msg,またぁ．．．いつもみたいに私より先にイッたらダメだからね,pid2
+		zin_old_msg,わかってるよ,pid1
+		zin_old_msg,ほんとに？　お腹に赤ちゃんいるんだから、前みたいに腰は振れないわよ,pid2
+		zin_old_qnar,p_name2はp_name1の上で器用に腰をくねらせて、激しく前後にすべらせた。
+		zin_old_msg,お、おい．．．前より動きがエロくなって．．．き、気持ちいいぞ．．．,pid1
+		zin_old_msg,そ、そう？　赤ちゃんのこと考えて動いてるだけなんだけど．．．,pid2
+		zin_old_msg,うくううううっ！！,pid1
+		zin_flush,pid2
+		zin_old_msg,え、なにっ？　もしかして．．．．イッちゃったの？,pid2
+		zin_old_msg,へへ、どうやらそのようだな,pid1
+		zin_old_msg,そんな、まだ私、イッてないのに！！,pid2
+		zin_old_msg,すまねえ、次は我慢するからよ、今日は勘弁な,pid1
+		zin_old_msg,もう、いつもそればっかり！！,pid2
+		end
+	case_oback
+	case_oseijo
+	default_otaii
+		zin_old_msg,あんっ．．．call_pid21のtin_str．．．すごく熱い．．．,pid2
+		zin_old_msg,お前の中はトロトロだぜ。孕んでいてもsiru_strがダラダラ出てくるな。スケベな妹だ,pid1
+		zin_old_msg,ま、また変なこと言わないでよ、call_pid21！！,pid2
+		zin_old_msg,でも、嬉しいぜ。お前が孕んでもエロい妹のままでよ,pid1
+		zin_old_msg,う、うん．．．だって．．．なんだかこれまでより感じやすくなったみたいなの,pid2
+		zin_old_msg,そうか、ならお前のイキ顔、また見せてくれよ！！,pid1
+		zin_old_qnar,そう言うと、p_name1はp_name2に遠慮無く腰を振り始めた。
+		zin_old_msg,あ、ああんっ！！　ちょっと．．．もっとやさしくしてよ．．．,pid2
+		zin_old_msg,で、でも．．．とっても．．．感じちゃううううっ！！,pid2
+		zin_old_msg,へへ、妊娠しても、お前の味は変わらねえな．．．あ、安心したぜ．．．,pid1
+		zin_old_msg,ああっ！　も、もう．．．イッちゃう．．ああっ．．いやぁん．．はああーーっ！,pid2
+		zin_flush,pid2
+		end

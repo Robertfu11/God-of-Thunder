@@ -1,0 +1,72 @@
+//覇王オルド　妾  強引
+//■Ｈ体位：正常位
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,今宵はcallself_pid1の小覇王もパワーがありあまっている,0
+	zin_reg_msg,イヤでも貴様の身体を使わせてもらうぞ,0
+	zin_reg_msg,ひいぃ！！,1
+	zin_reg_msg,そ、そんな大きなモノ入りません！！,1
+	zin_reg_msg,ならば、ねじ込むまでよ！！,0
+	zin_reg_msg,ああ、そんな、だめぇ！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,ああっ．．．tin_strがっ．．．callself_pid2の中で．．．暴れてる．．．,pid2
+	zin_old_msg,フフッ．．．小突かれて、call_pid2も本当は気持ちいいんだろう？,pid1
+	zin_old_msg,．．そんな、ことっ．．．ありま、せんっ．．．んん．．ぁ．．あああっ！,pid2
+	zin_old_msg,口では何と言おうと、call_pid2の中は、どんどん潤んできているぞ？,pid1
+	zin_old_msg,い、いわないで．．そんなの．．はずか、しいっ．．．,pid2
+	zin_old_msg,いくら口で取り繕おうとも、call_pid2はcallself_pid1の精を欲しがっているんだ．．．,pid1
+	zin_old_msg,その小さな身体に、たっぷりと中に出してやる,pid1
+	zin_old_msg,いやああぁ．．man_strに．．．中に出さないで．．．,pid2
+	zin_flush,pid2
+	zin_old_msg,ああっ．．．出さないでって言ったのに．．．crどんどん、流れ込んでくる．．．,pid2
+	end
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,貴様は今宵が初めてか？,0
+	zin_reg_msg,ならば、その気持ちはわからぬでもない,0
+	zin_reg_msg,で、では．．．,1
+	zin_reg_msg,しかし、その幼い身体を見てはどうにも欲求が抑えられぬわ,0
+	zin_reg_msg,先延ばしにすればその膜を他の男に奪われるやもしれぬ,0
+	zin_reg_msg,そ、そんなことはありません,1
+	zin_reg_msg,callself_pid1はうまいモノを一番先に食うタイプだ,0
+	zin_reg_msg,ああ、だめcr放してぇ！！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,くうっっっ！！crああああっ．．．ひ．．ひぐっ．．．,pid2
+	zin_old_msg,いた、いっ．．．いたい、ですっ．．．こんなっ．．．ひどいっ．．．,pid2
+	zin_old_msg,ひどい？crcall_pid2の役目はcallself_pid1の子を孕むことだろう？,pid1
+	zin_old_msg,それはっ．．．で、でもっ．．．こんなっ．．．むりやり、ひどい、ですっ．．．,pid2
+	zin_old_msg,ああ、それは悪かった,pid1
+	zin_old_msg,詫びとして、激しく犯して早く終わらせてやる,pid1
+	zin_old_msg,ひいいいっ！！！crああっ．．いた、い．．んんんっ！,pid2
+	zin_old_msg,いたい．．です．．おねがい、です．．crもっと．．もっと．．ゆっくりいぃっ！！！,pid2
+	zin_old_msg,そろそろcall_pid2の奥に、たっぷりとtane_strをくれてやる,pid1
+	zin_old_msg,そんな．．ああ．．あ．．ああ．．crいや．．いや、ですっ．．．おねがいっ．．．,pid2
+	zin_old_msg,やめて．．ください．．やめ、て．．んんんんっ！,pid2
+	zin_flush,pid2
+	zin_old_msg,ああ．．あついの．．．ドクドク．．．入ってる．．．,pid2
+	end
+//孕みパターン
+case_botebara
+	zin_reg_msg,フフ、ずいぶん大きくなったな,0
+	zin_reg_msg,ですから、今日はお帰りください,1
+	zin_reg_msg,ならぬ,0
+	zin_reg_msg,その身体、じっくり味わってみたくなったわ,0
+	zin_reg_msg,そ、そんな！！,1
+	zin_reg_msg,さあ、今宵も余の小覇王が大暴れしてくれる,0
+	zin_reg_msg,ああ、お、お願い、許してぇ！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,ああ．．．お願い．．．もっとやさしくして．．．,pid2
+	zin_old_msg,ほう．．．これが孕み女という奴か．．．crすごいな、大きな乳がもう１つあるようだ,pid1
+	zin_old_msg,しかも、妊娠前より感度が上がったのではないか？crこの濡れ具合はタダ事ではないな,pid1
+	zin_old_msg,そ、そんなことは．．．あ、ありません．．．ほんとに．．．苦しいんです．．．,pid2
+	zin_old_msg,嘘を言うな、ホントは子ができても子宮が疼きっぱなしなのだろう？,pid1
+	zin_old_msg,まったく、もうすぐ母親になるというのに、とんでもない奴だ。cr罰として、たっぷりと中に出してやる,pid1
+	zin_old_msg,そん、な．．あああ．．はげ、しい．．んん．．んぁ．．あ．．あ．．だめええええええっ！,pid2
+	zin_flush,pid2
+	end

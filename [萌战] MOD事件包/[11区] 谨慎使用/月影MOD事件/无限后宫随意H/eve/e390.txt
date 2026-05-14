@@ -1,0 +1,46 @@
+eve_start
+	if_date,80,2
+//艾涅、阿達姆斯領
+	if_hid,16,10
+//サイモン、阿貝莫伊卡配下
+	if_poid,265,3
+	if_poid,226,3
+eve_end
+
+chk_exeplayer,3,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,阿貝莫伊卡的王宮,3,265,,gzin8
+zin_reg_msg,阿貝莫伊卡大人、在下有事稟告,1
+zin_reg_msg,什麼事、賽蒙,0
+zin_reg_msg,好的、現在就向您彙報攻略阿達姆斯的計劃,1
+zin_reg_msg,阿達姆斯麼、我知道了,0
+zin_reg_msg,可是、我們的國家目前還非常脆弱,0
+zin_reg_msg,侵略他國需要耗費大量的人力物力,0
+zin_reg_msg,到那時就晚了啊,1
+zin_reg_msg,阿達姆斯現在必定在覬覦著我們的家園,1
+zin_reg_msg,以王師之神速、一鼓作氣地把他打掉才是上策啊,1
+zin_reg_msg,我很了解阿達姆斯這個人,0
+zin_reg_msg,他估計也很了解我,0
+zin_reg_msg,那傢伙是一定不會主動向我挑起戰端的,0
+zin_reg_msg,因為他知道我軍的強悍,0
+zin_reg_msg,不過即使他打過來了也沒什麼大不了的,0
+zin_reg_msg,他那點艦隊、隨時都能給他拍扁了,0
+zin_reg_msg,可是,1
+zin_reg_msg,如果他正面無法取勝、他在背地裏沒准兒會出什麼陰招．．．,1
+zin_reg_msg,好了、別再管那種戰五渣了,0
+zin_reg_msg,相比而言、反倒是洛根比較讓我擔心,0
+zin_reg_msg,我們必須嚴防從阿達姆斯那邊過來洛根軍,0
+zin_reg_msg,可是、大人．．． ,1
+zin_reg_msg,唉、夠了！！,0
+zin_reg_msg,我不想再聽那種建議了！！,0
+zin_reg_face_1,226
+zin_reg_msg,夫君、賽蒙閣下是我軍的重臣,1
+zin_reg_msg,那事情能不能再好好地商議一下？,1
+zin_reg_msg,唔．．．．,0
+zin_reg_button,0
+//zin_reg_exit

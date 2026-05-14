@@ -1,0 +1,36 @@
+eve_start
+    if_eveflg,62,2
+//阿達姆斯を殺した覇王が生きている
+    if_haou,eveflg064
+//阿達姆斯を殺した覇王は男である
+	if_val,性別:eveflg064=1
+//巴尼亞瓦12歳以上 15歳以下
+    if_chksts,429,年齢,>11
+    if_chksts,429,年齢,<16
+eve_end
+
+set_eveflg,62,3
+
+chk_exeplayer,eveflg064,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+set_epid1,eveflg064
+bgm_chg,69
+zin_reg_event,士官學校入隊登記處,756,0,,gzin13
+zin_reg_qnar,某一天，一名少年來到p_name1軍的士官學校入隊了。
+zin_reg_msg,好，下一個,0
+zin_reg_face_r,429
+zin_reg_msg,是！！,1
+zin_reg_msg,名字是？,0
+zin_reg_msg,我的名字是巴尼亞瓦,1
+zin_reg_msg,巴尼亞瓦……,0
+zin_reg_qnar,負責登記的人用手上的終端確認了一下名字。
+zin_reg_msg,哦哦，這個啊cr你是駕駛員候補生吧,0
+zin_reg_msg,去Ｄ地域的２１區域吧,0
+zin_reg_msg,是！！,1
+zin_reg_face_r,0
+zin_reg_msg,好，下一個！！,0
+zin_reg_button,0
+end

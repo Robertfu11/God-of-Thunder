@@ -1,0 +1,11 @@
+bgm_chg,59
+zin_reg_init
+zin_reg_event,p_name2的王宮,pid1,0,,gzin9
+zin_reg_msg,p_name3大人現在、在幹些什麼呢．．．,0
+zin_reg_msg,滿腦子都是p_name3大人的影子．．．,0
+zin_reg_msg,真想再見一次啊．．．．,0
+zin_reg_msg,倒不如、讓他攻打這顆行星．．．,0
+zin_reg_msg,把我虜走該多好．．．．,0
+zin_reg_button,0
+zin_reg_exit
+end

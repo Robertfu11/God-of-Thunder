@@ -1,0 +1,227 @@
+//依照玩家為部下或霸王分配最大數
+chk_sts,player,勲功,13000
+chk_sts_then
+	set_eveflg,291,10
+	//王族子種
+	set_eveflg,292,0
+	//部下子種
+	set_eveflg,293,0
+	//酒女
+	goto,*count
+chk_sts_else
+	set_eveflg,291,7
+	//王族子種
+	set_eveflg,292,7
+	//部下子種
+	set_eveflg,293,12
+	//酒女
+	goto,*count
+
+//現有數量統計
+*count
+for,PMAX,290,2
+	chk_msts,eveflg290,状態,1,年齢,0,NON,0,NON,0,NON,0
+	chk_msts_then
+		sub,291,eveflg291,1
+		continue
+	chk_msts_else
+
+	chk_msts,eveflg290,状態,13,年齢,<1,年齢,>-4,NON,0,NON,0
+	chk_msts_then
+		sub,292,eveflg292,1
+		continue
+	chk_msts_else
+
+	chk_msts,eveflg290,状態,19,年齢,>24,NON,0,NON,0,NON,0
+	chk_msts_then
+		upd_sts,eveflg290,状態,3
+		//dbg_print,酒女畢業,eveflg290
+		continue
+	chk_msts_else
+
+	chk_msts,eveflg290,状態,19,NON,0,NON,0,NON,0,NON,0
+	chk_msts_then
+		upd_sts,eveflg290,年齢,1
+		sub,293,eveflg293,1
+		continue
+	chk_msts_else
+next
+
+//dbg_print,王族子種缺,eveflg291
+//dbg_print,部下子種缺,eveflg292
+//dbg_print,酒女缺,eveflg293
+
+//死者復活,第一次撥補
+for,PMAX,290,1
+	//死亡判定
+	chk_msts,eveflg290,状態,3,性別,2,特殊,0,NON,0,NON,0
+	chk_msts_then
+
+		set_eveflg,295,0
+		//清空判定要補到哪的旗標,王族1,部下13,酒女19,浪人5,未定案0
+
+		chk_mval,eveflg295=0,eveflg291>2,eveflg291>eveflg292,,
+		chk_mval_then
+			set_eveflg,295,1
+			sub,291,eveflg291,1
+		chk_mval_else
+		//王族子種缺很大時
+
+		chk_mval,eveflg295=0,eveflg292>2,,,
+		chk_mval_then
+			set_eveflg,295,13
+			sub,292,eveflg292,1
+		chk_mval_else
+		//部下子種缺很大時
+
+		chk_mval,eveflg295=0,eveflg293>4,,,
+		chk_mval_then
+			set_eveflg,295,19
+			sub,293,eveflg293,1
+		chk_mval_else
+		//酒女缺很大時
+
+		chk_mval,eveflg295=0,eveflg291>0,eveflg291>eveflg292,,
+		chk_mval_then
+			set_eveflg,295,1
+			sub,291,eveflg291,1
+		chk_mval_else
+		//王族子種一般撥補
+
+		chk_mval,eveflg295=0,eveflg292>0,,,
+		chk_mval_then
+			set_eveflg,295,13
+			sub,292,eveflg292,1
+		chk_mval_else
+		//部下子種一般撥補
+
+		chk_mval,eveflg295=0,eveflg293>0,,,
+		chk_mval_then
+			set_eveflg,295,19
+			sub,293,eveflg293,1
+		chk_mval_else
+		//酒女一般撥補
+
+		chk_mval,eveflg295=0,,,,
+		chk_mval_then
+			set_eveflg,295,5
+		chk_mval_else
+		//浪人決定
+
+		//共同處理
+		upd_sts,eveflg290,父,0
+		upd_sts,eveflg290,母,0
+		upd_sts,eveflg290,状態,eveflg295
+		upd_sts,eveflg290,友好,50
+		set_virgin,eveflg290
+		set_kataki_oya,eveflg290,0,0
+		set_kataki_yome,eveflg290,0,0
+		set_kataki_kodomo,eveflg290,0,0
+
+		//年齡處理(select_pid亂用XD)
+		select_pid,eveflg295
+		case19
+			set_pnen,eveflg290,12
+			//dbg_print,酒女,eveflg290
+			continue
+		default
+			set_pnen,eveflg290,1
+			upd_sts,eveflg290,年齢,-1
+			continue
+	chk_msts_else
+
+	//男性復活
+	chk_msts,eveflg290,状態,3,性別,1,特殊,0,NON,0,NON,0
+	chk_msts_then
+		upd_sts,eveflg290,父,0
+		upd_sts,eveflg290,母,0
+		upd_sts,eveflg290,状態,5
+		upd_sts,eveflg290,友好,50
+		set_kataki_oya,eveflg290,0,0
+		set_kataki_yome,eveflg290,0,0
+		set_kataki_kodomo,eveflg290,0,0
+		set_pnen,eveflg290,1
+		upd_sts,eveflg290,年齢,-1
+		continue
+	chk_msts_else
+next
+
+//dbg_print,已補一次後王族子種缺,eveflg291
+//dbg_print,部下子種缺,eveflg292
+//dbg_print,酒女缺,eveflg293
+
+chk_ormval,eveflg291>2,eveflg292>2,eveflg291>4,,
+chk_ormval_else
+	goto,*TheEnd
+chk_ormval_then
+
+//還是缺很大,從浪人補
+for,PMAX,290,1
+	chk_msts,eveflg290,状態,5,性別,2,年齢,<6,父,0,母,0
+	chk_msts_then
+
+		set_eveflg,295,0
+		//清空判定要補到哪的旗標,王族1,部下13,酒女19,浪人5,未定案0
+
+		chk_mval,eveflg295=0,eveflg291>2,eveflg291>eveflg292,,
+		chk_mval_then
+			set_eveflg,295,1
+			sub,291,eveflg291,1
+		chk_mval_else
+		//王族子種缺很大時
+
+		chk_mval,eveflg295=0,eveflg292>2,,,
+		chk_mval_then
+			set_eveflg,295,13
+			sub,292,eveflg292,1
+		chk_mval_else
+		//部下子種缺很大時
+
+		chk_mval,eveflg295=0,eveflg293>4,,,
+		chk_mval_then
+			set_eveflg,295,19
+			sub,293,eveflg293,1
+		chk_mval_else
+		//酒女缺很大時
+
+		chk_mval,eveflg295=0,,,,
+		chk_mval_then
+			break
+			//補到沒缺很大就好
+		chk_mval_else
+
+		//共同處理
+		upd_sts,eveflg290,父,0
+		upd_sts,eveflg290,母,0
+		upd_sts,eveflg290,状態,eveflg295
+		upd_sts,eveflg290,友好,50
+		set_virgin,eveflg290
+		set_kataki_oya,eveflg290,0,0
+		set_kataki_yome,eveflg290,0,0
+		set_kataki_kodomo,eveflg290,0,0
+
+		//年齡處理(select_pid亂用XD)
+		select_pid,eveflg295
+		case19
+			set_pnen,eveflg290,12
+			//dbg_print,浪人,eveflg290
+			continue
+		default
+			set_pnen,eveflg290,1
+			upd_sts,eveflg290,年齢,-1
+			continue
+	chk_msts_else
+next
+
+*TheEnd
+//旗標清空
+	set_eveflg,290,0
+	set_eveflg,291,0
+	set_eveflg,292,0
+	set_eveflg,293,0
+	set_eveflg,295,0
+	txtload,u289B
+end
+
+
+

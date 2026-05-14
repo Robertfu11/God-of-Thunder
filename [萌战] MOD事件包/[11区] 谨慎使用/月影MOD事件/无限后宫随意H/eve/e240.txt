@@ -1,0 +1,31 @@
+eve_start
+	if_eveflg,26,0
+	if_date,80,5
+	if_poid,688,624
+eve_end
+
+set_eveflg,26,1
+
+chk_exeplayer,624,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,61
+//zin_reg_init
+zin_reg_event,斯庫洛克的王宮,624,688,,gzin8
+zin_reg_msg,摩西啊、下一代的戰斗用人造人還沒造出來嗎？,0
+zin_reg_msg,哈哈，這次有了出乎意料的發展,1
+zin_reg_msg,現在暫時的緩期．．．．,1
+zin_reg_msg,你這傢伙、不是故意拖時間嗎？,0
+zin_reg_msg,正如字面上的意思所說．．．,1
+zin_reg_msg,嗎 這樣也好,0
+zin_reg_msg,話說回來還記得關於繼承貝塔血緣的孩子逃出這顆行星的傳聞嗎？,0
+zin_reg_msg,是 是的．．．．,1
+zin_reg_msg,那個孩子．．．．cr以防萬一應該處理掉,0
+zin_reg_msg,你調整完的人造人的使命就是殺掉這個孩子,0
+zin_reg_msg,為 為什麼要這麼做．．．,1
+zin_reg_msg,按這個使命進行調整cr明白了嗎、好好的命令他,0
+zin_reg_msg,．．．．．．cr了解了的．．,1
+zin_reg_button,0
+//zin_reg_exit

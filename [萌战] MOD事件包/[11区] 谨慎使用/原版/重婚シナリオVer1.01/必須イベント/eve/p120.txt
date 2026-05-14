@@ -1,0 +1,17 @@
+auth_uid,E6BE
+chk_mval,覇王:pid1!eveflg198,eveflg199!1,状態:player!4,,
+chk_mval_then
+bgm_chg,59
+zin_reg_init
+zin_reg_event,p_name2の王宮,pid1,0,,gzin9
+zin_reg_msg,p_name3様は今頃、何をしておられるのでしょう・・・,0
+zin_reg_msg,p_name3様のことが頭から離れないわ・・・,0
+zin_reg_msg,もう一度、お会いしたい・・・・,0
+zin_reg_msg,いっそのこと、この惑星を攻めてこられないかしら・・・,0
+zin_reg_msg,私を奪っていってほしい・・・・,0
+zin_reg_button,0
+zin_reg_exit
+end
+
+chk_mval_else
+end

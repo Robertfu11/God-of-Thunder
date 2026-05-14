@@ -1,0 +1,48 @@
+eve_start
+	if_eveflg,42,2
+//五月、阿達姆斯配下
+	if_poid,312,10
+//花ひげが阿貝莫伊卡配下
+	if_poid,799,3
+//フィリアが阿貝莫伊卡配下
+	if_poid,226,3
+eve_end
+
+upd_sts,110,19,0
+upd_sts,226,19,0
+set_eveflg,42,3
+
+chk_exeplayer,10,3,0,0
+chk_exeplayer_else
+set_horyo,226,10
+end
+
+chk_exeplayer_then
+bgm_chg,68
+//zin_reg_init
+zin_reg_event,阿貝莫伊卡的王宮,799,312,,gzin24
+zin_reg_qnar,五月遵從主命，潛入了阿貝莫伊卡的王宮。
+zin_reg_msg,是五月嗎？,0
+zin_reg_msg,你是花髭吧,1
+zin_reg_msg,這邊、跟我來,0
+bl_fadeout
+bl_fadein,gzin9
+zin_reg_event,,226,799,,gzin9
+zin_reg_msg,法尼亞大人、打擾了,1
+zin_reg_msg,花髭？,0
+zin_reg_msg,都這時間了，有什麼事嗎！！,0
+zin_reg_msg,是的、確實有緊急情況發生．．．,1
+zin_reg_msg,誒？,0
+bgm_se,15
+zin_reg_msg,咕．．．．,0
+zin_reg_face_0,0
+zin_reg_face_0,312
+zin_reg_msg,相當不錯的身手啊,1
+zin_reg_msg,不用恭維,0
+zin_reg_msg,早點把肉票運出去為好,0
+zin_reg_msg,我明白了,1
+zin_reg_title,法尼亞被綁架了。
+zin_reg_button,0
+//zin_reg_exit
+set_horyo,226,10
+end

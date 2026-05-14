@@ -1,0 +1,57 @@
+zin_reg_msg,call_pid12．．．我喜歡你,0
+zin_reg_msg,你．．．認真的嗎？,1
+zin_reg_msg,都這個時候我才不會開玩笑,0
+zin_reg_msg,你也長大了啊、很寂寞吧,1
+zin_reg_msg,沒關係、我來安慰你吧,1
+zin_reg_msg,call_pid12．．．,0
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_qnar,p_name1將tin_str頂在p_name2的man_str口、緩緩的插了進去。
+	zin_old_msg,call_pid12．．．怎麼樣？,pid1
+	zin_old_msg,好棒．．．弟弟的tin_str．．．進來了．．．,pid2
+	zin_old_msg,動了喲、心情會更加舒暢的喲。,pid1
+	zin_old_msg,嗯啊、嗯啊、啊啊啊啊．．．,pid2
+	zin_old_msg,p_name1、我、要升天了啊啊．．．,pid2
+	zin_old_msg,給我吧、p_name1的tane_str啊啊,pid2
+	zin_old_msg,嗯、call_pid12．．．我也、出來了、嗯嗯啊！！,pid1
+	zin_old_msg,嗯嗯．．啊、啊啊啊啊啊啊！！！,pid2
+	zin_flush,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_old_msg,真、真是的．．．明明姐姐在大著肚子．．．還,pid2
+	zin_old_msg,還要．．．欺負．．．欺負姐姐,pid2
+	zin_old_msg,啊、這樣的、call_pid12．．．很有味道啊．．．。,pid1
+	zin_old_msg,我一見到call_pid12．．．就無法忍耐了呢。,pid1
+	zin_old_msg,嗚嗯嗯！！　啊嗚嗯嗯嗯嗯！！,pid2
+	zin_old_msg,話說、從剛才開始call_pid12的siru_str就在一直的垂流不停呢。,pid1
+	zin_old_msg,啊、tane_str差不多也、要出來了呢。,pid1
+	zin_old_msg,就在call_pid12的man_str裡充分的中出、來表達對此的感謝吧,pid1
+	zin_old_msg,call_pid12的肚子裡已經住著寶寶了呢、不會有問題的、啊哈,pid1
+	zin_old_msg,嗚嗯！！　啊嗚嗯．．．嗯嗯嗯啊啊！！,pid2
+	zin_old_msg,啊、啊啊、不、不行、要、已經．．．高潮了．．,pid2
+	zin_old_msg,啊啊．．高潮．．高潮．．了啊啊啊啊ーー！,pid2
+	zin_flush,pid2
+	end
+
+//初膜ターン
+case_hatumaku
+	zin_old_msg,我、我、還是處女的說．．．,pid2
+	zin_old_msg,call_pid12？　真的嗎？,pid1
+	zin_old_msg,我才沒有說謊啊、你會知道的啊。,pid2
+	zin_old_msg,所以、拜託、一定要溫柔點啊,pid2
+	zin_old_msg,啊、我知道了、call_pid12。,pid1
+	zin_old_qnar,p_name1將tin_str頂在p_name2的man_str口、緩緩的插了進去。
+	zin_old_msg,call_pid12．．．怎麼樣？,pid1
+	zin_old_msg,好．．．好痛．．．,pid2
+	zin_old_msg,不過、沒事了、現在好多了,pid2
+	zin_old_msg,是嗎、那麼、我要開動了、我會讓你更加舒服的。,pid1
+	zin_old_msg,那麼、嗯啊、嗯啊、啊啊．．．,pid2
+	zin_flush,pid2
+	end

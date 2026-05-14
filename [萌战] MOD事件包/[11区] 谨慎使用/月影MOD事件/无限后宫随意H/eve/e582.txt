@@ -1,0 +1,61 @@
+eve_start
+	if_eveflg,31,3
+	//プレイヤーが覇王である
+	if_pkun,player,13000
+eve_end
+
+set_eveflg,31,4
+set_epid1,player
+
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,p_name1的王宮,player,846,,gzin8
+zin_reg_msg,p_name1大人、這次的演唱會大獲成功,1
+zin_reg_msg,衷心感謝您的支持,1
+zin_reg_face_1,847
+zin_reg_msg,p_name1王、非常感謝,1
+zin_reg_face_1,846
+zin_reg_msg,你們一定賺了個盆滿缽滿吧,0
+zin_reg_msg,馬馬虎虎啦、咱可不是志願者呢,1
+zin_reg_msg,下次公演、還要請您多多指教,1
+zin_reg_msg,哼、厚臉皮的傢伙．．．,0
+zin_reg_msg,那就先行告退,1
+zin_reg_2sel,就這樣回去,不准回去
+get_resp
+ret_sel1
+	zin_reg_msg,那就一路平安吧,0
+	zin_reg_msg,非常感謝您的關心,1
+	zin_reg_title,慰問團啟程回去了。
+	zin_reg_button,0
+	//zin_reg_exit
+	end
+
+ret_sel2
+get_kunpsn,player
+	zin_reg_msg,等等！！,0
+	zin_reg_msg,啊？cr什麼事？．．．,1
+	zin_reg_msg,你們不能就這麼走了,0
+	zin_reg_msg,你們有間諜的嫌疑,0
+	zin_reg_msg,暫時先扣下,0
+	zin_reg_msg,把它們都關起來！！,0
+	zin_reg_msg,什、您說什麼！！,1
+zin_reg_face_1,847
+	zin_reg_msg,p_name1王、這一定有什麼誤會！！,1
+	zin_reg_msg,趕緊帶走！！,0
+	zin_reg_msg,啊、不、不要！！,1
+zin_reg_face_1,0
+	zin_reg_msg,謔謔謔謔,0
+zin_reg_face_1,pval
+	zin_reg_msg,這樣做好嗎？,1
+	zin_reg_msg,把人氣歌娘下了大牢、將士們的士氣沒問題吧？,1
+	zin_reg_msg,沒關系,0
+	zin_reg_msg,那個小妞待會我親自審問,0
+	zin_reg_msg,明白了,1
+	zin_reg_title,部下的忠誠度降低了。
+	zin_reg_button,0
+dwn_ploy,player,0,40
+set_eveflg,31,5
+//捕虜設定
+set_horyo,847,player
+//upd_sts,847,1,-35
+	//zin_reg_exit

@@ -1,0 +1,31 @@
+eve_start
+	if_date,91,8
+	if_eveflg,18,8
+	if_poid,219,13
+	if_poid,534,13
+eve_end
+
+set_eveflg,18,9
+
+chk_exeplayer,13,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,69
+//zin_reg_init
+zin_reg_event,村外,219,534,,gzin18
+zin_reg_msg,帶面具的大叔！！,0
+zin_reg_msg,在的吧？,0
+zin_reg_msg,今天也要教我劍術哦！！,1
+zin_reg_face_0,755
+zin_reg_msg,喂喂、俺也不是啥大叔啊,0
+zin_reg_msg,還粉粉嫩呢,0
+zin_reg_msg,就算是這麼說，帶個面具咱啥都不知道嘛,1
+zin_reg_msg,是，是麼．．．．cr也是啊,0
+zin_reg_face_1,219
+zin_reg_msg,吶、今天也教教劍術嘛,1
+zin_reg_msg,好吧，可以的啦cr陪你練習吧,0
+zin_reg_msg,好耶！！,1
+zin_reg_button,0
+//zin_reg_exit

@@ -1,0 +1,57 @@
+bgm_chg,69
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin34
+zin_reg_msg,夫君、你看cr很可愛吧,1
+zin_reg_face,pid3
+zin_reg_msg,這個孩子．．．,0
+zin_reg_msg,拜託了！！cr希望你能認下這個孩子,1
+zin_reg_msg,僅僅只是沒有血緣關系而已,1
+zin_reg_msg,可是這個孩子本身沒有任何過錯啊,1
+zin_reg_msg,我想讓這孩子、作為優秀的你的繼承人,1
+zin_reg_msg,唔．．．,0
+zin_reg_3sel,認作子嗣,暫且讓其出生,流放
+get_resp
+ret_sel1
+	zin_reg_msg,好吧,0
+	zin_reg_msg,這是誰的種子都沒有關系,0
+	zin_reg_msg,這個孩子從今天起就是callself_pid1的孩子,0
+	zin_reg_msg,非常感謝、夫君,1
+	zin_reg_msg,說起來、請先給您的孩子賜個名吧,1
+	zin_reg_msg,名字麼．．．cr好吧,0
+	make_name,pid3
+	zin_reg_msg,buf_str1好不好,0
+	zin_reg_msg,真是個好名字呢,1
+	zin_reg_title,buf_str1出生了。
+	zin_reg_button,0
+	zin_reg_exit
+	upd_sts,pid2,1,50
+	end
+ret_sel2
+	zin_reg_msg,我允許你生下這個孩子,0
+	zin_reg_msg,但是這個孩子我不能認,0
+	zin_reg_msg,怎麼、怎麼會這樣．．．,1
+	zin_reg_msg,把我的愛給別人的孩子、這不太可能吧,0
+	zin_reg_msg,可是．．．．．,1
+	zin_reg_msg,是你孩子沒錯、但是callself_pid1這個爹當得冤,0
+	zin_reg_msg,你不能這麼想cr再怎麼說咱家也算后繼有人了．．．,1
+	zin_reg_msg,這種徒有其表的親屬關系是無法長久的,0
+	zin_reg_msg,尤其是像現在這種時代．．．,0
+	zin_reg_title,p_name3出生了。
+	zin_reg_button,0
+	zin_reg_exit
+	upd_sts,pid2,1,30
+	end
+ret_sel3
+	zin_reg_msg,buf_str2的孩子麼．．．,0
+	zin_reg_msg,不是callself_pid1我的孩子呢,0
+	zin_reg_msg,明天把這孩子送到福利院去吧,0
+	zin_reg_msg,可是、這可是我的孩子呀．．．,1
+	zin_reg_msg,如果你無論如何也不肯割舍的話、那你也一起卷鋪蓋走人,0
+	zin_reg_msg,怎麼會這樣．．．,1
+	zin_reg_msg,我明白了cr明天我就把孩子送到福利機構去,1
+	zin_reg_msg,有勞了,0
+	zin_reg_title,p_name3被放逐了。
+	zin_reg_button,0
+	zin_reg_exit
+	set_hourou,pid3
+	end

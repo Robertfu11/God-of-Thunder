@@ -1,0 +1,40 @@
+eve_start
+	if_date,83,4
+//奧巴爾還活著
+	if_psts,255,2
+//桜花假死設定
+	if_psts,815,6
+eve_end
+
+chk_exeplayer,poid0255,0,0,0
+chk_exeplayer_else
+//奧巴爾死亡
+set_dead,255,815
+end
+
+chk_exeplayer_then
+bgm_chg,53
+//zin_reg_init
+zin_reg_event,奧巴爾的研究所,255,0,,gzin28
+zin_reg_qnar,奧巴爾正在給生化人做調整，背後傳來聲響。
+zin_reg_msg,嗯？　什麼啊？,0
+zin_reg_msg,喂，是有誰在麼？,0
+zin_reg_face_1,815
+zin_reg_msg,嗚嗚．．．．．,1
+zin_reg_msg,你、你是．．．cr桜花！！！,0
+zin_reg_msg,你還活著啊！！,0
+zin_reg_msg,嗚嗚．．．．．cr你．．．我認識,1
+zin_reg_msg,你．．．．cr我討厭．．．．,1
+zin_reg_msg,等、等等．．．．,0
+zin_reg_msg,你好像誤會了什麼．．．,0
+zin_reg_msg,我可是為了研究的發展．．．,0
+bgm_se,15
+zin_reg_msg,嗚啊！！！！,0
+zin_reg_qnar,桜花的拳頭打穿了奧巴爾的腹部。
+zin_reg_face_0,0
+zin_reg_msg,．．．．．．．,1
+zin_reg_title,奧巴爾死了。
+zin_reg_button,0
+//zin_reg_exit
+//奧巴爾死亡
+set_dead,255,815

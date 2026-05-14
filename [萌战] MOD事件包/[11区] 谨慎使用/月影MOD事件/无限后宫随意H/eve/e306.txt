@@ -1,0 +1,25 @@
+eve_start
+	if_date,88,6
+	if_poid,625,537
+eve_end
+
+chk_exeplayer,537,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,61
+get_habatu2,625
+//zin_reg_init
+zin_reg_event,布朗的執務室,625,pval,,gzin33
+zin_reg_msg,布朗大人、給予拉拉威王位可以嗎？,1
+zin_reg_msg,現在的話布朗大人是阿古迪巴軍二把手的事誰都明白不過了,1
+zin_reg_msg,沒關系,0
+zin_reg_msg,現在的老朽從拉拉威那剝奪王位，很多事情會發生的吧,0
+zin_reg_msg,與其那樣來暗中操控這傢夥才是上策啊,0
+zin_reg_msg,現在這個惑星正在不斷被我黨成員佔領,0
+zin_reg_msg,相比拉拉威、老朽的話才有分量,0
+zin_reg_msg,王位什麽的何時都能奪取,0
+zin_reg_msg,原來如此、這樣非常的有意思呢,1
+zin_reg_button,0
+//zin_reg_exit

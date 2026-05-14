@@ -1,0 +1,17 @@
+zin_reg_msg,就算你這麼說、我還是要和你做．．．,0
+zin_reg_msg,只要繼續做的話、你也不會再說出這樣的話了,0
+zin_reg_msg,啊、不要呀！！,1
+zin_reg_msg,來、把衣服脫掉！,0
+zin_reg_msg,啊、不要呀！！,1
+bgm_chg,56
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,痛、好痛呀call_pid21,pid2
+zin_old_msg,沒關係、馬上就會變得舒服起來的,pid1
+zin_old_msg,我根本就沒有感到舒服．．．,pid2
+zin_old_msg,哼哼．．．那就把精液射在妳的裏面！！,pid1
+zin_old_msg,啊、怎麼能這麼隨便！！,pid2
+zin_old_msg,喔．．．射、射了！！,pid1
+zin_old_msg,啊啊啊啊啊！！！哥哥的精液灌進來了！！,pid2
+zin_flush,pid2
+end

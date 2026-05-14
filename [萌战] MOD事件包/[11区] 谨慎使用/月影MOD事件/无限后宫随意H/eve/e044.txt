@@ -1,0 +1,45 @@
+eve_start
+	if_date,70,7
+	//阿貝莫伊卡 アスラン配下
+	if_poid,3,743
+	//フィリア アスラン配下
+	if_poid,226,743
+eve_end
+
+chk_exeplayer,743,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,阿斯蘭的王宮,3,10,,gzin23
+zin_reg_qnar,阿貝莫伊卡奔回王宮內馬上就跟王子阿達姆斯撞在了一起。
+zin_reg_msg,嗚嗚．．．．．．,0
+zin_reg_msg,啊啊．．．．．cr這，這不是王子嗎,1
+zin_reg_msg,這真的是非常失禮了,1
+zin_reg_msg,不，是我的錯,0
+zin_reg_msg,真是非常抱歉,0
+zin_reg_msg,你好像很急的樣子，要去哪裡？,1
+zin_reg_msg,其實是聽說了法尼婭病倒的消息cr雖然不是很嚴重的樣子,0
+zin_reg_msg,這樣還是令人擔心吧,1
+zin_reg_msg,趕快去吧,1
+zin_reg_msg,抱歉,0
+zin_reg_face_0,0
+zin_reg_msg,．．．．．．．,1
+bl_fadeout
+bl_fadein,gzin9
+bgm_chg,54
+zin_reg_event,阿達姆斯的居所,3,226,,gzin9
+zin_reg_msg,法尼婭、沒事吧？,0
+zin_reg_msg,老公．．．．．cr你太緊張了,1
+zin_reg_msg,只是有一點發燒，暈暈的而已,1
+zin_reg_msg,如果只是因為小症狀而導致後悔的狀況可就．．．． ,0
+zin_reg_msg,明天馬上給醫生診斷看看,0
+zin_reg_msg,知道了嗎,0
+zin_reg_msg,是是，我知道了,1
+zin_reg_msg,真的．．．很謝謝你、老公．．．．,1
+zin_reg_msg,恩恩．．．．．,0
+zin_reg_button,0
+//zin_reg_exit
+end

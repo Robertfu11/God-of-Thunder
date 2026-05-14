@@ -1,0 +1,46 @@
+//1回目　義姉オンリー
+zin_reg_msg,むう．．．cr困りましたね,0
+zin_reg_msg,言うことを聞かないとなれば仕方ありません,0
+zin_reg_msg,まずは、これを見ていただきましょうか,0
+zin_reg_qnar,p_name1はp_name2の弱みを見せつけた。
+zin_reg_msg,こ、これは．．．crどうしてcall_pid21が,1
+zin_reg_msg,フフフ、これが世間に知れればあなたはもちろん陛下も困るでしょうな,0
+zin_reg_msg,な、なんて卑怯な男なの,1
+zin_reg_msg,さあ、あらためて返事を聞きましょうか？,0
+zin_reg_msg,わ、わかったわcr言うとおりに．．．crします,1
+zin_reg_msg,クククッ,0
+bl_fadeout
+
+bgm_chg,64
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,お願いp_name1、もうやめて．．．こんなこと．．．ダ、ダメよ．．．,pid2
+zin_old_msg,だめだよcall_pid12、これからがいいところじゃないか,pid1
+chk_mval,初膜:pid2=0,,,,,
+chk_mval_then
+	zin_old_msg,だめよ、私．．．処女なの！！cr初めてなのよっ！！,pid2
+	zin_old_msg,ハハハハ、兄上は今日まで何をしていたんだ,pid1
+	zin_old_msg,この日のために膜をとっておいたと思うと哀れだな,pid1
+chk_mval_else
+	zin_old_msg,ああっ．．．最高だ、call_pid12．．．,pid1
+	zin_old_msg,初めて見た時から．．．いつかこんな日が来ると思っていた．．．,pid1
+	zin_old_msg,あ、あなた．．．私をいつもそんな目で見ていたのねっ！！　このケダモノっ！！,pid2
+	zin_old_msg,なんとでも言うがいい。call_pid12はこうしてcf_pid1の奴隷になったのだからな,pid1
+	zin_old_msg,そ、そんな．．．奴隷だなんて．．．そんなつもりは．．．ないわっ！！　,pid2
+	zin_old_msg,ほう．．．では、あの秘密をバラしてもいいんだな,pid1
+	zin_old_msg,そ、それは．．．ダ、ダメよっ！！,pid2
+	zin_old_msg,ハハハハ、ではcf_pid1の言うことを聞くんだ。さあ、『私はp_name1様の奴隷です』と言ってみろ！！,pid1
+	zin_old_msg,ううっ．．．んんっ．．．そ、そんなこと．．．言えるわけない．．．,pid2
+	zin_old_msg,言うんだ！！,pid1
+	zin_old_msg,．．．．．．．．．．．．．．．．．,pid2
+	zin_old_msg,わ、私は．．．p_name1様の．．．ど、奴隷です．．．．んんっ．．．,pid2
+	zin_old_msg,ハハハハ、見ろ、やはり奴隷ではないかっ！！,pid1
+	zin_old_msg,人の弱みにつけ込んで．．．こんなこと．．．あなたって．．．さ、最低よっ！！,pid2
+	zin_old_msg,フフフ、奴隷が何を言う。crcall_pid12には少しお仕置きが必要のようだ,pid1
+	zin_old_msg,tane_strという仕置がな、フフフ,pid1
+	zin_old_msg,そ、そんなっ！！　ダメよ、今日は何も避妊していないのよ。危ないのっ！！,pid2
+	zin_old_msg,だから、それだけはやめてちょうだい！　お、お願いよ！！,pid2
+	zin_old_msg,ならん！！　cf_pid1の子を孕んで兄上に詫びるんだなっ！！,pid1
+	zin_old_msg,そ、そんな！！　ダ、ダメ！！　ダメだってばああああああああっ！！！！！,pid2
+	zin_flush,pid2
+	end

@@ -1,0 +1,43 @@
+//夜這い　弱みオルド 姉
+chk_mval,オルド回数:pid2=0,,,,,
+//初回
+chk_mval_then
+	zin_old_msg,這、這麼做。cr這．．這樣的、可．．可以結束了吧,pid2
+	zin_old_msg,呵呵、好啊、如果你能令我得到滿足的話、也許我會考慮一下哈,pid1
+	zin_old_msg,知、知道了,pid2
+	goto,*np1
+//2回目以降
+chk_mval_else
+	zin_old_msg,上次不是已經說過結束的麼．．．為什麼．．．,pid2
+	zin_old_msg,因為還是不滿意啊。cr如果陛下的姐姐可以再次奉仕的話、也許我會考慮一下哈,pid1
+	zin_old_msg,那、那樣．．．,pid2
+
+*np1
+
+//体位ごとに分岐
+switch_otaii,pid2
+//騎乗位
+case_okijo
+	zin_old_qnar,p_name2在p_name1的身上開始激烈的搖動著腰。,0
+	zin_old_msg,這是這是．．．陛下的姐姐哪裡有被脅迫的意思啊。cr自已都在絶妙的搖動著腰部。是不是已經忘不掉這種感覺了呢？、呵呵呵,pid1
+	zin_old_msg,來、來吧．．．還說些什麼廢話．．．cr快、快點．．．高潮了．．．,pid2
+	zin_old_msg,哎呀哎呀、立場不覺間被逆反了呢。cr如果想要可要好好的拜託才行呢,pid1
+	zin_old_msg,拜、拜託你了．．．高潮．．．高潮．．來．．來了．．啊啊啊！！,pid2
+	zin_old_msg,哇哈哈哈、自分沉醉在感覺中自己在揮動著腰部呢。cr好吧、我也差不多快要到極限了呢。一起高潮的噴射吧,pid1
+	zin_old_msg,啊一庫、一庫．．嗚．．啊嗚．．啊啊啊啊啊ーーーっ！,pid2
+	goto,*switch_otaii_end
+default_otaii
+	zin_old_qnar,p_name2自行開始激烈的搖動著腰。,0
+	zin_old_msg,這是這是．．．陛下的姐姐哪裡有被脅迫的意思啊。cr自已都在絶妙的搖動著腰部。是不是已經忘不掉這種感覺了呢？、呵呵呵,pid1
+	zin_old_msg,但是、我才不會認輸呢、來吧！！,pid1
+	zin_old_qnar,p_name1反過來更加劇烈的揮動起腰部來。,0
+	zin_old_msg,嗚啊！！　好厲害！！　啊、不行．．．那裡是．．．啊啊！！,pid2
+	zin_old_msg,什麼啊、這麼弱的樣子？cr不行、得再來一次,pid1
+	zin_old_msg,啊！　不行了！　不、要了．．．拜託．．．cr啊啊、已經．．一庫！　一庫！　一庫ーーー嗚！　一庫哆哦哦哦哦哦！！,pid2
+
+*switch_otaii_end
+zin_old_msg,哈～～哈～～這、這是付出的代價．．．cr要為我保守秘密,pid2
+zin_old_msg,好吧。我會保守秘密的。cr只是、我可是還未滿足哦,pid1
+zin_old_msg,那、那是什麼意思？,pid2
+zin_old_msg,那麼．．．．哇哈哈哈哈！！,pid1
+end

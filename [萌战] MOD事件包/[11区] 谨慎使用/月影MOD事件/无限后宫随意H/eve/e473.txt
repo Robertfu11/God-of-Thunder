@@ -1,0 +1,18 @@
+eve_start
+	if_eveflg,72,14
+	if_chkwsts,20,座標X,12
+	if_chkwsts,20,座標Y,6
+eve_end
+
+set_eveflg,72,20
+
+//惑星消滅
+wexpl,19
+wexpl,20
+
+bgm_chg,53
+zin_reg_event,,0,0,,gzin87
+bgm_se,98
+zin_reg_qnar,惑星扎克松和巴魯貢發生碰撞。不要說惑星的人了、周圍的艦隊也受到了嚴重損害。
+zin_reg_button,0
+end

@@ -1,0 +1,17 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,亡命者,pid1,pid2,,gzin8
+zin_reg_msg,p_name1大人、有希望能仕官的人求見,1
+zin_reg_msg,什麼、亡命者？cr好的、帶上來  ,0
+zin_reg_msg,遵命,1
+zin_reg_face_r,pid3
+zin_reg_msg,我的名字叫p_name3 是從crbuf_str1那裏逃走的,1
+zin_reg_msg,我和我的艦隊一起 希望能在p_name1大人這裏謀求發展,1
+zin_reg_msg,謔．．．cr居然帶著艦隊一起亡命．．．,0
+zin_reg_msg,很好、批准你的仕官請求,0
+zin_reg_msg,餘接受你的效忠,0
+zin_reg_msg,是、非常榮幸,1
+zin_reg_title,p_name3成為了部下。
+zin_reg_button,0
+zin_reg_exit
+end

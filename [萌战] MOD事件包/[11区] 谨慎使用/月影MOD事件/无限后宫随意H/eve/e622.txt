@@ -1,0 +1,60 @@
+eve_start
+	if_eveflg,75,12
+	if_val,状態:243=6
+	if_val,覇王:243=覇王:player
+//シリアの父がプレイヤーの派閥長
+	if_val,父:243>0
+	if_val,父:243=派閥:player
+	set_epid1,父:243
+	if_val,状態:pid1=2
+	if_val,勲功:player<=5000
+eve_end
+
+set_epid2,243
+set_epid3,player
+bgm_chg,54
+//zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin33
+zin_reg_msg,call_pid21！！,1
+zin_reg_msg,怎么了、p_name2,0
+zin_reg_msg,p_name3那个人呢,1
+zin_reg_msg,p_name3他怎么了？,0
+zin_reg_msg,不是怎么了,1
+zin_reg_msg,p_name3是个难得的人才,1
+zin_reg_msg,所以呢、才仅仅是那个官阶是不是太奇怪了,1
+zin_reg_msg,赶紧给他升官啊,1
+zin_reg_msg,哈哈哈、先冷静下来p_name2,0
+zin_reg_msg,军中的人事调整、不是那么简单的事情,0
+zin_reg_msg,call_pid21出马的话不是小菜一碟！,1
+zin_reg_msg,唔、呃．．．cr话是这么说．．．,0
+zin_reg_msg,call_pid21不肯答应我的请求吗？,1
+zin_reg_msg,不、我不是那个意思,0
+zin_reg_msg,那么、马上给p_name3升官吧,1
+zin_reg_msg,唔．．．cr我知道了,0
+zin_reg_msg,我会替cf_pid1向陛下请示的,0
+zin_reg_msg,太感谢了、call_pid21！！,1
+bl_fadeout
+zin_reg_nar,之后、p_name1的建议下、p_name3官升一级。
+bl_fadein,gzin24
+zin_reg_event,,pid1,pid3,,gzin24
+zin_reg_msg,p_name3、参见,1
+zin_reg_msg,哦哦、p_name3,0
+zin_reg_msg,虽然在这个时期是特例、决定将你的官阶提升一级,0
+zin_reg_msg,升官．．．．cr吗？,1
+zin_reg_msg,没错,0
+zin_reg_msg,从今以后要继续为我军多做贡献,0
+zin_reg_msg,是、非常感谢,1
+zin_reg_face_0,243
+zin_reg_msg,太好了、p_name3,0
+zin_reg_msg,p_name2大人,1
+zin_reg_msg,是我向call_pid21请求让你升官的,0
+zin_reg_msg,感谢我吧,0
+zin_reg_msg,是、是这样啊,1
+zin_reg_face_0,pid1
+zin_reg_msg,p_name2来请求我我也没法拒绝,0
+zin_reg_msg,所以说、事情就是这样,0
+zin_reg_msg,是、是．．．．,1
+zin_reg_button,0
+//zin_reg_exit
+add_kunkou,player,1000
+end

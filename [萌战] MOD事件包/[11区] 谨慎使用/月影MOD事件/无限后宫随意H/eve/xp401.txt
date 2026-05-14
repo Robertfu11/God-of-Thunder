@@ -1,0 +1,104 @@
+//海賊オルド　娘
+zin_old_init
+zin_old_img_pid,pid2,1
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	//体位ごとに分岐
+	switch_otaii,pid2
+	case_oback
+		zin_old_msg,ああんっ、call_pid21．．．それ以上．．．は、入らないよ．．．くうううっ！！,pid2
+		zin_old_msg,フフフ、早くも子宮に当たってるようだな。まだまだかわいいman_strだ,pid1
+		zin_old_msg,これから穴をだんだん大きくしてやる。crお前のman_strに父親のtin_strの形を徹底的に覚えさせてやるからな,pid1
+		zin_old_msg,ヤ、ヤダ．．．p_name2のman_str．．．ガバガバになっちゃうよ！！,pid2
+		zin_old_msg,父ちゃんのtin_strに最適な形にするんだ。父ちゃんのtin_str以外では満足できないようにな！,pid1
+		zin_old_msg,そんな．．．わ、私．．．お嫁に行けなくなっちゃう！！,pid2
+		zin_old_msg,お前は嫁になんか行かなくていいんだ．．．．これからもオレの子をバンバン産んでもらうからな！,pid1
+		zin_old_msg,もう．．．そんなにp_name2のこと好きなの？　しょうがいないcall_pid21なんだから．．．ああんっ！！,pid2
+		zin_old_msg,さあ、tane_strをたっぷりくれてやるぞ！！　ぐうううっ！！,pid1
+		zin_old_msg,あん、ひああっ．．．．ああああああっ！！,pid2
+		zin_flush,pid2
+		end
+	case_okijo
+		zin_old_msg,おいおい、自分から腰を振るなんて．．．そんな娘にした覚えはないぞ,pid1
+		zin_old_msg,だって．．．call_pid21のtin_str．．．とっても気持ちいいんだもの,pid2
+		zin_old_msg,まったく、いやらしい娘になったもんだ．．．こんなにsiru_strをダラダラ垂れ流して．．．グチュグチュ言ってるのが聞こえるだろ？,pid1
+		zin_old_msg,ひ、ひどいわ．．．全部、call_pid21の．．．せいよ．．．,pid2
+		zin_old_msg,娘に．．こんなこと．．．させ．．る．．なんて．．．んんっ,pid2
+		zin_old_msg,ハハハ、そうか、オレのせいか。それはすまなかったな,pid1
+		zin_old_msg,p_name2のオマンコ．．．．すっかりcall_pid21に開発されて．．．call_pid21のtin_strでないと．．．満足できないんだから！,pid2
+		zin_old_msg,そうか、いい娘だ。それでこそ我が娘というもの,pid1
+		zin_old_msg,んあっ！！　ああっ、んくっ．．．crダメ．．．そろそろ．．．．イッちゃう！！,pid2
+		zin_old_msg,そうか、いいだろう。同時にtane_strを注入してやる！,pid1
+		zin_old_msg,ああ、イグ！　イグ！　イグーーーぅ！　イグのおぉぉぉぉ！！！！,pid2
+		zin_flush,pid2
+		end
+	case_oseijo
+	default_otaii
+		zin_old_msg,call_pid21、どう？　p_name2のman_str、気持ちいい？,pid2
+		zin_old_msg,ああ、さすが我が娘だ．．．オレのtin_strと相性がいい．．．,pid1
+		zin_old_msg,同じ遺伝子を．．持ってるから．．だろうな．．．ううっ,pid1
+		zin_old_msg,しかし、まだ奥が浅いな。まだまだ開発の余地がある,pid1
+		zin_old_msg,p_name2のman_str、call_pid21の気持ちいいように．．．か、改造して．．．ほしいの,pid2
+		zin_old_msg,もちろんだ、これからじっくりと時間をかけて父親の味というのを教えてやるからな,pid1
+		zin_old_msg,ああんっ！！　う、嬉しい．．．ひあぁっ．．．．んんっ！　あぁ．．．んんっ！,pid2
+		zin_old_msg,フフ、man_strがヒクついてきたな．．．そろそろイきたいんだろ？,pid1
+		zin_old_msg,も、もうダメ．．．p_name2．．．イッちゃう！！,pid2
+		zin_old_msg,そうか、実は父ちゃんも限界だ．．．さあ、いくぞ！！,pid1
+		zin_old_msg,ひああああっ、すごい！　すごい！　call_pid21！　来て！　p_name2の一番奥まで、きてええええっ！！,pid2
+		zin_flush,pid2
+		end
+
+//初膜パターン
+case_hatumaku
+	zin_old_msg,p_name2、全部入ったぞ。どうだ、痛いか？,pid1
+	zin_old_msg,う、ううん．．．だ、大丈夫．．．,pid2
+	zin_old_msg,tin_strって．．．．こんなに大きくて．．．か、固いんだね．．．んんっ,pid2
+	zin_old_msg,そうだ、これが父の．．．男の味だ,pid1
+	zin_old_msg,す、すごい．．．,pid2
+	zin_old_msg,どうだ、気持ちいいか？,pid1
+	zin_old_msg,よ、よく．．．わからないよ．．．ふあっ．．．あっ．．．んぁああぁあっ．．．．,pid2
+	zin_old_msg,call_pid21は．．．き、気持ちいいの？,pid2
+	zin_old_msg,父ちゃんは．．．気持ちいいぞ．．．,pid1
+	zin_old_msg,そう．．．よ、よかった．．．んあああっ！！,pid2
+	zin_old_msg,イカン、もうそろそろ限界だ。crp_name2．．．いよいよ．．．tane_strを．．出すからな,pid1
+	zin_old_msg,しっかり．．．飲むんだぞ．．．,pid1
+	zin_old_msg,う、うん．．．わかったわ．．．,pid2
+	zin_old_msg,うくっ！！　で、出る！！,pid1
+	zin_flush,pid2
+	end
+
+//孕みパターン
+case_botebara
+	//体位ごとに分岐
+	switch_otaii,pid2
+	case_okijo
+		zin_old_msg,なかなかのボテになったな、p_name2。しかし娘に自分の子を孕ませるたぁ．．．オレも最低の父親だな,pid1
+		zin_old_msg,ああんっ．．．いいのよ、call_pid21cr私が望んだことだから．．．．んんっ！！,pid2
+		zin_old_msg,call_pid21の子供．．．．ほしかったの．．．,pid2
+		zin_old_msg,そうか、親孝行な娘を持って、オレも幸せモンだぜっ。crしかし、そんなに腰振って大丈夫か？,pid1
+		zin_old_msg,う、うん．．．．とっても．．．気持ちいいから．．．,pid2
+		zin_old_msg,．．．もっと、call_pid21の精液．．．ほしいの．．．ひあああんっ！！,pid2
+		zin_old_msg,相変わらず感じやすいな．．．しかもいい声で鳴く．．．,pid1
+		zin_old_msg,ああん、もうダメ．．．い、イッちゃう！！,pid2
+		zin_old_msg,そうか、ならイカせてやるっ。これでフィニッシュだっ！！,pid1
+		zin_old_msg,イクッ、イクッ、イッちゃうーーーーーっ！！！,pid2
+		zin_flush,pid2
+		end
+	case_oback
+	case_oseijo
+	default_otaii
+		zin_old_msg,むうう．．．子を孕むと、また別の味になるな。子宮の重みが絶妙にカリを刺激しやがるぜ,pid1
+		zin_old_msg,しかし、あの小さなマンコがこんなに広がって、オレのtin_strを咥え込むとは．．．．,pid1
+		zin_old_msg,女ってぇのはやっぱすげえな．．．,pid1
+		zin_old_msg,call_pid21ったら．．．変なことに感心しないでよっ．．．,pid2
+		zin_old_msg,そんなことより、p_name2の子宮をもっとグリグリ掻き回してっ！！,pid2
+		zin_old_msg,ああ、任せとけって！！　これがイイんだろ！！,pid1
+		zin_old_msg,あん、そう！！　そこ．．．イイッ．．．もっと、そこ．．．強く．．．ああああっ！！,pid2
+		zin_old_msg,p_name2の弱いところは全部わかってるからな。好きなだけイかせてやるぜっ,pid1
+		zin_old_msg,ヤダッ！！　そんなにされたら．．．こ、腰が．．浮いちゃうううっ！！,pid2
+		zin_old_msg,はああんっ．．．もう．．．だめ、あっひあぁぁぁぁーーーん！！！！！,pid2
+		zin_flush,pid2
+		end

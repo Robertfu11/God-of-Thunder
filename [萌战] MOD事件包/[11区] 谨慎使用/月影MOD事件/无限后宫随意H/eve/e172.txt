@@ -1,0 +1,45 @@
+eve_start
+    if_date,80,4
+	if_eveflg,63,5
+    if_poid,599,624
+    if_poid,688,624
+    if_poid,161,624
+	if_haou,13
+	if_money,624,>100000
+eve_end
+
+set_eveflg,63,6
+
+chk_exeplayer,624,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+zin_reg_event,摩西的研究室,599,161,,gzin41
+zin_reg_qnar,德米南斯計劃著下一輪怎麼支援阿多魯塞姆。
+zin_reg_msg,那麼這次該怎麼辦呢？,0
+zin_reg_msg,我給阿多魯塞姆的諜報員透露了運輸艦隊的情報,1
+zin_reg_msg,運輸的是金銀財寶，這樣可以削弱斯庫洛克，強化阿多魯塞姆。,1
+zin_reg_msg,是這樣，不錯的主意,0
+zin_reg_face_0,688
+zin_reg_msg,德米南斯，可別做得太出格啊,0
+zin_reg_msg,最近斯庫洛克這邊風頭很緊,0
+zin_reg_msg,嗯，我會掌握尺度的cr無需擔心,1
+zin_reg_face_1,817
+zin_reg_msg,摩西大人，４號調整槽的數值顯示異常,1
+zin_reg_msg,能給我看看麼？,1
+zin_reg_msg,明白，馬上來cr你在裏面等等,0
+zin_reg_msg,好,1
+zin_reg_face_1,161
+zin_reg_msg,喂，這誰啊？,1
+zin_reg_msg,他嘛，算是我的弟子吧,0
+zin_reg_msg,幾年前開始教他生化人的技術,0
+zin_reg_msg,腦袋亮光，學得挺快的，0
+zin_reg_msg,是想趁現在找繼承人麼？,1
+zin_reg_msg,是啊,0
+zin_reg_msg,我已經被斯庫洛克盯上了,0
+zin_reg_msg,照這樣下去，誰知道以後會怎麼樣,0
+zin_reg_msg,嗯,1
+zin_reg_button,0
+end

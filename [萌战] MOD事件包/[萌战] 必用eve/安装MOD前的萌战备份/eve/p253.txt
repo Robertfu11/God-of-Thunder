@@ -1,0 +1,12 @@
+bgm_chg,107
+//zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin56
+zin_reg_msg,老大、發現輸送艦隊了,1
+zin_reg_msg,識別信號為p_name3軍,1
+zin_reg_msg,好啦、準備砲撃啦,0
+zin_reg_msg,別誤中貨櫃、小心別把寶物打爛喲,0
+zin_reg_msg,喔耶！！,1
+zin_reg_title,p_name1搶奪了金３０萬。
+zin_reg_button,0
+//zin_reg_exit
+end

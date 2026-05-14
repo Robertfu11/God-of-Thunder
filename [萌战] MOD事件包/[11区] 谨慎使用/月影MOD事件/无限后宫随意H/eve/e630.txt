@@ -1,0 +1,30 @@
+eve_start
+	if_eveflg,75,100
+	if_val,母:243>0
+//	if_val,母:243=派閥:player
+	set_epid1,母:243
+	if_val,状態:pid1=2
+	if_val,覇王:pid1=覇王:player
+eve_end
+
+set_eveflg,75,110
+
+set_epid2,243
+set_epid3,player
+bgm_chg,54
+zin_reg_event,,pid1,pid3,,gzin18
+zin_reg_msg,p_name3、在嗎？,0
+zin_reg_msg,call_pid31,1
+zin_reg_face_1,243
+zin_reg_msg,嘛、call_pid21cr歡迎,1
+zin_reg_msg,p_name2、還好吧？,0
+zin_reg_msg,嗯、那是當然的了,1
+zin_reg_face_1,player
+zin_reg_msg,p_name3、女兒就拜託你了,0
+zin_reg_msg,請一定要讓她幸福,0
+zin_reg_msg,這是天下做父母的心願,0
+zin_reg_msg,請放心吧、call_pid31,1
+zin_reg_msg,我一定不會讓p_name2感到難過的,1
+zin_reg_msg,拜託你了,0
+zin_reg_button,0
+end

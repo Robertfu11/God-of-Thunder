@@ -1,0 +1,401 @@
+//メインルーチン
+set_epid1,0
+set_epid2,0
+set_epid3,0
+set_epid4,0
+set_eveflg,200,0
+set_eveflg,201,0
+set_eveflg,202,0
+set_eveflg,203,0
+set_eveflg,204,0
+set_eveflg,205,0
+set_eveflg,206,0
+set_eveflg,207,0
+set_eveflg,208,0
+set_eveflg,209,0
+set_eveflg,210,0
+set_eveflg,211,0
+set_eveflg,212,0
+set_eveflg,213,0
+set_eveflg,214,0
+set_eveflg,215,0
+set_eveflg,220,0
+set_eveflg,221,0
+set_eveflg,222,0
+set_eveflg,223,0
+set_eveflg,224,0
+set_eveflg,230,0
+set_eveflg,240,0
+set_eveflg,241,0
+set_eveflg,250,0
+set_eveflg,251,0
+set_eveflg,252,0
+set_eveflg,260,0
+set_eveflg,270,0
+set_eveflg,271,0
+set_eveflg,280,0
+set_eveflg,281,0
+
+chk_mval,状態:player!2,,,,
+chk_mval_then
+	end
+chk_mval_else
+
+//プレイヤー勢力に仕官中で18歳以上の未婚者、との条件を満たす
+//男性の覇王、上皇、王子、王族のいずれか1人をランダムに取り出す。
+get_mpid,覇王=poid_player,状態=2,性別=1,年齢>=18,妻=0,勲功>=12080,
+set_epid1,pval
+
+select_pid,pid1
+case_0
+	end
+default
+
+//pid1の父母
+//このループ処理はbreakではなく全てcontinueの為重い
+//この処理はあくまでcsvファイル登録済みの、pid1の父母であって、
+//それらが状態=2であるかなどは一切確認していないため、
+//例えば死亡（=3）などの場合も含めてしまっている。
+//従って実際に使用する際は、chk_mval等で状態チェック（通常、これに加えて覇王のチェック）を
+//掛けなければ、満足に使用できないことだけは注意しておく。
+
+for,PMAX,200,1
+	chk_family,eveflg200,pid1
+	case_fam_父
+		//eveflg200はpid1から見て父
+		//フラグ201にセット
+		set_eveflg,201,eveflg200
+		//ループ続行
+		continue
+	case_fam_母
+		set_eveflg,202,eveflg200
+		continue
+	//それ以外
+	default_fam
+		continue
+next
+
+//プレイヤー勢力仕官中で18歳以上になる、pid1の姉妹いずれかをランダムで1人
+//姉妹の母はeveflg202に限定せず、父と妾の子でも可。
+//ただ独身ならば、近親婚の処理に入ってしまえば、
+//父が怒鳴り込む可能性あり、ということ。
+//pid1の母は無関係。
+//上記の通り、「未婚か既婚か」（婚姻=0又は婚姻>0）はこの時点ではチェックしない。
+//このファイル下方にある処理で、pid3にフラグ202がセットされる「可能性」があるが、
+//pid3をまともに使用したいならば、後ほど、近親婚ルートでこの婚姻ステータスを、
+//必ず「pid3に対して」チェックすること。
+
+chk_eveflg,201,0
+chk_eveflg_then
+	goto,*musume
+chk_eveflg_else
+
+get_mpid,覇王=poid_player,状態=2,性別=2,父=eveflg201,年齢>=18,,
+set_eveflg,203,pval
+
+*musume
+//プレイヤー勢力仕官中で18歳以上になる、pid1の娘をランダムで1人
+get_mpid,覇王=poid_player,状態=2,性別=2,父=pid1,年齢>=18,,
+set_eveflg,204,pval
+
+//eveflg202は0ではないことを事前確認。
+//chk_mvalやif_val等の間接指定処理（":"を使用するタイプの処理）では、
+//指定（人物又は惑星）IDが0の場合、「即エラー落ち」するという、「プログラム側の仕様」がある。
+//このためchk_mval等を実行する場合は事前の正数確認を常に行うこと。
+
+chk_eveflg,202,0
+chk_eveflg_then
+	//セカンダリチェックへ
+	goto,*flgchk_scndry
+chk_eveflg_else
+
+//eveflg202（母の仮フラグ）はプレイヤー勢力仕官中
+chk_mval,覇王:eveflg202=poid_player,状態:eveflg202=2,,,
+chk_mval_then
+	goto,*flgchk_pre
+chk_mval_else
+	//0で強制的に上書き
+	set_eveflg,202,0
+	goto,*flgchk_pre
+
+*flgchk_pre
+chk_eveflg,204,>0
+chk_eveflg_then
+	//204：○
+	goto,*flgchk0
+chk_eveflg_else
+	//204：×
+	goto,*flgchkA
+
+*flgchk0
+chk_eveflg,203,>0
+chk_eveflg_then
+	//203：○、204：○
+	goto,*flgchk1
+chk_eveflg_else
+	//203：×、204：○
+	goto,*flgchkB
+
+*flgchkA
+chk_eveflg,203,>0
+chk_eveflg_then
+	//203：○、204：×
+	goto,*flgchk2
+chk_eveflg_else
+	//203：×、204：×
+	goto,*flgchkC
+
+*flgchk1
+chk_eveflg,202,>0
+chk_eveflg_then
+	//202：○、203：○、204：○
+	goto,*flgset0
+chk_eveflg_else
+	//202:×、203：○、204：○
+	goto,*flgset1
+
+*flgchkB
+chk_eveflg,202,>0
+chk_eveflg_then
+	//202：○、203：×、204：○
+	goto,*flgset2
+chk_eveflg_else
+	//202：×、203：×、204：○
+	//⇒204をpid3にセット
+	set_epid3,eveflg204
+	goto,*evechk
+
+*flgchk2
+chk_eveflg,202,>0
+chk_eveflg_then
+	//202：○、203：○、204：×
+	goto,*flgset3
+chk_eveflg_else
+	//202：×、203：○、204：×
+	//⇒203をpid3にセット
+	set_epid3,eveflg203
+	goto,*evechk
+
+*flgchkC
+chk_eveflg,202,>0
+chk_eveflg_then
+	//202：○、203：×、204：×
+	//⇒202をpid3にセット
+	set_epid3,eveflg202
+	goto,*evechk
+chk_eveflg_else
+	//202×、203：×、204：×
+	//⇒pid3は0。後ほど予備ルートに切り替え
+	goto,*evechk
+
+*flgset0
+rnd,3
+case0
+	set_epid3,eveflg202
+	goto,*evechk
+case1
+	set_epid3,eveflg203
+	goto,*evechk
+case2
+	set_epid3,eveflg204
+	goto,*evechk
+
+*flgset1
+rnd,2
+case0
+	set_epid3,eveflg203
+	goto,*evechk
+case1
+	set_epid3,eveflg204
+	goto,*evechk
+
+*flgset2
+rnd,2
+case0
+	set_epid3,eveflg202
+	goto,*evechk
+case1
+	set_epid3,eveflg204
+	goto,*evechk
+
+*flgset3
+rnd,2
+case0
+	set_epid3,eveflg202
+	goto,*evechk
+case1
+	set_epid3,eveflg203
+	goto,*evechk
+
+
+*flgchk_scndry
+//以下はeveflg202=0時の処理である。
+//処理内容は上方にあるルーチンと同一だが、
+//チェックするフラグは203と204に縮退化。
+chk_eveflg,204,>0
+chk_eveflg_then
+	//204：○
+	goto,*flgchk0
+chk_eveflg_else
+	//204：×
+	goto,*flgchkA
+
+*flgchk0
+chk_eveflg,203,>0
+chk_eveflg_then
+	//203：○、204：○
+	goto,*flgset_alpha
+chk_eveflg_else
+	//203：×、204：○
+	set_epid3,eveflg204
+
+*flgchkA
+chk_eveflg,203,>0
+chk_eveflg_then
+	//203：○、204：×
+	set_epid3,eveflg203
+chk_eveflg_else
+	//203：×、204：×
+	goto,*evechk
+
+*flgset_alpha
+rnd,2
+case0
+	set_epid3,eveflg203
+	goto,*evechk
+case1
+	set_epid3,eveflg204
+	goto,*evechk
+
+//ちなみに、pid1は未婚であるから
+//義理の兄弟姉妹（義姉・義妹・義兄・義弟）は当然のごとく存在しない。
+
+*evechk
+//不要フラグゼロクリア（再利用可）
+set_eveflg,202,0
+set_eveflg,203,0
+set_eveflg,204,0
+
+//No.2
+get_kunpsn2,poid_player,eveflg201
+set_epid4,pval
+//No.2が0又は844の場合、強制終了
+select_pid,pid4
+case_0
+case_844
+	end
+default
+
+eve_start
+	//pid1は正数
+	if_pid1,>0
+	//pid4は正数（pid3が0の可能性もあり、その場合副官の重要度が高いため）
+	if_pid4,>0
+	//eveflg201（＝父の仮フラグ）は0でもよい。
+	//pid3（＝女性親族）も0でもよいが、その場合は後ほど予備ルートに強制的に切り替える。
+	//確率3分の1
+	if_rnd,3
+eve_end
+
+//eveflg210に人事長官（又は平の人事担当官）をセット
+get_tyokan,poid_player,16
+//ただし、pid4と被る場合があるので対策を取る。
+chk_mval,pid4=pval,,,,
+chk_mval_then
+	goto,*jinji01
+chk_mval_else
+	goto,*jinji02
+
+*jinji01
+//フラグ202は再利用可能である。
+for,PMAX,202,1
+	chk_mval,覇王:eveflg202=poid_player,状態:eveflg202=2,役職:eveflg202=16,eveflg202!pid4,eveflg202!eveflg201
+	chk_mval_then
+		set_eveflg,210,eveflg202
+		break
+	chk_mval_else
+		continue
+next
+
+goto,*kosai_aite_chk
+
+*jinji02
+//pvalはget_tyokanの実行結果、の筈。
+chk_mval,勲功:pval<12080,,,,
+chk_mval_then
+	set_eveflg,210,pval
+	//ちなみにこれはID:844含む。
+	goto,*kosai_aite_chk
+chk_mval_else
+	//王族が選ばれてしまった場合は、下級士官Ｂで代替
+	set_eveflg,210,845
+	goto,*kosai_aite_chk
+
+*kosai_aite_chk
+chk_mval,pid1!player,,,,
+chk_mval_then
+	goto,*route_select
+chk_mval_else
+
+for,PMAX,211,1
+	chk_mval,覇王:eveflg211=poid_player,状態:eveflg211=2,性別:eveflg211=2,交際中:eveflg211>0,
+	chk_mval_then
+		set_eveflg,212,eveflg211
+		break
+	chk_mval_else
+		continue
+next
+
+//会話スタート
+bl_fadein,gzin33
+bgm_chg,69
+zin_reg_event,副官の勘繰り,pid1,pid4,,gzin33
+zin_reg_msg,p_name1様。,1
+zin_reg_msg,何だ？,0
+zin_reg_msg,唐突ですが、,1
+zin_reg_msg,p_name1様には意中の女性はおられるのですか？,1
+zin_reg_msg,！？,0
+zin_reg_msg,な、何を藪から棒に！,0
+
+chk_eveflg,212,>0
+chk_eveflg_then
+	goto,*iru
+chk_eveflg_else
+	goto,*inai
+
+*iru
+bgm_stop
+zin_reg_msg,・・・,0
+bgm_chg,54
+zin_reg_msg,な、なんと！,1
+zin_reg_msg,ちなみに・・・,1
+zin_reg_msg,ええぃ！もういいだろう！,0
+zin_reg_msg,え、あ、crちょ、ちょっと！,1
+zin_reg_msg,出口はこっちだ！！,0
+zin_reg_face_1,0
+bgm_se,14
+zin_reg_msg,全く・・・,0
+bl_fadeout
+txtload,u016/99_end
+
+*inai
+zin_reg_msg,そんな者・・・,0
+zin_reg_msg,いるわけなかろう・・・,0
+zin_reg_msg,・・・,1
+zin_reg_msg,た、大変失礼致しました・・・,1
+zin_reg_msg,・・・,0
+bl_fadeout
+//フラグ再利用
+set_eveflg,211,0
+set_eveflg,212,0
+
+*route_select
+//予備ルート切り替えの為の判定処理
+select_pid,pid3
+//pid3=0ならば
+case_0
+	//予備ルート用ファイル強制ロード
+	txtload,u016/01_yobi_1
+default
+	//pid3が0以外ならば通常ルート
+	txtload,u016/00_tujo_1

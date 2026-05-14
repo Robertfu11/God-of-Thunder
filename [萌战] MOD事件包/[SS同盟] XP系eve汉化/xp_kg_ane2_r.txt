@@ -1,0 +1,89 @@
+//王族オルド強引　相手：姉
+//■Ｈ体位：バック
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,呵呵、反抗是沒有用的事呢,0
+	zin_reg_msg,那麼、call_pid2、就用手扶在那裡把屁股對著我吧,0
+	zin_reg_msg,啊、你要、干什麼！！,1
+	zin_reg_msg,呵呵、我會輕一點的、call_pid2,0
+	zin_reg_msg,那麼插入了哦,0
+	zin_reg_msg,那樣、是、不行的、不行啊啊啊啊！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,嗯嗯．．．拜託．．．請重新考慮一下．．．,pid2
+	zin_old_msg,這種害羞的樣子．．．姉弟互相．．性交什麼的．．多奇怪啊．．．,pid2
+	zin_old_msg,確實很難為情的情子啊．．．callself_pid1被接受插入了呢．．．,pid1
+	zin_old_msg,隱秘的地方都在callself_pid1的眼前突出著，都被看見了呢．．．,pid1
+	zin_old_msg,是、可恥的事情．．不要再說了．．．拜託．．．請、停下吧．．．,pid2
+	zin_old_msg,明白了．．．那麼、代替語言、讓我用愛來代替吧．．．,pid1
+	zin_old_msg,啊啊．．不對啊．．不是這樣的．．嗯嗯．．嗯．．啊啊啊啊！,pid2
+	zin_old_msg,嘴上說著不要不要的、身體卻在好好的享受呢．．．,pid1
+	zin_old_msg,不對．．的．．這是．．聲音任意的洩露著．．嗯嗯嗯嗯！,pid2
+	zin_old_msg,已經沒有必要再忍耐下去了．．．更多的更多的、混亂吧．．．,pid1
+	zin_old_msg,不行．．這．．真的．．callself_pid2．．callself_pid2啊．．．,pid2
+	zin_old_msg,這個姿勢．．callself_pid2的．．柔弱的地方．．callself_pid2的裡面．．肉棒．．又變大了啊．．．,pid2
+	zin_old_msg,不行．．不行．．拜託．．啊啊啊．．快．．停下．．嗯啊啊啊啊啊！,pid2
+	zin_flush,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,看、call_pid2,0
+	zin_reg_msg,call_pid2小小的身體、只是看看、我的肉棒就．．．,0
+	zin_reg_msg,嗚！！cr拜託、不要、call_pid1,1
+	zin_reg_msg,已經不會有什麼能夠阻止我停下來了,0
+	zin_reg_msg,call_pid2初膜的摘取活動、將在今晚開始、哇哈哈哈哈,0
+	zin_reg_msg,哎呀、那麼、快停下啊啊啊啊！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,身体小小的連man_str的尺寸也是小巧玲瓏的啊,pid1
+	zin_old_msg,但是、肉棒的根部還沒有全部進入呢。延展力意外的驚人啊、這就是女人的小穴啊,pid1
+	zin_old_msg,啊、不行．．．拜託．．．抜出去．．．出去啊．．．很痛的啊！！！,pid2
+	zin_old_msg,呵呵．．．call_pid2的裡面、簡直就是極品啊．．．,pid1
+	zin_old_msg,把call_pid2重要的貞潔奪走了、是我的callself_pid1．．．,pid1
+	zin_old_msg,那樣的事情、這個害羞的樣子、call_pid2一定會銘刻在心的．．．,pid1
+	zin_old_msg,啊啊．．肚子、裡面．．．弟弟的肉棒、在動．．．,pid2
+	zin_old_msg,嗚、啊啊．．．想要的東西．．．害羞的東西．．．已經．．．得到了、請停止、吧．．．,pid2
+	zin_old_msg,不會停止的．．．直至最後、在call_pid2的深處、要把你充分的侵犯完成才行呢,pid1
+	zin_old_msg,啊啊．．嗯嗯．．嗚啊．．啊．．啊啊．．嗯嗯嗯啊．．．,pid2
+	zin_old_msg,啊、嗯嗯．．．啊啊啊嗯．．．嗚．．嗯嗯．．嗚啊啊啊啊啊．．．,pid2
+	zin_old_msg,真的．．．光是這種緊緊糾纏的感覺、就已經、足以讓我射出來了啊．．．,pid1
+	zin_old_msg,那樣．．．那樣的、可怕的事情．．．也．．．拜託不要說了．．．,pid2
+	zin_old_msg,太晚了呢、已經．．．,pid1
+	zin_old_msg,啊啊啊．．callself_pid2的．．裡面．．膨脹．．．的說．．這樣的．．．,pid2
+	zin_old_msg,嗯嗯．．啊．．啊．．啊啊啊．．嗯．．嗯嗯．．嗯啊啊啊啊啊啊啊嗚！,pid2
+	zin_flush,pid2
+	zin_old_msg,出來了．．．弟弟的．．．實在．．．太過分了．．嗚嗚嗚嗚．,pid2
+	end
+//孕みパターン
+case_botebara
+	zin_reg_msg,call_pid2、那樣的身體抵抗也是沒用的啊,0
+	zin_reg_msg,挺著個大肚子到哪裡也不自由不是嗎,0
+	zin_reg_msg,拜託了、為了這孩子今天也請忍耐一下,1
+	zin_reg_msg,越看見call_pid2的肚子就越是想要呢,0
+	zin_reg_msg,我會小心些、溫柔一點的、所以還是請老實一點吧,0
+	zin_reg_msg,啊啊、不要、不行啊我不是說過了嗎！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,拜託了．．．這樣的姿勢．．．是羞恥的東西．．．,pid2
+	zin_old_msg,那個吧呀．．．深入到．．插進去了、所以．．．,pid2
+	zin_old_msg,子宮是．．．咣咣的、相當重要的地方．．．拜託．．．請、住手吧．．,pid2
+	zin_old_msg,沒關係的、call_pid2不是已經進入穩定期了嘛、正是知道這點、所以才...,pid1
+	zin_old_msg,啊啊啊．．不要．．那樣的動、啊．．嗚嗚嗯．．．啊啊啊．．太深了啊啊啊啊．．．,pid2
+	zin_old_msg,子宮的重量加入之後、最棒了啊．．．,pid1
+	zin_old_msg,那、那往深處．．．至少不要．．．嗯啊啊啊嗚！！,pid2
+	zin_old_msg,不過、一邊這樣說著、一邊向上頂著、siru_str垂流的像似失禁了呢．．．,pid1
+	zin_old_msg,那、那樣的事情．．．我才．．．那樣的事情真的．．．,pid2
+	zin_old_msg,誒．．．是嗎。這樣的話、我在深處、再給你確認一下吧,pid1
+	zin_old_msg,啊啊啊啊！啊啊啊．．我的．．重要的地方．．被頂上了啊．．．,pid2
+	zin_old_msg,拜託．．已經．．停止吧．．裸露著．．裸露著、啊．．．,pid2
+	zin_old_msg,有沒有變得坦率一些啊．．．那麼、這裡倒是變得坦率起來了呢、call_pid2的深處、充分的暴露出來了呢,pid1
+	zin_old_msg,啊啊啊．．這麼恐怖的事情．．住手啊！！,pid2
+	zin_old_msg,肚子裡的．．．寶寶．．．會、受不了的！！,pid2
+	zin_old_msg,已經根本停不下來了．．．請糾正一下観念吧．．．,pid1
+	zin_old_msg,嗯嗯嗯！啊．．啊啊啊．．深處．．不行．．深．．啊啊啊．．嗯嗯嗯嗯嗯啊！,pid2
+	zin_flush,pid2
+	end

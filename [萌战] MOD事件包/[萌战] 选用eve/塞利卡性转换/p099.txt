@@ -1,0 +1,248 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,体力の限界,pid1,pid2,,gzin35
+chk_sts,pid2,3,2
+
+chk_sts_then
+	chk_wsts,pid2
+	case_normal
+		zin_reg_2sel,警備兵陵辱,陵辱しない
+		get_resp
+		ret_sel1
+			goto,*rape
+		ret_sel2
+			goto,*notrape
+	case_botebara
+		zin_reg_2sel,孕婦陵辱,陵辱しない
+		get_resp
+		ret_sel1
+			goto,*boterape
+		ret_sel2
+			goto,*notrape
+	case_hatumaku
+		zin_reg_2sel,處女羞辱,羞辱しない
+		get_resp
+		ret_sel1
+			goto,*haturape
+		ret_sel2
+			goto,*notrape
+
+chk_sts_else
+
+	select_pid,pid2
+	case_555
+		txtload,p099A
+	default
+		goto,*notrape
+end
+
+*rape
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,ああっ．．．むぐっ．．．,pid2
+	zin_old_msg,そらっ！口で飲め！こぼすなよ！,840
+	zin_old_msg,んぐっ．．．んっ．．．んむっ．．．,pid2
+	zin_old_msg,ふう、お前の口の中もたまらんな,840
+	zin_old_msg,げふっ．．．げほっ！,pid2
+	zin_old_msg,ふふっ、これくらいでまいるなよ？まだまだたくさん犯してやるからな,840
+	zin_old_msg,さあっ、尻を向けろ。またぶち込んでやる,840
+	zin_old_msg,おねが．．．もう．．．やめ．．．,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,32
+zin_reg_face_l,pid1
+zin_reg_msg,なかなかせいが出ているようだな？,0
+zin_reg_face_r,840
+zin_reg_msg,こ、これはp_name1様！！,1
+zin_reg_msg,p_name2に話がある。下がっていろ,0
+zin_reg_msg,ははっ！,1
+
+zin_reg_face_1,0
+zin_reg_event,体力の限界,pid1,pid2,,gzin35
+zin_reg_face_r,pid2
+zin_reg_msg,お前の穴という穴から溢れ出る精液は誰のモノかな？,0
+zin_reg_msg,それだけ大量だと、もはやわからぬな,0
+zin_reg_msg,ううっ．．．ううっ,1
+zin_reg_msg,星系一の自慢の肌も、こびり付いた精液で見る影もない,0
+zin_reg_msg,ううっ．．．ううっ,1
+zin_reg_msg,くくく、そんな状態になってもまだ保てる貴様のその強情さ、嫌いではないぞ？,0
+zin_reg_msg,はぁっ．．．うえっ．．．,1
+zin_reg_msg,しかしまあなんという臭いだ。まあ、シャワーも浴びれないのでは仕方があるまい,0
+zin_reg_msg,ううっ．．．うう．．．,1
+zin_reg_msg,さあ、また犯されるがいい。新しい部下たちが貴様のことを知ってな,0
+zin_reg_msg,犯したいそうだ。気の済むまでな。ハハハッ！ではな,0
+zin_reg_msg,ま．．．まって,1
+zin_reg_msg,なんだ？避妊の心配ならすることはないぞ？,0
+zin_reg_msg,そのうちに避妊薬が切れることもあるかもしれんが気にするな。妊娠も一興よ,0
+zin_reg_msg,はぁっ．．．ちが．．．,1
+zin_reg_msg,た、たすけて．．．ください,1
+zin_reg_msg,ほう？助けてとは．．．どういう事だ？,0
+zin_reg_msg,はぁっ．．．お仕えしますから．．．おねがい．．．です。ここから．．．出して,1
+zin_reg_msg,仕えるだと？本当にか？にわかに信じられぬな,0
+zin_reg_msg,ここまで強情だった貴様から考えられないな,0
+zin_reg_msg,お、お願いです．．．p_name1様,1
+zin_reg_msg,ふふっ、本気で私の部下になるというのだな？,0
+zin_reg_msg,は．．．はい、p_name1様,1
+zin_reg_msg,くく、いい心がけだ,0
+zin_reg_title,p_name2は部下になりました。
+zin_reg_button,0
+	rnd,2
+	case0
+		set_ninsin,pid2,840
+		zin_reg_qnar,p_name2は懐妊しました。
+		zin_reg_button,0
+		zin_reg_exit
+		end
+	case1
+end
+
+*boterape
+zin_reg_event,体力の限界,pid1,pid2,,gzin35
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,さて、それは誰の子なのかな？,pid1
+	zin_old_msg,．．．,pid2
+	zin_old_msg,果たして元々妊娠していたのか？それともここで犯された時の誰とも知れぬ父の子か？,pid1
+	zin_old_msg,言わないで！！,pid2
+	zin_old_msg,．．．男か女か、今の技術ならすぐにでもわかるのだがな,pid1
+	zin_old_msg,！？,pid2
+	zin_old_msg,ろくな設備も食事もなければ．．．腹の子はどうなるであろうな？,pid1
+	zin_old_msg,．．．ぐっ！,pid2
+	zin_old_msg,まあいい、そんな腹のお前でも犯したいというものが多いのでな,pid1
+	zin_old_msg,ま、まさか．．．,pid2
+	zin_old_msg,あれだけの人数では輪姦になってしまうが仕方あるまい,pid1
+	zin_old_msg,！！,pid2
+	zin_old_msg,貴様の腕ほどの太さ、長さ、そんなモノを持つヤツもいたな,pid1
+	zin_old_msg,あんなモノで子宮まで犯されたら．．．腹の子はどうなることやら,pid1
+	zin_old_msg,止めて！！,pid2
+	zin_old_msg,いいではないか、たとえ流産しようとも．．．,pid1
+	zin_old_msg,たっぷりと此処で犯されて、またすぐに妊娠するであろう！！,pid1
+	zin_old_msg,いやぁ！！,pid2
+	zin_old_msg,さあ、宴の始まりだ。たっぷりと愉しむがいいだろう,pid1
+	zin_old_msg,今からその兵士たちを呼んでやる！,pid1
+	zin_old_msg,お、お願い！それだけは止めて！！,pid2
+	zin_old_msg,そうは言ってもな、あのいきり立った部下立ちを止めるのは難しい,pid1
+	zin_old_msg,お願いです．．．お願いですp_name1様．．．,pid2
+	zin_old_msg,ほほう、私をそう呼んでくれるのだな,pid1
+	zin_old_msg,はい．．．p_name1様,pid2
+	zin_old_msg,では私が望むのは何か、わかるな？,pid1
+	zin_old_msg,はい．．．p_name1様の部下となってお役に立つこと．．．です,pid2
+	zin_old_msg,ふむ．．．部下に、か,pid1
+	zin_old_msg,お願いです．．．お願いですp_name1様．．．,pid2
+	zin_old_msg,信じて良いのかな？,pid1
+	zin_old_msg,はい．．．p_name1様、忠誠を誓います,pid2
+	zin_old_msg,くくく、ではここから出してやろう。軍の病院にも入れてやる,pid1
+	zin_old_msg,ほ、本当ですか！？,pid2
+	zin_old_msg,ぬっ、本当ですか、だと？,pid1
+	zin_old_msg,貴様は今ここで仕えた主君を信用できないというのだな？,pid1
+	zin_old_msg,も、申し訳ありません！！p_name1様！,pid2
+	zin_old_msg,お許しください！！,pid2
+	zin_old_msg,冗談だ。これからは体を安静にして良い子を産むがいい,pid1
+	zin_old_msg,はい．．．p_name1様、忠誠を誓います,pid2
+	zin_old_msg,（もし美しい娘を産めば．．．楽しみが増えそうだ）,pid1
+	zin_flush,pid2
+	zin_old_fadeout,0,32
+zin_reg_title,p_name2は部下になりました。
+zin_reg_button,0
+zin_reg_exit
+end
+
+*haturape
+zin_reg_event,体力の限界,pid1,pid2,,gzin35
+zin_reg_msg,くくく、何故目をそらす？貴様のための宴だぞ？,0
+zin_reg_msg,大勢の男に犯される女を見るのは初めてか？,0
+zin_reg_msg,しっかりと見ておけよ,0
+zin_reg_msg,．．．うっ！,1
+zin_reg_msg,あの者はな、貴様と同じとある勢力の武将であったのだ,0
+zin_reg_msg,まあ、力及ばず我が軍に捕らえられ、このような目にあっている,0
+zin_reg_msg,私への仕官を拒否した故にここにいる,0
+zin_reg_msg,すでに何百人もの軍の荒くれ者に犯され続けて,0
+zin_reg_msg,体力は限界のようだ,0
+zin_reg_msg,だが武将、軍人として精神を鍛え過ぎたのであろうな,0
+zin_reg_msg,あの様な姿になってもまだ屈しない,0
+zin_reg_msg,大したものではないか,0
+zin_reg_msg,死なぬ限りあのままであろうな,0
+zin_reg_msg,まあ体力、精神共に限界まで来たら,0
+zin_reg_msg,医療カプセルに入れてやることにしている,0
+zin_reg_msg,そしてまた、屈するまで、あるいは．．．死ぬまでこの牢獄で陵辱する,0
+zin_reg_msg,いやぁっ！！,1
+zin_reg_msg,何を叫ぶ？,0
+zin_reg_msg,あ、貴方は人間じゃないわ！！,1
+zin_reg_msg,それはずいぶんと非道い非道い言い草だ,0
+zin_reg_msg,だって．．．あんな非道いことをさせてなんとも思わないの？,1
+zin_reg_msg,これも私の務めだ、仕方あるまい,0
+zin_reg_msg,げ、外道．．．,1
+zin_reg_msg,．．．さて、何故これを目の前で貴様に見せたと思う？,0
+zin_reg_msg,！？,1
+zin_reg_msg,ああ、実に良い反応だ。牢獄で体力を限界まで衰えさせた貴様は．．．,0
+zin_reg_msg,．．．（ごくり）,1
+zin_reg_msg,どこまであの行為に耐えられるかな？,0
+zin_reg_msg,ま、まさか．．．！,1
+zin_reg_msg,あれは姿を変えた男女の営み、忌避するものではあるまい,0
+zin_reg_msg,む、無理矢理だなんてどうかしているわ！！,1
+zin_reg_msg,ふふふ、知っているぞ？貴様．．男を知らぬ体であろう？,0
+zin_reg_msg,！？,1
+zin_reg_msg,捕らえら時に一度、調べさせてもらった。じっくりとな,0
+zin_reg_msg,やめて！！,1
+zin_reg_msg,私に屈しない以上は陵辱させてもらう,0
+zin_reg_msg,いやぁ．．．,1
+zin_reg_msg,まず初めては私が貰おう。じっくりと堪能してくれる,0
+zin_reg_msg,やめて．．．,1
+zin_reg_msg,飽きるまで貴様を犯したら．．．,0
+zin_reg_msg,兵士たちにくれてやろう,0
+zin_reg_msg,貴様はあの女の隣で貴様は兵士たちに犯されることにだろう,0
+zin_reg_msg,ううっ．．．いやぁ！！,1
+zin_reg_msg,どこまであの行為に耐えられるかな？,0
+zin_reg_msg,やあ．．．いやぁ！聞きたくない！,1
+zin_reg_msg,まあ、殺さぬようにはしてやろう,0
+zin_reg_msg,そして精神が崩壊しても、肉便器として兵士に使わせてやるぞ、どうだ？,0
+zin_reg_msg,おねがい．．．止めて．．．,1
+zin_reg_msg,さあ、この宴も終わりだ。次の主菜は．．．お前だ！！,0
+zin_reg_msg,いやぁ！許してください！！,1
+zin_reg_msg,許す？何故私が貴様を許さなければならない,0
+zin_reg_msg,やめて．．．ください,1
+zin_reg_msg,貴様は拒否するばかりだ。私が何故そんなヤツの言うことを聞かねばならん,0
+zin_reg_msg,わかり．．．ました,1
+zin_reg_msg,ん？なんだ？,0
+zin_reg_msg,p_name1様の．．．部下となります．．．,1
+zin_reg_msg,ん～、実は貴様はもう部下としては．．．要らぬ,0
+zin_reg_msg,！？,1
+zin_reg_msg,私に犯されて、この牢獄で兵士たちの肉便器と生きるほうが,0
+zin_reg_msg,まだ私の役に立つ,0
+zin_reg_msg,私にとって貴様の価値は,0
+zin_reg_msg,その処女だけだ,0
+zin_reg_msg,お、お願いします！p_name1様の．．．p_name1様の部下にしてください！！,1
+zin_reg_msg,しかしな．．．,0
+zin_reg_msg,わ、私の処女なら捧げます！！ですから．．．部下になりますから,1
+zin_reg_msg,非道いことをするのだけはお止めください！！,1
+zin_reg_msg,さて．．．どうしようか？,0
+zin_reg_msg,お願いいたします．．．p_name1様．．．,1
+zin_reg_msg,信じて良いのだな？,0
+zin_reg_msg,は、はい！！,1
+zin_reg_msg,では私に初めてを捧げるか？,0
+zin_reg_msg,．．．はいp_name1様,1
+zin_reg_msg,よかろう。だが肝に銘じておけ、私を裏切れば．．．,0
+zin_reg_msg,わ、わかっております！！,1
+zin_reg_msg,ふふっ、では貴様には私の部下としての処遇を与えよう,0
+zin_reg_msg,有難き幸せです,1
+zin_reg_msg,貴様の処女はいずれ頂く。それまで大事に取っておくが良い,0
+zin_reg_msg,わかりました,1
+zin_reg_title,p_name2は部下になりました。
+
+zin_reg_button,0
+zin_reg_exit
+end
+
+*notrape
+
+zin_reg_event,体力の限界,pid1,pid2,,gzin35
+zin_reg_msg,何か話があるそうだが？,0
+zin_regs_msg,うう．．．た、頼む．．．ここから．．．だして．．．くれ．．．,お、お願い．．．こ、ここから．．．だして．．．,1
+zin_reg_msg,ほう．．．crずいぶん堪えたようだな,0
+zin_reg_msg,callself_pid1の部下になるなら出してやってもいいぞ,0
+zin_regs_msg,わ、わかった．．．な、なんでも．．．するぅぅ．．．,な、なります．．．部下に．．．忠実な部下に．．．なり．．ます．．,1
+zin_reg_msg,フフ、いいだろう,0
+zin_reg_title,p_name2は部下になりました。
+zin_reg_button,0
+zin_reg_exit
+
+end

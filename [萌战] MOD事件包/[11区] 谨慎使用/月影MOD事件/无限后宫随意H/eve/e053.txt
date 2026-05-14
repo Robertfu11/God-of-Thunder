@@ -1,0 +1,32 @@
+eve_start
+	if_date,70,10
+	if_poid,625,743
+	if_poid,16,743
+	if_poid,11,743
+eve_end
+
+set_eveflg,7,1
+
+chk_exeplayer,743,0,0,0
+chk_exeplayer_else
+set_habatusts,11,6
+end
+
+chk_exeplayer_then
+bgm_chg,60
+get_habatumem,11,0
+//zin_reg_init
+zin_reg_event,阿多尼爾的辦公室,11,pval,,gzin33
+zin_reg_msg,好像十分吵鬧的樣子,0
+zin_reg_msg,阿多尼爾大人、現在並不是悠閑的時候了,1
+zin_reg_msg,明明其他的王族為了得到自己的領主而紛紛准備著,1
+zin_reg_msg,這樣啊．．．．,0
+zin_reg_msg,果然阿古迪巴並沒有使眾人歸心的能力．．．,0
+zin_reg_msg,阿斯蘭王朝也壯大過頭了,0
+zin_reg_msg,這個國家發生暴亂也是時間的問題了,0
+zin_reg_msg,一直殘存下來我們一族的命運也到這裏位置了麼,0
+zin_reg_msg,不走沒有辦法了呢,0
+zin_reg_title,阿多尼爾離開了。
+zin_reg_button,0
+//zin_reg_exit
+set_habatusts,11,6

@@ -1,0 +1,11 @@
+eve_start
+//	if_month,3
+//天王為霸王
+	if_haou,669
+//地球は天王領ではない
+	if_chkwsts,33,覇王,!669
+eve_end
+
+//年1回　恨み値を更新
+add_urami,669,soid33,500
+end

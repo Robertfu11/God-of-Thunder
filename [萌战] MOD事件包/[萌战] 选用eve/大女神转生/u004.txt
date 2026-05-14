@@ -1,0 +1,52 @@
+eve_start
+	if_date,75,03
+        if_pkun,555,13000
+eve_end
+
+set_epid1,player
+set_eveflg,196,0
+
+bgm_chg,51
+bl_fadein,gzin53
+zin_reg_event,,player,,,
+zin_reg_msg,吾以蘿莉為骨
+zin_reg_msg,以萌為吾身
+zin_reg_msg,以GAL為吾血
+zin_reg_msg,吾曾推倒无数的蘿莉
+zin_reg_msg,从未失手
+zin_reg_msg,亦从未滿足
+zin_reg_msg,吾独醉于蘿莉之中
+zin_reg_msg,故此生已无任何意義
+zin_reg_msg,所以吾祈求,0
+zin_reg_2sel,无限萌制,いや
+        get_resp
+        ret_sel1
+        goto,*go
+        ret_sel2
+        set_eveflg,196,0
+        end
+        *go
+                    for,PMAX,196,1 
+                                    chk_msts,eveflg196,状態,6,NON,0,NON,0,NON,0,NON,0
+                                    chk_msts_then
+                                                        set_epid2,eveflg196
+                                                        chk_eveflg,196,>1199
+                                                        chk_eveflg_then
+                                                        continue
+                                                        chk_eveflg_else
+                                                        zin_reg_msg,p_name2,0
+                                                        zin_reg_msg,以萌之名義
+                                                        zin_reg_msg,令汝
+                                                        zin_reg_2sel,復活,いや
+                                                        get_resp
+                                                        ret_sel1
+                                                        set_sikan,eveflg196,poid_player
+                                                        add_kunkou,eveflg196,12200
+                                                        set_pnen,eveflg196,17
+                                                           continue
+                                                        ret_sel2
+                                                           continue
+                                    chk_msts_else
+                                       continue
+                    next                                 
+end

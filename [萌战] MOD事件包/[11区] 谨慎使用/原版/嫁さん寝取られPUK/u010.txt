@@ -1,0 +1,43 @@
+eve_start
+	if_chksts,player,17,>0
+	if_eveflg,161,1
+	if_eveflg,150,>1
+	if_rnd,4
+eve_end
+
+set_epid1,eveflg150,0
+set_epid2,yome_player,0
+set_epid3,player,0
+
+bgm_chg,60
+zin_reg_init
+zin_reg_event,怪しい男,pid3,pid2,,gzin18
+zin_reg_msg,それじゃあ、仕事に行ってくるよ,0
+zin_reg_msg,いってらっしゃい、call_pid23□,1
+zin_reg_msg,（なにか嫌な予感がするな．．．）,0
+zin_reg_2sel,注意を促す,気のせいだろう
+get_resp
+ret_sel1
+zin_reg_msg,p_name2、戸締りはしっかりな,0
+zin_reg_msg,後、知らない人が来ても鍵を開けてはいけないよ,0
+zin_reg_msg,？？クスッ□call_pid21ったら心配性ですね,1
+zin_reg_msg,わかりましたcr戸締りも知らない人にも注意しておきます,1
+end
+
+ret_sel2
+zin_reg_face_0,pid1
+zin_reg_msg,ん、あれは．．．,0
+zin_reg_msg,p_name3と隣にいるのは新しい嫁か？,0
+zin_reg_msg,最近姿を見ないと思ったら．．．,0
+zin_reg_msg,へぇ．．．crあの粗チンにはもったいない女だな,0
+zin_reg_msg,前の女にも飽きてきたところだったし丁度いい,0
+zin_reg_msg,あの女にもcr本当のセックスってやつを教えてやる,0
+zin_reg_msg,体に直接なcr（ニヤッ）,0
+//寝とり男前妻と離婚
+set_rikon,pid1
+set_eveflg,161,0
+set_eveflg,160,1
+end
+
+
+

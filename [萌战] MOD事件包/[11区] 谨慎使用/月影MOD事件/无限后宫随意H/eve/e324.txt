@@ -1,0 +1,58 @@
+eve_start
+	if_date,95,2
+	//雷在阿希麾下
+	if_poid,626,432
+	//詹妮弗在阿希麾下
+	if_poid,340,432
+	//詹妮弗已婚
+	if_not_single,340
+eve_end
+
+chk_exeplayer,432,0,0,0
+chk_exeplayer_else
+set_rikon,626
+//霸王交替
+chg_haou,432,626
+set_dead,432,0
+//玩家交替
+chg_player,626,432
+set_run_msg,阿希死亡，雷成為霸王。
+end
+
+chk_exeplayer_then
+bgm_chg,56
+//zin_reg_init
+zin_reg_event_mode,阿希的王宮,432,626,,gzin9,2
+zin_reg_qnar,阿希病倒後，症狀逐漸惡化。
+zin_reg_msg,雷啊，我已命不久矣,0
+zin_reg_msg,阿希大人，請您務必振作．．．,1
+zin_reg_msg,能答應我最後一件事嗎．．．,0
+zin_reg_msg,請您吩咐,1
+zin_reg_msg,作為我的繼承人，成為一國之君吧,0
+zin_reg_msg,什麼？．．．cr要我成為霸王．．．,1
+zin_reg_msg,只有卿可擔此重任了．．．．,0
+zin_reg_msg,除了卿，還有誰說話大家肯聽．．．,0
+chk_exist_fam,432,兒子
+chk_exist_fam_then
+	zin_reg_msg,可是，p_name_pval大人呢？,1
+	zin_reg_msg,他不行cr不是為人君的料,0
+	zin_reg_msg,我這兒子，說起來還真是沒出息,0
+	zin_reg_msg,卿心裏也很清楚吧,0
+chk_exist_fam_else
+	zin_reg_msg,．．．．．．,1
+	zin_reg_msg,我明白了,1
+	zin_reg_msg,阿希大人的心願，就由我繼承,1
+	zin_reg_msg,喔喔，你願意擔此大任麼！！,0
+	zin_reg_msg,之後的事就請放心交給我吧,1
+	zin_reg_msg,嗯，拜託了．．．,0
+	zin_reg_qnar,數日之後，阿希過世。
+	zin_reg_title,雷成為了霸王。
+	zin_reg_button,0
+//zin_reg_exit
+set_rikon,626
+//霸王交替
+chg_haou,432,626
+set_dead,432,0
+//玩家交替
+chg_player,626,432
+end

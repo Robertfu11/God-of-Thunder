@@ -1,0 +1,151 @@
+set_epid1,player
+/////////////////第一候補：妻
+for,PMAX,280,1
+set_epid2,eveflg280
+chk_mval,状態:eveflg280=2,覇王:eveflg280=poid_player,,,
+chk_mval_then
+chk_family,pid2,pid1
+	case_fam_妻
+		goto,*OrenoTuma1
+		break
+	default_fam
+continue
+next
+
+chk_mval_else
+continue
+next
+//////////////////////第二候補：娘
+for,PMAX,280,1
+set_epid2,eveflg280
+chk_mval,状態:eveflg280=2,覇王:eveflg280=poid_player,,,
+chk_mval_then
+chk_family,pid2,pid1
+	case_fam_娘
+	case_fam_娘(養)
+		goto,*OrenoTuma1
+		break
+	default_fam
+continue
+next
+
+chk_mval_else
+continue
+next
+//////////////////////第二候補：母
+for,PMAX,280,1
+set_epid2,eveflg280
+chk_mval,状態:eveflg280=2,覇王:eveflg280=poid_player,,,
+chk_mval_then
+chk_family,pid2,pid1
+	case_fam_母
+		goto,*OrenoTuma1
+		break
+	default_fam
+continue
+next
+
+chk_mval_else
+continue
+next
+//////////////////////第二候補：兄弟姉妹
+for,PMAX,280,1
+set_epid2,eveflg280
+chk_mval,状態:eveflg280=2,覇王:eveflg280=poid_player,,,
+chk_mval_then
+chk_family,pid2,pid1
+	case_fam_姉
+	case_fam_妹
+		goto,*OrenoTuma1
+		break
+	default_fam
+continue
+next
+
+chk_mval_else
+continue
+next
+end
+///////////////////
+*OrenoTuma1
+/////その他チェック
+for,PMAX,282,1
+chk_mval,状態:eveflg282=2,覇王:eveflg282=poid_player,,,
+chk_mval_then
+chk_eveflg,282,player
+chk_eveflg_then
+continue
+chk_eveflg_else
+goto,*sonota
+break
+chk_mval_else
+continue
+next
+end
+*sonota
+set_epid3,eveflg282
+
+eve_start
+if_pid3,>0
+if_pid2,>0
+if_rnd,24
+eve_end
+
+
+
+/////妻とは険悪かどうかの調査
+chk_mval,友好:eveflg280<25,,,,
+chk_mval_then
+zin_reg_event,商業惑星,pid1,pid2,,gzin21
+zin_reg_msg,．．．最近crcall_pid2とのcr折り合いが悪い,0
+zin_reg_msg,仲直りをかねてcr外出に誘ってみるか？,0
+zin_reg_2sel,その必要は無い,外出に誘う
+get_resp
+ret_sel1
+zin_reg_msg,．．．ふんcrそんな必要は無いな,0
+zin_reg_button,0
+zin_reg_exit
+end
+ret_sel2
+goto,*TumatohaKenaku
+chk_mval_else
+goto,*TumatohaNakayosi
+/////////険悪な夫婦関係を解消しよう
+*TumatohaKenaku
+zin_reg_msg,．．．なに？,1
+zin_reg_msg,．．．いや、たまにはcr一緒に外出しようとcr思って、な,0
+zin_reg_msg,．．．,1
+rnd,2
+case0
+zin_reg_msg,．．．一人でcr外出すれば？,1
+zin_reg_msg,．．．急いでいるからcrそこをどいて,1
+zin_reg_msg,．．．くっ,0
+zin_reg_button,0
+zin_reg_exit
+end
+case1
+zin_reg_msg,．．．そうね,1
+zin_reg_msg,．．．たまには良いかもしれないわね,1
+
+////////妻とラブラブお買い物□
+*TumatohaNakayosi
+/////妻が性奴隷か調査
+chk_mval,友好:eveflg280<90,,,,
+chk_mval_then
+add_sinmitu,pid2,10
+chk_mval_else
+////プレイヤーが覇王か調査
+chk_mval,勲功:player=13000,,,,
+chk_mval_then
+upd_sts,pid2,1,10
+chk_mval_else
+
+
+rnd,3
+case0
+	txtload,u012a
+case1
+	txtload,u012b
+case2
+	txtload,u012c
+

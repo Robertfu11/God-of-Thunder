@@ -1,0 +1,19 @@
+/////流産予防（2月に0歳へ戻す）/////
+
+eve_start
+	if_aft_date,93
+	if_bef_date,115
+	if_month,2
+eve_end
+
+//子種5（女の子）で1～2歳になってしまったのを0歳へ戻す
+for,10,eveflg299,1
+	get_mpid,状態=5,特殊=0,父=0,母=0,年齢>0,年齢<3,性別=2
+	chk_mval,pval=0,,,,
+	chk_mval_then
+		break
+	chk_mval_else
+		upd_sts,pval,2,-2
+		continue
+next
+end

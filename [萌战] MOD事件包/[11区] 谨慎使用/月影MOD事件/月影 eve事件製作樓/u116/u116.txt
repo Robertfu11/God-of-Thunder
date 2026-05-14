@@ -1,0 +1,21 @@
+eve_start
+	if_psex,player,1  
+eve_end
+set_epid1,player
+set_eveflg,194,0
+                for,PMAX,194,1             
+                chk_msts,eveflg194,”e‰¤,poid_player,ó‘Ô,8,«•Ê,1,NON,0,NON,0
+                chk_msts_then
+                    set_epid2,eveflg194
+                    zin_reg_msg,p_name2,0
+                    set_sikan,eveflg194,poid_player
+                    continue
+                chk_msts_else
+                    continue
+                 next
+                set_epid2,poid_player
+                set_eveflg,194,0
+                set_eveflg,195,0
+                end
+set_eveflg,194,0
+end

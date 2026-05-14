@@ -1,0 +1,12 @@
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin8
+//	zin_reg_msg,０１２３４５６７８９０１２３４５６７８９０１,0
+	zin_reg_msg,p_name1大人,1
+	zin_reg_msg,霸王p_name3的抓捕行動已經失敗了,1
+	zin_reg_msg,什麼、p_name3逃掉了嗎！！,0
+	zin_reg_msg,十分抱歉,1
+	zin_regs_msg,可惡．．．cr居然逃掉了,丟下家人獨自逃跑、真是個狠心的霸王啊,0
+zin_reg_button,0
+//zin_reg_exit
+end

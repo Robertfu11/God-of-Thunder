@@ -1,0 +1,44 @@
+eve_start
+	if_date,70,8
+	//布朗　アスラン配下
+	if_poid,625,743
+	//阿姆　アスラン配下
+	if_poid,751,743
+	//アブター　アスラン配下
+	if_poid,563,743
+eve_end
+
+chk_exeplayer,743,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,61
+//zin_reg_init
+zin_reg_event,宮廷内,625,563,,gzin23
+zin_reg_msg,這是布朗王子,1
+zin_reg_msg,喔喔阿布塔殿下cr最近還好吧？,0
+zin_reg_msg,不知怎回事最近還算有點忙,1
+zin_reg_msg,哈哈，所處的派系較弱就會比較忙啊,0
+zin_reg_msg,說是派系要大，但，重要的還是內部組成的人員啊,1
+zin_reg_msg,喔，我不是說你們是烏合之眾,1
+zin_reg_msg,你說甚麼！！,0
+zin_reg_msg,啊啊，真的是非常抱歉,1
+zin_reg_msg,我並不是指阿古巴迪派的事情,1
+zin_reg_msg,你，可惡．．．cr恩？,0
+zin_reg_msg,話說回來．．．cr那邊的貴婦人是？,0
+zin_reg_msg,喔喔，這是我遲了介紹了,1
+zin_reg_msg,這是我的妻子，阿姆,1
+zin_reg_face_1,751
+zin_reg_msg,我是阿姆、王子,1
+zin_reg_msg,喔？．．．cr阿布塔殿下甚麼時候有如此美麗的夫人啊．．．,0
+zin_reg_face_1,563
+zin_reg_msg,我們去年結婚的,1
+zin_reg_msg,沒有去像殿下打個招呼實在是太失禮了,1
+zin_reg_msg,哼．．．．,0
+zin_reg_msg,那麼，布朗王子cr我門還有一點急事,1
+zin_reg_face_1,0
+zin_reg_msg,這樣美貌的女子．到底在哪裡找到的．．,0
+zin_reg_button,0
+//zin_reg_exit
+end

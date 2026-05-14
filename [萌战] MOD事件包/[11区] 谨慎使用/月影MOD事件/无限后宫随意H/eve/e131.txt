@@ -1,0 +1,36 @@
+eve_start
+	if_date,70,9
+	//ツキリ　ツウガイ配下
+	if_poid,14,805
+	//ルーキ ツウガイ配下
+	if_poid,560,805
+eve_end
+
+chk_exeplayer,805,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,61
+//zin_reg_init
+zin_reg_event,,805,14,,gzin21
+zin_reg_qnar,茲烏蓋回城的時候與一個人偶然視線相對。
+zin_reg_msg,茲基利喲、提那個男人的首級來見我,0
+zin_reg_msg,那個男人．．．．cr父親、那個人做了什麼？,1
+zin_reg_msg,他的目光很可疑cr那是想要謀反的眼神,0
+zin_reg_msg,可是、突然要取人首級．．．,1
+zin_reg_msg,暫且先關押起來、然後再詳細調查．．．．,1
+zin_reg_msg,混小子！！！！！,0
+zin_reg_msg,你聽不懂嗎？我叫你去取下他的首級！！！！,0
+zin_reg_msg,可是、父親cr那也太武斷了．．．．,1
+zin_reg_msg,孽障．．．cr用不著再指望你了,0
+zin_reg_msg,路希！！！,0
+zin_reg_face_1,560
+zin_reg_msg,在！！,1
+zin_reg_msg,把那個男人的腦袋給我帶過來！！,0
+zin_reg_msg,如您所願！！,1
+zin_reg_face_1,14
+zin_reg_msg,父親．．．．,1
+zin_reg_button,0
+//zin_reg_exit
+end

@@ -1,0 +1,92 @@
+eve_start
+	if_aft_date,109,2
+	if_bef_date,115,2
+//モレア　未契約
+	if_kaizoku_free,616
+//蕾娜姬　巴尼亞瓦配下
+	if_poid,618,429
+//資金6萬以下
+//	if_money,429,<60000
+eve_end
+
+//資金供給100萬
+add_money,429,1000000
+
+chk_exeplayer,429,0,0,0
+chk_exeplayer_else
+//モレア　巴尼亞瓦處仕官
+set_sikan,616,429
+upd_sts,616,勲功,9000
+upd_sts,616,忠誠,100
+end
+
+chk_exeplayer_then
+set_epid1,429
+set_epid2,618
+set_epid3,616
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,司令室,429,781,,gzin29
+zin_reg_msg,司令、不明艦隊正在接近防禦網,1
+zin_reg_msg,什麼！！cr是敵人嗎？,0
+zin_reg_msg,立刻去叫防衛隊,0
+zin_reg_msg,了解cr．．．．．,1
+zin_reg_msg,等一下cr從不明艦隊中傳來了通信,1
+zin_reg_msg,什麼？cr想要勸我們投降嗎！,0
+zin_reg_face_1,616
+zin_reg_msg,嗨、蕾娜姬！！cr在嗎？？,1
+zin_reg_face_0,618
+zin_reg_msg,這、這聲音是．．．,0
+zin_reg_msg,以前的老朋友來找你玩了,1
+zin_reg_msg,快點發射激光制導！！,1
+zin_reg_msg,モレア！！,0
+zin_reg_msg,ハハハ、你果然還活著啊,1
+zin_reg_msg,你不也是、怎麼了,0
+zin_reg_msg,就是有點事想和你聊聊,1
+zin_reg_msg,不打開門？,1
+zin_reg_face_0,429
+zin_reg_face_1,781
+zin_reg_msg,也好cr但是要從警戒區域的哪裏進來呢,0
+zin_reg_msg,你來帶路吧,0
+zin_reg_msg,了解、我會帶你過警戒區域的,1
+bl_fadeout
+bgm_chg,69
+bl_fadein,gzin24
+zin_reg_event,,618,616,,gzin69
+zin_reg_msg,好久不見,0
+zin_reg_msg,是啊cr能活著就不錯了,1
+zin_reg_msg,你到底做了什麼啊,0
+zin_reg_msg,我也像你一樣不做海盜了,1
+zin_reg_msg,發生了什麼？,0
+zin_reg_msg,最近、海盜都投靠正規軍了,1
+zin_reg_msg,不像以前那麼自由了,1
+zin_reg_msg,需要我們的時候就低聲下氣、用完了就態度大變,1
+zin_reg_msg,是啊．．．．,0
+zin_reg_msg,雖然我想過要當官、既然要當官就要和你在以前,1
+zin_reg_msg,我歡迎你來、モレア,0
+zin_reg_msg,我介紹一下cr這個國家的霸王也是我的丈夫,0
+zin_reg_face_0,429
+zin_reg_msg,巴尼亞瓦だ,0
+zin_reg_msg,要娶蕾娜姬的人也不簡單啊,1
+zin_reg_msg,モレアよcr雇傭我嗎？,1
+zin_reg_msg,只要是能用的人才的話、來多少我都不會嫌棄的,0
+zin_reg_msg,我的實力去蕾娜姬から裏了解了吧,1
+zin_reg_msg,這樣你才會跟相信吧,1
+zin_reg_msg,而且還會有禮物哦,1
+zin_reg_msg,哦、什麼禮物啊？,0
+zin_reg_msg,目前為止收集的金銀財寶、都會給你的哦,1
+zin_reg_msg,有100萬的價值哦,1
+zin_reg_msg,我想要這艦隊,1
+zin_reg_face_0,618
+zin_reg_msg,做這種事情沒問題嗎？,0
+zin_reg_msg,現在開始要把性命托付給他們cr希望這能表現我的忠心,1
+zin_reg_face_0,429
+zin_reg_msg,我知道了、cr歡迎你哦モレア,0
+zin_reg_title,モレア成為了部下。
+zin_reg_button,0
+//モレア　巴尼亞瓦處仕官
+set_sikan,616,429
+upd_sts,616,勲功,9000
+upd_sts,616,忠誠,100
+//zin_reg_exit
+end

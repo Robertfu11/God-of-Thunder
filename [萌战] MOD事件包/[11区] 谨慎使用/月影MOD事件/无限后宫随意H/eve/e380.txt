@@ -1,0 +1,40 @@
+eve_start
+	if_date,70,8
+//ホップマンがアビー配下
+	if_poid,497,4
+//ファーリ仮死状態
+	if_psts,574,6
+eve_end
+
+chk_exeplayer,432,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,61
+//zin_reg_init
+zin_reg_event,阿比的王宮,4,497,zin63,gzin8
+zin_reg_qnar,霍普曼艦隊在搜索從卡魯哈恩艦隊脫離的艦艇。
+zin_reg_msg,阿比大人、我是霍普曼,1
+zin_reg_msg,辛苦了、找到什麼了嗎？,0
+zin_reg_msg,是、捉到了卡魯哈恩的女兒法莉,1
+zin_reg_msg,哦．．．．cr終於發現了嗎,0
+zin_reg_msg,是、殘存的妮娜、拉芙還沒有找到,1
+zin_reg_msg,但只是時間問題,1
+zin_reg_msg,嗯、做得好,0
+zin_reg_face_1,574
+zin_reg_msg,放、放開我！！,1
+zin_reg_msg,法莉殿下,0
+zin_reg_msg,初次見面、我是阿比,0
+zin_reg_msg,你、你是．．．,1
+zin_reg_msg,竟然把父親．．．,1
+zin_reg_msg,妮娜、拉芙殿下似乎不和你在一起呢．．．,0
+zin_reg_msg,你能告訴我她在哪裏嗎？,0
+zin_reg_msg,誰、誰要告訴你！！,1
+zin_reg_msg,呵呵、好吧好吧,0
+zin_reg_msg,既然來了 那總得關心一下吧,0
+zin_reg_msg,那就希望我們有再會的一天吧,0
+zin_reg_msg,咕．．．．．,1
+zin_reg_button,0
+//zin_reg_exit
+end

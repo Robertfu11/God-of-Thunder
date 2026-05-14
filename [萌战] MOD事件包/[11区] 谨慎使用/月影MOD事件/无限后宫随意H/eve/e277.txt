@@ -1,0 +1,26 @@
+eve_start
+	if_eveflg,28,1
+	if_psts,725,2
+	if_pkun,725,<13000
+eve_end
+
+//移動至貝塔麾下
+set_pmov,725,669
+//功勳、忠誠設定
+upd_sts,725,1,100
+upd_sts,725,4,4000
+
+chk_exeplayer,piod0725,669,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event_mode,布蘭塔的住宅,725,0,,gzin18,2
+zin_reg_msg,這個是．．．cr終於來了啊,0
+zin_reg_msg,父親大人應該已經趕過去了,0
+zin_reg_msg,我也得快點才行．．．,0
+zin_reg_title,布蘭塔投靠天王。
+zin_reg_button,0
+//zin_reg_exit

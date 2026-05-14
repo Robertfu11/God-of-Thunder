@@ -1,0 +1,26 @@
+// 同勢力年齡大於35女性恢復青春同加能力
+eve_start
+	if_month,4
+eve_end
+set_eveflg,190,0
+for,PMAX,190,1
+chk_msts,eveflg190,覇王,poid_player,性別,2,年齢,>35,NON,0,NON,0
+chk_msts_then
+	set_pnen,eveflg190,13
+	set_virgin,eveflg190
+	upd_sts,eveflg190,1,20
+	upd_sts,eveflg190,5,20 
+	upd_sts,eveflg190,6,20 
+	upd_sts,eveflg190,7,20
+	upd_sts,eveflg190,8,20
+	upd_sts,eveflg190,9,20
+	upd_sts,eveflg190,10,10
+	upd_sts,eveflg190,12,110
+
+
+
+chk_msts_else
+	continue
+next
+txtload,u001b
+end

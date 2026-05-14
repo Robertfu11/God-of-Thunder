@@ -1,0 +1,40 @@
+eve_start
+	if_eveflg,69,3
+//天皇配下
+	if_poid,eveflg70,669
+//琳希　天皇配下
+	if_poid,668,669
+eve_end
+
+set_eveflg,69,4
+
+chk_exeplayer,669,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+set_epid1,669
+set_epid2,eveflg70
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,天王的王宮,668,840,,gzin23
+zin_reg_qnar,琳希最近沒有見到父親，因此主動去天王的居室拜訪。
+zin_reg_msg,為什麼不露面！！,0
+zin_reg_msg,不要躲著了！！,0
+zin_reg_msg,對不起，任何身份也不能通過，這是天王大人的命令,1
+zin_reg_msg,父親不可能拒絕與我見面的,0
+zin_reg_msg,這幾天都沒有看到過父親的臉，如果有什麼問題的話，怎麼辦！,0
+zin_reg_msg,雖然這麼說．．．但是．．.,1
+zin_reg_face_1,pid2
+zin_reg_msg,怎麼了？,1
+zin_reg_msg,p_name2、那個死腦袋的衛兵怎麼講都講不聽,0
+zin_reg_msg,這個，公主cr現在天王誰都不見,1
+zin_reg_msg,是你···cr這是怎麼回事！,0
+zin_reg_msg,理由我也不知道，不過他誰都不想見。,1
+zin_reg_msg,這樣嗎．．.,0
+zin_reg_msg,改日再來吧,1
+zin_reg_msg,.．．．．cr啊，好吧,0
+zin_reg_msg,哈哈哈,1
+zin_reg_button,0
+//zin_reg_exit
+end

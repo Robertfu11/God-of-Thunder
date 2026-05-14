@@ -1,0 +1,36 @@
+eve_start
+	if_date,96,11
+	//カンシ　sts6である
+	if_psts,356,6
+	if_psts,813,6
+	if_psts,843,6
+eve_end
+
+bgm_chg,69
+//飛行艇の中
+zin_reg_event,,813,843,,gzin86
+zin_reg_msg,喂，莉莉罕！！,0
+zin_reg_msg,已經過了幾個月了啊,0
+zin_reg_msg,快點告訴我一太郎的住處！！,0
+zin_reg_msg,不是那樣的．．.,1
+zin_reg_msg,把我的食物提升一下，給我兩個傭人,1
+zin_reg_msg,如果我不滿意的話．．.,1
+zin_reg_msg,這、這傢伙．．．到底想怎麼樣,0
+zin_reg_face_1,356
+zin_reg_msg,瓦德大人，這裏．．.,1
+zin_reg_msg,不不．．.,0
+zin_reg_face_1,843
+zin_reg_msg,呵呵呵、坎西好吧我知道了。,1
+zin_reg_msg,拜託你了哦，坎西,1
+zin_reg_face_0,356
+zin_reg_msg,公主，這是在宇宙船裏面,0
+zin_reg_msg,享受也不是像這樣的,0
+zin_reg_msg,暫時忍忍吧,0
+zin_reg_msg,不要！！cr沒辦法麼．．.,1
+zin_reg_face_0,813
+zin_reg_face_1,356
+zin_reg_msg,坎西，一旦打聽到一太郎場所的話，立即吧這傢伙斬首、換成獎金,0
+zin_reg_msg,瓦、瓦德大人．．.,1
+zin_reg_button,0
+//zin_reg_exit
+end

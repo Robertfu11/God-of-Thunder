@@ -1,0 +1,80 @@
+//王族オルド通常　相手：姫
+//■Ｈ體位：バック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,call_pid1、p_name2自從想到父親大人就一直在自慰著,1
+	zin_reg_msg,呼呼、還真是個、淫蕩的女兒啊,0
+	zin_reg_msg,可、可是．．．,1
+	zin_reg_msg,好吧、但是這樣才能讓我更爽的、為了表揚今天也會讓你達到天國般的感覺的,0
+	zin_reg_msg,好『好高興啊．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊．．．call_pid21．．．這麼激烈的、都頂到子宮了啦．．．,pid2
+	zin_old_msg,當然要這樣．．．呼、呼啊．．．這樣才會有天堂般的感覺啊！！！,pid2
+	zin_old_msg,好、好厲害．．．肚子都被．．．撐開了啊啊啊啊．．．,pid2
+	zin_old_msg,子宮要被．．．插、插壞了啊啊啊啊啊！！！,pid2
+	zin_old_msg,今天是天國特別的日子,pid1
+	zin_old_msg,讓父親大人來帶你走向天堂的極至吧！！,pid1
+	zin_old_msg,已、已經要忍不住了啊啊啊啊ーーーーーっ！！,pid2
+	zin_flush_one,pid2
+	zin_old_msg,呼呼呼、才沒有理由這麼快就結束了呢,pid1
+	zin_old_msg,啊啊、這種！！　這、這樣．．．激烈！！！,pid2
+	zin_old_msg,嗚啊啊啊啊啊！！　不、不行了．．．明明、現在正是天堂啊啊啊啊啊！！,pid2
+	zin_old_msg,今天的天堂可是無止境般的啊！！,pid1
+	zin_old_msg,不、不要啊！！　call_pid21！！　要、要壞掉了！！,pid2
+	zin_old_msg,p_name2、嗚、嗚啊啊啊啊啊！！　好舒服啊啊啊、有什麼地方、好奇怪啊啊啊啊啊！！,pid2
+	zin_old_msg,來吧、讓父親大人和你一起去享受天堂吧！！,pid1
+	zin_old_msg,啊啊啊！　啊啊啊！　啊啊啊ーーーーー呼！！,pid2
+	zin_flush,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,call_pid21的話．．．cr可以哦,1
+	zin_reg_msg,call_pid21的事cr．．．一直都喜歡著,1
+	zin_reg_msg,是嗎、那麼女兒的第一次我就不客氣的收下了,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊．．．啊啊．．有、有些痛呢．．．,pid2
+	zin_old_msg,不過、第一次給了最愛的父親大人．．．心情還是．．．很高興的呢．．．,pid2
+	zin_old_msg,怎麼回事呢？　已經濕成這樣了啊,pid1
+	zin_old_msg,不過這樣也好、更方便你父親我插的更深了．．．．,pid1
+	zin_old_msg,其實．．．cr到剛才還、一直在想著父親大人的事情呢．．．,pid2
+	zin_old_msg,什麼、難道說原來一直都在一個人自慰嗎？cr還沒想到原來是這麼淫蕩的女兒啊,pid1
+	zin_old_msg,那、那樣的事．．．會、會不好意思的啦！！,pid2
+	zin_old_msg,呼呼、這個怎麼樣！！,pid1
+	zin_old_qnar,p_name1動起了腰深深的插入到裏面,0
+	zin_old_msg,嗚啊啊．．．啊呀呀呀呀！！,pid2
+	zin_old_msg,這麼裏面的．．這麼深的．．．不、不行了啊啊ーーーっ！！,pid2
+	zin_old_msg,肚子裏．．．子宮裏面．．．好、好舒服啊啊啊．．．,pid2
+	zin_old_msg,call_pid21、用力．．．要力、拜託了父親大人再用力些！！！,pid2
+	zin_old_msg,呀呼啊啊、真不敢相信這是你的第一次呢我的女兒！！,pid1
+	zin_old_msg,可、可是．．．p_name2的裏面．．．,pid2
+	zin_old_msg,要出來了．．．有什麼東西要出來了！！,pid2
+	zin_old_msg,呼啊啊啊啊．．．呀啊啊啊啊！　噢噢、啊啊啊啊！,pid2
+	zin_old_msg,不、不行了．．．啊、啊啊啊！！出來了啊啊啊啊！！！,pid2
+	zin_flush,pid2
+	end
+//孕みパターン
+case_botebara
+	zin_reg_msg,call_pid1、父親大人、真早呢,1
+	zin_reg_msg,p_name2胸前的牛奶開始溢出了,1
+	zin_reg_msg,如何．．．快要出生了吧,0
+	zin_reg_msg,希望是個精神的孩子呢,0
+	zin_reg_msg,是的、call_pid1,1
+	zin_reg_msg,那麼、今天也來獎勵你達到天國般的感覺吧,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,呼、呼啊啊啊．．．這、這麼深的、好舒服啊啊啊！！！,pid2
+	zin_old_msg,呼呼、這明顯大了許多的子宮還真是讓人欲罷不能啊．．如何啊,pid1
+	zin_old_msg,呀啊啊．．．噢噢啊啊．．．call_pid21．．．請、請溫柔一些．．．p_name2的子宮．．．要壞掉了啦！！,pid2
+	zin_old_msg,噢噢、啊啊。抱歉了乖女兒、看到這樣子的你實在是忍不住了啊,pid1
+	zin_old_msg,那麼這樣的感覺怎麼樣啊？,pid1
+	zin_old_msg,很、很好．．．很好啊啊啊啊．．．啊啊．．．啊啊．．．,pid2
+	zin_old_msg,嗚嗚嗚．．．乖女兒咱要忍不住了．．．要射了．．．啊啊啊啊．．．,pid1
+	zin_old_msg,呀、哦哦．．．沒關系．．．不管．．．任何時候．．都．．．可以啊啊啊！！,pid2
+	zin_old_msg,嗚噢！！　呀呀呀呀啊！！,pid1
+	zin_old_msg,啊啊啊啊！！　啊啊哦！！　p_name2要．．．要、要去了啊！！　天堂啊啊啊啊啊啊！！！！,pid2
+	zin_flush,pid2
+	end

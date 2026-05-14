@@ -1,0 +1,41 @@
+eve_start
+	if_date,70,5
+	//コンラッド アディス配下
+	if_poid,798,12
+eve_end
+
+chk_exeplayer,12,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,54
+//zin_reg_init
+zin_reg_event,コンラッドの屋敷,798,626,,gzin18
+zin_reg_msg,父親大人．．．cr歡迎回來,1
+zin_reg_msg,哦哦、ラーcr我回來咯,0
+zin_reg_msg,怎樣、妹妹們的狀態？,0
+zin_reg_msg,是的．．．cr現在正在睡覺,1
+zin_reg_msg,抱歉哪、媽媽才去世不久就讓你這麼操勞,0
+zin_reg_msg,．．．．．cr這種程度不是問題,1
+zin_reg_msg,恩呣．．．．,0
+zin_reg_msg,你也是、該休息了,0
+zin_reg_msg,還想再讀一本的．．．,1
+zin_reg_msg,嗯？cr還在讀我的戰術理論嗎？,0
+zin_reg_msg,讀那種東西也很無趣吧？,0
+zin_reg_msg,．．．．．．,1
+zin_reg_msg,算了也好、隨意吧,0
+zin_reg_msg,．．．．謝謝,1
+zin_reg_face_1,0
+zin_reg_msg,．．．．．．,0
+zin_reg_msg,不怎麼表露感情呢．．．,0
+zin_reg_msg,這也是因為母親早逝的原因嗎．．．,0
+zin_reg_msg,對不住哪、雷,0
+zin_reg_msg,咕啊啊啊！！！！,0
+zin_reg_msg,唔咕嗚嗚嗚！！！！,0
+zin_reg_msg,唔．．．．cr哈啊哈啊．．哈啊哈啊．．．．,0
+zin_reg_msg,胸、胸口的疼痛．．．cr似乎又增加了呢．．．,0
+zin_reg_msg,還．．不能．．．倒下啊．．．,0
+zin_reg_button,0
+//zin_reg_exit
+end

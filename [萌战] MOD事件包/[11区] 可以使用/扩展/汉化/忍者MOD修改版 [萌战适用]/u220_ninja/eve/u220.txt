@@ -1,0 +1,95 @@
+//”Ó÷Ê≥¨∞∫ÈW»Ã»˝»ÀΩM
+
+
+chk_mval,eveflg176=0,,,,
+chk_mval_then
+	txtload,Ninja/u220a
+chk_mval_else
+
+chk_mval,eveflg176=1,,,,
+chk_mval_then
+	txtload,Ninja/u220b
+chk_mval_else
+
+chk_mval,eveflg176=2,,,,
+chk_mval_then
+	rnd,3
+	case0
+		txtload,Ninja/u220c
+	case1
+		end
+	case2
+		end
+chk_mval_else
+
+chk_mval,eveflg176=3,,,,
+chk_mval_then
+	txtload,Ninja/u220d
+chk_mval_else
+
+chk_mval,eveflg176=4,,,,
+chk_mval_then
+	txtload,Ninja/u220e
+chk_mval_else
+
+chk_mval,eveflg176=5,,,,
+chk_mval_then
+	txtload,Ninja/u220f
+chk_mval_else
+
+chk_mval,eveflg176=6,,,,
+chk_mval_then
+	txtload,Ninja/u220g
+chk_mval_else
+
+chk_mval,eveflg176=7,,,,
+chk_mval_then
+	txtload,Ninja/u220h
+chk_mval_else
+
+chk_mval,eveflg176=8,,,,
+chk_mval_then
+	txtload,Ninja/u220i
+chk_mval_else
+
+chk_mval,eveflg176=8,,,,
+chk_mval_then
+	txtload,Ninja/u220i
+chk_mval_else
+
+chk_mval,eveflg176=8,,,,
+chk_mval_then
+	txtload,Ninja/u220j
+chk_mval_else
+
+chk_mval,eveflg176=8,,,,
+chk_mval_then
+	txtload,Ninja/u220k
+chk_mval_else
+
+chk_mval,eveflg176=8,,,,
+chk_mval_then
+	txtload,Ninja/u220l
+chk_mval_else
+
+chk_mval,eveflg176=8,,,,
+chk_mval_then
+	txtload,Ninja/u220m
+chk_mval_else
+
+chk_mval,eveflg176=8,,,,
+chk_mval_then
+	rnd,3
+	case0
+		txtload,Ninja/u220n
+	case1
+		end
+	case2
+		end
+
+chk_mval_else
+
+
+end
+
+

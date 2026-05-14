@@ -1,0 +1,16 @@
+bgm_chg,54
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin18
+zin_reg_qnar,p_name1訪問了p_name2的住所。
+zin_reg_msg,住的地方不錯嘛,0
+zin_reg_msg,哈哈哈、貧窮浪人的便宜房子罷了,1
+zin_reg_msg,還沒找到想出仕的國家嗎？,0
+zin_reg_msg,要找到願意奉伺的主君，比想像中難多了,1
+zin_reg_msg,嗯,0
+zin_reg_msg,別管了，先為今天的再會乾杯吧,1
+zin_reg_msg,說的沒錯,0
+zin_reg_title,與p_name2的親密度提升了
+zin_reg_button,0
+zin_reg_exit
+add_sinmitu,pid2,15
+end

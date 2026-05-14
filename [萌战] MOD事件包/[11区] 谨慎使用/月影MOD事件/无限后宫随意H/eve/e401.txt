@@ -1,0 +1,12 @@
+eve_start
+	if_eveflg,41,0
+	if_eveflg,39,3
+	//阿多魯塞姆非霸王
+	if_not_haou,13
+	//スクロック覇王
+	if_pkun,624,13000
+eve_end
+
+//バン→スクロック
+set_kmdata,624,2,0,0
+set_eveflg,41,1

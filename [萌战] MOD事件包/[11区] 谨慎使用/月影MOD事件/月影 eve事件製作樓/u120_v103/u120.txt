@@ -1,0 +1,131 @@
+eve_start
+	if_psex,player,1
+    if_val,状態:player!5
+eve_end
+set_epid1,player
+set_epid3,poid_player
+set_eveflg,193,0
+bl_fadein,gzin8
+zin_reg_event,,player,,,
+zin_reg_msg,強姦王族以上?,0
+ zin_reg_2sel,強姦王族以上,いや
+        get_resp
+        ret_sel1
+        goto,*q
+        ret_sel2
+        bl_fadeout
+         end
+*q
+                for,PMAX,193,1
+                chk_msts,eveflg193,性別,2,覇王,poid_player,懐妊,0,年齢,>5,勲功,>12000
+                chk_msts_then
+                    chk_sts,eveflg193,0,3
+                    chk_sts_then
+                        continue
+                        end
+                    chk_sts_else
+                    set_epid2,eveflg193
+                    bl_fadein,gzin8
+                    zin_reg_event,,player,eveflg193,,
+                    zin_reg_msg,強姦p_name2?,0
+                    zin_reg_2sel,強姦,いや
+                    get_resp
+                    ret_sel1
+                    set_ninsin,eveflg193,player
+                    bgm_chg,64
+                    zin_old_init
+                    zin_old_img_pid,pid2,1
+                    zin_old_msg,ひうう・・・・crお、お願い・・・もうヤめて・・・,pid2
+                    zin_old_msg,何言ってるんだ、オマエも気持ちいいだろ？,pid1
+                    zin_old_msg,こんなの・・・ぜんぜん、気持ちよくない・・・,pid2
+
+                    chk_wsts,pid2
+                    //処女
+                    case_hatumaku
+                        zin_old_msg,私、初めてだったのに・・・crこんなの・・・ひどいわ・・・,pid2
+                        zin_old_msg,まさか初物新品だったとはなcr予想外で驚いたぞ,pid1
+                        zin_old_msg,初めてのセックスが嫌いにならないようにサービスしないとな,pid1
+                        goto,*np1
+                    //妊娠中
+                    case_botebara
+                    case_normal
+                    *np1
+                    //人妻
+                    chk_mval,婚姻:pid2>0,覇王:pid2=覇王:pid3,状態:pid3=2,,,
+                    chk_mval_then
+                        zin_old_msg,ウソを言うな、旦那より気持ちいいだろう？,pid1
+                        zin_old_msg,じょ、冗談じゃないわ・・・,pid2
+                        zin_old_msg,こ、こんな・・・夫以外の男と・・・crもしp_name3に知れたら・・・,pid2
+                        zin_old_msg,p_name3も毎日、こんな上等man_strを味わえるとは贅沢なヤツだ,pid1
+                        zin_old_msg,だが、ここからはp_name3とはひと味違うところを見せてやる,pid1
+
+                    chk_mval_else
+
+                    //体位ごとに分岐
+                    switch_otaii,pid2
+                    //バック
+                    case_oback
+                        chk_mval,初膜:pid2=0,,,,,
+                        chk_mval_then
+                            zin_old_msg,うむ、まだアソコがよくほぐれていないようだな,pid1
+                            zin_old_msg,あ、あたりまえよ・・・crこんなことされて・・・ぬ、濡れるわけないでしょ！！,pid2
+                            zin_old_msg,フフフ、それを取りほぐすのもまた一興よ。crしかし、これは適度な擦れ具合がまた美味だな,pid1
+
+                        chk_mval_else
+                            zin_old_msg,あうっ！！　い、痛い！！　も、もう止めて！！,pid2
+                            zin_old_msg,しばらく我慢すれば、すぐに快楽の虜になる,pid1
+                            zin_old_msg,ふにゃんっ・・・ひあぁぁ！　やっ、あぁぁっ！,pid2
+                            zin_old_msg,さて、そろそろ・・・お、終わりにするか！！,pid1
+                            zin_old_msg,あ、いやっ！！　な、中に出さないで！！,pid2
+                            zin_old_msg,ううっ！！　くっうううう！！,pid1
+                            zin_flush,pid2
+                            zin_old_msg,ああ・・・止めてって・・・言ったのに・・・crこんなに・・・ドクドク、そ、注がれてる・・・,pid2
+                            zin_old_msg,フフ、次はもっと濡らしてやるからな。cr楽しみにしていろ,pid1
+                            zin_old_msg,ゆ、許さないから・・・,pid2
+                            zin_old_fadeout,0,5
+                            continue
+                            end
+
+                    //騎乗位
+                    case_okijo
+                        zin_old_msg,さあ、もっと腰を振らぬか！！,pid1
+                        zin_old_msg,そ、そんなこと・・・できないわ・・・,pid2
+                        zin_old_msg,まったく・・役立たずな女だ・・・,pid1
+                        zin_old_qnar,p_name1は下から力強く突き上げ始めた。,0
+                        zin_old_msg,ああっ！！　そんなのダメ！！crお、お願いヤめてえぇーーーっ！！,pid2
+                        zin_old_msg,フフ、なかなか良い穴を持っているではないか。crこれならすぐにイキそうだ,pid1
+                        zin_old_msg,あんっ、だ、ダメよ・・・crい、イクときは・・・そ、外に・・・,pid2
+                        zin_old_msg,そんなワガママは聞けぬな、うううっ！！,pid1
+                        zin_old_msg,ああっ！！　だ、ダメ！！　い、いやあああああっ！！,pid2
+                        zin_flush,pid2
+                        zin_old_fadeout,0,5
+                        continue
+                        end
+
+                    //正常位
+                    default_otaii
+                        zin_old_msg,これなら、どうだ！！,pid1
+                        zin_old_qnar,p_name1は己の腰を思い切り突き刺した。,0
+                        zin_old_msg,あひいいいっ！！,pid2
+                        zin_old_msg,フハハハハ！！crアソコからは潮が吹き上がってるな,pid1
+                        zin_old_msg,身体の方は正直だcrこれでも気持ちよくないってのか？,pid1
+                        zin_old_msg,お願い、ダメーーーーっ！！crこれ以上は・・・い、イっちゃう！！,pid2
+                        zin_old_msg,へへ、もう止まらないぞcrこのまま大噴射させてやる！！,pid1
+                        zin_old_msg,い、いや、やめて！！　お、お願い、もうっ,pid2
+                        zin_old_msg,くーーーっ！！　い、イクうううううっ！！,pid2
+                        zin_flush,pid2
+                        zin_old_fadeout,0,5
+                        continue
+                        end
+                    zin_reg_button,0
+                    continue
+                    //break
+                    end
+                    ret_sel2
+                    continue
+                    end
+                chk_msts_else
+                    continue
+                 next
+                         set_eveflg,193,0
+                end

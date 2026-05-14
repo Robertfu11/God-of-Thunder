@@ -1,0 +1,37 @@
+eve_start
+	if_eveflg,55,0
+	if_aft_date,83,10
+	//西伍茲が放浪狀態
+	if_psts,368,5
+	//レイドが洛根處仕官
+	if_poid,564,9
+eve_end
+
+set_eveflg,55,1
+
+chk_exeplayer,9,0,0,0
+chk_exeplayer_else
+	set_sikan,368,9
+	end
+
+chk_exeplayer_then
+	bgm_chg,60
+	//zin_reg_init
+	zin_reg_event,某個惑星,564,368,,gzin21
+	zin_reg_qnar,雷德休假中外出，碰巧見到了西伍茲。cr西伍茲年輕時曾在雷德身邊任職過一段時間。
+	zin_reg_msg,喲，這不是西伍茲嗎？,0
+	zin_reg_msg,是雷德大人啊cr很久不見了,1
+	zin_reg_msg,嗯，你在這種地方幹嘛？,0
+	zin_reg_msg,這個，我其實是在尋找就職地的旅程當中……,1
+	zin_reg_msg,這樣啊，那麼來我這吧,0
+	zin_reg_msg,去雷德大人……那裏？,1
+	zin_reg_msg,是啊cr我現在正在洛根王麾下任職,0
+	zin_reg_msg,洛根……cr是那一位嗎,1
+	zin_reg_msg,怎麼樣，你有為那位大人盡忠的想法嗎？,0
+	zin_reg_msg,如果大人能看上我這微薄的能力，那我自當回報這知遇之恩,1
+	zin_reg_msg,哈哈哈，有你這樣優秀的傢伙加入的話陛下也會高興的吧,0
+	zin_reg_title,西伍茲在洛根麾下任職了。
+	zin_reg_button,0
+	//zin_reg_exit
+	set_sikan,368,9
+	end

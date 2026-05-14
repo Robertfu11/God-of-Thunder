@@ -1,0 +1,79 @@
+//覇王 嫁オルド強引
+//状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,你給我適可而止、不要任性了,0
+	zin_reg_msg,你說我任性？,1
+	zin_reg_msg,就是,0
+	zin_reg_msg,你的工作就是為callself_pid1生兒育女,0
+	zin_reg_msg,連這都做不到的話、你也就沒有存在的意義了,0
+	zin_reg_msg,怎、怎麼這樣．．．,1
+	zin_reg_msg,明白的話、就按callself_pid1說的做,0
+	zin_reg_msg,啊．．．cr請不要這麼粗暴,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,怎麼樣、偶爾玩點刺激的感覺還不錯吧,pid1
+	zin_old_msg,怎麼、怎麼會這樣．．．啊啊．．．嗯．．．,pid2
+	zin_old_msg,聽好了、從今往后不允許違抗callself_pid1說的命令,pid1
+	zin_old_msg,啊唔．．．唔唔．．．,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,你打算把節操留到什麼時候？,0
+	zin_reg_msg,現在該盡一下你身為王妃的義務了?,0
+	zin_reg_msg,我還不要．．．,1
+	zin_reg_msg,我還沒下好決心,1
+	zin_reg_msg,要不下次吧．．．,1
+	zin_reg_msg,哼．．．,0
+	zin_reg_msg,你在激怒callself_pid1,0
+	zin_reg_msg,你這樣的女人、我想拿你怎樣就怎樣,0
+	zin_reg_msg,和你的心情好不好沒有關系,0
+	zin_reg_msg,callself_pid1想做的時候就必須要做、明白了嗎？,0
+	zin_reg_msg,我明白了,pid1
+	zin_reg_msg,是、是的．．．夫君,1
+	zin_reg_msg,很好、那就全部脫光,0
+	zin_reg_msg,把自己獻給callself_pid1吧,0
+	zin_reg_msg,是、是的．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,哦哦．．．我的王妃如此美麗動人,pid1
+	zin_old_msg,這胴體、就好像白璧一般無瑕,pid1
+	zin_old_msg,啊啊．．．嗚嗚嗚．．．,pid2
+	zin_old_msg,怎麼樣、失去處女之后、是不是感覺節操都隨風而逝了,pid1
+	zin_old_msg,嗚嗚嗚．．．,pid2
+	zin_old_msg,呵呵、好像稍微順從點了。別忘了你身為王妃的義務！！,pid1
+	zin_old_msg,啊唔．．．嗚嗚．．．,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_reg_msg,call_pid1、我今天沒有做那種事的心情,1
+	zin_reg_msg,你的心情什麼的、怎麼樣都行,0
+	zin_reg_msg,callself_pid1想做的時候就要做、僅此而已,0
+	zin_reg_msg,那麼、問答時間結束,0
+	zin_reg_msg,給我扒開腿等著,0
+	zin_reg_msg,．．．．call_pid1,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊．．．還是那麼的．．．大．．．,pid2
+	zin_old_msg,怎麼樣、進來之后感覺應該還不錯吧,pid1
+	zin_old_msg,這愛液也已經嗒啦噠啦的．．．你竟敢拒絕callself_pid1的誠意邀請,pid1
+	zin_old_msg,不、不是的．．．今天．．．今天真的．．．不、不行啊．．．,pid2
+	zin_old_msg,還在這麼說！！　那就讓你趕快高潮吧！！,pid1
+	zin_old_msg,啊啊！！　call_pid1、不要啊！！　這樣的話．．．,pid2
+	zin_old_msg,這樣的話、會變成call_pid1的肉奴隸的！！,pid2
+	zin_old_msg,你這騷貨！！　已經沉溺快樂無法自控了嗎！！,pid1
+	zin_old_msg,你那擔心是多餘的！！　只要我肉棒一到、就會讓你墮落成瘋狂高潮的母豬！！,pid1
+	zin_old_msg,啊啊．．．call_pid1、說我是．．．母豬什麼的．．．才不是呢！！,pid2
+	zin_old_msg,咕．．．那、要射了、喝了這個你就是一頭漂亮的母豬了！！,pid1
+	zin_old_msg,啊啊、只有這個不行．．．今天在外面射啊．．．,pid2
+	zin_old_msg,因為call_pid1一直都是又多又濃．．．之后肚子會很疼的．．．,pid2
+	zin_old_msg,這不行、作為妻子、把丈夫的精液全部喝掉這是義務,pid1
+	zin_old_msg,一滴也不許漏掉！！,pid1
+	zin_old_msg,那、那個な．．．我做不到,pid2
+	zin_old_msg,做不到的話、你也就沒有身為王妃的價值了！！　そりゃあああ！！,pid1
+	zin_old_msg,咕嗚嗚嗚！！　呀啊啊啊！！,pid2
+	zin_flush,pid2
+	end

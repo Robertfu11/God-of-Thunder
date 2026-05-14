@@ -1,0 +1,8 @@
+bgm_chg,60
+zin_reg_event,,134,0,,gzin31
+zin_reg_msg,哈哈、成功了！！,0
+zin_reg_qnar,技術士官有新技術開發成功了。
+zin_reg_msg,這個技術的應用的話我軍的艦載機性能會提高,0
+zin_reg_title,艦載機技術提高了。
+zin_reg_button,0
+end

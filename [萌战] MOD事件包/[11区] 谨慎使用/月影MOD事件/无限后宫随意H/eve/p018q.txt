@@ -1,0 +1,61 @@
+bgm_chg,69
+zin_reg_init
+zin_reg_event,,pid1,pid2,zin1,gzin34
+zin_reg_msg,你看你看cr很可愛吧,1
+zin_reg_face,pid3
+zin_reg_msg,p_name2、看到了,0
+zin_reg_msg,這孩子的父親並不是我,0
+zin_reg_qnar,對剛出生的孩子進行血統的確認、馬上檢查這是種慣例。
+zin_reg_msg,求求你！！cr能夠認下這個孩子吧,1
+zin_reg_msg,只是血統關系、而這個孩子其實並沒有任何罪過的,1
+zin_reg_msg,而且將來一定會成為很優秀的繼承人的,1
+zin_reg_msg,嗯．．．,0
+zin_reg_3sel,承認孩子,不承認,送孤兒院
+get_resp
+ret_sel1
+	zin_reg_msg,是啊,0
+	zin_reg_msg,是誰親生的又有什麼關系呢,0
+	zin_reg_msg,這孩子從今天開始就是callself_pid1的孩子了,0
+	zin_reg_msg,太感謝你了、親愛的,1
+	zin_reg_msg,話說回來、請給孩子取個好名字吧,1
+	zin_reg_msg,可愛的buf_str1呢,1
+	zin_reg_msg,buf_str1呀．．．cr那麼．．．,0
+	make_name,pid3
+	zin_reg_msg,buf_str1如何,0
+	zin_reg_msg,好名字呢,1
+	zin_reg_title,buf_str1出生了。
+	zin_reg_button,0
+	zin_reg_exit
+	upd_sts,pid2,1,50
+	//父親變更為玩家
+	upd_sts,pid3,父,player
+	end
+ret_sel2
+	zin_reg_msg,我會允許你生下他,0
+	zin_reg_msg,但是我並不會承認他是我的孩子,0
+	zin_reg_msg,那、那樣的事．．．,1
+	zin_reg_msg,讓我去愛別人的孩子是不可能的,0
+	zin_reg_msg,但是．．．．．,1
+	zin_reg_msg,你做為母親愛護他很正常、可是我並不是他的父親,0
+	zin_reg_msg,沒有那樣的事啊cr即使是和你沒有血緣關系．．．,1
+	zin_reg_msg,你覺得那樣表面看好的虛假的父子關系能保持長久嗎,0
+	zin_reg_msg,特別是像現在這種時代．．．,0
+	zin_reg_title,p_name3出生了。
+	zin_reg_button,0
+	zin_reg_exit
+	upd_sts,pid2,1,30
+	end
+ret_sel3
+	zin_reg_msg,buf_str2的孩子麼．．．,0
+	zin_reg_msg,不是我的孩子啊,0
+	zin_reg_msg,明天去把他送給委托機構,0
+	zin_reg_msg,可是、這個孩子卻是我親生的啊．．．,1
+	zin_reg_msg,你要是無論如何都想要這個孩子的話、那麼咱倆的關系也就到此為止了,0
+	zin_reg_msg,那樣的事．．．,1
+	zin_reg_msg,我知道了cr明天、送到委托機構吧,1
+	zin_reg_msg,嗯拜託你們了,0
+	zin_reg_title,p_name3被流放了。
+	zin_reg_button,0
+	zin_reg_exit
+	set_hourou,pid3
+	end

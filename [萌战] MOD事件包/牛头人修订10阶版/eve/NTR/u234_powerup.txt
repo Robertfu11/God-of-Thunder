@@ -1,0 +1,10 @@
+/////£¨ÊË¹Ù ÄÜÁ¦ÉÏÉı£©//////
+
+*pwup
+upd_sts,pid1,1,10
+upd_sts,pid1,5,2
+upd_sts,pid1,6,2
+upd_sts,pid1,7,2
+upd_sts,pid1,8,2
+upd_sts,pid1,9,2
+return

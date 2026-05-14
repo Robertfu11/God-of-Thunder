@@ -1,0 +1,49 @@
+eve_start
+	if_eveflg,31,0
+	//プレイヤーが非覇王である
+	if_pkun,player,<13000
+	if_pkun,player,>6999
+	if_chksts,player,0,!4
+	if_chksts,847,0,16
+eve_end
+
+set_eveflg,31,7
+
+set_epid1,poid_player
+bgm_chg,60
+get_kunpsn,pid1
+//zin_reg_init
+zin_reg_event,p_name1の王宮,pid1,pval,,gzin8
+zin_reg_msg,p_name1大人、自稱為歌舞慰問團的人來進行禮貌性訪問了,1
+zin_reg_msg,歌舞慰問團？,0
+zin_reg_msg,是的、在周圍從事表演的明星,1
+zin_reg_msg,以歌曲的方式而聞名,1
+zin_reg_msg,好．．．．,0
+zin_reg_msg,讓我們好好放鬆一下,0
+zin_reg_msg,了解,1
+bl_fadeout
+bgm_chg,62
+bl_fadein,gzin8
+zin_reg_event,p_name1の王宮,pid1,846,,gzin8
+zin_reg_msg,你們就是歌舞慰問團的代表？,0
+zin_reg_msg,是的、謝謝這段時間給我們寄港許可,1
+zin_reg_msg,我是奧莉維亞的經理,1
+zin_reg_msg,這位是我們的歌姬奧莉維亞,1
+zin_reg_face_1,847
+zin_reg_msg,我是奧利維亞,1
+zin_reg_msg,很榮幸認識你、p_name1王,1
+zin_reg_msg,嗯、會唱索契嗎？,0
+zin_reg_msg,是的,1
+zin_reg_face_1,846
+zin_reg_msg,p_name1大人、我希望得到在這個星球上舉行演唱會的權限,1
+zin_reg_msg,讓我們這顆恒星的士兵士氣也上升,1
+zin_reg_msg,你說得對．．．．,0
+zin_reg_msg,行,0
+zin_reg_msg,給你許可,0
+zin_reg_msg,哦、謝謝,1
+zin_reg_face_1,847
+zin_reg_msg,感謝crp_name1王,1
+set_eveflg,31,8
+zin_reg_button,0
+//zin_reg_exit
+end

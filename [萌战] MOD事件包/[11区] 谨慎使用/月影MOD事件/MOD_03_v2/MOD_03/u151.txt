@@ -1,0 +1,146 @@
+eve_start
+	if_psex,player,1
+    //if_val,状態:player=2
+	//if_month,5
+eve_end
+set_seron,poid_player,50
+set_epid1,player
+set_eveflg,196,0
+//bl_fadein,gzin8
+//zin_reg_event,,player,,,
+//zin_reg_msg,重要人物復活,0
+//set_sikan,2246,poid_player
+bl_fadein,gzin8
+zin_reg_event,,player,,,
+zin_reg_msg,重要人物復活?,0
+zin_reg_2sel,重要人物復活,放棄
+        get_resp
+        ret_sel1
+        goto,*go
+        ret_sel2
+        set_eveflg,196,0
+        end
+        *go
+		zin_reg_3sel,全霸王子種,全浪人,全任官
+                           get_resp
+                           ret_sel1
+						   for,PMAX,196,1 
+                                    select_pid,eveflg196
+                                   // case_1   // オペレータ
+								   case_666
+								   case_2308
+								    continue
+                                    default
+									chk_msts,eveflg196,状態,1,NON,0,NON,0,NON,0,NON,0
+                                    chk_msts_then
+									upd_sts,eveflg196,2,-100
+									continue
+                                    chk_msts,eveflg196,状態,!3,NON,0,NON,0,NON,0,NON,0
+                                    chk_msts_then
+									continue
+									chk_msts_else
+									chk_msts,eveflg196,勲功,<1500,NON,0,NON,0,NON,0,NON,0
+                                    chk_msts_then
+									continue
+									chk_msts_else
+                                    chk_msts,eveflg196,状態,3,年齢,>0,勲功,>1000,NON,0,NON,0
+                                    chk_msts_then
+                                                        bl_fadein,gzin8
+														set_epid2,eveflg196
+														zin_reg_msg,p_name2,0
+                                                        zin_reg_event,,player,eveflg196,,
+														zin_reg_msg,p_name2,0
+														chk_sts,eveflg196,性別,2
+														chk_sts_then
+															set_virgin,eveflg196
+														chk_sts_else
+														upd_sts,eveflg196,父,0
+														upd_sts,eveflg196,母,0
+																	 upd_sts,eveflg196,2,-100
+                                                                     upd_sts,eveflg196,0,1
+                                                continue
+                                    chk_msts_else
+                                       continue
+                    next
+                    set_eveflg,196,0
+end
+						   ret_sel2
+						     for,PMAX,196,1 
+                                    select_pid,eveflg196
+                                   // case_1   // オペレータ
+								   case_666
+								   case_2308
+								    continue
+                                    default
+									chk_msts,eveflg196,状態,1,NON,0,NON,0,NON,0,NON,0
+                                    chk_msts_then
+									upd_sts,eveflg196,2,-100
+									continue
+                                    chk_msts,eveflg196,状態,!3,NON,0,NON,0,NON,0,NON,0
+                                    chk_msts_then
+									continue
+									chk_msts_else
+									chk_msts,eveflg196,勲功,<1500,NON,0,NON,0,NON,0,NON,0
+                                    chk_msts_then
+									continue
+									chk_msts_else
+                                    chk_msts,eveflg196,状態,3,年齢,>0,勲功,>1000,NON,0,NON,0
+                                    chk_msts_then
+                                                        bl_fadein,gzin8
+														set_epid2,eveflg196
+                                                        zin_reg_msg,p_name2,0														
+                                                        zin_reg_event,,player,eveflg196,,
+														zin_reg_msg,p_name2,0
+														chk_sts,eveflg196,性別,2
+														chk_sts_then
+															set_virgin,eveflg196
+														chk_sts_else
+																	 set_hourou,eveflg196
+																	 set_pnen,eveflg196,16
+                                                continue
+                                    chk_msts_else
+                                       continue
+                    next
+                    set_eveflg,196,0
+end
+						   ret_sel3
+						    for,PMAX,196,1 
+                                    select_pid,eveflg196
+                                   // case_1   // オペレータ
+								   case_666
+								   case_2308
+								    continue
+                                    default
+									chk_msts,eveflg196,状態,1,NON,0,NON,0,NON,0,NON,0
+                                    chk_msts_then
+									upd_sts,eveflg196,2,-100
+									continue
+									chk_msts_else
+                                    chk_msts,eveflg196,状態,!3,NON,0,NON,0,NON,0,NON,0
+                                    chk_msts_then
+									continue
+									chk_msts_else
+									chk_msts,eveflg196,勲功,<1001,NON,0,NON,0,NON,0,NON,0
+                                    chk_msts_then
+									continue
+									chk_msts_else
+                                    chk_msts,eveflg196,状態,3,年齢,>0,勲功,>1000,NON,0,NON,0
+                                    chk_msts_then
+                                                        bl_fadein,gzin8
+														set_epid2,eveflg196
+														zin_reg_msg,p_name2,0
+                                                        zin_reg_event,,player,eveflg196,,
+														zin_reg_msg,p_name2,0
+														chk_sts,eveflg196,性別,2
+														chk_sts_then
+															set_virgin,eveflg196
+														chk_sts_else
+														set_sikan,eveflg196,poid_player
+																	//set_kaizoku,eveflg196
+																	 set_pnen,eveflg196,18
+                                                continue
+                                    chk_msts_else
+                                       continue
+                    next
+                    set_eveflg,196,0
+end

@@ -1,0 +1,27 @@
+eve_start
+	if_date,74,11
+	if_pkun,621,13000
+	if_pkun,624,13000
+	if_not_uni,621,624
+eve_end
+
+chk_exeplayer,621,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+get_kunpsn,621
+set_epid1,621
+set_epid2,pval
+zin_reg_event,p_name1的辦公室,pid1,pid2,,gzin33
+zin_reg_qnar,p_name2就今後的戰略問題和p_name1交換意見。
+zin_reg_msg,斯庫洛克依舊沒有動靜,1
+zin_reg_msg,單方面撤銷同盟，真不知道他到底是怎麼想的。,1
+zin_reg_msg,那傢伙的戰略相當詭異,0
+zin_reg_msg,估計是想趁我們周邊諸國打仗打得國力衰退之後一口氣吞並我們,0
+zin_reg_msg,所謂的漁翁之利麼,1
+zin_reg_msg,他可就是這種人,1
+zin_reg_msg,那麼，我們該怎麼辦呢．．．,0
+zin_reg_button,0
+end

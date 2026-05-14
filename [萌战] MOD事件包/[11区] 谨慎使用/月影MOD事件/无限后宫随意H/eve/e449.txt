@@ -1,0 +1,32 @@
+eve_start
+    if_date,95,3
+    if_eveflg,62,3
+//阿達姆斯を殺した覇王が生きている
+    if_haou,eveflg064
+eve_end
+
+//巴尼亞瓦仕官設定
+set_sikan,429,eveflg064
+//アイテムゲット
+get_item,poid0429,429,飛行戦術書
+
+chk_exeplayer,eveflg064,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+get_kunpsn,eveflg064
+
+bgm_chg,60
+zin_reg_event,,pval,429,,gzin33
+zin_reg_msg,巴尼亞瓦，要進來了,1
+zin_reg_msg,哦哦，你就是巴尼亞瓦嗎,0
+zin_reg_msg,記得是本年度的首席畢業生吧,0
+zin_reg_msg,聽說你的操縱技術非常的不得了啊,0
+zin_reg_msg,不，我還差得遠呢,1
+zin_reg_msg,真謙虛啊，這樣也好,0
+zin_reg_msg,從今以後，就用你的技術好好為軍隊做貢獻吧cr我期待著你的表現,0
+zin_reg_msg,是！！,1
+zin_reg_title,巴尼亞瓦任職了。
+zin_reg_button,0
+end

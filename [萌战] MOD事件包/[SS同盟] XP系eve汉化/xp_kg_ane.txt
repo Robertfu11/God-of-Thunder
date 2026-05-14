@@ -1,0 +1,161 @@
+//王族オルド襲う　相手：姉
+//状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+rnd,3
+case0
+	zin_reg_msg,快點給我脫！！,0
+	zin_reg_msg,不行就是不行！！,1
+	zin_reg_msg,放棄無謂的抵抗吧call_pid2、快點兒！！,0
+	zin_reg_msg,不．．．不要．．．cr求你了、姐弟是不行的、那種事情！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊．．．有、有這樣的事．．．我．．．被親弟弟．．．被親弟弟侵犯了．．．,pid2
+	zin_old_msg,callself_pid1可是最棒的喲、call_pid2,pid1
+	zin_old_msg,這樣一來、終于夢想成真的能和call_pid2在一起了．．,pid1
+	zin_old_msg,為、為什麼．．．會有這種事．．．,pid2
+	zin_old_msg,從小時候我就很喜歡call_pid2,pid1
+	zin_old_msg,而我現在已經無法抑制這種感情了！！,pid1
+	zin_old_msg,這種、這種．．．奇怪的．．．有悖人倫的．．．,pid2
+	zin_old_msg,沒有這種事情、我想要更多更多的愛call_pid2．．．,pid1
+	zin_old_msg,呼啊啊！！　啊啊、快放手．．．call_pid1！！,pid2
+	zin_old_msg,不行呀、身體．．．身體已經無法．．．停下來了！！,pid1
+	zin_old_msg,差不多了．．．要、要射了．．．,pid1
+	zin_old_msg,啊啊！！　不可以啊、call_pid1,pid2
+	zin_old_msg,姐弟不可以這麼做啊！！,pid2
+	zin_old_msg,callself_pid1想要和call_pid2結出愛的果實！！,pid1
+	zin_old_msg,啊、不行．．．不要、拔出來、拔出來啊啊啊啊！！！！,pid2
+	zin_flush,pid2
+	zin_old_msg,啊啊．．．咕嘟咕嘟的出來了．．．已經．．．完事了．．．,pid2
+	end
+case1
+	zin_reg_msg,怎麼說呢call_pid2、請你遵從callself_pid1的命令,0
+	zin_reg_msg,call_pid1、你聽不懂我說的話嗎！！,1
+	zin_reg_msg,聽不見呢call_pid2、老老實實地就范吧,0
+	zin_reg_msg,啊、怎麼會．．．吧、不要啊．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,不！！　不行啊call_pid1！！,pid2
+	zin_old_msg,哦哦、不愧是call_pid2、和其他女人就是不一樣！！,pid1
+	zin_old_msg,哈唔．．．好、好大．．．這東西．．．第、第一次．．．,pid2
+	zin_old_msg,啊啊．．．不行．．和弟弟有．．有快感什麼的．．,pid2
+	zin_old_msg,call_pid2！！　我已經忍不住啦！！　裡面．．．我就內射了喲！！,pid1
+	zin_old_msg,哈啊．．．不行、裡面不行啦！！,pid2
+	zin_old_msg,嗷嗷嗷！！,pid1
+	zin_flush,pid2
+	zin_old_msg,受、受到了．．．弟弟的．．．欺負．．．,pid2
+	end
+case2
+	zin_reg_msg,這、這不可以、call_pid1,1
+	zin_reg_msg,請你冷靜一點！！,1
+	zin_reg_msg,callself_pid1既冷靜又理智、call_pid2,0
+	zin_reg_msg,就是想和call_pid2在一起！！,0
+	zin_reg_msg,啊、不、不行喲、call_pid1！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊、怎麼會這樣．．．弟弟的肉棒．．．進來了．．．嗚嗚！！,pid2
+	zin_old_msg,啊啊．．．call_pid2的肉穴裡面．．．變得好溫暖．．．,pid1
+	zin_old_msg,快停下來、call_pid1．．．這樣已經夠了．．．快、快拔出來．．．,pid2
+	zin_old_msg,那、那種事情已經、已經．．．做不到了！！,pid1
+	zin_old_msg,p_name1用盡全力抽插著。,0
+	zin_old_msg,啊啊、call_pid1．．．不行．．．這樣．．．不行啊．．．快、快住手！！,pid2
+	zin_old_msg,call_pid2、這必須是不可能的住手的．．．我要在call_pid2的裡面．．．內射．．．,pid1
+	zin_old_msg,那、那樣不行啊．．．求你了．．．射在．．．外面、call_pid1！！,pid2
+	zin_old_msg,那、我要來了啊！！,pid1
+	zin_old_msg,不要、不行．．．裡面．．．裡面、不行、不行、啊啊啊啊啊！！！！,pid2
+	zin_flush,pid2
+	end
+
+
+//初膜パターン
+case_hatumaku
+rnd,2
+case0
+	zin_reg_msg,不、不行啊,1
+	zin_reg_msg,被弟弟奪去處女什麼的,1
+	zin_reg_msg,你想都不要想,1
+	zin_reg_msg,嗬、call_pid2還是處女麼,0
+	zin_reg_msg,那就絕對、要收下了,0
+	zin_reg_msg,不要開玩笑了,1
+	zin_reg_msg,為什麼非要把第一次給弟弟,1
+	zin_reg_msg,因為你弟弟callself_pid1是霸王,0
+	zin_reg_msg,啊、不行、快住手．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,不要啊啊啊！！,pid2
+	zin_old_msg,這、這種事情不行啊！！,pid2
+	zin_old_msg,嗬．．．不愧是call_pid2,pid1
+	zin_old_msg,可能是養尊處優的關系、果然和別的庸脂俗粉不可同日而語．．．,pid1
+	zin_old_msg,啊啊．．．快、快停下來．．．,pid2
+	zin_old_msg,你、你這個畜生！！,pid2
+	zin_old_msg,這可是很過分的說法哦,pid1
+	zin_old_msg,那麼、就請您懷上這只畜生的孩子吧！！,pid1
+	zin_old_msg,啊啊．．吧、不可以．．．只有、只有這個不可以啊．．．,pid2
+	zin_old_msg,這絕對、絕對、不行啊啊啊啊！！,pid2
+	zin_flush,pid2
+	end
+case1
+	zin_reg_msg,call_pid2．．．在這種情形下拒絕我、你打算如何？,0
+	zin_reg_msg,論力氣你是無法反抗callself_pid1的、讓你逃走也是不可能的,0
+	zin_reg_msg,這麼說你打算硬來咯？,1
+	zin_reg_msg,說什麼呢．．．這可是我們姐弟之愛的表現喲、call_pid2,0
+	zin_reg_msg,那、那樣很奇怪！！,1
+	zin_reg_msg,你適可而止吧,0
+	zin_reg_msg,啊、不行、放開我！！　啊、不要啊！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,你果然還是第一次呢、call_pid2,pid1
+	zin_old_msg,啊啊．．．這．．．弟弟的肉棒．．．在我裡面．．．啊啊．．．,pid2
+	zin_old_msg,盡管只是第一次、就潤滑到這種程度．．,pid1
+	zin_old_msg,果然弟弟我的肉棒、還是能讓你感到快活不是麼？,pid1
+	zin_old_msg,嗚嗚．．．那、那種．．．事情是．．．不可能的．．．啊！！,pid2
+	zin_old_msg,不如、讓我在快點吧、接招！！,pid1
+	zin_old_msg,啊咕．．．不、不行．．．那可．．．不、可能．．．有、有快感．．！！,pid2
+	zin_old_msg,你可不要強忍啊．．．因為弟弟我的肉棒、會有不一般的感受哦,pid1
+	zin_old_msg,現在的callself_pid1．．．差不多到了爆種的界限了、咯咯咯咯．．．,pid1
+	zin_old_msg,啊啊．．．不、不要啊啊．．．好、好．．．好舒服．．．昂．．啊啊嗯！！,pid2
+	zin_old_msg,看起來總算是有快感了,pid1
+	zin_old_msg,啊啊．．．咿咿．．．call_pid1．．．很好、再快一點．．．,pid2
+	zin_old_msg,呵呵、果然涂點藥是明智之舉。這麼簡單就墮落了．．．,pid1
+	zin_old_msg,還要．．．還要再往裡面、裡面攪動．．求、求求你了啦．．．啊啊啊啊！！,pid2
+	zin_old_msg,吸著弟弟的肉棒、還在需索無度的浪叫、call_pid2、可真寒了弟弟的心啊,pid1
+	zin_old_msg,啊啊．．．別、別這麼說．．．,pid2
+	zin_old_msg,好吧．．．在感度不錯的肉穴裡我的種子已經到界限了,pid1
+	zin_old_msg,滿滿的給你打一針吧,pid1
+	zin_old_msg,呃．．．吧、不行．．．只有這個不行．．．不要啊call_pid1！！,pid2
+	zin_old_msg,嗬．．．你還保持著這種程度的理性、可真讓人吃驚啊,pid1
+	zin_old_msg,不過、已經停不下來了喲、call_pid2。好好的收下吧,pid1
+	zin_old_msg,啊啊、不、不要．．．弟弟的．．．懷上弟弟的孩子什麼的．．．不、不要啊啊啊！！！！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end
+
+
+//孕みパターン
+case_botebara
+	zin_reg_msg,不可以啊、call_pid1,1
+	zin_reg_msg,肚子裡可是你的孩子,1
+	zin_reg_msg,今天沒問題的、call_pid2,0
+	zin_reg_msg,稍微向孩子打個招呼而已,0
+	zin_reg_msg,啊啊、不、我說過不行了！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,哈哈哈、call_pid2、這肚子搖動的場景可不是輕易能見的哦,pid1
+	zin_old_msg,都是因為call_pid1．．．你．．．硬來的．．．啊啊．．．,pid2
+	zin_old_msg,嘴上這麼說．．．這忍不住的汁液又如何解釋？,pid1
+	zin_old_msg,我聽說懷孕的女人性欲會變強,pid1
+	zin_old_msg,真的感覺不錯、快要受不了了是不是啊、call_pid2,pid1
+	zin_old_msg,這、這種事情．．．啊啊．．．不要．．．不要那麼．．．激烈的．．．,pid2
+	zin_old_msg,不行啊、不快一點、call_pid2要到何年何月才能射啊,pid1
+	zin_old_msg,那、那個．．．啊啊．．．已經不行了．．．已經受不了了．．．,pid2
+	zin_old_msg,那、call_pid2、你要去了麼？　已經忍不住了？,pid1
+	zin_old_msg,嗚嗚．．．就、就和你說的一樣．．．已經．．．忍不住了！！,pid2
+	zin_old_msg,啊啊、高潮．．．每次．．．都、都會有幾次．．．啊啊．．,pid2
+	zin_old_msg,什麼、一直都有絕頂？cr好過分的．．．完全被欺騙了啊,pid1
+	zin_old_msg,不過這次輪到callself_pid1先出場了。請好好享用鮮榨的精奶喲,pid1
+	zin_old_msg,啊啊．．．好呀．．．好多．．．我要好多好多牛奶！！,pid2
+	zin_old_msg,喲西、趁熱喝下吧、call_pid2！！,pid1
+	zin_flush,pid2
+	end

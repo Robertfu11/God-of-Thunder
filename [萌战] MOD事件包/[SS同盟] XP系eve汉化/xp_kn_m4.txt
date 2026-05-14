@@ -1,0 +1,78 @@
+//覇王オルド　妾  タイプ4　抱上げ
+//状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+rnd,5
+case0
+	zin_old_msg,呀啊啊啊．．．．肉棒．．．肉棒進來了啊啊啊！！！,pid2
+	zin_old_msg,好．．．好棒．．．爽．．．把p_name2的肉穴．．．狠狠的．．．狠狠的抽插！！！,pid2
+	zin_old_msg,就那麼爽？　那我就讓你再嗨一些！！,pid1
+	zin_old_msg,呀啊！！！　好、好深嗯嗯．．．子宮．．．子宮要壞掉了啊啊啊！！,pid2
+	zin_old_msg,怎麼樣、爽飛了吧,pid1
+	zin_old_msg,啊、啊咿咿咿咿．．．已經、已經不行了．．．再裡面．．．call_pid1的種子．．．射在裡面啊！！！,pid2
+	zin_old_msg,那就、如您所愿、精液發射！！！,pid1
+	zin_flush,pid2
+	zin_old_msg,呼．．．有點胖了呢．．．．cr減減肥吧,pid1
+	zin_old_msg,．．．．哈．．．呀啊．．．．．,pid2
+	end
+case1
+	zin_old_msg,呀啊啊啊．．．不、不行．．．這個．．．好奇怪的感覺！！,pid2
+	zin_old_msg,callself_pid1已經停不下來了、感覺也好的停不下來了！！,pid1
+	zin_old_msg,怎麼、怎麼會這樣！！　p_name2、要死掉了啊啊！！,pid2
+	zin_old_msg,唔唔．．．要射了．．．在裡面．．．我就射在裡面了！！,pid1
+	zin_old_msg,這、這．．．這個會．．．會有、孩子的！！,pid2
+	zin_old_msg,沒錯、給callself_pid1生個結實的孩子吧、p_name2！！,pid1
+	zin_old_msg,啊啊、咿咿．．．已經、隨便怎麼都行、咿咿！！！！！,pid2
+	zin_flush,pid2
+	zin_old_msg,啊啊．．．裡面．．．好熱．．．BIU BIU的．．．溢出來了．．．,pid2
+	end
+case2
+	zin_old_msg,昂、呀啊啊啊！！　好厲害、大雞雞．．．一直在裡面．．．抽插．．．啊啊啊啊！！,pid2
+	zin_old_msg,咯咯咯、我全都插進去了啊！！,pid1
+	zin_old_msg,呀啊！！　不、不行．．．子宮．．．要壞掉了！！,pid2
+	zin_old_msg,況且你今天．．．比平時．．．更大．．．更硬．．．噗啊啊啊！！,pid2
+	zin_old_msg,剛一進去就被團團包圍了。這是我老二告訴我的！！,pid1
+	zin_old_msg,這是．．．不知不覺的．．．這麼做的．．．呀啊啊啊啊！！,pid2
+	zin_old_msg,呵呵呵、我也是欲罷不能啊,pid1
+	zin_old_msg,呀啊啊啊、不行誒．．．這樣一來．．．要．．．要高潮了ーー！！！,pid2
+	zin_flush_one,pid2
+	zin_old_msg,什麼？　要丟了？cr可callself_pid1還沒拔出來呢！！,pid1
+	zin_old_msg,呀咿咿咿．．．請、請原諒我．．．,pid2
+	zin_old_msg,怎麼樣、一邊高潮一邊被瘋狂抽插的感覺？,pid1
+	zin_old_msg,已經、已經．．．什麼都．．．無所謂了．．呃．．．嗯．．．啊啊．．．額額．．．,pid2
+	zin_old_msg,什麼叫無所謂！！那就給我、再攀頂峰吧！！,pid1
+	zin_old_msg,呀啊啊啊啊．．．不行啊．．．要丟了、又要高潮了呀呀呀呀呀呀！！！,pid2
+	zin_flush,pid2
+	end
+case3
+case4
+	txtload,xpkm_tn
+	end
+
+//初膜パターン
+case_hatumaku
+	txtload,xpkm_tv
+	end
+
+//孕みパターン
+case_botebara
+rnd,4
+case0
+	zin_old_msg,呀咿咿．．．．還要．．．還要、再快一點！！,pid2
+	zin_old_msg,唔．．．．好的、那我就沖鋒了！！,pid1
+	zin_old_msg,哈啊、好厲害．．．這樣摩擦著肉穴．．．豆子．．．豆子要．．．,pid2
+	zin_old_msg,不愧是多了一個人啊．．．好辛苦．．．,pid1
+	zin_old_msg,我撐不了多久了．．．．已經．．．要射了,pid1
+	zin_old_msg,怎、怎麼會．．．不要、還不能射啊．．．啊啊啊！！！,pid2
+	zin_old_msg,你要注意一點、你有孕在身。今後你要為孩子多考慮一下！！,pid1
+	zin_old_msg,啊、討厭．．．還要．．．我還要！！！,pid2
+	zin_old_msg,今天、收工！！,pid1
+	zin_old_msg,還、還沒有出來．．．．沒、出來呢啊、討厭！！！,pid2
+	zin_flush,pid2
+	end
+case1
+case2
+case3
+	txtload,xpkm_tb
+	end

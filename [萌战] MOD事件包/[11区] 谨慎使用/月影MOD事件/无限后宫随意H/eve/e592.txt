@@ -1,0 +1,28 @@
+eve_start
+	if_date,109,10
+	//詹妮弗がラー配下
+	if_poid,340,626
+eve_end
+
+chk_exeplayer,626,0,0,0
+chk_exeplayer_else
+set_dead,626,0
+end
+
+chk_exeplayer_then
+bgm_chg,64
+get_kunpsn,626
+set_epid2,pval
+zin_reg_event,,340,pid2,,gzin80
+zin_reg_qnar,雷去死了。得知這個消息大家都很惋惜。
+zin_reg_msg,唉．．.,0
+zin_reg_msg,詹妮弗大人，你不要傷心了,1
+zin_reg_msg,p_name2，謝謝,0
+zin_reg_msg,從今以後的事就拜託你了,0
+zin_reg_msg,請交給我吧,1
+zin_reg_msg,我去其他房間休息了,0
+zin_reg_face_0,0
+zin_reg_msg,是．．．．．.,1
+zin_reg_button,0
+set_dead,626,0
+end

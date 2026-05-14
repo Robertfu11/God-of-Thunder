@@ -1,0 +1,86 @@
+get_mpid,性別=2,勲功>=12100,状態=2,年齢>13,懐妊=0,,
+set_epid2,pval
+
+chk_sts,pid2,覇王,0
+	chk_sts_then
+		goto,*finish
+		end
+	chk_sts_else
+
+set_epid1,覇王:pid2
+set_epid3,player
+set_epid4,覇王:pid3
+
+//ターゲットを性奴隷化しており、ターゲットの覇王と同盟を組んでいる場合は懐妊√へ
+chk_sts,pid2,友好,110
+	chk_sts_then
+		eve_start
+			if_uni,pid4,pid1
+			if_val,懐妊:pid2=0
+			if_val,覇王:pid3!pid1
+			if_val,覇王:pid2!pid4
+		eve_end
+		goto,*event-check01
+	chk_sts_else
+		eve_start
+			if_uni,pid4,pid1
+			if_val,懐妊:pid2=0
+			if_val,覇王:pid3!pid1
+			if_val,覇王:pid2!pid4
+			if_player_item,全身性感香
+		eve_end
+*event-check01
+
+
+//抽出した女性が女覇王の場合（出産のみ、婿入り無し）
+chk_mval,勲功:pid2=13000,,,,
+	chk_mval_then
+		goto,*onna-haou-rouraku
+	chk_mval_else
+
+//抽出した女性が妃の場合（孕ませor女覇王擁立＝擁立は今回削除）
+chk_mval,勲功:pid2=12200,,,,
+	chk_mval_then
+		goto,*kisaki-rouraku
+	chk_mval_else
+
+//抽出した女性が姫の場合（出産or女覇王擁立＝擁立は今回削除）
+chk_mval,勲功:pid2=12100,,,,
+	chk_mval_then
+		goto,*hime-rouraku
+	chk_mval_else
+
+//抽出した女性が太后の場合（出産のみ）
+chk_mval,勲功:pid2=12700,,,,
+	chk_mval_then
+		goto,*taikou-rouraku
+	chk_mval_else
+
+goto,*finish
+
+
+
+//女覇王
+*onna-haou-rouraku
+	txtload,u147/u147-onna-haou
+goto,*finish
+
+
+//妃
+*kisaki-rouraku
+	txtload,u147/u147-onna-haou
+goto,*finish
+
+//姫を篭絡
+*hime-rouraku
+	txtload,u147/u147-onna-haou
+goto,*finish
+
+//太后孕ませ
+*taikou-rouraku
+	txtload,u147/u147-onna-haou
+goto,*finish
+end
+
+*finish
+end

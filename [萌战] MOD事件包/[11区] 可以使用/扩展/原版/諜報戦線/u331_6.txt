@@ -1,0 +1,486 @@
+auth_uid,123D
+//暗殺イベントスクリプト
+//標的の階級により対戦相手を変更
+chk_mval,勲功:pid4=13000,,,,
+chk_mval_then
+	//覇王なら特命で最も格闘の高い者
+	set_eveflg,211,0
+	gosub,*highestbtsts
+	gosub,*chkspselect
+	goto,*getspid
+chk_mval_else
+chk_mval,勲功:pid4>=10000,,,,
+chk_mval_then
+	//王族、将軍は特命ランダム
+	get_mpid,状態=2,覇王=pid3,役職=4,,,,
+	set_eveflg,211,pval
+	gosub,*chkspselect
+	goto,*getspid
+chk_mval_else
+chk_mval,派閥:pid4=pid4,,,,
+chk_mval_then
+	//派閥長なら派閥メンバー
+	set_eveflg,211,0
+	gosub,*highestbtlhabatu
+	gosub,*chkspselect
+	goto,*getspid
+chk_mval_else
+	//それ以外は自身
+	set_eveflg,211,pid4
+*getspid
+set_epid3,eveflg211
+set_eveflg,211,0
+for,1000,210,1
+	zin_reg_msg,暗殺方法を選択してください,0
+	zin_reg_3sel,襲撃,毒殺,次へ
+	get_resp
+	ret_sel1
+		zin_reg_msg,直接標的に襲いかかります,0
+		zin_reg_msg,ある程度の成功率が期待できますが逮捕や死亡の危険性があります,0
+		set_eveflg,212,1
+		goto,*chkconfirm
+	ret_sel2
+		zin_reg_msg,使用人などを買収して毒薬を仕込みます,0
+		zin_reg_msg,比較的安心かつ効果的ですが成功率は低めです,0
+		set_eveflg,212,2
+		goto,*chkconfirm
+	ret_sel3
+	zin_reg_3sel,爆破,自爆,戻る
+	get_resp
+	ret_sel1
+		zin_reg_msg,標的の乗る艦船に爆発物を仕掛けます,0
+		zin_reg_msg,最も安全ですが成功率は低いです,0
+		set_eveflg,212,3
+		goto,*chkconfirm
+	ret_sel2
+		zin_reg_msg,爆発物を抱えて標的に接近して自爆します,0
+		zin_reg_msg,最も成功率は高いですが担当者は死亡します,0
+		set_eveflg,212,4
+		goto,*chkconfirm
+	ret_sel3
+		goto,*endconfirm
+	*chkconfirm
+	zin_reg_2sel,決定,再考
+	get_resp
+	ret_sel1
+		break
+	ret_sel2
+	*endconfirm
+	chk_eveflg,210,999
+	chk_eveflg_then
+		set_eveflg,210,0
+	chk_eveflg_else
+	continue
+next
+bl_fadeout
+set_eveflg,213,覇王:pid4
+chk_eveflg,212,4
+chk_eveflg_then
+	rnd,4
+	goto,*ansatuhantei
+chk_eveflg_else
+chk_eveflg,212,1
+chk_eveflg_then
+	bgm_chg,71
+	zin_reg_event,暗殺　襲撃編,pid2,pid4,,gzin23
+	zin_reg_msg,p_name4、覚悟！！,0
+	chk_mval,pid3=pid4,,,,
+	chk_mval_then
+		goto,*btlskip
+	chk_mval_else
+	zin_reg_face_1,pid3
+	zin_reg_msg,call_pid34、お下がりください！！　ここはcf_pid3が！！,1
+	btl_ansatu,pid2,pid3,0,0
+	get_resp
+	ret_sel3
+		zin_reg_face_0,pid4
+		zin_regs_msg,死んだか？,死んだの？,0
+		zin_reg_msg,いえ、まだ生きております,1
+		zin_reg_msg,では回復し次第、誰が首謀者か聞き出すのだ,それでは回復し次第、誰が首謀者か聞き出してちょうだい,0
+		zin_reg_title,p_name4の暗殺に失敗しました。
+		zin_reg_button,0
+		zin_reg_exit
+		set_horyo,pid2,eveflg213
+		add_urami,eveflg213,poid_player,200
+		chk_mval,勲功:player<11000,,,,
+		chk_mval_then
+			add_kunkou,pid1,-100
+		chk_mval_else
+		end
+	ret_sel2
+	zin_reg_msg,口ほどにもないやつ。　次はおまえだ！！,0
+	zin_reg_face_1,pid4
+	*btlskip
+	zin_regs_msg,おのれっ！！,よくもっ！！,1
+	btl_ansatu,pid2,pid4,1,0
+	get_resp
+	ret_sel3
+		zin_regs_msg,しまった、首謀者を聞き出す前に殺してしまったか,いけない、首謀者を聞き出す前に殺してしまったわ,1
+		zin_reg_title,p_name4の暗殺に失敗しました。
+		zin_reg_button,0
+		zin_reg_exit
+		chk_mval,勲功:player<11000,,,,
+		chk_mval_then
+			add_kunkou,pid1,-100
+		chk_mval_else
+		end
+	ret_sel2
+		zin_reg_title,p_name4の暗殺に成功しました。
+		zin_reg_button,0
+		zin_reg_exit
+		chk_mval,勲功:player<11000,,,,
+		chk_mval_then
+			add_kunkou,pid1,-100
+		chk_mval_else
+		add_kunkou,pid2,400
+		end
+chk_eveflg_else
+chk_eveflg,212,2
+chk_eveflg_then
+	rnd,8
+	goto,*ansatuhantei
+chk_eveflg_else
+chk_eveflg,212,3
+chk_eveflg_then
+chk_eveflg_else
+	rnd,10
+	*ansatuhantei
+	case0
+	case1
+		goto,*ansatusuccess
+	case2
+	case3
+	case4
+	case5
+	case6
+	case7
+	case8
+	case9
+		goto,*ansatufaild
+*ansatusuccess
+	chk_eveflg,212,2
+	chk_eveflg_then
+		bgm_chg,60
+		gosub,*chkwife
+		chk_mval,勲功:pid4>=12080,,,,
+		chk_mval_then
+			//王族以上
+			zin_reg_event,暗殺　毒殺編,pid4,pid3,,gzin61
+			goto,*dokusatucomp
+		chk_mval_else
+		chk_mval,勲功:pid4>=8000,,,,
+		chk_mval_then
+			//分２位以上
+			zin_reg_event,暗殺　毒殺編,pid4,pid3,,gzin72
+			*dokusatucomp
+			zin_regs_msg,たまにはこうしてゆっくりするのも良いな,たまにはこうしてゆっくりするのも良いわね,0
+			zin_reg_msg,最近は何かと忙しかったですから,1
+			zin_reg_face_1,765
+			zin_reg_msg,お茶をお持ちしました,1
+			zin_reg_face_1,pid3
+			zin_regs_msg,ほう、これはうまいな,あら、これおいしいわね,0
+			zin_reg_msg,そうですね、どこのお茶ですか？,1
+			zin_reg_msg,これは確か．．．ぐふおあっ！！,0
+			zin_regs_msg,なっ、call_pid34！！cr誰か、医者を呼んでくれ！！,えっ、call_pid34！！cr誰か、医者を！！,1
+			zin_reg_qnar,お茶に仕込まれた毒によりp_name4は息絶えた。
+			zin_reg_button,0
+			zin_reg_exit
+			set_dead,pid4,0
+		chk_mval,勲功:player<11000,,,,
+		chk_mval_then
+			add_kunkou,pid1,100
+		chk_mval_else
+			add_kunkou,pid2,400
+			end
+		chk_mval_else
+			//それ以下
+			zin_reg_event,暗殺　毒殺編,pid4,pid3,,gzin18
+			*dokusatucomp
+			zin_regs_msg,たまにはこうしてゆっくりするのも良いな,たまにはこうしてゆっくりするのも良いわね,0
+			zin_reg_msg,最近は何かと忙しかったですから,1
+			zin_regs_msg,そうだ。cr先日いい酒が届いたのだが、どうだ？,そうだ。cr先日いいお酒が届いたのだけど、どうかしら？,0
+			zin_reg_msg,それは是非,1
+			zin_regs_msg,ほう、これはうまいな,あら、これおいしいわね,0
+			zin_reg_msg,そうですね、どなたからの贈り物で？,1
+			zin_reg_msg,これは確か．．．ぐふおあっ！！,0
+			zin_regs_msg,なっ、call_pid34！！cr誰か、医者を呼んでくれ！！,えっ、call_pid34！！cr誰か、医者を！！,1
+			zin_reg_qnar,グラスに仕込んだ毒でp_name4は息絶えた。
+			zin_reg_button,0
+			zin_reg_exit
+			set_dead,pid4,0
+		chk_mval,勲功:player<11000,,,,
+		chk_mval_then
+			add_kunkou,pid1,100
+		chk_mval_else
+			add_kunkou,pid2,400
+			end
+	chk_eveflg_else
+	chk_eveflg,212,3
+	chk_eveflg_then
+		bgm_chg,61
+		chk_mval,pid3=pid4,,,,
+		chk_mval_then
+			set_eveflg,214,勲功:pid4
+			get_mpid,覇王=覇王:pid4,状態=2,年齢>11,勲功<eveflg214,,,
+			chk_ormval,pval=0,,,,
+			chk_ormval_then
+				set_epid3,844
+				goto,*chkguard
+			chk_ormval_else
+				set_epid3,pval
+		chk_mval_else
+		*chkguard
+		zin_reg_event,暗殺　爆破編,pid4,pid3,,gzin85
+		zin_regs_msg,はあ．．．この移動の間が最もつまらんな,はあ．．．この移動の間が退屈だわ,0
+		zin_reg_msg,ですが我々護衛にとっては一番気が休まりますよ,1
+		zin_regs_msg,こいつ、いいよるわ,あら、いうわね～,0
+		zin_regs_msg,おっと、座席の間に落ちたか．．．,やだ、座席の間に落ちちゃったかしら,0
+		zin_reg_msg,お取りします．．．んっ？,1
+		bgm_se,11
+		zin_reg_event,暗殺　爆破編,,,,gzin88
+		zin_reg_title,p_name4の暗殺に成功しました。
+		zin_reg_button,0
+		zin_reg_exit
+		set_dead,pid4,0
+		set_dead,pid3,0
+		chk_mval,勲功:player<11000,,,,
+		chk_mval_then
+			add_kunkou,pid1,100
+		chk_mval_else
+		add_kunkou,pid2,400
+		end
+	chk_eveflg_else
+		bgm_chg,53
+		chk_mval,pid3=pid4,,,,
+		chk_mval_then
+			set_eveflg,214,勲功:pid4
+			get_mpid,覇王=覇王:pid4,状態=2,年齢>11,勲功<eveflg214,,,
+			chk_ormval,pval=0,,,,
+			chk_ormval_then
+				set_epid3,844
+				goto,*chkguard
+			chk_ormval_else
+				set_epid3,pval
+		chk_mval_else
+		*chkguard
+		zin_reg_event,暗殺　自爆編,,pid4,,gzin80
+		zin_reg_qnar,某日、p_name4が参加する式典が厳かに執り行われていた。cr変装して紛れていたp_name2は機を見てp_name4の元へと飛び出した。
+		zin_reg_event,暗殺　自爆編,pid2,pid4,,gzin80
+		zin_reg_msg,な、なんだ！！,1
+		zin_reg_face_1,pid3
+		zin_reg_msg,p_name4様、お下がりください！！,1
+		zin_reg_msg,po_name2に、栄光あれえええええええ！！,0
+		bgm_se,11
+		zin_reg_event,暗殺　自爆編,,,,gzin80
+		zin_reg_title,p_name4の暗殺に成功しました。
+		zin_reg_button,0
+		zin_reg_exit
+		set_dead,pid4,0
+		set_dead,pid3,0
+		set_dead,pid2,0
+		chk_mval,勲功:player<11000,,,,
+		chk_mval_then
+			add_kunkou,pid1,100
+		chk_mval_else
+		end
+*ansatufaild
+	chk_eveflg,212,2
+	chk_eveflg_then
+		bgm_chg,60
+		gosub,*chkwife
+		chk_mval,勲功:pid4>=12080,,,,
+		chk_mval_then
+			//王族以上
+			zin_reg_event,暗殺　毒殺編,pid4,pid3,,gzin61
+			goto,*dokusatucomp2
+		chk_mval_else
+		chk_mval,勲功:pid4>=8000,,,,
+		chk_mval_then
+			//分２位以上
+			zin_reg_event,暗殺　毒殺編,pid4,pid3,,gzin72
+			*dokusatucomp2
+			zin_regs_msg,たまにはこうしてゆっくりするのも良いな,たまにはこうしてゆっくりするのも良いわね,0
+			zin_reg_msg,最近は何かと忙しかったですから,1
+			zin_reg_face_1,765
+			zin_reg_msg,お茶をお持ちしました,1
+			zin_regs_msg,む、待て。crこのお茶、何を混ぜた？,待ちなさい。crこのお茶、何を混ぜたの？,0
+			zin_reg_msg,な、なんのことですか？,1
+			zin_regs_msg,とぼけるな！！cr昔から嗅覚は敏感なのだ,とぼけないで！！cr昔から嗅覚は優れてるのよ,0
+			zin_regs_msg,うっすらと薬品のニオイがする,うっすらと薬品のニオイがするわ,0
+			zin_reg_msg,そんな！！crどうして私がそのようなことを,1
+			zin_regs_msg,ではおまえが飲んでみよ,じゃああなたが飲みなさい,0
+			zin_reg_msg,！！crそれは．．．できません,1
+			zin_regs_msg,そうだろうな。cr誰の差し金かじっくり調べてやろう,そうでしょうね。cr誰の差し金かじっくり調べてあげる,0
+			zin_reg_title,p_name4の暗殺に失敗しました。
+			zin_reg_button,0
+			zin_reg_exit
+			rnd,2
+			case0
+				add_urami,eveflg213,poid_player,200
+			case1
+			chk_mval,勲功:player<11000,,,,
+			chk_mval_then
+				add_kunkou,pid1,-100
+			chk_mval_else
+				add_kunkou,pid2,-400
+			end
+		chk_mval_else
+			//それ以下
+			zin_reg_event,暗殺　毒殺編,pid4,pid3,,gzin18
+			*dokusatucomp
+			zin_regs_msg,たまにはこうしてゆっくりするのも良いな,たまにはこうしてゆっくりするのも良いわね,0
+			zin_reg_msg,最近は何かと忙しかったですから,1
+			zin_regs_msg,そうだ。cr先日いい酒が届いたのだが、どうだ？,そうだ。cr先日いいお酒が届いたのだけど、どうかしら？,0
+			zin_reg_msg,それは是非,1
+			zin_regs_msg,ん？cr待て、飲んではならん！！,ん？cr待って、飲んではダメよ！！,0
+			zin_reg_msg,どうしたのです？,1
+			zin_regs_msg,何かおかしなニオイがする,何かおかしなニオイがするの,0
+			zin_reg_msg,確かに、言われてみれば微かににおいますね,1
+			zin_regs_msg,あえて危ない橋を渡ることはなかろう,あえて危ない橋を渡る必要はないわね,0
+			zin_reg_title,p_name4の暗殺に失敗しました。
+			zin_reg_button,0
+			zin_reg_exit
+			chk_mval,勲功:player<11000,,,,
+			chk_mval_then
+				add_kunkou,pid1,-100
+			chk_mval_else
+			add_kunkou,pid2,-400
+			end
+	chk_eveflg_else
+	chk_eveflg,212,3
+	chk_eveflg_then
+		bgm_chg,61
+		chk_mval,pid3=pid4,,,,
+		chk_mval_then
+			set_eveflg,214,勲功:pid4
+			get_mpid,覇王=覇王:pid4,状態=2,年齢>11,勲功<eveflg214,,,
+			chk_ormval,pval=0,,,,
+			chk_ormval_then
+				set_epid3,844
+				goto,*chkguard
+			chk_ormval_else
+				set_epid3,pval
+		chk_mval_else
+		*chkguard
+		zin_reg_event,暗殺　爆破編,pid4,pid3,,gzin85
+		zin_regs_msg,はあ．．．この移動の間が最もつまらんな,はあ．．．この移動の間が退屈だわ,0
+		zin_reg_msg,ですが我々護衛にとっては一番気が休まりますよ,1
+		zin_regs_msg,こいつ、いいよるわ,あら、いうわね～,0
+		zin_regs_msg,おっと、座席の間に落ちたか．．．,やだ、座席の間に落ちちゃったかしら,0
+		zin_reg_msg,お取りします．．．んっ？,1
+		zin_regs_msg,どうした？,どうしたの？,0
+		zin_reg_msg,不審物です。cr爆発物かもしれませんので外へ射出します,1
+		bgm_se,11
+		zin_regs_msg,危ないところだったな,危ないところだったわね,0
+		zin_reg_msg,ええ、間一髪でした,1
+		zin_reg_title,p_name4の暗殺に失敗しました。
+		zin_reg_button,0
+		zin_reg_exit
+		chk_mval,勲功:player<11000,,,,
+		chk_mval_then
+			add_kunkou,pid1,-100
+		chk_mval_else
+		add_kunkou,pid2,-400
+		end
+	chk_eveflg_else
+	chk_eveflg,212,4
+	chk_eveflg_then
+		bgm_chg,53
+		chk_mval,pid3=pid4,,,,
+		chk_mval_then
+			set_eveflg,214,勲功:pid4
+			get_mpid,覇王=覇王:pid4,状態=2,年齢>11,勲功<eveflg214,,,
+			chk_ormval,pval=0,,,,
+			chk_ormval_then
+				set_epid3,844
+				goto,*chkguard
+			chk_ormval_else
+				set_epid3,pval
+		chk_mval_else
+		*chkguard
+		zin_reg_event,暗殺　自爆編,,pid4,,gzin80
+		zin_reg_qnar,某日、p_name4が参加する式典が厳かに執り行われていた。cr変装して紛れていたp_name2は機を見てp_name4の元へと飛び出した。
+		zin_reg_event,暗殺　自爆編,pid2,pid4,,gzin80
+		zin_reg_msg,な、なんだ！！,1
+		zin_reg_face_0,pid3
+		zin_reg_msg,p_name4様、お下がりください！！,1
+		zin_reg_qnar,p_name2が起爆スイッチを押すより早くp_name3の放った銃弾がその手を撃ち抜いた。crその直後、p_name2は衛兵によって取り押さえられた。
+		zin_reg_face_0,pid4
+		zin_reg_face_1,pid3
+		zin_reg_msg,危機一髪であったな,危機一髪だったわね,0
+		zin_reg_msg,誰の仕業かきっちり調べるのだ,誰の仕業かきっちり調べるのよ,0
+		zin_reg_msg,はっ！！,1
+		zin_reg_title,p_name4の暗殺に失敗しました。
+		zin_reg_button,0
+		zin_reg_exit
+		chk_mval,勲功:player<11000,,,,
+		chk_mval_then
+			add_kunkou,pid1,-100
+		chk_mval_else
+		set_horyo,pid2,eveflg213
+		end
+	chk_eveflg_else
+		end
+*chkwife
+		set_eveflg,214,婚姻:pid4
+		chk_mval,婚姻:pid4!0,覇王:eveflg214=覇王:pid4,,,
+		chk_mval_then
+			set_epid3,婚姻:pid4
+			return
+		chk_mval_else
+		chk_mval,pid3=pid4,,,,
+		chk_mval_then
+			set_eveflg,214,勲功:pid4
+			get_mpid,覇王=覇王:pid4,状態=2,年齢>11,勲功<eveflg214,,,
+			chk_ormval,pval=0,,,,
+			chk_ormval_then
+				set_epid3,844
+				return
+			chk_ormval_else
+				set_epid3,pval
+		chk_mval_else
+		return
+*highestbtsts
+	for,PMAX,210,1
+		chk_mval,役職:eveflg210=4,覇王:eveflg210=pid3,状態:eveflg210=2,,
+		chk_mval_then
+			chk_eveflg,211,0
+			chk_eveflg_then
+				set_eveflg,211,eveflg210
+				goto,*procskip
+			chk_eveflg_else
+				chk_ormval,格闘:eveflg211<格闘:eveflg210,,,,
+				chk_ormval_then
+					set_eveflg,211,eveflg210
+				chk_ormval_else
+		chk_mval_else
+		*procskip
+		continue
+	next
+	return
+*highestbtlhabatu
+	for,PMAX,210,1
+		chk_mval,派閥:eveflg210=pid4,覇王:eveflg210=pid3,状態:eveflg210=2,,
+		chk_mval_then
+			chk_eveflg,211,0
+			chk_eveflg_then
+				set_eveflg,211,eveflg210
+				goto,*procskip
+			chk_eveflg_else
+				chk_ormval,格闘:eveflg211<格闘:eveflg210,,,,
+				chk_ormval_then
+					set_eveflg,211,eveflg210
+				chk_ormval_else
+		chk_mval_else
+		*procskip
+		continue
+	next
+	return
+*chkspselect
+	chk_ormval,eveflg211=0,eveflg211=pid4,,,
+	chk_ormval_then
+		set_eveflg,211,758
+		return
+	chk_ormval_else
+		return
+

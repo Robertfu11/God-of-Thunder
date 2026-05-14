@@ -1,0 +1,25 @@
+set_epid1,player
+set_eveflg,192,0
+bl_fadein,gzin8
+zin_reg_event,,player,,,
+zin_reg_msg,全人物忠誠99?,0
+zin_reg_2sel,全人物忠誠99,いや
+        get_resp
+        ret_sel1
+                for,PMAX,192,1             
+                chk_msts,eveflg192,覇王,poid_player,勲功,<13000,NON,0,NON,0,NON,0
+                chk_msts_then
+                set_epid2,eveflg192
+                upd_sts,eveflg192,忠誠,99
+                continue
+                chk_msts_else
+                continue
+                 next
+                set_eveflg,192,0
+                zin_reg_msg,全人物忠誠99,0
+                end
+        ret_sel2
+                set_eveflg,192,0
+                end
+set_eveflg,192,0
+end

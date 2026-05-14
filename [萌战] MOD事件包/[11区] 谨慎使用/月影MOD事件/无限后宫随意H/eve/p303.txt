@@ -1,0 +1,9 @@
+bgm_chg,107
+zin_reg_event,,pid1,pid2,,gzin19
+zin_reg_title,p_name1直営艦隊
+zin_reg_qnar,p_name1は各地で反乱を起こしている抵抗軍を掃討するため出撃した。
+zin_reg_msg,司令！！crレーダーに反応があります！,1
+zin_reg_msg,このあたりの抵抗軍艦隊に間違いありません,1
+zin_reg_msg,そうか、ならば仕事を始めるとするか,0
+zin_reg_qnar,勝利条件：抵抗軍艦隊の撃滅
+end

@@ -1,0 +1,17 @@
+bgm_chg,54
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin22
+zin_reg_qnar,p_name1訪問了p_name2的住所。
+zin_reg_msg,還在喝酒呀？,0
+zin_reg_msg,喔喔、這不是p_name1嗎？,1
+zin_reg_msg,會不會喝得有點過多啦？,0
+zin_reg_msg,昨天、仕官的選考會又落榜了,1
+zin_reg_msg,說我不適合從軍呀,1
+zin_reg_msg,這樣呀,0
+zin_reg_msg,來陪我喝幾杯吧,1
+zin_reg_msg,好吧cr我就奉陪到底了,0
+zin_reg_title,與p_name2的親密度提升了
+zin_reg_button,0
+zin_reg_exit
+add_sinmitu,pid2,15
+end

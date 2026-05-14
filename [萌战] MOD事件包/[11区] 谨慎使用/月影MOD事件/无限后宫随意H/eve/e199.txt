@@ -1,0 +1,24 @@
+eve_start
+	if_eveflg,18,3
+//ファーリが阿貝亞空配下
+	if_poid,574,7
+eve_end
+
+set_eveflg,18,4
+
+chk_exeplayer,10,7,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,索尼婭的宇宙船,602,6,,gzin29
+zin_reg_msg,母親、我們這是去哪兒？,1
+get_capwid,7
+zin_reg_msg,去s_name_pval ,0
+zin_reg_msg,那兒有我的一個老朋友,0
+zin_reg_msg,一定會幫助我們的,0
+zin_reg_msg,這樣啊．．．,1
+zin_reg_button,0
+//zin_reg_exit

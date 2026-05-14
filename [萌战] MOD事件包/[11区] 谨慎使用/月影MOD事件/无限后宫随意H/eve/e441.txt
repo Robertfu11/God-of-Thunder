@@ -1,0 +1,44 @@
+eve_start
+	if_eveflg,56,2
+	//ホスエンの覇王はパグンである
+	if_cap,22,621
+	//ホスエン上空に敵艦隊がいる
+	if_enefltonwid,22
+	set_epid3,pval
+eve_end
+
+set_eveflg,56,3
+
+set_epid1,621
+get_kunpsn,621
+set_epid2,pval
+
+bgm_chg,56
+zin_reg_event,巴庫恩的王宮,621,pid2,,gzin8
+zin_reg_msg,巴庫恩大人，坎西送來報告，剛剛已經逃離了這顆惑星,1
+zin_reg_msg,是嗎……cr那麼這邊也開始行動吧,0
+zin_reg_msg,起爆按鈕已經准備好了,1
+zin_reg_msg,嗯，一直以來辛苦你了,0
+zin_reg_msg,此言令我不勝惶恐,1
+zin_reg_msg,那麼，我們走吧,0
+bgm_se,11
+zin_reg_event,巴庫恩的王宮,621,pid2,zin19,gzin8
+zin_reg_qnar,巴庫恩按下了起爆按鈕。cr霍斯因各都市瞬間灰飛煙滅，其威力甚至讓惑星本身崩潰了。
+
+set_epid1,pid3
+get_kunpsn,pid3
+set_epid2,pval
+zin_reg_event,,pid1,pid2,,gzin33
+zin_reg_msg,call_pid21，惑星霍斯因似乎已經完全消滅了,1
+zin_reg_msg,你說是消滅了！！,0
+zin_reg_msg,正前往制壓的我軍艦隊也幾乎處於全滅的狀況,1
+zin_reg_msg,可惡，巴庫恩那傢伙……,0
+zin_reg_msg,不過，擁有著連惑星都能破壞的兵器，真是可怕的技術力啊,1
+zin_reg_msg,還想著占領霍斯因的話，就能拿到那股力量了呢,0
+zin_reg_msg,太可惜了……,0
+zin_reg_button,0
+//惑星破壊
+wexpl,22
+//パグン死亡
+set_dead,621,0
+end

@@ -1,0 +1,335 @@
+//王族オルド通常　相手：姫
+//■Ｈ體位：正常位
+
+//女の狀態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,call_pid1、p_name2想爸爸都快发疯了！！,1
+	zin_reg_msg,呼呼、還真是、讓人生氣又欲罷不能的好女兒啊,0
+	zin_reg_msg,那、那樣子的．．．,1
+	zin_reg_msg,來吧、今天也讓你的子宮滿滿充斥著我的精液吧,0
+	zin_reg_msg,快插进来，插进女儿的子宫里．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,p_name2的這裏也已經開發的不錯了呢,pid1
+	zin_old_msg,就連深度也比以前增加了不少了,pid1
+	zin_old_msg,是、是的．．．被父親大人．．．好好的．．．訓練了呢．．．噢．．．啊啊啊啊！！,pid2
+	zin_old_msg,父親的tin_str緊緊的夾著證明你也是個優秀的大人了呢,pid1
+	zin_old_msg,好吧、為了獎勵我的乖女兒你父親大人我今天也毫無保留的滿足你吧,pid1
+	zin_old_msg,噢噢．．．呀啊啊．．．肚子裏．．．還在向裏面深入著．．．,pid2
+	zin_old_msg,哼哼！！,pid1
+	zin_old_msg,啊啊啊啊啊噢！！　父、父親大人的cr一直．．．一直一直．．．深入著！！！,pid2
+	zin_old_msg,呼噢噢噢噢哦．．．啊、man_str．．．摩擦著．．．cr這樣子的、好舒服啊啊啊啊啊！！！,pid2
+	zin_old_msg,噢噢噢．．．呀啊呀啊．．．呼呼呼！！,pid1
+	zin_old_msg,不行了、要去了．．．p_name2的裏面．．．要出來了、出來了啊啊啊啊啊！！,pid2
+	zin_flush,pid2
+	goto,*check
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,我想男女關系什麼的你也明白吧？,0
+	zin_reg_msg,男人和女人之間的,0
+	zin_reg_msg,是、是的．．．．,1
+	zin_reg_msg,我的身体，我的心都是属于父亲大人的,1
+	zin_reg_msg,恩知道就好、第一次可能會有些痛．．．,0
+	zin_reg_msg,不過放心、只是第一次而已,0
+	zin_reg_msg,相信父親吧,0
+	zin_reg_msg,是、是的．．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,呀啊啊啊！！　啊啊．．．進、進來了．．．父親大人的、進到我的身體裏了啊啊啊啊啊啊！！！,pid2
+	zin_old_msg,怎麼樣？　會很痛嗎？,pid1
+	zin_old_msg,有、有些．．．不過、沒關系的．．．的說．．．嗚啊啊噢噢！！,pid2
+	zin_old_msg,呼呼呼、我的好女兒你可知道父親大人等這一天等了多久了嗎,pid1
+	zin_old_msg,一直期待女兒第一次的是．．．是父親大人．．．這、這樣子的我，是坏孩子么？．．,pid2
+	zin_old_msg,啊哈哈是的．．所以最喜欢你了,pid1
+	zin_old_msg,是、是的．．．嗚嗚喔喔．．！！,pid2
+	zin_old_qnar,p_name1慢慢的向p_name2敏感的深處探索著．．．,0
+	zin_old_msg,啊啊啊、呼呼啊、呀．．呀噢、噢．．啊嗚．．cr不要啊ーーーーーっ！,pid2
+	zin_old_msg,如何啊？　這裏怎麼樣？　父親大人可是很舒服的啊,pid1
+	zin_old_msg,呼啊啊、呀噢噢噢！　父親、父親大人啊啊啊啊啊ーーー！！,pid2
+	zin_old_msg,恩不錯、要永遠和父親大人在一起！！,pid1
+	zin_old_msg,呀哦哦嗚！！　這個．．．那個、如果是父親大人所希望的話ーーーーー！！！！,pid2
+	zin_flush,pid2
+	zin_old_msg,啊～～啊～～啊～～啊～～cr我．．．．那個．．．那個．．永遠和父親大人在一起了．．．,pid2
+	goto,*check
+//孕みパターン
+case_botebara
+	zin_reg_msg,call_pid1、這麼早啊父親大人,1
+	zin_reg_msg,p_name2的胸前已經有牛奶溢出了,1
+	zin_reg_msg,如何．．．cr馬上要出產了嗎,0
+	zin_reg_msg,怎麼樣、是很有精神的孩子吧,0
+	zin_reg_msg,是的、call_pid1,1
+	zin_reg_msg,那麼、今天也跟callself_pid1的tane_str緊緊相連吧,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,女兒這樣子的身體．．p_name2的事情．．那個、父親大人會會討厭的嗎．．．,pid2
+	zin_old_msg,怎麼可能、乖女兒現在的樣子最喜歡了．．．,pid1
+	zin_old_msg,啊啊啊．．好、好高興啊．．．call_pid1．．．cr哈．．噢噢噢．．．呀．．啊啊啊噢．．．,pid2
+	zin_old_msg,今天的小穴也依舊這麼爽啊。cr比任何時候siru_str都要迷人啊,pid1
+	zin_old_msg,因、因為．．．寶寶可能也會．．．感覺到了．．啊啊．．啊啊啊！！,pid2
+	zin_old_msg,是嗎、就連寶寶也會感覺到這淫蕩的小穴嗎,pid1
+	zin_old_msg,這種事情．．．人家不知道嘛．．啊啊啊啊啊！！,pid2
+	zin_old_msg,啊噢啊啊啊．．呀！　啊啊啊！　噢噢噢！　啊啊！cr好！　好舒服啊啊啊啊！　call_pid21的tin_str好舒服啊！　啊啊啊！,pid2
+	zin_old_msg,要．．．要．．．要去了啊啊啊啊ーーーー嗚！！！还要生个女儿给父亲大人操,pid2
+	zin_flush,pid2
+	goto,*check
+*check
+bl_fadeout
+zin_reg_event,日常调教,pid1,pid2,,gzin32
+zin_reg_msg,今夜cf_pid1也干了个爽,0
+zin_reg_3sel,已经满足了,再来一次,我们结婚吧
+get_resp
+
+ret_sel1
+upd_sts,pid2,1,50 
+upd_sts,pid2,5,50 
+upd_sts,pid2,6,50 
+upd_sts,pid2,7,50 
+upd_sts,pid2,8,50 
+upd_sts,pid2,9,50 
+zin_reg_msg,啊啊，您高兴就好，肉便器p_name2随时为call_pid21准备着！,1
+zin_reg_qnar,p_name2的忠诚，知力，攻击，防御，格斗，交涉提升
+zin_reg_button,0
+zin_reg_exit
+end
+
+
+ret_sel2
+upd_sts,pid2,1,160 
+upd_sts,pid2,5,160 
+upd_sts,pid2,6,160 
+upd_sts,pid2,7,160 
+upd_sts,pid2,8,160 
+upd_sts,pid2,9,160 
+zin_reg_msg,太好了，被call_pid21随意使用是肉便器p_name2的使命！,1
+zin_reg_qnar,p_name2的忠诚，知力，攻击，防御，格斗，交涉双倍提升
+zin_reg_button,0
+zin_reg_exit
+end
+
+
+ret_sel3
+chk_sts,pid1,妻,pid2
+chk_sts_then
+upd_sts,pid2,1,200 
+upd_sts,pid2,5,200 
+upd_sts,pid2,6,200 
+upd_sts,pid2,7,200 
+upd_sts,pid2,8,200 
+upd_sts,pid2,9,200
+zin_reg_msg,能够成为call_pid21的妻子真是太好了,1
+bl_fadeout
+zin_reg_event,第二天,pid1,pid2,,gzin18
+zin_reg_qnar,第二天
+zin_reg_msg,p_name2,0
+zin_reg_msg,在，call_pid21，要用饭的话还要等一会,1
+zin_reg_msg,不，我想说说别的,0
+zin_reg_msg,什么？,1
+zin_reg_msg,p_name2，我喜欢你,0
+zin_reg_qnar,p_name2愣住了，三秒后用双手捂住嘴巴
+zin_reg_msg,怎么了？p_name2,0
+zin_reg_msg,没，没什么！call_pid21,1
+zin_reg_msg,没关系，慢慢说，我就在这里,0
+zin_reg_qnar,p_name2轻声啜泣着……
+zin_reg_msg,我太高兴了！因为call_pid21是我一生中最重要的人！,1
+zin_reg_msg,是这样吗？p_name2是如此地爱着我，我真是幸福啊,0
+zin_reg_msg,是，是的，我最喜欢call_pid21了,1
+zin_reg_msg,这么喜欢的话，就用实际行动来表达吧,0
+zin_reg_msg,是，是！call_pid21，今后每天都把man_str洗干净了，随时为call_pid21准备着,1
+zin_reg_qnar,p_name2的忠诚，知力，攻击，防御，格斗，交涉提升
+zin_reg_button,0  
+zin_reg_exit
+end
+
+chk_sts_else
+chk_sts,pid2,妻,0
+chk_sts_then
+upd_sts,pid2,1,250 
+upd_sts,pid2,5,250 
+upd_sts,pid2,6,250 
+upd_sts,pid2,7,250 
+upd_sts,pid2,8,250 
+upd_sts,pid2,9,250
+zin_reg_msg,要是能够成为call_pid21的妻子就好了,1
+bl_fadeout
+zin_reg_event,第二天,pid1,pid2,,gzin18
+zin_reg_qnar,第二天
+zin_reg_msg,p_name2,0
+zin_reg_msg,在，call_pid21，要用饭的话还要等一会,1
+zin_reg_msg,不，我想说说别的,0
+zin_reg_msg,什么？,1
+zin_reg_msg,p_name2，我喜欢你，请你和我结婚吧,0
+zin_reg_qnar,p_name2愣住了，三秒后用双手捂住嘴巴
+zin_reg_msg,不愿意吗？p_name2,0
+zin_reg_msg,不！不是的！call_pid21,1
+zin_reg_msg,没关系，慢慢说，我就在这里,0
+zin_reg_qnar,p_name2轻声啜泣着……
+zin_reg_msg,我愿意！因为call_pid21是我一生中最重要的人！,1
+zin_reg_msg,是这样吗？p_name2是如此地爱着我，我真是幸福啊,0
+zin_reg_msg,是，是的，我最喜欢call_pid21了,1
+zin_reg_msg,这么喜欢的话，就用实际行动来表达吧,0
+zin_reg_msg,是，是的！我知道了！call_pid21，我是只属于您一人的淫荡妻子,1
+zin_reg_msg,很好的回答,0
+zin_reg_msg,是的，我会努力的。call_pid21,1
+set_pkon,pid1,pid2
+zin_reg_qnar,p_name2成为了p_name1的妻子，可喜可贺
+zin_reg_qnar,p_name2的忠诚，知力，攻击，防御，格斗，交涉提升
+zin_reg_button,0  
+zin_reg_exit
+end
+chk_sts_else
+get_mpid,妻=pid2,,
+set_epid3,pval
+zin_reg_msg,要是能够成为call_pid21的妻子就好了,1
+bl_fadeout
+zin_reg_event,第二天,pid1,pid2,,gzin18
+zin_reg_qnar,第二天
+zin_reg_msg,p_name2,0
+zin_reg_msg,在，call_pid21，要用饭的话还要等一会,1
+zin_reg_msg,不，我想说说别的,0
+zin_reg_msg,什么？,1
+zin_reg_msg,p_name2，我喜欢你，请你和我结婚吧,0
+zin_reg_qnar,p_name2愣住了，三秒后用双手捂住嘴巴
+zin_reg_msg,不愿意吗？p_name2,0
+zin_reg_msg,不！不是的！call_pid21,1
+zin_reg_msg,没关系，慢慢说，我就在这里,0
+zin_reg_qnar,p_name2轻声啜泣着……
+zin_reg_msg,我愿意！因为call_pid21是我一生中最重要的人！,1
+zin_reg_msg,是这样吗？p_name2是如此地爱着我，我真是幸福啊,0
+zin_reg_msg,是，是的，我最喜欢call_pid21了,1
+zin_reg_msg,这么喜欢的话，就用实际行动来表达吧,0
+zin_reg_msg,可，可是……我明白了！call_pid21！cr虽然我已经结婚了，但这并不重要,1
+zin_reg_msg,你的意思是？,0
+zin_reg_msg,我会和那个人离婚，今后每天都把man_str洗干净了，随时为您准备着,1
+zin_reg_msg,很好，不愧是我看中的女人,0
+zin_reg_qnar,p_name2激动得man_str又湿了……
+zin_reg_msg,是的，我会努力的。call_pid21,1
+//以下为原夫上门情节追加，会进行一场战斗，输则死亡
+bgm_chg,61
+zin_reg_qnar,就在这时，一阵激烈的敲门声响起
+zin_reg_msg,什么人！！？？,0
+bl_fadeout
+zin_reg_event,背叛者来袭,pid1,pid3,,gzin18
+zin_reg_qnar,没有回答，突然门就被踹开了。
+zin_reg_msg,你这个混蛋！！,1
+zin_reg_msg,哦……原来是你啊，p_name3,0
+zin_reg_qnar,p_name1用冷酷的目光看向来者
+zin_reg_msg,你竟然敢这么做！cr呜呜，我可怜的p_name2，我来接你了,1
+zin_reg_msg,哼，别搞错了，p_name2是自愿的，她早就是cf_pid1的人了。,0
+zin_reg_msg,别开玩笑了！,1
+zin_reg_msg,告诉他，p_name2,0
+zin_reg_qnar,p_name1转过身，不再理会p_name3
+zin_reg_qnar,p_name3掏出武器，趁着p_name1背着身冲上去。
+zin_reg_msg,我要杀了你！,1
+btl_ansatu,pid1,pid3,0,0
+//模式0:打輸也不會死亡 1:輸了會死
+//背景文字列0:暗殺背景 1:宮廷内仇討用 2:部下同士　深夜(道路)
+get_resp
+bl_fadeout
+
+ret_sel2
+zin_reg_qnar,p_name3被打倒在地
+zin_reg_msg,可恶！怎么会这么强cr这家伙……,1
+zin_reg_msg,真是费了一点工夫呢cr那么，接下来该怎么办呢？,0
+zin_reg_msg,你，你要做什么！,1
+zin_reg_msg,两个男人争夺一个女人，输者会被怎么处置，你是知道的吧？,0
+zin_reg_qnar,p_name1用力揉搓着p_name2的奶子，p_name2就这样平静地看着p_name3
+zin_reg_msg,你，你的手！拿开你的手！,1
+zin_reg_msg,这可不行，现在，她是我的妻子了，所以任由我怎么摸都行,0
+zin_reg_msg,对吗？p_name2,pid1
+bl_fadeout
+zin_reg_event,事后处理1,pid2,pid3,,gzin18
+zin_reg_msg,是的，call_pid21，我已经是您的女人了，而且永远都是,0
+zin_reg_msg,可恶啊！这不可能！cr一定是你！p_name1，一定是你用了什么鬼伎俩！,1
+zin_reg_msg,请放过这个可怜的男人吧，call_pid21……cr请用骚货p_name2发泄您的怒气,0
+zin_reg_msg,你……你这个贱货，想要践踏男人的自尊到什么时候！,1
+zin_reg_qnar,p_name2冷笑着，将p_name3拽起来扔出门外
+zin_reg_msg,没用的家伙，能保住性命，就已经是call_pid21的恩德了！,0
+zin_reg_msg,可，可恶啊！！！！！cr你这个淫贱的女人！,1
+zin_reg_msg,是的，我就是淫贱，是个骚货！但只是属于call_pid21一个人的！,0
+zin_reg_qnar,p_name2当着丈夫的面，品尝着p_name1的tin_str和tane_str
+zin_reg_msg,太棒了，call_pid21的tin_str和tane_str！cr我已经离不开call_pid21了。,0
+zin_reg_msg,我要成为call_pid21的妻子，call_pid21一辈子的肉便器！,0
+zin_reg_msg,但原因不是tin_str和tane_str，而是因为他cr我爱他，爱着call_pid21的全部！,0
+zin_reg_msg,看看这里。,0
+zin_reg_qnar,p_name1在p_name3的面前，用手指分开了自己的man_str
+zin_reg_msg,man_str都已经湿了。cr但是，从今以后，这里是call_pid21的tin_str专用的。,0
+zin_reg_qnar,门外的败犬狼狈远去
+zin_reg_msg,可怜的男人，我早就是call_pid21的人了。,0
+bl_fadeout
+zin_reg_event,事后处理2,pid1,pid2,,gzin18
+zin_reg_msg,做得好，p_name2，要我如何奖励你呢？,0
+zin_reg_qnar,p_name2抓住p_name1的手，放到自己的奶子上
+zin_reg_msg,您说呢？亲爱的。cr那个男人已经没用了，不要杀他，好吗？,1
+zin_reg_2sel,任那败犬去吧,斩草除根
+get_resp
+bl_fadeout
+ret_sel1
+zin_reg_msg,放心，我这个人喜欢和平，打打杀杀什么的太无聊了。,0
+set_rikon,pid2
+upd_sts,pid3,1,-20
+upd_sts,pid3,12,-60
+upd_sts,pid2,1,250 
+upd_sts,pid2,5,250 
+upd_sts,pid2,6,250 
+upd_sts,pid2,7,250 
+upd_sts,pid2,8,250
+upd_sts,pid2,9,250
+zin_reg_qnar,p_name2和p_name3离婚了
+zin_reg_qnar,p_name3的忠诚下降20
+zin_reg_qnar,p_name3的友好下降60
+zin_reg_qnar,p_name2得到了p_name1的承诺，可喜可贺
+zin_reg_qnar,p_name2的忠诚，知力，攻击，防御，格斗，交涉提升
+zin_reg_button,0
+zin_reg_exit
+end
+ret_sel2
+set_dead,pid3,pid1
+zin_reg_msg,抱歉，我无法容忍他曾经拥有你。,0
+zin_reg_qnar,p_name3被p_name1暗杀了
+zin_reg_qnar,p_name2的忠诚，知力，攻击，防御，格斗，交涉没有提升
+zin_reg_button,0
+zin_reg_exit
+end
+
+ret_sel3
+zin_reg_event,背叛者来袭,pid1,pid3,,gzin18
+zin_reg_qnar,p_name1被打倒在地
+zin_reg_msg,可恶！怎么会这么强cr这家伙……,0
+zin_reg_msg,真是费了一点工夫呢cr那么，接下来该怎么办呢？,1
+zin_reg_msg,你，你要做什么！,0
+zin_reg_msg,让你求生不得，求死不能！,1
+zin_reg_msg,这可一点都不有趣！,0
+zin_reg_msg,因为你是我的俘虏，所以只能任由我处置,1
+zin_reg_msg,真是麻烦啊！,0
+zin_reg_qnar,突然间，p_name1跃出窗外
+//将进行一次随机检定，死亡概率二分之一
+rnd,2
+case 0
+zin_reg_msg,那么，下次见，拜拜了！,0
+zin_reg_msg,你这个家伙！cr给我站住！,1
+upd_sts,pid2,5,-5 
+upd_sts,pid2,6,-5 
+upd_sts,pid2,7,-5 
+upd_sts,pid2,8,-5 
+upd_sts,pid2,9,-5 
+upd_sts,pid3,12,-100
+zin_reg_qnar,p_name1逃跑了，全属性减5，保住了自己的小命，什么都没获得
+zin_reg_qnar,p_name3的友好下降100
+off_habatu,pid1
+//玩家脫離派閥。玩家為派閥長時本指令無效。
+zin_reg_button,0  
+zin_reg_exit
+end
+case1
+set_dead,pid1,pid3
+zin_reg_qnar,p_name1摔断了腿
+zin_reg_msg,不，不！我的野心！cr我还有愿望没有达成！,0
+zin_reg_msg,啊啊啊啊啊啊啊啊,0
+zin_reg_qnar,p_name1不甘心地被p_name3杀死
+//原夫捉奸情节到这里结束
+zin_reg_button,0  
+zin_reg_exit
+end

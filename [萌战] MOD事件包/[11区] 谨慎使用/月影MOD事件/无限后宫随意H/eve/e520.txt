@@ -1,0 +1,35 @@
+eve_start
+	if_eveflg,68,0
+	//天王が生きている
+	if_haou,669
+	//布朗がラーを攻撃目標にしている（同盟狀態ではない）
+	if_target_hao,625,626
+	//阿莫斯、布朗配下
+	if_poid,423,625
+eve_end
+
+set_eveflg,68,1
+
+chk_exeplayer,625,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+set_epid1,625
+set_epid2,423
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,布朗の王宮,625,423,,gzin8
+zin_reg_qnar,布朗決定了下面的攻擊目標為雷。cr聽到這個決定阿莫斯拜見了布朗。
+zin_reg_msg,call_pid21、我們不能與雷作戰啊,1
+zin_reg_msg,如果與雷作戰，因為他的奇謀我們軍隊將承擔巨大的破壞,1
+zin_reg_msg,阿莫斯，很久沒看到你沒想到你會說出這樣的蠢話來,0
+zin_reg_msg,需要害怕那樣的小國嗎！！,0
+zin_reg_msg,不要輕視雷,1
+zin_reg_msg,現在應該與他一起聯手,1
+zin_reg_msg,你是指結盟？,0
+zin_reg_msg,愚蠢之極···cr不管任何奇謀，都會在我大軍前倒下,0
+zin_reg_msg,唉．．.,1
+zin_reg_button,0
+//zin_reg_exit
+end

@@ -1,0 +1,70 @@
+eve_start
+	if_eveflg,69,6
+	//多拉は覇王
+	if_haou,571
+
+	if_psts,668,6
+	//カンシ　sts6である
+	if_psts,356,6
+	if_psts,813,6
+	if_psts,843,6
+	//ワード55歳以下
+	if_val,年齢:813<55
+eve_end
+
+set_eveflg,69,7
+
+set_epid1,0
+set_epid2,eveflg71
+set_epid3,0
+
+bgm_chg,60
+zin_reg_event,瓦德的宇宙船,813,356,,gzin86
+zin_reg_qnar,坎西發現了一艘正在接近自己的中了彈的宇宙船。
+zin_reg_msg,瓦德殿下、有船正在接近,1
+zin_reg_msg,隸屬呢？,0
+zin_reg_msg,看起來像是民間船．．．貌似中彈了,1
+zin_reg_msg,裏面說不定有人、要救嗎？,1
+zin_reg_msg,省省吧、反正也活不了,0
+zin_reg_face_1,843
+zin_reg_msg,你還是一如既往的冷漠啊,1
+zin_reg_msg,那艘船乘員的怨靈說不定會憑依到我等的船上的哦,1
+zin_reg_msg,怨靈什麼的斬殺掉就行了．．．,0
+zin_reg_msg,唉、監視好那艘船坎西,0
+zin_reg_face_1,356
+zin_reg_msg,明白,1
+bl_fadeout
+bl_fadein,gzin88
+zin_reg_event,琳希的宇宙船,668,pid2,,gzin88
+zin_reg_msg,公主殿下、有一艘像是民間的宇宙船正在接近,1
+zin_reg_msg,不是天王軍吧？,0
+zin_reg_msg,識別信號為非天王軍,1
+zin_reg_msg,那麼向它發送求助訊號,0
+zin_reg_msg,這艘船已經不行了,0
+zin_reg_msg,明白,1
+bl_fadeout
+bgm_chg,69
+zin_reg_nar,琳希他們乘上了瓦德的宇宙船避難。
+bl_fadein,gzin86
+zin_reg_event,瓦德的宇宙船,356,668,,gzin86
+zin_reg_msg,非常感謝你們的救助,1
+zin_reg_msg,感激不盡,1
+zin_reg_msg,琳希？cr這不是琳希嗎？,0
+zin_reg_msg,坎西？cr你是坎西吧？,1
+zin_reg_msg,好多年沒見了吧,0
+zin_reg_msg,彼此都長大了、都快認不出來了,0
+zin_reg_msg,不過、你怎麼會在這裏？,0
+zin_reg_msg,坎西、我們現在正在逃亡,1
+zin_reg_msg,拜託了、把我們帶到哈根星去,1
+zin_reg_msg,看起來發生了不少事情啊,0
+zin_reg_msg,瓦德殿下、可以嗎？,0
+zin_reg_face_1,813
+zin_reg_msg,嗯、沒問題,1
+zin_reg_face_0,843
+zin_reg_msg,反正、我們也沒什麼想去的地方,0
+zin_reg_msg,看我今天晚上不把你的嘴給縫起來,1
+zin_reg_msg,喔喔、好可怕啊,0
+zin_reg_msg,你、你這傢伙．．．,1
+zin_reg_button,0
+//zin_reg_exit
+end

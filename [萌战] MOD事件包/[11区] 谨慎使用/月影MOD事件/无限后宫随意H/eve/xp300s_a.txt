@@ -1,0 +1,110 @@
+//部下オルド　正常位 20%
+chk_kunko,pid1,pid2
+case_kun_部下
+	zin_old_msg,不愧是call_pid12的身体啊、tin_str在man_str裡的感覺就是這樣的舒服啊啊啊．．．,pid1
+	zin_old_msg,今天、可是值得好好品味呢,pid1
+	zin_old_msg,啊啊嗯．．．call_pid21．．．,pid2
+	zin_old_msg,加油、請不說這樣的話．．．慢慢的感覺會越來越舒服的．．．,pid2
+	zin_old_msg,啊啊．．．tin_str插在裡面、感覺就像是插在棉花糖裡一樣呢,pid1
+	zin_old_msg,沒想到．．．會是這樣完全色情的身體啊．．．,pid1
+	zin_old_msg,不知道要幾根tin_str插在裡面才會覺得擁擠呢？,pid1
+	zin_old_msg,不要！！　cf_pid2．．．那種的誰都不允許插入的說！！,pid2
+	zin_old_msg,唔嗯！！　我已經無法忍耐了！！cr充分的中出、把man_str灌滿吧．．．嗯唔啊啊啊啊啊啊啊,pid1
+	chk_mval,懐妊:pid2!0,,,,
+	chk_mval_then
+		goto,*chknin1
+	chk_mval_else
+		rnd,5
+		case0
+			zin_old_msg,啊、不行的啊！！　今日是危険日的啊！！,pid2
+			zin_old_msg,懷上了call_pid21的寶寶、該怎麼辦啊？,pid2
+			zin_old_msg,部下懷上了上司的孩子、搞不好、會被軍隊的首領開除的！！,pid2
+			zin_old_msg,那樣的話、cf_pid1會照顧你的,pid1
+			zin_old_msg,所以放心吧、高潮了！！cr收下cf_pid1的tane_str懷孕吧！！,pid1
+			zin_old_msg,啊、不行！！　停下ーーーーっ！！！！！,pid2
+			zin_flush,pid2
+			zin_old_msg,騙子．．．tane_str被裝滿了嗚嗚．．．cr啊啊．．．會有寶寶了．．．,pid2
+			set_ninsin,pid2,pid1
+			end
+		case1
+		case2
+		case3
+		case4
+			*chknin1
+			zin_old_msg,哈嗯、好啊cr這樣中出、好啊好啊！,pid2
+			zin_old_msg,在cf_pid2的man_str裡面、多多的出來吧！！,pid2
+			zin_flush,pid2
+			end
+	end
+case_kun_同僚
+	zin_old_msg,不愧是call_pid12的身体啊、tin_str在man_str裡的感覺就是這樣的舒服啊啊啊．．．,pid1
+	zin_old_msg,今天、可是值得好好品味呢,pid1
+	zin_old_msg,啊啊嗯．．．call_pid21．．．,pid2
+	zin_old_msg,加油、請不說這樣的話．．．慢慢的感覺會越來越舒服的．．．,pid2
+	zin_old_msg,啊啊．．．tin_str插在裡面、感覺就像是插在棉花糖裡一樣呢,pid1
+	zin_old_msg,沒想到．．．會是這樣完全色情的身體啊．．．,pid1
+	zin_old_msg,不知道要幾根tin_str插在裡面才會覺得擁擠呢？,pid1
+	zin_old_msg,不要！！　cf_pid2．．．那種的誰都不允許插入的說！！,pid2
+	zin_old_msg,唔嗯！！　我已經無法忍耐了！！cr充分的中出、把man_str灌滿吧．．．嗯唔啊啊啊啊啊啊啊,pid1
+	chk_mval,懐妊:pid2!0,,,,
+	chk_mval_then
+		goto,*chknin1
+	chk_mval_else
+		rnd,5
+		case0
+			zin_old_msg,啊、不行的啊！！　今日是危険日的啊！！,pid2
+			zin_old_msg,懷上了call_pid21的寶寶、該怎麼辦啊？,pid2
+			zin_old_msg,懷上了同仕的孩子、搞不好、會被軍隊的首領開除的！！,pid2
+			zin_old_msg,那樣的話、cf_pid1會照顧你的,pid1
+			zin_old_msg,所以放心吧、高潮了！！cr收下cf_pid1的tane_str懷孕吧！！,pid1
+			zin_old_msg,啊、不行！！　停下ーーーーっ！！！！！,pid2
+			zin_flush,pid2
+			zin_old_msg,騙子．．．tane_str被裝滿了嗚嗚．．．cr啊啊．．．會有寶寶了．．．,pid2
+			set_ninsin,pid2,pid1
+			end
+		case1
+		case2
+		case3
+		case4
+			*chknin1
+			zin_old_msg,哈嗯、好啊cr這樣中出、好啊好啊！,pid2
+			zin_old_msg,在cf_pid2的man_str裡面、多多的出來吧！！,pid2
+			zin_flush,pid2
+			end
+	end
+case_kun_上司
+	zin_old_msg,不愧是call_pid12的身体啊、tin_str在man_str裡的感覺就是這樣的舒服啊啊啊．．．,pid1
+	zin_old_msg,今天、可是值得好好品味呢,pid1
+	zin_old_msg,啊啊嗯．．．call_pid21．．．,pid2
+	zin_old_msg,加油、請不說這樣的話．．．慢慢的感覺會越來越舒服的．．．,pid2
+	zin_old_msg,啊啊．．．tin_str插在裡面、感覺就像是插在棉花糖裡一樣呢,pid1
+	zin_old_msg,沒想到．．．會是這樣完全色情的身體啊．．．,pid1
+	zin_old_msg,不知道要幾根tin_str插在裡面才會覺得擁擠呢？,pid1
+	zin_old_msg,不要！！　cf_pid2．．．那種的誰都不允許插入的說！！,pid2
+	zin_old_msg,唔嗯！！　我已經無法忍耐了！！cr充分的中出、把man_str灌滿吧．．．嗯唔啊啊啊啊啊啊啊,pid1
+	chk_mval,懐妊:pid2!0,,,,
+	chk_mval_then
+		goto,*chknin1
+	chk_mval_else
+		rnd,5
+		case0
+			zin_old_msg,啊、不行的啊！！　今日是危険日的啊！！,pid2
+			zin_old_msg,懷上了call_pid21的寶寶、該怎麼辦啊？,pid2
+			zin_old_msg,上司懷上了部下的孩子、搞不好、會被軍隊的首領開除的！！,pid2
+			zin_old_msg,那樣的話、cf_pid1會照顧你的,pid1
+			zin_old_msg,所以放心吧、高潮了！！cr收下cf_pid1的tane_str懷孕吧！！,pid1
+			zin_old_msg,啊、不行！！　停下ーーーーっ！！！！！,pid2
+			zin_flush,pid2
+			zin_old_msg,騙子．．．tane_str被裝滿了嗚嗚．．．cr啊啊．．．會有寶寶了．．．,pid2
+			set_ninsin,pid2,pid1
+			end
+		case1
+		case2
+		case3
+		case4
+			*chknin1
+			zin_old_msg,哈嗯、好啊cr這樣中出、好啊好啊！,pid2
+			zin_old_msg,在cf_pid2的man_str裡面、多多的出來吧！！,pid2
+			zin_flush,pid2
+			end
+	end

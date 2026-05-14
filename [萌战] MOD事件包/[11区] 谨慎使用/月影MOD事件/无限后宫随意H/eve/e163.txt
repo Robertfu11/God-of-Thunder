@@ -1,0 +1,48 @@
+eve_start
+    if_date,90,10
+    if_poid,278,13
+    if_haou,669
+    if_not_uni,13,669
+eve_end
+
+chk_exeplayer,13,669,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+set_epid1,13
+set_epid2,278
+
+bgm_chg,60
+zin_reg_event,,13,278,,gzin7
+zin_reg_qnar,阿多魯塞姆集合部下開始作戰會議。
+zin_reg_msg,眾卿怎麼看那個天王勢力？,0
+zin_reg_msg,就我掌握的情報看來，他們似乎有非常先進的技術,1
+zin_reg_msg,眼前和他們敵對並非上策,1
+zin_reg_msg,和他們進行戰爭的話，我方勢必會有大量犧牲,1
+zin_reg_msg,嗯，可以的話也想和cf_pid1聯手,0
+zin_reg_msg,就像p_name2說的那樣，現在和天王爭霸，勢必會大大削弱我方實力,0
+zin_reg_msg,這就會給別的霸王可趁之機,0
+zin_reg_msg,沒錯、call_pid21,1
+zin_reg_msg,所以請將同盟使者的任務交給我,1
+zin_reg_msg,噢，卿願意前往的話我也就安心了,0
+zin_reg_msg,這個任務就就給你了,0
+zin_reg_msg,遵命！！,1
+bl_fadeout
+bl_fadein,gzin8
+zin_reg_event,,669,278,,gzin8
+zin_reg_qnar,p_name2作為同盟使者前往天王勢力。
+zin_reg_msg,阿多魯塞姆的使者麼cr這回有何事,0
+zin_reg_msg,我們的王願與貴國結成同盟,1
+zin_reg_msg,什麼？你是說同盟？,0
+zin_reg_msg,只要能結成同盟，就能免除後顧之憂，雙方都能專心建設國家,1
+zin_reg_msg,這對我們雙方都有很大的好處，不是嗎？,1
+zin_reg_msg,哈哈哈哈哈！！,0
+zin_reg_msg,汝不知道麼？,0
+zin_reg_msg,朕之所願乃滅絕阿族,0
+zin_reg_msg,朕怎會與阿族聯手,0
+zin_reg_msg,回去轉告汝的主人吧,0
+zin_reg_msg,本天王誓將世上阿族全數滅絕,0
+zin_reg_msg,可惡．．．．,1
+zin_reg_button,0
+end

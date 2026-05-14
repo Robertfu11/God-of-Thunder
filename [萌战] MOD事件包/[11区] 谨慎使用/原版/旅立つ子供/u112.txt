@@ -1,0 +1,47 @@
+get_mpid,父=player,年齢=16,状態=18
+set_epid1,pval
+
+eve_start
+  if_month,6
+  if_val,pid1>0
+  if_val,勲功:player!13000
+eve_end
+
+  zin_reg_event,player_nameの家,player,pid1,,gzin18
+  zin_reg_qnar,p_name1が16歳になったある日
+  zin_regs_msg,父さん、話があるんだ。,お父様、お話があるの。,1
+  zin_reg_msg,何だ？,0
+  zin_regs_msg,俺、仕官しようと思うんだ。,私、軍人になろうと思うの。,1
+  zin_reg_msg,そうか、なら明日一緒に覇王様のところに行こう。,0
+  zin_regs_msg,違うんだよ。俺は父さんとは違うところに行くつもりなんだ。,違うの。私はお父様とは別のところに行くつもりなの。,1
+  zin_reg_msg,何だって！！crどういうつもりなんだ。,0
+  zin_regs_msg,俺はplayer_nameの子供としてじゃなくてp_name1として生きていきたいんだ。,私はplayer_nameの子供としてじゃなくてp_name1として生きていきたいの。,1
+  zin_reg_msg,そうか．．．,0
+  zin_reg_msg,（p_name1も一人前になったのか．．．crどうするか．．．）,0
+  zin_reg_2sel,認めてやる,認めない
+   get_resp
+    ret_sel1
+      zin_reg_msg,わかった。crp_name1ももう一人前だ。好きにするといい。,0
+      zin_regs_msg,ありがとう、父さん。,ありがとう、お父様。,1
+      zin_reg_msg,辛くなったらいつでも帰って来なさい。,0
+      zin_regs_msg,わかった。cr父さん、元気で。,わかりました。crお父様、お元気で。,1
+     get_phao
+     set_epid2,pval
+     get_rndhao,pid2
+     set_epid3,pval
+     set_sikan,pid1,pid3
+      zin_reg_qnar,p_name1はp_name3へと仕官しました。
+     end
+    ret_sel2
+      zin_reg_msg,だめだ。認めん。,0
+      zin_regs_msg,どうして！,どうしてなの！,1
+      zin_reg_msg,今の御時世ではいつだれが敵になるかもわからん。cr親子で戦うなんて悲しいじゃないか。,0
+      zin_reg_msg,でも．．．,1
+      zin_reg_msg,子が親より先に死ぬのは辛いんだ。ましてそれが自分の手でだともっと．．．,0
+      zin_reg_msg,わかってくれ。p_name1は大切な子供なんだ。,0
+      zin_regs_msg,父さん．．．,お父様．．．,1
+      zin_regs_msg,わかったよ。,わかったわ。,1
+      zin_reg_msg,おおそうか！もし軍人になりたいなら、覇王様のところへ一緒にいこう。,0
+      zin_regs_msg,いや、今はいいよ。,いや、今はいいわ。,1
+      zin_reg_msg,そうか。では気がむいたらまた言ってくれ。,0
+     end

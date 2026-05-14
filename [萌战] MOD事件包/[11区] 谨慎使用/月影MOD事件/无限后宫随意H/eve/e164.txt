@@ -1,0 +1,61 @@
+eve_start
+	if_eveflg,16,3
+	if_pkun,16,13000
+	//阿古迪巴がプレイヤー
+	//if_player,16
+eve_end
+
+set_eveflg,16,4
+
+chk_exeplayer,16,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+get_kunpsn,16
+zin_reg_event,阿古迪巴的王宮,16,pval,,gzin8
+zin_reg_msg,阿古迪巴大人、發生大事了,1
+zin_reg_msg,怎麼了？,0
+zin_reg_msg,阿茲瑪大人．．．．,1
+zin_reg_msg,好像被羅德阿姆生擒了．．．,1
+zin_reg_msg,什麼！！！,0
+zin_reg_msg,羅德阿姆那兒傳來了通信,1
+zin_reg_msg,傳過來,0
+zin_reg_msg,是．．．,1
+bl_fadeout
+bl_fadein,gzin8
+zin_reg_event,阿古迪巴的王宮,16,613,zin63,gzin8
+zin_reg_msg,阿古迪巴、你的兒子在我這裏哦,1
+zin_reg_msg,羅德阿姆你這混帳。。,0
+zin_reg_msg,想把阿茲瑪怎麼樣！！,0
+zin_reg_msg,確實呢．．．cr不把這傢伙買回去嗎,1
+zin_reg_msg,什麼！！,0
+zin_reg_msg,5萬現大洋cr很便宜吧,1
+zin_reg_msg,嘛、可是大甩賣哦,1
+zin_reg_msg,那麼、如何呢！！,1
+
+owner_sel,支付,不付,16
+get_resp
+ret_sel1
+	zin_reg_msg,我明白了．．．錢給你,0
+	zin_reg_msg,作為交換別動阿茲瑪一根汗毛,0
+	zin_reg_msg,啊啊、很好,1
+	zin_reg_title,金５萬被支付了。
+	zin_reg_button,0
+	add_money,16,-50000
+	end
+
+ret_sel2
+	zin_reg_msg,這樣啊、也就是說不要兒子的命了嗎,1
+	zin_reg_msg,我族不能屈服於海賊的威脅,0
+	zin_reg_msg,很好,1
+	zin_reg_msg,那麼、這傢伙的命我就收下了,1
+	zin_reg_msg,再見啦,1
+	zin_reg_msg,混賬．．．．,0
+	zin_reg_title,阿茲瑪被殺了。
+	zin_reg_button,0
+	set_dead,609,0
+	set_eveflg,16,99
+	end

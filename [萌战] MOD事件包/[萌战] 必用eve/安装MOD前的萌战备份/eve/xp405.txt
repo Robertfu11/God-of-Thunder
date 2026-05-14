@@ -1,0 +1,58 @@
+zin_old_init
+zin_old_img_pid,pid2,1
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+case_botebara
+	//体位ごとに分岐
+	switch_otaii,pid2
+	case_okijo
+		zin_old_msg,果然還是call_pid12的身体最棒啊,pid1
+		zin_old_msg,man_str糾纏的方式、和其他的女人是完全不同的呢,pid1
+		zin_old_msg,已經．．．盡說些奇怪的話表揚人啊。還和其他女人比什麼的、真是低級啊！,pid2
+		zin_old_msg,哦哦．．．call_pid12、那麼激烈的擺動著腰部．．．馬上、就會出來的啊．．．,pid1
+		zin_old_msg,好．．．全部．．．榨取出來．．啊、都要給你．．．,pid2
+		zin_old_msg,然後．．．給你生個．．．小孩子下來．．．呵呵！！,pid2
+		zin_old_msg,哦、真的嗎？　好、好高興呢、call_pid12,pid1
+		zin_old_msg,那麼、趕快．．．把tane_str都．．．射出來吧！！,pid2
+		zin_old_msg,啊、好啦．．．出來了call_pid12！！　謝謝啊！！,pid1
+		zin_old_msg,啊啊嗯、不行．．．啊、我也．．．要、要、高潮啊啊啊啊！！,pid2
+		zin_flush,pid2
+		end
+	case_oseijo
+	case_oback
+	default_otaii
+		zin_old_msg,果然還是call_pid12的身体最棒啊,pid1
+		zin_old_msg,man_str糾纏的方式、和其他的女人是完全不同的呢,pid1
+		zin_old_msg,已經．．．盡說些奇怪的話表揚人啊。還和其他女人比什麼的、真是低級啊！,pid2
+		zin_old_msg,因為．．．無法用言語形容這種奇妙的感覺嘛？,pid1
+		zin_old_msg,那、那樣的事情才沒有．．．啊啊嗯．．．這麼激烈．．．的、不要頂的啊啊．．．,pid2
+		zin_old_msg,不行啊．．．這、腰部．．．根本停不下來啊！！,pid1
+		zin_old_msg,啊、啊啊嗯！！　啊、不行啊．．．現在．．是危險期啊．．．被這樣射入的話．．．一定、一定會懷孕的啊！！,pid2
+		zin_old_msg,call_pid12、已經全部中出了呢．．．好、好爽啊．．．,pid1
+		zin_old_msg,真沒辦法啊．．．啊、你的孩子．．．就給你生下來了哦．．．嗚啊啊！！,pid2
+		zin_old_msg,好、好的．．．啊、拜託你了．．．call_pid12！！　哇哈哈！！,pid1
+		zin_old_msg,啊啊嗯、不行．．．啊、我也．．．要、要、高潮啊啊啊啊！！,pid2
+		zin_flush,pid2
+		end
+
+//初膜パターン
+case_hatumaku
+	zin_old_msg,call_pid12、第一次就這樣做？　沒問題嗎？,pid1
+	zin_old_msg,嗯、嗯．．．沒問題呢．．．很簡單的事啊．．這對我來說．．．,pid2
+	zin_old_msg,真的．．．吔、全部都插入了呢．．．啊好溫暖．．．好舒服啊．．．,pid1
+	zin_old_msg,這樣啊．．．太、太好了呢．．．,pid2
+	zin_old_msg,能和call_pid12發生這樣的事、真的好像是在做夢一般,pid1
+	zin_old_msg,已經、真的發生了啊．．．p_name1還．．說著奇怪的夢話．．．嗚啊啊啊啊！,pid2
+	zin_old_msg,call_pid12的身体．．．最棒吔．．．,pid1
+	zin_old_msg,這樣．．．那麼、這樣的事也做吧,pid2
+	zin_old_qnar,p_name2將、自己的腰揮動著、在p_name1的tin_str上開始套弄起來。
+	zin_old_msg,嗚哦哦哦哦！！　call_pid12、那樣做的話．．．已經、受不了啊！！,pid1
+	zin_old_msg,呵呵呵、好吧．．．讓種子．．．發射吧,pid2
+	zin_old_msg,嗯啊啊啊啊！　好、好厲害．．．好舒服．．．．,pid1
+	zin_old_msg,那麼、早點高潮吧！！,pid2
+	zin_old_msg,啊啊嗯．．．．要、不行啦！　去啦、call_pid12！！,pid1
+	zin_flush,pid2
+	end

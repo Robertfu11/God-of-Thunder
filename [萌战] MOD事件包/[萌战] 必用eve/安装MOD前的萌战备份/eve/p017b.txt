@@ -1,0 +1,77 @@
+bgm_chg,65
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin9
+zin_reg_msg,p_name2在哪裏！,0
+zin_reg_msg,call_pid1、你來啦,1
+zin_reg_msg,哦哦、孩子怎麼樣？,0
+zin_reg_msg,在這裏、call_pid1,1
+zin_reg_face,pid3
+zin_reg_msg,哦哦．．．這個孩子承載了我們王家的希望,0
+zin_reg_msg,起什麼名字好呢、call_pid1,1
+
+zin_reg_msg,可愛的buf_str1呢,1
+zin_reg_msg,buf_str1呀．．．cr這樣啊,0
+make_name,pid3
+zin_reg_msg,buf_str1、這名字怎麼樣？,0
+zin_reg_msg,很好、相當不錯的名字,1
+zin_reg_msg,唔、得趕緊給這孩子指派一個好的監護人,0
+chk_sts,pid3,24,player
+chk_sts_then
+	zin_reg_title,buf_str1出生了。
+	zin_reg_button,0
+	zin_reg_exit
+	end
+chk_sts_else
+	bgm_chg,61
+	zin_reg_face_1,849
+	zin_reg_msg,p_name1大人、有難以啟齒的事情．．．,1
+	zin_reg_msg,怎麼了？cr但說無妨,0
+	zin_reg_msg,據ＤＮＡ的鑒定結果 這個孩子並非p_name1大人親生的,1
+	zin_reg_msg,什．．．什麼？,0
+	zin_reg_face_1,pid2
+	zin_reg_msg,call_pid2、這是怎麼回事！！,0
+	zin_reg_msg,怎麼可能、這確實是call_pid1的孩子啊．．．,1
+	zin_reg_msg,你不用狡辯、 我已經知道這不是callself_pid1的孩子了,0
+	zin_reg_msg,我、我沒有說謊,1
+	zin_reg_msg,可惡啊、被看扁了．．．,0
+	zin_reg_3sel,作為子嗣,作為部下,處死
+	get_resp
+	ret_sel1
+		zin_reg_msg,對不起、我已經忘記了剛才發生的事了,0
+		zin_reg_msg,這個孩子是無罪的,0
+		zin_reg_msg,這個孩子將作為callself_pid1的孩子而被正式承認,0
+		zin_reg_msg,啊啊、謝謝、call_pid1．．．,1
+		zin_reg_title,buf_str1出生了。
+		zin_reg_button,0
+		zin_reg_exit
+		upd_sts,pid3,24,player
+		upd_sts,pid3,25,pval
+		upd_sts,pid2,1,30
+		chk_sts,pid3,3,1
+		chk_sts_then
+			upd_sts,pid3,4,12300
+			end
+		chk_sts_else
+			upd_sts,pid3,4,12100
+			end
+	ret_sel2
+		zin_reg_msg,這個孩子我不能認,0
+		zin_reg_msg,怎、這麼會這樣．．．,1
+		zin_reg_msg,我留下這孩子的性命就已經是大發慈悲了,0
+		zin_reg_msg,call_pid1．．．．．,1
+		zin_reg_title,p_name3出生了。
+		zin_reg_button,0
+		zin_reg_exit
+		upd_sts,pid2,1,-20
+		upd_sts,pid3,4,2000
+		end
+	ret_sel3
+		zin_reg_msg,真是礙眼,0
+		zin_reg_msg,不能讓這孽種留在人間,0
+		zin_reg_msg,怎麼這樣、還是這麼小的一個孩子．．．,1
+		zin_reg_title,p_name3被處死了。
+		zin_reg_button,0
+		zin_reg_exit
+		set_dead,pid3,0
+		upd_sts,pid2,1,-50
+		end

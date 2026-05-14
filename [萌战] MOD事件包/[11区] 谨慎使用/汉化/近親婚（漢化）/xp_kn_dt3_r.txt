@@ -1,0 +1,70 @@
+//王族オルド通常　相手：姫
+//■Ｈ體位：騎乗位
+
+//女の狀態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,call_pid1、p_name2已經忍不住了啊！！,1
+	zin_reg_msg,呼呼、還真是個、淫蕩的女兒呢,0
+	zin_reg_msg,可、可是．．．,1
+	zin_reg_msg,放心吧、今天也會讓你的子宮滿滿的裝著我們的孩子的,0
+	zin_reg_msg,好高興啊．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊啊．．．進來了呢．．．,pid2
+	zin_old_msg,啊啊！！　討、討厭．．．call_pid21的tin_str、好有精神啊啊啊啊,pid2
+	zin_old_msg,p_name2用很大的幅度動起了腰,pid1
+	zin_old_msg,乖女兒的小穴還真是明器啊、讓父親大人插的這麼爽,pid1
+	zin_old_msg,噢噢啊啊啊！！啊啊啊！！　好好、好厲害啊啊啊啊！！cr的腰已經停不下來了！！,pid2
+	zin_old_msg,啊、啊呀呀．．．man_str．．．嗚啊啊啊啊啊啊．．．要來了．．．,pid2
+	zin_old_msg,噢、call_pid21．．．p_name2的腰．．．停不下來了啊啊啊啊．．．好爽啊啊啊啊啊！！,pid2
+	zin_old_msg,呼呼呼．．．父親也．．．要出來了啊！！,pid1
+	zin_old_msg,好、好啊．．．call_pid21的那裏．．．滿滿的．．．滿滿的注入吧！！,pid2
+	zin_old_msg,蒽不錯．．．來吧讓你的小穴．．．永遠一直接受著父親的愛吧！！,pid1
+	zin_flush,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,因為是第一次父親想你總會有些恐懼的吧,0
+	zin_reg_msg,所以就用這種姿勢吧、讓父親來教你如何成為一個好女人,0
+	zin_reg_msg,好、好吧．．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊．．．這、這樣的姿勢．．．要、進入了．．,pid2
+	zin_old_msg,蒽蒽．．．就先隨著你的感覺來慢慢適應吧。cr感覺到疼了嗎？,pid1
+	zin_old_msg,噢、沒．．．沒關系的．．．cr不、不太疼的．．．,pid2
+	zin_old_msg,蒽還不錯．．．已經這麼濕了．．．,pid1
+	zin_old_msg,呼呼．．．那個、其實剛才自己稍微自慰了下．．．,pid2
+	zin_old_msg,p_name2的man_str．．．從剛才就一直在想著．．．,pid2
+	zin_old_msg,哦哦、不錯啊這個身體已經開始覺醒了呢．．．cr不愧是我的好女兒,pid1
+	zin_old_msg,放心將來一定會讓你感受到無上的快樂的。從今以後來每天試著調教吧,pid1
+	zin_old_msg,好、好高興啊．．．call_pid21．．．,pid2
+	zin_old_msg,呼呼、來讓父親大人好好教教你做女人的幸福吧,pid1
+	zin_old_msg,誤啊啊啊！！　這、這種事、呀呀．．cr更、更深處．．．這種感覺．．．好舒服的樣子、第一次這樣子的！！,pid2
+	zin_old_msg,啊啊啊、啊啊啊．．．cr的小穴、．．．摩擦著．．．摩擦著啊啊啊．．．這樣子的．．．實在太厲害了啊啊啊啊．．．,pid2
+	zin_old_msg,嗚嗚．．啊嗚．．啊啊啊啊啊啊ーーーーーっ！,pid2
+	zin_old_msg,啊啊啊．．．這種感覺．．．cr呀啊啊啊啊啊啊 啊啊 ！！,pid2
+	zin_flush,pid2
+	end
+//孕みパターン
+case_botebara
+	zin_reg_msg,call_pid1、終於來了呢父親大人,1
+	zin_reg_msg,p_name2的胸前已經有牛奶開始溢出,1
+	zin_reg_msg,如何．．．已經快要出產了吧,0
+	zin_reg_msg,是個有精神的孩子嗎,0
+	zin_reg_msg,是的、call_pid1,1
+	zin_reg_msg,那麼、今天也callself_pid1的tane_str緊緊相連吧,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊啊．．．callself_pid2っ．．．明明已經懷了你的孩子的．．．,pid2
+	zin_old_msg,tin_str．．．這麼深的話．．已經．．．感覺到了啊．．．啊啊啊啊．．．,pid2
+	zin_old_msg,p_name2就算有孩子也沒有辦法改變啊。你這名器一樣的感覺真讓人欲罷不能啊．．．,pid1
+	zin_old_msg,call_pid21的tin_strは．．．頂到子宮了啊．．．天堂啊啊啊啊．．．,pid2
+	zin_old_msg,呼呼、p_name2懷孕也沒關系。今天也要和你做到天亮的！！,pid1
+	zin_old_msg,啊、啊啊啊啊啊啊啊！！！！cr那、那麼、用力的、會壞掉的啊啊啊啊！！！！,pid2
+	zin_old_msg,這、這樣子的．．．我、我已經！！　壞．．．壞掉了啊啊啊啊啊！！！,pid2
+	zin_old_msg,啊啊啊！　什麼、什麼都．．．已經什麼都無所謂了啊．．啊啊啊噢．．噢噢噢．．啊啊啊ーーっ！,pid2
+	zin_flush,pid2
+	end

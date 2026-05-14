@@ -1,0 +1,53 @@
+eve_start
+	if_date,98,4
+	if_eveflg,53,7
+//特騰、阿卡弗利配下
+	if_poid,21,32
+eve_end
+
+set_eveflg,53,8
+
+chk_exeplayer,32,0,0,0
+chk_exeplayer_else
+	//特騰捕虜設定
+	set_horyo,21,32
+	end
+
+chk_exeplayer_then
+	bgm_chg,60
+	zin_reg_event,,21,0,,gzin33
+	zin_reg_qnar,特騰對於巴恩的死有著很多難以釋懷的地方，正試圖找出真相。。
+	zin_reg_msg,在向我承諾傳下王位的這個時點巴恩大人身亡，這代表的是……,0
+	zin_reg_msg,阿卡弗利如此緊急地進行戴冠儀式也太不自然了,0
+	zin_reg_msg,一般來說應該先服喪一段時間才對的,0
+	zin_reg_msg,事故的詳情也沒有公開cr更重要的是阿卡弗利本人拒絕調查事故,0
+	zin_reg_msg,果然這個事件裏隱藏著什麼真相……,0
+	//憲兵
+	zin_reg_face_1,756
+	zin_reg_msg,特騰大人，阿卡弗利大人傳召你cr請你盡快前往待命,1
+	zin_reg_msg,…………,0
+	zin_reg_msg,明白了cr請回複說我馬上就去,0
+	bl_fadeout
+	bl_fadein,gzin8
+	zin_reg_event,,32,21,,gzin8
+	zin_reg_msg,有何吩咐嗎，阿卡弗利大人,1
+	zin_reg_msg,特騰啊，你不是該叫我陛下嗎？,0
+	zin_reg_msg,…………,1
+	zin_reg_msg,特騰，父王已經死了cr你身為父王的重臣，是否願意為我獻上忠誠？,0
+	zin_reg_msg,要是願意作為我的臣下死命效忠的話就沒事了，但要是不願意的話我就要把你投入牢籠,0
+	zin_reg_msg,…………,1
+	zin_reg_face_r,0
+	zin_reg_qnar,特騰一言不發地離開了。cr他已經確信是阿卡弗利殺害了巴恩。
+	zin_reg_msg,特騰，給我停下來！！不停下來的話我就視你為反逆了！！,0
+	zin_reg_msg,可惡……,0
+	zin_reg_msg,憲兵！！,0
+	//憲兵
+	zin_reg_face_1,756
+	zin_reg_msg,在！！,1
+	zin_reg_msg,馬上把特騰抓起來,0
+	zin_reg_msg,是！！,1
+	zin_reg_qnar,之後，特騰被抓捕送往牢獄。
+	zin_reg_button,0
+	//特騰捕虜設定
+	set_horyo,21,32
+	end

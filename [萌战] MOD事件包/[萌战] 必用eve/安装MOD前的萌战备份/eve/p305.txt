@@ -1,0 +1,14 @@
+bgm_chg,107
+zin_reg_event,,pid1,pid2,,gzin19
+zin_reg_title,p_name1直営艦隊
+zin_reg_qnar,p_name1收到p_name3軍襲擊的報告、為了偵查敵方艦隊動向而出擊。
+zin_reg_msg,如何、有發現敵方艦隊嗎？,0
+zin_reg_msg,司令！！cr剛剛收到偵查部隊的連絡了！,1
+zin_reg_msg,確實發現敵方艦隊了,1
+zin_reg_msg,這樣呀、意料之外的早呢,0
+zin_reg_msg,好、掉頭吧cr快向本部報告敵人位置,0
+zin_reg_msg,司令！！cr敵方的部分艦隊往這來了！,1
+zin_reg_msg,看來被發現了,0
+zin_reg_msg,避不開戦闘了．．．,0
+zin_reg_qnar,勝利條件：將敵方迎撃艦隊全滅、或戰鬥結束我方依然生還。
+end

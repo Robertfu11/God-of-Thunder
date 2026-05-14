@@ -1,0 +1,30 @@
+eve_start
+	if_date,75,10
+	if_chkwsts,20,座標X,11
+	if_chkwsts,20,座標Y,4
+eve_end
+
+//巴爾根移動
+bgm_chg,60
+get_kunpsn,soid20
+set_epid1,soid20
+set_epid2,pval
+zin_reg_event,,soid20,pval,,gzin8
+zin_reg_msg,call_pid21、剛剛接到了防衛長官的報告,1
+zin_reg_msg,惑星巴爾根は毎年公転軌道が動いてるらしいのです,1
+zin_reg_msg,慢慢地被太陽的引力吸引過去了,1
+zin_reg_msg,正式的結果還沒出來,1
+zin_reg_msg,このままではいずれザクソンと衝突する可能性もあるとのことです,1
+zin_reg_msg,うむ、這個恒星地帶還沒了解嗎,0
+zin_reg_msg,巴爾根的軌道還沒有安定呢,0
+zin_reg_msg,什麼、你不知道嗎,1
+zin_reg_msg,巴爾根發現的時候,0
+zin_reg_msg,但是沒有和ザクソンと相撞,0
+zin_reg_msg,ザクソンの手前で引力の釣り合いがとれて巴爾根の軌道は安定する,0
+zin_reg_msg,移動也在哪裏停止了,0
+zin_reg_msg,是那麼嗎,1
+zin_reg_msg,但是、ザクソンへ在接近也是一件大事啊,1
+zin_reg_msg,你說的對,0
+zin_reg_msg,這對將來的形式和今後的戰略有不少的影響,0
+zin_reg_button,0
+end

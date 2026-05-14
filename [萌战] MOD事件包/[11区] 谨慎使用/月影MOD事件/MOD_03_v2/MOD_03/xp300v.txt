@@ -1,0 +1,26 @@
+//²¿ÏÂ¥ª¥ë¥É¡¡„IÅ®
+bl_fadein,gzin32
+//set_ninsin,pid2,pid1
+zin_reg_event,,pid1,pid2,,
+rnd,7
+case0
+txtload,xp_kg_m1
+	end
+case1
+txtload,xp_kg_m1_r
+	end
+case2
+txtload,xp_kg_m2
+	end
+case3
+txtload,xp_kg_m2_r
+	end
+case4
+txtload,xp_kg_m3
+	end
+case5
+txtload,xp_kg_m3_r
+	end
+case6
+txtload,xp_kg_m4
+	end

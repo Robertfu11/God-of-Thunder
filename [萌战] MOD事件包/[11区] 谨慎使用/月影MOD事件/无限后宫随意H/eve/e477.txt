@@ -1,0 +1,30 @@
+//女生化人完成 102.5
+eve_start
+    if_date,102,5
+    if_eveflg,62,4
+    if_poid,606,eveflg064
+//庫爾特尼奧が生まれている
+    if_poid,870,eveflg064
+eve_end
+
+chk_exeplayer,eveflg064,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,61
+zin_reg_event,,606,817,,gzin33
+zin_reg_msg,帕米拉様、你要的東西完成了,1
+zin_reg_msg,是嗎、我現在就要看一下,0
+zin_reg_msg,進來,1
+zin_reg_face_1,896
+zin_reg_msg,帕米拉様、ACT5梅蘿です,1
+zin_reg_msg,梅蘿か．．．cr做得真不錯啊,0
+zin_reg_msg,就算是我也能明白,0
+zin_reg_msg,もったいなき你的話,1
+zin_reg_msg,你、現在開始為我和と庫爾特尼奧工作吧,0
+zin_reg_msg,在這之前要把技術磨練好,0
+zin_reg_msg,取悅男子的技術,0
+zin_reg_msg,是、了解,1
+zin_reg_button,0
+end

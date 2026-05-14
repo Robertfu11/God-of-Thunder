@@ -1,0 +1,28 @@
+eve_start
+	if_eveflg,69,6
+	if_haou,571
+	//哈根は多拉領
+	//if_hid,571,18
+	if_psts,668,6
+eve_end
+
+set_eveflg,69,7
+
+chk_exeplayer,669,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,69
+set_epid2,eveflg71
+//琳希の宇宙船
+zin_reg_event,琳希的宇宙船,668,pid2,,gzin85
+zin_reg_msg,公主殿下、接下來我們該怎麼辦？,1
+zin_reg_msg,我想要去找多拉,0
+zin_reg_msg,多拉？,1
+zin_reg_msg,那個女霸王嗎？,1
+zin_reg_msg,沒錯,0
+zin_reg_msg,我們暫時先到那裏藏身,0
+zin_reg_msg,我明白了,1
+zin_reg_button,0
+end

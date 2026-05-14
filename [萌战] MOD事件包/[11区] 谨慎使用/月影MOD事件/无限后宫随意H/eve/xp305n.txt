@@ -1,0 +1,19 @@
+//夜這い　弱みオルド 妹 膜なし
+//体位ごとに分岐
+switch_otaii,pid2
+//騎乗位
+case_okijo
+	zin_old_msg,男のtin_strを根元まで飲み込むとは．．．cr慣れておられるのですなぁ,pid1
+	zin_old_msg,な、なに言ってるのよ．．．,pid2
+	zin_old_msg,p_name2様もこういったことに興味があるようですな。crまんざら嫌いではなさそうだ,pid1
+	zin_old_msg,変なこと言わないで。私はそんなイヤらしい女ではありません,pid2
+	zin_old_msg,ウソはいけませんな。アソコはきゅうきゅう締め付けてきますぞ。おかげでもうイキそうです。よい子を孕むことを期待しておりますぞ。では！！,pid1
+	zin_flush,pid2
+	end
+default_otaii
+	zin_old_msg,あふっ、うっ、くっ、ひ．．あひ．．んっくうぅーーーーーっ！,pid2
+	zin_old_msg,さあ、入りましたよ、p_name2様。crさすがは陛下の妹君！　アソコもなかなかのモノだ,pid1
+	zin_old_msg,だ、ダメ．．．これ以上は．．．こ、壊れちゃうよぉ！！,pid2
+	zin_old_msg,ならば、これで終わらせてやる。cr我が子種をたっぷりと飲むがよい！！,pid1
+	zin_flush,pid2
+	end

@@ -1,0 +1,28 @@
+eve_start
+    if_date,101,10
+    if_eveflg,62,4
+    if_poid,429,eveflg064
+    if_poid,606,eveflg064
+eve_end
+
+chk_exeplayer,eveflg064,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,68
+zin_reg_event,,429,835,,gzin22
+zin_reg_qnar,有一天、巴尼亞瓦在某個地方與男子相約。
+zin_reg_msg,軍隊怎麼樣了？,0
+zin_reg_msg,准備得差不多了,1
+zin_reg_msg,還差一個艦隊就完成了,1
+zin_reg_msg,うむ、還差一口氣啊,0
+zin_reg_msg,我們這裏已經送了好幾首過去了,0
+zin_reg_msg,艦隊的集結地怎麼樣了？,1
+zin_reg_msg,カスマン附近的小行星怎麼樣,0
+zin_reg_msg,也好、在哪裏准備基地的建設,1
+zin_reg_msg,帕米拉が已經察覺到什麼了吧,0
+zin_reg_msg,要小心不要被那個女的察覺到,0
+zin_reg_msg,了解,1
+zin_reg_button,0
+end

@@ -1,0 +1,42 @@
+eve_start
+    if_date,100,10
+    if_eveflg,62,4
+    if_poid,429,eveflg064
+eve_end
+
+set_epid1,eveflg064
+set_epid2,606
+
+chk_exeplayer,eveflg064,0,0,0
+chk_exeplayer_else
+set_sikan,606,eveflg064
+upd_sts,606,勲功,12080
+upd_sts,606,特殊,2
+set_birth,870,pid1,606,12300
+end
+
+chk_exeplayer_then
+bgm_chg,61
+zin_reg_event,,pid1,606,zin1,gzin9
+zin_reg_msg,p_name1様、請看,1
+zin_reg_msg,終於誕生啦,1
+zin_reg_msg,哦、是男孩子啊！！,0
+zin_reg_msg,辦到了呀、帕米拉,0
+zin_reg_msg,呼呼、你的願望達到了哦,1
+zin_reg_msg,說起來我們的約定沒忘記吧,1
+zin_reg_msg,什麼約定？,0
+zin_reg_msg,給這個孩子的地位的話啊,1
+zin_reg_msg,啊這個約定啊,0
+zin_reg_msg,當然cr我會把他當成王子的,0
+zin_reg_msg,是、那麼我會怎麼樣呢？,1
+zin_reg_msg,是這個孩子的母親,1
+zin_reg_msg,我會讓你成為王室成員的,0
+zin_reg_msg,這樣應該足夠了吧？,0
+zin_reg_msg,是啊、好吧,1
+zin_reg_qnar,庫爾特尼奧王子誕生、帕米拉被迎為王族。
+zin_reg_button,0
+set_sikan,606,eveflg064
+upd_sts,606,勲功,12080
+upd_sts,606,特殊,2
+set_birth,870,pid1,606,12300
+end

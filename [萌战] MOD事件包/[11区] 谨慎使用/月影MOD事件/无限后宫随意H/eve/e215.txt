@@ -1,0 +1,46 @@
+eve_start
+	if_eveflg,20,0
+//華月、五月と再會
+	if_same_oid,26,312
+//捕虜ではない
+	if_psts,26,2
+	if_psts,312,2
+eve_end
+
+set_eveflg,20,1
+//アイテムゲット
+get_item,poid0026,26,飛行戦術書
+
+chk_exeplayer,poid0026,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,54
+//zin_reg_init
+set_epid1,poid0026
+zin_reg_event,p_name1防衛基地,312,26,,gzin25
+zin_reg_msg,華月．．．．,0
+zin_reg_msg,這不是華月嗎！！,0
+zin_reg_msg,五、是五月嗎？,1
+zin_reg_msg,為什麼你會在這裏．．．,1
+zin_reg_msg,我一直．．．cr我一直在找你啊,0
+zin_reg_msg,軍方因為你的戰斗失蹤已經把你當做陣亡處理了．．．,0
+zin_reg_msg,你現在怎麼樣？,0
+zin_reg_msg,啊啊．．．．cr實際上我稍微被敵人抓住了一下下,1
+zin_reg_msg,作為俘虜被帶上了一顆不知名的星球,1
+zin_reg_msg,在那裏認識了一個男人cr然後就和他一起逃了出來．．．,1
+zin_reg_msg,暫時處於東南西北都分不清的狀態,1
+zin_reg_msg,反而我比較在意你，身無分文又在滿宇宙的找我,1
+zin_reg_msg,不好意思．．．cr倒是你，沒事吧？,1
+zin_reg_msg,我想華月一定在哪兒志願參軍了．．．,0
+zin_reg_msg,我加入軍隊的話，也許就能得到你的消息呢,0
+zin_reg_msg,沒事就好啊．．．,1
+zin_reg_msg,啊、這個給你,0
+zin_reg_msg,這個是！！,1
+zin_reg_msg,很重要的東西吧？,0
+zin_reg_msg,這是我從華月的房間裏帶過來的唯一一樣東西哦,0
+zin_reg_msg,是嗎、謝謝你cr五月．．．,1
+zin_reg_title,華月入手了飛行戰術書。
+zin_reg_button,0
+//zin_reg_exit

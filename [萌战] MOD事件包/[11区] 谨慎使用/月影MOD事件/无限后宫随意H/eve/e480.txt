@@ -1,0 +1,33 @@
+eve_start
+    if_date,103,2
+    if_eveflg,62,4
+    if_poid,606,870
+eve_end
+
+chk_exeplayer,870,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+zin_reg_event,,870,614,,gzin8
+zin_reg_qnar,梅蘿帶オンゴゴ來給庫爾特尼奧接見。
+zin_reg_msg,你就是がオンゴゴか,0
+zin_reg_msg,你想向我起忠心的樣子啊,0
+zin_reg_msg,帶我問好,0
+zin_reg_msg,ハハッ、我願意向庫爾特尼奧様表示忠心,1
+zin_reg_face_0,606
+zin_reg_face_1,896
+zin_reg_msg,梅蘿、你做得真好cr上出來だ,0
+zin_reg_msg,ハハッ、多喪氣的話啊,1
+zin_reg_face_1,614
+zin_reg_msg,オンゴゴ、現在開始為我和庫爾特尼奧工作吧,0
+zin_reg_msg,給我什麼命名，1
+zin_reg_msg,うむ、你的任務是搶奪金錢,0
+zin_reg_msg,去襲擊各國的運輸船把搶來的給我軍做補給,0
+zin_reg_msg,原本就是海盜的工作cr對你而言很簡單吧,0
+zin_reg_msg,ハハッ、知道了,1
+zin_reg_msg,我很期待你哦,0
+zin_reg_button,0
+//zin_reg_exit
+end

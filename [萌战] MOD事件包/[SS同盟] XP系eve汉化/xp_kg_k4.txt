@@ -1,0 +1,56 @@
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_msg,真是的．．．毫不猶豫的吮吸著仇敵的肉棒．．．,pid1
+	zin_old_msg,相當變態的女人啊,pid1
+	zin_old_msg,啊啊．．．咿．．．還要．．．我還要、再快一點！！,pid2
+	zin_old_msg,好厲害、進來了．．．一直到裡面．．．還是、還是頭一回！！,pid2
+	zin_old_msg,你這淫蕩的婊子！！　簡直和色情狂一樣！！,pid1
+	zin_old_msg,好像要把callself_pid1的肉棒當成俘虜一樣,pid1
+	zin_old_msg,說起來、你這樣瘋狂的需索、是打算要callself_pid1的命麼？,pid1
+	zin_old_msg,昂、那種．．．那種奇怪的事情．．．做、做不出啊．．．哈啊啊啊啊！！,pid2
+	zin_old_msg,那你就說、『p_name2是call_pid1專用的肉奴隸』！！,pid1
+	zin_old_msg,p_name2是．．．call_pid1專用的．．．肉、肉奴隸．．的說！！,pid2
+	zin_old_msg,啊啊、不行了．．．啪啪摩擦著的陰核、要高潮了！！,pid2
+	zin_old_msg,真要命、你這只母豬！！cr趕快懷上callself_pid1的種子吧！！,pid1
+	zin_old_msg,啊啊、不行．．．要高潮了！！　要、要壞掉了！！,pid2
+	zin_flush,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_old_msg,啊啊！！　咿咿！！　肉棒！！　肉棒感覺好棒！！,pid2
+	zin_old_msg,哦哦、這個這個．．．肉穴裡這激烈的蠕動感。無法讓人相信這是第一次啊,pid1
+	zin_old_msg,好、好舒服．．．肉棒．．．好舒服！！,pid2
+	zin_old_msg,嗯．．．居然能讓callself_pid1的肉棒整根插入．．．,pid1
+	zin_old_msg,何等深不見底的肉穴．．．．,pid1
+	zin_old_msg,那好、就讓我親自動手、一探虛實！！,pid1
+	zin_old_msg,嗯啊啊啊啊啊！！　超、超棒！！　肉穴、要壞掉了啊啊啊！！！,pid2
+	zin_old_msg,怎麼樣、第一次被男人直搗黃龍的感覺！！,pid1
+	zin_old_msg,呀啊啊啊啊、好舒服．．．H．．．最喜歡H了！！,pid2
+	zin_old_msg,好吧、我就給你的子宮第一次種子吧,pid1
+	zin_old_msg,領種謝恩吧！！　仇敵的種子喲！！,pid1
+	zin_old_msg,啊啊昂！！　滿滿的！！　p_name2的子宮、call_pid1的種子滿滿的進來了ーーー！！,pid2
+	zin_flush,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_old_msg,啊啊、孩子要出來了．．．可還是停不下來腰來．．．,pid2
+	zin_old_msg,你這好色的女人！！　肚裡的孩子也會為你感到羞恥的！！,pid1
+	zin_old_msg,可、可是．．．不受控制的．．．就、動起來了．．．啊啊．．咿咿．．,pid2
+	zin_old_msg,call_pid1的小雞雞．．．比平時的大好多．．．好厲害．．．這樣摩擦．．．嗯嗯！！,pid2
+	zin_old_msg,呵呵呵、你這根本停不下來的腰、也讓我感覺不錯,pid1
+	zin_old_msg,懷孕了之后、肉穴的觸感好像會有變化,pid1
+	zin_old_msg,呀啊、這樣吧唧吧唧抽插的話．．．p_name2的肉穴．．．會變得松松垮垮的了！！,pid2
+	zin_old_msg,你這個風塵女人、你在胡說些什麼！！,pid1
+	zin_old_msg,怎麼、怎麼這麼說．．．好過分．．．p_name2不是．．．不是這種女人．．．啊啊！！,pid2
+	zin_old_msg,什麼？　我說的不對？　到現在還不承認、唔裡呀啊啊啊！！,pid1
+	zin_old_msg,啊嘎啊啊啊啊！！　對、您說的對！！　p_name2就是．．．一個風塵女人！！,pid2
+	zin_old_msg,請再．．．再快一點、抽插！！　請把肚子裡的孩子、插到、插到失神為止！！,pid2
+	zin_old_msg,咕！！　好吧、要射了！！,pid1
+	zin_old_msg,啊啊、不行了、要高潮了、p_name2也．．．忍不住了ーーー！！,pid2
+	zin_flush,pid2
+	zin_old_msg,啊啊．．．小寶寶也．．．感覺到了．．．在肚子裡、咕嚕咕嚕的動！！
+	end

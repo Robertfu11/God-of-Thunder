@@ -1,0 +1,667 @@
+//女主用エロシナリオ～風俗編～
+eve_start
+if_eveflg,122,>0
+if_eveflg,122,<2
+if_val,状態:player=5
+if_val,年齢:player>=OLD
+eve_end
+
+//プレイヤーをpid2に格納
+set_epid2,player
+
+zin_reg_event,お金がない,,pid2,,gzin45
+	bgm_chg,57
+	zin_reg_qnar,为了仕官而浪人中的p_name2．．．
+	zin_reg_msg,（为了成为仕官、我得提升属性、但精气是个大问题啊）,1
+	zin_reg_msg,（这样的话、就干脆从事卖春工作看看吧）,1
+	zin_reg_2sel,卖春,不去
+	get_resp
+ret_sel1
+	zin_reg_qnar,p_name2在娼馆工作了。
+	goto,*prostitute1
+ret_sel2
+	zin_reg_msg,（果然、那样的事不行啊）,1
+	end
+*prostitute1
+	set_epid1,692
+zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	bgm_chg,68
+	zin_reg_msg,那么、营业的时间到了。今天也要努力赚钱啊！p_name2小姐、准备好了吗？,0
+	zin_reg_msg,是的。准备好了。,1
+//客の設定
+rnd,2
+case0
+	set_epid1,785
+	goto,*prostitute2
+case1
+	set_epid1,840
+	goto,*prostitute2
+
+*prostitute2
+zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	zin_reg_msg,好的．．．,0
+	zin_reg_qnar,p_name2在包间内等待着顾客的到来。
+	zin_reg_msg,我是p_name2。感谢您今天的指名让我服务。,1
+
+zin_reg_2sel,积极地接客,没有热情的接客
+	get_resp
+ret_sel1
+	zin_reg_msg,（反正做爱又舒服又有精气拿）,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	bgm_chg,126
+	goto,*lovesex1
+
+ret_sel2
+	zin_reg_msg,（这种货色一看就没什么精气．．cr唉、因为贫困也是没办法的事啊）,1
+	goto,*rapesex1
+
+*lovesex1
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+rnd,2
+case0
+	zin_old_msg,p_name2突然一下快速的扭腰、p_name1把持不住cr的射了出去、就在这时、p_name2一声嘤咛、一波cr温热的淫液泄了出来、洒在了龟头上、阴冷的气息cr一下子钻进了p_name1的体内,pid2
+	zin_old_msg,他打了一个寒颤、阳气大量的散了出去、p_name2cr微微一用力、阳气被吸进了子宫的深处。“啊~~好鲜cr美啊~~”p_name2陶醉的闭上眼睛吮着食指、膣肉cr兴奋无比的裹了上来。,pid2
+	zin_old_msg,“采阳补阴！”p_name1瞪大了眼睛、他不可置信的cr看着p_name2。“不够~你的精液姐姐也收下了~”crp_name2舔着嘴角、媚笑着睁开眼睛。她抬起丰臀cr开始一下一下的拍着p_name1的胯下,pid2
+	zin_old_msg,响亮的啪啪声传来、p_name2没一次提起来之前都cr会将丰臀微微前弓、让膣腔变得曲折、肉棒的插入cr会受到更多的快感。,pid2
+	zin_old_msg,p_name1的阳气被吸走了一部分正在产出的时候、crp_name2将快感迅速的堆积到了顶峰、随着丰臀最cr后的无情拍下、再也无法忍耐的精液喷薄了出来、cr洒进了子宫深处,pid2
+	zin_flush,pid2
+	zin_old_msg,同时p_name2再次吸收了一部分阳气。p_name1爽cr的打了一个寒颤、随后身体传来一阵奇怪的空虚感。cr“初精~真是美妙无比~”p_name2笑着拥着crp_name1。,pid2
+	zin_old_fadeout,0,5
+	goto,*rest1
+case1
+	zin_old_msg,客人~你准备好了吗？”p_name2轻笑着将双脚靠上cr肉棒、p_name2深情的吻住p_name1。一双可爱的cr小脚轻轻的从左右夹住肉棒、慢慢的揉搓、两个大cr拇趾按在龟头上、细细的摩擦着,pid2
+	zin_old_msg,奇妙的快感从下体传来、柔软的触感将p_name1的cr肉棒裹在中央。“嘿~”p_name2的动作一变、双脚cr狠狠一夹两个大拇趾轻巧的一旋、精液喷涌了出来、cr随后射精的快感才接踵而至。,pid2
+	zin_old_msg,“唔…”p_name1瞪大了眼睛、因为p_name2并没cr有停下动作、反而更加的剧烈起来、双脚灵巧的在cr肉棒上按压摩擦着、将快感一层一层的叠加在crp_name1的身上,pid2
+	zin_old_msg,她仿佛对p_name1的弱点了如指掌一样、每次脚趾cr的按压都能将成倍的快感加至p_name1的肉棒。crp_name2开始加快速度、可爱的小脚飞舞着、她笑cr着加快了速度,pid2
+	zin_flush,pid2
+	zin_old_msg,肉棒在她的玩弄下射出了白色的精液、p_name2继cr续加速、如同两只小精灵在飞舞一样、精液不停的cr喷射,pid2
+	zin_old_msg,渐渐的p_name2的动作到底了一个高潮、最后她双cr脚离开肉棒狠狠的一夹、大量的精液喷射在柔软的cr脚心。,pid2
+	zin_old_fadeout,0,5
+	goto,*rest1
+
+//初膜パターン
+case_hatumaku
+	zin_old_msg,p_name2慢慢的将p_name1抱起来、将他轻轻的搂cr住、丰满的小臀坐到他的双腿上、将早已饥渴的小cr穴对准龟头、她的小臀突然的抖动起来、许久、大cr量的粘稠淫液从小缝中漏出滴在龟头上,pid2
+	zin_old_msg,p_name1因龟头被湿热的淫液刺激而颤了一下、她cr的脸上满是笑容。“这样舒服一点吗~”p_name2轻cr轻的吹着气、咬着p_name1的耳朵同时小缝张开了cr一个小口、隔着肉丝将肉棒吞了下去,pid2
+	zin_old_msg,p_name1的身体一颤。肉棒被肉丝所裹住在膣肉的cr夹层中缓慢的前进着、湿热的液体不断的滴在龟头cr上、膣肉闻见阳气的香味兴奋的蠕动起来、膣肉开cr始裹住肉棒,pid2
+	zin_old_msg,龟头的前进不断的被褶皱所刮划着将淫液涂抹在龟cr头上、龟头一过去、褶皱便再次的缠上肉棒、p_name1cr的身体不断的因为温柔的感觉而颤抖着、p_name2cr微笑着慢慢的坐到底,pid2
+	zin_old_msg,随着肉棒彻底的没入p_name2的身体里、p_name1cr的身体颤了一下便软到了p_name2的怀里、龟头在cr突破层层包裹后顶到了子宫口、将子宫口微微的顶cr开、p_name2媚笑着娇吟了一声,pid2
+	zin_old_msg,p_name1虽然双眼无神但还是露出难过的神色、他cr感觉自己的下体彻底的没入了一个被温暖的嫩肉所cr包裹的地狱中、只要自己不小心的颤抖都会带来快cr感的增加。,pid2
+	zin_old_msg,“看~我还没动呢~她们就这么欢迎你~”p_name2不cr停的低着头调戏p_name1的耳朵、她轻笑了一声、cr十分缓慢的抬起美臀、龟头的沟渠再次在褶皱中被cr一层一层的拔出来,pid2
+	zin_old_msg,p_name1颤的更加厉害了、每拔出一点都会让快感cr增长着、充满快感的酷刑渐渐的过去了、随着肉棒cr被拔起、肉棒渐渐的被拔了出来、从外面可以看见cr龟头下的沟渠,pid2
+	zin_old_msg,p_name2抱着p_name1的头轻轻的旋转着丰臀、crp_name1的反应也十分让p_name2满意、旋了两圈cr后p_name2残酷的一笑、臀部一挺狠狠的坐下、龟cr头一下子顶进子宫口,pid2
+	zin_old_msg,p_name1的身体一下绷紧、微张的嘴没有发出声音cr只是颤抖、精液噗噗的射进子宫、吸力将精液吸进cr子宫深处、p_name1的龟头随着精液的射出散发出cr一股淡黄色的透明气体,pid2
+	zin_old_msg,膣肉触碰到这些气体更加的兴奋的缠裹紧夹着肉cr棒、子宫处传来的吸力将一部分的阳气吸了进去。crp_name2陶醉的闭着眼,pid2
+	zin_old_msg,p_name2的下体没有停止对肉棒的酷刑、她再次缓cr慢的抬起粉臀、旋几圈狠狠的落下、发出“啪”的cr一声、这次p_name1并没有射精、p_name2皱着眉cr头再次抬起粉臀。,pid2
+	zin_old_msg,再又射了两三次后似乎是玩腻了、p_name2放弃了cr对于p_name1的折磨、她放松了褶皱对于肉棒的紧cr束转而开始摇起粉臀进攻了起来、粉臀大幅度的摆cr动着,pid2
+	zin_old_msg,p_name2好像对于p_name1的身体了如指掌一般、cr每次挺动着粉臀都能给予肉棒最大的快乐、p_name1cr根本无法做出任何的抵抗,pid2
+	zin_old_msg,他身体的每一个敏感点都在p_name2的身下被不断cr的刺激着、每一次的抽插都将快感不断的强加在他cr的身上。p_name2不断的在p_name1的身上挺动着、cr将他抱在怀里、轻轻的抚摸着他黑色的头发,pid2
+	zin_old_msg,用慈爱的眼光看着怀里被她吸精的p_name1、他的cr阳气十分的美味。“美味~美味~”p_name2舔着嘴唇cr将p_name1调转方向按倒在床上、骑在他的身上小cr臀摇摆着、褶皱不断的将肉棒抚摸着,pid2
+	zin_old_msg,嫩肉也在不停的蠕动着、每次的抽插都让p_name1cr处于将要射精的极点、但p_name2通过不断的改变cr小臀摇摆的方向牢牢的掌控着他的高潮,pid2
+	zin_old_msg,p_name2觉得可以了才会打破那个极点、让精液与cr阳气射出来、p_name1就像是一个玩具一样被crp_name2玩弄着、在扭了扭翘臀后她坐在p_name1cr的腰上、修长的双腿抬起,pid2
+	zin_old_msg,在他的身上旋了一圈、跪在床上翘臀对着p_name1、cr双乳拍在他的膝盖上、调整了一下小蛮腰的位置、cr再次扭动起来、p_name2粉瞳微闭享受着散发着阳cr气的肉棒在自己小穴中的感觉。,pid2
+	zin_old_msg,她半蹲着抓起p_name1的两只小腿、p_name1此时cr上半身躺着床上、下半身悬在半空、双腿被p_name2cr抓起、粉臀不断的拍在p_name1的胯下发出啪啪声,pid2
+	zin_old_msg,p_name2媚笑着挥舞着粉臀一遍一遍的将快感加在crp_name1的身上、p_name1抿着嘴双手抓住床单、cr就像一个被侵犯的小女人一样。,pid2
+	zin_old_msg,她不断的换着姿势凌辱着身下的p_name1、淫荡的cr娇喘声在p_name1的耳边回响着、突然间、p_name2cr的双眼粉红色的光芒一闪、一股阴冷的感觉从温热cr潮湿的肉穴中传来、p_name1的身体抖了一下,pid2
+	zin_old_msg,阴冷的气息钻入了马眼、p_name1感觉这股气息在cr自己体内环了一圈、肉棒被刺激的射了精、阴冷的cr气息被随着精液射出裹上肉棒,pid2
+	zin_flush,pid2
+	zin_old_msg,大量的阳气随着精液被放出、气息将阳气裹挟住收cr回子宫、p_name1的身体一冷、许久才慢慢的回复cr过来。,pid2
+	zin_old_fadeout,0,5
+	goto,*rest1
+
+//孕みパターン
+case_botebara
+	zin_old_msg,p_name2抬起了她的粉臀、让p_name1脱离了销魂cr穴、她翻了个身、坐在了p_name1的双腿间、将两cr只纤细的小腿搁在了p_name1挺起的肉棒两边、用cr小脚轻轻的踢了踢肿胀的肉棒歪着头笑道,pid2
+	zin_old_msg,“哥哥真是变态呢~对着这么小的小女生发情~咯咯cr~所以呢~死刑~”她可爱的双脚从两边猛地夹住肉棒cr的根部、柔若无骨的触感从肉棒上传来、p_name2cr开始夹住肉棒上下轻轻的撸动,pid2
+	zin_old_msg,不知为何、明明很平常的动作在p_name2的脚上却cr十分的娴熟、柔软的小脚开始一旋一旋的动了起来、cr将肉棒碾着、小脚轻轻的往上边撸动边旋着、一开cr始微小的快感p_name1并不在意,pid2
+	zin_old_msg,但很快随着p_name2双脚的上行快感开始成几倍的cr攀升着、p_name1开始觉得不对劲、此时p_name2cr的双脚渐渐的旋到了龟头、p_name2的嘴角突然拉cr出了一个柔和的幅度,pid2
+	zin_old_msg,“呐~大哥哥~死刑~开始了哦~”p_name2的双趾突cr然猛烈的夹住马眼两边狠狠的往外一掰、p_name1cr闷哼了一声、大量的精液从马眼中喷射了出来、毫cr无防备的射精了,pid2
+	zin_flush,pid2
+	zin_old_msg,p_name1他自己都无法想象射精是如此的突兀、刚cr刚的快感是不可能导致射精、但当p_name2的双趾cr碰到龟头的时候一切已经晚了,pid2
+	zin_old_msg,p_name2娇笑道：“大哥哥很兴奋吗~射的这么多cr~p_name2的脚很舒服吗？”p_name2的十趾开始在cr龟头上摩擦、酥麻的感觉阵阵的侵袭着p_name1的cr神经、很快p_name2再次旋了起来,pid2
+	zin_old_msg,酥麻的感觉瞬间化为快感冲破p_name1的防线、crp_name1颤抖着再次射精了、“莫~大哥哥是早泄吗~cr这么快就射了~”,pid2
+	zin_old_msg,p_name2的十趾像是轻盈的舞蹈者在p_name1的龟cr头上不停的起舞着、每次的舞终都会有大量的白色cr液体喷发庆祝,pid2
+	zin_old_msg,p_name1努力的忍耐大脑一片空白、短暂的失神使cr得自己陷入了不可逆转的局势、p_name2正将肉棒cr踩在脚下不停的撸动着、恐怖的快感不断的增长,pid2
+	zin_old_msg,p_name1一切的忍耐在p_name2的双脚下是如此的cr苍白无力、肉棒不断的喷精身体不断的颤抖、crp_name1渐渐的在快感下迷失了。,pid2
+	zin_old_fadeout,0,5
+	goto,*rest1
+*rest1
+	zin_reg_qnar,p_name2搞定了一个客人。
+	set_epid1,692
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	bgm_chg,127
+rnd,3
+case0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	bgm_chg,126
+	zin_old_msg,“香吗？我可是花了不少的能量才异化出来的哦~”crp_name2炫耀似得轻轻的塞在队长的嘴巴里、再将cr她们拿了出来。走到了p_name1的下身处、拉起了cr他两只小腿、小脚踩在了他的肉棒上。,pid2
+	zin_old_msg,“什么军队~什么嫖客~在我的身体里闻多了味道~cr都是这幅样子~待宰的羔羊~真无趣~”她笑着扭动着cr小脚、踩在肉棒上的小脚、五趾抓住龟头摩擦着、cr她轻轻的加快动作扭动着。,pid2
+	zin_old_msg,龟头顶在小脚心上、柔软的触感不断的深陷着、身cr体一步步的被攻陷。“射吧~你是忍不住的~我的盘中cr餐~”p_name2抬起脚踩在他鼓起的输精管上、用大cr拇趾与二趾夹住肉棒、上下撸动着,pid2
+	zin_old_msg,将管子里的东西往上撸出、龟头渗出了液体、crp_name2并不满足、她所期望的可不是这个、她加cr快了撸动、很快龟头开始颤动、精液随着撸动的浮cr动射出。“我要更多的食物~”,pid2
+	zin_old_msg,看见了精液的射出p_name2眼瞳里闪烁着饥饿的光cr芒。她趴了下去、小嘴舔着射在外面的精液、大口cr的吞吃着、将精液完全的吃下后并没有减轻饥饿的cr感觉、她不满足的啐着,pid2
+	zin_flush,pid2
+	zin_old_msg,旋吸的力道就像是钻头一样、将p_name1的精关轻cr松的破开、直接吸出里面的精液、她的两只小手用cr力的捏住肉棒、精液射出的速度更加的快、射出的cr力道更大,pid2
+	zin_old_msg,p_name1在奇妙的吸力下爽的直打摆子。好一会她cr才满足的松开了小嘴、用手指擦掉嘴角的精液、放cr进嘴里品味着。“不错的味道呢~中上级的好东西~”crp_name2看着p_name1,pid2
+	zin_old_msg,被吸了不少精液的他的脸上丝毫没出现干涸的表cr现。“精液意外的多嘛~”p_name2满意的握住肉棒、cr再次吮吸了起来。粉色的肉穴中传出了吞咽的声音。,pid2
+	zin_old_fadeout,0,5
+	goto,*down1
+case1
+	zin_reg_msg,p_name2暂时没有客人找你了、先待机吧。,0
+	zin_reg_msg,残念～先去洗个澡吧。,1
+	zin_reg_qnar,在洗澡的时候p_name2被指名了。
+	zin_reg_msg,准备好了没？　下一个客人来啦。,0
+	zin_reg_msg,啊啊、马上好。,1
+	goto,*secondstage11
+case2
+	zin_reg_qnar,当天、风俗店生意很好。
+	zin_reg_msg,p_name2今天客人又指名你了、快点。,0
+	zin_reg_msg,嘻嘻、好的马上来！,1
+	zin_reg_msg,（下一个男人是啥样的呢、啊里面好痒啊）,1
+	zin_reg_msg,（好容易来个精奴隶、可不能让客人久等了呢）,1
+	goto,*secondstage21
+
+*secondstage11
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	bgm_chg,126
+rnd,2
+case0
+	set_epid1,779
+	goto,*secondstage12
+case1
+	set_epid1,845
+	goto,*secondstage12
+
+*secondstage12
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+rnd,2
+case0
+	zin_old_msg,客人、你好像来过呢~”她在他的耳边低语道、轻轻cr的将自己的黑色蕾丝内裤拉下来、黑色的阴毛下是cr神秘的洞窟、似乎是闻到了p_name1的香气、洞穴cr开始不安的蠕动着,pid2
+	zin_old_msg,胶黏的声音不断的传来。p_name2轻轻的褪下crp_name1的裤子、将他幼小的肉棒轻轻的拿出来、cr指尖拨开包皮在龟头上轻轻的划了一下、留下了粉cr色的痕迹、很快龟头便立了起来、坚硬了起来。,pid2
+	zin_old_msg,p_name2在他的耳边吹着气、p_name1害怕的闭上cr了眼睛、p_name2微微的起身、将兴奋无比的私处cr对准龟头坐了下去、快感袭了上来、p_name1轻哼cr了一声、脸上露出了难过的神色。,pid2
+	zin_old_msg,随着肉棒彻底的没入了根部、p_name2停下了动作、cr膣肉却兴奋的围住肉棒产裹着、送上自己的热情、cr温热潮湿的蜜穴含住肉棒、p_name1绷着的身体渐cr渐的软了下来,pid2
+	zin_old_msg,p_name2并没有扭动起她夺魂的腰肢和丰臀、而就cr仅仅的抱着p_name1、让肉棒插在自己的身体里、cr膣肉蠕动着将空气一点一点的挤出去,pid2
+	zin_old_msg,很快、在将空气彻底挤出去的时候、膣肉停止了动cr作、她们开始一圈圈的缠裹住肉棒、将他牢牢的抓cr住,pid2
+	zin_old_msg,子宫口张开将龟头吞下。一阵奇异的吸力传了过来、cr龟头一被吸力接触、身体的力气就莫名其妙的一点cr一点的消失了。,pid2
+	zin_old_fadeout,0,5
+	goto,*secondstage13
+case1
+	zin_old_msg,客人~你准备好了吗？”p_name2轻笑着将双脚靠上cr肉棒、p_name2深情的吻住p_name1。一双可爱的cr小脚轻轻的从左右夹住肉棒、慢慢的揉搓、两个大cr拇趾按在龟头上、细细的摩擦着,pid2
+	zin_old_msg,奇妙的快感从下体传来、柔软的触感将p_name1的cr肉棒裹在中央。“嘿~”p_name2的动作一变、双脚cr狠狠一夹两个大拇趾轻巧的一旋、精液喷涌了出来、cr随后射精的快感才接踵而至。,pid2
+	zin_old_msg,“唔…”p_name1瞪大了眼睛、因为p_name2并没cr有停下动作、反而更加的剧烈起来、双脚灵巧的在cr肉棒上按压摩擦着、将快感一层一层的叠加在crp_name1的身上,pid2
+	zin_old_msg,她仿佛对p_name1的弱点了如指掌一样、每次脚趾cr的按压都能将成倍的快感加至p_name1的肉棒。crp_name2开始加快速度、可爱的小脚飞舞着、她笑cr着加快了速度,pid2
+	zin_flush,pid2
+	zin_old_msg,肉棒在她的玩弄下射出了白色的精液、p_name2继cr续加速、如同两只小精灵在飞舞一样、精液不停的cr喷射,pid2
+	zin_old_msg,渐渐的p_name2的动作到底了一个高潮、最后她双cr脚离开肉棒狠狠的一夹、大量的精液喷射在柔软的cr脚心。,pid2
+	zin_old_fadeout,0,5
+	goto,*secondstage13
+case_hatumaku
+	goto,*secondstage13
+//孕みパターン
+case_botebara
+	zin_old_msg,居然是个孕妇！,pid1
+	zin_old_msg,怀孕期间意外的很受欢迎呢。,pid2
+	zin_old_msg,太爽了、孕妇我喜欢、大保健送NTR。,pid1
+	zin_old_msg,能出母乳吗？。,pid1
+	zin_old_msg,用力吸的话应该可以的。。。,pid2
+	zin_old_msg,WWWWWWW真是太棒了cr想不到我hentai14也有这一天！,pid1
+	zin_old_msg,“嗯哼~”将肉棒纳入、p_name2将p_name1拉起来、cr看着他的眼睛、金黄色的眼眸渐渐出现了一个爱心cr的轮廓、p_name1颤抖了一下、p_name2开始缓慢cr的扭动起腰来。,pid2
+	zin_old_msg,p_name1无意识的呻吟了一声、巨大的快感开始将cr他覆盖、比起之前p_name2带来的还要浓烈数倍、cr被快感所吞噬的p_name1、无神的看着p_name2、cr她的身影一下子变成了两个,pid2
+	zin_old_msg,一个正媚笑看着他上下挺动着丰臀、另一个则是闭cr着眼睛缓慢的旋扭着纤腰、双倍的快感加在crp_name1的身上、让他不知所措、每一个都像真身、cr每一个带来的感觉都传递到肉棒上。,pid2
+	zin_old_msg,p_name2笑着动作突然缓慢了一秒、继续加速、crp_name1所受的快感猛然增加、他的视野中出现了cr第三个p_name2、她伏在自己的身上、丰臀飞快的cr提坐。,pid2
+	zin_old_msg,“呃…”p_name1努力的克制着自己射精的欲望。crp_name2不依不饶的继续着增加自己的能力、crp_name1的视野中p_name2的分身持续的增加着、cr获得的快感也在无时不刻的增加着,pid2
+	zin_old_msg,在p_name2增加到第五个的时候自己就忍耐不住的cr射精了、五个p_name2露出了享受的表情、五声酥cr骨的魅音让p_name1无法把持住、精液流水般的射cr进了p_name2的体内。,pid2
+	zin_old_msg,不到一会、p_name2的分身增加到了八个、她们横cr着一排以各种姿势摆着自己的丰臀、每两次挺动crp_name1都会无法忍耐的射出自己的精华、以及阳cr气。,pid2
+	zin_old_msg,p_name2停下了动作、她轻轻的将丰臀坐下去、金cr黄色的心性轮廓消散、她主动的消去了自己的能力、cr膣肉蠕动着将残留的精液吸尽,pid2
+	zin_old_msg,p_name2俯下身去深情的吻着p_name1的嘴、看着cr他那双由于巨量快感而迷失的双眼、p_name2轻轻cr一笑。,pid2
+	zin_old_fadeout,0,5
+	goto,*secondstage13
+
+*secondstage13
+	set_epid1,692
+	zin_reg_qnar,p_name2搞定了两个客人。
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	bgm_chg,68
+	zin_reg_qnar,之后p_name2接客继续、并且榨了3汁。
+	zin_reg_msg,辛苦了、今天就到这里吧。,0
+	zin_reg_msg,嗨嗨、你也辛苦了哦。,1
+	zin_reg_msg,（嘻嘻、今天战绩还算不错）,1
+	goto,*up1
+
+*secondstage21
+set_epid1,839
+	bl_fadeout
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	zin_reg_qnar,２人目
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,客人你好棒好棒的！,pid2
+	zin_old_msg,哇啊啊、我的腰完全停不下来。,pid1
+	zin_old_msg,啊、简直要飞起来了！,pid2
+	zin_flush,pid2
+	zin_reg_qnar,３人目
+	zin_reg_qnar,４人目
+	set_epid1,838
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	zin_reg_qnar,５人目
+	zin_old_init
+	zin_old_img_pid,pid2,1
+chk_mval,懐妊:player<7,,,,
+chk_mval_then
+	zin_old_msg,娇媚的声音在耳边响起、p_name1的肉棒在p_name2cr的摆弄下已经变的奇硬无比、p_name2轻轻的环着cr他的后背、自己往后倒去、将他拉了起来、黑色的cr蕾丝内裤中张开了一个小口,pid2
+	zin_old_msg,淡粉色的淫气从小口处随着张合被吐出、吹在肉棒cr上、修长的双腿环住他健壮的腰。“快来吧~享受快cr乐吧~”恶魔的呢喃让p_name1颤抖了一下、此时的cr他已经被p_name2彻底的掌控了,pid2
+	zin_old_msg,在她的催促下、p_name1抓住p_name2的水蛇腰、cr狠狠的挺进了迷魂穴。火热紧凑的感觉让他分外的cr舒爽、他愣了一下便开始挺腰抽插起来、柔软的膣cr肉细细的蹭着肉棒,pid2
+	zin_old_msg,紧凑无比的感觉让他更加的卖力、每一次都插进最cr深处、顶在紧闭的子宫口上。“啊~就是这样~加快速cr度~”淫荡的床语挑逗着p_name1的神经、他开始加cr快速度、寻求着更多的快感,pid2
+	zin_old_msg,p_name2配合着浪叫起来、她一副享受的表情下隐cr藏着阴冷的眼神。不一会、p_name1的速度达到了cr极点、他喘息着用力抽插、最后一下狠狠的顶在了cr穴口、子宫口在他的用力下张开了紧闭的大门,pid2
+	zin_old_msg,一股温热的淫液挥洒在龟头上、下一刻子宫口就迫cr不及待的将龟头吞下、精液喷涌而出、吸力随着精cr液的喷射出现、在密缝的空间中狠狠的吸出肉棒中cr的精液,pid2
+	zin_old_msg,同时p_name2的皮肤表面冒出了紫色的光芒、crp_name1只感觉将一阵极大的快感释放了出去、他cr身上紫色的微光从交合处被吸入p_name2的淫穴cr中。,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	goto,*secondstage22
+chk_mval_else
+	zin_old_msg,被黄色丝袜所裹住的地方张开了一道小口、p_name1cr被托到了小口附近、抓着他腰间的手将他对准留着cr蜜液的穴口狠狠的按了进去、大张的穴口接受了这cr份美味的食物,pid2
+	zin_old_msg,将嘴缩小含住肉棒开始细细的品尝。p_name1忍不cr住呻吟了起来、穴口缓慢的吞吃着肉棒、整个小穴cr里就像是一张粘稠的蛛网、每一次抽插都十分的费cr力,pid2
+	zin_old_msg,抓着p_name1腰间的手替他解决了这个问题、肉棒cr在膣腔中摩擦、轻柔的感觉覆盖在肉棒的外表、随cr着肉棒每一次的插入淫穴中而进入了马眼。,pid2
+	zin_old_msg,p_name2媚笑着控制淫穴分泌出大量的淫丝、肉棒cr每次拔出都会带出许多淫丝、淫丝在解除空气的时cr候会凝固、黄色的双手负责将淫丝涂抹在p_name1cr的身体上,pid2
+	zin_old_msg,p_name1深处快感之中根本无法反应过来、只能任cr由黄色的双手涂抹、渐渐的动作开始加快、p_name1cr除了头部已经尽数的被透明的丝线所覆盖、抽插的cr动作也迎来了高潮,pid2
+	zin_old_msg,肉棒颤抖了两下却什么都没射出、马眼已经被淫水cr所堵住、无法射精的难受感觉让p_name1抓狂的摇cr着头、但p_name2却丝毫没打算停下来、抓住crp_name1腰部的手开始加快速度,pid2
+	zin_old_msg,肉棒疯狂的抽插着、发出噗滋噗滋的淫水声、肉与cr肉的碰撞不断的加剧、p_name1在大量的快感中断cr断续续的痛苦呻吟着。,pid2
+	zin_old_msg,终于p_name2的动作达到了一个顶点、她娇吟了一cr声子宫中发出强烈无比的吸力、p_name1也在膣腔cr的动作中迎来了高潮,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	goto,*secondstage22
+
+*secondstage22
+	zin_reg_qnar,６人目
+	set_epid1,779
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	zin_reg_qnar,７人目
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,客人想不想做一些~更加快乐的事呢~”淫媚的cr声音从p_name2的嘴中传出、她轻轻的舔着p_name1cr的耳朵、柔的能滴出水的眼神看着正抚摸着她双乳cr的p_name1。,pid2
+	zin_old_msg,p_name1点了点头、p_name2笑了笑、躺在了床上、cr双腿支撑着将丰臀抬高、神秘的花园展露在crp_name1的眼前、p_name1咽了咽口水、慢慢的走cr上前去。,pid2
+	zin_old_msg,“快来啊~小宝贝~”p_name2摇着丰臀、淫荡的嫩cr穴分泌出大量的淫液。p_name1来到了p_name2的cr胯下、抚摸着她白皙的大腿、滑顺的黑丝摸起来让crp_name1格外的兴奋,pid2
+	zin_old_msg,他双手抬起p_name2的双腿、坚挺的肉棒对准微张cr的穴口按了上去、他用力的一挺、肉棒刺入了膣腔cr中、两人呻吟了一声、火热的膣肉贴在肉棒的表面cr蠕动着、p_name1挺起腰开始抽插。,pid2
+	zin_old_msg,“嗯~就这样~宝贝你好棒~~咯咯~”p_name2淫靡的cr呻吟声在耳旁回响着、一对硕大的巨乳从贴在了背cr上、一双灵巧的纤手抚摸着p_name1的胸膛、姗姗cr的红唇舔着p_name1的脸颊脖颈,pid2
+	zin_old_msg,让他更加的兴奋、更加迈力的抽插着、小穴十分紧、cr膣肉在p_name2的控制下伴随着p_name1的抽插而cr舒张紧缩、每当p_name1挺腰插入时p_name2都会cr让膣腔缩的格外紧,pid2
+	zin_old_msg,每一次p_name1的抽插都要用力、凭着p_name1久cr经训练的身躯可以轻松抓起p_name2的双腿、他边cr享受着p_name2的膣腔边与姗姗亲吻着交换淫液。cr“啊~~啊~~~加油~射吧~射吧~~全都射进来~~”,pid2
+	zin_old_msg,p_name2淫乱的叫声越发的浪、泥泞的肉穴狠狠夹cr吸着p_name1的肉棒、终于p_name1忍耐不住开始cr加速疯狂的抽插、最后姗姗用食指刺入p_name1的cr菊门顶在敏感点上,pid2
+	zin_flush,pid2
+	zin_old_msg,p_name1舒畅的一颤、姗姗舔舐的舌头缩回、红唇cr吻上、p_name2膣腔紧缩嫩肉缠住肉棒、精液噗滋cr噗滋的射进p_name2的子宫中、血液被吮吸的快乐cr让他下体痉挛着抽搐了两下。,pid2
+	zin_old_fadeout,0,5
+	zin_reg_qnar,８人目
+	zin_reg_qnar,９人目
+set_epid1,845
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	zin_reg_qnar,１０人目
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,p_name2你如此的风骚、你结婚了没？,pid1
+chk_mval,婚姻:player=0,,,,
+chk_mval_then
+	zin_old_msg,人家还没．．结婚呢、欢迎．．来搞！,pid2
+	zin_old_msg,如果这次战争结束没死的话我就来娶你！,pid1
+	zin_old_msg,少年你没事立这种flag没问题么。。,pid2
+	zin_flush,pid2
+	goto,*secondstage23
+chk_mval_else
+	zin_old_msg,哎呀．．．結婚．．了．．．呢！,pid2
+	zin_old_msg,岂可修！真羡慕你老公,pid1
+	zin_old_msg,嗯啊、用力！p_name2的老公今晚就是你啊！,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	goto,*secondstage23
+*secondstage23
+	set_epid1,692
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	bgm_chg,68
+	zin_reg_qnar,p_name2连续不断的接客。
+	zin_reg_qnar,当天、合計１０个倒霉客人被榨汁了。。。
+	zin_reg_msg,大姐、你真是太猛了。拿好、这是你今天的报酬。,0
+	zin_reg_msg,嘻嘻、多谢拉、你要不要也来一发呀！,1
+	zin_reg_msg,（今天好像榨的有点太多了呢、好满）,1
+	goto,*up2
+
+*rapesex1
+	zin_reg_qnar,p_name2把衣服脱了两腿一张。
+	zin_reg_msg,这男的一看就是没什么精气可以榨的、啊呸。,1
+	zin_reg_msg,哦哦哦、真是极品啊。,0
+	zin_reg_msg,．．．．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	bgm_chg,55
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+rnd,2
+case0
+	zin_old_msg,姗姗媚笑着用嫩足勾引着p_name1、p_name1抓住cr姗姗的双足含在嘴里、舔舐着美足、甜腻的香气在cr嘴中传开、这是吸血鬼身上独有的香气、如同毒药cr一样让人欲罢不能,pid2
+	zin_old_msg,他握住一翘一翘的肉棒、对准毫无血色的嫩穴插了cr进去、火热的肉棒在进入膣腔后不由得一颤、冰冷cr的感觉让他行动一缓、但沉重的膣肉压迫着肉棒让cr他再次火热起来,pid2
+	zin_old_msg,嫩肉缓慢的在肉棒上蠕动着、将粘稠的淫液涂抹在cr皮肤表层、这些粘稠的液体含着数量惊人的病毒。cr姗姗的双腿靠在p_name1的肩上、p_name1抚摸着cr肉丝开始奋力的抽插,pid2
+	zin_old_msg,p_name2在p_name1的后面用灵巧的双手玩弄着睾cr丸、调皮的尻尾刺入他的菊门搅动着、分泌出淫液cr涂抹在敏感点上。,pid2
+	zin_old_msg,“嗯哼哼~好舒服~boy加油啊~~姐姐想要热乎乎的cr精液~”姗姗与p_name2的淫声淫语催促着p_name1。cr他用力的挺动着腰、低吼了一声、身体往前倾、压cr在姗姗的身上、奋力的抽插着,pid2
+	zin_old_msg,在努力的给身下的女性带来快感、双手揉搓她柔软cr丰硕的乳房、嘴咬住乳头吸吮着乳液、姗姗被他的cr动作搞的措手不及、火热的肉棒摩擦着柔软的淫肉cr让她也有了感觉,pid2
+	zin_old_msg,她的双腿交叉着夹住p_name1的腰将他锁在自己的cr胯下、任凭他努力的抽插。在膣肉不知疲惫的攻势、cr与p_name2尻尾不时带来的刺激下下p_name1低吼cr着放出了精液,pid2
+	zin_flush,pid2
+	zin_old_msg,滚烫的精液烫的姗姗浪叫了一声、膣肉本能的缩紧cr将肉棒裹住、塞入了与普通人一样的温热子宫中、cr吮吸着肉棒的精液。好一会p_name1再次将肉棒对cr准p_name2的嫩穴、给她送去大量的营养,pid2
+	zin_old_fadeout,0,5
+	goto,*rest2
+case1
+	zin_old_msg,boy呀~这样就不行了吗？真是让姐姐失望呢~”姗cr姗尖尖的舌尖舔动着龟头、不时的用力按压、crp_name2挤压着精囊、舔着肉棒。,pid2
+	zin_old_msg,“唔……”p_name1舒畅的呻吟声鼓励了两人的动cr作、两人交替着将肉棒含入嘴中吮吸着、很快精液cr就喷涌而出、像喷泉一样喷在两人的脸上。,pid2
+	zin_old_msg,p_name2舔掉嘴角的精液、媚笑着坐在了p_name1cr的腿上、姗姗绕到p_name1的身后将p_name1抱在cr怀里、将他的头嵌入双乳中、白皙的双手抓住crp_name1的手十指交错握住他们,pid2
+	zin_old_msg,p_name2抬起丰臀、对准淫靡的穴口坐了下去、丰cr臀缓慢的轻旋着将肉棒彻底的纳入、同时上身往前cr一倾、双乳按在了p_name1的脸上、两人将p_name1cr夹在中间、p_name2与姗姗吻在了一起,pid2
+	zin_old_msg,她的美臀朝斜前方挺动着、斜着抽出来、在绕到肉cr棒直立的地方丰臀落下发出清脆的一声“啪”姗姗cr松开p_name1的双手抚摸着p_name2的脸颊、crp_name2抚摸着姗姗的身体,pid2
+	zin_old_msg,两人忘情的亲吻着、粉臀毫不留情的一次次拔起落cr下、不时的缓慢研磨、肉棒充分的摩擦着膣肉、在cr扭曲的膣腔中转了一圈、两人亲吻着任凭p_name1cr因缺氧而挣扎、再微微松开给他呼吸的机会。,pid2
+	zin_old_msg,p_name1终于忍耐不住了、精液大泄而出、p_name2cr摇摆的丰臀狠狠落下、迎接着甜美的精液、敞开的cr子宫口将龟头吞下大吸特吸、温柔的羊撕下了面皮cr露出了狼性,pid2
+	zin_flush,pid2
+	bgm_se,135
+	zin_old_msg,巨大的吸力让p_name1的腰一下子挺了起来、肉棒cr没入了淫穴中、大量的精液流出、p_name2身上的cr紫光大亮、同时有什么特别的东西射了出去,pid2
+	zin_old_msg,p_name1感到了一股虚弱感、与之而来的是极大的cr快感、仿佛射出了什么不好的东西使得身体轻飘飘cr的舒畅起来。,pid2
+	zin_old_fadeout,0,5
+	goto,*rest2
+
+//初膜パターン
+case_hatumaku
+	zin_old_msg,p_name1身体前倾、吻上了p_name2的嘴唇、一只cr手揉搓着她的双乳、转身将她按到在床上、压在身cr下、一边索吻着、一边揉弄着她的敏感点,pid2
+	zin_old_msg,p_name2微微的抵抗更加的激起了p_name1隐藏的cr兽欲。p_name1亲吻着p_name2滑嫩的肌肤、嗅着cr她诱人的幽香、双眼渐渐的被欲望所占据,pid2
+	zin_old_msg,他正要脱裤子时、却发现自己的衣物化为一片烟雾cr消失了、而p_name2的内衣与内裤不知何时消失了、cr如玉的神秘花园没有一丝黑毛,pid2
+	zin_old_msg,黑丝就像是原本的皮肤一样、将性器的轮廓蒙上了cr一层朦胧的黑色、p_name1迫不及待的握住早已硬cr起的巨根、对准了穴口、一下子刺了进去。,pid2
+	zin_old_msg,“唔…”“啊~~~”p_name1舒爽的声音与p_name2cr淫媚的娇吟互相响起、火热的膣腔中、嫩肉渴望的cr蠕动着、淫热温软的触感让p_name1的肉棒更加的cr肿胀变大、淫靡的汁液浇淋在龟头上,pid2
+	zin_old_msg,让p_name1进一步的被淫欲所吞噬。p_name1开始cr挺动起来、轻缓的节奏让p_name1忍不住的用力狠cr狠插入、而p_name2则开始随着他的动作而扭动起cr蜂腰,pid2
+	zin_old_msg,娴熟的腰技让p_name1很快的步入了一个奇异的节cr奏、他开始忘情的抽插起来、他俯下身去揉搓着吸cr着p_name2硕乳、一只手揽住p_name2的纤腰,pid2
+	zin_old_msg,肉棒不停的在淫靡无比的肉洞中来回、给他带来极cr大的快感、让他欲罢不能。“嗯~p_name1cr就是这样~~更加~啊~~~用力~~”p_name2淫荡的娇cr喘声不停的在耳边回荡着、增大p_name1的兽欲。,pid2
+	zin_old_msg,p_name1的动作愈加的激烈、而p_name2的叫床声cr不断的激励着p_name1更加的努力。,pid2
+	zin_flush,pid2
+	zin_old_msg,终于、在p_name2腰部激烈的扭动下p_name1第一cr次在p_name2的嫩穴中放射出精液、p_name2的嫩cr穴缩紧着、轻微的吸力抚摸着龟头、在夹吸中射精cr的感觉让p_name1舒爽无比。,pid2
+	zin_old_fadeout,0,5
+	goto,*rest2
+
+//孕みパターン
+case_botebara
+	zin_old_msg,p_name2侧躺在床上、伸出小腿轻轻的朝前勾了一cr勾、小脚在空中划出了美丽的弧度、p_name1盯着cr她被黑丝包裹的美足慢慢的走上前去、身上的衣服cr一瞬间化为了虚无,pid2
+	zin_old_msg,他走上前去捧着她的双脚放在鼻子上猛嗅着、属于cr魅魔身上特有香气让p_name1的身体一瞬间有了感cr觉、下体硬了起来、p_name1伸出舌头舔着p_name2cr的脚心、同时撸动着自己的肉棒。,pid2
+	zin_old_msg,“啊~p_name1你在干什么呢~真是变态呢~不过~”crp_name2的小手轻轻的握住肉棒揉搓起来。“好东西cr可不能浪费在其它的地方哦~变态先生~”,pid2
+	zin_old_msg,p_name2温柔的笑着、抚摸着肉棒、伸出一只小手cr接着自己的唾液涂抹在肉棒上面、双手灵活的摩擦cr着龟头、同时舔着p_name2嫩足的p_name1已经开cr始渐渐的丧失理智。,pid2
+	zin_old_msg,“p_name1既然这么喜欢p_name2的脚~那就让crp_name2来用脚服侍p_name1吧~”p_name2眯着眼cr说道、p_name1放下了p_name2的双足、留在黑丝cr上的唾液一瞬间就消失了。,pid2
+	zin_old_msg,“p_name1躺好哦~p_name2要来了~”p_name2站cr起身来、看着躺在床上的p_name1轻轻一笑、张开cr小嘴、口水滴下在空中划出了一条长长的淫丝、滴cr在龟头上,pid2
+	zin_old_msg,p_name2抬起嫩足、足尖轻轻的点着肉棒、在龟头cr上轻轻的划着、然后整个脚掌将肉棒踩下、踩在crp_name1的小腹上、被黑丝所缠裹的小脚开始上下cr的撸动。,pid2
+	zin_old_msg,“啊啦~p_name1在p_name2的脚下变的更加硬了呢cr~”p_name2眯着眼、微笑着道。“变态~”p_name2cr抬起脚狠狠踩下、p_name1呻吟了一声、肉棒更加cr的坚挺,pid2
+	zin_old_msg,p_name2五趾勾住肉棒左右的划擦、黑丝与柔嫩小cr足的触感让p_name1低吼了一声、他开始变的奇怪、cr在p_name2的玩弄下渐渐的被欲望所占据。小足踩cr下、再次击打肉棒,pid2
+	zin_flush,pid2
+	zin_old_msg,龟头颤了两下扑哧扑哧的射出了白色的浆液。“看啊cr~变态先生~”p_name2将沾满了白浊的小足伸到crp_name1的眼前,pid2
+	zin_old_msg,稍微恢复理智的p_name1清晰的看着在p_name2的cr小脚上、黑色的丝袜开始蠕动、将白色的粘液一点cr点的包裹、吞噬。,pid2
+	zin_old_fadeout,0,5
+	goto,*rest2
+
+*rest2
+	zin_reg_qnar,就这样p_name2三下两下搞定了客人。
+	set_epid1,692
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	bgm_chg,68
+rnd,3
+case0
+	zin_reg_msg,p_name2快点后面还有客人排队呢。,0
+	zin_reg_msg,啊等等、我先洗个澡(消化消化）。,1
+	zin_reg_qnar,结果、洗完澡回来客人就没了。
+	zin_reg_msg,（啊啊、被别的碧池抢了汁液）,1
+	zin_reg_msg,（早知道就先不洗澡了、后悔呀）,1
+	zin_reg_qnar,后来一直没有指名。
+	zin_reg_qnar,一直到关店、只榨取了2汁。
+	zin_reg_msg,（岂可修、才这么点汁、还不够美容的）,1
+	zin_reg_msg,（气死我了）,1
+	goto,*down1
+case1
+	zin_reg_msg,p_name2在下一个客人来之前保持待机。,0
+	zin_reg_msg,最近嫖客的汁液越来越稀薄了。,1
+	zin_reg_msg,（而且身体还很臭呢、还是去榨军官精气多啊）,1
+	zin_reg_qnar,p_name2一边思考出路一边洗了个澡。
+	zin_reg_msg,準備好了没？　下一个客人来啦。,0
+	zin_reg_msg,好的我来了。,1
+	goto,*secondstage31
+case2
+	zin_reg_qnar,当天是假日风俗店爆满。
+	zin_reg_msg,p_name2人呢、客人已经在排队了你快点啊。,0
+	zin_reg_msg,是、明白了！,1
+	zin_reg_msg,（客人太多也是烦恼啊）,1
+	zin_reg_msg,（子宫里头的精液还没消化呢、吸不下了呀）,1
+	goto,*secondstage41
+
+*secondstage31
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	bgm_chg,126
+rnd,2
+case0
+	set_epid1,779
+	goto,*secondstage32
+case1
+	set_epid1,845
+	goto,*secondstage32
+
+*secondstage32
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+rnd,2
+case0
+	zin_old_msg,p_name2媚笑着改变了丰臀运转的节奏、一坐到底、cr膣肉咬住肉棒然后开始扭动蛇腰、而在现实世界的crp_name2同样的笑着,pid2
+	zin_old_msg,她狠狠的抱住怀中的p_name1、让他的身体更加的cr陷入充满魅香的软玉中、她缩紧膣肉、丰臀开始像cr机器一样飞快抽插。,pid2
+	zin_old_msg,“啊~~~”p_name1痛苦的呻吟着、快乐让他的抵抗cr瞬间化为了虚无、而p_name2并没有停止这份酷刑、cr她双手开始撑着p_name1的胸膛、跪坐在p_name1cr的身上、淫穴吞吃着肉棒。,pid2
+	zin_old_msg,“放过我吧。求你了…”p_name1一边挣扎一边哀cr求着。“不~~行~~~哦~”p_name2调皮的拖长音调、cr夹吸着p_name1。,pid2
+	zin_old_msg,“嗯哼哼~哈哈哈~怎么样呢~p_name1~是不是已经cr爽的不能呼吸了呢？莫~已经到极点了呢~”,pid2
+	zin_old_msg,p_name2的停止了研磨开始上下起落接着说道：“那cr就射进来吧~在姐姐的身体中~将自己的灵魂与生命cr~~全都射进来~~~啊~~~~”。,pid2
+	zin_old_msg,节奏疯狂的加速、最后狠狠坐下、等待已久的子宫cr口在膣腔缩短的一瞬间就将肉棒吞了进去、饥渴滚cr烫的淫水浇在龟头顶端。,pid2
+	zin_old_msg,“啊~~~唔~~~~”p_name1忍耐的最后防线、在吸力cr到达的一瞬间就崩溃了、大量的精液涌出、p_name1cr的大脑陷入一片空白,pid2
+	zin_old_msg,他的皮肤表面冒出了蓝光、丝丝蓝光顺着身体一路cr往下进入了与p_name1交合的p_name2体内、体表cr的紫光在摄入蓝光后一瞬间大涨、p_name2舒爽的cr一声娇吟、娇吟声传入p_name1的耳中,pid2
+	zin_old_msg,他只觉得一阵头晕目眩、更多的蓝光被吸入了crp_name2的体内、p_name2在吸入蓝光后身体开始cr变化、身后与后脑长出了两对蝠翼、身形开始与外cr界的魅魔重叠。,pid2
+	zin_old_msg,在外面的p_name1同样的在魅魔的怀中达到了高cr潮、大量白花花的精液被吸入魅魔的体内、魅魔淫cr靡的笑着、低下头与p_name1开始深吻、双腿的黑cr丝顺着紧夹的腰部往p_name1的体表蔓延。,pid2
+	zin_old_msg,“嗯哼哼~没用的~没用的~~没用的~~~你已经逃不cr了p_name1~在姐姐的身下不断的高潮吧~直至~~”cr美妇疯狂的动作再次为之一停、精液伴随着灵活被cr吸入子宫深处。,pid2
+	zin_old_msg,“彻底的被姐姐所榨干~成为姐姐的腹中之物~”充cr满着淫媚的温柔耳语声轻轻的诉说着p_name1的无cr力、p_name1的听见声音的同时再一次的泄了精。,pid2
+	zin_old_msg,p_name1的大脑开始有些混沌、每次蓝光被吸走时cr伴随的剧烈快感要比射精所带来的还要致命、crp_name1无力的挣扎着、对此美妇只是用嘲笑来回cr应,pid2
+	zin_old_msg,看着p_name1脸上的痛苦挣扎渐渐的变成享受的迷cr茫、美妇脸色不由得潮红起来、。“多么香甜~多么美cr妙~在自己的梦中却化为了我的食物~”,pid2
+	zin_old_msg,美妇轻轻的抚摸着p_name1的脸庞、看着他渐渐失cr神的眼睛。“你的灵魂与生命就是这个月的报酬哦~cr哼哼~为了侵占你的梦境姐姐可是花了不少的功夫cr来讨好你呢~现在全都还给我吧~”,pid2
+	zin_flush,pid2
+	zin_old_msg,美妇低沉酥骨的淫语、她闭上眼睛细细感受着crp_name1灵魂与精液的甜美、然后永远也满足不了cr的榨汁机再次运作给身下的p_name1带来快乐、收cr取他的灵魂与生命作为极乐的代价。,pid2
+	zin_old_msg,紫色的竖瞳直视着怀中空洞的双眼、他歪着头、苍cr白的皮肤、消瘦的身体、嘴角挂着唾液、除了头部cr其他的身体已经与魅魔的身体缠裹在一起化为了黑cr色的丝茧、精液生命不断的被收取,pid2
+	zin_old_msg,魅魔微笑着将他的双眼抚上、深深的吻下去、同时cr黑丝开始往头上蔓延、他的灵魂已经快被彻底的抽cr走、而精液与生命力也接近干涸。,pid2
+	zin_old_msg,“感受到了吧~我们正融为一体~”魅魔与梦境中的cr媚子同时在p_name1耳边轻声的说道。“那么~就用cr这个你最喜欢的姿势来庆祝你化为我的一部分吧~”梦境中的美妇将p_name1拉起、轻轻的抱住,pid2
+	zin_old_msg,开始缓慢的进行着最后的吸魂、现实中魅魔则是结cr束了最后的耳语、看着p_name1的头彻底的被黑丝cr所缠裹、一个人形的黑丝茧慢慢的倒入魅魔的怀抱cr中、巨大的蝠翼展开,pid2
+	zin_old_msg,无声的在现实与梦境中将两人拥住。“愿你在我的身cr体中得到永恒的快感~”p_name1在意识消散时所cr听到的最后一句话,pid2
+	zin_old_msg,随后梦境中的p_name1彻底的化为了一阵蓝色的气cr息被拉扯着吸入少妇的蜜穴中、现实中的p_name1cr也在魅魔的怀里渐渐的缩小,pid2
+	zin_old_msg,最后随着嫩肉的卷动声、两片被黑丝所覆盖的粉色cr蓓蕾无声的闭合、淫穴在一阵蠕动声后也消失了动cr静。,pid2
+	zin_old_fadeout,0,5
+	goto,*secondstage33
+case1
+	zin_old_msg,咯咯~姐姐的身体可是舒服的很呢~保证客人一次后cr便再也不会抵抗了~”p_name2微眯着眼睛淫媚的笑cr着、她轻轻的吻住p_name1、丰满的美臀挺了起来cr调整一个角度坐了下去。,pid2
+	zin_old_msg,两人不约而同的轻哼了一声、火热紧凑的蜜穴包裹cr住了肉棒、沉重的挤压着肉棒、龟头被层层的褶皱cr摩擦的快感连连、p_name1开始怀疑自己能不能坚cr持过第一个高潮。,pid2
+	zin_old_msg,“哼嗯~居然不是第一次~稍微有点失望呢~”crp_name2开始挺动美臀起伏着、性交的快感开始刺cr激p_name1的感官、已经超出他预想的快感了、而crp_name2显然还没有用全力,pid2
+	zin_old_msg,她一坐到底开始缓慢的旋扭着蛇腰、p_name1闷哼cr了一声、胶黏的声音从两人交合的私处传来、crp_name2让人心血澎湃的娇吟声夹在着柔媚的笑声cr挑逗着p_name1的神经。,pid2
+	zin_old_msg,“已经坚持不住了吗？~哼哼~客人真是早泄呢~不cr过没关系哦~”p_name1肉棒颤抖了一下被p_name2cr敏锐的抓住了、虽然他很快的止住了感觉、但是crp_name2没有丝毫想让他逃过的机会。,pid2
+	zin_old_msg,她开始加快了速度、丰臀挺动的速度极具增加、膣cr腔中开始产生旋吸之力、“都已经快出来了再憋回去cr可不好哦~射进来吧~快点射进来吧~客人~全都射进cr来~在姐姐的体内~让姐姐好好的~品尝~”,pid2
+	zin_flush,pid2
+	zin_old_msg,p_name2带着娇喘的淫叫声阵阵传来、膣腔也运作cr到了一个不可停止的程度、p_name1难受的闷哼着cr随着p_name2最后的一座精液喷涌而出、膣腔紧缩、cr剧烈的吮吸将精液尽数吸入,pid2
+	zin_old_msg,p_name闭着眼睛享受着极致的美味、缓慢的舔着粉cr唇、膣口微微的收缩着。,pid2
+	zin_old_fadeout,0,5
+	goto,*secondstage33
+case_hatumaku
+	zin_old_msg,一点黑色也没有的p_name2的肉缝中、已经排出的cr蜜汁散发出妖艳的光泽、不断的被p_name1吸入口cr中。,pid2
+	zin_old_msg,不同于一般人类女子的淫液、p_name2的爱液甘美cr可口、就象花蜜一样、且对人类男子有极强的催情cr和迷魂作用。现在的p_name1已经完全失去了自我、cr身心都被p_name2所支配着。,pid2
+	zin_old_msg,p_name2看着意乱情迷的p_name1、嘴角流露出一cr丝得意的微笑、那仿佛是看到猎物终于掉入自己的cr陷阱时的笑容。,pid2
+	zin_old_msg,虽然p_name2肌肤上汗渍晶莹、瑶鼻里不断透出诱cr人无比的恩哼声、但她的眉宇间却是一片令人难以cr察觉的清冷之色、现在的她正冷冷的观察身下crp_name1的反应。,pid2
+	zin_old_msg,「看来是时候了！」p_name2对自己说到。接着她松cr开钳着p_name1头的大腿、调转姿势、跨坐在仰躺cr着的p_name1上面并将其阴茎对准自己蜜穴。,pid2
+	zin_old_msg,只见p_name2的腹部一阵蠕动后、蜜穴口立刻张大、cr好像正在捕食的蛇一样瞬间将阴茎吞了下去。,pid2
+	zin_old_msg,「啊啊！」p_name1感到一股强大的吸力由p_name2cr的自宫深处发出、吸扯着自己的阴茎往其腔内猛钻cr进去。无比舒畅的感觉从下体传遍全身,pid2
+	zin_old_msg,等稍稍回过神来时、自己东西的前端已经到达了crp_name2的子宫入口。,pid2
+	zin_old_msg,p_name2汗淋淋的丰胸轻轻的颤抖着、身子向后仰cr起、娇哼声不断由嘴中传出。两人性器摩擦时、积cr压着水的声音在这月夜下的林间响起。,pid2
+	zin_old_msg,p_name2狭窄的腔壁把p_name1的阴茎紧紧的包着、cr不断的蠕动、使p_name1觉得痛苦与快感交织在一cr起、从阴茎向全身扩散、快感象电流一样四处游走、cr阴壁的夹力强的令人难以致信,pid2
+	zin_old_msg,感到肉棒随时要被夹断似的。p_name1双手握住她cr的乳峰、下身开始加速挺动、而p_name2也淫荡地cr把腰臀迎凑摇晃、湿润柔软的阴道如小嘴似的、不cr住吸吮着他的阳具。,pid2
+	zin_old_msg,p_name1只觉她体内的吸力越来越大、直美得自己cr浑身打颤、同时也感到阴道肉壁的收缩、把他整个cr龟头、紧箍得又麻又酸、舒爽无比,pid2
+	zin_old_msg,而淫汁充沛的膣壁、竟然越来越加收紧、强烈的异cr样快感、直令人连思维都要停止。,pid2
+	zin_old_msg,此时p_name2感到有阵阵热流由p_name1的肉棒不cr断的注入自己的身体、她知道对方生命的精华已经cr开始外泄了、便深吸一口气、运足魔力吸摄被害者cr的精华。,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	goto,*secondstage33
+//孕みパターン
+case_botebara
+	zin_old_msg,p_name2转过身去、肥厚的丰臀对着p_name1张开cr蓓蕾、淫肉卷转着发出胶黏的声音、p_name2轻轻cr摇动着肥臀,pid2
+	zin_old_msg,p_name1咽了咽口水、双手抓住她的腰间、肉棒对cr准淫穴挺了进去、刚刚还松弛的膣肉开始缩紧、缠cr住肉棒、p_name1奋力的将肉棒拔出来再插进去,pid2
+	zin_old_msg,p_name2则是媚笑着呻吟、控制着膣肉缩紧舒张配cr合p_name1抽插的节奏、给他带去快乐。p_name1cr开始等待机会、但p_name2从头到尾没有露出丝毫cr的破绽、他只能咬着牙抽插,pid2
+	zin_old_msg,p_name2的阴道开始收缩加紧肉棒、p_name1闷哼cr一声本能的加快了抽插的速度、p_name2摇摆丰臀cr的速度也加快,pid2
+	zin_old_msg,p_name1狠狠的抽插着、淫水四溅、p_name2的浪cr叫声一波接着一波、然后。“噗嗤~”精液射入了crp_name2的膣腔中、柔软的淫肉开始缩紧、精液的cr吸取开始加剧。,pid2
+	zin_old_msg,p_name2闭着眼睛享受着。“继续吧~客人~”p_name2cr轻笑着转过身去面朝p_name1躺在棉丝上、伸出一cr只手将蓓蕾捻开、双腿轻轻的搭在他的腰间。crp_name1感受到了成功了喜悦,pid2
+	zin_old_msg,当他准备继续往外拔时、耳边传来了p_name2的笑cr声。p_name2轻轻搭在p_name1腰间的双腿突然夹cr住了p_name1的腰,pid2
+	zin_old_msg,有力的双腿紧紧的卡在了p_name1的腰间、如同锁cr一样牢牢的固定住了p_name1的身躯、缠在他双手cr的棉袜突然延伸、他整个身体被往前拉、拔出一半cr的肉棒直接彻底的没入了蜜壶中,pid2
+	zin_old_msg,上身整个倒在了p_name2的身上、他的头被双乳所cr夹住、p_name2的双手随即抱住了他的身体、将他cr按入双乳中、浑圆修长的大腿贴在他的腰上、小腿cr顶住他的臀部。,pid2
+	zin_old_msg,p_name2的丰臀有力的开始摇动、毫不怜惜的挺动cr蛇腰、p_name1身体颤抖了一下、身体开始左右的cr摆动、试图挣扎出来、而然p_name2的动作飞快的cr将快乐叠加到了p_name1的身上,pid2
+	zin_flush,pid2
+	zin_old_msg,p_name1见识到了p_name2真正的性技、将抱着自cr己的身体狠狠的缩紧、精液的射了出去、止不住的cr被p_name2吸入子宫的深处、化为最为精纯的能量。,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	goto,*secondstage33
+
+*secondstage33
+	set_epid1,692
+	zin_reg_qnar,p_name2已经榨取了2汁。
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	bgm_chg,68
+	zin_reg_qnar,伺候p_name2接客继续、并且３人の客榨取。
+	zin_reg_msg,辛苦了。今天就到这里了。,0
+	zin_reg_msg,嗯嗯、你也拉客辛苦了芬里尔酱。,1
+	zin_reg_msg,（吸收了好多汁cr存起来慢慢消化、嘻嘻）,1
+	goto,*up1
+
+*secondstage41
+set_epid1,839
+	bl_fadeout
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	zin_reg_qnar,２人目
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,客人、你好像来过呢~”她在他的耳边低语道、轻轻cr的将自己的黑色蕾丝内裤拉下来、黑色的阴毛下是cr神秘的洞窟、似乎是闻到了p_name1的香气、洞穴cr开始不安的蠕动着,pid2
+	zin_old_msg,胶黏的声音不断的传来。p_name2轻轻的褪下crp_name1的裤子、将他幼小的肉棒轻轻的拿出来、cr指尖拨开包皮在龟头上轻轻的划了一下、留下了粉cr色的痕迹、很快龟头便立了起来、坚硬了起来。,pid2
+	zin_old_msg,p_name2在他的耳边吹着气、p_name1害怕的闭上cr了眼睛、p_name2微微的起身、将兴奋无比的私处cr对准龟头坐了下去、快感袭了上来、p_name1轻哼cr了一声、脸上露出了难过的神色。,pid2
+	zin_old_msg,随着肉棒彻底的没入了根部、p_name2停下了动作、cr膣肉却兴奋的围住肉棒产裹着、送上自己的热情、cr温热潮湿的蜜穴含住肉棒、p_name1绷着的身体渐cr渐的软了下来,pid2
+	zin_old_msg,p_name2并没有扭动起她夺魂的腰肢和丰臀、而就cr仅仅的抱着p_name1、让肉棒插在自己的身体里、cr膣肉蠕动着将空气一点一点的挤出去,pid2
+	zin_old_msg,很快、在将空气彻底挤出去的时候、膣肉停止了动cr作、她们开始一圈圈的缠裹住肉棒、将他牢牢的抓cr住,pid2
+	zin_flush,pid2
+	zin_old_msg,子宫口张开将龟头吞下。一阵奇异的吸力传了过来、cr龟头一被吸力接触、身体的力气就莫名其妙的一点cr一点的消失了。,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	zin_reg_qnar,３人目
+	zin_reg_qnar,４人目
+	set_epid1,841
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	zin_reg_qnar,５人目
+	zin_old_init
+	zin_old_img_pid,pid2,1
+chk_mval,懐妊:player<7,,,,
+chk_mval_then
+	zin_old_msg,p_name2觉得是时候了、于是她慢慢躺了下来、两cr人的姿势一下子对调了、就像p_name1在主动的侵cr犯着p_name2一样、“咯咯~真正的快乐马上就要来cr了~弟弟加把劲~来~用你的肉棒狠狠的插姐姐吧~”,pid2
+	zin_old_msg,p_name2媚笑着双手环住p_name1的后背、双腿也cr夹住他的腰、在p_name2的鼓励下p_name1开始努cr力挺动自己的腰、每一次都十分用力的插到底、很cr快就不行了,pid2
+	zin_old_msg,他开始丧气的的道：“姐姐…我快不行了…我要射cr了……”“不行…哦~弟。弟。现在还…不能射…姐cr姐…也快来了…嗯~”p_name2上气不接下气的说cr道、她被白丝包裹的躯体开始染上粉霞,pid2
+	zin_old_msg,她感觉p_name1的肉棒已经开始抖动而离她的高潮cr还有点距离、她皱着眉头控制着自己的子宫喷出一cr股粘稠的淫液、喷在龟头上进入马眼、死死的堵住cr不让精液射出来,pid2
+	zin_old_msg,同时自己丰臀也开始左右的摇动、夹住p_name1的cr双腿推动着p_name1的身体一次一次的剧烈冲撞着cr蜜穴、她全然不顾已经开始抽搐的p_name1、她只cr知道自己的高潮已经慢慢的开始,pid2
+	zin_old_msg,她开始娇喘、她将p_name1的上身一下子拉下来紧cr紧的搂着、双腿也猛地一下用力将肉棒推到最深处、cr子宫一口将龟头吞下,pid2
+	zin_old_msg,阴道的膣肉死死的缠住肉棒、不留一丝空隙、子宫cr的肉壁上有很多小颗粒突了出来、开始疯狂的摩擦cr着龟头、p_name1被这一举动搞的无法忍住他颤抖cr的道：“姐姐…我…要射……。”,pid2
+	zin_old_msg,“想射……。就射…嗯~射吧……啊~”悠长迷魂的cr叫声从她的嘴里传出来、她放弃对于淫液的控制、cr颤抖的龟头马上如决堤一样疯狂的射精,pid2
+	zin_flush,pid2
+	zin_old_msg,p_name1被这阵射精的快感冲的大脑眩晕起来、滚cr烫的精液射在花心里将p_name2的高潮唤起、一瞬cr间p_name2阴道的膣肉和子宫肉壁停止了动作,pid2
+	zin_old_msg,取之而来的是巨大的吸力、刚要停止射精的龟头在cr这巨大的吸力下瞬间被击溃、精关无法把持、精液cr像咆哮的江河一样源源不断的射精蜜穴深处,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	goto,*secondstage42
+chk_mval_else
+	zin_old_msg,p_name2毫不留情让黑丝挤压着可怜的p_name1、cr将消化液喷射在他的身上、子宫紧握住肉棒用巨力cr将精液吸出来、强烈的快感让p_name1止不住人摇cr摆着射精、精液不停的射入p_name2的子宫,pid2
+	zin_old_msg,黑丝也在疯狂的蠕动着咀嚼着体内的食物、p_name2cr胸口的小洞在吸收了p_name1的精液后慢慢的愈合cr起来、在p_name1带着快感的哀嚎中p_name2开始cr扭动自己的下体,pid2
+	zin_old_msg,以各种奇异的姿势让阴道内的肉棒摩擦她的敏感cr点、很快她的皮肤上开始布上粉霞、她残忍的笑着、crp_name2体内的吸力停了下来让p_name1有了喘息cr的余地,pid2
+	zin_old_msg,身上的痛楚已经渐渐的消失、取而代之的是自己的cr身体没有了反应但他没想到他已经彻底的坠入了深cr渊、“小宝贝~全部给姐姐吧~”,pid2
+	zin_old_msg,带着娇吟的声音从头顶上传来、p_name2的腰扭动cr的速度到达了一个极点的瞬间停了下来、粉臀再次cr拍在p_name1的身上、随着一声清脆的“啪”声、crp_name2开始将他紧紧的抱着、双手环住他,pid2
+	zin_old_msg,双腿夹住他幼小的身体、膣肉将他的肉棒紧紧裹住、cr不留一丝空隙、子宫也将龟头吞入卡主沟渠滚烫的cr淫水洒在龟头上、时间似乎停止了那么一两秒,pid2
+	zin_old_msg,p_name1露在黑丝外面的头突然开始快速的颤抖cr着、他的双眼狂往上翻、吸力、巨大的吸力从crp_name2的子宫深处传来,pid2
+	zin_flush,pid2
+	zin_old_msg,p_name2的小腹开始波浪般的起伏着、p_name1的cr精关如摧枯拉朽般被摧毁、精液如同奔流的大海一cr样汹涌的流入p_name2的体内,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	goto,*secondstage42
+
+*secondstage42
+	zin_reg_qnar,６人目
+set_epid1,779
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	zin_reg_qnar,７人目
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,出来拉我不行拉啊啊啊！！,pid1
+	zin_old_msg,精气源源不断的进来啦！！！！,pid2
+	zin_flush,pid2
+	zin_old_msg,你这碧池浑身精液让我怎么继续啊。,pid1
+	zin_old_msg,老老实实当精奴隶吧、精神控制,pid2
+	zin_old_msg,我愿意为p_name2女王精尽人亡！,pid1
+	zin_reg_qnar,８人目
+	zin_reg_qnar,９人目
+	set_epid1,845
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	zin_reg_qnar,１０人目
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,那个、p_name2你还独身吗？,pid1
+chk_mval,婚姻:player=0,,,,
+chk_mval_then
+	zin_old_msg,嗯嗯．．．用力．．．是的！,pid2
+	zin_old_msg,太好了、俺这次战争结束就来娶你！,pid1
+	zin_old_msg,（少年你被榨了这么多汁、都快成废人了cr我看是没指望了）,pid2
+	zin_flush,pid2
+	goto,*secondstage23
+chk_mval_else
+	zin_old_msg,啊、嗯．．．結婚了．．呢．．．用力！,pid2
+	zin_old_msg,啊啊、真羡慕你老公。能天天享受这样的极品小穴！,pid1
+	zin_old_msg,客人你也可以天天来的嘛cr（只要你禁得起榨汁！）,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	goto,*secondstage43
+*secondstage43
+	set_epid1,692
+	zin_reg_event,風俗店にて,pid1,pid2,,gzin32
+	bgm_chg,68
+	zin_reg_qnar,当天p_name2特别的亢奋。
+	zin_reg_msg,卧槽、你这么浪你家里人知道么？玩过你的客人都一副被玩坏的样子。,0
+	zin_reg_msg,也不知道谁嫖了谁。。。算了．这是你今日の報酬。,0
+	zin_reg_msg,嘻嘻、报酬确认、谢谢芬里尔酱！,1
+	zin_reg_msg,（这帮嫖客都没什么精气的、老娘还是趁早去当官榨军官吧）,1
+	goto,*up2
+*down1
+	set_non_virgin,pid2
+	zin_reg_qnar,那天嫖客跟SS同盟的渣渣一样都没什么汁液。
+	zin_reg_qnar,p_name2没有得到足够的精气。
+	end
+*up1
+	set_non_virgin,pid2
+	zin_reg_qnar,p_name2得到了足够的精气．美容之外还有结余。
+	upd_sts,pid2,5,1
+	upd_sts,pid2,6,1
+	upd_sts,pid2,7,1
+	upd_sts,pid2,8,1
+	upd_sts,pid2,9,1
+	end
+
+*up2
+	set_non_virgin,pid2
+	zin_reg_qnar,p_name2得到了十足的精气。
+	zin_reg_qnar,好像还榨到了一个名叫hentai14的嫖客灵魂。
+	upd_sts,pid2,5,2
+	upd_sts,pid2,6,2
+	upd_sts,pid2,7,2
+	upd_sts,pid2,8,2
+	upd_sts,pid2,9,2
+	end

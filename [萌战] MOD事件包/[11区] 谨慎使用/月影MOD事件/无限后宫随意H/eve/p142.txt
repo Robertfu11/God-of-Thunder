@@ -1,0 +1,27 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin35
+zin_reg_msg,p_name2殿下、還活著麼？,0
+zin_reg_msg,你是誰,1
+zin_reg_msg,我是p_name3軍的使者,0
+zin_reg_msg,來幫助你來了,0
+zin_reg_msg,什麼？,1
+zin_reg_msg,逃離這裡來我們軍吧,0
+zin_reg_msg,是來勸說我的啊,1
+zin_reg_msg,那麼，答案呢,0
+zin_reg_2sel,接受,拒絕
+get_resp
+ret_sel1
+	zin_reg_msg,好吧cr我接受了,1
+	zin_reg_msg,嗯、正確的選擇,0
+	zin_reg_qnar,p_name2從惑星逃跑,去p_name3處仕官。
+	zin_reg_button,0
+	set_sikan,pid2,pid3
+	zin_reg_exit
+	end
+ret_sel2
+	zin_reg_msg,不感興趣cr你回去吧,1
+	zin_reg_msg,真是愚蠢．．．,0
+	zin_reg_button,0
+	zin_reg_exit
+	end

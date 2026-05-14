@@ -1,0 +1,15 @@
+zin_reg_msg,じゃあ、この香りで．．．,0
+zin_reg_qnar,p_name1はp_name2に媚薬を使った。
+zin_reg_msg,あ、また．．．この香り．．．ああ．．．．,1
+zin_reg_msg,さあ、call_pid12crあっちで楽しもう,0
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,ねえ、見て．．．こんなに濡れてる,pid1
+zin_old_msg,綺麗だよ、call_pid12,pid1
+zin_old_msg,本当？,pid2
+zin_old_msg,じゃあ、あなたのtin_strちょうだい,pid2
+zin_old_msg,クク、わかったよcall_pid12。じゃあ、入れるよ,pid1
+zin_old_msg,はうっ．．．うはあああ！！,pid2
+zin_flush,pid2
+end

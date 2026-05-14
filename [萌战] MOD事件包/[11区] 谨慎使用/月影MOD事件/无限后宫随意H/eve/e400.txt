@@ -1,0 +1,12 @@
+eve_start
+	if_eveflg,40,0
+	if_eveflg,39,3
+	//アビー非霸王
+	if_not_haou,4
+	//阿多魯塞姆覇王
+	if_pkun,13,13000
+eve_end
+
+//バン→阿多魯塞姆
+set_kmdata,13,2,0,0
+set_eveflg,40,1

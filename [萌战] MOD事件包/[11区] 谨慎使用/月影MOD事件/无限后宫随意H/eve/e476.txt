@@ -1,0 +1,39 @@
+eve_start
+    if_date,101,7
+    if_eveflg,62,4
+    if_poid,606,eveflg064
+	//庫爾特尼奧が生まれている
+    if_poid,870,eveflg064
+eve_end
+
+chk_exeplayer,eveflg064,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,61
+zin_reg_event,,606,817,,gzin6
+zin_reg_qnar,馬洛．．．這個男子以前是摩西的弟子、以後要多給他研究經費讓他繼續研究生化人。
+zin_reg_msg,哈．．．帕、帕米拉大人．．．,1
+zin_reg_msg,呼呼呼、你是個乖孩子馬洛,0
+zin_reg_msg,你做得生化人比想象的要優秀,0
+zin_reg_msg,謝謝．．．cr了．．．,1
+zin_reg_msg,來、這是獎勵哦,0
+zin_old_init
+zin_old_img_str,e476a,3,1
+
+zin_old_msg,怎麼樣、舒服嗎？,606
+zin_old_msg,是、是的．．．非常．．．好、好舒服啊．．．,817
+zin_old_msg,對了馬洛、能聽我一個請求嗎？,606
+zin_old_msg,好的．．．只要是帕米拉大人的．．．要求．．．什麼都．．．可以！！．．．呼嗚嗚．．．,817
+zin_old_msg,我很高興哦、馬洛。cr其實、希望你幫忙製作生化人,606
+zin_old_msg,這次是女人的體型。要做個很會玩弄男人的,606
+zin_old_msg,哦、女型的啊．．．,817
+zin_old_msg,可以嗎？,606
+zin_old_msg,當、當然可以．．．嗚嗚啊．．啊、啊啊！！,817
+zin_old_msg,對、你真是個好孩子啊。那麼、讓你更舒服吧,606
+zin_old_msg,啊啊、好、好棒、帕米拉大人！！　嗚、嗚嗚啊啊！！！！,817
+zin_flush_file,e476b,3
+zin_reg_button,16
+zin_reg_exit
+end

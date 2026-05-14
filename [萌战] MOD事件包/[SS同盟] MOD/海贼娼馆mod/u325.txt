@@ -1,0 +1,250 @@
+//	娼館毎月の処理
+//	海賊のカシラである限り有効
+eve_start
+eve_end
+
+//海賊のカシラではない場合はフラグをクリアして終わる
+chk_mval,状態:player!4,勲功:player!13000,,,
+chk_mval_then
+	set_eveflg,160,0
+	set_eveflg,161,0
+	set_eveflg,162,0
+	set_eveflg,163,0
+	set_eveflg,164,0
+	set_eveflg,165,0
+	end
+chk_mval_else
+set_eveflg,210,0
+set_eveflg,211,0
+set_eveflg,212,0
+//娼婦フラグを調べて処理を行う
+chk_eveflg,164,>0
+chk_eveflg_then
+	set_eveflg,212,164
+	set_eveflg,210,eveflg164
+	gosub,*escapehantei
+	chk_mval,eveflg164=0,,,,
+	chk_mval_then
+		goto,*escape1
+	chk_mval_else
+	gosub,*prostituteexe
+*escape1
+chk_eveflg_else
+chk_eveflg,163,>0
+chk_eveflg_then
+	set_eveflg,212,163
+	set_eveflg,210,eveflg163
+	gosub,*escapehantei
+	chk_mval,eveflg163=0,,,,
+	chk_mval_then
+		goto,*escape2
+	chk_mval_else
+	gosub,*prostituteexe
+*escape2
+chk_eveflg_else
+chk_eveflg,162,>0
+chk_eveflg_then
+	set_eveflg,212,162
+	set_eveflg,210,eveflg162
+	gosub,*escapehantei
+	chk_mval,eveflg162=0,,,,
+	chk_mval_then
+		goto,*escape3
+	chk_mval_else
+	gosub,*prostituteexe
+*escape3
+chk_eveflg_else
+chk_eveflg,161,>0
+chk_eveflg_then
+	set_eveflg,212,161
+	set_eveflg,210,eveflg161
+	gosub,*escapehantei
+	chk_mval,eveflg161=0,,,,
+	chk_mval_then
+		goto,*escape4
+	chk_mval_else
+	gosub,*prostituteexe
+*escape4
+chk_eveflg_else
+chk_eveflg,160,>0
+chk_eveflg_then
+	set_eveflg,212,160
+	set_eveflg,210,eveflg160
+	gosub,*escapehantei
+	chk_mval,eveflg160=0,,,,
+	chk_mval_then
+		goto,*escape5
+	chk_mval_else
+	gosub,*prostituteexe
+*escape5
+chk_eveflg_else
+	//分2位以下の士官を客に設定
+	get_mpid,状態=2,勲功<8000,性別=1,年齢>10,,,
+	set_epid1,pval
+	gosub,*ptostituteselect
+	chk_mval,pid2=0,,,,
+	chk_mval_then
+		end
+	chk_mval_else
+	goto,*prostitutework
+
+*escapehantei
+	//プレイヤーの所属でなくなっているか海賊以外ならクリア
+	chk_ormval,覇王:eveflg210!player,状態:eveflg210!4,,,
+	chk_ormval_then
+		set_eveflg,eveflg212,0
+		return
+	chk_ormval_else
+		add_eveflg,211,1
+		return
+
+*prostituteexe
+	//処女なら貫通イベ
+	chk_mval,初膜:eveflg210=0,,,,
+	chk_mval_then
+		set_epid2,eveflg160
+		gosub,*virgineget
+	chk_mval_else
+	//忠誠ダウン
+	upd_sts,eveflg210,忠誠,+1
+	//資金アップ
+	add_money,player,5000
+	return
+
+*virgineget
+	zin_reg_event,初次工作,pid1,pid2,,gzin54
+	zin_reg_msg,call_pid21...不知道怎么样了,1
+	zin_reg_msg,今天好像是call_pid12第一次接客,0
+	zin_reg_msg,call_pid12的第一次居然在这里，f_pid1初次没有得到啊,0
+	zin_reg_msg,恩恩...这个男人看起来面色不善啊,1
+	zin_reg_msg,呵呵，是个海盗啊,0
+	zin_old_init
+	bgm_chg,51
+	zin_old_img_pid,pid2,1
+	zin_old_msg,慢，慢点...call_pid21好痛...！！,pid2
+	zin_old_msg,这个疼痛一生难忘吧。crcf_pid1这是第一次接客的瞬间记忆,pid1
+	zin_old_msg,但是...比预想中的man_str要好。看到call_pid12客人会蜂拥而至的,pid1
+	zin_old_msg,嗯...这，这样的...才不舒服...嗯啊啊,pid2
+	zin_old_msg,哦？什么嘛，你开始有感觉了啊？呵呵，siru_str身体兴奋起来了呢,pid1
+	zin_old_msg,恩...？　嗯呃！！啊，啊啊...怎么...cf_pid2居然...有感觉了？,pid2
+	zin_old_msg,哦哦，我这里也快忍不住了！！就这样在tane_str里面中出给你,pid1
+	zin_old_msg,诶...等，等一下！！中出的话...会怀上宝宝的！！,pid2
+	zin_old_msg,那个放心好了，我在娼馆里拿有药的！！（嘛，就是不知道有没有效果了）,pid1
+	zin_old_msg,啊啊...就算有那个也不能安心...的...啊，啊啊啊啊啊！！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_old_exit
+	set_non_virgin,pid2
+	return
+
+*ptostituteselect
+	chk_eveflg,211,5
+	chk_eveflg_then
+		rnd,5
+		case0
+			set_epid2,eveflg160
+			return
+		case1
+			set_epid2,eveflg161
+			return
+		case2
+			set_epid2,eveflg162
+			return
+		case3
+			set_epid2,eveflg163
+			return
+		case4
+			set_epid2,eveflg164
+			return
+	chk_eveflg_else
+	chk_eveflg,211,4
+	chk_eveflg_then
+		rnd,4
+		case0
+			set_epid2,eveflg160
+			return
+		case1
+			set_epid2,eveflg161
+			return
+		case2
+			set_epid2,eveflg162
+			return
+		case3
+			set_epid2,eveflg163
+			return
+	chk_eveflg_else
+	chk_eveflg,211,3
+	chk_eveflg_then
+		rnd,3
+		case0
+			set_epid2,eveflg160
+			return
+		case1
+			set_epid2,eveflg161
+			return
+		case2
+			set_epid2,eveflg162
+			return
+	chk_eveflg_else
+	chk_eveflg,211,2
+	chk_eveflg_then
+		rnd,2
+		case0
+			set_epid2,eveflg160
+			return
+		case1
+			set_epid2,eveflg161
+			return
+	chk_eveflg_else
+	chk_eveflg,211,1
+	chk_eveflg_then
+		set_epid2,eveflg160
+		return
+	chk_eveflg_else
+	end
+
+*prostitutework
+	chk_mval,覇王:pid1=player,,,,
+	chk_mval_then
+		//プレイヤーの手下同士
+		zin_reg_event,娼妇接客,pid1,pid2,,gzin32
+		zin_reg_msg,客人是位军官呢！cr来海盗的娼馆没事嘛？,1
+		zin_reg_msg,在军队受到袭击的时候是没有那么多管制的,0
+		zin_reg_msg,而且，现在只是一个脱了衣服的男人和女人，对嘛？,0
+		zin_reg_msg,说的也是，对cf_pid2来说军人也是客人嘛,1
+		zin_old_init
+		bgm_chg,51
+		zin_old_img_pid,pid2,1
+		zin_old_msg,啊啊...好...好厉害，好大...,pid2
+		zin_old_msg,就算脱掉了衣服也还是军人啊？cr但是还不仅仅是这样哦！！,pid1
+		zin_old_msg,但是...这，这第一次...要，要去了啊啊...！！,pid2
+		zin_old_msg,哈哈，很好，这样的高潮man_str尽管来吧！,pid1
+		zin_old_msg,嗯...啊啊啊...一库，一库库库库库库库库！！,pid2
+		zin_flush,pid2
+		zin_reg_button,16
+		zin_reg_exit
+		end
+	chk_mval_else
+		//一般客
+		zin_reg_event,娼妇接客,pid1,pid2,,gzin32
+		zin_reg_msg,p_name2真的作为一个娼妇在工作着,0
+		zin_reg_msg,p_name1！...来干什么？,1
+		zin_reg_msg,干什么？来娼馆的目的只有一个吧,0
+		zin_reg_msg,咕...好吧，那赶紧来做吧,1
+		zin_old_init
+		bgm_chg,51
+		zin_old_img_pid,pid2,1
+		zin_old_msg,呵呵呵，_name2的man_str真让人受不了。很久之前就想和你来一发了呢,pid1
+		zin_old_msg,居然...被，被这么，这么恶心的视线注视着...被这样的人抱在怀里...简直糟糕透了,pid2
+		zin_old_msg,这样啊，那就让你变得更加糟糕好了,pid1
+		zin_old_msg,啊嗯、啊啊啊！！　这里，这里不...不行的，啊啊啊...！！,pid2
+		zin_old_msg,哦哦哦，太棒了！！要出来了，在里面...p_name2的里面出来了！！,pid1
+		zin_old_msg,不不...不要啊啊啊...！！cr求，求求你...在外...在外边射出来啊啊！！,pid2
+		zin_old_msg,老子这次花了不少钱呢，就决定了要中出了。呵呵呵，嘿咻，好好的接受种子吧！！,pid1
+		zin_flush,pid2
+		zin_reg_button,16
+		zin_reg_exit
+		end
+		
+
+

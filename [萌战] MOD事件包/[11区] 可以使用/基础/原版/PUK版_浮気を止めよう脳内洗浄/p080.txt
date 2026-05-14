@@ -1,0 +1,118 @@
+bgm_chg,35
+//zin_reg_init
+zin_reg_event,浮気は許さん！！,pid1,pid2,zin23,gzin18
+	zin_reg_msg,p_name2！！,0
+	zin_reg_msg,どうしたの、あなた？,1
+	zin_reg_msg,そんなに興奮して,1
+	zin_reg_msg,おまえ、浮気しているな,0
+	zin_reg_msg,な、なんなのいきなり,1
+	zin_reg_msg,最近、様子がおかしいと思っていたんだ,0
+	zin_reg_msg,調べてみたら、案の定．．．,0
+	zin_reg_msg,ここに証拠はすべてそろっている,0
+	zin_reg_msg,こ、これは．．．crそんな．．．,1
+	zin_reg_msg,すべてバレバレだ,0
+	zin_reg_msg,ご、ごめんなさい、crあなた,1
+	zin_reg_msg,これが最後よ、本当よcrもう、こんな事しないわ,1
+	zin_reg_msg,だから、今回は許してほしいの,1
+	zin_reg_msg,お願い．．．,1
+zin_reg_3sel,許す,許さない,カウンセリングに行かせる
+get_resp
+ret_sel1
+	zin_reg_msg,いいだろうcr今回だけは許してやろう,0
+	zin_reg_msg,だが、次は離縁だcrいいな,0
+	zin_reg_msg,わ、わかったわ、あなた．．．,1
+	zin_reg_button,0
+//	zin_reg_exit
+	end
+ret_sel2
+	zin_reg_msg,だめだ,0
+	zin_reg_msg,もう許すわけにはいかない,0
+	zin_reg_msg,そ、そんな．．．,1
+	zin_reg_msg,おまえのおかげで嫁を寝取られたダメ亭主という噂が国中に広がっておるわ,0
+	zin_reg_msg,そんな、ばかな．．．,1
+	zin_reg_msg,もう、おまえとは離縁だ,0
+	zin_reg_msg,いいな,0
+	zin_reg_msg,ううう．．．crわかったわ．．．,1
+	zin_reg_button,0
+//	zin_reg_exit
+	//離婚設定
+	set_rikon,pid1
+	end
+/////////////////////追加部分
+ret_sel3
+	bgm_chg,67
+	zin_reg_msg,．．．何でもするか？,0
+	zin_reg_msg,も、もちろんよ！cr許してくれるのなら何でもするわ！,1
+	zin_reg_msg,．．．よしcrなら、ついてこい！,0
+zin_reg_event,浮気は頭の病気です！！,pid1,850,,gzin45
+	zin_reg_msg,これは、これはcrよく来られました,1
+	zin_reg_msg,よろしく頼む,0
+zin_reg_event,浮気は頭の病気です！！,pid2,850,,gzin45
+	zin_reg_msg,こ、この人は？,0
+zin_reg_event,浮気は頭の病気です！！,pid1,850,,gzin45
+	zin_reg_msg,簡単に言えばcrカウンセラーだ,0
+	zin_reg_msg,浮気は精神的cr脳的な問題だからな,0
+	zin_reg_msg,二度と浮気をしないようにカウンセリングを受けて貰う,0
+zin_reg_event,浮気は頭の病気です！！,pid2,850,,gzin45
+	zin_reg_msg,そ、そういう事,0
+	zin_reg_msg,（で、でも、カウンセラーには見えないわ）,0
+	zin_reg_msg,では、中へお入り下さい,1
+zin_reg_event,浮気は頭の病気です！！,pid2,850,,gzin37
+	zin_reg_msg,．．．あら、中は普通ね,0
+	zin_reg_msg,ではマダムcrこの薬を飲んだら、私の目を見て下さい,1
+	zin_reg_msg,．．．目って．．．はぅ．．．,0
+	zin_reg_face_0,0
+	zin_reg_msg,ふむ。予定通りの効果、と．．．,1
+zin_reg_event,浮気は頭の病気です！！,pid1,850,,gzin37
+	zin_reg_msg,すまないな,0
+	zin_reg_msg,いえいえ、新薬を試す、良い機会ですから,1
+	zin_reg_msg,薬剤と、軽い睡眠誘導で．．．,1
+	zin_reg_msg,浮気をしないような性格に変えられますが．．．,1
+	zin_reg_msg,どのような性格になされますか？,1
+
+zin_reg_3sel,トラ性格,オオカミ性格,他の性格を見る
+get_resp
+ret_sel1
+	upd_sts,pid2,性格,11
+	goto,*aitemu01
+ret_sel2
+	upd_sts,pid2,性格,14
+	goto,*aitemu01
+ret_sel3
+
+zin_reg_3sel,黒ひょう性格,コジカ性格,ペガサス性格
+get_resp
+ret_sel1
+	upd_sts,pid2,性格,31
+	goto,*aitemu01
+ret_sel2
+	upd_sts,pid2,性格,41
+	goto,*aitemu01
+ret_sel3
+	upd_sts,pid2,性格,21
+
+*aitemu01
+	zin_reg_msg,わかりました．．．crマダ～ム～,1
+	zin_reg_msg,あなた～わ～cr夫につく～す～,1
+bl_fadeout
+zin_reg_qnar,マインド．コントロ．．．
+zin_reg_qnar,カウンセリングが終了しました
+zin_reg_event,脳内洗浄終了,pid1,pid2,,gzin37
+	bgm_chg,31
+	zin_reg_msg,気分はどうだ？,0
+	zin_reg_msg,なんだろう．．．cr凄くすっきりしているわ,1
+	zin_reg_msg,まるで、頭の中を洗い流したかのよう,1
+	zin_reg_msg,そうか、そうか,0
+	zin_reg_msg,そうだcrお代は．．．,1
+zin_reg_event,脳内洗浄終了,pid1,850,,gzin37
+	zin_reg_msg,それには及びませんcr貴重なサンプル．データを頂きましたので,1
+zin_reg_event,脳内洗浄終了,pid1,pid2,,gzin37
+	zin_reg_msg,あら、悪いわね,1
+	zin_reg_msg,じゃあ、帰ろうか？,0
+	zin_reg_msg,はい,1
+	zin_reg_button,0
+//	zin_reg_exit
+	end
+
+
+

@@ -1,0 +1,49 @@
+eve_start
+    if_date,80,6
+	if_eveflg,63,6
+	if_haou,624
+	if_haou,13
+	if_money,624,>100000
+eve_end
+
+set_eveflg,63,7
+//１０萬金轉入阿多魯塞姆帳下
+add_money,624,-100000
+add_money,13,100000
+
+chk_exeplayer,624,13,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+get_kunpsn,13
+set_epid1,13
+set_epid2,pval
+zin_reg_event,,pid1,pid2,,gzin8
+zin_reg_qnar,阿多魯塞姆收到了諜報員的聯絡。
+zin_reg_msg,call_pid21、諜報員掌握了斯庫洛克運輸艦隊的情報,1
+zin_reg_msg,詳細的運輸路線已經到手,1
+zin_reg_msg,而且運輸的幾乎都是財寶,1
+zin_reg_msg,這可是求之不得的機會啊,0
+zin_reg_msg,快派艦隊火速襲擊,0
+zin_reg_msg,遵命！！,1
+bl_fadeout
+zin_reg_nar,數日後，阿多魯塞姆艦隊攻擊了運輸艦隊，搶得１０萬金。
+bl_fadein,gzin33
+get_kunpsn,624
+set_epid1,624
+set_epid2,pval
+zin_reg_event,,624,pval,,gzin33
+zin_reg_msg,call_pid21、方才我軍運輸艦隊遭到襲擊,1
+zin_reg_msg,什麼？是海賊幹的好事麼！,0
+zin_reg_msg,據情報稱，很可能是阿多魯塞姆艦隊,1
+zin_reg_msg,阿多魯塞姆麼，竟然敢跟我拽．．．,0
+zin_reg_msg,這次運輸包括很多財寶,1
+zin_reg_msg,這將對我軍的經濟造成嚴重打擊．．．,1
+zin_reg_msg,怎麼會這樣,0
+zin_reg_msg,護衛運輸艦隊的計劃是怎麼搞的,0
+zin_reg_msg,馬上給我把負責人處死！！,0
+zin_reg_msg,遵命！！,1
+zin_reg_button,0
+end

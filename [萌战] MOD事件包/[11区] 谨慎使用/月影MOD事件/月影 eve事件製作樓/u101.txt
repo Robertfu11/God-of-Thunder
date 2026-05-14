@@ -1,0 +1,18 @@
+// upd_sts,player,5,200
+// upd_sts,player,6,200
+// upd_sts,player,7,200
+// upd_sts,player,8,200
+// upd_sts,player,9,200
+// set_pnen,player,25
+upd_sts,player,’q–d,250
+upd_sts,player,UŒ‚,250
+upd_sts,player,–hŒä,250
+upd_sts,player,Ši“¬,250
+upd_sts,player,ŒğÂ,250
+upd_sts,player,Šïô,10
+chk_sts,player,”N—î,>25
+chk_sts_then
+    upd_sts,player,”N—î,-5
+    end
+
+//set_pnen,player,25

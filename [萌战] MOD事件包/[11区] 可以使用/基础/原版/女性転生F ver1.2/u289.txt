@@ -1,0 +1,252 @@
+/////女性転生F_ver1.2/////
+
+eve_start
+	if_aft_date,81
+	if_month,3
+eve_end
+
+for,PMAX,297,1
+	chk_msts,eveflg297,状態,3,性別,2,NON,0,NON,0,NON,0
+	chk_msts_then
+		gosub,*IDcheck
+		continue
+	chk_msts_else
+		continue
+next
+end
+
+*IDcheck
+select_pid,eveflg297
+//対象から排除
+	case_1   //オペレータ
+	case_221 //ナオミ
+	case_243 //シリア
+	case_567 //キョウカ
+	case_577 //イーダ
+	case_719 //ノーマ
+	case_763 //ルー
+	case_764 //ルセット
+	case_765 //メイド
+	case_766 //ローチ
+	case_771 //タチアナ
+	case_781 //オペレータ
+	case_795 //コーレル
+	case_809 //予備枠
+	case_812 //メイド２
+	case_814 //一般市民
+	case_848 //ユナ
+	case_849 //医者
+	case_852 //ハンナ
+	case_895 //医者
+	case_897 //予備枠
+	case_898 //予備枠
+		return
+//幼少顔無し
+	case_43 //アイリーン
+	case_57 //アスミタ
+	case_72 //バレリー
+	case_153 //ニナ
+	case_213 //スーザン
+	case_226 //フィリア
+	case_276 //ジェナ
+	case_312 //サツキ
+	case_327 //リオナ
+	case_345 //ジョシア
+	case_356 //カンシ
+	case_405 //リアナ
+	case_568 //カカラ
+	case_570 //キャサリン
+	case_571 //ドーラ
+	case_574 //ファーリ
+	case_576 //フィフィタ
+	case_580 //エセラ
+	case_581 //イーガ
+	case_585 //ラブ
+	case_590 //サンミ
+	case_592 //メリリス
+	case_595 //カルディナ
+	case_598 //ミディア
+	case_599 //エルバ
+	case_602 //ソニア
+	case_616 //モレア
+	case_618 //レナジ
+	case_660 //エコ
+	case_661 //カルミン
+	case_662 //サンドラ
+	case_665 //スイホー
+	case_667 //カイリ
+	case_702 //シズエ
+	case_718 //アマンダ
+	case_720 //ナタリア
+	case_721 //バネッサ
+	case_723 //ニキ
+	case_725 //ブレンダ
+	case_733 //オクサーナ
+	case_734 //モギア
+	case_737 //バレン
+	case_740 //ガロア
+	case_747 //マリタ
+	case_748 //エラ
+	case_751 //アム
+	case_754 //アナベラ
+	case_834 //ユナ
+	case_847 //オリビア
+	case_896 //ACT5メロウ
+	case_961 //イリティア
+	case_962 //アカネ
+	case_1002 //ドミニク
+	case_1009 //ロアンナ
+	case_1011 //ユウ
+	case_1013 //ベネッセ
+	case_1014 //ドルファ
+	case_1017 //シーラ
+	case_1018 //リンファ
+	case_1021 //パトリシア
+	case_1022 //オフィーリア
+	case_1023 //シャオチン
+	case_1024 //エマ
+	case_1025 //ダリ
+	case_1026 //コリーン
+	case_1027 //ケイト
+	case_1028 //リタ
+	case_1030 //ヒヨリ
+	case_1032 //アカリ
+	case_1035 //イボンヌ
+	case_1039 //ミチル
+	case_1040 //メリンダ
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		upd_sts,eveflg297,19,0
+		upd_sts,eveflg297,24,0
+		upd_sts,eveflg297,26,0
+		upd_sts,eveflg297,10,0
+		set_virgin,eveflg297
+		upd_sts,eveflg297,4,1000
+		set_pnen,eveflg297,16
+		rnd,3
+		//16歳在野に転生
+		case0
+			set_hourou,eveflg297
+			upd_sts,eveflg297,5,-5
+			upd_sts,eveflg297,6,-5
+			upd_sts,eveflg297,7,-5
+			upd_sts,eveflg297,8,-5
+			upd_sts,eveflg297,9,-5
+			return
+		//16歳村娘に転生
+		case1
+		case2
+			upd_sts,eveflg297,0,7
+			upd_sts,eveflg297,5,-5
+			upd_sts,eveflg297,6,-5
+			upd_sts,eveflg297,7,-5
+			upd_sts,eveflg297,8,-5
+			upd_sts,eveflg297,9,-5
+			return
+//幼少顔有り
+	default
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		get_mpid,母=eveflg297,状態!3,,,,,
+			upd_sts,pval,26,0
+		upd_sts,eveflg297,19,0
+		upd_sts,eveflg297,24,0
+		upd_sts,eveflg297,26,0
+		upd_sts,eveflg297,10,0
+		set_virgin,eveflg297
+		rnd,6
+		//覇王子種に転生
+		case0
+			upd_sts,eveflg297,4,12100
+			upd_sts,eveflg297,2,-100
+			upd_sts,eveflg297,0,1
+			upd_sts,eveflg297,5,-120
+			upd_sts,eveflg297,5,5
+			upd_sts,eveflg297,6,-120
+			upd_sts,eveflg297,6,5
+			upd_sts,eveflg297,7,-120
+			upd_sts,eveflg297,7,5
+			upd_sts,eveflg297,8,-120
+			upd_sts,eveflg297,8,5
+			upd_sts,eveflg297,9,-120
+			upd_sts,eveflg297,9,5
+			return
+		//0歳在野に転生（一般子種になる？）
+		case1
+		case2
+		case3
+			upd_sts,eveflg297,4,1000
+			upd_sts,eveflg297,2,-100
+			set_hourou,eveflg297
+			upd_sts,eveflg297,5,-120
+			upd_sts,eveflg297,5,5
+			upd_sts,eveflg297,6,-120
+			upd_sts,eveflg297,6,5
+			upd_sts,eveflg297,7,-120
+			upd_sts,eveflg297,7,5
+			upd_sts,eveflg297,8,-120
+			upd_sts,eveflg297,8,5
+			upd_sts,eveflg297,9,-120
+			upd_sts,eveflg297,9,5
+			return
+		//部下プレー用子種に転生
+		case4
+			upd_sts,eveflg297,4,1000
+			upd_sts,eveflg297,2,-100
+			upd_sts,eveflg297,0,13
+			upd_sts,eveflg297,5,-120
+			upd_sts,eveflg297,5,5
+			upd_sts,eveflg297,6,-120
+			upd_sts,eveflg297,6,5
+			upd_sts,eveflg297,7,-120
+			upd_sts,eveflg297,7,5
+			upd_sts,eveflg297,8,-120
+			upd_sts,eveflg297,8,5
+			upd_sts,eveflg297,9,-120
+			upd_sts,eveflg297,9,5
+			return
+		//12歳村娘に転生
+		case5
+			upd_sts,eveflg297,4,1000
+			set_pnen,eveflg297,12
+			upd_sts,eveflg297,0,7
+			upd_sts,eveflg297,5,-10
+			upd_sts,eveflg297,6,-10
+			upd_sts,eveflg297,7,-10
+			upd_sts,eveflg297,8,-10
+			upd_sts,eveflg297,9,-10
+			return

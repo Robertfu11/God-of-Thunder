@@ -1,0 +1,28 @@
+eve_start
+    if_eveflg,62,5
+    if_psts,134,!3
+    if_psts,134,!8
+	if_pkun,134,<12000
+	if_haou,429
+eve_end
+
+set_eveflg,62,6
+
+chk_exeplayer,429,poid134,0,0
+chk_exeplayer_else
+set_sikan,134,429
+upd_sts,134,勲功,8000
+end
+
+chk_exeplayer_then
+bgm_chg,60
+zin_reg_event,,134,0,,gzin33
+zin_reg_qnar,金賈は巴尼亞瓦が旗揚得到げしたという的情報立馬開始了行動。
+zin_reg_msg,沒想到那傢伙還活著,0
+zin_reg_msg,他們還把我排斥在外,0
+zin_reg_msg,已經不能再允許了！！,0
+zin_reg_title,金賈は巴尼亞瓦の元に向かった。
+zin_reg_button,0
+set_sikan,134,429
+upd_sts,134,勲功,8000
+end

@@ -1,0 +1,53 @@
+eve_start
+	if_eveflg,24,1
+	//阿莫斯　阿希配下
+	if_poid,423,432
+	if_poid,625,16
+eve_end
+
+set_eveflg,24,2
+
+chk_exeplayer,16,432,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,61
+get_habatumem,625,0
+//zin_reg_init
+zin_reg_event,阿莫斯的房間,423,pval,zin23,gzin18
+zin_reg_qnar,布朗的情報人員潛入與阿莫斯見了面。
+zin_reg_msg,阿莫斯閣下、我是阿古迪巴的使者,1
+zin_reg_msg,主君阿古迪巴對閣下給予了很高的贊譽,1
+zin_reg_msg,不知您意下如何、能否祝吾主一臂之力？,1
+zin_reg_msg,你、居然這麼厚顏無恥．．．,0
+zin_reg_msg,這是什麼地方你不知道嗎！,0
+zin_reg_msg,請不要在說那樣的話了,1
+zin_reg_msg,這是為了閣下的將來著想,1
+zin_reg_msg,你說什麼蠢話,0
+zin_reg_msg,我為什麼要去幫助阿古迪巴,0
+zin_reg_msg,你再不走我就叫保安了,0
+zin_reg_msg,是這樣麼．．．,1
+zin_reg_msg,可是、我不能空著手回去交差,1
+zin_reg_msg,閣下、說起來您在地球是不是還有家人．．,1
+zin_reg_msg,什麼、你怎麼知道．．．,0
+zin_reg_msg,確實有個年老的母親是不是？,1
+zin_reg_msg,唔．．．,0
+zin_reg_msg,兒子是身處敵陣、您母親可能會過得很辛苦吧,1
+zin_reg_msg,今後、作為非國民會受到怎樣的對待呢？,1
+zin_reg_msg,我是沒什麼關系,1
+zin_reg_msg,可是、年輕的軍官們可能並不是這麼想的．．．,1
+zin_reg_msg,你．．．．．,0
+zin_reg_msg,那麼、期待你重新考慮後的回答,1
+zin_reg_msg,咕、真卑鄙．．．,0
+zin_reg_msg,好像交涉已經決裂了,1
+zin_reg_msg,很可惜但是沒辦法、先行告退,1
+zin_reg_msg,等、等等．．．,0
+zin_reg_msg,還有什麼事嗎？,1
+zin_reg_msg,我知道了．．．．我會去地球的．．．,0
+zin_reg_msg,哦哦、是嘛、明智的決定,1
+zin_reg_msg,那我就先回去複命了,1
+zin_reg_msg,期待閣下的到來,1
+zin_reg_msg,．．．．．．,0
+zin_reg_button,0
+//zin_reg_exit

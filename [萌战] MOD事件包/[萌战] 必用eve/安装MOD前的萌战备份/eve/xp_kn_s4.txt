@@ -1,0 +1,74 @@
+//覇王オルド通常　相手：妾
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+rnd,2
+case0
+	zin_old_msg,還要．．．還要．．．激烈些．．．抽插．．．嗚嗚！！,pid2
+	zin_old_msg,每次、都對call_pid2的淫亂目瞪口呆 cr那麼、這招怎麼樣！！,pid1
+	zin_old_msg,啊啊、厲害、厲害！！　太厲害了啊啊啊！！　愛液．．止、止不住了．．．,pid2
+	zin_old_msg,這都嗒啦噠啦滴下來了、真是毫不檢點的傢伙啊,pid1
+	zin_old_msg,可、可是．．．可是誒！！！,pid2
+	zin_old_msg,呵呵、我知道已經插到底啦,pid1
+	zin_old_msg,啊啊、裡面好爽！！子宮啪啪啪的好爽！！,pid2
+	zin_old_msg,已經不行了、要泄了啊啊啊啊啊　要出了啦啊啊啊啊！！！,pid2
+	zin_flush,pid2
+	end
+case1
+	zin_old_msg,咿呀啊啊啊、啾啾、好厲害．．．肚子、肚子、要．．．壞掉了啊！！,pid2
+	zin_old_msg,你這貨、只要自己動動腰．．．就能讓callself_pid1躺著不動也能得到滿足,pid1
+	zin_old_msg,就是說嘛．．．這麼做．．．好厲害．．．感覺．呀噫噫！！,pid2
+	zin_old_msg,你這個淫蕩的娼婦．．．總是讓我無法自拔．．．,pid1
+	zin_old_msg,呃啊．．．p_name2．．．已經．．無法、無法控制了．．．,pid2
+	zin_old_msg,事情變成這樣就有點掃興了,pid1
+	zin_old_msg,暫時先冷靜一下吧,pid1
+	zin_old_msg,此言過后、p_name1把自己的肉棒拔了出來、走出了房間。,0
+	zin_old_msg,啊啊、怎麼這樣．．．不行、不要、不要拔出來啊、這都要高潮了誒！！,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+rnd,2
+case0
+	zin_old_msg,吶、吶．．．,pid2
+	zin_old_msg,趕緊進來吧,pid2
+	zin_old_msg,什麼．．．,pid1
+	zin_old_msg,你真的是處女麼？,pid1
+	zin_old_msg,真的是誒．．．,pid2
+	zin_old_msg,那我就進來了啊,pid1
+	zin_old_msg,誒．．．,pid2
+	zin_old_msg,怎麼會這樣．．．,pid2
+	zin_old_msg,明明一點不疼嘛．．．,pid2
+	zin_old_msg,恩、感覺不到疼麼,pid1
+	zin_old_msg,好像完全感覺不到被插入的樣子,pid1
+	zin_old_msg,好沒意思的破處誒．．．,pid2
+	end
+case1
+	zin_old_msg,啊啊、不行啊．．．,pid2
+	zin_old_msg,這麼、這麼弄豆豆．．,pid2
+	zin_old_msg,別、別這麼弄誒．．．,pid2
+	zin_old_msg,你真的是處女麼,pid1
+	zin_old_msg,才剛開始、就這麼奔放是咋回事,pid1
+	zin_old_msg,女人的本性真是無法理解的東西,pid1
+	zin_old_msg,啊啊、別這麼說欸．．．還要、還要再深一點！！,pid2
+	zin_old_msg,真掃興、竟然又是這種女人,pid1
+	zin_old_msg,就連裡面也是這麼松！！　沒法射了！！,pid1
+	zin_old_msg,今天就到這裡了、callself_pid1要碎覺了,pid1
+	zin_old_msg,誒誒！！　怎麼這樣啊、好過分哇！！,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_old_msg,call_pid2、肚子沒問題吧？,pid1
+	zin_old_msg,恩、孩子估計也很高興,pid2
+	zin_old_msg,這樣就太好了．．．,pid1
+	zin_old_msg,比起這種事、還是趕緊進門吧,pid2
+	zin_old_msg,孕婦PLAY只有這個時候是不能夠的。,pid2
+	zin_old_msg,還是說、你討厭大肚子的女人？,pid2
+	zin_old_msg,呵呵呵、你在說什麼吶,pid1
+	zin_old_msg,加上肚裡的孩子、就是3P、還是相當有趣的,pid1
+	zin_old_msg,callself_pid1的肉棒一直都是杠杠的！！,pid1
+	zin_old_msg,嘛、真強壯．．．今晚請愛我到天亮吧,pid2
+	zin_old_msg,嗯、交給我吧,pid1
+	end

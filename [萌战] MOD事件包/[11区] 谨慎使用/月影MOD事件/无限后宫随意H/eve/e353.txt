@@ -1,0 +1,38 @@
+eve_start
+	if_date,91,6
+	//阿卡弗利がバン配下
+	if_poid,32,2
+	//モニカが洛根配下
+	if_poid,732,9
+	//バン、洛根同盟狀態
+	if_uni,2,9
+eve_end
+
+set_pmov,732,2
+set_pkon,32,732
+upd_sts,732,4,12080
+
+chk_exeplayer,9,2,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+get_kunpsn,432
+get_habatumem,5,43
+get_habatu2,625
+//zin_reg_init
+zin_reg_event,巴恩的王宮,2,9,,gzin8
+zin_reg_qnar,洛根傳來了希望莫妮卡與巴恩第一王子阿卡弗利聯姻的請求。
+zin_reg_msg,洛根殿、很久不見啊,0
+zin_reg_msg,雖然有些早但是莫妮卡和阿卡弗利殿下的事情,1
+zin_reg_msg,考慮的如何了呢？,1
+zin_reg_msg,當然,0
+zin_reg_msg,這是我們一族求之不得的事情,0
+zin_reg_msg,阿卡弗利也很高興得到了好的妻子吧,0
+zin_reg_msg,這就太好了,1
+zin_reg_msg,這樣我們兩國都能長久的繁榮下去吧,1
+zin_reg_msg,嗯、就是這樣,0
+zin_reg_title,阿卡弗利和莫妮卡結婚了。
+zin_reg_button,0
+//zin_reg_exit

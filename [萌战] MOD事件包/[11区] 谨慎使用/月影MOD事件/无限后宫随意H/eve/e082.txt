@@ -1,0 +1,12 @@
+eve_start
+	if_eveflg,10,4
+	//¥¢¥Ó©`¤¬Ò†Íõ
+	if_pkun,4,13000
+	if_pkun,2,13000
+eve_end
+
+set_eveflg,10,5
+
+//¹¥ÊØÔO¶¨ ¥Ğ¥ó¡ú¥¢¥Ó©`
+set_kmdata,4,2,0,0
+end

@@ -1,0 +1,109 @@
+//覇王オルド　強引　初膜汎用
+zin_seloop_stop
+rnd,4
+case0
+    bgm_se,135
+	zin_old_msg,喲嗬．．．這個不錯、久違的軟玉溫香抱滿懷的感覺啊,pid1
+	bgm_se,135
+	zin_old_msg,啊．啊啊．．不、不要啊．．．．,pid2
+	bgm_se,135
+	zin_old_msg,呵呵、你這厭惡的表情讓我更加興奮了,pid1
+	bgm_se,135
+	zin_old_msg,啊啊．．．不行．．．不要、不要啊．．．．,pid2
+	bgm_se,136
+	zin_old_msg,我可不覺得你是第一次啊、這麼緊緊的吸著callself_pid1的老二、拔都拔不出啊,pid1
+	bgm_se,136
+	zin_old_msg,啊啊．．．好噁心．．．呃呃．．．不要啊．．．,pid2
+	bgm_se,136
+	zin_old_msg,你不知道這種話會起到反效果？cr讓我越來越興奮了．．．,pid1
+	bgm_se,137
+	zin_old_msg,那麼、直到你高潮之前、要一直發出這種聲音！！,pid1
+	bgm_se,137
+	zin_old_msg,啊啊、呀啊啊！！　不要、不要、不要這麼激烈！！！,pid2
+	bgm_se,137
+	zin_old_msg,疼、好疼啊！！　拔、拔出去！！　求求你！！,pid2
+	bgm_se,137
+	zin_old_msg,哈哈哈、好啊、再叫響一點！！　callself_pid1的絕頂就是這麼來的！！,pid1
+	bgm_se,137
+	zin_old_msg,啊啊．．．不、不要．．．我．．．已經．．要泄了．．．,pid2
+	bgm_se,141
+	zin_old_msg,已經、不、不行了誒誒誒！！！！！,pid2
+	set_non_virgin,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	txtload,u107
+case1
+    bgm_se,135
+	zin_old_msg,哦哦．．．得到了個極品啊,pid1
+	bgm_se,135
+	zin_old_msg,啊呀啊啊啊！！．．．不要、不行．．．痛、痛、好痛啊啊啊啊い！！,pid2
+	bgm_se,135
+	zin_old_msg,照你今天破瓜這德行來說、你是怎麼守身到今日的？,pid1
+	bgm_se,136
+	zin_old_msg,向你致敬、木哈哈哈哈,pid1
+	bgm_se,136
+	zin_old_msg,噫噫噫噫噫．．．．,pid2
+	bgm_se,137
+	zin_old_msg,那、第一次就內射也不行嗎？,pid1
+	bgm_se,137
+	zin_old_msg,啊啊．．．不行．．．今天不行．．．請外射吧．．．裡面．．．不、不要啊．．．,pid2
+	bgm_se,137
+	zin_old_msg,是麼、那今天就大發慈悲原諒你,pid1
+	bgm_se,137
+	zin_old_msg,啊．．非常、非常．．．感謝．．．您．．．,pid2
+	bgm_se,137
+	zin_old_msg,嗚嗚！！！,pid1
+	zin_flush,pid2
+	bgm_se,141
+	zin_old_msg,噫啊啊啊！！．．．誒．．．這．．．裡面、怎麼在裡面．．．射了．．這麼多．．．啊啊．．．好、好過分．．．,pid2
+	bgm_se,141
+	zin_old_msg,不好意思、我剛改變主意。唔哈哈哈。,pid1
+	set_non_virgin,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	txtload,u107
+case2
+    bgm_se,135
+	zin_old_msg,呵．．．你有個好東西呢、一件能融化callself_pid1肉棒的名器,pid1
+	bgm_se,135
+	zin_old_msg,不、不要不要．．．這樣．．．不要不要．．．,pid2
+	bgm_se,135
+	zin_old_msg,呵呵呵、處子的香氣已經飄過來了．．．,pid1
+	bgm_se,136
+	zin_old_msg,啊啊啊、不要啊．．．不要亂動啊．．．．,pid2
+	bgm_se,136
+	zin_old_msg,怎麼樣、有沒有一點點快感？,pid1
+	bgm_se,137
+	zin_old_msg,討、討厭啊．．．好疼．．．好疼誒誒誒誒！！,pid2
+	bgm_se,137
+	zin_old_msg,是麼、那這次就沒有辦法了、暫且放你一馬,pid1
+	bgm_se,137
+	zin_old_msg,啊．．．怎麼這樣．．．不要啊！！！,pid2
+	bgm_se,137
+	zin_old_msg,唔！！　要出來了哦、給你好多好多！！,pid1
+	bgm_se,141
+	zin_old_msg,哈啊．．．不行啊．．．只有這個不行啊！！！,pid2
+	set_non_virgin,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	txtload,u107
+case3
+    bgm_se,135
+	zin_old_msg,哈咕．．．呀啊．．．,pid2
+	bgm_se,135
+	zin_old_msg,這種事．．．感覺超噁心．．．,pid2
+	bgm_se,136
+	zin_old_msg,既然是處那也沒辦法、感覺會慢慢好起來的吧,pid1
+	bgm_se,136
+	zin_old_msg,沒有．．．沒有這種事．．．,pid2
+	bgm_se,137
+	zin_old_msg,噗、可是到現在為止不是都挺好的麼,pid1
+	bgm_se,137
+	zin_old_msg,今天就讓callself_pid1好好地爽一下吧,pid1
+	bgm_se,141
+	zin_old_msg,啊啊、不行誒．．．不要誒．．．不要亂動啊ーーー！！,pid2
+	set_non_virgin,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	txtload,u107
+	end

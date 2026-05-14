@@ -1,0 +1,26 @@
+eve_start
+	if_eveflg,54,0
+//阿卡弗利10才
+	if_pnen,32,10
+//阿卡弗利　バン配下
+	if_poid,32,2
+	if_poid,434,2
+eve_end
+
+set_eveflg,54,1
+
+chk_exeplayer,2,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+zin_reg_event,巴恩的王宮,2,434,,gzin8
+zin_reg_msg,布魯夫啊,0
+zin_reg_msg,在！！,1
+zin_reg_msg,阿卡弗利今年也到10歲了吧,0
+zin_reg_msg,我對你的能力有信心，特此任命你成為我的王子布魯夫的老師,0
+zin_reg_msg,給我把他鍛煉成出色的男人吧,0
+zin_reg_msg,沒有比這更光榮的事了，遵命,1
+zin_reg_button,0
+end

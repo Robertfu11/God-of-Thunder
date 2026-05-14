@@ -1,0 +1,41 @@
+eve_start
+	if_date,83,11
+//プレイヤー仕官中
+	if_psts,player,2
+//プレイヤー分3位以下
+	if_pkun,player,<7001
+//村娘がいるか？
+	if_rndwman,off,on,on,off,12,0,0
+eve_end
+
+//仕官していない女をランダムにゲット
+get_rndwman,off,on,on,off,12,0,0
+set_epid1,player
+set_epid2,pval
+set_epid3,0
+
+//仕官設定
+set_sikan,pid2,poid_player
+
+bgm_chg,54
+zin_reg_event,,player,pid2,,gzin25
+zin_reg_qnar,player_name在散步中碰到了一個抱著山堆似的文書搖搖晃晃地走著的女人。
+zin_reg_msg,那，那個……cr對不起，請讓讓,1
+zin_reg_msg,嗯？,0
+zin_reg_qnar,女人向player_name的方向走近，然後就那樣撞到了一起。
+zin_reg_msg,啊啊、對、對不起你有什麼地方被撞到了嗎？,1
+zin_reg_msg,啊，我沒事cr話說回來，你是？,0
+zin_reg_msg,失禮了cr我是從一周前起分配下來的新兵p_name2,1
+zin_reg_msg,在各個方面都還很不習慣……,1
+zin_reg_msg,這樣啊，很辛苦吧cr要加油哦,0
+zin_reg_msg,謝謝你cr那、那個……,1
+zin_reg_msg,怎麼了？,0
+zin_reg_msg,可以的話能請教你的名字嗎？,1
+zin_reg_msg,cf_pid1叫player_name,0
+zin_reg_msg,以，以後也請多多關照了,1
+zin_reg_title,p_name2任職了。
+zin_reg_button,0
+
+//面會回數+1
+add_menkai,pid2
+end

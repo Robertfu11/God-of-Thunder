@@ -1,0 +1,30 @@
+eve_start
+	if_date,70,10
+	if_poid,625,743
+	if_poid,16,743
+	if_poid,10,743
+eve_end
+
+set_eveflg,8,1
+
+chk_exeplayer,743,0,0,0
+chk_exeplayer_else
+set_habatusts,10,6
+end
+
+chk_exeplayer_then
+bgm_chg,60
+get_habatumem,10,0
+//zin_reg_init
+zin_reg_event,阿達姆斯的辦公室,10,pval,,gzin33
+zin_reg_msg,阿斯蘭的使命也到頭了麼．．．,0
+zin_reg_msg,阿達姆斯大人．．．,1
+zin_reg_msg,到了我們展現身手的時候了,0
+zin_reg_msg,那麼就．．．,1
+zin_reg_msg,全艦快速前進,0
+zin_reg_msg,阿古迪巴肯定准備好了追擊的打算,0
+zin_reg_msg,是！！,1
+zin_reg_title,阿達姆斯脫離了阿斯蘭的領地。
+zin_reg_button,0
+//zin_reg_exit
+set_habatusts,10,6

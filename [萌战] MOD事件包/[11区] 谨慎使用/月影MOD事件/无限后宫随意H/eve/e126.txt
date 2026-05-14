@@ -1,0 +1,36 @@
+eve_start
+    if_eveflg,63,3
+//有設置的地方嗎？
+    if_cfpos,10,6,13
+//静江，阿多魯塞姆麾下
+    if_poid,702,13
+//艾露巴，斯庫洛克麾下
+    if_poid,599,624
+    if_poid,688,624
+    if_poid,161,624
+eve_end
+
+set_eveflg,63,4
+//要塞建設
+set_fort,702,10,6,1,静江
+
+chk_exeplayer,624,13,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+zin_reg_event,,13,161,,gzin19
+zin_reg_qnar,阿多魯塞姆期待已久的要塞終於完工了。
+zin_reg_msg,請看cr在那邊的就是交付使用的要塞,1
+zin_reg_msg,喔，那個就是．．．cr看起來真可靠,0
+zin_reg_msg,德米南斯，辛苦你了,0
+zin_reg_msg,不勝惶恐,1
+zin_reg_msg,怎麼樣，卿要不要也來我麾下？,0
+zin_reg_msg,給你比現在更好的待遇怎麼樣？,0
+zin_reg_msg,雖然不勝榮幸，但畢竟我也有很多熟客，沒辦法輕易放棄,1
+zin_reg_msg,是這樣啊，也罷cr什麼時候改變主意的話隨時都可以來我這,0
+zin_reg_msg,哈哈哈，真的十分感謝您,1
+zin_reg_qnar,静江要塞在地點１０－６完工。
+zin_reg_button,0
+end

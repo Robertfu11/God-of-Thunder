@@ -1,0 +1,14 @@
+bgm_chg,35
+zin_reg_event,偷吃要記得擦嘴喔～ (^^)v,pid1,pid2,zin23,gzin18
+zin_reg_msg,妳．．．,0
+zin_reg_msg,今日、我為了什麼過來cr知道麼？,0
+zin_reg_msg,嗯．．．不太清楚呢．．．,1
+zin_reg_msg,我發現你見異思遷了呢,0
+zin_reg_msg,那個p_name3和你有染吧．．．,0
+zin_reg_msg,嗯、抱歉．．．,1
+zin_reg_msg,道歉是不夠的啊！！,0
+zin_reg_msg,好了、好了．．．,1
+zin_reg_msg,住嘴、我才不認識你,0
+zin_reg_title,與p_name1的親密度下降了。
+zin_reg_button,0
+end

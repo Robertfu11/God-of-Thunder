@@ -1,0 +1,37 @@
+eve_start
+	if_date,80,6
+//布拉卡斯 阿達姆斯配下
+	if_poid,110,10
+//五月　阿達姆斯配下
+	if_poid,312,10
+//阿達姆斯　洛根　同盟状態
+	if_uni,10,9
+eve_end
+
+chk_exeplayer,10,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,阿達姆斯的辦公室,10,110,,gzin8
+zin_reg_msg,布拉卡斯啊cr總而言之，如果真要去和洛根結盟，那可千萬大意不得,0
+zin_reg_msg,我擔心的是、以那個傢伙的德行，估計隨時會撕毀盟約,0
+zin_reg_msg,這樣一來，我們的國家就有覆滅之險了,0
+zin_reg_msg,你有什麼好的辦法嗎？,0
+zin_reg_msg,將阿貝莫伊卡作為我們的攻略目標如何？,1
+zin_reg_msg,和強大的洛根比起來，阿貝莫伊卡的勢力還很弱小,1
+zin_reg_msg,攻下他的話，我們就能獲得和洛根對等的國力,1
+zin_reg_msg,如果那樣的話，不就能跟洛根拼個不分上下了嗎？,1
+zin_reg_msg,恩，確實如你所說,0
+zin_reg_msg,可是，阿貝莫伊卡雖相對弱小。可對我們來說依然是強敵,0
+zin_reg_msg,阿貝莫伊卡那傢伙相當的善戰,0
+zin_reg_msg,不會輕易就範,0
+zin_reg_msg,我們有正面挑起爭端的必要嗎？,1
+zin_reg_msg,有何良策？,0
+zin_reg_msg,就交與在下吧cr在下自有妙計,1
+zin_reg_msg,恩，好吧．．．．．,0
+zin_reg_button,0
+//zin_reg_exit
+end

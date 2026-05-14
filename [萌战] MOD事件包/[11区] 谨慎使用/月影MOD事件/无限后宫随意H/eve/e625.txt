@@ -1,0 +1,34 @@
+eve_start
+	if_eveflg,75,24
+	if_val,状態:243=6
+	if_val,覇王:243=覇王:player
+eve_end
+
+add_menkai,243
+
+set_epid1,243
+set_epid2,player
+bgm_chg,60
+zin_reg_event,,pid1,pid2,,gzin43
+zin_reg_msg,p_name2、在嗎！！,0
+zin_reg_msg,p_name1大人,1
+zin_reg_msg,今天給你帶來了一個好東西,0
+zin_reg_msg,是什麼？,1
+zin_reg_msg,道具「特別部隊召集」哦,0
+zin_reg_msg,這、這個是．．．,1
+zin_reg_msg,作為艦隊司令時可以讓能夠指揮的艦艇增加１２００艘哦,0
+zin_reg_msg,好、好厲害！！,1
+zin_reg_msg,如何？　想要嗎？,0
+zin_reg_msg,想、想要,1
+zin_reg_msg,好啊,0
+zin_reg_msg,不過、從明天開始的一周內、每天都要陪我去買東西,0
+zin_reg_msg,買、買東西．．．,1
+zin_reg_msg,護衛兼行李車,0
+zin_reg_msg,從白天一直到晚上cr明白嗎？,0
+zin_reg_msg,唔唔．．．．cr明白了,1
+zin_reg_msg,那麼、這個道具送你了,0
+zin_reg_msg,非、非常感謝,1
+zin_reg_title,獲得了特別部隊召集。
+zin_reg_button,0
+get_item,player,0,特別部隊招集
+end

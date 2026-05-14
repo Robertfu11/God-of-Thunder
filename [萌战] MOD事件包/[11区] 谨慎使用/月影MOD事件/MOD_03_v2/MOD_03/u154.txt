@@ -1,0 +1,108 @@
+eve_start
+	if_psex,player,1
+    if_val,×´‘B:player=2
+eve_end
+set_eveflg,194,0
+set_eveflg,195,0
+set_eveflg,193,0
+set_eveflg,192,0
+for,SMAX,193,1
+                chk_mval,îIÍõ:eveflg193=0,,,,
+                chk_mval_then
+                        chk_mssts,eveflg193,³ö¬F,1,NON,0,NON,0,NON,0,NON,0
+                        chk_mssts_then
+                        set_eveflg,194,eveflg193
+                        // get_rndhao,0
+                        // set_epid3,pval
+                        // mov_wid,eveflg194,pid3
+                        // continue
+                        rnd,2
+                            case0
+                            set_eveflg,195,0
+                            break
+                            case1
+                            set_eveflg,195,1
+                            break
+                        chk_mssts_else
+                continue
+                chk_mval_else
+                continue
+next
+//zin_old_qnar,s_name_eveflg(194),0
+chk_eveflg,194,0
+chk_eveflg_then
+set_eveflg,193,0
+set_eveflg,192,0
+set_eveflg,195,0
+end
+chk_eveflg_else
+for,PMAX,192,1
+                chk_msts,eveflg192,×´‘B,5,NON,0,NON,0,NON,0,NON,0
+                chk_msts_then
+                set_epid2,eveflg192
+                chk_sts,eveflg192,ĞÔ„e,2
+                chk_sts_then
+                        upd_sts,eveflg192,3,1
+                        upd_sts,eveflg192,20,eveflg192
+                        dokuritu,eveflg192,eveflg194,1
+                        set_winfo,eveflg194,eveflg192,0,0,0,10000,-1,-1
+                        upd_sts,eveflg192,21,eveflg192
+                        upd_sts,eveflg192,0,2
+                        get_puu,eveflg192,6
+                        upd_sts,eveflg192,3,2
+                        add_money,eveflg192,500000
+                        add_sdev,eveflg192,0,3000
+                        add_sdev,eveflg192,1,3000
+                        add_sdev,eveflg192,2,3000
+                        add_sdev,eveflg192,3,3000
+                        add_sdev,eveflg192,4,3000
+                        add_sdev,eveflg192,5,3000
+                        add_sdev,eveflg192,6,3000
+                        add_sdev,eveflg192,7,3000
+                        add_sdev,eveflg192,8,3000
+                        add_sdev,eveflg192,9,3000
+						rel_weapon,eveflg192
+                        break
+                chk_sts_else
+                chk_eveflg,195,0
+                chk_eveflg_then
+                continue
+                chk_eveflg_else
+                        rnd,10
+                            case0
+                            case1
+                            case2
+                            case3
+                            case4
+                            case5
+                            case6
+                            case7
+                            case8
+                            continue
+                            case9
+                        upd_sts,eveflg192,20,eveflg192
+                        dokuritu,eveflg192,eveflg194,1
+                        set_winfo,eveflg194,eveflg192,0,0,0,10000,-1,-1
+                        upd_sts,eveflg192,21,eveflg192
+                        upd_sts,eveflg192,0,2
+                        get_puu,eveflg192,6
+                        add_money,eveflg192,200000
+                        add_sdev,eveflg192,0,2000
+                        add_sdev,eveflg192,1,2000
+                        add_sdev,eveflg192,2,2000
+                        add_sdev,eveflg192,3,2000
+                        add_sdev,eveflg192,4,2000
+                        add_sdev,eveflg192,5,2000
+                        add_sdev,eveflg192,6,2000
+                        add_sdev,eveflg192,7,2000
+                        add_sdev,eveflg192,8,2000
+                        add_sdev,eveflg192,9,2000
+                        break
+                chk_msts_else
+                continue
+next
+set_eveflg,194,0
+set_eveflg,193,0
+set_eveflg,192,0
+txtload,u154
+end

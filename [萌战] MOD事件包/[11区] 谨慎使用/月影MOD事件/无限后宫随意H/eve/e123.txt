@@ -1,0 +1,28 @@
+eve_start
+    if_date,75,9
+//艾露巴,斯庫洛克麾下
+    if_poid,599,624
+    if_poid,276,624
+eve_end
+
+set_eveflg,63,1
+
+//如果玩家霸王是斯庫洛克，執行chk_exeplayer_then
+chk_exeplayer,624,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,58
+zin_reg_event,,276,599,,gzin9
+zin_reg_qnar,最近吉娜身體不好，艾露巴擔心吉娜，前來探望。
+zin_reg_msg,謝謝你啊，艾露巴cr我已經沒事了cr別擔心,0
+zin_reg_msg,媽媽，你還是再休息一下吧,1
+zin_reg_msg,沒事了，我倒是擔心歐瓦南,0
+zin_reg_msg,沒我在他身邊，他真的什麼都幹不成啊,0
+zin_reg_msg,媽、媽媽．．．,1
+zin_reg_msg,你怎麼了？cr爸爸他不是早就過世了嗎,1
+zin_reg_msg,艾露巴，你在說什麼啊，今天怎麼怪怪的啊cr別說傻話啦,0
+zin_reg_msg,媽、媽媽cr怎麼會這樣．．．,1
+zin_reg_button,0
+end

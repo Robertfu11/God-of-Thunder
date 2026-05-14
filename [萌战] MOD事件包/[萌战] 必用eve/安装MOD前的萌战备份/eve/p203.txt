@@ -1,0 +1,39 @@
+bgm_chg,54
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin22
+zin_reg_qnar,p_name1正在大口喝酒的時候突然有人的聲音傳來。
+chk_sts,pid2,年齢,>18
+chk_sts_then
+	zin_reg_msg,呐，你．．．真是不錯的男人呢,1
+	zin_reg_msg,一個人嗎？,1
+	zin_reg_msg,正是如此．．．．你也是一個人？,0
+	zin_reg_msg,呵呵，我是p_name2．．．多多關照,1
+	zin_reg_msg,callself_pid1是p_name1,0
+	zin_reg_msg,啊拉，真是不錯的名字呢,1
+	zin_reg_msg,今晚不一起喝點嗎？,1
+	zin_reg_msg,像你這樣的美女當然非常歡迎了,0
+	zin_reg_msg,啊拉，看來會是很有趣的一夜呢,1
+	zin_reg_title,和p_name2成為朋友了。
+	zin_reg_button,0
+	zin_reg_exit
+	upd_sts,pid2,12,75
+	end
+chk_sts_else
+	zin_reg_msg,呐，大叔是一個人嗎？,1
+	zin_reg_msg,居然叫我大叔！？,0
+	zin_reg_msg,本來就是吧？,1
+	zin_reg_msg,話說回來，你不還是個孩子嗎,0
+	zin_reg_msg,未成年人都可以在這裏喝酒了嗎？,0
+	zin_reg_msg,未成年？,1
+	zin_reg_msg,說什麼呢你？．．．在這個星球，10歲就可以喝酒了喲,1
+	zin_reg_msg,是，是這樣嗎？,0
+	zin_reg_msg,呐，比起那種事情，大叔你稍微有點陰鬱的樣子呢,1
+	zin_reg_msg,是我喜歡的類型,1
+	zin_reg_msg,今天就一直陪你到早上吧,1
+	zin_reg_msg,為此感到光榮吧,1
+	zin_reg_msg,碰上了奇怪的女人呢．．．,0
+	zin_reg_title,和p_name2成為朋友了。
+	zin_reg_button,0
+	zin_reg_exit
+	upd_sts,pid2,12,75
+	end

@@ -1,0 +1,330 @@
+//放浪女性、村娘
+
+chk_sts,pid3,性別,2
+chk_sts_then
+	bgm_chg_nl,61
+	bl_fadein,gzin37
+	zin_reg_event,迷子の歌姫候補？,pid4,pid3,,gzin37
+	zin_reg_qnar,何だ女か?なんでこんなところに女がいるの
+	zin_reg_msg,．．．すみませんが出口を教えてくださいませんか？,0
+	zin_reg_msg,えっ？いやっ、私も迷っちゃって．．．．,1
+	zin_reg_msg,あらあら．．．困りましたね。歌姫の最終オーディションに間に合わない,0
+	zin_reg_msg,えっ？歌姫オーディションっ！！あれ私も応募したんだよね．．．,1
+	zin_reg_msg,一次審査で落ちたけど．．．,1
+	zin_reg_msg,これも何かの縁一緒に会場探してもらえませんか？,0
+	zin_reg_msg,しょうがないわね．．．手伝ってあげるわ,1
+	zin_reg_qnar,p_name3はp_name4をオーディション会場に連れていった。
+	bl_fadeout
+	
+	bgm_chg_nl,61
+	bl_fadein,gzin43
+	zin_reg_event,お仕置きしたろか？,pid1,pid3,,gzin43
+	zin_reg_qnar,このハラワタの煮えくりかえる思いどうしてくれようっ！！
+	zin_reg_msg,．．．弁明は．．．．,0
+	zin_reg_msg,．．．．ありません．．．,1
+	zin_reg_msg,で、その彼女は歌姫になれたのかね．．．？,0
+	zin_reg_msg,は、はい。でもまだデビュー前のレッスン中だそうです,1
+	zin_reg_msg,．．．私もアイドルになりたかった．．．．シクシク．．．,1
+	zin_reg_qnar,ふぅうう．．．もう怒る気力も．．．．
+	zin_reg_msg,．．．．そうか．．．今度軍の宣伝ポスターに出てみるか？,0
+	zin_reg_msg,えっ！！ホントにっ！！！,1
+	zin_reg_qnar,p_name3の勲功が２００下がった。
+	add_kunkou,pid3,-200
+	bl_fadeout
+	end
+chk_sts_else
+chk_sts,pid4,状態,5
+chk_sts_then
+	bgm_chg_nl,61
+	bl_fadein,gzin37
+	zin_reg_event,就活の女性,pid4,pid3,,gzin37
+	zin_reg_qnar,何だこの女？この国の士官か？
+	zin_reg_msg,．．．誰なの？あっ！面接官の方ですか,0
+	zin_reg_msg,ん？あぁ。そうだ、待たせて済まなかったな。,1
+	zin_reg_msg,いえそんなっ！！私こそ面接させて頂けるなんて,0
+	zin_reg_msg,あぁ！君は優秀だったからね,1
+	zin_reg_msg,でもね．．．上に掛け合ってみるにはね．．．,1
+	zin_reg_msg,．．．．やっぱりダメですか．．．,0
+	zin_reg_msg,いや．．．能力は十分なんだ。ただ誠意がね．．．,1
+	zin_reg_msg,．．．．お金ですか？．．．でもあまりないし,0
+	zin_reg_msg,お金以外でもいろいろあるでしょ．．．女性だし．．．ね。,1
+	zin_reg_qnar,p_name3はp_name4ををベットある部屋に連れ込んだ。
+	bl_fadeout
+	goto,*zaiya
+chk_sts_else
+bgm_chg_nl,61
+	bl_fadein,gzin37
+	zin_reg_event,囚われの村娘,pid4,pid3,,gzin37
+	zin_reg_qnar,．．．なんだこの娘．．．士官ではなさそうだが？
+	zin_reg_msg,．．．っ！！！．．．．．んーんー！！！,0
+	zin_reg_msg,なんだお前？捕まっているのか？,1
+	zin_reg_msg,ぷはぁ！！！助かった、ありがとうね,0
+	zin_reg_msg,どうしてこんなところに？,1
+	zin_reg_msg,実は故郷の惑星が領主の娘狩りにあって．．．,0
+	zin_reg_msg,娘狩りの成果がお前ってわけか．．．,1
+	zin_reg_qnar,　　　　むっ、話し声が近づいてくるぞ．．．．
+	zin_reg_msg,すまないがcf_pid3は逃げなきゃならん。縄は解いてやる,1
+	zin_reg_msg,．．．．連れってって．．．ここにいられない,0
+	zin_reg_msg,あー、クソッ！！！分かったよっ！！！つれってってやるっ！！！,1
+	zin_reg_msg,ありがとうっ！！！ところで名前は？cf_pid4はp_name4って言うんだ,0
+	zin_reg_msg,cf_pid3はp_name3だ。グズグズするな逃げるぞっ！！！,1
+	zin_reg_qnar,p_name3はp_name2連れて宇宙港に向かった。
+	bl_fadeout
+	goto,*muramusume
+
+*zaiya
+chk_wsts,pid4
+case_normal
+bgm_chg,64
+zin_old_init
+zin_old_img_pid,pid4,1
+zin_old_msg,さぁ．．．自分でman_strを開いてみせて,pid3
+zin_old_msg,．．．は、恥ずかしい．．．でも．．．士官するためなら．．．,pid4
+zin_old_msg,コネのないcf_pid4が職をありつくには．．．．ガマン．．．,pid4
+zin_old_msg,call_pid34のは色や形が崩れてないな、そんなに遊んでないのかね？,pid3
+zin_old_msg,い、いやぁ！そんなこと言わないでくださいっ！！！,pid4
+zin_old_msg,でも処女ではないから男はいたようだね．．．カレシかな？,pid3
+zin_old_msg,．．．そ．．．そんな事言えないっ．．．です。,pid4
+zin_old_msg,一応これも面接の一部なんだがね．．．そうか言えないか．．．,pid3
+zin_old_msg,えっ？そんなっ！！．．．答えますっ！！答えますからっ！！,pid4
+zin_old_msg,彼とは別れて最近はＨしてなかったですっ！！久しぶりだからいまチョット興奮しちゃってるんですっ！！！,pid4
+zin_old_msg,素直でよろしい。ではcall_pid34のman_strにtin_strが久しぶりに入るよ,pid3
+zin_old_msg,く、くぁっ！．．．ふ、太いっ！！！ウソ、カレのと全然ちがっ．．！！！,pid4
+zin_old_msg,いい反応しますね。call_pid34のman_strとは相性がよさそうです,pid3
+zin_old_msg,ちゃんとcf_pid3のtin_strにフィットしてます．．．ねっ！！,pid3
+zin_old_msg,あっ　あっ　あふぅ！！call_pid43のtin_strがcf_pid4のman_strを占領しちゃってるよぉ,pid4
+zin_old_msg,本当に久しぶりなんですね。call_pid34のman_strからsiru_strが滴ってますよ,pid3
+zin_flush_one,pid4
+zin_old_msg,はぁああーー！！！．．．．はぁ　はぁ　ひとりでイッちゃいました。,pid4
+zin_old_msg,久しぶりにtin_strでズコズコされて一人でイってしまう子でしたか。,pid3
+zin_old_msg,ちが、違いますぅ！！ちゃんとcall_pid43のことも気持ち良くさせますからっ！！！,pid4
+zin_old_msg,そうですか？ではもう少し激しくしますよっ！！！,pid3
+zin_old_msg,あっ　えっ　い、いやぁ　激しいぃいい,pid4
+zin_old_msg,ダメェええええっ！！！きちゃうのぉおおお！！！またイっちゃうううっ！！！,pid4
+zin_flush,pid4
+zin_old_msg,ううぅ締まるっ！！！このまま中で出しますよっ！！！,pid3
+zin_old_msg,んんっーーーー！！！イっちゃてるっ！！！！でもナカで出しちゃだめぇえええええ！！！んはぁああーーー！！！,pid4
+zin_flush,pid4
+zin_old_msg,うそっ出ちゃってるう．．．cf_pid4のナカにtane_str出ちゃってる．．．,pid4
+zin_old_msg,ふむっこの具合の良さならまちがいなく合格です,pid3
+zin_old_msg,．．．．．ほ．．．本当ですか．．．,pid4
+zin_old_msg,本当です。だから早く身支度してください,pid3
+zin_old_msg,えっ？あっ、はい．．．．,pid4
+zin_reg_qnar,p_name4はp_name3に促されるまま宇宙港へむかった。
+zin_old_fadeout,0,5
+bl_fadeout
+goto,*syukatu
+
+case_botebara
+bgm_chg_nl,53
+zin_old_init
+zin_old_img_pid,pid4,1
+zin_old_msg,い、いやぁっ！もっと優しくしてください！！crお腹が揺れて．．．痛いんです,pid4
+zin_old_msg,痛い？その割には随分と気持ちよさそうな顔じゃないか,pid3
+zin_old_msg,それに．．．腰を動かしてるのはcall_pid34じゃないか,pid3
+zin_old_msg,ふえぇ？そんな．．．そんなはずありません．．．,pid4
+zin_old_msg,はははっ、見てみろcrcf_pid3は全く動いてないぞ,pid3
+zin_old_msg,やだ．．．腰．．．勝手に動いてるぅ！！,pid4
+zin_old_msg,あっ、あぐっ．．．すごい、です！crお腹揺れて．．．何ですかこれぇっ！！,pid4
+zin_old_msg,おおっ、きゅうきゅう締め付けてきて．．．crダメだ、もうもう我慢できん！！,pid3
+zin_old_msg,きてっ、もっと激しく、ガンガン突いてくださいっ！！,pid4
+zin_flush,pid4
+zin_old_msg,お腹に赤ちゃんいるのに．．．止まらなかった．．．,pid4
+zin_old_msg,さぁcall_pid34、早く身支度してください。,pid3
+zin_old_msg,お腹の子と共に採用ですよ、さあ急いで,pid3
+zin_old_msg,えっ？あっ、はい．．．．．,pid4
+zin_old_fadeout,0,6
+zin_reg_qnar,p_name3はp_name4を連れ宇宙港に向かった。
+goto,*syukatu
+
+case_hatumaku
+zin_old_init
+zin_old_img_pid,pid4,1
+zin_old_msg,あの．．．実は私初めてなのですけれども．．．,pid4
+zin_old_msg,ほほう！？それは本当か？,pid3
+zin_old_msg,は、はい．．．,pid4
+zin_old_msg,では見せてみろ,pid3
+zin_old_msg,こ、こうですか,pid4
+zin_old_msg,きれいなピンク色だ。形も崩れていない,pid3
+zin_old_msg,お、お気に入られましたか？,pid4
+zin_old_msg,ああ、これはいい、久しぶりの上玉を抱けるかもしれん,pid3
+zin_old_msg,で、では．．．,pid4
+zin_old_msg,ああ、入れるぞ．．．それっ！,pid3
+zin_old_msg,あ．．．ぐうっ！い、痛いです．．．,pid4
+zin_old_msg,大丈夫だ、動いていれば、そのうち濡れて気持ちよくなる,pid3
+zin_old_msg,う．．あうっ！！,pid4
+zin_old_msg,血でぬめってきたぞ。そろそろ楽になる,pid3
+zin_old_msg,は、はい．．．うっ！,pid4
+zin_old_msg,この締め、深さ、ひだのざらつき．．．名器だな,pid3
+zin_old_msg,ふむん．．．ひああっ．．．ひあっ！,pid4
+zin_old_msg,もう肉棒をすべて飲み込んでいるじゃないか？存外いやらしいのだな？,pid3
+zin_old_msg,あっ、あっ、あっ、あっ．．．はあ．．．ひいっ．．．ああ、ああああん！！,pid4
+zin_old_msg,はや悦びを知りはじめたか,pid3
+zin_old_msg,だ、ダメ．．．もう．．．我慢で．．できない．．．,pid4
+zin_old_msg,ふふっ．．．こちらもそろそろ良いようだ、しっかり受け止めろ！,pid3
+zin_old_msg,はいっ．．．ひんっ．．．あああっっ！！,pid4
+zin_flush,pid4
+zin_old_msg,はあっ．．．ああっ．．．,pid4
+zin_old_msg,良かったぞ。これはクセになりそうだ,pid3
+zin_old_msg,さぁ、急いで身支度しろ,pid3
+zin_old_msg,えっ？あっ．．．はい．．．でもアソコが痛くて．．．,pid4
+zin_old_msg,しょうがないやつめ。抱えていってやる。,pid3
+zin_reg_qnar,p_name3はp_name4を抱え宇宙港へ向かった。
+set_non_virgin,pid4
+zin_old_fadeout,0,6
+goto,*syukatu
+
+*syukatu
+bgm_chg_nl,61
+	bl_fadein,gzin69
+	zin_reg_event,採用先が．．．,pid4,pid3,,gzin69
+	zin_reg_qnar,．．．p_name3は任務遂行をあきらめp_name4と脱出を目指した。
+	zin_reg_msg,よし、乗り込んだぞ．．．ふぅ,1
+	zin_reg_msg,はぁはぁ．．．なぜ船に乗るんです？,0
+	zin_reg_msg,ああ、そうかまだ言ってなかったな,1
+	zin_reg_msg,cf_pid3は敵軍の配下なんだ。,1
+	zin_reg_msg,え？ええっ！！！そんな事一言も．．．,0
+	zin_reg_msg,ひどい！騙したのね！仕官の話も嘘なんでしょ,0
+	zin_reg_msg,仕官の話は本当だ。cf_pid3が口を利いてやる,1
+	zin_reg_msg,敵軍の配下だがな,1
+	zin_reg_msg,うそ！でも仕官が叶うなら,0
+	zin_reg_msg,問題は無さそうだな,1
+	zin_reg_msg,はいっ！ヨロシクお願いしますっ！！,0
+	zin_reg_qnar,　　　　p_name3はp_name4を連れ本星に帰還した。
+	bl_fadeout
+goto,*houkoku
+*muramusume
+bgm_chg_nl,61
+	bl_fadein,gzin69
+	zin_reg_event,逃避行,pid4,pid3,,gzin69
+	zin_reg_qnar,．．．p_name3は任務遂行をあきらめp_name4と脱出を目指した。
+	zin_reg_msg,はぁはぁ．．．も．．．もう走れないっ！！！,0
+	zin_reg_msg,バカっ！！！もう少しだ！！！船に着けばこっちものだ。,1
+	zin_reg_msg,ごめん！！！足引っぱてるね．．．,0
+	zin_reg_msg,あやまる暇があるなら走れっ！！！,1
+	zin_reg_msg,．．．うんっ！！！,0
+	zin_reg_msg,良し船が見えたっ！！！,1
+	zin_reg_qnar,　　　　チッ、見張りがついてやがる．．．
+	zin_reg_msg,p_name4！！cf_pid3が見張りを引き付けるから先に船に行けっ！！！,1
+	zin_reg_msg,．．．えっ？でも．．．call_pid43が捕まったら．．．,0
+	zin_reg_msg,阿呆！！！囮になるのは、cf_pid3が捕まる可能性の方が低いからだっ！！！,1
+	zin_reg_msg,．．．わかった。先に行くよ。絶対きてよっ！！！,0
+	zin_reg_msg,分かっている。！！！,1
+	zin_reg_qnar,p_name3は見張りを引き付けるためp_name4と別の方に向かった。
+	bl_fadeout
+
+	bgm_chg_nl,61
+	bl_fadein,gzin37
+	zin_reg_event,吊橋理論？,pid4,pid3,,gzin37
+	zin_reg_qnar,p_name3は敵星から脱出に成功しp_name4を連れ帰途に着いていた。
+	zin_reg_msg,call_pid23が無事で良かった．．．来なかったどうしようって,0
+	zin_reg_msg,あの程度の奴らを撒くのは朝飯前だ．．．,1
+	zin_reg_msg,本当に、本当にありがとうっ！！！,0
+	zin_reg_msg,ところで本星につれってってやるが、後はどうする？,1
+	zin_reg_msg,．．．生活の当てはあるのか？,1
+	zin_reg_msg,当てなんて．．．．なんにも．．．,0
+	zin_reg_qnar,　　　　思わず連れ出してしまったが．．．どうするか．．．
+	zin_reg_msg,とりあえず軍に入るか？crそこならcf_pid3のコネでなんとか．．．,1
+	zin_reg_msg,call_pid43の迷惑でないですか？,0
+	zin_reg_msg,ちょうどcf_pid3の部下が欲しいと思ってたところだ。,1
+	zin_reg_msg,なにから何まで．．．crどう感謝すれば．．．．,0
+	zin_reg_msg,call_pid23っ！！cf_pid4を好きにしてくださいっ！！,0
+	zin_reg_qnar,p_name4はp_name3をベットに押し倒した。
+	bl_fadeout
+chk_wsts,pid4
+case_normal
+bgm_chg,64
+zin_old_init
+zin_old_img_pid,pid4,1
+zin_old_msg,おいっ！！なにをっ！！！,pid3
+zin_old_msg,んっ．．．．あっ．．．．だってこれぐらいしか,pid4
+zin_old_msg,cf_pid2にできるのはcall_pid43を気持ち良くさせてあげることぐらいしか,pid4
+zin_old_msg,いや、別にそんなつもりで助けたわけじゃ．．．ないぞ,pid3
+zin_old_msg,んあっぁ！！！cf_pid4がcall_pid43にしたいんですぅ！！,pid4
+zin_old_msg,だ、だかなっ！！うあぁ．．．,pid3
+zin_old_msg,．．．やっぱりcall_pid43はcf_pid4みたいな女とはエッチしたくないんですね．．．,pid4
+zin_old_msg,ち、違うっ！！p_name4は魅力的で．．．どっちかって言うとcf_pid2の好みのタイプだ,pid3
+zin_old_msg,あぅん．．．ほ、本当？ですか．．．？,pid4
+zin_old_msg,本当に、本当の、ホントですか？,pid4
+zin_old_msg,ああっ！そうだ！p_name4のman_strの中のcf_pid3のtane_strが答えだっ！！！,pid3
+zin_old_msg,う、うれしい．．．．call_pid43もっときて,pid4
+zin_old_msg,うぁああ！！ダメだ出るっ！！！外に出すからっ！！,pid3
+zin_old_msg,あっ！コラ！！足を絡ませられたら．．．．うう,pid3
+zin_old_msg,いいのっ！いいのぉ！このまま中で出してイイからっ！！！,pid4
+zin_old_msg,イクっ！！ううううぅ,pid3
+zin_flush_one,pid4
+zin_old_msg,はぁあ．．．call_pid43の精子あったかいですね,pid4
+zin_old_msg,す、すまない中で出してしまった。,pid3
+zin_old_msg,call_pid43気持ち良かったですか？,pid4
+zin_old_msg,あ？ああっ！恥ずかしいぐらい精液が出てしまった．．．,pid3
+zin_old_msg,これからも部下としてお世話になりますがお願いしますねcall_pid43,pid4
+zin_old_msg,あ、ああそうだなヨロシク頼む,pid3
+zin_old_fadeout,0,5
+bl_fadeout
+goto,*houkoku
+case_botebara
+goto,*houkoku
+case_hatumaku
+bgm_chg,64
+zin_old_init
+zin_old_img_pid,pid4,1
+zin_old_msg,あ．．．ああ！,pid4
+zin_old_msg,p_name2．．．無理しなくてもいいぞ,pid3
+zin_old_msg,い、いいんです．．．cf_pid4が出来ること．．．これぐらいしか．．．．,pid4
+zin_old_msg,call_pid43の恩を少しでも返せれば．．．．んぁ,pid4
+zin_old_msg,初めてだろ？．．．辛くないか？,pid3
+zin_old_msg,痛いけど．．．call_pid43を．．．感じるから．．．,pid4
+zin_old_msg,ゴメンな．．．なんかゴメン．．．,pid3
+zin_old_msg,謝らないで、cf_pid4が、こうしたかったんだから,pid4
+zin_old_msg,本当は、初めて会った時から、好きになってた,pid3
+zin_old_msg,卑怯なヤツだよな、p_name4の弱みに付け込んで．．．,pid3
+zin_old_msg,cf_pid4助けてくれたのがcall_pid43で良かった。,pid4
+zin_old_msg,本当は初めてをcall_pid43に貰ってもらってうれし．．．,pid4
+zin_flush_one,pid4
+zin_old_msg,あっ．．．,pid4
+zin_old_msg,．．．イったのか,pid3
+zin_old_msg,あっ　あっ　call_pid43　からだ　おかしいっ,pid4
+zin_old_msg,おかしくないよ　愛し合ってとても気持ちが良くなると身体の方がそうやって喜ぶんだ,pid3
+zin_old_msg,イクっていうんだよ,pid3
+zin_old_msg,イク？　わたし、いまイったの？,pid4
+zin_old_msg,そうだよ,pid3
+zin_old_msg,も、気持ちいいと、イクの？,pid4
+zin_old_msg,そうだよ、p_name4の身体が気持ち良くて、p_name4が可愛いから、もうイきそうだ,pid3
+zin_old_msg,call_pid43イって、わたしで、イって！,pid4
+zin_old_msg,p_name4！！,pid3
+zin_flush,pid4
+zin_old_msg,あっ　熱っ　あっ　わたしっ　わたしまたイクっ,pid4
+zin_flush_one,pid4
+zin_old_msg,ううっ、こ、こんなに出たのは初めてだ！,pid3
+zin_old_msg,おなか、あついの、いっぱいで、あったかい、よ．．．,pid4
+zin_old_qnar,p_name4の姿に興奮したのか、今までの欲求が溢れだしたのか、p_name3は長い射精の後も萎えなかった
+zin_old_msg,っごめん、p_name4,pid3
+zin_old_msg,あっ．．．ああっ．．．ああぁぁぁぁぁ～～～！？,pid4
+zin_flush_one,pid4
+zin_old_qnar,p_name3とp_name4は何度も愛し合った。
+zin_old_qnar,p_name3はp_name4の身体を抱えて揺すりあげ、秘裂から溢れだす精液を押し返すように何度も子宮の奥目掛けて射精した
+zin_old_msg,イクのっ　わたしまたイっちゃうの！,pid4
+zin_old_msg,い、一緒にイクぞ！,pid3
+zin_old_msg,はぅ―――――,pid4
+zin_flush,pid4
+zin_old_fadeout,0,5
+set_non_virgin,pid4
+bl_fadeout
+
+*houkoku
+bgm_chg_nl,61
+	bl_fadein,gzin43
+	zin_reg_event,なんでそうなった？,pid1,pid3,,gzin43
+	zin_reg_qnar,p_name3は奪還計画の顛末を報告するべくp_name1の執務室にいた
+	zin_reg_msg,．．．で、何でそうなった？,0
+	zin_reg_msg,．．．ハッ！任務遂行に協力してもらったので,1
+	zin_reg_msg,だが、p_name2の奪還は成功していないではないか,0
+	zin_reg_msg,すみません。私の能力が足りませんでした。,1
+	zin_reg_msg,．．．ですがっ！p_name4は我が軍を担う人材です。,1
+	zin_reg_qnar,．．．p_name2の代わりにp_name4を得たと思うか．．．
+	zin_reg_msg,よかろうp_name4の仕官の件は人事に通しておく,0
+	zin_reg_msg,ハッ！ありがとうございます。,1
+	zin_reg_qnar,p_name4は仕官した。
+	set_sikan,pid4,poid_player
+	bl_fadeout
+	end

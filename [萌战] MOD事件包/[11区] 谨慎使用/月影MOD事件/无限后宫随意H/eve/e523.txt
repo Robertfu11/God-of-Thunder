@@ -1,0 +1,77 @@
+eve_start
+	if_eveflg,68,11
+//ラーと天王は同盟していない
+	if_eveflg,67,<3
+	//天王が生きている
+	if_haou,669
+	//ラーが生きている
+	if_haou,626
+	//ラーと天王は同盟していない
+	if_not_uni,669,626
+	//バラジャラ、普羅貝特配下
+	if_poid,79,736
+	if_money,736,>200000
+eve_end
+
+set_eveflg,68,12
+
+chk_exeplayer,626,736,0,0
+chk_exeplayer_else
+//同盟設定
+//del_union,736
+//del_union,626
+//set_union,736,626,0,0,0
+add_union,736,626,0
+set_run_msg,ラーと普羅貝特は同盟しました。
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,雷的王宮,626,79,,gzin8
+zin_reg_qnar,巴拉加拉為了和雷結成同盟拜訪了雷
+zin_reg_msg,你是普羅貝特的使者？,0
+zin_reg_msg,今天想要做什麼？,0
+zin_reg_msg,我王希望與貴國結成同盟,1
+zin_reg_msg,哦．．．我們聯手？,0
+zin_reg_msg,是的,1
+zin_reg_msg,但是從我上一代阿希的時候就與貴國有各種矛盾,0
+zin_reg_msg,你讓我全部忘記麼？,0
+zin_reg_msg,上一代霸王已經去世了，我國的普羅貝特將實行新的體制。,1
+zin_reg_msg,布朗的時代已經過去了，希望大家能理解,1
+zin_reg_msg,我們應該一起向天王開戰,1
+zin_reg_msg,確實與天王相比和貴國結盟更好，但是,0
+zin_reg_msg,不要說你打算所有的防禦都要我們自己來？,0
+zin_reg_msg,同盟確認的話我同意將我軍的艦隊給貴國做防衛,1
+zin_reg_msg,資金的合作也有准備,1
+owner_sel,結盟,不結盟,626
+get_resp
+ret_sel1
+	zin_reg_msg,巴拉加拉先生,0
+	zin_reg_msg,考慮到貴國的變革也許是真的,0
+	zin_reg_msg,萬一，有像從後面討伐我軍的話,0
+	zin_reg_msg,立即廢棄同盟,0
+	zin_reg_msg,沒有異議,1
+	zin_reg_msg,可以,0
+	zin_reg_qnar,雷和普羅貝特結成同盟。cr普羅貝特軍將20萬支援金送給雷。。
+	zin_reg_button,0
+	//zin_reg_exit
+	//同盟設定
+	//del_union,736
+	//del_union,626
+	//set_union,736,626,0,0,0
+	add_union,736,626,0
+	add_money,736,-200000
+	add_money,626,200000
+	end
+ret_sel2
+	zin_reg_msg,現在你還是不能讓我們信任,0
+	zin_reg_msg,如果你們從背後襲擊我軍的話，我們將被天王及普羅貝特包夾,0
+	zin_reg_msg,這樣我們也無計可施。,0
+	zin_reg_msg,無論如何也無法結成同盟？,1
+	zin_reg_msg,可以說你白來了,0
+	zin_reg_msg,哼．．.,1
+	zin_reg_title,談判失敗了。
+	zin_reg_button,0
+	//zin_reg_exit
+	end

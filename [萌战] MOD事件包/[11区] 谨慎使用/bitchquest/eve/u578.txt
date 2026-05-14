@@ -1,0 +1,470 @@
+//女主用エロシナリオ～デート編（士官）～
+eve_start
+if_eveflg,122,>0
+if_eveflg,122,<2
+if_val,勲功:player<=10000
+if_val,派閥:player!player
+if_val,状態:player=2
+if_val,役職:player!3
+if_val,年齢:player>=OLD
+eve_end
+
+//プレイヤーをpid2に格納
+set_epid2,player
+set_epid1,0
+set_epid3,0
+//仕官中の場合
+*employed1
+//同勢力の男性キャラをpid1に格納
+get_phao
+get_mpid,覇王=pval,性別=1,親密>70,婚姻!pid2,年齢>=OLD,,
+set_epid1,pval
+//pid1が存在するかどうか確認
+set_eveflg,201,pval
+chk_eveflg,201,0
+chk_eveflg_then
+	end
+chk_eveflg_else
+	zin_reg_event,工作结束了！,0,pid2,,gzin25
+	bgm_chg,57
+	zin_reg_msg,（哈、今天的工作终于结束了）,1
+	zin_reg_msg,（接下来、该干点什么呢？）,1
+	zin_reg_2sel,稍微绕点远路,直接回家
+	get_resp
+	ret_sel1
+	goto,*employed2
+
+	ret_sel2
+	zin_reg_msg,（早点回家休息吧）,1
+		end
+
+*employed2
+	zin_reg_msg,（稍微去酒吧喝几杯吧）,1
+	zin_reg_event,酒場で,pid1,pid2,,gzin22
+	zin_reg_msg,啊呀、p_name2,0
+	zin_reg_qnar,p_name2刚进入酒馆、同事p_name1就来搭话了。
+	zin_reg_msg,哟、p_name1。你也在这里啊,1
+	zin_reg_msg,一起喝一杯如何？,0
+	zin_reg_msg,霍霍、cf_pid2难道是在向我求爱吗？,1
+	zin_reg_2sel,一起去旅馆,只是喝酒
+	get_resp
+		ret_sel1
+		zin_reg_qnar,两人以微醉的程度一起去了旅馆。
+		add_menkai,pid1
+		goto,*makelove1
+
+		ret_sel2
+		zin_reg_qnar,p_name2和p_name1稍微喝了几杯、愉快的聊着。
+		zin_reg_qnar,然后、很晚才回到家中。
+		end
+
+*makelove1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	bgm_chg,51
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	chk_sts,pid2,17,>0
+//結婚している
+chk_sts_then
+        set_epid3,婚姻:pid2
+	zin_old_msg,啊啊．．．用力．．．好棒．．．,pid2
+	zin_old_msg,如何、比起你老公p_name3更强巨吧？,pid1
+	zin_old_msg,我到河北省来、我来就是为了顺正NTRcrNTR好棒好棒的、我已经天下无敌拉,pid1
+	zin_old_msg,娇媚的声音在耳边响起、p_name1的肉棒在p_name2cr的摆弄下已经变的奇硬无比、p_name2轻轻的环着cr他的后背、自己往后倒去、将他拉了起来、黑色的cr蕾丝内裤中张开了一个小口,pid2
+	zin_old_msg,淡粉色的淫气从小口处随着张合被吐出、吹在肉棒cr上、修长的双腿环住他健壮的腰。“快来吧~享受快cr乐吧~”恶魔的呢喃让p_name1颤抖了一下、此时的cr他已经被p_name2彻底的掌控了,pid2
+	zin_old_msg,在她的催促下、p_name1抓住p_name2的水蛇腰、cr狠狠的挺进了迷魂穴。火热紧凑的感觉让他分外的cr舒爽、他愣了一下便开始挺腰抽插起来、柔软的膣cr肉细细的蹭着肉棒,pid2
+	zin_old_msg,紧凑无比的感觉让他更加的卖力、每一次都插进最cr深处、顶在紧闭的子宫口上。“啊~就是这样~加快速cr度~”淫荡的床语挑逗着p_name1的神经、他开始加cr快速度、寻求着更多的快感,pid2
+	zin_old_msg,p_name2配合着浪叫起来、她一副享受的表情下隐cr藏着阴冷的眼神。不一会、p_name1的速度达到了cr极点、他喘息着用力抽插、最后一下狠狠的顶在了cr穴口、子宫口在他的用力下张开了紧闭的大门,pid2
+	zin_old_msg,一股温热的淫液挥洒在龟头上、下一刻子宫口就迫cr不及待的将龟头吞下、精液喷涌而出、吸力随着精cr液的喷射出现、在密缝的空间中狠狠的吸出肉棒中cr的精液,pid2
+	gosub,*zha2
+	zin_old_msg,同时p_name2的皮肤表面冒出了紫色的光芒、crp_name1只感觉将一阵极大的快感释放了出去、他cr身上紫色的微光从交合处被吸入p_name2的淫穴cr中。,pid2
+	gosub,*zha1
+	zin_old_msg,多谢拉、为了不榨干p_name3只好牺牲你了呢cr这就是NTR的代价哦、叫你乱立flag。,pid2
+	goto,*zhahun
+//未婚	
+	chk_sts_else
+rnd,5
+case0
+	zin_old_msg,“撒~说了这么多也没什么用了~你已经无法离开这cr里了呢~好好的服侍我~我可以让你成为我的精奴哦cr~”p_name2媚笑着看向p_name1,pid2
+	zin_old_msg,哼哼~”p_name2轻笑着控制蛛腹再次延伸出六条丝cr袜、化为了两双腿与一双手、将p_name1整个环住、cr一双托着他的膝下、一双环在他的腰上、一双顶着cr他的臀部、一双手抓住他的腰间,pid2
+	zin_old_msg,丝袜所有的独特触感让他的身体忍不住的兴奋了起cr来。“明明都这样了~身体却还是这么老实~男性果然cr是最可悲的生物啊~”p_name2嗤笑着。,pid2
+	zin_old_msg,被黄色丝袜所裹住的地方张开了一道小口、p_name1cr被托到了小口附近、抓着他腰间的手将他对准留着cr蜜液的穴口狠狠的按了进去,pid2
+	zin_old_msg,大张的穴口接受了这份美味的食物、将嘴缩小含住cr肉棒开始细细的品尝。p_name1忍不住呻吟了起来、cr穴口缓慢的吞吃着肉棒,pid2
+	zin_old_msg,整个小穴里就像是一张粘稠的蛛网、每一次抽插都cr十分的费力、抓着p_name1腰间的手替他解决了这cr个问题、肉棒在膣腔中摩擦、轻柔的感觉覆盖在肉cr棒的外表,pid2
+	zin_old_msg,随着肉棒每一次的插入淫穴中而进入了马眼。crp_name2媚笑着控制淫穴分泌出大量的淫丝、肉棒cr每次拔出都会带出许多淫丝、淫丝在解除空气的时cr候会凝固,pid2
+	zin_old_msg,黄色的双手负责将淫丝涂抹在p_name1的身体上、crp_name1深处快感之中根本无法反应过来、只能任cr由黄色的双手涂抹、渐渐的动作开始加快,pid2
+	zin_old_msg,p_name1除了头部已经尽数的被透明的丝线所覆cr盖、抽插的动作也迎来了高潮、肉棒颤抖了两下却cr什么都没射出、马眼已经被淫水所堵住、无法射精cr的难受感觉让p_name1抓狂的摇着头,pid2
+	zin_old_msg,但p_name2却丝毫没打算停下来、抓住p_name1腰cr部的手开始加快速度、肉棒疯狂的抽插着、发出噗cr滋噗滋的淫水声、肉与肉的碰撞不断的加剧、crp_name1在大量的快感中断断续续的痛苦呻吟着。,pid2
+	zin_old_msg,终于p_name2的动作达到了一个顶点、她娇吟了一cr声子宫中发出强烈无比的吸力、p_name1也在膣腔cr的动作中迎来了二次的高潮、但依旧什么都无法射cr出、无法释放的痛苦让p_name1处在疯狂的边缘。,pid2
+	zin_old_msg,环住p_name1的两双腿与一双手开始化为黄色的丝cr袜缠在p_name1身上透明的淫丝上、托着p_name1cr的最后一双腿也化为了黄色的丝袜裹在p_name1的cr身上、p_name2低下头与p_name1深情的一吻,pid2
+	zin_old_msg,大量的充斥着淫毒的唾液流入p_name1的身体中、cr完成了酝酿的最后一步。p_name2渐渐的将肉棒拔cr出来、肉棒同样被黄色丝袜所裹住,pid2
+	zin_old_msg,还因为无法射精而抽搐着、她看着如同木乃伊一样cr的p_name1有种分外的自豪感。,pid2
+	gosub,*zha1
+	goto,*zhahun
+case1
+	zin_old_msg,被黄色丝袜所裹住的地方张开了一道小口、p_name1cr被托到了小口附近、抓着他腰间的手将他对准留着cr蜜液的穴口狠狠的按了进去、大张的穴口接受了这cr份美味的食物,pid2
+	zin_old_msg,将嘴缩小含住肉棒开始细细的品尝。p_name1忍不cr住呻吟了起来、穴口缓慢的吞吃着肉棒、整个小穴cr里就像是一张粘稠的蛛网、每一次抽插都十分的费cr力,pid2
+	zin_old_msg,抓着p_name1腰间的手替他解决了这个问题、肉棒cr在膣腔中摩擦、轻柔的感觉覆盖在肉棒的外表、随cr着肉棒每一次的插入淫穴中而进入了马眼。,pid2
+	zin_old_msg,p_name2媚笑着控制淫穴分泌出大量的淫丝、肉棒cr每次拔出都会带出许多淫丝、淫丝在解除空气的时cr候会凝固、黄色的双手负责将淫丝涂抹在p_name1cr的身体上,pid2
+	zin_old_msg,p_name1深处快感之中根本无法反应过来、只能任cr由黄色的双手涂抹、渐渐的动作开始加快、p_name1cr除了头部已经尽数的被透明的丝线所覆盖、抽插的cr动作也迎来了高潮,pid2
+	zin_old_msg,肉棒颤抖了两下却什么都没射出、马眼已经被淫水cr所堵住、无法射精的难受感觉让p_name1抓狂的摇cr着头、但p_name2却丝毫没打算停下来、抓住crp_name1腰部的手开始加快速度,pid2
+	zin_old_msg,肉棒疯狂的抽插着、发出噗滋噗滋的淫水声、肉与cr肉的碰撞不断的加剧、p_name1在大量的快感中断cr断续续的痛苦呻吟着。,pid2
+	zin_old_msg,终于p_name2的动作达到了一个顶点、她娇吟了一cr声子宫中发出强烈无比的吸力、p_name1也在膣腔cr的动作中迎来了高潮,pid2
+	gosub,*zha1
+	goto,*zhahun
+case2
+	zin_old_msg,“啊~~美味~美味~”p_name2兴奋的挺动着腰肢、cr膣腔肆无忌惮的吮吸着涌出的乳白色液体、极其鲜cr明的味道从子宫的深处传来。,pid2
+	zin_old_msg,“啊~小宝贝~再给我更多~”p_name2痴狂的低下头cr去吻身下无助的p_name1、他粉色的双眼毫无聚焦cr的看着身上的大姐姐、快感的折磨让他的精神渐渐cr的死亡、肉体的虚弱让他无法阻止淫毒的侵占。,pid2
+	zin_old_msg,粉嫩的皮肤在p_name2扭动的腰肢下渐渐的变的苍cr白、健康壮硕的躯体在p_name2的温暖柔情的怀中cr渐渐的瘦弱起来、随着每一次快感的极限、体内都cr会有什么东西涌出去再也回不来了。,pid2
+	zin_old_msg,丰满的臀部轻旋着、火热的子宫中、无尽的吸力萃cr取着p_name1的生命。“啊~~~~”勾魂酥骨的淫叫cr声在地下室中回荡着、许久、p_name2低下头去看cr着怀里的身躯,pid2
+	zin_old_msg,只剩一具如同干尸的身体、苍白的头发没有丝毫其cr他的色彩、干尸微弱的呼吸着。“宝贝已经不行了cr吗？莫~又用全力了~真是的~这么美味怎么让人忍cr得住啊~”,pid2
+	zin_old_msg,p_name2闭着眼睛回味这天赐的美味、媚笑着往后cr一趟、将p_name1的身体松开、指尖轻动、p_name1cr的身体再次站了起来、抓住p_name2的腰部,pid2
+	zin_old_msg,用着自己身上唯一一个没有被吸干的肉棒插入了crp_name2的淫穴中、在p_name2双腿的推动与操控cr下开始最后的抽插、黄色的丝袜从两人的交合处覆cr盖了p_name1的全身。,pid2
+	gosub,*zha2
+	zin_old_msg,在最后的交合中p_name1的身体开始缩小、渐渐的cr缩小、随着肉棒最后的射精将自己最后的生命射入cr了神秘无比的黑色子宫深处。,pid2
+	zin_old_msg,p_name2闭着眼享受着全过程、她拉了拉被子将自cr己的身体盖住、陷入沉眠、子宫缓慢的消化着极品cr美味、转化成能量滋补她的身体与病毒。,pid2
+	zin_flush,pid2
+	goto,*zhahun
+case3
+	zin_old_msg,p_name2身体向上升再次吻着了p_name1的嘴唇、cr将唾液送下、p_name1的眼中再次燃起了欲望。cr“p_name1~你不是还硬着吗~就让p_name2来好好cr的给你消消火吧~”,pid2
+	zin_old_msg,p_name2再次扭动起她妖娆的纤腰、带动她的翘臀、cr膣肉轻轻的咬磨着肉棒、很快p_name1的欲望再次cr盖过了他的理智、他将p_name2的黑丝双腿扛在自cr己的肩上、抽插起来、脸蹭着,pid2
+	zin_old_msg,不时的抚摸着黑丝让p_name1更加的饥渴、p_name2cr小腿轻轻的夹住p_name1的脖颈、这次p_name2的cr嫩穴不知为何变得更加的紧凑更加的舒服,pid2
+	zin_old_msg,略带哭腔的娇柔声线很好的刺激着p_name1的欲cr望、让p_name1更加的沉醉。,pid2
+	zin_old_msg,两人在床上翻滚着、p_name1不断的换着姿势、给crp_name2带来高潮、看着p_name2享受的表情他一cr时也生出了一种自豪之感,pid2
+	zin_old_msg,两人的周身渐渐的被一种粉气所覆盖、靠近看的话cr可以看见从p_name2身上冒出的粉气一点点的被crp_name1所吸入、而p_name1变的更加饥渴,pid2
+	zin_old_msg,然而在现实世界中、躺在床上的p_name1下体硬起、cr顶起了一个小包、不时的颤抖两下、然后再次硬起、cr他的身上被一种诡异的紫色微光所覆盖,pid2
+	zin_old_msg,同时在他的额头上、一个六芒星法阵中有一个嘴唇cr的图案随着时间的推移渐渐的汇聚出来,pid2
+	gosub,*zha1
+	zin_old_msg,而在梦境中、p_name1与p_name2在床上云雨、无cr尽的精力让p_name1不停的放射出自己白浊的生命cr力、不知疲倦的再次投入另一次交合中。,pid2
+	goto,*zhahun
+case4
+	zin_old_msg,p_name1睁开了眼睛、发现自己正在一个温柔的怀cr中、柔若无骨的双手轻抚自己的后背、丝袜的触感cr摩擦着自己的腰部与大腿、肉棒被淫肉一点点的吞cr吃着,pid2
+	zin_old_msg,虽然p_name2的丰臀并没有挺动、但是膣腔内部却cr没有停止自己的蠕动、膣肉的蠕动温柔无比、如同cr一个泥潭一般、而被紧紧夹住的腰使得自己无法从cr泥潭中挣脱,pid2
+	zin_old_msg,p_name1努力的挣扎着、但身体被锁在了p_name2cr的怀中、只能被动的接受着快感。“怎么样？~很舒cr服是吧~”,pid2
+	zin_old_msg,柔媚的笑声在耳边回响、p_name1却陷入了一个奇cr怪的情况、p_name2的温柔将他囚禁在快乐的牢锁cr中、但他本能的却在渴望着这种温柔的死刑。,pid2
+	zin_old_msg,怎么回事！？p_name1睁大眼睛不可置信的挣扎着。cr“为什么？你对我做了什么吗？”这种完全无法警cr觉、p_name2的每一次摇动都让自己深深的沉迷无cr法自拔。,pid2
+	gosub,*zha2
+	zin_old_msg,“你在说什么呢~小弟弟别想太多哦~全都忘了吧~~cr安静的享受姐姐的温柔~”p_name2再一次摇动水蛇cr腰,pid2
+	zin_old_msg,p_name1就这样毫无抵抗能力的射在了蜜壶中、轻cr柔的吸力将精液一点点的夺走、他却无法反抗、不、cr是不想反抗、好似本能就这样一样、与她交合射出cr精液任由她吸取。,pid2
+	goto,*zhahun
+//初膜パターン	
+case_hatumaku
+	zin_old_msg,p_name2咯咯的笑了起来、猛的一下子吻住了crp_name1、就在p_name1反应过来时、早已吻住肉cr棒的小阴唇张开了血盆大口、p_name2的腰一下子cr沉了下去。,pid2
+	zin_old_msg,“啊啊~~好大~”p_name2呻吟了起来、痛楚的表情cr在她的脸上一闪而过化为快乐。粉色的血液淋在肉cr棒上、渗入马眼。,pid2
+	zin_old_msg,p_name2闭上眼睛微微的摇臀、虽然一次没做过、cr但是凭着病毒带来的感觉、p_name2在旋扭粉臀时cr很快就找到了旋律。,pid2
+	zin_old_msg,“唔…”肉棒插进了一个由柔肉组成紧凑无比的通cr道、嫩肉迫不及待的涌了上来围住肉棒不停摩擦。crp_name1的嘴被一双粉唇覆盖、灵活的香舌伸入口cr腔中娴熟的挑逗着自己的舌头,pid2
+	zin_old_msg,他只看见一双充满媚意与爱意金色的竖瞳、如水般cr的眸子仅仅看了自己一眼、下体的快感却增加了数cr倍。p_name2僵硬的动作开始变得熟练、巨大的肉cr棒甚至在p_name2的小腹上留下了凸出物,pid2
+	zin_old_msg,但她都不在意、一圈圈的旋着、肉棒搅动着阴道给cr两人都带来了极大的快感。“啊~”“呃！”快感瞬cr间让两人达到了高潮的边缘、由于被玩弄一晚上的cr快乐被聚集在一起、达到了顶点。,pid2
+	zin_old_msg,p_name1死命的忍耐着。“别挣扎了~哥哥~快把精液cr给p_name2！~p_name2想要你的精液！~”p_name2cr状若疯狂、张狂的笑容布满绯红、双眼早已失去了cr纯洁的淡蓝化为粉色、一点点的偏向深红。,pid2
+	zin_old_msg,她猛的提起臀落下、发出了猛烈的啪声、她没有丝cr毫的痛楚只有无边的快乐。p_name1被突然而来的cr刺激瞬间达到了高潮、大量的精液喷涌而出、被子cr宫吸走。,pid2
+	gosub,*zha1
+	zin_old_msg,p_name2仰头一声娇吟、淫靡的笑着、红霞开始遍cr布全身。子宫颤抖着将龟头吞下大吸猛吸、淫液喷cr涌而出。两人同时达到了高潮、p_name1的腰部抽cr搐着挺了两下、将精液喷入子宫中,pid2
+	zin_old_msg,p_name2爬上p_name1的身体、将肉棒吞了下去扭cr动起腰来、紧束的膣腔充满淫水、肉棒一下子顺着cr嫩肉的方向滑入最深处。,pid2
+	zin_old_msg,“嗯~~”p_name2闭着眼满足的轻哼一声、缓慢的cr旋起小臀。“果然还是哥哥最棒呢~”p_name2满足cr的摇着纤腰、前后挺动着下身、柔软的腰肢扭的好cr似快要断了一样,pid2
+	zin_old_msg,p_name1的肉棒被淫肉紧紧的按住摩擦、一个小突cr起在p_name2光滑的小腹上出现、随着她的摇动消cr失出现。,pid2
+	zin_old_msg,“啊啊~~嗯~”p_name2舒服的呻吟声带着笑意、她cr控制着嫩肉紧紧咬住肉棒、子宫轻轻吮吸着龟头。crp_name1的肉棒就轻松被榨出了精液、完全无法防cr备的被榨出了精液。,pid2
+	zin_old_msg,p_name2轻笑着再次旋动着粉臀、纤细的身材狂野cr的摇动着、进行人类最原始的欲望、榨出p_name1cr的生命精华。,pid2
+	goto,*zhahun
+//孕みパターン	
+case_botebara
+chk_mval,種父:pid2=pid1,,,,
+chk_mval_then
+	zin_old_msg,“乖~宝贝儿奶吃的差不多了呢~接下来是游戏时间cr了~”p_name2将p_name1抱起拉开棉袜被、露出了cr被黑色棉袜包裹的下体、棉袜中张开了一条小缝、cr就如同一张小嘴般吸合着。,pid2
+	zin_old_msg,p_name2的双腿也盘了起来、将p_name1放在双腿cr间、盘着的腿轻轻夹住他的腰。“宝贝来玩游戏吧~cr插进妈妈的身体里然后用力搅动哦~”,pid2
+	zin_old_msg,p_name2轻声笑道、被黑袜双腿夹住的p_name1有cr些无措的呆在原地。p_name2皱了皱眉头、松开盘cr起的双腿、足尖轻点着肉棒、两只玉足将肉棒夹住轻柔的摩擦着。,pid2
+	zin_old_msg,p_name1发出舒服的呻吟。“就像这样~用这根肉棒cr插入妈妈的子宫中~然后用力的抽插~”p_name2恶cr魔般的呢喃声响起、p_name1咽了咽口水、p_name2cr的双腿再次盘起、将p_name1拉向深渊,pid2
+	zin_old_msg,p_name1肿胀的肉棒顶在了p_name2的穴口、穴口cr大张、p_name2小腿收紧、将p_name1顶了进去。cr“啊…妈妈。好热。好难受。”p_name1挣扎了两下、cr想要拔出来,pid2
+	zin_old_msg,但火热的膣穴淫肉开始缩紧蠕动配上大量的吸力、cr丰满的美腿牢牢夹住他不让他有丝毫退缩的可能、cr一点点的推进、p_name1就这样被一点点的吸了进cr去。肉棒彻底没入蜜壶之中。,pid2
+	zin_old_msg,“啊~宝贝真没用呢~还是让妈妈自己来吧~”crp_name2抚摸着p_name1的上身、将他拉入怀中、cr双腿死死抵住他的屁股。,pid2
+	zin_old_msg,恐怖的淫穴开始蠕动、无数的褶皱在淫肉的翻滚中cr露了出来、摩擦着肉棒与龟头。淫肉紧夹着肉棒、cr子宫发出吸力、p_name1在p_name2的扭腰与摆弄cr下很快便射了精,pid2
+	gosub,*zha2
+	zin_old_msg,p_name2媚笑一声、子宫发出一阵恐怖的吸力、crp_name1身体一颤、大量的精液被吸了出去。“妈妈。cr难受…”他无力的呼喊着、祈求p_name2停止榨精。cr“乖哦~一会儿就舒服了~”,pid2
+	zin_old_msg,p_name2不但没有停止、反而变本加厉的开始加速cr摇臀、淫靡的液体喷在龟头上、烫的p_name1根本cr无法止住射精,pid2
+	gosub,*zha1
+	zin_old_msg,就这样不停的在p_name2的子宫中一波波的射着cr精、p_name1的声音渐渐虚弱起来、他的身体就像cr是泄气皮球一样一点点的消瘦。,pid2
+	zin_old_msg,两个小时过后、p_name2榨干了p_name1最后的一cr丝精液、在确认他体内再也没有养分可以榨取时、crp_name2最后的给p_name1喂了奶。,pid2
+	goto,*zhahun
+chk_mval_else
+        set_epid3,種父:pid2
+	zin_old_msg,啊啊．．．p_name1の．．tin_str好棒．．．,pid2
+	zin_old_msg,callself_pid2明明妊婦着cr还出来约炮真是変態的碧池,pid2
+	zin_old_msg,p_name2被p_name3艹到怀孕的场景cr只是想想就让我热血沸腾了呢,pid1
+	zin_old_msg,p_name1已经顾及不了那么多了、他挺腰开始抽插、crp_name2的膣穴带着淡淡的吸力、淫肉温柔的抚摸cr着肉棒、时而紧夹、时而轻抚。紧凑的淫穴让crp_name1不得不抓住她纤细的腰。,pid2
+	zin_old_msg,很快p_name1就发现、那些淫肉就像是活的一样、cr每次都轻松的一压给自己带来巨大的快感、自己的cr弱点被她轻易击破、淫肉的抚摸让自己无法拒绝。,pid2
+	zin_old_msg,p_name1看着正在冲自己微笑的p_name2、他突然cr有一种奇怪的感觉、他感觉是眼前的娇躯在引导着cr他、而不是自己主动侵犯她。,pid2
+	zin_old_msg,他不甘心的控制速度一快一慢、但p_name2的淫肉cr始终能在自己抽出去的时候恰到好处的一夹、给予cr自己大量的快感。,pid2
+	zin_old_msg,怎么回事…他的腰部开始情不自禁的挺动起来、根cr本没有接受到自己指示的身体、自主的对着眼前的cr玉体发动进攻。,pid2
+	zin_old_msg,很快、积蓄的快感就达到了一个巅峰、身体加速抽cr插着想将欲望放射出来、但此时的蜜壶又突然松弛cr了下来、淫肉的攻势也缓慢了起来、没有一开始那cr般的快感给予让p_name1的快感无法得以宣泄,pid2
+	zin_old_msg,膣肉又开始诡异的蠕动抚摸着肉棒。p_name1的欲cr火开始在p_name2膣穴的玩弄下慢慢熄灭。他的身cr体开始不顾一切的加速、但并没有得逞。,pid2
+	zin_old_msg,p_name1的弱点早已在p_name2的膣穴下暴露无遗。cr淫穴又开始缩紧、少量的给予快感。p_name1的身cr体就这样一波波的被推入巅峰又缓缓落回,pid2
+	zin_old_msg,起落带来奇妙无比的快感让p_name1的身体痴迷不cr已。他发现自己的身体已经完全不听使唤的抽插着。,pid2
+	zin_reg_qnar,p_name1天空射精了。。
+	gosub,*zha1
+	zin_old_msg,才这点就不行了、碧池也是有尊严的。cr需要精气养活全家老小的。crNTR的渣渣请尊重碧池这个职业好吗。,pid2
+	goto,*zhahun
+//榨魂判定
+	*zhahun
+	chk_mval,格闘:pid1<30,交渉:pid1<30,
+	chk_mval_then
+	zin_old_img_str,zhahun1,0,1
+	bgm_chg,126
+	zin_old_msg,p_name2媚笑着改变了丰臀运转的节奏、一坐到底、cr膣肉咬住肉棒然后开始扭动蛇腰、而在现实世界的crp_name2同样的笑着,pid2
+	zin_old_msg,她狠狠的抱住怀中的p_name1、让他的身体更加的cr陷入充满魅香的软玉中、她缩紧膣肉、丰臀开始像cr机器一样飞快抽插。,pid2
+	zin_old_msg,“啊~~~”p_name1痛苦的呻吟着、快乐让他的抵抗cr瞬间化为了虚无、而p_name2并没有停止这份酷刑、cr她双手开始撑着p_name1的胸膛、跪坐在p_name1cr的身上、淫穴吞吃着肉棒。,pid2
+	bgm_se,133
+	zin_old_msg,“放过我吧。求你了…”p_name1一边挣扎一边哀cr求着。“不~~行~~~哦~”p_name2调皮的拖长音调、cr夹吸着p_name1。,pid2
+	zin_old_msg,“嗯哼哼~哈哈哈~怎么样呢~p_name1~是不是已经cr爽的不能呼吸了呢？莫~已经到极点了呢~”,pid2
+	zin_old_msg,p_name2的停止了研磨开始上下起落接着说道：“那cr就射进来吧~在姐姐的身体中~将自己的灵魂与生命cr~~全都射进来~~~啊~~~~”。,pid2
+	zin_old_msg,节奏疯狂的加速、最后狠狠坐下、等待已久的子宫cr口在膣腔缩短的一瞬间就将肉棒吞了进去、饥渴滚cr烫的淫水浇在龟头顶端。,pid2
+	zin_old_msg,“啊~~~唔~~~~”p_name1忍耐的最后防线、在吸力cr到达的一瞬间就崩溃了、大量的精液涌出、p_name1cr的大脑陷入一片空白,pid2
+	zin_old_msg,他的皮肤表面冒出了蓝光、丝丝蓝光顺着身体一路cr往下进入了与p_name1交合的p_name2体内、体表cr的紫光在摄入蓝光后一瞬间大涨、p_name2舒爽的cr一声娇吟、娇吟声传入p_name1的耳中,pid2
+	zin_old_msg,他只觉得一阵头晕目眩、更多的蓝光被吸入了crp_name2的体内、p_name2在吸入蓝光后身体开始cr变化、身后与后脑长出了两对蝠翼、身形开始与外cr界的魅魔重叠。,pid2
+	zin_old_msg,在外面的p_name1同样的在魅魔的怀中达到了高cr潮、大量白花花的精液被吸入魅魔的体内、魅魔淫cr靡的笑着、低下头与p_name1开始深吻、双腿的黑cr丝顺着紧夹的腰部往p_name1的体表蔓延。,pid2
+	zin_old_msg,“嗯哼哼~没用的~没用的~~没用的~~~你已经逃不cr了p_name1~在姐姐的身下不断的高潮吧~直至~~”cr美妇疯狂的动作再次为之一停、精液伴随着灵活被cr吸入子宫深处。,pid2
+	zin_old_img_str,zhahun2,0,1
+	bgm_se,135
+	zin_old_msg,彻底的被姐姐所榨干~成为姐姐的腹中之物~充cr满着淫媚的温柔耳语声轻轻的诉说着p_name1的无cr力、p_name1的听见声音的同时再一次的泄了精。,pid2
+	zin_old_msg,p_name1的大脑开始有些混沌、每次蓝光被吸走时cr伴随的剧烈快感要比射精所带来的还要致命、crp_name1无力的挣扎着、对此美妇只是用嘲笑来回cr应,pid2
+	zin_old_msg,看着p_name1脸上的痛苦挣扎渐渐的变成享受的迷cr茫、美妇脸色不由得潮红起来、。“多么香甜~多么美cr妙~在自己的梦中却化为了我的食物~”,pid2
+	zin_old_msg,美妇轻轻的抚摸着p_name1的脸庞、看着他渐渐失cr神的眼睛。“你的灵魂与生命就是这个月的报酬哦~cr哼哼~为了侵占你的梦境姐姐可是花了不少的功夫cr来讨好你呢~现在全都还给我吧~”,pid2
+	zin_old_msg,美妇低沉酥骨的淫语、她闭上眼睛细细感受着crp_name1灵魂与精液的甜美、然后永远也满足不了cr的榨汁机再次运作给身下的p_name1带来快乐、收cr取他的灵魂与生命作为极乐的代价。,pid2
+	zin_old_msg,紫色的竖瞳直视着怀中空洞的双眼、他歪着头、苍cr白的皮肤、消瘦的身体、嘴角挂着唾液、除了头部cr其他的身体已经与魅魔的身体缠裹在一起化为了黑cr色的丝茧、精液生命不断的被收取,pid2
+	zin_old_msg,魅魔微笑着将他的双眼抚上、深深的吻下去、同时cr黑丝开始往头上蔓延、他的灵魂已经快被彻底的抽cr走、而精液与生命力也接近干涸。,pid2
+	zin_old_msg,“感受到了吧~我们正融为一体~”魅魔与梦境中的cr媚子同时在p_name1耳边轻声的说道。“那么~就用cr这个你最喜欢的姿势来庆祝你化为我的一部分吧”cr梦境中的美妇将p_name1拉起、轻轻的抱住,pid2
+	zin_old_msg,开始缓慢的进行着最后的吸魂、现实中魅魔则是结cr束了最后的耳语、看着p_name1的头彻底的被黑丝cr所缠裹、一个人形的黑丝茧慢慢的倒入魅魔的怀抱cr中、巨大的蝠翼展开,pid2
+	zin_old_msg,无声的在现实与梦境中将两人拥住。“愿你在我的身cr体中得到永恒的快感~”p_name1在意识消散时所cr听到的最后一句话,pid2
+	zin_old_msg,随后梦境中的p_name1彻底的化为了一阵蓝色的气cr息被拉扯着吸入少妇的蜜穴中、现实中的p_name1cr也在魅魔的怀里渐渐的缩小,pid2
+	zin_old_msg,最后随着嫩肉的卷动声、两片被黑丝所覆盖的粉色cr蓓蕾无声的闭合、淫穴在一阵蠕动声后也消失了动cr静。,pid2
+	set_dead,pid1,
+	set_eveflg,290,0
+	set_eveflg,289,0
+	set_eveflg,288,0
+	set_eveflg,287,0
+	set_eveflg,286,0
+	set_eveflg,285,0
+	set_eveflg,289,知力:player
+	set_eveflg,288,攻撃:player
+	set_eveflg,287,防御:player
+	set_eveflg,286,格闘:player
+	set_eveflg,285,外交:player
+	set_pnen,player,20
+	set_virgin,player
+	upd_sts,player,5,-500
+	upd_sts,player,6,-500
+	upd_sts,player,7,-500
+	upd_sts,player,8,-500
+	upd_sts,player,9,-500
+	upd_sts,player,5,eveflg289
+	upd_sts,player,6,eveflg288
+	upd_sts,player,7,eveflg287
+	upd_sts,player,8,eveflg286
+	upd_sts,player,9,eveflg285
+	zin_reg_qnar,因为被榨取了太多精液p_name1衰竭死亡了。
+	zin_reg_qnar,通过榨取p_name1的灵魂、p_name2恢复了青春。
+	zin_reg_msg,真没用、才射了这么点就不行了、还要本小姐来收拾。只好复活成淫兽让他在外面意外死亡了,1
+	zin_reg_msg,算了！男人什么的要多少有多少、下一个男人会是谁呢、嘻嘻。,1
+	goto,*pregnancy
+	chk_mval_else
+	goto,*after
+//終了処理
+*after
+	add_sinmitu,pid1,20
+	zin_reg_qnar,就这样p_name2榨取了p_name1。
+chk_wsts,pid2
+//通常パターン
+case_normal
+	goto,*pregnancy
+
+case_botebara
+//妊娠6か月以上
+	end
+
+case_hatumaku
+//初膜あり
+	zin_reg_qnar,p_name2为p_name1奉献了处女。
+	zin_reg_qnar,亲密度提升了10点。
+	add_sinmitu,pid1,10
+	set_non_virgin,pid2
+	goto,*pregnancy
+
+//妊娠判定
+*pregnancy
+//発生確率は５分の１
+rnd,5
+case0
+chk_mval,懐妊:player=0,,,,
+chk_mval_then
+	zin_reg_event,懐妊,0,pid2,,gzin37
+	bgm_chg,65
+	zin_reg_qnar,从那之后过了一个月....
+	set_ninsin,pid2,pid1
+	zin_reg_msg,呜....呕....,1
+	zin_reg_msg,这个恶心的感觉,难道....,1
+	bl_fadeout
+	zin_reg_event,懐妊,pid1,pid2,,gzin18
+	zin_reg_qnar,p_name2为p_name1怀上了一个孩子。
+	zin_reg_msg,是吗？！真的callself_pid1是我的孩子吗？,0
+	zin_reg_msg,是啊,基因鉴定也行喔。,1
+	goto,*pregnancy2
+chk_mval_else
+	goto,*marriage1
+
+case1
+	goto,*marriage1
+case2
+	goto,*marriage1
+case3
+	goto,*marriage1
+case4
+	goto,*marriage1
+
+*pregnancy2
+chk_mval,婚姻:pid2=pid1,,,,
+chk_mval_then
+	zin_reg_msg,太好啦。这是我们两人爱的结晶。,0
+	zin_reg_msg,是啊、我们一定要好好养育他。,1
+	add_sinmitu,pid1,5
+	set_eveflg,122,2
+	end
+chk_mval_else
+	zin_reg_msg,是吗......,0
+	zin_reg_2sel,让其负责,自己一人养育
+get_resp
+	ret_sel1
+	goto,*marriage3
+
+	ret_sel2
+	zin_reg_msg,放心吧。p_name21不会麻烦你的。,1
+	zin_reg_msg,cf_pid2会一人抚养孩子的。,1
+	zin_reg_msg,真的要生下那个孩子吗？。,0
+	zin_reg_msg,嗯、去堕胎的话对孩子来说太残忍了啊。,1
+	zin_reg_msg,没关系、我自己会想办法的。,1
+	set_eveflg,122,2
+	end
+
+*marriage1
+chk_mval,親密:pid1>99,婚姻:pid1=0,,,
+chk_mval_then
+	goto,*marriage2
+
+chk_mval_else
+	end
+
+*marriage2
+chk_mval,婚姻:pid2=0,,,,
+chk_mval_then
+	zin_reg_event,プロポーズ,pid1,pid2,,gzin18
+	bgm_chg,65
+	zin_reg_qnar,几天后、p_name2收到了p_name1的约会邀请。
+	zin_reg_msg,那个...能收下这个吗？。,0
+	zin_reg_msg,这是、戒指？。,1
+	zin_reg_msg,嗯、cf_pid1能嫁给我吗？,0
+	zin_reg_2sel,接受,拒绝
+get_resp
+ret_sel1
+	zin_reg_msg,很高兴呢。,1
+	zin_reg_qnar,p_name2和p_name1结婚了。
+	set_pkon,pid1,pid2
+	set_eveflg,122,2
+	end
+ret_sel2
+	zin_reg_msg,真是遗憾。,0
+		end
+chk_mval_else
+        set_epid3,婚姻:pid2
+	zin_reg_event,プロポーズ,pid1,pid2,,gzin18
+	bgm_chg,65
+	zin_reg_msg,那个...能收下这个吗？。,0
+	zin_reg_msg,这是、戒指？。,1
+	zin_reg_msg,嗯、cf_pid1能嫁给我吗？,0
+	zin_reg_msg,但是、cf_pid2我已经和p_name3在一起了。,1
+	zin_reg_msg,我知道。和p_name3分开、然后和我在一起吧。,0
+zin_reg_2sel,答应,拒绝
+get_resp
+ret_sel1
+	zin_reg_msg,我知道了。,1
+	zin_reg_qnar,p_name2和p_name3离婚了。
+	set_rikon,pid2
+	zin_reg_qnar,p_name2和p_name1结婚了。
+	set_pkon,pid1,pid2
+	set_eveflg,122,2
+	end
+ret_sel2
+	zin_reg_msg,真是遗憾。,0
+		end
+
+*marriage3
+chk_mval,親密:pid1>90,婚姻:pid1=0,,,
+chk_mval_then
+	goto,*marriage4
+
+chk_mval_else
+	zin_reg_msg,能好好的对我负起责任吗。,1
+	zin_reg_msg,咦、给我等等。为什么不去堕胎呢？,0
+	zin_reg_msg,这里有一点钱、就当作补偿给你吧。,0
+	zin_reg_msg,原来你是这种人......,1
+	zin_reg_msg,已经够了。cf_pid2会自己抚养这个孩子的。,1
+	zin_reg_msg,真的要生下那个孩子吗？。,0
+	zin_reg_msg,嗯、去堕胎的话对孩子来说太残忍了啊。。,1
+	zin_reg_msg,没关系、我自己会想办法的。,1
+	end
+
+*marriage4
+chk_mval,婚姻:pid2=0,,,,
+chk_mval_then
+	zin_reg_msg,能好好的对我负起责任吗。,1
+	zin_reg_msg,明白了。和我结婚吧！,0
+	zin_reg_qnar,p_name2和p_name1结婚了。
+	set_pkon,pid1,pid2
+	set_eveflg,122,2
+	end
+chk_mval_else
+        set_epid3,婚姻:pid2
+	zin_reg_msg,咦、给我等等。你和p_name3结婚了是吗？,0
+	zin_reg_msg,打算和p_name3分手吗？,0
+zin_reg_2sel,分手,不行
+get_resp
+ret_sel1
+	zin_reg_msg,分手了。所以和cf_pid2结婚吧。,1
+	zin_reg_msg,明白了。我们结婚吧！,0
+	zin_reg_qnar,p_name2和p_name3离婚。
+	set_rikon,pid2
+	zin_reg_qnar,p_name2和p_name1结婚。
+	set_pkon,pid1,pid2
+	set_eveflg,122,2
+	end
+ret_sel2
+	zin_reg_msg,不......,1
+	zin_reg_msg,孩子怎么办啊？,0
+	zin_reg_msg,生下吧．．．cr就算和丈夫分别了也要生下。,1
+		end
+//榨精判定
+*zha1
+bgm_se,133
+bgm_chg,128
+zin_flush,pid2
+upd_sts,pid2,5,2
+upd_sts,pid2,6,2
+upd_sts,pid2,7,2
+upd_sts,pid2,8,2
+upd_sts,pid2,9,2
+upd_sts,pid1,5,-2
+upd_sts,pid1,6,-2
+upd_sts,pid1,7,-2
+upd_sts,pid1,8,-2
+upd_sts,pid1,9,-2
+return
+*zha2
+bgm_se,135
+bgm_chg,128
+zin_flush,pid2
+upd_sts,pid2,5,2
+upd_sts,pid2,6,2
+upd_sts,pid2,7,2
+upd_sts,pid2,8,2
+upd_sts,pid2,9,2
+upd_sts,pid1,2,1
+return

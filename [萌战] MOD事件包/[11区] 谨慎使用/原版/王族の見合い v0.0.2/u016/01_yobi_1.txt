@@ -1,0 +1,400 @@
+//予備ルート前半
+//このファイルをロードした時点でpid3=0。
+
+//会話スタート
+bl_fadein,gzin33
+bgm_chg,69
+zin_reg_event,p_name4の執務室,pid4,eveflg210,,gzin33
+zin_reg_msg,むぅ・・・,0
+zin_reg_msg,難しい顔をされて、どうなされました、p_name4殿。,1
+zin_reg_msg,いや、実はな。p_name1様のお世継ぎの件で困っているのだ,0
+zin_reg_msg,ふむ。,1
+zin_reg_msg,侍従長、宮内局から相当な突き上げを食らっていて、辟易しているのだが・・・,0
+zin_reg_msg,そもそも、お世継ぎもなにも、p_name1様はお一人の身だからな・・・,0
+zin_reg_msg,まずはそこですな。娶ってもらわないと解決しないかと,1
+zin_reg_msg,そうなのだ・・・,0
+zin_reg_msg,ご本人は・・・,0
+zin_reg_msg,奥手なんですかね！,1
+zin_reg_msg,おい！大きな声で言うな、失礼なことを！,0
+zin_reg_msg,ああ、すみません・・・,1
+zin_reg_msg,そこで、ちょっとお見合いでも勧めてみようかと思うのだが,0
+zin_reg_msg,なるほど、よいお考えですね,1
+zin_reg_msg,肝心のお相手がいない,0
+zin_reg_msg,・・・,1
+zin_reg_msg,そこで・・・,0
+zin_reg_qnar,・・・・・・
+zin_reg_msg,・・・cr（ジィーッ）,0
+zin_reg_msg,（・・・）,1
+zin_reg_msg,（なんだよ、crその目は・・・）,1
+zin_reg_msg,わ、分かりました。人事局のデータベースから相応しい方を何人か選んでみます！,1
+zin_reg_msg,よろしく頼むっ！,0
+zin_reg_msg,（なんだか）,1
+zin_reg_msg,（まんまと術中に・・・）,1
+zin_reg_msg,（嵌められたような気が・・・）,1
+zin_reg_msg,あ、あと今日中に頼むわ！,0
+zin_reg_msg,え、ええーっ！！,1
+zin_reg_msg,何か文句でも？,0
+zin_reg_msg,い、いえ・・・,1
+bl_fadeout
+
+//プレイヤー勢力の覇王の持つ資金について
+chk_mval,資金:poid_player>=500000,,,,
+chk_mval_then
+	goto,*royal_or_normal
+chk_mval_else
+	goto,*omiai_normal
+
+*royal_or_normal
+rnd,2
+case0
+	goto,*omiai_royal
+case1
+	goto,*omiai_normal
+
+*omiai_royal
+//他国の未婚王族女性（但しバイオノイド及び親族除く）
+//をランダムに1人選ぶ（取得失敗の可能性あり）。
+//注意:ACT0オウカ（ID=815）は特殊=1ではなく、特殊=2である。
+//（シナリオ上欠いてはいけない為か？重要人物指定）
+for,10,211,1
+	get_mpid,覇王!poid_player,状態=2,性別=2,年齢>=18,婚姻=0,勲功>=12080,特殊!1
+	//上記コマンドによってpvalにある人物IDが格納された。
+	chk_mval,pval!pid3,pval!815,父:pval!eveflg201,父:pval!pid1,母:pid1!pval
+	//条件 "pval!pid3" については、pid3=0であるから、実際は "pval!0" ということ。
+	chk_mval_then
+		set_eveflg,212,pval
+		break
+	chk_mval_else
+		continue
+next
+
+gosub,*parents
+
+chk_eveflg,212,0
+chk_eveflg_then
+	gosub,*flgclear
+	goto,*omiai_normal
+chk_eveflg_else
+	goto,*kakeichk_royal_pre
+
+*kakeichk_royal_pre
+chk_eveflg,214,>0
+chk_eveflg_then
+	//214：正
+	goto,*kakeichk_royal_0
+chk_eveflg_else
+	//214：0
+	goto,*kakeichk_royal_A
+
+*kakeichk_royal_0
+chk_eveflg,215,>0
+chk_eveflg_then
+	//214：正、215：正
+	goto,*kakeichk_royal_1
+chk_eveflg_else
+	//214：正、215：0
+	goto,*kakeichk_royal_2
+
+*kakeichk_royal_A
+chk_eveflg,215,>0
+chk_eveflg_then
+	//214：0、215：正
+	goto,*kakeichk_royal_B
+chk_eveflg_else
+	//214：0、215：0
+	set_eveflg,220,eveflg212
+	txtload,u016/15_royal
+
+*kakeichk_royal_1
+chk_mval,父:eveflg214!eveflg201,父:eveflg215!eveflg201,,,
+chk_mval_then
+	set_eveflg,220,eveflg212
+	txtload,u016/15_royal
+chk_mval_else
+	gosub,*flgclear
+	goto,*omiai_normal
+
+kakeichk_royal_2
+chk_mval,父:eveflg214!eveflg201,,,,
+chk_mval_then
+	set_eveflg,220,eveflg212
+	txtload,u016/15_royal
+chk_mval_else
+	gosub,*flgclear
+	goto,*omiai_normal
+
+*kakeichk_royal_B
+chk_mval,父:eveflg215!eveflg201,,,,
+chk_mval_then
+	set_eveflg,220,eveflg212
+	txtload,u016/15_royal
+chk_mval_else
+	gosub,*flgclear
+	goto,*omiai_normal
+
+*omiai_normal
+//プレイヤー陣営の未婚女性（但しバイオノイド及び親族除く）
+//をランダムに1人選ぶ（取得失敗の可能性あり）。
+for,10,211,1
+	get_mpid,覇王=poid_player,状態=2,性別=2,年齢>=18,婚姻=0,特殊!1,父!eveflg201
+	chk_mval,pval!pid3,pval!815,父:pval!pid1,母:pid1!pval,
+	chk_mval_then
+		set_eveflg,212,pval
+		break
+	chk_mval_else
+		continue
+next
+
+gosub,*parents
+
+chk_eveflg,212,0
+chk_eveflg_then
+	gosub,*flgclear
+	goto,*omiai_zaiya
+chk_eveflg_else
+	goto,*kakeichk_normal_pre
+
+*kakeichk_normal_pre
+chk_eveflg,214,>0
+chk_eveflg_then
+	//214：正
+	goto,*kakeichk_normal_0
+chk_eveflg_else
+	//214：0
+	goto,*kakeichk_normal_A
+
+*kakeichk_normal_0
+chk_eveflg,215,>0
+chk_eveflg_then
+	//214：正、215：正
+	goto,*kakeichk_normal_1
+chk_eveflg_else
+	//214：正、215：0
+	goto,*kakeichk_normal_2
+
+*kakeichk_normal_A
+chk_eveflg,215,>0
+chk_eveflg_then
+	//214：0、215：正
+	goto,*kakeichk_normal_B
+chk_eveflg_else
+	//214：0、215：0
+	set_eveflg,220,eveflg212
+	goto,*aite_sentei
+
+*kakeichk_normal_1
+chk_mval,父:eveflg214!eveflg201,父:eveflg215!eveflg201,,,
+chk_mval_then
+	set_eveflg,220,eveflg212
+	goto,*aite_sentei
+chk_mval_else
+	gosub,*flgclear
+	goto,*omiai_zaiya
+
+kakeichk_normal_2
+chk_mval,父:eveflg214!eveflg201,,,,
+chk_mval_then
+	set_eveflg,220,eveflg212
+	goto,*aite_sentei
+chk_mval_else
+	gosub,*flgclear
+	goto,*omiai_zaiya
+
+*kakeichk_normal_B
+chk_mval,父:eveflg215!eveflg201,,,,
+chk_mval_then
+	set_eveflg,220,eveflg212
+	goto,*aite_sentei
+chk_mval_else
+	gosub,*flgclear
+	goto,*omiai_zaiya
+
+*omiai_zaiya
+//放浪、村娘、平民、又は大衆大奥の未婚女性（但しバイオノイド及び親族除く）
+//をランダムに1人選ぶ（取得失敗の可能性あり）。
+for,10,211,1
+	get_mpid,状態=5|7|18|19,性別=2,年齢>=18,婚姻=0,特殊!1,父!eveflg201,父!pid1
+	chk_mval,pval!pid3,pval!815,母:pid1!pval,,
+	chk_mval_then
+		set_eveflg,212,pval
+		break
+	chk_mval_else
+		continue
+next
+
+gosub,*parents
+
+chk_eveflg,212,0
+chk_eveflg_then
+	gosub,*flgclear
+	set_eveflg,220,0
+	goto,*aite_sentei
+chk_eveflg_else
+	goto,*kakeichk_zaiya_pre
+
+*kakeichk_zaiya_pre
+chk_eveflg,214,>0
+chk_eveflg_then
+	//214：正
+	goto,*kakeichk_zaiya_0
+chk_eveflg_else
+	//214：0
+	goto,*kakeichk_zaiya_A
+
+*kakeichk_zaiya_0
+chk_eveflg,215,>0
+chk_eveflg_then
+	//214：正、215：正
+	goto,*kakeichk_zaiya_1
+chk_eveflg_else
+	//214：正、215：0
+	goto,*kakeichk_zaiya_2
+
+*kakeichk_zaiya_A
+chk_eveflg,215,>0
+chk_eveflg_then
+	//214：0、215：正
+	goto,*kakeichk_zaiya_B
+chk_eveflg_else
+	//214：0、215：0
+	set_eveflg,220,eveflg212
+	goto,*aite_sentei
+
+*kakeichk_zaiya_1
+chk_mval,父:eveflg214!eveflg201,父:eveflg215!eveflg201,,,
+chk_mval_then
+	set_eveflg,220,eveflg212
+	goto,*aite_sentei
+chk_mval_else
+	gosub,*flgclear
+	set_eveflg,220,0
+	goto,*aite_sentei
+
+kakeichk_zaiya_2
+chk_mval,父:eveflg214!eveflg201,,,,
+chk_mval_then
+	set_eveflg,220,eveflg212
+	goto,*aite_sentei
+chk_mval_else
+	gosub,*flgclear
+	set_eveflg,220,0
+	goto,*aite_sentei
+
+*kakeichk_zaiya_B
+chk_mval,父:eveflg215!eveflg201,,,,
+chk_mval_then
+	set_eveflg,220,eveflg212
+	goto,*aite_sentei
+chk_mval_else
+	gosub,*flgclear
+	set_eveflg,220,0
+	goto,*aite_sentei
+
+//両親検出用サブルーチン
+*parents
+	for,PMAX,213,1
+		chk_family,eveflg213,eveflg212
+		case_fam_父
+			set_eveflg,214,eveflg213
+			continue
+		case_fam_母
+			set_eveflg,215,eveflg213
+			continue
+		default_fam
+			continue
+	next
+	return
+
+//フラグクリア用サブルーチン
+*flgclear
+	set_eveflg,211,0
+	set_eveflg,212,0
+	set_eveflg,213,0
+	set_eveflg,214,0
+	set_eveflg,215,0
+	return
+
+*aite_sentei
+bl_fadein,gzin33
+zin_reg_event,p_name_eveflg(210)の執務室,eveflg210,,,gzin33
+zin_reg_msg,全く、人使いが荒いんだから、あの人は・・・,0
+zin_reg_msg,さて、どうするか・・・,0
+zin_reg_qnar,・・・・・・
+
+chk_eveflg,220,0
+chk_eveflg_then
+	goto,*aite_nasi
+chk_eveflg_else
+	goto,*aite_kettei
+
+*aite_nasi
+zin_reg_msg,・・・,0
+zin_reg_msg,どれもこれもイマイチだなぁ・・・,0
+bl_fadeout
+
+bl_fadein,gzin33
+bgm_chg,60
+zin_reg_event,p_name4の執務室,pid4,eveflg210,,gzin33
+zin_reg_msg,なに？候補はいないだと！,0
+zin_reg_msg,可能な限り調べましたが、どうにも相応しい方はおりませんでして・・・,1
+zin_reg_msg,むぅ・・・そうか,0
+zin_reg_msg,あまり相応しくない者を推薦して王家の品位を汚すのも畏れ多いからな,0
+zin_reg_msg,仕方ない・・・,0
+bl_fadeout
+txtload,u016/99_end
+
+*aite_kettei
+zin_reg_msg,この方はどうだろうか・・・,0
+bl_fadeout
+
+zin_reg_nar,翌日・・・
+
+bl_fadein,gzin33
+zin_reg_event,p_name1の執務室,pid1,pid4,,gzin33
+zin_reg_msg,p_name1様、少しお話が・・・,1
+zin_reg_msg,ん？なんだ申してみよ,0
+zin_reg_msg,ハッ！,1
+zin_reg_msg,実はこの写真を見ていただきたいのですが,1
+zin_reg_face,eveflg220
+zin_reg_msg,何だこれは？,0
+zin_reg_msg,p_name1様には意中の女性は今いらっしゃらない、,1
+zin_reg_msg,！？,0
+zin_reg_msg,とのことなので、,1
+zin_reg_msg,な！crま、またその話か！,0
+zin_reg_msg,もういい加減に・・・,0
+zin_reg_msg,でしたら、お見合いをされてはどうか、と思いまして,1
+zin_reg_msg,な、何だと！？,0
+zin_reg_msg,p_name1様。,1
+zin_reg_msg,我が国の発展は、王室の発展なくして達成できません,1
+zin_reg_msg,そのためにはどうしてもお世継ぎが必要なのです,1
+zin_reg_msg,そ、そんな事、急に言われても困る！,0
+zin_reg_msg,事態は一刻を争います。どうかお見合いをなさってください,1
+zin_reg_msg,ああ、ご心配には及びません。人事局が選定した将来有望な婦人ですので・・・,1
+zin_reg_msg,まだ行くと決めたわけではない！,0
+zin_reg_msg,p_name1様、いい加減、腹を括ってください！,1
+zin_reg_msg,無茶苦茶なこと言うな！,0
+zin_reg_msg,ううぅ・・・,0
+
+chk_mval,pid1=player,,,,
+chk_mval_then
+	zin_reg_2sel,見合いをする,結婚に興味は無い
+	get_resp
+	ret_sel1
+		goto,*omiai
+	ret_sel2
+		txtload,u016/40_kyohi
+chk_mval_else
+	zin_reg_qnar,・・・
+	rnd,2
+	case0
+		goto,*omiai
+	case1
+		txtload,u016/40_kyohi
+
+*omiai
+zin_reg_msg,分かった。cr世継ぎの事もあるゆえ、受けよう,0
+zin_reg_msg,ありがとうございます。それでは明日、城下のレストランでお願いいたします,1
+zin_reg_msg,・・・,0
+bl_fadeout
+
+txtload,u016/10_omiai

@@ -1,0 +1,15 @@
+//弱みオルド　一般兵 プレイヤーが上官 人妻　2回目以降
+zin_old_msg,啊啊．．．請不行．．．cr被侵犯了．．．腰部隨意．．．停下、不要動！！,pid2
+zin_old_msg,嗯．．．積存了相當多的愛汁嘛。cr關於性愛久違了嗎？　看來你的老公太久沒有疼愛你了呢,pid1
+zin_old_msg,那、那種事情是．．．啊啊！！　嗚啊啊啊啊！！！,pid2
+zin_flush_one,pid2
+zin_old_msg,什麼？　高潮了？cr自己高潮了、真是個無恥的傢伙啊,pid1
+zin_old_msg,是ー嗯、是ー嗯．．．對、對不起．．．,pid2
+zin_old_msg,cf_pid1到高潮之前不准停下來,pid1
+zin_old_msg,是、是．．．,pid2
+zin_old_msg,這次換我來進攻,pid1
+zin_old_msg,啊．．．不行．．．那樣的．．．啊、啊好熱啊啊！！,pid2
+zin_old_msg,偷情的刺激、還有這肉洞的觸感。根本無法形容的舒爽啊,pid1
+zin_old_msg,啊啊、啊、不行．．．了、高潮、又去了、又去了啊啊啊！！,pid2
+zin_flush,pid2
+end

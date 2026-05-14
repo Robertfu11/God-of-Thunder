@@ -1,0 +1,76 @@
+//■強姦
+//■相手：妻（妃）
+//■Ｈ体位：正常位
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,仕方ない、では力づくでやるとするか,0
+	zin_reg_msg,ああっ！！　やだっ！！放してください！！,1
+	zin_reg_msg,言うことを聞け！！,0
+	zin_reg_msg,いやああっ！！,1
+	zin_reg_msg,フフ、か弱いな,0
+	zin_reg_msg,力でcallself_pid1にかなうわけがあるまい,0
+	zin_reg_msg,さて、じっくり味わうとするか,0
+	zin_reg_msg,ひううううっ,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,んんっ．．．はぁっ．．ぁっ．．．いたいっ．．．,pid2
+	zin_old_msg,ひどい、ですっ．．．こんなっ．．．強引にっ、身体をもとめるなんてっ,pid2
+	zin_old_msg,煩いな、call_pid2はcallself_pid1が求めるままに応えればいいんだ,pid1
+	zin_old_msg,そんなっ．．．っっっっ！crんんっ、あっ、ぁああっ、あっ、んんっ,pid2
+	zin_old_msg,おねがいっ、今日はっ．．．もうっ．．やめて．．くださいっ,pid2
+	zin_old_msg,大丈夫だろう？crほら、少しずつ濡れて、滑りもよくなってきたしな,pid1
+	zin_old_msg,か、身体は、だいじょうぶ．．でもっ．．．心がっ、心が苦しいんです！！,pid2
+	zin_old_msg,心か．．．そんなものは関係ない,pid1
+	zin_old_msg,callself_pid1の妃である以上、いつでも身体を使わせる心構えはしておけ,pid1
+	zin_old_msg,そんなっ、ぁああっ、んっ、んぁっ、っ、んんんんっ！,pid2
+	zin_old_msg,おねがいっ、こんなふうに、なんてっ、いやっ、いやですっ．．．,pid2
+	zin_old_msg,もう遅い．．．たっぷりと出してやるからな,pid1
+	zin_old_msg,あっ、ぁあっ、んんっ、んっ、んあああっ、んんんんんんっ！,pid2
+	zin_flush,pid2
+	zin_old_msg,出て、ますっ．．．ひどいっ．．．こんな、ふうにっ．．．むりやりっ．．．,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,お前の処女はcallself_pid1のものだ,0
+	zin_reg_msg,あきらめてマタを開くのだな,0
+	zin_reg_msg,そんなの、イヤです！！,1
+	zin_reg_msg,力づくでも従わせるまでだ,0
+	zin_reg_msg,ああ、ダメ！！crいやあああ！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,フフ．．．いい締め付けだ,pid1
+	zin_old_msg,女にとって処女を破られる経験は一生に一度だからな．．．たっぷり愉しめ,pid1
+	zin_old_msg,そん、なっ．．．こんなっ、強引にっ、されてっ．．．楽しめるわけっ．．．っんんんんっ！,pid2
+	zin_old_msg,どうだ、初めてを奪われた感想は？,pid1
+	zin_old_msg,こんなの．．．いやぁ．．．,pid2
+	zin_old_msg,ああっ、い、たっ、っっ、もうっ、おねがいっ、やめて、くださいっ、っ！,pid2
+	zin_old_msg,ああ、そろそろ中にたっぷりと出してやる,pid1
+	zin_old_msg,だめっ、おねがいっ、やっ、やぁああっ．．．んんんんんっ！！！,pid2
+	zin_flush,pid2
+	end
+//孕みパターン
+case_botebara
+	zin_reg_msg,イヤと言われればますますやりたくなるもの,0
+	zin_reg_msg,腹の大きな妻を抱くのも面白いものよ,0
+	zin_reg_msg,い、今はダメです,1
+	zin_reg_msg,産まれるまで我慢してください,1
+	zin_reg_msg,それはできぬ！！,0
+	zin_reg_msg,ああ、や、やめて！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,ひどいわっ．．．こんなことしたら．．．丈夫な子．．．産めなくなっちゃう,pid2
+	zin_old_msg,ふふ．．．妊娠している女とするのも、悪くないな,pid1
+	zin_old_msg,だめっ、だめっ、おくまで、入らないでっ．．．赤ちゃんがっ．．．,pid2
+	zin_old_msg,関係ないな、callself_pid1が気持ちよくなれるよう動くだけだ,pid1
+	zin_old_msg,んんっ、んっ、んっ、ぁあっ、だ、めっ、おねがいっ、ぁああっ！,pid2
+	zin_old_msg,ふっ．．．仕方ないな．．．,pid1
+	zin_old_msg,もうすぐ射精して終わりにしてやる．．．ただし、中にたっぷりと射精させてもらうがな,pid1
+	zin_old_msg,そん、なっ、そんなっ、ぁああっ、んんっ、んっ、んぁあっ、だ、めっ！,pid2
+	zin_old_msg,おねがいっ、あっ、あっ、ぁあっ、やめっ！！　んんんんんんっ！！,pid2
+	zin_flush,pid2
+	zin_old_msg,ひぁっ．．．ああぁっ．．．なか．．にっ．．．熱いの．．．でてるっ．．．んんっ,pid2
+	end

@@ -1,0 +1,22 @@
+zin_reg_msg,あなた、この前私に何をしたの,1
+zin_reg_msg,変な薬を使ったでしょ,1
+zin_reg_msg,そのとおりですよ,0
+zin_reg_qnar,p_name1はp_name2に媚薬を使った。
+zin_reg_msg,いったい．．．な．．に．．,1
+zin_reg_msg,．．．．うう．．．,1
+zin_reg_msg,これだよ、call_pid12,0
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,ああ．．．うう．．．,pid2
+zin_old_msg,どう？　意識はあるでしょ,pid1
+zin_old_msg,ぼーっとしてると思うけど,pid1
+zin_old_msg,でも、ちょっとでも触ると．．．,pid1
+zin_old_msg,ああ！！、あひいいい,pid2
+zin_old_msg,アハハハ、面白いよcall_pid12,pid1
+zin_old_msg,完全に僕のおもちゃだね,pid1
+zin_old_msg,記念に１枚、写真をとっておくよ,pid1
+zin_old_msg,あひっ！！あひいいいい！！！,pid2
+zin_flush,pid2
+zin_old_msg,ククク,pid1
+end

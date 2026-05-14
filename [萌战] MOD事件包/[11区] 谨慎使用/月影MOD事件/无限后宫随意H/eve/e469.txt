@@ -1,0 +1,35 @@
+eve_start
+    if_date,101,5
+    if_eveflg,62,4
+    if_poid,606,eveflg064
+//妃がいる
+	if_ouzoku,eveflg064,12200,606
+	set_epid2,pval
+//庫爾特尼奧が生まれている
+    if_poid,870,eveflg064
+eve_end
+
+chk_exeplayer,eveflg064,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,35
+set_epid1,eveflg064
+set_epid3,606
+bgm_chg,61
+zin_reg_event,,pid1,606,zin3,gzin6
+zin_reg_msg,帕米拉呀、你生了孩子後還是什麼都沒變啊,0
+zin_reg_msg,一直都如同處女一樣呢,0
+zin_reg_msg,嘻、我很開心呢,1
+zin_reg_msg,說起來我到這裏來、王妃沒問題嗎？,1
+zin_reg_msg,嗯、其實我感到有一點奇怪,0
+zin_reg_msg,不想太靠近,0
+zin_reg_msg,那、你是太擔心了,1
+zin_reg_msg,實在太累了吧,1
+zin_reg_msg,還是讓醫生來看一下吧,1
+zin_reg_msg,嗯、也好,0
+zin_reg_msg,你跟p_name2不一樣，是個溫柔的女人,0
+zin_reg_msg,雖然p_name2以前也有這溫柔的感覺．．．,0
+zin_reg_button,0
+end

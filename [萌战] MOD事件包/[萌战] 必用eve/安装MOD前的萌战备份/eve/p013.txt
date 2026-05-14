@@ -1,0 +1,14 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin8
+zin_reg_msg,大事不好了,1
+zin_reg_msg,據剛剛上報的情況,1
+zin_reg_msg,p_name3大人被敵方抓獲了,1
+zin_reg_msg,什麼！？情況屬實？,0
+zin_reg_msg,句句屬實,1
+zin_reg_msg,現在情況怎麼樣了．．．,0
+zin_reg_msg,生死不明,1
+zin_reg_msg,唔,0
+zin_reg_button,0
+zin_reg_exit
+end

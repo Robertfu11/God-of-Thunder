@@ -1,0 +1,68 @@
+//habatsu member kazu
+
+
+set_eveflg,240,0
+set_eveflg,241,0
+
+for,PMAX,240,1
+	chk_msts,eveflg240,状態,2,派閥,!0,NON,0,NON,0,NON,0
+	chk_msts_else
+	continue
+	chk_msts_then
+	set_eveflg,241,派閥:eveflg240
+	chk_eveflg,241,!0
+	chk_eveflg_then
+		chk_sts,eveflg241,32,0
+		chk_sts_then
+		upd_sts,eveflg241,32,3001
+		continue
+		chk_sts_else
+			chk_sts,eveflg241,32,3001
+			chk_sts_then
+			upd_sts,eveflg241,32,3002
+			continue
+			chk_sts_else
+				chk_sts,eveflg241,32,3002
+				chk_sts_then
+				upd_sts,eveflg241,32,3003
+				continue
+				chk_sts_else
+					chk_sts,eveflg241,32,3003
+					chk_sts_then
+					upd_sts,eveflg241,32,3004
+					continue
+					chk_sts_else
+					continue
+					upd_sts_else
+	chk_eveflg_else
+	continue
+next
+end
+
+//eve_start
+	//if_orval,状態:player=2,状態:player=5,,,
+
+//eve_end
+
+////edit,全身性感香
+
+
+//end
+
+
+get_item,player,,面会パス
+upd_sts,1109,12,100
+upd_sts,player,4,9000
+get_item,player,player,面会パス
+get_item,player,,精力剤
+get_item,player,,媚薬
+set_pkon,player,1109
+
+if_val,状態:player=2
+
+set_eveflg,196,子供男:eveflg195
+
+chk_eveflg,196,0
+chk_eveflg_else
+continue
+chk_eveflg_then

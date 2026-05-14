@@ -1,0 +1,22 @@
+eve_start
+    //if_date,95,03
+	if_pkun,player,13000
+    if_is_habatu,poid_player
+eve_end
+
+get_bgst_habatu,player,0
+set_epid2,pval
+set_eveflg,192,0
+for,PMAX,192,1  
+chk_msts,eveflg192,•ƒ,player,”e‰¤,poid_player,«•Ê,2,NON,0,NON,0
+                chk_msts_then
+                    set_epid1,eveflg192
+                    txtload,xp021
+                    continue
+                    end
+                chk_msts_else
+                    continue
+                 next
+set_eveflg,192,0
+end
+

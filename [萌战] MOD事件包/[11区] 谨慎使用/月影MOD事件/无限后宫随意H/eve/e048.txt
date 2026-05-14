@@ -1,0 +1,24 @@
+eve_start
+	if_date,70,10
+	//布朗 アスラン配下
+	if_poid,625,743
+	//阿古迪巴 アスラン配下
+	if_poid,16,743
+eve_end
+
+//阿古迪巴霸王设定
+chg_haou,743,16
+set_dead,743,0
+set_run_msg,阿斯蘭去世了阿古迪巴成了新的霸王。
+chg_player,16,743
+
+upd_sts,5,19,0
+upd_sts,8,19,0
+upd_sts,11,19,0
+upd_sts,43,19,0
+upd_sts,570,19,0
+upd_sts,601,19,0
+upd_sts,603,19,0
+upd_sts,797,19,0
+
+end

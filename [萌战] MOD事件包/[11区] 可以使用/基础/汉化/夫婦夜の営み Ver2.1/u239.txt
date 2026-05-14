@@ -1,0 +1,91 @@
+/////夫婦夜の営み_ver2.1/////
+
+eve_start
+	if_orval,状態:player=2,状態:player=4,,,
+	if_rnd,24
+eve_end
+
+//自勢力の処理///////////////////////////////////////////////////
+get_mpid,性別=2,状態=2|4,婚姻>0,勲功!12200,覇王=poid_player,懐妊=0,年齢<45
+//自勢力の士官もしくは海賊手下で、妃でなく結婚済み未懐妊44歳以下女性を抽出
+set_epid2,pval
+chk_mval,pid2>0,pid2!815,特殊:pid2!1,pid2!yome_player,
+//該当者がおり、なおかつそれがPlayerの嫁やオウカでなければ続行。そうでなければ他勢力処理へ
+	chk_mval_then
+	goto,*Dannatyusyutu
+	chk_mval_else
+	goto,*TakokuSyori
+
+*Dannatyusyutu
+set_epid3,婚姻:pid2
+chk_mval,覇王:pid3=覇王:pid2,状態:pid3!8,特殊:pid3!1,勲功:pid3!13000,
+//その女性の夫が同じ覇王で捕虜でなければ次の条件へ、条件に合わなければ他勢力処理へ
+chk_mval_then
+goto,*Tuma2
+chk_mval_else
+goto,*TakokuSyori
+
+*Tuma2
+chk_sts,pid2,2,>35
+//女性の年齢によって妊娠確率変動（36歳以上33％、35歳以下100％）
+chk_sts_then
+rnd,3
+case0
+	goto,*Ninsin
+case1
+case2
+		//zin_reg_event,夜生活,781,,,gzin3
+		//zin_reg_msg,自勢力的p_name2為了給p_name3生孩子、懷孕了。,0
+		//zin_reg_exit
+	goto,*TakokuSyori
+chk_sts_else
+
+*Ninsin
+set_ninsin,pid2,pid3
+		//zin_reg_event,夜生活,781,,,gzin3
+		//zin_reg_msg,自勢力的p_name3讓p_name2懷孕了。,0
+		//zin_reg_exit
+
+
+//他勢力の処理///////////////////////////////////////////////////
+*TakokuSyori
+get_mpid,性別=2,状態=2,婚姻>0,勲功!12200,覇王!poid_player,懐妊=0,年齢<45
+//他勢力の士官で、妃でなく結婚済み未懐妊44歳以下女性を抽出
+set_epid2,pval
+chk_mval,pid2>0,pid2!815,特殊:pid2!1,pid2!yome_player,
+//該当者がおり、なおかつそれがPlayerの嫁やオウカでなければ続行。そうでなければ終了
+	chk_mval_then
+	goto,*TakokuDannatyusyutu
+	chk_mval_else
+	end
+
+*TakokuDannatyusyutu
+set_epid3,婚姻:pid2
+chk_mval,覇王:pid3=覇王:pid2,状態:pid3!8,特殊:pid3!1,勲功:pid3!13000,
+//その女性の夫が同じ覇王で捕虜でなければ次の条件へ、条件に合わなければ終了
+chk_mval_then
+goto,*TakokuTuma2
+chk_mval_else
+end
+
+*TakokuTuma2
+chk_sts,pid2,2,>35
+//女性の年齢によって妊娠確率変動（36歳以上33％、35歳以下100％）
+chk_sts_then
+rnd,3
+case0
+	goto,*TakokuNinsin
+case1
+case2
+		//zin_reg_event,夜生活,781,,,gzin3
+		//zin_reg_msg,po_name2勢力的p_name2為了給po_name3勢力的p_name3生孩子、懷孕了。,0
+		//zin_reg_exit
+	end
+chk_sts_else
+
+*TakokuNinsin
+set_ninsin,pid2,pid3
+		//zin_reg_event,夜生活,781,,,gzin3
+		//zin_reg_msg,po_name3勢力的p_name3讓po_name2勢力的p_name2懷孕了。,0
+		//zin_reg_exit
+end

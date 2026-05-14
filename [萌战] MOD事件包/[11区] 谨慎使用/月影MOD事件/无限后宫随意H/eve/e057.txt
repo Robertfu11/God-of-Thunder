@@ -1,0 +1,36 @@
+eve_start
+	if_date,70,10
+//威邦並非首都
+	if_not_cap,9,0
+	if_hid,9,743
+	if_poid,625,743
+	if_poid,16,743
+	if_poid,5,743
+eve_end
+
+set_wjinko,33,-30000
+set_wjinko,9,30000
+
+chk_exeplayer,743,0,0,0
+chk_exeplayer_else
+dokuritu,5,9,1
+set_winfo,9,0,0,0,0,10000,-1,-1
+set_run_msg,阿貝格爾在惑星威邦挙兵了。
+end
+
+chk_exeplayer_then
+bgm_chg,60
+get_habatumem,5,43
+//zin_reg_init
+zin_reg_event,阿貝格爾的辦公室,5,pval,,gzin33
+zin_reg_msg,阿貝格爾大人．．．,1
+zin_reg_msg,不是很有趣嘛,0
+zin_reg_msg,接下來阿族的王族們都紛紛舉兵 會成為群雄割據的時代,0
+zin_reg_msg,不知最後誰能掌握宇宙的霸權,0
+zin_reg_msg,那麼 我們也？,1
+zin_reg_msg,那當然、這麼有趣的遊戲我們怎麼可能不參加呢,0
+zin_reg_title,阿貝格爾在惑星威邦挙兵了。
+zin_reg_button,0
+//zin_reg_exit
+dokuritu,5,9,1
+set_winfo,9,0,0,0,0,10000,-1,-1

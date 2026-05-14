@@ -1,0 +1,41 @@
+eve_start
+	if_date,72,10
+	//ルーキ ツウガイ配下
+	if_poid,560,805
+	//サンミ ツウガイ配下
+	if_poid,590,805
+	//阿古迪巴が覇王である
+	if_pkun,16,13000
+eve_end
+
+set_eveflg,14,1
+
+chk_exeplayer,805,0,0,0
+chk_exeplayer_else
+set_dead,590,0
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,茲烏蓋的辦公室,805,560,,gzin33
+zin_reg_msg,茲烏蓋大人cr屬下有一些事情要稟報．．．．,1
+zin_reg_msg,是什麼事、路希,0
+zin_reg_msg,關於桑美大人的事．．．,1
+zin_reg_msg,桑美大人似乎私下與阿古迪巴有著一些不明關系,1
+zin_reg_msg,你說什麼！！,0
+zin_reg_msg,桑美大人經常到那些警備力量薄弱的星球然後呆上幾天,1
+zin_reg_msg,這是作為證據的視頻．．．,1
+zin_reg_msg,什麼！！！cr拿來我看！！,0
+zin_reg_msg,．．．．．．．,0
+zin_reg_msg,唔．．．．．cr可惡的女人．．．,0
+zin_reg_msg,瞞著我偷偷摸摸跑出去偷漢子．．．．,0
+zin_reg_msg,莫非她是在、謀劃著竊取這個國家的計劃,1
+zin_reg_msg,可惡．．．cr桑美人在哪裏！！,0
+zin_reg_msg,現在好像剛剛離開,1
+zin_reg_msg,不可原諒！！！！,0
+zin_reg_qnar,茲烏蓋找到了桑美、二話不說就將其殺害了。
+zin_reg_button,0
+//zin_reg_exit
+set_dead,590,0
+end

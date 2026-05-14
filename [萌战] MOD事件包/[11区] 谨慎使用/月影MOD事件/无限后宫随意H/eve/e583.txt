@@ -1,0 +1,59 @@
+//xeve
+eve_start
+	if_eveflg,31,5
+	//プレイヤーが覇王である
+	if_pkun,player,13000
+	//オリビア　プレイヤーの捕虜
+	if_horyo,847,player
+eve_end
+
+set_eveflg,31,6
+set_epid1,player
+get_kunpsn,pid1
+
+bgm_chg,61
+//zin_reg_init
+zin_reg_event,p_name1的王宮,player,pval,,gzin8
+zin_reg_msg,p_name1大人、那個歌娘,1
+zin_reg_msg,已經送到一個特殊的房間裏了,1
+zin_reg_msg,呵呵、好的,0
+zin_reg_msg,捆結實了嗎？,0
+zin_reg_msg,如您吩咐．．．,1
+zin_reg_msg,唔、那就趕快開始審問間諜吧,0
+set_epid1,player
+set_epid2,847
+zin_old_init
+zin_old_img_str,e583a,3,1
+zin_old_qnar,p_name2被緊縛住沒法動彈p_name1從後面長驅直入。,0
+zin_old_msg,謔謔謔．．．．cr不愧是歌娘喲、身材如此緊致啊,pid1
+zin_old_msg,裏面也是緊得無可挑剔,pid1
+zin_old_msg,疼、好疼！！．．．不要．．．快、快住手．．,pid2
+zin_old_msg,哦？cr呃啊．．．居然還是處女．．．cr在世風日下的娛樂圈裏可真少見啊,pid1
+zin_old_msg,呵呵、這太讓人興奮了！！,pid1
+zin_old_msg,喂、啊．．．你給我．．．適可而止．．啊！！　唔、唔唔！！．．．啊、啊啊！！,pid2
+zin_old_msg,呵呵、你可是間諜。這是例行審問環節,pid1
+zin_old_msg,說！！　誰派你來的！！,pid1
+zin_old_msg,不、不是．．．那樣的！！cr我．．．才不是．．．間諜什麼的！！,pid2
+zin_old_msg,馬上．．把我．．放開．．啊．．．cr這種事．．．唔唔．．．cr我、我的粉絲們．．．是不會．．原諒你的,pid2
+zin_old_msg,好潑辣的小妞啊,pid1
+zin_old_msg,這就是你的供詞？,pid1
+zin_old_msg,啊啊．．．．啊、啊．．．哇啊！！,pid2
+zin_old_msg,呵呵呵、早點招供就讓你爽。cr不招、就把你肏到生活不能自理！！,pid1
+zin_old_msg,唔咕．．．不、不可以！！！cr好、好奇怪的．．．感覺！！,pid2
+zin_old_msg,謔．．．已經開始有快感了？cr你這女人、悶騷貨啊,pid1
+zin_old_msg,別、別．．胡說八道．．．嗚哇！！,pid2
+zin_old_msg,呵呵、真是倔強的女人啊、再不招、就把你的小浪穴灌滿callself_pid1的萬千子孫哦,pid1
+zin_old_msg,不、不要！！．．．不、不行、只有那個．．．不、不行啊！！！！,pid2
+zin_old_msg,不過、感覺真的不錯．．．好久沒有這樣爽過了．．．,pid1
+zin_old_msg,怎麼樣、做callself_pid1的小妾如何？cr這樣你就能洗清嫌疑、過著養尊處優的生活了,pid1
+zin_old_msg,誰、誰要．．．做你的小妾．．．嗚嗚．．啊呀啊啊啊！！,pid2
+zin_old_msg,好吧、那就懷上callself_pid1的子嗣吧！！,pid1
+zin_old_msg,懷上了沒准兒你就會改變心意了。cr唔．．．要、要射了！！,pid1
+zin_old_msg,啊啊、不、不要啊．．．裏面．．．裏面、不行啊啊啊啊啊啊！！！,pid2
+zin_flush_file,e583b,3
+zin_old_msg,啊．．．怎麼、這樣．．．滿滿的．．．咕嘟咕嘟的、就這樣射了進來．．．不是說過．．．不行了麼．．．,pid2
+zin_reg_button,16
+zin_old_exit
+//zin_reg_exit
+set_non_virgin,847
+end

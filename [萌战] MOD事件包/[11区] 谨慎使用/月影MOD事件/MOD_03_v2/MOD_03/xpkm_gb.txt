@@ -1,0 +1,51 @@
+//覇王オルド　強引　ボテ汎用
+zin_seloop_stop
+rnd,2
+case0
+    bgm_se,135
+	zin_old_msg,不要、不要啊！！　call_pid1．．．．,pid2
+	bgm_se,135
+	zin_old_msg,請您．．．請您、饒了我吧．．．這麼．．激烈．．小寶寶．．．會死掉．．．的啊！！,pid2
+	bgm_se,135
+	zin_old_msg,呵呵、這種程度不至于死掉、也就坐搖搖車那個水準吧！！,pid1
+	bgm_se,136
+	zin_old_msg,怎麼、怎麼這樣．．．好過分．．．請．．．溫柔一點．．．小寶寶．．．快要窒息了！！,pid2
+	bgm_se,136
+	zin_old_msg,是callself_pid1的孩子的話、這種程度是死不了的,pid1
+	bgm_se,137
+	zin_old_msg,要真沒了、我再種就是,pid1
+	bgm_se,137
+	zin_old_msg,怎麼說．．．這個孩子．．．也是call_pid1的．．．啊啊啊！！！,pid2
+	bgm_se,137
+	zin_old_msg,話說、你也有感覺了吧？　那就趕緊給我奔放起來吧,pid1
+	bgm_se,141
+	zin_old_msg,呀啊啊啊！！　請、請您饒了我吧！！　再這樣的話．．．要去了．．．要去了啊啊啊啊啊啊！！,pid2
+	set_non_virgin,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	end
+case1
+    bgm_se,135
+	zin_old_msg,啊啊．．．這麼搞．．．小寶寶會．．這麼粗魯的．．抽插．．．,pid2
+	bgm_se,135
+	zin_old_msg,嗯啊、和孕婦做感覺不壞呢。和胖子一樣的、那種噗喲噗喲的快感,pid1
+	bgm_se,135
+	zin_old_msg,怎麼這麼說．．．啊啊嗯．．．呃呃．．．,pid2
+	bgm_se,136
+	zin_old_msg,怎麼？　你感覺應該也不錯吧？,pid1
+	bgm_se,136
+	zin_old_msg,據說懷孕的女人特別的敏感。確實好像是這樣的,pid1
+	bgm_se,137
+	zin_old_msg,．．．咕．．．不、不行．．．好厲害．．．的感覺．．．,pid2
+	bgm_se,137
+	zin_old_msg,喲西、那就再給你搓搓豆豆,pid1
+	bgm_se,137
+	zin_old_msg,咿呀啊啊啊啊ーーー、不行、不要．．．這麼．．．這麼粗暴的玩弄！！　我要．．．要、要去了！！,pid2
+	bgm_se,137
+	zin_old_msg,怎麼了、這就忍不住了．．．這回callself_pid1也一起射吧。給你滿滿的加一壺！！,pid1
+	bgm_se,141
+	zin_old_msg,咿啊啊啊、去了．．．要、高潮了ーーー！！！,pid2
+	set_non_virgin,pid2
+	zin_flush,pid2
+	zin_old_fadeout,0,5
+	end

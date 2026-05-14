@@ -1,0 +1,12 @@
+auth_uid,E6BE
+//全ての毎ターン処理イベントの始まりのイベントです
+eve_start
+if_val,勲功:player=13000
+if_val,状態:player!4
+if_val,player=eveflg198
+if_eveflg,199,1
+eve_end
+
+txtload,zyukon/maiturn1
+
+end

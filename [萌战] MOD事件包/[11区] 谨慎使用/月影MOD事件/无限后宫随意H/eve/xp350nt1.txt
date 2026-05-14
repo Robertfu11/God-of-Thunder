@@ -1,0 +1,28 @@
+bgm_chg,64
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,あっ．．ひっ．．．いいっ．．．ひんっ！！,pid2
+zin_old_msg,哦哦、這樣！　このムチムチしてヌルヌルした感觸．．．在其他女人身上可享受不到,pid1
+zin_old_msg,謝謝．．．啊嗚嗚、あうん．．．ふくううううっ！！！,pid2
+zin_old_msg,あっ、あっ、あっ、あっ．．．くぁ．．．はあぁん,pid2
+zin_old_msg,哈哈哈、還是一如既往的一副母狗相。看來你的丈夫是因為厭煩而離開你的吧。你還真是個可憐的、傢伙,pid1
+zin_old_msg,但是、老公不在很寂寞吧？　cf_pid1出現的不正是時候嗎,pid1
+zin_old_msg,從現在開始cf_pid1代替你的丈夫來好好疼愛你,pid1
+zin_old_msg,ひああああっ！！　不可以！！　如果被這樣做的話．．．在小穴裏．．突然那麼快的動的話！！,pid2
+zin_old_msg,ふにゃんっ．．．ひあぁ．．．やっ、あぁぁっ．．．啊、在小穴裏．．．摩擦著．．．好、好舒服．．．,pid2
+zin_old_msg,不、不行．．．あっ．．ひっ．．．這樣下去．．．．んんっ．．．好舒服．．．要、要變得奇怪了！！,pid2
+zin_old_msg,むうっ．．．小穴突然收緊了．．．,pid1
+zin_old_msg,やああぁ．．．這、腰．．．停不下來啦！！,pid2
+zin_old_msg,くっ．．．うううっ．．．差、差不多該．．．,pid1
+zin_old_msg,那麼、call_pid12．．．cr你希望我射在哪裏、中出？　還是外面？,pid1
+zin_old_msg,な、中出．．．不行！！　那、外邊．．．求求你．．．んぁああぁあっ．．．．,pid2
+zin_old_msg,喂喂、不對吧？　cf_pid1的手中握著你的秘密這件事你忘記了？,pid1
+zin_old_msg,ん．．．ううっ、くううっ．．．な、中出．．．在陰道中．．．求求你．．．給我．．．うううっ！！,pid2
+zin_old_msg,嗚哈哈哈、是嗎。既然你這麼求我那就沒辦法啦。那麼就把你的子宮用tane_str灌得滿滿的,pid1
+zin_old_msg,あっはあ．．．ん！　あんっ！　あんっ！　あんっ！　あんっ！　好！　好的！　要去了啊！　あああっ！,pid2
+zin_flush,pid2
+zin_old_msg,ふう．．．．完全吸收進去了。這次不錯、call_pid12。下一次也很期待啊,pid1
+zin_old_msg,ひうっ．．．．．うううっ．．．．んうっ．．．．,pid2
+zin_reg_button,16
+zin_reg_exit
+end

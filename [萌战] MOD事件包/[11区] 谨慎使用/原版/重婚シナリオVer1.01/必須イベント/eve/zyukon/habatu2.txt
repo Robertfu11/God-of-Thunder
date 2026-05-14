@@ -1,0 +1,12 @@
+auth_uid,E6BE
+//‰Å‚Å‚È‚­‚È‚Á‚½—«‚Ì”h”´‰ğ‘Ì—pƒCƒxƒ“ƒg‚Å‚·
+for,PMAX,280,1
+chk_mval,”e‰¤:eveflg280=eveflg198,ŒMŒ÷:eveflg280!12200,”h”´:eveflg280=eveflg280,,
+chk_mval_then
+habatu_kaitai,eveflg280
+continue
+chk_mval_else
+continue
+
+next
+txtload,zyukon/maiturn4

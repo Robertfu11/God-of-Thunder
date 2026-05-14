@@ -1,0 +1,27 @@
+eve_start
+    if_date,96,10
+    if_eveflg,62,4
+    if_poid,429,eveflg064
+eve_end
+
+chk_exeplayer,eveflg064,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+get_kunpsn,eveflg064
+set_epid1,pval
+
+bgm_chg,60
+zin_reg_event,,pid1,429,,gzin33
+zin_reg_msg,巴尼亞瓦、我來了,1
+zin_reg_msg,其實有一項重要的任務,0
+zin_reg_msg,什麼任務呢,1
+zin_reg_msg,地方反亂軍的討伐,0
+zin_reg_msg,現在、新型的グランドウォーカー全部投入了,0
+zin_reg_msg,我會給你一小隊的指揮權,0
+zin_reg_msg,知道了,1
+zin_reg_msg,不管哪個傳聞是真還是假，我希望能看到你的技術,0
+zin_reg_msg,哈哈！！,1
+zin_reg_button,0
+end

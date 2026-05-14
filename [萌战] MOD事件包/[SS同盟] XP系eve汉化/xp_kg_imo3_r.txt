@@ -1,0 +1,92 @@
+//王族オルド襲う　相手：妹
+//■Ｈ体位：騎乗位
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,今天我再也無法忍受了,0
+	zin_reg_msg,哥哥的肉棒非常想要,0
+	zin_reg_msg,因為．．．那個、會痛的嘛,1
+	zin_reg_msg,沒事的、今天我保證不會太痛的,0
+	zin_reg_msg,啊、call_pid1！！,1
+	zin_reg_msg,呵呵、可愛的p_name2啊,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊啊．．．說過、的．．．callself_pid2的裡面．．．進來了、真的嗎．．．,pid2
+	zin_old_msg,像騎馬的樣子．．．不好意思的．．．而且．．．,pid2
+	zin_old_msg,不行、這並不是．．．真的．．．真的．．和喜歡的人．．在一起．．不行、這並不是．．．,pid2
+	zin_old_msg,是嗎．．．call_pid2討厭被callself_pid1的肉棒插嗎？,pid1
+	zin_old_msg,不是這樣、的．．．只是．．．那個東西的．．．,pid2
+	zin_old_msg,這樣的話、其實還是喜歡的吧、call_pid2的心情會變得舒暢的哦,pid1
+	zin_old_msg,啊啊．．嗚嗯嗯．．空白了．．不行．．不行的啊．．．,pid2
+	zin_old_msg,啊．．啊啊啊．．嗯．．嗯嗯嗯嗯啊．．．,pid2
+	zin_old_msg,你看、從深處在不斷的向外淌著蜜汁呢．．．call_pid2的心情也很舒服的吧？,pid1
+	zin_old_msg,啊啊啊．．不一樣、的．．．心情、並不好、的說．．．,pid2
+	zin_old_msg,已經．．已經．．這樣的、東西不想、要的說．．．,pid2
+	zin_old_msg,我是不會放棄的喲．．．還要在call_pid2的肉洞裡、充分的射精才行的、呢,pid1
+	zin_old_msg,那、那樣的、不行的．．．寶寶．．會誕生的吧,pid2
+	zin_old_msg,不要緊的、不會那麼容易就懷孕的說,pid1
+	zin_old_msg,嗯嗯．．啊啊啊．．啊嗚嗚嗚．．嗯．．嗚嗯．．嗚嗯嗯嗯啊！,pid2
+	zin_old_msg,膨脹起來了、啊．．難道．．不行．．不行的啊！,pid2
+	zin_old_msg,差不多要射了呢、call_pid2,pid1
+	zin_old_msg,嗯嗯．．拜託了．．不要．．停下．．快停下．．嗚啊啊啊啊啊嗯！,pid2
+	zin_flush,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,聽哥哥的話,0
+	zin_reg_msg,不行、所以拜託了不要做奇怪的事情！,1
+	zin_reg_msg,你還是、第一次嗎？,0
+	zin_reg_msg,不用擔心,0
+	zin_reg_msg,那麼、把一切都交給哥哥吧,0
+	zin_reg_msg,因為、因為．．．,1
+	zin_reg_msg,好可怕．．．call_pid1,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,嗯、等等、的．．．等一下的啊．．．,pid2
+	zin_old_msg,這樣的．．．過分、的．．．,pid2
+	zin_old_msg,比想像中的還要棒、call_pid2的裡面是這麼的緊窄．．．,pid1
+	zin_old_msg,真的好舒服啊、call_pid2．．．,pid1
+	zin_old_msg,那、被這樣說也．．．callself_pid2．．．不懂、的啊．．．,pid2
+	zin_old_msg,比起那個、更是．．．想要．．．停下的．．．這樣的、希望、的啊．．．,pid2
+	zin_old_msg,事到如今誰還能停得下來啊,pid1
+	zin_old_msg,嗚、啊．．．好、痛、的啊．．．痛的啊．．．真、的啊．．．,pid2
+	zin_old_msg,痛嗎？　但是、callself_pid1的心情可是極度舒暢的啊,pid1
+	zin_old_msg,嗯嗯啊．．．拜託．．．停下來吧．．．,pid2
+	zin_old_msg,這樣．．．像是騎馬的樣子．．．很討厭的．．．,pid2
+	zin_old_msg,呵呵、風景多好啊．．．明明像是孩子般的縱肌、卻被callself_pid1好好的插入著,pid1
+	zin_old_msg,嗯嗯．．才不看．．的．．多不好意思．．多不好意思．．．,pid2
+	zin_old_msg,受不了了啊、call_pid2．．．差不多、該中出了呢．．．,pid1
+	zin_old_msg,不、不要啊？什麼的事情．．不懂、的事情．．可怕的．．拜託．．快停下．．．,pid2
+	zin_old_msg,出來了、call_pid2,pid1
+	zin_old_msg,啊啊啊．．好、熱．．滿滿．．的、進來了．．嗯嗯．．嗯．．嗯嗯嗯嗯啊！,pid2
+	zin_flush,pid2
+	end
+//孕みパターン
+case_botebara
+	zin_reg_msg,呵呵、再也無法忍耐下去了？,0
+	zin_reg_msg,一直想要、其實這也是沒有辦法的吧？,0
+	zin_reg_msg,那、那種事情．．．才沒有,1
+	zin_reg_msg,不要緊的、只要注意點肚子裡的孩子,0
+	zin_reg_msg,不、不過．．．,1
+	zin_reg_msg,來啊、到我身邊來,0
+	zin_reg_msg,唔、嗯．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊嗯．．．嗯嗯啊．．．那樣往上頂的話．．．子宮會破了的．．．會淌出來的啊．．．,pid2
+	zin_old_msg,比平時插入的還要淺呢．．．不用擔心的說,pid1
+	zin_old_msg,嗚啊啊啊嗯．．．總覺得．．．小穴的入口．．．被摩擦的啊、心情舒暢．．．,pid2
+	zin_old_msg,哎呀哎呀、陰蒂這不是在好好的勃起了嘛,pid1
+	zin_old_msg,誒、誒呀．．．那樣的地方．．．不許看啊！！,pid2
+	zin_old_msg,哈哈哈、可以清楚地看到呢。你最羞恥的地方都被一覽無遺喲,pid1
+	zin_old_msg,啊、啊啊真是的！！　也、已經．．．call_pid21的話．．．啊啊．．．但是、真的是．．很舒服呢．．．,pid2
+	zin_old_qnar,p_name2、自己開始使勁的搖動著腰部。
+	zin_old_msg,喂、喂．．．那麼動的話真的沒問題嗎？,pid1
+	zin_old_msg,因、因為．．．p_name2也．．．停不下來了哦！！　非常．．．舒服呢．．．嗚啊啊啊啊啊嗯！！,pid2
+	zin_old_msg,哦哦．．．那樣動的話．．．我這邊快要高潮了啊．．．,pid1
+	zin_old_msg,啊啊．．．高潮．．．p_name2也．．．已經．．．啊．．不行了啊．．．,pid2
+	zin_old_msg,嗯嗯．．．不行、去了．．．高潮、高潮、了、啊嗯嗯嗯嗯嗯！！！！,pid2
+	zin_flush,pid2
+	end

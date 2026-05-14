@@ -1,0 +1,74 @@
+// get_rndhao,0
+// set_epid1,pval
+eve_start
+	if_psex,player,1
+	if_val,勲功:player=13000
+	if_val,状態:player=2
+eve_end
+set_eveflg,193,0
+set_eveflg,195,0
+for,PMAX,193,1
+                chk_msts,eveflg193,勲功,13000,性別,2,状態,2,婚姻,0,覇王,!player,NON,0
+                chk_msts_then
+                set_eveflg,195,eveflg193
+                        break
+                chk_msts_else
+                    continue
+                 next
+//chk_eveflg,195,0
+       //chk_eveflg_then
+	  // bl_fadein,gzin8
+	   //zin_reg_msg,0...中斷,0
+        // end
+        //chk_eveflg_else
+set_epid1,eveflg195
+set_eveflg,193,0
+eve_start
+//if_val,状態:player=2
+// if_val,妻:pid1=0
+if_not_eveflg,195,0
+eve_end
+//bl_fadein,gzin8
+//zin_reg_event,,pid1,,,
+//zin_reg_msg,p_name1中斷,0
+set_eveflg,193,0
+set_eveflg,195,0
+for,PMAX,193,1
+                chk_msts,eveflg193,覇王,pid1,性別,1,勲功,<12000,年齢,>15,状態,2,特殊,!1
+                chk_msts_then
+                set_eveflg,195,eveflg193
+                        break
+                chk_msts_else
+                    continue
+                 next
+chk_eveflg,195,0
+chk_eveflg_then
+for,PMAX,193,1
+chk_msts,eveflg193,覇王,!player,性別,1,勲功,<12000,年齢,>15,状態,4,特殊,!1
+                chk_msts_then
+                set_eveflg,195,eveflg193
+				set_sikan,eveflg193,pid1
+                        break
+                chk_msts_else
+                    continue
+                 next
+chk_eveflg_else
+chk_eveflg,195,0
+chk_eveflg_then
+set_eveflg,193,0
+set_eveflg,195,0
+bl_fadein,gzin8
+zin_reg_event,,pid1,,,
+zin_reg_msg,p_name1中斷,0
+end
+chk_eveflg_else
+set_epid2,eveflg195
+set_eveflg,193,0
+set_eveflg,195,0
+bl_fadein,gzin8
+zin_reg_event,,pid1,pid2,,
+zin_reg_msg,p_name1和p_name2結婚,0
+set_pkon,pid1,pid2
+set_ninsin,pid1,pid2
+txtload,u175
+end

@@ -1,0 +1,46 @@
+zin_reg_msg,p_name2、過來．．．來給哥哥抱抱,0
+zin_reg_msg,call_pid21．．．．,1
+zin_reg_msg,好吧、既然call_pid21這麼希望的話,1
+zin_reg_msg,p_name2．．．,0
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_msg,吶！妹妹的man_str舒服麼？,pid2
+	zin_old_msg,嗯啊、非常的舒服呢,pid1
+	zin_old_msg,call_pid21這麼說、我好高興呢．．．,pid2
+	zin_old_msg,那裡．．．．就是那裡．．好舒服！！,pid2
+	zin_old_msg,感覺舒服麼？call_pid21．．．,pid2
+	zin_old_msg,嗯、哥哥我也、差不多要射了呢,pid1
+	zin_old_msg,好，好的...射進來吧！啊，啊啊啊啊啊！！,pid2
+	zin_flush,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_old_msg,吶！call_pid21、你看、妹妹的肚子大了呢？,pid2
+	zin_old_msg,嗯啊．．．沒想到妹妹這樣、小小的、身體裡面．．．也住著寶寶呢．．．,pid1
+	zin_old_msg,call_pid21這麼說、我好幸福呢．．．,pid2
+	zin_old_msg,哎呀．．．．哥哥的tin_str在肚子裡面．．不老實呢！！,pid2
+	zin_old_msg,嗯、啊哈哈、怎麼樣？差不多要射了呢,pid1
+	zin_old_msg,好，好的...射進來吧！啊，啊啊啊啊啊！！,pid2
+	zin_flush,pid2
+	end
+
+//初膜ターン
+case_hatumaku
+	zin_old_msg,我、我還是處女！．．．,pid2
+	zin_old_msg,我明白了、我會溫柔點的,pid1
+	zin_old_msg,嗯．．．,pid2
+	zin_old_msg,吶！妹妹的man_str漂亮麼？,pid2
+	zin_old_msg,啊、是漂亮的粉色呢,pid1
+	zin_old_msg,call_pid21這麼說、我好高興呢．．．,pid2
+	zin_old_msg,那裡．．．．就是那裡．．好舒服！！,pid2
+	zin_old_msg,感覺舒服麼？call_pid21．．．,pid2
+	zin_old_msg,嗯、哥哥我也、差不多要射了呢,pid1
+	zin_old_msg,好，好的...射進來吧！啊，啊啊啊啊啊！！,pid2
+	zin_flush,pid2
+	end

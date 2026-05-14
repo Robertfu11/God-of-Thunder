@@ -1,0 +1,11 @@
+bgm_chg,60
+zin_reg_event,,152,0,,gzin31
+zin_reg_msg,哈哈、不錯的主意,0
+zin_reg_qnar,技術士官突然有新的靈感。
+zin_reg_msg,這個想法應用的話我軍的陸戰武器會提高性能,0
+zin_reg_msg,現在馬上給配備中的陸戰武器使用吧,0
+zin_reg_qnar,結果將巨資開發的技術配備到實戰後、才發現根本是有缺陷的．．．
+zin_reg_msg,奇怪cr以為會很順利的．．．,0
+zin_reg_title,各惑星的防衛部隊遭到損失。
+zin_reg_button,0
+end

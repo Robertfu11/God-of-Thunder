@@ -1,0 +1,25 @@
+eve_start
+	if_eveflg,28,1
+	if_psts,312,2
+	if_pkun,312,<13000
+eve_end
+
+//移動至貝塔麾下
+set_pmov,312,669
+//功勳、忠誠設定
+upd_sts,312,1,100
+upd_sts,312,4,3000
+
+chk_exeplayer,piod0312,669,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event_mode,五月的住宅,312,0,,gzin18,2
+zin_reg_msg,華月應該也聽了這個信息,0
+zin_reg_msg,還是到貝塔大人那彙合比較快,0
+zin_reg_title,五月投靠天王。
+zin_reg_button,0
+//zin_reg_exit

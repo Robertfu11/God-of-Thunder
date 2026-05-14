@@ -1,0 +1,29 @@
+eve_start
+	if_eveflg,75,0
+	if_val,状態:243=6
+	if_val,年齢:243=13
+	if_val,覇王:243=覇王:player
+eve_end
+
+add_menkai,243
+set_eveflg,75,1
+
+set_epid1,243
+set_epid2,player
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin43
+zin_reg_msg,p_name2、在嗎！！,0
+zin_reg_msg,這不是p_name1大人嗎,1
+zin_reg_msg,我想到市鎮上視察,0
+zin_reg_msg,你陪我同去,0
+zin_reg_msg,視察嗎．．．,1
+zin_reg_msg,沒錯、我的護衛就拜託你了,0
+zin_reg_msg,還是說你有其他事情？,0
+zin_reg_msg,沒、沒有、沒有什麼事情．．．,1
+zin_reg_msg,很好、那就沒問題了,0
+zin_reg_msg,馬上出發吧,0
+zin_reg_msg,是、遵命．．．,1
+zin_reg_button,0
+//zin_reg_exit
+end

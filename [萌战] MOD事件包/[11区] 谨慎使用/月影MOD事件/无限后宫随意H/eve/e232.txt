@@ -1,0 +1,30 @@
+eve_start
+	if_date,80,3
+	if_poid,163,624
+	if_atkable,18,624
+//阿多魯塞姆が覇王
+	if_pkun,13,13000
+eve_end
+
+//哈根攻略設定
+set_target,624,18
+
+chk_exeplayer,624,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,斯庫洛克的王宮,624,163,,gzin8
+zin_reg_msg,斯庫洛克大人、根據情報員的報告阿多魯塞姆盯上了我們,1
+zin_reg_msg,阿多魯塞姆嗎．．．．,0
+zin_reg_msg,某個以前地球上面落魄的王子的男人,0
+zin_reg_msg,挑戰我們還要早100年,0
+zin_reg_msg,看看我們最新兵器的厲害,0
+zin_reg_msg,那麼我們就開始攻略哈根吧,1
+zin_reg_msg,很好cr把那個傢伙的頭帶過來,0
+zin_reg_msg,是,1
+zin_reg_button,0
+//zin_reg_exit
+end

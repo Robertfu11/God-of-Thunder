@@ -1,0 +1,7 @@
+//シリアイベントカウンタ
+eve_start
+	if_bet_eveflg,75,1,99
+eve_end
+
+add_eveflg,75,1
+end

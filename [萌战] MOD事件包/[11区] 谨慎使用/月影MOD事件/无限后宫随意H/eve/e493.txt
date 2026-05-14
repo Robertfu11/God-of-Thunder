@@ -1,0 +1,43 @@
+eve_start
+	if_date,106,4
+	if_poid,751,736
+    if_single,736
+eve_end
+
+chk_exeplayer,736,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+set_epid1,736
+set_epid2,751
+set_epid3,580
+bgm_chg,54
+zin_reg_event,,pid1,pid2,,gzin61
+zin_reg_qnar,有一天、普羅貝特被阿姆叫出來了。
+zin_reg_msg,call_pid12、有什麼事嗎？,0
+zin_reg_msg,普羅貝特、你是不是該娶妻子了,1
+zin_reg_msg,王妃？　是想讓我結婚？,0
+zin_reg_msg,你年紀也不小了,1
+zin_reg_msg,是差不多決定繼承者了,1
+zin_reg_msg,call_pid12、我還很年輕？,0
+zin_reg_msg,普羅貝特．．．可沒有你和我明天還能活著站在這的保證呀,1
+zin_reg_msg,這樣啊．．．,0
+zin_reg_msg,我已經選出了幾個候補,1
+zin_reg_msg,快、從裡面選出你喜歡的姑娘吧,1
+zin_reg_msg,call_pid12．．．cr我已經有想結婚的對象了,0
+zin_reg_msg,啊拉、我還不知道你已經有女友了？,1
+zin_reg_msg,是埃、埃塞拉、call_pid12,0
+zin_reg_msg,埃塞拉？cr是那個傭人埃塞拉嗎？,1
+zin_reg_msg,為什麼、埃塞拉以外的我想都沒想過,0
+zin_reg_msg,怎麼可以！！cr埃塞拉可是傭人哦！！王和傭人的女兒結婚什麼的．．．,1
+zin_reg_msg,call_pid12、請求你cr到現在為止call_pid12的話是什麼我都聽,0
+zin_reg_msg,我的任性的話也請聽一次,0
+zin_reg_qnar,阿姆感受到普羅貝特語氣中蘊含的堅決意念，而改變了主意。
+zin_reg_msg,唉．．．你都這麼說了還讓我說什麼好啊,1
+zin_reg_msg,埃塞拉是一個好女人我也知道的,1
+zin_reg_msg,但想要成為你的王妃還要修行一下．．．,1
+zin_reg_msg,這樣、你就幫她一下吧,1
+zin_reg_msg,謝、謝謝call_pid12,0
+zin_reg_button,0
+end

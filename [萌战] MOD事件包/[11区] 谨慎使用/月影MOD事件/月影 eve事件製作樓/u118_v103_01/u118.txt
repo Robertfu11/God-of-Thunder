@@ -1,0 +1,95 @@
+set_epid1,player
+set_eveflg,196,0
+
+bl_fadein,gzin8
+zin_reg_event,,player,,,
+zin_reg_msg,重要人物復活?,0
+zin_reg_2sel,重要人物復活,いや
+        get_resp
+        ret_sel1
+        goto,*go
+        ret_sel2
+        set_eveflg,196,0
+        end
+        *go
+                    for,PMAX,196,1 
+                                    select_pid,eveflg196
+                                    case_1   // オペレータ
+                                    case_133
+                                    case_221
+                                    case_575
+                                    case_578
+                                    case_582
+                                    case_597
+                                    case_666
+                                    case_714
+                                    case_717
+                                    case_724
+                                    case_738
+                                    case_756
+                                    case_765
+                                    case_778
+                                    case_779
+                                    case_780
+                                    case_781
+                                    case_782
+                                    case_783
+                                    case_785
+                                    case_786
+                                    case_800
+                                    case_803
+                                    case_809
+                                    case_811
+                                    case_812
+                                    case_814
+                                    case_820
+                                    case_836
+                                    case_837
+                                    case_838
+                                    case_839
+                                    case_840
+                                    case_841
+                                    case_842
+                                    case_843
+                                    case_844
+                                    case_845
+                                    case_846
+                                    case_847
+                                    case_848
+                                    case_849
+                                    case_850
+                                    case_895
+                                    case_897
+                                    case_898
+                                    case_899
+                                    case_900
+                                       continue
+                                    
+                                    default
+                                    chk_msts,eveflg196,状態,3,NON,0,NON,0,NON,0,NON,0
+                                    chk_msts_then
+                                                        set_epid2,eveflg196
+                                                        chk_eveflg,196,>897
+                                                        chk_eveflg_then
+                                                        continue
+                                                        chk_eveflg_else
+                                                        bl_fadein,gzin8
+                                                        zin_reg_event,,player,,,
+                                                        zin_reg_msg,p_name2,0
+                                                        zin_reg_event,,player,eveflg196,,
+                                                        zin_reg_2sel,復活,いや
+                                                        get_resp
+                                                        ret_sel1
+                                                        set_sikan,eveflg196,poid_player
+                                                        set_kataki_oya,eveflg196,0,0
+                                                        set_kataki_yome,eveflg196,0,0
+                                                        set_kataki_kodomo,eveflg196,0,0
+                                                        add_kunkou,eveflg196,5000
+                                                        set_pnen,eveflg196,20
+                                                           continue
+                                                        ret_sel2
+                                                           continue
+                                    chk_msts_else
+                                       continue
+                    next
+end

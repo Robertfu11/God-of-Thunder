@@ -1,0 +1,640 @@
+/////NTR_ver2.2（仕官 同事友好）/////
+eve_start
+        if_rnd,3
+eve_end
+*Start
+
+set_epid1,eveflg106
+set_epid2,yome_player
+set_epid3,player
+
+bgm_chg,64
+zin_reg_event,指挥中心监控室,pid1,pid2,,gzin7
+zin_reg_qnar,这个月、p_name2和p_name1被安排在监控室守夜。
+zin_reg_msg,今天晚上看来也没什么事呢……cr好无聊啊……？,0
+zin_reg_msg,夫人今晚也来一炮吧？,0
+zin_reg_msg,这……,1
+zin_reg_msg,哈哈，夫人脸红的样子真美,0
+zin_reg_qnar,说着，p_name1拉开了裤链，掏出了已经硬了的肉棒，在p_name2的面前开始套弄起来
+zin_reg_msg,你……你别这样··,1
+zin_reg_msg,哈哈cr夫人的眼睛可不是这么告诉我的……,0
+zin_reg_qnar,p_name1一把抱起了旁边的p_name2
+zin_reg_msg,啊啊……你做什么……,1
+zin_reg_msg,夫人也饥渴了吧？,0
+zin_reg_qnar,然后他的一只手隔着衣服揉弄p_name2的左乳，另一只手抚摸着她的大腿
+zin_reg_msg,想要我的tin_str了吗?cr……里面一定都湿了吧,0
+zin_reg_msg,啊啊、别……,1
+zin_reg_qnar,p_name2推开了p_name1
+zin_reg_msg,（不说点什么的话，就糟糕了）,1
+zin_reg_qnar,准备防御他的哪种攻势呢？cr(欲望克魅力克伦理克欲望)
+zin_reg_3sel,欲望系,魅力系,伦理系
+get_resp
+///////////////////////////////////////////////////////////////
+ret_sel1
+rnd,3
+case0
+zin_reg_msg,你想尝一下除你丈夫以外男人的肉棒吗？,0
+zin_reg_msg,和cf_pid1的肉棒比一下怎么样呢,0
+zin_reg_qnar,p_name1想用欲望来征服
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+chk_ormval,交渉:pid1>99,交渉:pid2<60,,,
+chk_ormval_then
+        zin_reg_qnar,p_name1的手伸入了裙摆，撇开内裤，慢慢揉弄着p_name2濡湿的阴户
+	zin_reg_msg,哈哈哈、都湿了哟？,0
+	zin_reg_msg,不用再忍耐了cr想要男人的肉棒是女人的本能,0
+	zin_reg_msg,这里只有我们两个，谁都不会知道的,0
+	zin_reg_msg,……那……,1
+        upd_sts,pid1,9,5
+	goto,*OldStart
+chk_ormval_else
+	goto,*BougyoSeiko
+
+case1
+zin_reg_msg,很久没有丈夫的怀抱了吧？,0
+zin_reg_msg,cf_pid1将她温柔的抱入怀中,0
+zin_reg_qnar,p_name1使用魅力攻势
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+chk_ormval,格闘:pid1>60,格闘:pid2<60,,,
+chk_ormval_then
+	zin_reg_msg,你、你真的这么想要我吗？,1
+	zin_reg_msg,当然,0
+	zin_reg_msg,这是我最大的梦想,0
+	zin_reg_msg,……那……,1
+	upd_sts,pid1,8,5
+	goto,*OldStart
+chk_ormval_else
+	goto,*BougyoSeiko
+
+case2
+zin_reg_msg,在p_name3殿不知道的地方，把他的女人抱上床，不好吗？,0
+zin_reg_msg,你别再忍耐了,0
+zin_reg_qnar,p_name1使用伦理攻势
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+chk_ormval,知力:pid1>60,知力:pid2<60,,,
+chk_ormval_then
+	zin_reg_msg,说不定那个人也忍不住正在干着别的女人呢……？,0
+	zin_reg_msg,是……是这样的吗,1
+	zin_reg_msg,当然了，一个月这么久，怎么能忍住呢,0
+	zin_reg_msg,……那……,1
+	upd_sts,pid1,5,5
+	goto,*OldStart
+chk_ormval_else
+	goto,*BougyoSeiko
+///////////////////////////////////////////////////////////////
+ret_sel2
+rnd,3
+case0
+zin_reg_msg,你想尝一下除你丈夫以外男人的肉棒吗？,0
+zin_reg_msg,和cf_pid1的肉棒比一下怎么样呢,0
+zin_reg_qnar,p_name1想用欲望来征服
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+chk_ormval,交渉:pid1>60,交渉:pid2<60,,,
+chk_ormval_then
+        zin_reg_qnar,p_name1的手伸入了裙摆，撇开内裤，慢慢揉弄着p_name2濡湿的阴户
+	zin_reg_msg,哈哈哈、都湿了哟？,0
+	zin_reg_msg,不用再忍耐了cr想要男人的肉棒是女人的本能,0
+	zin_reg_msg,这里只有我们两个，谁都不会知道的,0
+	zin_reg_msg,……那……,1
+        upd_sts,pid1,9,5
+	goto,*OldStart
+chk_ormval_else
+	goto,*BougyoSeiko
+
+case1
+zin_reg_msg,很久没有丈夫的怀抱了吧？,0
+zin_reg_msg,cf_pid1将她温柔的抱入怀中,0
+zin_reg_qnar,p_name1使用魅力攻势
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+chk_ormval,格闘:pid1>99,格闘:pid2<60,,,
+chk_ormval_then
+	zin_reg_msg,你、你真的这么想要我吗？,1
+	zin_reg_msg,当然,0
+	zin_reg_msg,这是我最大的梦想,0
+	zin_reg_msg,……那……,1
+	upd_sts,pid1,8,5
+	goto,*OldStart
+chk_ormval_else
+	goto,*BougyoSeiko
+
+case2
+zin_reg_msg,在p_name3殿不知道的地方，把他的女人抱上床，不好吗？,0
+zin_reg_msg,你别再忍耐了,0
+zin_reg_qnar,p_name1使用伦理攻势
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+chk_ormval,知力:pid1>60,知力:pid2<60,,,
+chk_ormval_then
+	zin_reg_msg,说不定那个人也忍不住正在干着别的女人呢……？,0
+	zin_reg_msg,是……是这样的吗,1
+	zin_reg_msg,当然了，一个月这么久，怎么能忍住呢,0
+	zin_reg_msg,……那……,1
+	upd_sts,pid1,5,5
+	goto,*OldStart
+chk_ormval_else
+	goto,*BougyoSeiko
+///////////////////////////////////////////////////////////////
+ret_sel3
+rnd,3
+case0
+zin_reg_msg,你想尝一下除你丈夫以外男人的肉棒吗？,0
+zin_reg_msg,和cf_pid1的肉棒比一下怎么样呢,0
+zin_reg_qnar,p_name1想用欲望来征服
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+chk_ormval,交渉:pid1>60,交渉:pid2<60,,,
+chk_ormval_then
+        zin_reg_qnar,p_name1的手伸入了裙摆，撇开内裤，慢慢揉弄着p_name2有些濡湿的阴户
+	zin_reg_msg,哈哈哈、都湿了哟？,0
+	zin_reg_msg,不用再忍耐了cr想要男人的肉棒是女人的本能,0
+	zin_reg_msg,这里只有我们两个，谁都不会知道的,0
+	zin_reg_msg,……那……,1
+        upd_sts,pid1,9,5
+	goto,*OldStart
+chk_ormval_else
+	goto,*BougyoSeiko
+
+case1
+zin_reg_msg,很久没有丈夫的怀抱了吧？,0
+zin_reg_msg,cf_pid1将她温柔的抱入怀中,0
+zin_reg_qnar,p_name1使用魅力攻势
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+chk_ormval,格闘:pid1>60,格闘:pid2<60,,,
+chk_ormval_then
+	zin_reg_msg,你、你真的这么想要我吗？,1
+	zin_reg_msg,当然,0
+	zin_reg_msg,这是我最大的梦想,0
+	zin_reg_msg,……那……,1
+	upd_sts,pid1,8,5
+	goto,*OldStart
+chk_ormval_else
+	goto,*BougyoSeiko
+
+case2
+zin_reg_msg,在p_name3殿不知道的地方，把他的女人抱上床，不好吗？,0
+zin_reg_msg,你别再忍耐了,0
+zin_reg_qnar,p_name1使用伦理攻势
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+chk_ormval,知力:pid1>99,知力:pid2<60,,,
+chk_ormval_then
+	zin_reg_msg,说不定那个人也忍不住正在干着别的女人呢……？,0
+	zin_reg_msg,是……是这样的吗,1
+	zin_reg_msg,当然了，一个月这么久，怎么能忍住呢,0
+	zin_reg_msg,……那……,1
+	upd_sts,pid1,5,5
+	goto,*OldStart
+chk_ormval_else
+	goto,*BougyoSeiko
+///////////////////////////////////////////////////////////////
+*BougyoSeiko
+zin_reg_msg,别、别这样！,1
+zin_reg_msg,虽然是想要舒服放松一下,1
+zin_reg_msg,但是我不能背叛我的丈夫……,1
+zin_reg_msg,是吗……cr那么就算了吧,0
+zin_reg_msg,cf_pid1看来还需要磨炼啊,0
+zin_reg_msg,……,1
+zin_reg_button,0
+zin_reg_exit
+end
+
+
+*OldStart
+bgm_chg,21
+zin_reg_event,指挥中心中央控制室,pid1,pid2,,gzin41
+zin_reg_qnar,p_name1用手指抽插着p_name2充满情欲的阴户
+zin_reg_msg,……啊……嗯嗯…………那儿,1
+zin_reg_msg,嗯……哈…哈………p_name1……的技术……好厉害,1
+zin_reg_msg,p_name2是个美人的关系，让我非常兴奋,0
+zin_reg_msg,……嗯嗯……啊……不行…要……要去了……,1
+zin_reg_qnar,p_name2高潮了，喷出了大量的爱液
+zin_reg_msg,……差不多了吧？,0
+zin_reg_msg,好……来吧……人家等不及了,1
+zin_reg_msg,啊……cr带避孕套吧……,1
+zin_reg_msg,不要紧的……,0
+zin_reg_msg,别、别！cr人家就这一点要求了！,1
+zin_reg_msg,唉唉cr不会这么容易就怀孕的啦……,0
+zin_reg_msg,（不行、这样进来会怀孕的）,1
+zin_reg_qnar,准备防御他的哪种攻势呢？cr(欲望克魅力克伦理克欲望)
+zin_reg_3sel,欲望系,魅力系,伦理系
+get_resp
+///////////////////////////////////////////////////////////////
+ret_sel1
+rnd,3
+case0
+zin_reg_msg,直接在里面做的话会更有感觉的呢,0
+zin_reg_qnar,p_name1想用欲望来征服
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+
+chk_ormval,交渉:pid1>99,交渉:pid2<60,,,
+chk_ormval_then
+	zin_reg_qnar,説服失败！crp_name1就这样插入了p_name2的小穴。
+	zin_reg_msg,（对不起cr…………p_name3……亲爱的原谅我）,1
+        upd_sts,pid1,5,5
+	goto,*SinOld
+chk_ormval_else
+	zin_reg_qnar,説服成功！crp_name1带上了避孕套插入了p_name2的小穴。
+	goto,*KurokoOld
+
+case1
+zin_reg_msg,就这样感受我的温柔吧,0
+zin_reg_qnar,p_name1使用魅力攻势
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+
+chk_ormval,格闘:pid1>70,格闘:pid2<60,,,
+chk_ormval_then
+	zin_reg_qnar,説服失败！crp_name1就这样插入了p_name2的小穴。
+	zin_reg_msg,（对不起cr…………p_name3……亲爱的原谅我）,1
+        upd_sts,pid1,8,5
+	goto,*SinOld
+chk_ormval_else
+	zin_reg_qnar,説服成功！crp_name1带上了避孕套插入了p_name2的小穴。
+	goto,*KurokoOld
+
+case2
+zin_reg_msg,不相信cf_pid1吗？,0
+zin_reg_msg,(一定要让你怀孕),0
+zin_reg_qnar,p_name1使用伦理攻势
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+chk_ormval,知力:pid1>70,知力:pid2<60,,,
+chk_ormval_then
+	zin_reg_qnar,説服失败！crp_name1就这样插入了p_name2的小穴。
+	zin_reg_msg,（对不起cr…………p_name3……亲爱的原谅我）,1
+        upd_sts,pid1,9,5
+	goto,*SinOld
+chk_ormval_else
+	zin_reg_qnar,説服成功！crp_name1带上了避孕套插入了p_name2的小穴。
+	goto,*KurokoOld
+///////////////////////////////////////////////////////////////
+ret_sel2
+rnd,3
+case0
+zin_reg_msg,直接在里面做的话会更有感觉的呢,0
+zin_reg_qnar,p_name1想用欲望来征服
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+
+chk_ormval,交渉:pid1>70,交渉:pid2<60,,,
+chk_ormval_then
+	zin_reg_qnar,説服失败！crp_name1就这样插入了p_name2的小穴。
+	zin_reg_msg,（对不起cr…………p_name3……亲爱的原谅我）,1
+        upd_sts,pid1,5,5
+	goto,*SinOld
+chk_ormval_else
+	zin_reg_qnar,説服成功！crp_name1带上了避孕套插入了p_name2的小穴。
+	goto,*KurokoOld
+
+case1
+zin_reg_msg,就这样感受我的温柔吧,0
+zin_reg_qnar,p_name1使用魅力攻势
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+
+chk_ormval,格闘:pid1>99,格闘:pid2<60,,,
+chk_ormval_then
+	zin_reg_qnar,説服失败！crp_name1就这样插入了p_name2的小穴。
+	zin_reg_msg,（对不起cr…………p_name3……亲爱的原谅我）,1
+        upd_sts,pid1,8,5
+	goto,*SinOld
+chk_ormval_else
+	zin_reg_qnar,説服成功！crp_name1带上了避孕套插入了p_name2的小穴。
+	goto,*KurokoOld
+
+case2
+zin_reg_msg,不相信cf_pid1吗？,0
+zin_reg_msg,(一定要让你怀孕),0
+zin_reg_qnar,p_name1使用伦理攻势
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+chk_ormval,知力:pid1>70,知力:pid2<60,,,
+chk_ormval_then
+	zin_reg_qnar,説服失败！crp_name1就这样插入了p_name2的小穴。
+	zin_reg_msg,（对不起cr…………p_name3……亲爱的原谅我）,1
+        upd_sts,pid1,9,5
+	goto,*SinOld
+chk_ormval_else
+	zin_reg_qnar,説服成功！crp_name1带上了避孕套插入了p_name2的小穴。
+	goto,*KurokoOld
+///////////////////////////////////////////////////////////////
+ret_sel3
+rnd,3
+case0
+zin_reg_msg,直接在里面做的话会更有感觉的呢,0
+zin_reg_qnar,p_name1想用欲望来征服
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+
+chk_ormval,交渉:pid1>70,交渉:pid2<60,,,
+chk_ormval_then
+	zin_reg_qnar,説服失败！crp_name1就这样插入了p_name2的小穴。
+	zin_reg_msg,（对不起cr…………p_name3……亲爱的原谅我）,1
+        upd_sts,pid1,5,5
+	goto,*SinOld
+chk_ormval_else
+	zin_reg_qnar,説服成功！crp_name1带上了避孕套插入了p_name2的小穴。
+	goto,*KurokoOld
+
+case1
+zin_reg_msg,就这样感受我的温柔吧,0
+zin_reg_qnar,p_name1使用魅力攻势
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+
+chk_ormval,格闘:pid1>70,格闘:pid2<60,,,
+chk_ormval_then
+	zin_reg_qnar,説服失败！crp_name1就这样插入了p_name2的小穴。
+	zin_reg_msg,（对不起cr…………p_name3……亲爱的原谅我）,1
+        upd_sts,pid1,8,5
+	goto,*SinOld
+chk_ormval_else
+	zin_reg_qnar,説服成功！crp_name1带上了避孕套插入了p_name2的小穴。
+	goto,*KurokoOld
+
+case2
+zin_reg_msg,不相信cf_pid1吗？,0
+zin_reg_msg,(一定要让你怀孕),0
+zin_reg_qnar,p_name1使用伦理攻势
+zin_reg_msg,但、但是……,1
+zin_reg_msg,……,1
+chk_ormval,知力:pid1>99,知力:pid2<60,,,
+chk_ormval_then
+	zin_reg_qnar,説服失败！crp_name1就这样插入了p_name2的小穴。
+	zin_reg_msg,（对不起cr…………p_name3……亲爱的原谅我）,1
+        upd_sts,pid1,9,5
+	goto,*SinOld
+chk_ormval_else
+	zin_reg_qnar,説服成功！crp_name1带上了避孕套插入了p_name2的小穴。
+	goto,*KurokoOld
+
+////////////////////////////////////////////////////////////////////////////////////
+*SinOld
+chk_mval,eveflg104>0,,,,
+chk_mval_then
+goto,*old0
+chk_mval_else
+set_eveflg,104,1
+goto,*old0
+end
+
+add_eveflg,113,1
+
+*old0
+zin_old_init
+zin_old_img_pid,pid2,1
+rnd,3
+case0
+zin_old_msg,啊！！！！……进来了……crp_name1的肉棒……！,pid2
+goto,*old1
+case1
+zin_old_msg,啊啊……好大!!……cr里面被塞满了,pid2
+goto,*old1
+case2
+zin_old_msg,……啊嗯……哈……哈……好厉害cr……这个tin_str……好有感觉,pid2
+
+*old1
+//zin_old_exit
+//zin_reg_event,指挥中心中央控制室,pid1,pid2,,gzin41
+//psn_putsex,1,0,1
+
+zin_old_img_str,am_baisi01,20,1
+zin_old_img_str,am_baisi02,20,1
+
+zin_reg_2sel,看H片段,跳过
+get_resp
+ret_sel1
+goto,*hlook
+ret_sel2
+goto,*old8
+
+*hlook
+rnd,3
+case0
+zin_old_msg,夫人里面又紧又湿……cr已经等不及了吗？,pid1
+goto,*old2
+case1
+zin_old_msg,天呐……比想像的还要紧……cr简直就像是没有用过一样？,pid1
+goto,*old2
+case2
+zin_old_msg,哎……只进了一点点cr就已经不行了呀？,pid2
+
+*old2
+
+zin_old_img_str,am_baisi01,20,1
+zin_old_img_str,am_baisi02,20,1
+zin_old_img_str,am_baisi03,20,1
+zin_old_img_str,am_baisi04,20,1
+
+rnd,3
+case0
+zin_old_msg,别说那样的话……好羞耻……,pid2
+goto,*old3
+case1
+zin_old_msg,啊哈……好……哈……cr……好舒服……,pid2
+goto,*old3
+case2
+zin_old_msg,……啊……好硬啊……cr在里面……,pid2
+
+*old3
+
+zin_old_img_str,am_baisi05,20,1
+zin_old_img_str,am_baisi01,20,1
+zin_old_img_str,am_baisi02,20,1
+
+
+rnd,3
+case0
+zin_old_msg,哈哈、夫人的迷人的表情真是诱人呢……和crp_name3殿的东西比怎么样？,pid1
+goto,*old4
+case1
+zin_old_msg,好好、siru_str好多……吸得我好紧……和crp_name3殿的东西比怎么样呢？,pid1
+goto,*old4
+case2
+zin_old_msg,看，发现新大陆了吧……cf_pid1的东西还是p_name3殿的东西更棒呢？,pid1
+
+*old4
+
+zin_old_img_str,am_baisi03,20,1
+zin_old_img_str,am_baisi04,20,1
+zin_old_img_str,am_baisi05,20,1
+rnd,3
+case0
+zin_old_msg,嗯啊……啊……你的tin_strcr……好大啊……cr……子宫口……进来了！,pid2
+goto,*old5
+case1
+zin_old_msg,那个……！……什么cr……和他相比的话……啊··,pid2
+goto,*old5
+case2
+zin_old_msg,……别っ……都好……啊啊cr……都好舒服啊……！,pid2
+
+*old5
+zin_old_img_str,am_baisi01,20,1
+zin_old_img_str,am_baisi02,20,1
+zin_old_img_str,am_baisi03,20,1
+
+zin_old_msg,呐吶……这样啊！cr说实话、就爱这样干喜欢肉棒的人妻！！,pid1
+rnd,3
+case0
+zin_old_msg,哈啊……好激烈……啊……cr那样好、好啊啊！！,pid2
+goto,*old6
+case1
+zin_old_msg,别啊！……哈…哈…别っ、慢……慢一点ぃ……cr……要……要坏了……,pid2
+goto,*old6
+case2
+zin_old_msg,啊啊啊……好有感觉……别っ……好麻……啊……！,pid2
+
+*old6
+zin_old_img_str,am_baisi04,20,1
+zin_old_img_str,am_baisi05,20,1
+zin_old_img_str,am_baisi01,20,1
+rnd,3
+case0
+zin_old_msg,不、不行了…………要去了……cr感觉好好……要去了お,pid2
+goto,*old7
+case1
+zin_old_msg,啊··！你的tin_str……在里面……抖起来了！cr要去了吧？  来吧……？,pid2
+goto,*old7
+case2
+zin_old_msg,··哈……已经要丢了……丢了！来一起吧……！,pid2
+
+*old7
+zin_old_img_str,am_baisi02,20,1
+zin_old_img_str,am_baisi03,20,1
+zin_old_img_str,am_baisi04,20,1
+zin_old_img_str,am_baisi05,20,1
+rnd,3
+case0
+zin_old_msg,man_str包得好紧……cr好、cf_pid1也要去了！……一起去吧！！,pid1
+goto,*old8
+case1
+zin_old_msg,啊……可爱的p_name2！cr……就要丢了……来接受你丈夫以外的tane_str吧！！,pid1
+goto,*old8
+case2
+zin_old_msg,好厉害……你的小穴把cf_pid1的肉棒全部吃下去吧cr！……就要丢了！！,pid1
+
+
+///////////////////////////////////////////////////////////////
+*old8
+//zin_old_init
+zin_old_img_str,am_baisi05,20,1
+
+chk_mval,eveflg103<50,,,,
+chk_mval_then
+goto,*wai
+chk_mval_else
+
+zin_reg_2sel,（就这样射在里面）,不行请射在外面
+get_resp
+ret_sel1
+add_eveflg,103,4
+rnd,3
+case0
+zin_old_msg,……嗯……就这样……啊……射在里面……啊啊……,pid2
+zin_old_msg,p_name3殿，噢、cf_pid1要把tane_str全部射进你妻子p_name1的膣内了哟cr噢！,pid1
+zin_flush,pid2
+zin_old_msg,……啊、进来了……你的tane_str在子宫里满满滚烫的感觉……好舒服……,pid2
+goto,*NinsinHantei
+case1
+zin_old_msg,……嗯……就这样……啊……射在里面……啊啊……,pid2
+zin_old_msg,p_name3殿，噢、cf_pid1要把tane_str全部射进你妻子p_name1的膣内了哟cr噢！,pid1
+zin_flush,pid2
+zin_old_msg,……啊、进来了……你的tane_str在子宫里满满滚烫的感觉……好舒服……,pid2
+goto,*NinsinHantei
+case2
+zin_old_msg,……嗯……就这样……啊……射在里面……啊啊……,pid2
+zin_old_qnar,p_name1在射精前、从穴膣里拔了出来cr射在了她的性器上
+zin_flush,pid2
+zin_old_msg,哈啊……哈啊…………cf_pid2好兴奋…………好厉害……,pid2
+end
+///////////////////////////////////////////////////////////////
+ret_sel2
+*wai
+sub,103,eveflg103,2
+zin_old_msg,……哈啊……哈啊………别……别……请射在外面……,pid2
+rnd,3
+case0
+zin_old_qnar,p_name1没有理会p_name2，将大量的射精射入了穴膣里
+zin_flush,pid2
+zin_old_msg,……啊、……tane_str在子宫里滚烫的…………,pid2
+goto,*NinsinHantei
+case1
+zin_old_qnar,p_name1在射精前、从穴膣里拔了出来cr射在了她的性器上
+zin_flush,pid2
+zin_old_msg,哈啊……哈啊…………cf_pid2好兴奋…………好厉害……,pid2
+end
+case2
+zin_old_qnar,p_name1在射精前、从穴膣里拔了出来cr射在了她的性器上
+zin_flush,pid2
+zin_old_msg,哈啊……哈啊…………cf_pid2好兴奋…………好厉害……,pid2
+end
+
+end
+///////////////////////////////////////////////////////////////
+
+*NinsinHantei
+dec_sinmitu,pid2,10
+gosub,*pwup
+rnd,5
+case0
+	chk_sts,pid2,16,0
+	chk_sts_then
+		set_ninsin,pid2,pid1
+zin_old_msg,啊っ、啊っ、今天是危险日怎么忘记了っ！！,pid2
+zin_old_msg,怎么办、cr要怀孕了！！！,pid2
+		zin_reg_button,16
+		zin_old_exit
+		end
+	chk_sts_else
+		zin_reg_button,16
+		zin_old_exit
+		end
+case1
+case2
+case3
+case4
+
+	zin_reg_button,16
+	zin_old_exit
+	end
+
+*KurokoOld
+sub,103,eveflg103,1
+zin_reg_msg,看cr这样行了吧？,0
+psn_putsex,1,0,1
+zin_reg_msg,太棒了crp_name2好喜欢cr……,1
+zin_reg_msg,直白啊cr身体背叛了丈夫cr在别的男人这里得到满足了吧,0
+zin_reg_msg,现在的夫人はcr只是淫乱的女人啊……cr……谁都可以上你吧,0
+zin_reg_msg,别っcr别说这种话………我……我爱……丈夫…,1
+zin_reg_msg,……但是好舒服cr……不想这样……但是好想要,1
+zin_reg_msg,说着话就有感觉了？cr多淫乱啊,0
+zin_reg_qnar,p_name1在她的穴膣里猛烈的进攻着
+zin_reg_msg,啊啊嗯嗯啊啊cr要丢了、要丢了……！,1
+zin_reg_msg,好cf_pid1我也要射了哟！cr……うっ,0
+zin_reg_event,指挥中心中央控制室,pid1,pid2,,gzin41
+zin_reg_qnar,p_name1在射精前、从穴膣里拔了出来cr射在了她的性器上
+zin_flush,pid2
+zin_reg_msg,嗯……啊cr…………好温和··,1
+dec_sinmitu,pid2,10
+end
+
+*old10
+zin_reg_button,0
+zin_reg_exit
+end
+
+*pwup
+upd_sts,pid1,1,10
+upd_sts,pid1,5,5
+upd_sts,pid1,6,5
+upd_sts,pid1,7,5
+upd_sts,pid1,8,5
+upd_sts,pid1,9,5
+add_sinmitu,pid1,5
+return

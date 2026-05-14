@@ -1,0 +1,24 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,機庫,pid1,0,,gzin15
+zin_reg_msg,p_name3大人、p_name1往那邊走了,0
+zin_reg_msg,無論無何也無法抑制自己的情緒啊,0
+zin_reg_face_1,pid2
+zin_reg_msg,p_name1喲、你在這兒做什麼呢？,1
+zin_reg_msg,夫、夫君．．．,0
+zin_reg_msg,總覺得你最近有點怪怪的．．．,1
+zin_reg_msg,難道你又去p_name3那裏了？,1
+zin_reg_msg,沒錯、這有什麼不好的！！,0
+zin_reg_msg,可惡、厚顏無恥的女人．．．,1
+zin_reg_msg,難道你、 已經和p_name3發生關系了．．．,1
+zin_reg_msg,你、你在說什麼呐、沒那種事,0
+zin_reg_msg,一派胡言！！你竟敢背叛crcallself_pid2．．．,1
+zin_reg_msg,我絕對無法容忍這種行為,1
+zin_reg_msg,把p_name1抓起來！！,1
+zin_reg_msg,啊、討厭、快放開我！！,0
+zin_reg_msg,念在多年情分、就讓callself_pid2親自動手好了,1
+zin_reg_title,p_name1被處死了。
+zin_reg_button,0
+zin_reg_exit
+set_dead,pid1,0
+end

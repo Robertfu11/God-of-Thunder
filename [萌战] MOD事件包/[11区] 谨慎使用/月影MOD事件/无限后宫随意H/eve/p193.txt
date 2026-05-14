@@ -1,0 +1,12 @@
+bgm_chg,107
+zin_reg_init
+zin_reg_event,惑星防衛基地,pid1,pid2,,gzin17
+zin_reg_qnar,p_name1對時而出現的海盜團夥感到很棘手。
+zin_reg_msg,隊長！！收到聯絡，地上輸送部隊受到海盜襲擊,1
+zin_reg_msg,什麼？！好，讓第3中隊與第4中隊迎擊,0
+zin_reg_msg,這次絕對要抓住！！,0
+zin_reg_qnar,p_name1巧妙抓住海盜，沒收了他們的財寶。
+zin_reg_title,得到5萬金。
+zin_reg_button,0
+zin_reg_exit
+end

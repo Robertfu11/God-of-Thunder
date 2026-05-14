@@ -1,0 +1,18 @@
+bgm_chg,60
+zin_reg_event,偷吃要記得擦嘴喔～ (^^)v,pid1,pid2,zin23,gzin18
+zin_reg_msg,你．．．,0
+zin_reg_msg,今天、我來幹什麼cr知道嗎？,0
+zin_reg_msg,嗯．．．並不清楚啊．．．,1
+zin_reg_msg,你見異思遷了呢,0
+zin_reg_msg,那個p_name3和你有染吧．．．,0
+zin_reg_msg,嗯、對不起．．．,1
+zin_reg_msg,不好意思、我不能和你在一起了,0
+zin_reg_msg,離婚吧,0
+zin_reg_msg,這、這、cr不用到這種地步啊．．．,1
+zin_reg_msg,你似乎並不知道情況的嚴重性,0
+zin_reg_msg,和你分開是一件好事啊,0
+zin_reg_msg,好,0
+zin_reg_msg,不、不！！,1
+zin_reg_title,跟p_name1離婚了。
+zin_reg_button,0
+end

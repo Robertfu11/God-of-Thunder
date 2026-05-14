@@ -1,0 +1,13 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,p_name1的困擾,pid1,,,gzin11
+//	zin_reg_msg,０１２３４５６７８９０１２３４５６７８９０１,0
+	zin_reg_msg,受夠了call_pid2．．．,0
+	zin_reg_msg,callself_pid1投入了那麼多．．．,0
+	zin_reg_msg,這樣下去毫無意義,0
+	zin_reg_msg,離開吧．．．去很遠的地方．．．,0
+zin_reg_title,p_name1離開了。
+zin_reg_button,0
+zin_reg_exit
+set_hourou,pid1
+end

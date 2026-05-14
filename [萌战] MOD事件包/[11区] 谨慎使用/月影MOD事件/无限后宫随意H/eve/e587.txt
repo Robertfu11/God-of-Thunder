@@ -1,0 +1,63 @@
+//xeve
+eve_start
+	if_eveflg,31,10
+	//プレイヤーが覇王である
+	if_pkun,player,<13000
+	if_pkun,player,>6999
+
+eve_end
+
+set_eveflg,31,11
+set_epid1,poid_player
+set_epid2,player
+get_kunpsn,pid1
+
+bgm_chg,61
+//zin_reg_init
+zin_reg_event,p_name1の王宮,poid_player,pval,,gzin8
+zin_reg_msg,p_name1大人、那個歌娘,1
+zin_reg_msg,已經送到一個特殊的房間裏了,1
+zin_reg_msg,哈哈、是這樣的嗎？,0
+zin_reg_msg,捆結實了嗎？,0
+zin_reg_msg,您說的對．．．,1
+zin_reg_msg,嗯、那麼趕快開始調查吧,0
+zin_reg_msg,p_name2啊、這個女人的取證、交給您,0
+zin_reg_face_1,pid2
+zin_reg_msg,知道了,1
+set_epid1,player
+set_epid2,847
+zin_old_init
+zin_old_img_str,w0847xc,0,1
+zin_old_msg,p_name1身體不能活動p_name2從後面刺了下去。,0
+zin_old_msg,啊啊啊．．．．cr不愧是歌姬啊、身體真緊啊,pid1
+zin_old_msg,小穴的嚴緊也無可挑剔,pid1
+zin_old_msg,啊、啊啊！！．．．討厭．．．啊、停下來．．,pid2
+zin_old_msg,嗯？cr 啊．．．居然是處女．．．cr在歌姬中很罕見啊,pid1
+zin_old_msg,哈哈、真是興奮！！,pid1
+zin_old_msg,稍微、稍微．．．適可而止．．．吧．．啊！！　啊、啊啊！！．．．嗯、嗯嗯！！,pid2
+zin_old_msg,哈哈、你是間諜吧。這是調查啊,pid1
+zin_old_msg,來吧、說吧！！　哪裡的間諜？！！,pid1
+zin_old_msg,額、我不是．．．不是！！cr人．．．啊、間諜是．．．做什麼的！！,pid2
+zin_old_msg,馬上．．請．．解脫．．我．．．cr這樣的事．．．啊啊．．．cr我、我的粉絲．．．對我．．無情,pid2
+zin_old_msg,這是一個瀟灑的女人,pid1
+zin_old_msg,開始審訊,pid1
+zin_old_msg,啊啊啊．．．．啊、啊．．．啊啊啊啊！！,pid2
+zin_old_msg,哈哈哈、早點說出來會輕鬆地。cr這就快高潮了嗎！！,pid1
+zin_old_msg,啊．．．大、大人！！！cr啊、舒服．．．要來了！！,pid2
+zin_old_msg,哈．．．已經開始有感覺了嗎？cr這個女人、真是淫亂啊,pid1
+zin_old_msg,愚、愚蠢．．不要說．．．那樣的話！！,pid2
+zin_old_msg,哈哈、頑固的女人喲、要出來了callself_pid1在你的陰道裡中出吧！！,pid1
+zin_old_msg,什、什麼！！．．．不、不行啊、只有這．．．停、停止啊！！！！,pid2
+zin_old_msg,但是、這個感覺很好．．．這樣心情會很舒暢啊．．．,pid1
+zin_old_msg,怎麼樣、callself_pid1成為我的女人？cr這樣你的間諜嫌疑完全就洗清了,pid1
+zin_old_msg,我、成為．．．你的女人．．．對．．．嗚嗚．．啊啊啊啊啊啊啊啊啊啊！！,pid2
+zin_old_msg,是嗎？、那麼callself_pid1為我懷孕啊！！,pid1
+zin_old_msg,如果懷孕，想法也會改變吧。cr謝謝．．．那麼、發射吧！！,pid1
+zin_old_msg,啊啊、唉、哎呀．．．中出．．．中出、不行啊啊啊！！！,pid2
+zin_flush_file,w0847xd,0
+zin_old_msg,啊啊．．．那、那樣的．．．在陰道裡．．．嘩嘩的進入了．．．我、說過了．．．是不行的．．．,pid2
+zin_reg_button,16
+zin_old_exit
+//zin_reg_exit
+set_non_virgin,847
+end

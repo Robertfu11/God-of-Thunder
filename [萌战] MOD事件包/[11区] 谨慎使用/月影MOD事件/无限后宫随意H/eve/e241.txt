@@ -1,0 +1,37 @@
+eve_start
+	if_eveflg,26,1
+	if_poid,688,624
+eve_end
+
+set_eveflg,26,2
+
+chk_exeplayer,624,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,58
+//zin_reg_init
+zin_reg_event,摩西的研究室,688,0,,gzin41
+zin_reg_msg,欣．．．．．,0
+zin_reg_msg,這個女孩要把琳希殺掉麼．．．,0
+zin_reg_msg,這種調整辦得到嗎．．．．,0
+zin_reg_msg,但是、不這麼做的話這個女孩就會被殺掉吧．．．,0
+zin_reg_msg,不、即使這樣也有可能按照斯庫洛克的指令被再調整．．．,0
+zin_reg_msg,不應該在人造人上搭載生殖系統,0
+zin_reg_msg,遵循人造人的自律而被養育的人是無法成長的,0
+zin_reg_msg,而且、也太早了．．．．,0
+zin_reg_msg,．．．．．抱歉了欣,0
+zin_reg_msg,原諒我．．．．,0
+zin_reg_msg,為了保護你秘密調整中的姐妹．．．．,0
+zin_reg_face_1,817
+zin_reg_msg,摩西様．．．,1
+zin_reg_msg,來了呀、馬洛,0
+zin_reg_msg,要是我有什麼萬一的時候、你就帶著這晶片躲起來。,0
+zin_reg_msg,這晶片裡記錄了到目前為止的研究成果。,0
+zin_reg_msg,如果是你的話應該可以做出同樣性能的生化人,0
+zin_reg_msg,看你的了,0
+zin_reg_msg,．．．是,1
+zin_reg_button,0
+//zin_reg_exit
+end

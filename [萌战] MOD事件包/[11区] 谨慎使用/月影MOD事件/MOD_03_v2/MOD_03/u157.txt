@@ -1,0 +1,15 @@
+eve_start
+	if_psex,player,1
+    if_val,×´‘B:player=2
+	if_val,„ë¹¦:player=13000
+eve_end
+get_bgst_habatu,player,0
+set_eveflg,194,pval
+chk_eveflg,194,0
+chk_eveflg_then
+end
+chk_eveflg_else
+habatu_kaitai,pval
+set_eveflg,194,0
+txtload,u157
+end

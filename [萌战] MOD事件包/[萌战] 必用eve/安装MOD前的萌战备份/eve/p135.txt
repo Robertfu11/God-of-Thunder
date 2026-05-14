@@ -1,0 +1,84 @@
+//bgm_chg,60
+//友好アップ
+add_sinmitu,pid2,40
+
+//zin_reg_init
+//zin_reg_event,,pid1,pid2,,gzin43
+chk_family,pid2,pid1
+case_fam_妻
+	zin_reg_msg,這是給我的？,1
+	zin_reg_msg,我覺得對你有必要,0
+	zin_reg_msg,謝謝、call_pid21,1
+	zin_reg_title,p_name2親密度上升。
+	zin_reg_button,0
+	zin_reg_exit
+	end
+
+case_fam_弟
+case_fam_息子
+case_fam_息子(養)
+	zin_reg_msg,這是給我的？,1
+	zin_reg_msg,我覺得對你有必要,0
+	zin_reg_msg,謝謝、call_pid21,1
+	zin_reg_title,p_name2親密度提高了。
+	zin_reg_button,0
+	zin_reg_exit
+	end
+
+case_fam_妹
+case_fam_娘
+case_fam_娘(養)
+	zin_reg_msg,這是給我的？,1
+	zin_reg_msg,call_pid12是必要的呢,0
+	zin_reg_msg,謝謝、call_pid21,1
+	zin_reg_title,p_name2親密度提高了。
+	zin_reg_button,0
+	zin_reg_exit
+	end
+
+case_fam_父
+case_fam_兄
+	zin_reg_msg,這是給我的？,1
+	zin_reg_msg,call_pid12是必要的呢,0
+	zin_reg_msg,謝謝、call_pid21,1
+	zin_reg_title,p_name2親密度提高了。
+	zin_reg_button,0
+	zin_reg_exit
+	end
+
+case_fam_母
+case_fam_姉
+	zin_reg_msg,這是給我的？,1
+	zin_reg_msg,call_pid12是必要的呢,0
+	zin_reg_msg,感謝啊、call_pid21,1
+	zin_reg_title,p_name2親密度提高了。
+	zin_reg_button,0
+	zin_reg_exit
+	end
+
+default_fam
+	chk_kunko,pid1,pid2
+	case_kun_上司
+		zin_reg_msg,這要給callself_pid2？,1
+		zin_reg_msg,p_name2大人必需要,0
+		zin_regs_msg,好好、嗯,不錯、你有前途,1
+		zin_reg_title,p_name2親密度提高了。
+		zin_reg_button,0
+		zin_reg_exit
+		end
+	case_kun_同僚
+		zin_reg_msg,這要給callself_pid2？,1
+		zin_reg_msg,我認為你很需要,0
+		zin_regs_msg,好的、p_name1,哈哈、感謝你,1
+		zin_reg_title,p_name2親密度提高了。
+		zin_reg_button,0
+		zin_reg_exit
+		end
+	case_kun_部下
+		zin_regs_msg,這是您的東西？,給我好嗎？,1
+		zin_reg_msg,我認為對你有用,0
+		zin_reg_msg,多謝、call_pid21,1
+		zin_reg_title,p_name2親密度提高了。
+		zin_reg_button,0
+		zin_reg_exit
+		end

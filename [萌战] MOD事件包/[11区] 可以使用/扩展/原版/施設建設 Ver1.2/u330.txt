@@ -1,0 +1,139 @@
+auth_uid,123D
+//	施設建設　月毎可動部
+
+//初期チェック
+chk_mval,状態:player!2,,,,
+chk_mval_then
+	end
+chk_mval_else
+chk_eveflg,110,0
+chk_eveflg_then
+	end
+chk_eveflg_else
+//pid設定
+//覇王
+chk_mval,勲功:player=13000,,,,
+chk_mval_then
+	set_epid1,player
+	get_kunpsn2,player,0
+	set_epid2,pval
+	goto,*pidsetend
+chk_mval_else
+//最大派閥長（決定には覇王の裁定が必要）
+	get_bgst_habatu,poid_player,0
+	set_epid1,pval
+	chk_mval,pval!player,,,,
+	chk_mval_then
+		//最大派閥長でないので終了する
+		end
+	chk_mval_else
+	get_habatu2,player
+	set_epid2,pval
+	set_epid3,poid_player
+*pidsetend
+gosub,*chkplanet
+///////////////////////////////////////	発生ブロック	///////////////////////
+eve_start
+	if_rnd,5
+eve_end
+///////////////////////////////////////	実行ブロック	///////////////////////
+chk_eveflg,110,1
+chk_eveflg_then
+	goto,*facilities1
+chk_eveflg_else
+chk_eveflg,110,2
+chk_eveflg_then
+	goto,*facilities2
+chk_eveflg_else
+chk_eveflg,110,3
+chk_eveflg_then
+	goto,*facilities3
+chk_eveflg_else
+chk_eveflg,110,4
+chk_eveflg_then
+	goto,*facilities4
+chk_eveflg_else
+chk_eveflg,110,5
+chk_eveflg_then
+	goto,*facilities5
+chk_eveflg_else
+	goto,*facilities6
+
+*facilities1
+	//移民局
+	gosub,*lvselect
+	txtload,u330_1
+*facilities2
+	//モニュメント
+	gosub,*lvselect
+	txtload,u330_2
+*facilities3
+	//中央銀行
+	gosub,*lvselect
+	txtload,u330_3
+*facilities4
+	//製薬工場
+	gosub,*lvselect
+	txtload,u330_4
+*facilities5
+	//秘密警察
+	gosub,*lvselect
+	txtload,u330_5
+*facilities6
+	//技術研究所
+	gosub,*lvselect
+	txtload,u330_6
+
+///////////////////////////////////////	発生ブロックサブルーチン	///////////
+*chkplanet
+	set_eveflg,214,0
+	for,SMAX,210,1
+		chk_mval,領王:eveflg210=poid_player,,,,
+		chk_mval_then
+			add_eveflg,214,1
+		chk_mval_else
+		continue
+	next
+	chk_mval,eveflg214>4,,,,
+	chk_mval_then
+		set_eveflg,214,9
+		goto,*chkplanetcntstg
+	chk_mval_else
+	chk_mval,eveflg214>1,,,,
+	chk_mval_then
+		set_eveflg,214,6
+		goto,*chkplanetcntstg
+	chk_mval_else
+		set_eveflg,214,4
+	*chkplanetcntstg
+	chk_mval,eveflg111>eveflg214,,,,
+	chk_mval_then
+		//支配数によるステージを超えたレベルを下げる
+		set_eveflg,211,eveflg214
+	chk_mval_else
+		return
+///////////////////////////////////////	実行ブロックサブルーチン	///////////
+*lvselect
+	chk_eveflg,111,9
+	chk_eveflg_then
+		set_eveflg,211,5
+		return
+	chk_eveflg_else
+	chk_eveflg,111,>6
+	chk_eveflg_then
+		set_eveflg,211,4
+		return
+	chk_eveflg_else
+	chk_eveflg,111,>4
+	chk_eveflg_then
+		set_eveflg,211,3
+		return
+	chk_eveflg_else
+	chk_eveflg,111,>2
+	chk_eveflg_then
+		set_eveflg,211,2
+		return
+	chk_eveflg_else
+		set_eveflg,211,1
+		return
+

@@ -1,0 +1,403 @@
+set_epid1,0
+set_epid2,player
+
+for,PMAX,280,1
+chk_mval,種父:eveflg280=player,覇王:eveflg280=poid_player,婚姻:eveflg280>=1,婚姻:eveflg280!player,状態:eveflg280!3
+
+chk_mval_then
+set_epid1,eveflg280
+	goto,*tnetiti_player
+chk_mval_else
+continue
+next
+end
+*tnetiti_player
+
+////////////////////妊娠した人妻の夫
+for,PMAX,282,1
+chk_mval,状態:eveflg282=2,婚姻:eveflg282=pid1,,,
+chk_mval_then
+set_epid3,eveflg282
+	goto,*dannsan
+	break
+chk_mval_else
+continue
+next
+end
+*dannsan
+//////////////
+eve_start
+//	if_kainin,eveflg280,8
+//	if_pkun,player,13000
+eve_end
+
+/////////////妊娠したのは母か？
+chk_family,pid1,pid2
+	case_fam_母
+	txtload,u013a
+	default_fam
+////////////////////その妻は捕虜か
+chk_msts,eveflg280,状態,8,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+bgm_chg,60
+    zin_reg_event,執務室,pid2,pid1,zin22,gzin40
+    zin_reg_face,pid3
+    zin_reg_msg,捕虜にしたp_name1を孕ませてやったが．．．,0
+    zin_reg_msg,確かp_name3の妻だったな,0
+    zin_reg_msg,p_name3に、今の姿を見せて反応を見るというのも面白そうだな．．．,0
+goto,*HitozumanoKaisi2
+chk_msts_else
+///////////////////その人妻妊娠8ヶ月である。
+chk_msts,eveflg280,懐妊,8,NON,0,NON,0,NON,0,NON,0
+chk_msts_else
+end
+chk_msts_then
+////////////イベント開始
+*HitozumanoKaisi
+bgm_chg,60
+    zin_reg_event,執務室,pid2,pid1,,gzin33
+    zin_reg_face,pid3
+    zin_reg_msg,p_name3の妻p_name1を孕ませて半年が過ぎたが,0
+    zin_reg_msg,callself_pid2の子供がいる、この大きな腹を．．．,0
+    zin_reg_msg,p_name1の夫に見せて反応を見るというのも面白そうだ．．．,0
+
+*HitozumanoKaisi2
+zin_reg_2sel,止めておこう,夫の元に送る
+get_resp
+ret_sel1
+    zin_reg_msg,止めておくか．．．,0
+    end
+ret_sel2
+//////////捕虜の場合
+chk_msts,eveflg280,状態,8,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+    zin_reg_event,執務室,pid2,pid1,zin22,gzin9
+    zin_reg_msg,．．．何のようですか？,1
+goto,*Horyohuzinn
+chk_msts_else
+    zin_reg_event,執務室,pid2,pid1,,gzin9
+    zin_reg_msg,．．．何のようですか？,1
+//////////////////////
+*Horyohuzinn
+    zin_reg_msg,call_pid1、夫に会いに行ってもらおうか,0
+    zin_reg_msg,．．．え？,1
+/////////////////人妻の夫はプレイヤーが使える覇王か？
+chk_mval,覇王:eveflg282=poid_player,勲功:eveflg282=13000,,,
+chk_mval_then
+txtload,u013c
+chk_mval_else
+////////////妊娠したのは性奴隷か？
+chk_mval,親密:eveflg280=110,,,,
+chk_mval_then
+txtload,u013s
+chk_mval_else
+///////////////////
+bgm_chg,55
+    zin_reg_event,ルーム,pid3,pid1,,gzin23
+rnd,5
+case0
+    zin_reg_msg,p_name1!p_name1なのか!？,0
+	goto,*GesuYarou01
+case1
+    zin_reg_msg,call_pid1!？,0
+	goto,*GesuYarou01
+case2
+    zin_reg_msg,．．．ま、まさかcrp_name1!？,0
+	goto,*GesuYarou01
+case3
+    zin_reg_msg,p_name1．．．なのか？,0
+	goto,*GesuYarou01
+case4
+    zin_reg_msg,p_name1!crそ、そのお腹の子は．．．,0
+	*GesuYarou01
+rnd,7
+case0
+    zin_reg_msg,．．．あ、ああ．．．見ないで．．．,1
+	goto,*GesuYarou02
+case1
+    zin_reg_msg,．．．あ、あなた．．．あなた．．．,1
+	goto,*GesuYarou02
+case2
+    zin_reg_msg,．．．う、うう．．．,1
+	goto,*GesuYarou02
+case3
+    zin_reg_msg,い、いや．．．見ないで、見ないで．．．！,1
+	goto,*GesuYarou02
+case4
+    zin_reg_msg,．．．あ、ああ．．．crこれは．．．この体は．．．,1
+	goto,*GesuYarou02
+case5
+    zin_reg_msg,お腹を．．．見ないで．．．お願い．．．です,1
+	goto,*GesuYarou02
+case6
+    zin_reg_msg,そんな目で．．．そんな目で見ないで．．．！,1
+	*GesuYarou02
+rnd,5
+case0
+    zin_reg_msg,そのお腹は．．．crま、まさか！？,0
+	goto,*GesuYarou03
+case1
+    zin_reg_msg,い、いるのか．．．crお腹にp_name2の子が！？,0
+	goto,*GesuYarou03
+case2
+    zin_reg_msg,なんだ、そのお腹は！？,0
+	goto,*GesuYarou03
+case3
+    zin_reg_msg,ば、バカな．．．,0
+	goto,*GesuYarou03
+case4
+    zin_reg_msg,その醜く膨らんだ腹は．．．そうなのか！？,0
+	*GesuYarou03
+
+rnd,4
+case0
+    zin_reg_msg,お、お前は．．．夫である、このp_name3以外の子を孕んだというのか！？,0
+	goto,*GesuYarou031
+case1
+    zin_reg_msg,なぜ．．．cr何故妊娠したんだっ！！,0
+    zin_reg_msg,お前は、このp_name3の妻なんだぞ！！,0
+	goto,*GesuYarou031
+case2
+    zin_reg_msg,p_name1、crこの淫売女がっ！！！,0
+	goto,*GesuYarou031
+case3
+    zin_reg_msg,p_name1、よく、のこのことと顔を見せられたものだな！！,0
+	goto,*GesuYarou031
+case4
+    zin_reg_msg,p_name1、その腹を見せるために戻ってきたのかっ！！！,0
+	*GesuYarou031
+
+
+rnd,5
+case0
+    zin_reg_msg,うう、callself_pid1、callself_pid1は．．．crうう．．,1
+	goto,*GesuYarou04
+case1
+    zin_reg_msg,．．．ああ、体が、体が．．．貴方を、貴方を裏切ってしまったの．．．,1
+	goto,*GesuYarou04
+case2
+    zin_reg_msg,．．．ああ、許してcrあなた！．．．許して！,1
+	goto,*GesuYarou04
+case3
+    zin_reg_msg,．．．ひっ！？,1
+	goto,*GesuYarou04
+case4
+    zin_reg_msg,．．．ち、違うの．．．違うの．．ああ．．．,1
+	*GesuYarou04
+
+
+rnd,4
+case0
+    zin_reg_msg,．．．仕方が．．．仕方が無かったの,1
+	goto,*GesuYarou041
+case1
+    zin_reg_msg,callself_pid1どうしたらcrどうしたらよかったの．．．教えて．．．,1
+	goto,*GesuYarou041
+case2
+    zin_reg_msg,．．．ああ、愛しているの．．．貴方の事を．．．でも．．．でも．．．,1
+	goto,*GesuYarou041
+case3
+    zin_reg_msg,うう．．．何も．．．cr何も言えない．．．ああ．．．,1
+	goto,*GesuYarou041
+case4
+    zin_reg_msg,お願い．．．あなた、見捨てないで．．．お願い．．．,1
+*GesuYarou041
+
+rnd,6
+case0
+    zin_reg_msg,ふ、ふざけるな！crなんで、こんな．．．くそぉおおお！！！,0
+	goto,*GesuYarou0411
+case1
+    zin_reg_msg,このあばずれ淫売女！愛して、愛していたんだぞ！！！,0
+    zin_reg_msg,だのに、こんな．．．くそっ！！！,0
+	goto,*GesuYarou0411
+case2
+    zin_reg_msg,なぜ自決しなかった！！お前には一欠片の誇りもないのか！！！！,0
+	goto,*GesuYarou0411
+case3
+    zin_reg_msg,気持ち良かったか、ヤツとのセックスは！,0
+    zin_reg_msg,子供が出来るほどだからな！！！満足できただろう！,0
+	goto,*GesuYarou0411
+
+case4
+    zin_reg_msg,今の自分の姿を鏡で見てみろ！,0
+    zin_reg_msg,どれだけ自分が醜いか．．．直視してみろ！！,0
+	goto,*GesuYarou0411
+
+case5
+    zin_reg_msg,この程度の女だったとはな！男に簡単に股を開く屑め！！,0
+	*GesuYarou0411
+
+rnd,5
+case0
+    zin_reg_msg,情けない！！crこんな女が．．．妻だったなどと！！,0
+	goto,*GesuYarou0412
+case1
+    zin_reg_msg,この娼婦め！！,0
+    zin_reg_msg,今のお前は、道ばたにいる商売女より、遙かに下劣な存在だ！！,0
+	goto,*GesuYarou0412
+case2
+    zin_reg_msg,どうせ、ヤツの気を引くために自分から腰をふったんだろう！！,0
+    zin_reg_msg,違うか！！,0
+	goto,*GesuYarou0412
+case3
+    zin_reg_msg,p_name2に妻を子を授けて下さり、ありがとうございます．．．,0
+    zin_reg_msg,とでも、通信を送ればいいのか！ええ！？,0
+	goto,*GesuYarou0412
+case4
+    zin_reg_msg,本当に貴様は我が妻か！,0
+    zin_reg_msg,別人がなりすました偽物ではないのか！！ええ！？,0
+	*GesuYarou0412
+
+/////////////////////////離婚
+rnd,6
+case0
+case1
+case2
+case3
+	goto,*GesuYarou042
+case4
+    zin_reg_msg,．．．うう、言葉では．．．弁明できません．．．,1
+    zin_reg_msg,．．．だから,1
+    zin_reg_msg,自死をもってcr証とします！,1
+    bgm_se,13
+    zin_reg_face_1,0
+    zin_reg_msg,p_name1！？,0
+    zin_reg_qnar,p_name1は自決した
+    zin_reg_msg,．．．．．．,0
+    set_dead,pid1,0
+set_kataki_yome,pid3,pid2,pid1
+    goto,*GesuYarou099
+case5
+    zin_reg_msg,．．．離婚だ,0
+    zin_reg_msg,ヤツの愛人でも妾でも、好きなように生きれば良い！,0
+    zin_reg_msg,あ、あなた！crあなたぁあああ！！！,1
+zin_reg_qnar,夫と離縁した．．．
+set_rikon,pid1
+zin_reg_event,執務室,pid2,pid1,,gzin9
+zin_reg_msg,ハハハ！お前の夫はcr実に器の小さい男だな！,0
+zin_reg_msg,．．．,1
+zin_reg_msg,安心しろp_name1,0
+zin_reg_msg,callself_pid2が飼ってやる！crハハハハ！！,0
+zin_reg_msg,．．．,1
+zin_reg_msg,．．．ありがとうcrございます,1
+////プレイヤーが覇王か調査
+chk_mval,勲功:player=13000,,,,
+chk_mval_then
+upd_sts,pid1,0,2
+upd_sts,pid1,21,pid2
+upd_sts,pid3,1,-90
+chk_mval_else
+dec_sinmitu,pid3,90
+/////////////
+add_urami,pid3,pid1,400
+zin_reg_button,0
+zin_reg_exit
+end
+/////////////////
+	*GesuYarou042
+
+rnd,4
+case0
+    zin_reg_msg,ああ．．許して．．．許して．．．,1
+	goto,*GesuYarou0413
+case1
+    zin_reg_msg,うう．．．全て妊娠したcallself_pid1が悪い．．．の．．．,1
+	goto,*GesuYarou0413
+case2
+    zin_reg_msg,ごめんなさいcrごめんなさい．．．．,1
+	goto,*GesuYarou0413
+case3
+	bgm_se,15
+    zin_reg_msg,ああ、お願い！crお腹は、お腹は殴らないで！！,1
+	*GesuYarou0413
+
+    zin_reg_msg,．．．．．．,0
+
+rnd,7
+case0
+    zin_reg_msg,．．．ハァハァcr．．．こうなった以上、仕方が無い、な,0
+	goto,*GesuYarou05
+case1
+    zin_reg_msg,．．．くそ,0
+    zin_reg_msg,．．．そうだな、仕方が無い、仕方が無い事だ,0
+	goto,*GesuYarou05
+case2
+    zin_reg_msg,．．．う、ぐぐぐ,0
+    zin_reg_msg,p_name1、愛している．．．愛しているんだ．．．,0
+	goto,*GesuYarou05
+case3
+   zin_reg_msg,．．．．もう良い。,0
+    zin_reg_msg,p_name1、もう良い、わかった．．．,0
+	goto,*GesuYarou05
+case4
+   zin_reg_msg,．．．．．．,0
+    zin_reg_msg,怒鳴ったりしてすまないp_name1．．．,0
+	goto,*GesuYarou05
+case5
+    zin_reg_msg,．．．．．．cr．．．そうだな,0
+    zin_reg_msg,p_name1、お前だけが、悪いわけでは無い．．．,0
+	goto,*GesuYarou05
+case6
+    zin_reg_msg,．．．．．．cr．．．そうだな,0
+    zin_reg_msg,全て、この．．．cr甲斐性無しのせいだ．．．,0
+	*GesuYarou05
+rnd,6
+case0
+case1
+case2
+case3
+case4
+	goto,*GesuYarou06
+case5
+bgm_se,13
+zin_reg_qnar,激しい衝撃がp_name1を襲った
+    zin_reg_msg,．．．あ、あなた！？,1
+    zin_reg_face_1,0
+    zin_reg_msg,．．．．．．,0
+zin_reg_qnar,p_name1は死亡した
+set_kataki_yome,pid3,pid2,pid1
+	set_dead,pid1,0
+	goto,*GesuYarou099
+///////////////////妻を許した場合
+*GesuYarou06
+txtload,u013d
+/////////////////////////////////
+*GesuYarou099
+
+rnd,5
+case0
+    zin_reg_msg,（p_name2．．．ゆるさん、許さんぞ！）,0
+	goto,*GesuYarou10
+case1
+    zin_reg_msg,（この屈辱．．．cr万倍にして返してやるぞp_name2！）,0
+	goto,*GesuYarou10
+case2
+    zin_reg_msg,（人の妻を孕ませて送るとはな．．．）,0
+    zin_reg_msg,（p_name2覚えておけよ．．．）,0
+	goto,*GesuYarou10
+case3
+    zin_reg_msg,（殺してやるぞcrp_name2．．．八つ裂きにしてやる）,0
+	goto,*GesuYarou10
+case4
+    zin_reg_msg,（心から笑っているのだろうなp_name2．．．この報い、必ず受けさせてやる！）,0
+	goto,*GesuYarou10
+case1
+    zin_reg_msg,（p_name2、貴様の一族．．．根絶やしにしてくれる）,0
+	*GesuYarou10
+
+//////人妻の夫がプレイヤーの部下の場合忠誠度ダウン
+chk_msts,eveflg282,覇王,player,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+upd_sts,pid3,1,-90
+zin_reg_qnar,p_name3の忠誠度が激しく低下した．．．
+////////////////それ以外の場合は親密度低下
+chk_msts_else
+dec_sinmitu,pid3,90
+////////////////
+///////////////////////
+add_urami,pid3,pid1,400
+zin_reg_button,0
+zin_reg_exit
+end
+

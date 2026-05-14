@@ -1,0 +1,11 @@
+bgm_chg,56
+zin_reg_init
+zin_reg_event,,pid1,,,gzin73
+zin_reg_msg,嗚．．．cr胸口又在痛了．．．,0
+zin_reg_msg,cf_pid1的命也．．．cr到此為止了嗎．．．,0
+zin_reg_msg,霸業未竟．．．可惜呀．．．,0
+zin_reg_face_0,0
+zin_reg_title,p_name1死亡了。
+zin_reg_button,0
+zin_reg_exit
+end

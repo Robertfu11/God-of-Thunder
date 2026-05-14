@@ -1,0 +1,974 @@
+//※血族勧誘1.21forPUK2.02
+chk_mval,状態:player=2,勲功:player>12079,,,
+chk_mval_then
+end
+chk_mval_else
+
+set_epid1,player
+set_epid2,0
+set_epid3,0
+set_epid4,0
+set_eveflg,297,0
+set_eveflg,298,0
+set_eveflg,299,0
+
+//とりあえず息子or娘抽出
+get_mpid,状態=2,覇王!poid_player,父=player,年齢>4,友好>29,,
+set_epid2,pval
+
+//プレイヤーに父いる？
+chk_sts,player,父,0
+chk_sts_then
+	goto,*preallfin
+chk_sts_else
+	set_epid4,父:player
+
+//プレイヤーの父は仕官してる？
+chk_sts,父:player,状態,2
+chk_sts_then
+	goto,*fathin
+chk_sts_else
+	goto,*fathno
+
+*fathin
+rnd,9
+case0
+case1
+case2
+	get_mpid,状態=2,覇王!poid_player,年齢>4,父=pid4,勲功<13000,,
+	set_epid2,pval
+	chk_mval,pid2>0,性別:pid2=1,友好:pid2>29,,
+	chk_mval_then
+		goto,*preallfin
+	chk_mval_else
+
+	chk_mval,pid2>0,性別:pid2=2,,,
+	chk_mval_then
+		goto,*preallfin
+	chk_mval_else
+		goto,*inskip0
+case3
+case4
+case5
+*inskip0
+chk_mval,母:player>0,,,,
+chk_mval_else
+	goto,*inskip1
+chk_mval_then
+	get_mpid,状態=2,覇王!poid_player,年齢>4,母=母:player,友好>0,勲功<13000,
+	set_epid2,pval
+	chk_mval,pid2>0,,,,
+	chk_mval_then
+		goto,*preallfin
+	chk_mval_else
+		goto,*inskip1
+case6
+*inskip1
+	get_mpid,状態=2,覇王!poid_player,年齢>4,父=player,友好>0,勲功<13000,
+	set_epid2,pval
+	chk_mval,pid2>0,,,,
+	chk_mval_then
+		goto,*preallfin
+	chk_mval_else
+		goto,*inskip2
+case7
+*inskip2
+set_eveflg,299,0
+chk_mval,母:player>0,,,,
+chk_mval_else
+	goto,*insaigo
+chk_mval_then
+for,PMAX,299,1
+set_epid2,eveflg299
+	chk_mval,状態:pid2=2,覇王:pid2!poid_player,母:player=pid2,勲功:pid2<13000,
+	chk_mval_then
+	goto,*preallfin
+	chk_mval_else
+	continue
+case8
+*insaigo
+	set_epid2,pid4
+	goto,*preallfin
+//父仕官しておらず↓（死亡含）
+*fathno
+rnd,8
+case0
+case1
+case2
+	get_mpid,状態=2,覇王!poid_player,年齢>4,父=父:player,友好>0,勲功<13000,
+	set_epid2,pval
+	chk_mval,pid2>0,,,,
+	chk_mval_then
+		goto,*preallfin
+	chk_mval_else
+		goto,*noskip0
+case3
+case4
+case5
+*noskip0
+chk_mval,母:player>0,,,,
+chk_mval_else
+	goto,*noskip1
+chk_mval_then
+	get_mpid,状態=2,覇王!poid_player,年齢>4,母=母:player,友好>0,勲功<13000,
+	set_epid2,pval
+	chk_mval,pid2>0,,,,
+	chk_mval_then
+		goto,*preallfin
+	chk_mval_else
+		goto,*noskip1
+case6
+*noskip1
+	get_mpid,状態=2,覇王!poid_player,年齢>4,父=player,友好>0,勲功<13000,
+	set_epid2,pval
+	chk_mval,pid2>0,,,,
+	chk_mval_then
+		goto,*preallfin
+	chk_mval_else
+		goto,*noskip2
+case7
+*noskip2
+set_epid2,母:player
+chk_mval,pid2>0,状態:pid2=2,勲功:pid2<13000,,
+chk_mval_then
+	goto,*preallfin
+chk_mval_else
+	end
+
+*preallfin
+//ようやく条件部
+eve_start
+if_rnd,15
+//if_month,3
+if_val,pid2>0
+if_val,状態:pid2=2
+if_not_same_oid,player,pid2
+
+if_chksts,player,3,1
+if_chksts,player,2,>OLD
+if_chksts,player,勲功,<12080
+if_chksts,pid2,勲功,<13000
+eve_end
+
+set_epid3,覇王:pid2
+
+bgm_chg,60
+zin_reg_init
+zin_reg_event,家族の便り,pid1,,,gzin18
+zin_reg_msg,おっcrcall_pid12から手紙かcr珍しいな,0
+zin_reg_face,pid2
+chk_mval,婚姻:pid2=pid3,母:pid1=pid2,父:pid1=pid3,父:player>0,母:player>0
+chk_mval_then
+	zin_reg_msg,仕方ないかcrcall_pid13が今のcf_pid1への手紙を簡単に許すはずは．．,0
+	goto,*tegami
+chk_mval_else
+	zin_reg_msg,仕方ないかcr確かp_name3に仕えていたはず．．,0
+*tegami
+bl_fadeout
+chk_mval,性別:pid2=2,,,,
+chk_mval_then
+	goto,*nokon
+chk_mval_else
+
+chk_msts,pid2,3,1,17,>0,NON,0,NON,0,NON,0
+chk_msts_then
+	set_epid4,0
+	set_epid4,婚姻:pid2
+	goto,*konari
+chk_msts_else
+	goto,*nokon
+
+*konari
+chk_mval,状態:pid4=2,覇王:pid4=pid3,,,
+chk_mval_then
+	zin_reg_qnar,p_name2の手紙は、飾らない便箋１枚に、cr並んで微笑むp_name2と妻p_name4の写真を添えた、cr簡素な便りに過ぎなかった。
+	goto,*konari
+chk_mval_else
+*nokon
+	zin_reg_qnar,p_name2の手紙は、cr飾らない便箋にp_name2が佇む写真を添えた、cr簡素な便りに過ぎなかった。
+
+*konari
+zin_reg_qnar,だがそこには控えめな文意ながら、cr別の王の下で生きねばならぬ家族とcr会うのがままならない寂しさがcr自筆で綴られていた。
+bl_fadein,gzin18
+zin_reg_face_l,pid1
+zin_reg_msg,．．元気でいるとはあるが、call_pid12も心細いのかな,0
+zin_reg_msg,ん？crこの同封の写真、cr何かおかしくないか？,0
+zin_reg_msg,まさか．．cr古めかしい手だが．．．,0
+bl_fadeout
+bl_fadein,gzin37
+zin_reg_face_l,pid1
+zin_reg_face_r,pid2
+zin_reg_qnar,写真裏面の紋様を機器で録り込み解析すると、crそこには暗号音声が埋め込まれており、cr懐かしいp_name2の声による、cr隠されたもう１つの便りが再生された。
+
+//地位役職分岐
+chk_mval,勲功:pid2>12079,,,,
+chk_mval_then
+goto,*ouzo
+chk_mval_else
+
+chk_mval,役職:pid2=3,,,,
+chk_mval_then
+goto,*ladyme
+chk_mval_else
+
+chk_mval,勲功:pid2>8000,,,,
+chk_mval_then
+zin_reg_qnar,その中でp_name2は、密偵に迎えの段取りを付けてあるのでcrすぐに脱走し、p_name3の下で共に生き、cr働いてほしいという願い――
+zin_reg_qnar,また他ならぬ家族として、cr高位将校の己がp_name1の身分を保障する事を、cr真摯に語っていた。
+goto,*kazokun1
+chk_mval_else
+zin_reg_qnar,その中でp_name2は、密偵に迎えの段取りを付けてあるのでcrすぐに脱走し、p_name3の下で共に生き、cr働いてほしいとの願いを、真摯に語っていた。
+goto,*kazokun1
+
+//pid2は王族
+*ouzo
+zin_reg_qnar,その中でp_name2は、密偵に迎えの段取りを付けてあるのでcrすぐに脱走し、p_name3の下で共に生き、cr働いてほしいという願い――
+zin_reg_qnar,またp_name3家の王族たる己が家族としてcrp_name1の身分を保障する事を、真摯に語っていた。
+goto,*kazokun1
+
+//pid2は妾
+*ladyme
+zin_reg_qnar,その中でp_name2は、密偵に迎えの段取りを付けてあるのでcrすぐに脱走し、p_name3の下で共に生き、cr働いてほしいという願い――
+zin_reg_qnar,またp_name3の寵に与る自分が他ならぬ家族としてcrp_name1の身分を保障する事を、真摯に語っていた。
+
+*kazokun1
+zin_reg_msg,call_pid12も細かい真似をcrだが、そうもcf_pid1に来て欲しいのか．．,0
+zin_reg_2sel,脱走しない,脱走する
+get_resp
+ret_sel1
+	zin_reg_msg,．．call_pid12の願いといえどこれは聞けないな,0
+	zin_reg_msg,見なかった事にしようcr写真と解析は速やかにcr処分しなければ,0
+	add_sinmitu,pid2,-10
+	goto,*allfin
+ret_sel2
+	set_eveflg,297,pid2
+	set_eveflg,298,pid3
+	bgm_chg,107
+	zin_reg_event,脱走決断,pid1,,,gzin37
+	zin_reg_msg,．．call_pid12はcf_pid1の家族だ、一緒に生きたい事の何がおかしいか,0
+	zin_reg_msg,さて、そうと決まれば、脱走の支度を．．,0
+
+//連れてける女いる？
+set_epid4,0
+get_mpid,性別=2,状態=2,覇王=poid_player,友好=110,勲功!13000,特殊=0,
+set_epid4,pval
+
+set_epid3,0
+get_mpid,性別=2,状態=2,覇王=poid_player,友好=110,勲功!13000,勲功!勲功:pid4,特殊=0
+set_epid3,pval
+
+//２人入った？
+chk_mval,pid3>0,pid4>0,,,
+chk_mval_then
+	goto,*3taku
+chk_mval_else
+//じゃあ１人入った？
+chk_mval,pid4>0,,,,
+chk_mval_then
+	goto,*2taku
+chk_mval_else
+	bl_fadeout
+	bl_fadein,gzin37
+	zin_reg_face_l,pid1
+	zin_reg_msg,よし、これでいいcrグズグズしておれんcrさっさと行こう,0
+	bl_fadeout
+	goto,*allsafe
+
+*3taku
+zin_reg_msg,．．そうだな、call_pid12の手引きがあるなら、cf_pid1に従順なヤツ一人位連れて行けるか？,0
+zin_reg_face,pid3
+zin_reg_msg,今それとなく連絡でき、脈がありそうなのは、crcall_pid13と．．,0
+zin_reg_msg,．．あとは、call_pid14ぐらいかな,0
+zin_reg_face,pid4
+zin_reg_msg,誘うのはcall_pid13か、call_pid14か．．？,0
+zin_reg_msg,決め難いな．．crよし、こうなればコインの裏表で決めるか,0
+bgm_se,49
+zin_reg_msg,表ならcall_pid13、裏ならcall_pid14、それっ！,0
+zin_reg_3sel,コインは表だった,コインは裏だった,やはり見ない（単身）
+get_resp
+ret_sel1
+	set_epid4,pid3
+	goto,*avec
+ret_sel2
+	goto,*avec
+ret_sel3
+bl_fadeout
+bl_fadein,gzin37
+zin_reg_face_l,pid1
+zin_reg_event,脱走決断,pid1,,,gzin37
+zin_reg_msg,．．いや、コインなどで決めるなら考えてはいかん事だなcrさっさと行こう,0
+	set_epid4,0
+	bl_fadeout
+	goto,*allsafe
+
+*2taku
+zin_reg_msg,．．そうだな、call_pid12の手引きがあるなら、cf_pid1に従順なヤツ一人位連れて行けるか？,0
+zin_reg_msg,今それとなく連絡でき、脈がありそうなヤツといえば．．,0
+zin_reg_msg,．．call_pid14だけかcrどうする？,0
+zin_reg_face,pid4
+zin_reg_2sel,誘って２人で脱走,１人で脱走
+get_resp
+ret_sel1
+	goto,*avec
+ret_sel2
+	bl_fadeout
+	bl_fadein,gzin37
+	zin_reg_face_l,pid1
+	zin_reg_msg,いや、グズグズできんcrさっさと行くに限るな,0
+	set_epid4,0
+	bl_fadeout
+	goto,*allsafe
+
+//女連れ脱走
+*avec
+bl_fadeout
+bl_fadein,gzin6
+add_menkai,pid4
+bgm_chg,21
+set_epid3,覇王:pid2
+zin_reg_event,褥の絆,pid1,pid4,zin3,gzin6
+zin_reg_msg,あ、あッ　アアーっcrいいです、太いのがぐりぐりってスゴイの、call_pid41ーーっ,1
+zin_reg_msg,call_pid41、call_pid41っcrもっともっとぉっ！,1
+zin_reg_msg,うむむっcr今夜は一際格別の搾り具合．．,0
+zin_reg_msg,フフフ、本当にcall_pid14は可愛くて、淫乱な女だ,0
+zin_reg_msg,ハァハァ．．crでも、こ、こんなに乱れるのはcall_pid41だから．．,1
+zin_reg_msg,はっ、それはどうかなcrこの淫乱ぶり、cf_pid1が消えたら他の男を食い散らかすのだろ？,0
+zin_reg_msg,ああん、そんな風にいわないでcrcall_pid41がcf_pid4を、こんなメスにしたのにっ,1
+zin_reg_msg,もうcall_pid41無しでは生きていけないのぉ．．,1
+zin_reg_msg,本当か？　心から誓わなければイカせてやらん、もうここで止めてしまうぞ？,0
+zin_reg_msg,誓うわ、誓います、crcf_pid4を信じてぇっcrだからイカせてぇぇっ,1
+zin_reg_msg,よし、ではハイと誓えcr今晚、call_pid14はcf_pid1と共にこの星を発ってもらうぞ,0
+zin_reg_msg,ハイ、ハイィっ．．cr．．．い、えぇ？,1
+zin_reg_msg,星を発ち、cf_pid1の家族p_name2が仕えるp_name3の下へ向かうのだ,0
+zin_reg_msg,っっcrそんな、急に．．．,1
+zin_reg_msg,ああ、急ぎで決まったcrだから嫌と言うならココまでだ、イケないままな,0
+zin_reg_msg,え、でも、いくらなんでも、そんな寝返．．,1
+zin_reg_msg,フン、せっかく誘ってやったのに、このメスはcrcf_pid1がさっさと射精したらオサラバか,0
+zin_reg_msg,もう知らんぞ、オラッcrオラオラオラッcrオ゛オ゛ラアァァァ！！！,0
+zin_reg_msg,アグ、アギッ、crヒアァキャゥーッ！,1
+zin_reg_msg,ダメダメっ、キツすぎますっcr終わらないでぇぇ,1
+zin_reg_msg,誓うの、誓いますう！crどこまでもついて行くから一緒にイカせてぇ！！,1
+zin_reg_msg,そう、ついて来るかっcrもっとついて来い、crこっちも突きまくってやるっ！！,0
+zin_reg_msg,ほら、少しだけペース落としてやるからな、コレでイケ、これからもcf_pid1でイケェ！,0
+zin_reg_msg,イクのイクのっcrヤアアァァーーッ！！！,1
+bl_fadeout
+bgm_chg,53
+bl_fadein,gzin11
+zin_reg_face_l,pid1
+zin_reg_face_r,pid4
+zin_reg_msg,はあ．．．まだ腰が少し重たいですcrcall_pid41たら．．,1
+zin_reg_msg,フフ、盛大にイキまくったくせにcrだからついて来るのだろう？,0
+zin_reg_msg,そんな、決してそれだけではありま．．．cr．．ンッ！？,1
+set_epid3,756
+upd_sts,pid3,格闘,-200
+upd_sts,pid3,格闘,40
+zin_reg_face_l,pid1
+zin_reg_face_r,pid3
+bgm_chg,35
+zin_reg_msg,お待ち頂こう、p_name1殿,1
+zin_reg_msg,こんな夜更けに街の外れでデートですかなcrそのまま宇宙へでも？,1
+zin_reg_msg,．．見ての通りだcrこんな別嬪との夜、寝静まった街を步くだけでは勿体なかろう？,0
+zin_reg_msg,それはお邪魔したcrだが、もう切り上げて牢の中で共に寝て頂きたく,1
+zin_reg_msg,何、逮捕するというのかキサマに何の権限が．．,0
+zin_reg_msg,それも牢の中でcr抵抗するならお覚悟を！,1
+zin_reg_msg,くっ！！,0
+zin_reg_event,,pid3,pid1,zin3,gzin11
+//死亡しない．深夜
+btl_ansatu,pid3,player,0,2
+get_resp
+ret_sel2
+	goto,*exolose
+ret_sel3
+	goto,*exowin
+
+//○勝った
+*exowin
+bgm_chg,67
+zin_reg_event,,pid1,pid3,,gzin11
+zin_reg_msg,ウワァッcrひぎ、ぐぎゃあっっ,1
+zin_reg_msg,ふん、だらしのないcrそれほどの傷でも無かろうに,0
+zin_reg_msg,それより吐け、誰の差し金だ！cr仲間はどこにいる！？,0
+zin_reg_msg,うぐっ．．crだ、誰の命でもない、cr仲間もいない．．．,1
+zin_reg_msg,お、お前が我が軍と全く違う暗号をやり取りしたのを、仕事中に偶然傍受したのだ,1
+zin_reg_msg,その後、call_pid34とこんな所に向かったのを知って、これはもしやと．．,1
+zin_reg_msg,．．．その程度で１人先走っただけかcr冷や冷やさせおって,0
+zin_reg_msg,まあカンの良さは誉めてやろうcrだが、寝ていろっ！,0
+bgm_se,25
+zin_reg_msg,ぐぎゃぁっ,1
+zin_reg_face_1,0
+zin_reg_face_r,pid4
+zin_reg_msg,．．殺されたのですか？,1
+zin_reg_msg,いや、スタンモードだcr大した輩でないと分かればな,0
+zin_reg_msg,手間も掛けたくないcr下着まで剥いて、その辺の酒でも浴びせておくさ,0
+zin_reg_msg,フフcrそれはいい考えです,1
+
+rnd,4
+case0
+case1
+case2
+goto,*nai
+case3
+bl_fadeout
+bl_fadein,gzin11
+zin_reg_face_l,pid4
+zin_reg_msg,．．このポケットcrこれはもしかして．．,0
+zin_reg_msg,call_pid41crこの憲兵、こんな物を持ってました,0
+
+chk_ormval,攻撃:pid4>69,防御:pid4>69,,,
+chk_ormval_then
+	get_item,player,,失念飴
+	zin_reg_qnar,失念飴を手に入れた。
+	goto,*getem
+chk_ormval_else
+
+chk_ormval,格闘:pid4>69,,,,
+chk_ormval_then
+	get_item,player,,エアロビDVD
+	zin_reg_qnar,エアロビＤＶＤを手に入れた。
+	goto,*getem
+chk_ormval_else
+
+chk_ormval,知力:pid4>79,交渉:pid4>79,,,
+chk_ormval_then
+	get_item,player,,派閥加入券
+	zin_reg_qnar,派閥加入券を手に入れた。
+	goto,*getem
+chk_ormval_else
+
+get_item,player,,不妊薬
+zin_reg_qnar,不妊薬を手に入れた。
+
+*getem
+zin_reg_msg,さ、もう参りましょうcrあまり家族を待たせてはいけませんから,0
+goto,*allsafe
+
+*nai
+zin_reg_msg,さ、もう参りましょうcrあまり家族を待たせてはいけませんから,1
+goto,*allsafe
+//●負けた
+*exolose
+zin_reg_event,,pid3,pid1,,gzin11
+zin_reg_msg,ぐはあっ,1
+zin_reg_face_1,0
+zin_reg_face_r,pid4
+zin_reg_msg,ああっcrcall_pid41！！,1
+zin_reg_msg,フン、憲兵隊を甘く見るなcr女で腰の溶けた奴に負けるか！,0
+zin_reg_qnar,その時、騒ぎを聞き付けた仲間の憲兵隊がcr周囲から一斉に駆けつけてきた。
+zin_reg_face_r,pid3
+zin_reg_face_l,pid3
+zin_reg_msg,おおっcrお前がやったのか,0
+zin_reg_msg,割と簡単に捕まったなcr女連れで脱走など、我々をナメすぎだ,1
+zin_reg_face_r,pid4
+zin_reg_msg,は、離しなさいっcrcf_pid4を誰だと思ってるの！,0
+zin_reg_face_l,pid3
+zin_reg_msg,元気な事だcrこっちまでたぎりそうなニオイ、プンプンさせながら．．,1
+zin_reg_msg,p_name1も十分息はあるcrまあ牢で心ゆくまで休んでもらおう,0
+zin_reg_face_r,player
+zin_reg_msg,く、くそおっ．．．．,0
+goto,*noexod
+//
+*allsafe
+set_eveflg,299,0
+set_epid2,eveflg297
+set_epid3,覇王:pid2
+add_menkai,pid2
+//友好75未満ならアップ
+chk_mval,友好:pid2<75,,,,
+chk_mval_then
+	add_sinmitu,pid2,15
+	goto,*yukou
+chk_mval_else
+*yukou
+
+//もしかして父は？
+chk_mval,父:pid1=pid3,,,,
+chk_mval_then
+	bl_fadein,gzin5
+	bgm_chg,60
+	zin_reg_event,謁見,pid3,pid1,,gzin5
+	zin_reg_msg,よくおめおめと我が前に来れたものだな、p_name1,0
+	zin_reg_msg,．．．．．,1
+	zin_reg_msg,将領への示しもあるcr本来は生なかでは済まされぬ所、だが．．．,0
+	goto,*mosika
+chk_mval_else
+
+//プレイヤー移籍処理：分将以上なら好待遇
+chk_mval,勲功:player>9999,勲功:player<12080,,,
+chk_mval_then
+	set_eveflg,299,100
+	set_pmov,player,pid3
+	add_menkai,pid3
+	upd_sts,pid1,勲功,7000
+	add_kunkou,pid2,2500
+bl_fadein,gzin5
+bgm_chg,60
+zin_reg_event,謁見,pid3,pid1,,gzin5
+	zin_reg_msg,話は聞いておるcrcf_pid3の下で働きたいと申すのか？,0
+	zin_reg_msg,はい、きっとお役に立てるでしょう,1
+	zin_reg_msg,うむっcrcall_pid31ほどの将領が我が下に参じてくれるとは、まこと僥倖,0
+	zin_reg_msg,これはもったいないお言葉を．．,1
+	zin_reg_msg,従前同等の待遇とはならぬが、粗略にはせぬ,0
+	zin_reg_msg,位には気を払おうcrcf_pid3の覇業に尽くしてほしい,0
+	zin_reg_msg,ははあっcr光栄でございます,1
+	goto,*syougun
+chk_mval_else
+	set_pmov,player,pid3
+	add_menkai,pid3
+	add_kunkou,pid2,1000
+bl_fadein,gzin5
+bgm_chg,60
+zin_reg_event,謁見,pid3,pid1,,gzin5
+*syougun
+
+//直前で分将判定？
+chk_eveflg,299,>0
+chk_eveflg_then
+	goto,*kunend
+chk_eveflg_else
+
+//家族の地位は？
+chk_mval,勲功:pid2>12079,勲功:pid2<13000,,,
+chk_mval_then
+*mosika
+	zin_reg_msg,およそは耳にしたcr深い次第は質さぬ,0
+	zin_reg_msg,はっ．．．,1
+	zin_reg_msg,call_pid32の懇請に免じて許す故、以後はcf_pid3の覇業に尽くすがよい,0
+	zin_reg_msg,ありがたきお言葉crcall_pid13の下、精勤を尽くします,1
+	add_kunkou,player,2000
+	goto,*kunend
+chk_mval_else
+
+chk_mval,勲功:pid2>7999,勲功:pid2<12080,,,
+chk_mval_then
+	zin_reg_msg,話は聞いておるcrcf_pid3の下で働きたいと申すのか？,0
+	zin_reg_msg,はい、きっとお役に立てるでしょう,1
+	zin_reg_msg,うむcr我が軍の柱、p_name2の家族とあらば、他の降将と同列には扱えぬ,0
+	zin_reg_msg,特別に身を計らおうcrp_name2と共に忠功を尽くせ,0
+	zin_reg_msg,ははあっcr光栄でございます,1
+	add_kunkou,player,1500
+	goto,*kunend
+chk_mval_else
+
+chk_mval,役職:pid2=3,,,,
+chk_mval_then
+	zin_reg_msg,p_name2より、つとに話は聞くcrcf_pid3の下で働きたいと申すのか？,0
+	zin_reg_msg,はい、きっとお役に立てるでしょう,1
+	zin_reg_msg,うむ、p_name2はcf_pid3によく尽くしてくれておるcr身を取り計らってやろう,0
+	zin_reg_msg,p_name2と共に、cf_pid3の役に立て！！,0
+	zin_reg_msg,はっcr光栄でございます,1
+	add_kunkou,player,1000
+	goto,*kunend
+chk_mval_else
+//ボーナス無し
+zin_reg_msg,話は聞いておるcrcf_pid3の下で働きたいと申すのか？,0
+zin_reg_msg,はい、きっとお役に立てるでしょう,1
+zin_reg_msg,よかろう、cf_pid3の役に立て！！,0
+zin_reg_msg,ハハッ！！crありがたき幸せ,1
+
+*kunend
+
+chk_mval,pid4>0,,,,
+//女連れ
+chk_mval_then
+	set_sikan,pid4,poid_player
+	add_kunkou,pid4,1000
+	upd_sts,pid4,忠誠,30
+	set_sinmitu,pid4,110
+	zin_reg_title,player_name達はp_name3に仕官しました。
+	goto,*omakeold1
+chk_mval_else
+	zin_reg_title,p_name3に仕官しました。
+
+//おまけ
+*omakeold1
+zin_reg_button,0
+
+chk_mval,性別:pid2=2,友好:pid2=110,初膜:pid2=1,,
+chk_mval_then
+	goto,*omakeold2
+chk_mval_else
+	goto,*omakekana
+
+*omakeold2
+bl_fadeout
+bgm_chg,58
+bl_fadein,gzin6
+zin_reg_event,禁蜜の花園,pid1,pid2,,gzin6
+chk_family,pid2,pid1
+case_fam_姉
+case_fam_母
+	goto,*anehaha
+case_fam_娘
+//case_fam_娘(養)
+	goto,*musu
+case_fam_妹
+	goto,*imo
+default_fam
+	goto,*allfin
+
+//姉．母兼用
+*anehaha
+zin_reg_msg,ああ、call_pid21．．cr本当に嬉しい、まだ夢のようです,1
+zin_reg_msg,またcall_pid21と一緒に過ごせるなんてcrどれだけこの日を．．,1
+zin_reg_msg,そんな、いくらなんでもおおげさな．．,0
+zin_reg_msg,それに、本当に嬉しいのは、再会した事ではないのでしょう？,0
+zin_reg_msg,えっ？cr何を言っているの、嬉しいに決まって．．,1
+zin_reg_msg,とぼけなくていいですよcall_pid12cr久しぶりの二人きりです早く服を脱いで,0
+zin_reg_msg,ふふcrお互いの無事を力いっぱい、裸同士でお祝いしましょうか,0
+zin_reg_msg,あ．．．も、もうっcr相変わらずのオトコノコなんだから．．,1
+bl_fadeout
+bgm_chg,51
+zin_reg_init
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,や、あーっ、アーーッcrいいの、いいのぉ．．．,pid2
+zin_old_msg,やっぱりコレでないとダメェっcrcall_pid21のが太くてカタくて．．．cr一番感じちゃうのぉーっ,pid2
+zin_old_msg,ハハハッcr随分と溜まっていたようですね、call_pid12？,pid1
+zin_old_msg,最後に抱いてあげたのはいつだったか．．crその時よりずっと燃えているのでは？,pid1
+zin_old_msg,当たり前でしょっ！crコレと、アナタの胸とお腹と、腕と脚と、cr匂いと唾液と．．．,pid2
+zin_old_msg,全部でないとダメェっcrcf_pid2、cf_pid2、call_pid21とのこのセックス、cr久しぶりなんだからあっ,pid2
+zin_old_msg,フフフ、cf_pid1も同感ですよcrやっぱり一番相性の良いカラダはcall_pid12みたいです,pid1
+zin_old_msg,あん、あんっっ！cr子宮えぐってくるぅcr熱いの、スゴすぎるのぉっ．．．,pid2
+zin_old_msg,またお会いできて嬉しいですよっcrこれからもまた、このcall_pid12のナカに、cr思うまま種付けできるんです！,pid1
+zin_old_msg,いいわ、きて、きてえぇcrまたcf_pid2のオナカに、これからも．．．っ,pid2
+zin_old_msg,．．．あ、んんんっcrアアーーーーっっ,pid2
+zin_flush,pid2
+zin_old_msg,熱ぅいっ、call_pid21の精、子．．cr．．．ダメよ、ダメ、もらっちゃ．．．cr．．でも．．．．,pid2
+zin_old_msg,うれ、しい、の．．,pid2
+zin_reg_button,16
+zin_old_fadeout,0,15
+goto,*allfin
+
+//娘
+*musu
+zin_reg_msg,ああ、父様．．cr本当に嬉しい、まだ夢みたいなの,1
+zin_reg_msg,夢の中で父様が死んじゃった時には、cf_pid2も一緒に死んじゃいたかったんだから．．,1
+zin_reg_msg,おいおい、いくらなんでもおおげさだろう,0
+zin_reg_msg,それに、p_name2がcf_pid1と会えて嬉しいのは、本当に父と再会したからなのかな？,0
+zin_reg_msg,えっ．．cr何を言っているの、cr父様？,1
+zin_reg_msg,ん？crとぼける気かな、crcall_pid12,0
+zin_reg_msg,さあ服を脱ぎなさいcr父がいない間にどれだけ成長したか、隅々まで調べてやるぞ,0
+zin_reg_msg,ん、も、もう！cr本当にcf_pid2は父様いなくて寂しかったのに！,1
+zin_reg_msg,と、cr父様のエッチぃっ．．．,1
+bl_fadeout
+bgm_chg,51
+zin_reg_init
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,ふあん、ふにゃんっ、あぁあーーんんっ！,pid2
+zin_old_msg,やだやだ、父様ぁ！crぐりぐりって、オナカでおおきすぎい！！,pid2
+zin_old_msg,おかしいなcrカラダは全部イヤらしく成長してるのに、crココは成長してないのか？,pid1
+zin_old_msg,ふふっcr一番奥の口が、吸盤みたくチンチンの先っぽをcr捕まえて離さないなcr赤ん坊がおしゃぶりするみたいだぞ？,pid1
+zin_old_msg,チガうもん！cr父様が先っぽ、ギュチュギュチュって、crcf_pid2を押し付けて離さないだもん！,pid2
+zin_old_msg,久しぶりのオチンチンもおっきいしっ．．crアン、あくん、アキュウンっっ,pid2
+zin_old_msg,ね、ねえっ　ねえぇっcrもっと、優しくシテぇぇぇっ．．．,pid2
+zin_old_msg,はははcrそうか、父様が悪いのか,pid1
+zin_old_msg,久しぶりのp_name2のナカがcrきゅうきゅうに締めてくるから気持ちよくて、crついつい愛するのに力が入る父様が悪いか？,pid1
+zin_old_msg,あ、あうんっcrそんなコトは．．．,pid2
+zin_old_msg,でも、悪いなcr父様は優しくできないんだcrこれから一番激しくしたい時だからな！,pid1
+zin_old_msg,そ、そんなのヤあっ！crダメダメ、父様．．,pid2
+zin_old_msg,とうさ、まー、crアーッア゛ーッッ！！,pid2
+zin_old_msg,オッ、オッ、オオオッッcrもうイクぞ、久しぶりのp_name2のオナカに、cr父から子供の素のお土産だ！！,pid1
+zin_old_msg,ああんっ！crも、もうイッちゃう．．ああっ．．crいやぁん．．はああーーっ！,pid2
+zin_flush,pid2
+zin_old_msg,．．．．．．．．crあん．．．父様の、セーエキ．．．,pid2
+zin_old_msg,ん、チュ．．cr．．この味、ねcrcf_pid2を作った味．．．,pid2
+zin_old_msg,．．おかえり、父様．．,pid2
+zin_reg_button,16
+zin_old_fadeout,0,15
+goto,*allfin
+
+//妹
+*imo
+zin_reg_msg,嬉しい、call_pid21cr．．本当にcall_pid21よね,1
+zin_reg_msg,ふふ、時々ね、もう会えるのは頭の中のcall_pid21だけかもって思っちゃってた,1
+zin_reg_msg,おいおい、いくらなんでもひどいな,0
+zin_reg_msg,それにcf_pid1は大丈夫でもcall_pid12はどうなんだ？,0
+zin_reg_msg,えっ．．crどういう意味？,1
+zin_reg_msg,cf_pid1もcf_pid1なりに、p_name2の事は心配だったんだよ,0
+zin_reg_msg,女の変化は早いからなcrまた会えた時、妹が身も心も別人じゃショックなもんだ,0
+zin_reg_msg,そんなことないってばcrcf_pid2はcf_pid2で．．,1
+zin_reg_msg,だから、大事な妹の身も心も記憶通りか、確かめさせてくれcr分かるだろう？,0
+zin_reg_msg,エエッ、そんな．．cr．．．．う、うん．．,1
+bl_fadeout
+bgm_chg,51
+zin_reg_init
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,んんっっ、んっ．．crひゃうっ、ふあああ．．crすごいのぉっ．．．,pid2
+zin_old_msg,call_pid21っ　call_pid21っcrcall_pid21の、やっぱりスゴいのcr大好きだよぉおっ,pid2
+zin_old_msg,ああ、call_pid12のナカもあいかわらずだよ,pid1
+zin_old_msg,やっぱり昔通りのエロさだ、crcf_pid1のを美味そうにほうばってくれるなっ,pid1
+zin_old_msg,バカ、バカぁっcrそんな言い方しないでよぉっっ,pid2
+zin_old_msg,なんでだ？　嫌か、誉めてるんだぞ？cr本当に懐かしくてピッタリで、cr最高の妹man_strなんだぞ？,pid1
+zin_old_msg,う、うれしいからようっcrアソコが勝手に悦んじゃうからぁっ,pid2
+zin_old_msg,これ以上call_pid21のtin_strがcr大好きな妹にしないでようっっ！,pid2
+zin_old_msg,．．ふふふ、わかったわかったcrじゃあcall_pid12はそれ以上、crcf_pid1のモノを好きにならなくてもいいから．．,pid1
+zin_old_msg,．．その分cf_pid1が大好きな妹のナカでcr勝手に気持ち良くなって、crもっともっと好きになるぞっcrほらっ、ほらっ　思い切り激しくシてやるっ！！,pid1
+zin_old_msg,ヤッ　そんなムチャぁっcrだめっ、だめっっcrヒゥっ　ふフアアぁーーーっっっ,pid2
+zin_old_msg,ダメっ　だってばっcrそんな激しいtin_strっcrもっと、よくなっちゃうううぅっ！！,pid2
+zin_old_msg,じゃ、諦めろよっcrcf_pid1のコレが一番イイんだろっcrcall_pid21の精液一番欲しいんだろっ！！？,pid1
+zin_old_msg,．．そうよっcrcall_pid21tin_strの先からびくびくってcrドピュドピュって出てくる！,pid2
+zin_old_msg,きもちいいっ　アツアツなの、crいっぱい欲しがってるのぉっ！,pid2
+zin_old_msg,ヨシヨシっ　いっぱい出すぞ、もうイクぞっcrp_name2の兄用の子宮に、cr思い出たっぷりの子種プレゼントだ！！,pid1
+zin_old_msg,ああんっ！crも、もうイッちゃう．．ああっ．．crんんんっ．．はああーーっ！,pid2
+zin_flush,pid2
+zin_old_msg,あううんっ　オナカに入ってく．．crcf_pid2のオナカが入れたがってる．．．crcall_pid21の子種．．．．,pid2
+zin_old_msg,．．．．．．cr．．．んふうcrまだ固い、ね．．．．,pid2
+zin_old_msg,もっと、ちょうだい．．crcf_pid2用の子種．．．,pid2
+zin_old_msg,cf_pid2もずっと．．．cr同じように、もらいたいの．．．．,pid2
+zin_reg_button,16
+zin_old_fadeout,0,15
+goto,*allfin
+//家族おまけオルド〆
+
+*omakekana
+//フラグ299：父＝10、兄＝20、弟＝30　父兄→mens1、弟→mens2
+chk_mval,性別:pid2=1,父:pid2=player,,,
+chk_mval_then
+	set_eveflg,299,10
+	goto,*mens1
+chk_mval_else
+
+chk_mval,性別:pid2=1,年齢:player>年齢:pid2,父:player=父:pid2,父:player>0,
+chk_mval_then
+	set_eveflg,299,20
+	goto,*mens1
+chk_mval_else
+
+chk_mval,性別:pid2=1,年齢:player<年齢:pid2,父:player=父:pid2,父:player>0,
+chk_mval_then
+	set_eveflg,299,30
+	goto,*mens2
+chk_mval_else
+
+chk_mval,性別:pid2=1,年齢:player>年齢:pid2,母:player=母:pid2,母:player>0,
+chk_mval_then
+	set_eveflg,299,20
+	goto,*mens1
+chk_mval_else
+
+chk_mval,性別:pid2=1,年齢:player<年齢:pid2,母:player=母:pid2,母:player>0,
+chk_mval_then
+	set_eveflg,299,30
+	goto,*mens2
+chk_mval_else
+	goto,*allfin
+
+//自分は父．兄
+*mens1
+bl_fadeout
+bgm_chg,54
+bl_fadein,gzin18
+zin_reg_event,家族の絆,pid1,pid2,,gzin18
+zin_reg_msg,久しぶりだな、call_pid12,0
+zin_reg_msg,ええ．．crまさかcall_pid21と、またこうして会えるなんて,1
+zin_reg_msg,あんな手段で、こんなワガママを聞いてくれて、本当にありがとう,1
+zin_reg_msg,何、call_pid12に頼まれたら仕方ないさcr家族なんだからな,0
+zin_reg_msg,call_pid21．．．cr,1
+goto,*kuukana
+
+//自分は弟
+*mens2
+bl_fadeout
+bgm_chg,54
+bl_fadein,gzin18
+zin_reg_event,家族の絆,pid2,pid1,,gzin18
+zin_reg_msg,久しぶりです、call_pid12crお変わりないようですね,1
+zin_reg_msg,call_pid21もな．．crだが、またこうして会えるとは,0
+zin_reg_msg,あんな手段で、こんなワガママを聞いてくれるとは、正直思ってなかった,0
+zin_reg_msg,許してくれ．．．cr．．そして、ありがとう,0
+zin_reg_msg,call_pid12の頼みです、無視できませんよcr家族なんですから,1
+zin_reg_msg,call_pid21．．．,0
+
+*kuukana
+//嫁チェック：気まぐれ型or欲情型の場合…
+set_epid4,0
+get_mpid,状態=2,婚姻=pid2,覇王=pid3,,,,
+set_epid4,pval
+
+chk_mval,pid4>0,,,,
+chk_mval_else
+	goto,*muyome
+chk_mval_then
+	switch_seikaku,pid4
+	case_seikaku12
+	case_seikaku14
+	case_seikaku23
+	case_seikaku24
+		set_non_virgin,pid4
+		goto,*yomekui
+	default_seikaku
+		goto,*muyome
+//●嫁喰い
+*yomekui
+zin_reg_face_l,player
+zin_reg_face_r,pid4
+zin_reg_msg,御無事で来られて、本当に良かったわねcrあの手紙を出してからのアナタったら．．,1
+zin_reg_face_l,pid2
+zin_reg_msg,出さなければ良かった、バレたら返って危険じゃないかって、毎日毎晚そればかりで,1
+zin_reg_msg,い、言うなって！,0
+zin_reg_face_l,player
+zin_reg_msg,ははは、call_pid12がそんなことを？crそれはさぞ鬱陶しそうだ,0
+zin_reg_msg,ええ、もう女々しくって自分がやった事なのに、我が夫ながら情けなかったですわ,1
+zin_reg_face_r,pid2
+zin_reg_msg,．．．．．．,1
+zin_reg_face_r,pid4
+zin_reg_msg,それはcall_pid14にも迷惑だったかなcrその内cf_pid1からもお詫びしなければ,0
+zin_reg_msg,ふふ、来たばかりでお忙しいですものねcrでも、確か今日はアナタも．．,1
+zin_reg_face_r,pid2
+zin_reg_msg,ああ、今すぐからなcrちょっと、その、cr最近手に付かなかったcr仕事が．．,1
+zin_reg_msg,かまわないでいいよcr落ち着いたら連絡するから,0
+zin_reg_face_r,pid4
+zin_reg_msg,じゃあこのぐらいはお持ち帰りになって？cr一応手製のキャンディですわ,1
+zin_reg_msg,おおcrこれは立派なボンボンだ,0
+zin_reg_msg,是非、お宅でゆっくりcr口にして頂ければ．．,1
+zin_reg_2sel,持ち帰って賞味する,忙しいのでここで食べ終える
+get_resp
+ret_sel1
+zin_reg_msg,そうさせてもらうよcrわざわざありがとう,0
+zin_reg_face_r,pid2
+zin_reg_msg,じゃあcf_pid2はこれから仕事だけど、何かあったら連絡頼むよ,1
+zin_reg_msg,cf_pid2が捕まらない時は、call_pid24にでいいから,1
+bgm_stop
+	goto,*kuiold
+ret_sel2
+add_sinmitu,pid2,15
+dec_sinmitu,pid4,200
+add_sinmitu,pid4,80
+zin_reg_msg,いや、そんな事言わず、もうこの場で．．cr．．ムグ、モグ,0
+zin_reg_msg,あら勿体ない．．crお味はいかがですか？,1
+zin_reg_msg,．．．．．オッcrなかなか強いウヰスキーが、中から．．．,0
+zin_reg_msg,．．しかし、うんcr酒と飴と微かな塩っ気が美味い！,0
+zin_reg_msg,フフ、よかったcrもっと召し上がれ,1
+
+//●該当嫁無し
+*muyome
+chk_sts,pid2,12,<60
+chk_sts_then
+	zin_reg_button,0
+	goto,*allfin
+chk_sts_else
+
+chk_eveflg,299,10
+chk_eveflg_then
+	zin_reg_face_l,player
+	zin_reg_face_r,pid2
+	zin_reg_msg,そうだ、こういうものをもらったんですcrよかったらお役に立てて下さい,1
+	get_item,player,,延命酒
+	zin_reg_qnar,延命酒を手に入れた。
+	zin_reg_button,0
+	goto,*allfin
+chk_eveflg_else
+
+chk_eveflg,299,20
+chk_eveflg_then
+	zin_reg_face_l,player
+	zin_reg_face_r,pid2
+	zin_reg_msg,そうだ、この本とこの本差し上げますcrきっとcall_pid21にも役立つと思います,1
+	zin_reg_msg,これを読んで、crcall_pid23の下で共にcr頑張りましょう！,1
+	get_item,player,,艦隊戦術書 壱
+	get_item,player,,防衛戦術書 壱
+	zin_reg_qnar,艦隊戦術書壱と防衛戦術書壱を手に入れた。
+	zin_reg_button,0
+	goto,*allfin
+chk_eveflg_else
+
+chk_eveflg,299,30
+chk_eveflg_then
+	zin_reg_face_l,pid2
+	zin_reg_face_r,player
+	zin_reg_msg,ああ、そうだcrせめてもの礼だ、これを受け取ってくれ,0
+	get_item,player,,弁舌の達人
+	zin_reg_qnar,弁舌の達人を手に入れた。
+	zin_reg_button,0
+	goto,*allfin
+chk_eveflg_else
+	zin_reg_button,0
+	goto,*allfin
+
+//●嫁喰いオルド
+*kuiold
+bl_fadeout
+zin_reg_nar,その日の晚、p_name4はp_name1の新居を訪れていた。
+bgm_chg,61
+zin_reg_init
+zin_old_init
+zin_old_img_pid,pid4,1
+zin_old_qnar,のみならず、真新しいベッドの上で、crその滑らかで艶やかな女の裸と性を、cr余す所なく晒していた．．．
+zin_old_msg,あぐっ．．．はああ．．．す、すごい！！！,pid4
+zin_old_msg,あの人と、ぜんっぜんチガうわっcrいいわ、イイの、こうしてあげるぅっ,pid4
+zin_old_msg,おおうっcrヒダヒダが先っぽをしごいてきおるっ,pid1
+zin_old_msg,call_pid12がいるくせに、cr夫の前ではいい嫁面しやがってたくせに、crなんてヤツだ、お前は！！,pid1
+zin_old_msg,あは、あはあっcrいいのお、ふぅんっ、ふぅーーーっcrふーっ　ふ、ふぅ．．,pid4
+zin_old_msg,．．ふふ、今更、なにを言ってるのよcrおウチでもcf_pid4のこと、cr飢えてギラギラした眼で見てたくせに,pid4
+zin_old_msg,ふん、しょうがないだろうcrあんなテラテラした色目艶声遣われたら、crいっぱしの男なら誰の妻でも関係ないcrそら、そらああっっ,pid1
+zin_old_msg,あ、ああアンっっcrいいわ、もっとハネてっcrナカで暴れさせてえぇぇっ,pid4
+zin_old_msg,くくくっ　call_pid12はこのカラダをcr満足させられてなかったのかcr過ぎたカラダ、持ち腐れだったのか？,pid1
+zin_old_msg,んっ、そうよcrp_name2ってば、cf_pid4が少しナカ使ったら、crすぐイッちゃうんだもの．．．,pid4
+zin_old_msg,全く満足させてもらえなかったかcrだから夫への愛も薄れたか？crそれとも、元々愛なんてなかったか？,pid1
+zin_old_msg,ううんっcrp_name2は愛してて、子供も欲しいわcrそれは本心．．,pid4
+zin_old_msg,って言っても、ザーメン絞ってオシマイじゃ、crセックスが全然面白くないのcrでも、スるならナマでシたいから、cr赤の他人と遊ぶのは後が怖いし．．,pid4
+zin_old_msg,でもcall_pid41なら、万一デキても、crp_name2と血も近いわけだし．．．ネ？crだから、替わりに満足させて？,pid4
+zin_old_msg,はは、だらしないものだcrcall_pid12は亭主面して長い間、crこのカラダに全く歯が立たなかったのか,pid1
+zin_old_msg,だが、同じ家族でもcf_pid1の牡度はcrずっと上だからな、任せておけ,pid1
+zin_old_msg,．．だが、そんなにあの時ギラギラしてたかなcr気付かれてないだろうな．．？,pid1
+zin_old_msg,フフcr賭けてもいいわ、大丈夫よ,pid4
+zin_old_msg,だってp_name2ってば、crあの後本当にすぐ仕事に行ったものcrメールもいつも通りの内容だったしね,pid4
+zin_old_msg,そんなこといいから、ネ？crそんな澄ました顔してても、crあのボンボン食べてるんだから、crもう我慢できないでしょ？,pid4
+zin_old_msg,もっともっと、乱暴にしていいからぁcr今晚孕ませるつもりで、cr出すのは全部ナカの奥々でいいから、cr早くぅ．．．,pid4
+zin_old_msg,フン、アヤしい飴だとは思ったが、crギンギンにおっ勃つクスリを盛っていたとはなcr泡食って連絡させるのが目的だったとは,pid1
+zin_old_msg,いいだろう、今夜はcall_pid12の淫ら妻のナカに、cr家族のナカに本物の家族を、cr溢れるぐらい仕込んでやるぞ！！,pid1
+zin_old_msg,あはっ、溢れさせないで！cr子宮に精子塗り込めてぇcrあの人と家族で家族作るの競ってぇぇ！！,pid4
+zin_old_msg,ああ、もちろんcf_pid1が勝ってやるぞcrcf_pid1の種の方が強いに決まってるっcrフヌ、クォリャアァァァ！！！,pid1
+zin_old_msg,アーッ、マーッcrイイ、イヤァ、キイーーcrキアアーーーッッッ！！！！,pid4
+zin_flush,pid4
+zin_flush,pid4
+zin_flush,pid4
+zin_old_msg,アアアっ．．cr勢いスゴくって、熱すぎるわ．．．,pid4
+zin_old_msg,．．．フフフ、p_name2crアナタの種、妻のオナカで、crcall_pid41に負けちゃいそうよゥ．．．？,pid4
+
+//確率で妊娠
+rnd,8
+case0
+case1
+case2
+case3
+case4
+case5
+case6
+goto,*kuisafe
+case7
+set_ninsin,pid4,player
+
+*kuisafe
+zin_reg_button,16
+zin_old_fadeout,0,15
+goto,*allfin
+
+//脱出失敗
+*noexod
+set_horyo,player,poid_player
+set_horyo,pid4,poid_player
+zin_reg_title,player_name達は投獄されました。
+zin_reg_button,0
+
+//フラグ掃除
+*allfin
+chk_mval,pid3=756,,,,
+chk_mval_then
+	upd_sts,pid3,格闘,-200
+	upd_sts,pid3,格闘,76
+chk_mval_else
+
+*allfin2
+set_epid1,0
+set_epid2,0
+set_epid3,0
+set_epid4,0
+set_eveflg,297,0
+set_eveflg,298,0
+set_eveflg,299,0
+
+zin_reg_exit
+end

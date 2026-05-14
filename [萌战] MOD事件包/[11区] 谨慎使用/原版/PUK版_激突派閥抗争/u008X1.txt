@@ -1,0 +1,428 @@
+////////////////////
+*Hiboutyuu01
+
+rnd,3
+case0
+	zin_reg_msg,p_name_eveflg(281)派の切り崩しを行いましょう,1
+	goto,*Hiboutyuu02
+case1
+	zin_reg_msg,p_name_eveflg(281)派のメンバーを引き入れましょう,1
+	goto,*Hiboutyuu02
+case2
+	zin_reg_msg,p_name_eveflg(281)派の不満分子をこちらに招いてはいかがでしょう？,1
+	*Hiboutyuu02
+/////////////////
+rnd,3
+case0
+	zin_reg_msg,敵の力を弱め、こちらの力を強くする悪く無い案だな,0
+	goto,*Hiboutyuu03
+case1
+	zin_reg_msg,うむ、良い案だ,0
+	goto,*Hiboutyuu03
+case2
+	zin_reg_msg,それは面白いな,0
+	*Hiboutyuu03
+/////////////////////
+rnd,3
+case0
+	zin_reg_msg,p_name_eveflg(290)crお前に任せる！,0
+	goto,*Hiboutyuu04
+case1
+	zin_reg_msg,よし、任せるcr好きにやってみろ,0
+	goto,*Hiboutyuu04
+case2
+	zin_reg_msg,よろしいcrやってみろ！,0
+	*Hiboutyuu04
+////////////////////////
+rnd,3
+case0
+	zin_reg_msg,ハッ！,1
+	goto,*Hiboutyuu05
+case1
+	zin_reg_msg,お任せ下さい,1
+	goto,*Hiboutyuu05
+case2
+	zin_reg_msg,朗報をお待ち下さい,1
+	*Hiboutyuu05
+///////////説得する人物
+get_habatumem,eveflg281,eveflg281
+set_eveflg,271,pval
+///////////////////////////
+rnd,3
+case0
+	bl_fadeout
+	bl_fadein,gzin22
+zin_reg_event,某所バー,eveflg290,eveflg271,,gzin22
+	goto,*Hiboutyuu07
+case1
+	bl_fadeout
+	bl_fadein,gzin21
+zin_reg_event,某所カフェテリア,eveflg290,eveflg271,,gzin21
+	goto,*Hiboutyuu07
+case2
+	bl_fadeout
+	bl_fadein,gzin38
+zin_reg_event,某観光名所,eveflg290,eveflg271,,gzin38
+	*Hiboutyuu07
+///////////////////////////
+bgm_chg,61
+
+rnd,3
+case0
+	zin_reg_msg,p_name_eveflg(271)殿、我々p_name_eveflg(280)派に入り、辣腕をふるって欲しい,0
+	goto,*Hiboutyuu08
+case1
+	zin_reg_msg,我々p_name_eveflg(280)派は、p_name_eveflg(271)殿を高く評価している．．．,0
+	goto,*Hiboutyuu08
+case2
+	zin_reg_msg,p_name_eveflg(271)殿は、現在のp_name_eveflg(281)派の立場に満足してはいないでしょう,0
+	*Hiboutyuu08
+rnd,3
+case0
+	zin_reg_msg,p_name_eveflg(281)派は、どれほど貴殿に恩恵を与えてくれましたか？,0
+	goto,*Hiboutyuu08A
+case1
+	zin_reg_msg,p_name_eveflg(281)派は、貴殿を正当に評価しておりますか？,0
+	goto,*Hiboutyuu08A
+case2
+	zin_reg_msg,さしあたっての支度金を用意しました．．．これで如何でしょう？,0
+	*Hiboutyuu08A
+
+rnd,3
+case0
+	zin_reg_msg,．．．,1
+	goto,*Hiboutyuu09
+case1
+	zin_reg_msg,．．．ううむ,1
+	goto,*Hiboutyuu09
+case2
+	zin_reg_msg,．．．ふむ,1
+	*Hiboutyuu09
+rnd,3
+case0
+	zin_reg_msg,ここが決断のしどきですぞ！,0
+	goto,*Hiboutyuu09A
+case1
+	zin_reg_msg,我々と共に参りましょう。未来は我らが手に！,0
+	goto,*Hiboutyuu09A
+case2
+	zin_reg_msg,何か問題があれば、我々が手を回しましょう。後顧の憂いはありません,0
+	*Hiboutyuu09A
+
+
+	zin_reg_msg,．．．お話はcr分かりました,1
+
+//////////////////////成功失敗計算
+//////////////////組織のNO2が、相手よりも頭が良いか？
+
+//勝負判定、ステータス3本勝負
+set_eveflg,205,0
+
+//1本目：知謀値勝負
+chk_cpsts,智謀,eveflg271>eveflg290
+chk_cpsts_then
+	goto,*shoubu10
+	add_eveflg,205,1
+chk_cpsts_else
+	goto,*shoubu10
+
+//3本目：交渉値勝負
+*shoubu10
+chk_cpsts,交渉,eveflg271>eveflg290
+chk_cpsts_then
+	goto,*shoubu30
+	add_eveflg,205,1
+chk_cpsts_else
+	goto,*shoubu30
+
+///計算終わり
+*shoubu30
+
+chk_eveflg,205,>1
+chk_eveflg_then
+goto,*Yusei
+chk_eveflg_else
+goto,*Ressei
+
+////////////優勢
+*Yusei
+rnd,5
+case0
+case1
+case2
+case3
+goto,*settokuse01
+case4
+goto,*Settokusipa01
+////////////劣勢
+*Ressei
+rnd,5
+case0
+case1
+case2
+case3
+goto,*Settokusipa01
+case4
+goto,*settokuse01
+//////////////////説得成功
+*settokuse01
+add_kunkou,eveflg290,300
+rnd,3
+case0
+	zin_reg_msg,はやり自分の才能を正当に評価してくれる所にいくべきでしょうな,1
+	goto,*settokuse02
+case1
+	zin_reg_msg,p_name_eveflg(280)派にcr入りましょう,1
+	goto,*settokuse02
+case2
+	zin_reg_msg,それほど買って下さるなら、入りましょう,1
+	*settokuse02
+////////////////////
+rnd,3
+case0
+	zin_reg_msg,おお、入って下さりますか！,0
+	goto,*settokuse03
+case1
+	zin_reg_msg,これからは同志ですな！,0
+	goto,*settokuse03
+case2
+	zin_reg_msg,賢明な決断ですcrものの道理がわかっておられる！,0
+	*settokuse03
+
+zin_reg_qnar,p_name_eveflg(271)は、p_name_eveflg(280)派に転向した
+upd_sts,eveflg271,20,eveflg280
+	bl_fadeout
+	bl_fadein,gzin7
+zin_reg_event,p_name_eveflg(281)派会合,eveflg281,,,gzin7
+case0
+
+rnd,3
+case0
+	zin_reg_msg,p_name_eveflg(271)が裏切るとは！,0
+	goto,*settokuse04
+case1
+	zin_reg_msg,おのれ、p_name_eveflg(271)め！,0
+	goto,*settokuse04
+case2
+	zin_reg_msg,p_name_eveflg(271)がcrp_name_eveflg(280)派に！?,0
+	*settokuse04
+
+////////////////////
+rnd,3
+case0
+	zin_reg_msg,p_name_eveflg(280)め！crこの代償は大きいぞ！,0
+	goto,*settokuse04
+case1
+	zin_reg_msg,p_name_eveflg(280)め！cr許さん！cr絶対に許さん！,0
+	goto,*settokuse04
+case2
+	zin_reg_msg,くそ、p_name_eveflg(280)め！cr必ず報復してくれる！,0
+	goto,*settokuse04
+//////////////////////
+zin_reg_button,0
+end
+/////////////////説得に失敗//////////////////////
+
+*Settokusipa01
+
+rnd,3
+case0
+	zin_reg_msg,．．．この話は聞かなかったことにしよう,1
+	goto,*Settokusipa02
+case1
+	zin_reg_msg,．．．今の境遇に満足している,1
+	zin_reg_msg,離れる気は無い,1
+	goto,*Settokusipa02
+case2
+	zin_reg_msg,残念だが、今は離れる気はありません,1
+	*Settokusipa02
+
+rnd,3
+case0
+	zin_reg_msg,な、なんだと！？,0
+	goto,*Settokusipa03
+case1
+	zin_reg_msg,好機を逃すとは．．．,0
+	goto,*Settokusipa03
+case2
+	zin_reg_msg,むぅ．．．,0
+	*Settokusipa03
+
+zin_reg_qnar,p_name_eveflg(271)の説得に失敗しました
+
+	bl_fadeout
+	bl_fadein,gzin30
+zin_reg_event,p_name_eveflg(280)派会合,eveflg280,eveflg290,,gzin30
+rnd,3
+case0
+	zin_reg_msg,失敗したのか！,0
+	goto,*Settokusipa05
+case1
+	zin_reg_msg,むぅ．．．,0
+	goto,*Settokusipa05
+case2
+	zin_reg_msg,説得できず、か．．．,0
+	*Settokusipa05
+/////////////////
+rnd,3
+case0
+	zin_reg_msg,．．．申し訳ございません,1
+	goto,*Settokusipa04
+case1
+	zin_reg_msg,．．．面目しだいもございません,1
+	goto,*Settokusipa04
+case2
+	zin_reg_msg,．．．残念ながら,1
+	*Settokusipa04
+
+
+///////////////////290の知力が80以上ある場合
+chk_msts,eveflg290,智謀,>79,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+add_kunkou,eveflg290,200
+rnd,3
+case0
+	zin_reg_msg,ですが、罠を仕掛けることに成功致しました,1
+	zin_reg_msg,ほぅ？,0
+	goto,*Settokuwana01
+case1
+case2
+chk_msts_else
+///////////////
+rnd,3
+case0
+	zin_reg_msg,まぁ、良いcr次こそは成功させるのだ,0
+	goto,*Settokusipa05
+case1
+	zin_reg_msg,仕方が無い、次は成功させよ．．．,0
+	goto,*Settokusipa05
+case2
+	zin_reg_msg,次は成功させろ。わかったな！,0
+	*Settokusipa05
+
+	zin_reg_msg,．．．ハッ！,1
+zin_reg_button,0
+end
+////////////////////仕掛けられた罠
+*Settokuwana01
+
+	bl_fadeout
+	bl_fadein,gzin7
+zin_reg_event,p_name_eveflg(281)派会合,eveflg281,eveflg271,,gzin7
+	zin_reg_msg,お呼びですか？,1
+
+rnd,3
+case0
+	zin_reg_msg,今日呼んだのは他でも無い．．．,0
+	goto,*Settokuwana02
+case1
+	zin_reg_msg,どうして呼ばれたかわかるか？,0
+	goto,*Settokuwana02
+case2
+	zin_reg_msg,．．．これを見ろ,0
+	*Settokuwana02
+
+zin_reg_event,p_name_eveflg(281)派会合,eveflg281,eveflg271,zin63,gzin7
+rnd,3
+case0
+	zin_reg_msg,こ、これは．．．,1
+	goto,*Settokuwana03
+case1
+	zin_reg_msg,この映像は！？,1
+	goto,*Settokuwana03
+case2
+	zin_reg_msg,まさか！？,1
+	*Settokuwana03
+
+	zin_reg_msg,お前が、p_name_eveflg(280)派の一員と接触してきた映像だ,0
+
+///////////////////281の知力が80以上ある場合
+chk_msts,eveflg281,智謀,>79,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+rnd,6
+case0
+case1
+case2
+case3
+case4
+	zin_reg_msg,お前はハメられたのだ,0
+	zin_reg_msg,！？,1
+	zin_reg_msg,お前に疑惑の目を向けさせようとしたのだろう,0
+	zin_reg_msg,こんな稚拙な計略にかかるものか,0
+	zin_reg_msg,．．．も、申し訳ございません,1
+	zin_reg_msg,気をつけろ、奴らはいろんな手をつかって我々を分断させようとしてくる,0
+	zin_reg_msg,は、ハハ！,1
+zin_reg_button,0
+end
+case5
+goto,*Settokuwana03
+
+chk_msts_else
+/////////////
+*Settokuwana03
+///////////////
+chk_msts,eveflg296,智謀,>79,NON,0,NON,0,NON,0,NON,0
+chk_msts_then
+rnd,6
+case0
+case1
+case2
+case3
+case4
+zin_reg_event,p_name_eveflg(281)派会合,eveflg281,eveflg296,,gzin7
+	zin_reg_msg,疑惑の目をむけさせようと、このような映像を．．．,1
+	zin_reg_msg,姑息な手段を使うものですな,1
+	zin_reg_msg,やはり、p_name_eveflg(280)派の罠か？,0
+	zin_reg_msg,仲違いを起こさせる罠に間違いありません,1
+zin_reg_event,p_name_eveflg(281)派会合,eveflg281,eveflg271,,gzin7
+	zin_reg_msg,．．．気をつけろ、p_name_eveflg(271),0
+	zin_reg_msg,奴らは色々な手段をつかってくるからな,0
+	zin_reg_msg,ハッ！,1
+case5
+goto,*Settokuwana04
+chk_msts_else
+*Settokuwana04
+//////////////////
+add_kunkou,eveflg290,100
+rnd,3
+case0
+	zin_reg_msg,貴様、裏切ったな．．．,0
+	goto,*Settokuwana05
+case1
+	zin_reg_msg,お前は奴らのスパイか！,0
+
+	goto,*Settokuwana05
+case2
+	zin_reg_msg,．．．この裏切り者め,0
+	*Settokuwana05
+rnd,3
+case0
+	zin_reg_msg,ご、誤解です！,1
+	goto,*Settokuwana06
+case1
+	zin_reg_msg,ま、まず．．．お話を！,1
+
+	goto,*Settokuwana06
+case2
+	zin_reg_msg,お待ち下さい、これは！,1
+	*Settokuwana06
+
+	zin_reg_msg,黙れ！cr貴様は追放だ！,0
+
+case0
+	zin_reg_msg,(や、やられた．．．),1
+	goto,*Settokuwana06
+case1
+	zin_reg_msg,（なんてことだ．．．）,1
+
+	goto,*Settokuwana06
+case2
+	zin_reg_msg,（罠にはめられた．．．）,1
+	*Settokuwana06
+
+zin_reg_qnar,p_name_eveflg(271)はp_name_eveflg(281)派から追放された．．．
+upd_sts,eveflg271,20,0
+zin_reg_button,0
+end
+
+

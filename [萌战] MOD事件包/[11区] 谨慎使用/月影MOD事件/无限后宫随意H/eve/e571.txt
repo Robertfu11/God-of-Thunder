@@ -1,0 +1,112 @@
+eve_start
+	if_eveflg,74,1
+	if_haou,870
+	if_haou,571
+//梅蘿がsts6
+	if_psts,896,6
+eve_end
+
+set_eveflg,74,2
+
+chk_exeplayer,571,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,35
+//zin_reg_init
+zin_reg_event,多拉的王宮,571,0,,gzin24
+zin_reg_qnar,多拉在王宮內走著突然感覺人影飄過。
+zin_reg_msg,誰！？,0
+zin_reg_face_1,896
+zin_reg_msg,多拉,1
+zin_reg_msg,你．．．cr是我軍的人?,0
+zin_reg_msg,我來取你的項上人頭,1
+bgm_se,6
+zin_reg_qnar,多拉與梅蘿互相攻擊。
+zin_reg_msg,啊！！,0
+zin_reg_msg,哼，我的攻擊不是你能承受的了的。,1
+zin_reg_msg,去死吧,1
+//小太郎が多拉配下
+chk_mval,覇王:853=571,,,,,
+chk_mval_then
+	zin_reg_face_0,853
+	zin_reg_msg,多拉大人！！,0
+	zin_reg_msg,嗯，還有人,1
+	zin_reg_msg,這樣的話就要處理2個人了,1
+	zin_reg_msg,你、是什麼．．．cr你不是人,0
+	zin_reg_msg,哈哈哈！！死吧！！！,1
+	bgm_se,13
+	zin_reg_msg,.．．．．.,1
+	zin_reg_msg,真愚蠢．．．cr不愧是人類,1
+	zin_reg_face_1,0
+	zin_reg_msg,！！,0
+	zin_reg_face_1,571
+	zin_reg_msg,額，啊．．.,1
+	zin_reg_msg,這．．.,0
+	zin_reg_qnar,多拉被梅蘿第一次攻擊打中了，受了重傷。
+	zin_reg_msg,多拉，振作點！！,0
+	zin_reg_qnar,之後，多拉被送往醫院後不久死亡了。
+	set_dead,571,0
+	set_dead,896,0
+	end
+chk_mval_else
+chk_mval,覇王:813=571,,,,,
+chk_mval_then
+//ワードが多拉配下
+	zin_reg_face_0,813
+	zin_reg_msg,多拉！！,0
+	zin_reg_msg,嗯，還有人,1
+	zin_reg_msg,這樣的話就要處理2個人了,1
+	zin_reg_msg,你，是什麼．．．cr你不是人,0
+	zin_reg_msg,哈哈哈！！死吧！！！,1
+	bgm_se,13
+	zin_reg_msg,.．．．．.,1
+	zin_reg_msg,真愚蠢．．．cr不愧是人類,1
+	zin_reg_face_1,0
+	zin_reg_msg,多拉，你沒事嗎？,0
+	zin_reg_face_1,571
+	zin_reg_msg,額，啊．．.,1
+	zin_reg_msg,這．．.,0
+	zin_reg_qnar,多拉被梅蘿的攻擊打中了，受了重傷。
+	zin_reg_msg,多拉，振作點！！,0
+	zin_reg_qnar,之後，多拉被送往醫院後不久死亡了。
+	set_dead,571,0
+	set_dead,896,0
+	end
+chk_mval_else
+chk_mval,覇王:758=571,,,,,
+chk_mval_then
+//ACT1が多拉配下
+	zin_reg_face_0,758
+	zin_reg_msg,多拉！！,0
+	zin_reg_msg,嗯，還有人,1
+	zin_reg_msg,這樣的話就要處理2個人了,1
+	zin_reg_msg,你、是什麼．．．cr你不是人,0
+	zin_reg_msg,哈哈哈！！死吧！！！,1
+	bgm_se,13
+	zin_reg_msg,.．．．．.,1
+	zin_reg_msg,真愚蠢．．．cr不愧是人類,1
+	zin_reg_face_1,0
+	zin_reg_msg,多拉，你沒事嗎？,0
+	zin_reg_face_1,571
+	zin_reg_msg,額，啊．．.,1
+	zin_reg_msg,這．．.,0
+	zin_reg_qnar,多拉被梅蘿的攻擊打中了，受了重傷。
+	zin_reg_msg,多拉，振作點！！,0
+	zin_reg_qnar,之後，多拉被送往醫院後不久死亡了。
+	set_dead,571,0
+	set_dead,896,0
+	end
+chk_mval_else
+	//多拉死亡
+	zin_reg_msg,啊．．.,0
+	zin_reg_msg,哈哈哈！！死吧！！！,1
+	bgm_se,13
+	zin_reg_msg,不！！！,0
+	zin_reg_face_0,0
+	zin_reg_msg,哼，就沒有更有挑戰性的對手了麼,1
+	zin_reg_msg,那麼我就能快速的變強了,1
+	zin_reg_title,多拉死亡了。
+	set_dead,571,0
+	end

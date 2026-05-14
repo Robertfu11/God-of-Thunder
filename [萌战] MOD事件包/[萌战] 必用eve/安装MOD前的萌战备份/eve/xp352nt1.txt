@@ -1,0 +1,20 @@
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,啊啊．．．．call_pid21．．．．cr更多．．．．更加用力！！　更猛烈的！！,pid2
+zin_old_msg,你這是怎麼了、到底．．．．今天的call_pid12有點奇怪啊．．．,pid1
+zin_old_msg,拜託．．什麼都不要問．．．．更．．．更深處．．．啊啊啊．．嗯啊啊啊啊啊！！,pid2
+zin_old_msg,明白了、這麼積極的call_pid12好久都沒見過了。這將是一個愉快的夜晚,pid1
+zin_old_msg,啊啊啊．．．咿咿．．．果然還是call_pid21最好了．．．,pid2
+zin_old_msg,好喜歡．．．call_pid21的事．．．我好愛你,pid2
+zin_old_msg,啊啊、cf_pid1也,pid1
+zin_old_msg,來吧、把call_pid21的tane_str．．．tane_str給我吧！！,pid2
+zin_old_msg,啊．．．這麼激烈的動腰的話．．．cr即使不說、我也快要射了！！,pid1
+zin_old_msg,啊．．．咿咿．．．．去了！！　去了啊啊啊啊啊啊啊啊！！,pid2
+zin_flush,pid2
+zin_old_msg,唉．．．．今天的call_pid12哈．．．哈、哈．．真的是好激烈．．．,pid1
+zin_old_msg,是、是啊．．．偶爾．．．這樣一下．．．也很不錯吧？,pid2
+zin_old_msg,啊啊、好色的妻子我也很喜歡啊,pid1
+zin_old_msg,謝謝、call_pid21,pid2
+zin_reg_button,16
+zin_reg_exit
+end

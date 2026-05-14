@@ -1,0 +1,6 @@
+//²¿ÏÂ¥ª¥ë¥É¡¡òT\Î» 20%
+chk_wsts,pid2
+case_normal
+	txtload,xp300k_a
+case_botebara
+	txtload,xp300k_b

@@ -1,0 +1,99 @@
+//■強姦
+//■相手：妻（妃）
+//■Ｈ体位：バック
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,仕方ない、では力づくでやるとするか,0
+	zin_reg_msg,ああっ！！　やだっ！！放してください！！,1
+	zin_reg_msg,言うことを聞け！！,0
+	zin_reg_msg,いやああっ！！,1
+	zin_reg_msg,フフ、か弱いな,0
+	zin_reg_msg,力でcallself_pid1にかなうわけがあるまい,0
+	zin_reg_msg,さて、じっくり味わうとするか,0
+	zin_reg_msg,ひううううっ,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,あああっ．．．ああ．．こんな、格好で．．．いやです．．．,pid2
+	zin_old_msg,フフッ．．．無理矢理がいいんだろう。crそら、動くぞ,pid1
+	zin_old_msg,．．んん．．い、たっ．．．いた、いっ,pid2
+	zin_old_msg,こんな．．こんなふうに．．むりやり．．されてもっ．．．,pid2
+	zin_old_msg,こころと．．こころがいたくなる．．だけ、ですっ．．．なのに．．どうしてっ．．．,pid2
+	zin_old_msg,くく．．．callself_pid1のほうは、気持ちいいぞ,pid1
+	zin_old_msg,あぐ．．ひ．．ひぁ．．ああっ．．．あああっ！,pid2
+	zin_old_msg,call_pid2も、奥を小突かれて、どんどん潤んできているぞ？,pid1
+	zin_old_msg,んん．．んぁ．．だ、め．．もう．．これ、いじょうっ．．．あああっ．．．,pid2
+	zin_old_msg,ぐちゅぐちゅといやらしい音を立てているのが、自分でもわかるだろう？,pid1
+	zin_old_msg,んん．．んぁ．．あ．．ああああっ．．．,pid2
+	zin_old_msg,フフッ、いやらしい声だ。それに、中もうねってきている．．．,pid1
+	zin_old_msg,そん、な．．いやらしい声なんて．．だして、ませんっ,pid2
+	zin_old_msg,言い訳などいい。call_pid2はcallself_pid1の精を受け止めればいいんだ,pid1
+	zin_old_msg,そら．．出すぞっ,pid1
+	zin_old_msg,だめ．．です．．こんな．．こんな．．ふうに．．赤ちゃん．．さずかりたく．．ないですっ,pid2
+	zin_flush,pid2
+	zin_old_msg,あああ．．あつい．．call_pid1っ．．．ひどい、んんんっ．．．,pid2
+	zin_old_msg,たくさん．．たくさん．．callself_pid2の．．なかで．．ふるえてっ．．．,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,お前の処女はcallself_pid1のものだ,0
+	zin_reg_msg,あきらめてマタを開くのだな,0
+	zin_reg_msg,そんなの、イヤです！！,1
+	zin_reg_msg,力づくでも従わせるまでだ,0
+	zin_reg_msg,ああ、ダメ！！crいやあああ！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,いた、いっ．．．ひどいよぉっ．．．,pid2
+	zin_old_msg,こんなっ．．．こんな．．はずかしい格好でっ．．．はじめて、なんてっ．．．あああっ,pid2
+	zin_old_msg,一生忘れられない初体験になっただろう？,pid1
+	zin_old_msg,こんなっ．．．こんな．．はじめてっ．．．ほんとうにっ．．．ひっくっ．．．ひっくっ．．．,pid2
+	zin_old_msg,泣いているのか？,pid1
+	zin_old_msg,ないて．．いませんっ．．．ただ．．かなしい、だけ、ですっ．．．,pid2
+	zin_old_msg,そうか、だったら快楽を与えて、悲しさを忘れさせてやろう,pid1
+	zin_old_msg,んんんっ！んあああ．．あ．．ひぁ．．いた．．あああっ．．．,pid2
+	zin_old_msg,だめ．．いたいん、です．．うごか、ないで．．うごかないで．．くださいっ,pid2
+	zin_old_msg,動かないと、お互いに気持ちよくなれないだろう,pid1
+	zin_old_msg,気持ちよく．．なれなくて．．いい、ですっ．．．,pid2
+	zin_old_msg,んん．．んぁ．．こんな．．こんなの．．ひど、い．．んんんんんっ！,pid2
+	zin_old_msg,あああ．．な、なにっ？なかで．．びくびくあばれて．．ふくらんでっ,pid2
+	zin_old_msg,call_pid2の中に、たっぷりと精をくれてやる．．．,pid1
+	zin_old_msg,そん、な．．んん．．だめ．．おねがい．．ひぁ．．あああっ．．．,pid2
+	zin_flush,pid2
+	zin_old_msg,でて、る．．んん．．んあああ．．熱いの．．なかで．．たくさん．．でて、るっ．．．,pid2
+	end
+//孕みパターン
+case_botebara
+	zin_reg_msg,イヤと言われればますますやりたくなるもの,0
+	zin_reg_msg,腹の大きな妻を抱くのも面白いものよ,0
+	zin_reg_msg,い、今はダメです,1
+	zin_reg_msg,産まれるまで我慢してください,1
+	zin_reg_msg,それはできぬ！！,0
+	zin_reg_msg,ああ、や、やめて！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,んんっ．．．だ、めっ．．．この格好っ．．．おく、まで．．赤ちゃんがいる．．子宮までっ．．．,pid2
+	zin_old_msg,深く．．つながって．．くるしくてっ．．．あああ．．んんっ．．．,pid2
+	zin_old_msg,フフッ．．．そうだな、この体勢だと、こうしてずっしり重くなったcall_pid2の子宮を、たっぷりと小突いてやれるぞ,pid1
+	zin_old_msg,．．ふああああ．．だめ．．だめぇ．．おく．．だめっ．．．,pid2
+	zin_old_msg,あ．．あ．．んん．．んあああ．．あ．．あぐ．．ひんっ！,pid2
+	zin_old_msg,気持ちいいか、call_pid2？,pid1
+	zin_old_msg,気持ちよく．．ありま．．せんっ．．．,pid2
+	zin_old_msg,こんな．．はずかしい格好で．．むりやりされて,pid2
+	zin_old_msg,きもちいいはず．．ありま、せんっ．．．,pid2
+	zin_old_msg,そうか．．．だったら一方的に快楽を求めさせてもらうぞ,pid1
+	zin_old_msg,んん．．んぁ．．あ．．んん．．だ、め．．はげ、しいっ．．．,pid2
+	zin_old_msg,はげしく．．おく．．ノック．．ノック．．しないで．．ああああっ！,pid2
+	zin_old_msg,どんどんとcall_pid2の奥が窮屈になっているぞ．．．,pid1
+	zin_old_msg,callself_pid1の精を欲しがっているんだな,pid1
+	zin_old_msg,やぁ．．や．．ちがい、ます．．ほしがって．．ませんっ．．．,pid2
+	zin_old_msg,遠慮するな、もう一人孕んでしまうくらい、たっぷりと出してやる,pid1
+	zin_old_msg,そんな．．あ．．あああ．．んん．．だめ．．だめっ．．．,pid2
+	zin_old_msg,あああ．．callself_pid2の．．なかで．．おおきく．．んん．．んんんんんんんんっ！,pid2
+	zin_flush,pid2
+	zin_old_msg,ひああああ．．熱いの．．おくに．．ながれ、こんで．．んんんっ．．．,pid2
+	zin_old_msg,だめぇっ．．．そこに．．はいって．．こない、でっ．．．,pid2
+	zin_old_msg,そこっ．．．赤ちゃんの．．．たいせつな．．ところ．．．ああああっ．．．,pid2
+	end

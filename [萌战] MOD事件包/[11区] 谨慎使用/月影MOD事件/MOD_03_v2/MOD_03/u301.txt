@@ -1,0 +1,53 @@
+eve_start
+if_val,状態:player=4
+eve_end
+for,PMAX,193,1
+// chk_eveflg,193,988
+// chk_eveflg_then
+// set_dead,eveflg193,0
+// continue
+// chk_eveflg_else
+                chk_eveflg,193,player
+                chk_eveflg_then
+                continue
+                chk_eveflg_else
+                chk_msts,eveflg193,覇王,player,状態,4,攻撃,>75,勲功,<12000,NON,0,NON,0
+                chk_msts_then
+                upd_sts,eveflg193,4,12080
+                chk_msts_else
+                chk_msts,eveflg193,覇王,player,状態,4,防御,>70,知力,>70,勲功,<12000,NON,0
+                chk_msts_then
+                upd_sts,eveflg193,4,12080
+                chk_msts_else
+                chk_msts,eveflg193,覇王,player,状態,4,攻撃,>70,防御,>70,勲功,<12000,NON,0
+                chk_msts_then
+                upd_sts,eveflg193,4,12080
+                chk_msts_else
+                chk_msts,eveflg193,覇王,player,性別,1,状態,4,父,player,NON,0,NON,0
+                chk_msts_then
+                upd_sts,eveflg193,4,12300
+                        continue
+                chk_msts_else
+                chk_msts,eveflg193,覇王,player,性別,2,状態,4,父,player,NON,0,NON,0
+                chk_msts_then
+                upd_sts,eveflg193,4,12100
+                        continue
+                chk_msts_else
+                chk_msts,eveflg193,覇王,player,性別,2,状態,8,攻撃,>74,NON,0,NON,0
+                chk_msts_then
+                set_sikan,eveflg193,player
+                        continue
+                chk_msts_else
+                chk_msts,eveflg193,覇王,player,性別,2,状態,8,外交,>84,NON,0,NON,0
+                chk_msts_then
+                set_sikan,eveflg193,player
+                        continue
+                chk_msts_else
+                chk_msts,eveflg193,覇王,player,性別,2,状態,8,防御,>74,知力,>74,NON,0
+                chk_msts_then
+                set_sikan,eveflg193,player
+                        continue
+                chk_msts_else
+                    continue
+                 next
+set_eveflg,193,0

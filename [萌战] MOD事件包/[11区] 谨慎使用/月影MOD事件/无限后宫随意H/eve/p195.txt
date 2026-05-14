@@ -1,0 +1,13 @@
+bgm_chg,60
+zin_reg_event,,pid1,pid2,,gzin8
+zin_reg_msg,call_pid21、是這裏嗎?,1
+zin_reg_msg,噢噢，是p_name2啊，怎麼了？,0
+zin_reg_msg,目前我們的軍隊面臨著資金不足的情況,1
+zin_reg_msg,恩，確實如你所說，真是讓人頭疼呢,0
+zin_reg_msg,雖然是微不足道的力量，但我們p_name2派可以提供一些資金支持,1
+zin_reg_msg,什麼，這是真的嗎？,0
+zin_reg_msg,為國家大事盡忠義是作為臣下理所應當做的,1
+zin_reg_msg,噢噢，有像你這樣的部下，真是cf_pid1的福氣啊,0
+zin_reg_title,p_name2提供了buf_str1。
+zin_reg_button,0
+end

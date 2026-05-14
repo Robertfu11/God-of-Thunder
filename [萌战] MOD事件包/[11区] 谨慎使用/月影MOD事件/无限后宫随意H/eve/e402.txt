@@ -1,0 +1,40 @@
+eve_start
+	if_eveflg,43,0
+	if_aft_date,84,2
+	//プレイヤーはパグンではない
+	if_not_player,621,0
+	//ワードがパグン配下
+	if_poid,813,621
+	//9,8に要塞建設可能か？
+	if_cfpos,9,8,621
+eve_end
+
+set_eveflg,43,1
+
+bgm_chg,53
+get_kunpsn,621
+//zin_reg_init
+zin_reg_event,巴庫恩的王宮,621,pval,,gzin8
+zin_reg_qnar,巴庫恩在雷達無法探測的重力防壁內部秘密建造著一個要塞。
+zin_reg_msg,巴庫恩大人、要塞已經竣工了,1
+zin_reg_msg,是麼、終於完成了啊,0
+zin_reg_msg,解除重力防壁、艦隊開始移動,0
+zin_reg_msg,明白,1
+zin_reg_msg,好了、去叫瓦德過來,0
+bl_fadeout
+bl_fadein,gzin8
+zin_reg_event,巴庫恩的王宮,621,813,,gzin8
+zin_reg_msg,啥事兒啊老爹,1
+zin_reg_msg,從今天開始、你作為司令、去剛竣工的新型要塞赴任,0
+zin_reg_msg,要塞司令？,1
+zin_reg_msg,沒錯、是以你的名字命名的,0
+zin_reg_msg,瓦德要塞麼．．．看起來很好玩的樣子,1
+zin_reg_msg,然後就是擔任行星的主要防禦工作,0
+zin_reg_msg,正合我意、正好我也想出去走走咧,1
+zin_reg_title,瓦德要塞出現在星海之中。
+zin_reg_button,0
+//zin_reg_exit
+
+//要塞建設
+set_fort,813,9,8,1,瓦德
+end

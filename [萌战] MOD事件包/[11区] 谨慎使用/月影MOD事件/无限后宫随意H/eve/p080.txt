@@ -1,0 +1,40 @@
+bgm_chg,35
+//zin_reg_init
+zin_reg_event,不能花心！！,pid1,pid2,zin23,gzin18
+	zin_reg_msg,p_name2！！,0
+	zin_reg_msg,老公，你怎麼了？,1
+	zin_reg_msg,這麼興奮,1
+	zin_reg_msg,你外遇了吧．．．,0
+	zin_reg_msg,哦、突然說什麼啊,1
+	zin_reg_msg,最近、樣子很奇怪,0
+	zin_reg_msg,查了一下、不出所料．．．,0
+	zin_reg_msg,這裡證據都具備了,0
+	zin_reg_msg,嗯、這是．．．cr這樣．．．,1
+	zin_reg_msg,都露餡了,0
+	zin_reg_msg,啊、對不起、cr老公,1
+	zin_reg_msg,這是最后了、真的喲cr已經發生這樣的事,1
+	zin_reg_msg,所以、希望這次被原諒,1
+	zin_reg_msg,發發慈悲．．．,1
+zin_reg_2sel,原諒,不允許
+get_resp
+ret_sel1
+	zin_reg_msg,好吧cr這次就原諒吧,0
+	zin_reg_msg,但是、下次就離婚cr好吧,0
+	zin_reg_msg,嗯、知道了、老公．．．,1
+	zin_reg_button,0
+//	zin_reg_exit
+	end
+ret_sel2
+	zin_reg_msg,不行,0
+	zin_reg_msg,已經不能原諒了,0
+	zin_reg_msg,啊、這樣．．．,1
+	zin_reg_msg,任憑老婆被私通的頹廢男主人的傳言在全國蔓延嗎,0
+	zin_reg_msg,那樣的、笨蛋．．．,1
+	zin_reg_msg,已經夠了、還是離婚吧,0
+	zin_reg_msg,就這樣,0
+	zin_reg_msg,哈哈哈．．．cr知道了．．．,1
+	zin_reg_button,0
+//	zin_reg_exit
+	//離婚設定
+	set_rikon,pid1
+	end

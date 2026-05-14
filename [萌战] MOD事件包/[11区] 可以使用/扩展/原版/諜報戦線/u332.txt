@@ -1,0 +1,65 @@
+auth_uid,123D
+//	諜報戦線　流言と介入イベント用月処理
+//	条件
+//	覇王か派閥長
+//	ランダム1/4
+//get_bgst_habatu,poid_player,0
+eve_start
+	if_orval,勲功:player=13000,派閥:player=player,,,
+	if_rnd,4
+	if_eveflg,112,>0
+eve_end
+//各種初期設定
+set_eveflg,216,eveflg112
+set_eveflg,217,eveflg113
+set_epid1,player
+set_epid2,eveflg217
+set_epid3,eveflg216
+//112番に格納されている人物が覇王なら流言へ、それ以外なら介入支援
+chk_mval,勲功:eveflg216=13000,,,,
+chk_mval_then
+	txtload,u331_5
+chk_mval_else
+	//支援者が派閥長のままでいるか調べる
+	chk_mval,派閥:pid3!pid3,,,,
+	chk_mval_then
+		//派閥長でなくなっている場合はフラグを初期化して終了する
+		set_eveflg,112,0
+		set_eveflg,113,0
+		end
+	chk_mval_else
+	//pid3の無派閥者を探す
+	set_eveflg,211,0
+	for,1000,210,1
+		//支援派閥と同じ覇王に属する王族以下の無派閥士官
+		get_mpid,状態=2,覇王=覇王:pid3,派閥=0,勲功<=12080,,,
+		set_eveflg,212,pval
+		chk_eveflg,212,>0
+		chk_eveflg_then
+			add_eveflg,211,1
+			gosub,*habatuaddproc
+		chk_eveflg_else
+		continue
+	next
+	for,1000,210,1
+		get_mpid,状態=2,覇王=覇王:pid3,派閥!0,派閥!pid3,勲功<=12080,,
+		set_eveflg,212,pval
+		chk_eveflg,212,>0
+		chk_eveflg_then
+			chk_mval,派閥:eveflg212!eveflg212,,,,
+			chk_mval_then
+				add_eveflg,211,1
+				gosub,*habatuaddproc
+			chk_mval_else
+		chk_eveflg_else
+		continue
+	next
+	end
+*habatuaddproc
+	chk_eveflg,211,<3
+	chk_eveflg_then
+		//二人まで支援派閥へ
+		upd_sts,eveflg212,派閥,pid3
+	chk_eveflg_else
+		return
+

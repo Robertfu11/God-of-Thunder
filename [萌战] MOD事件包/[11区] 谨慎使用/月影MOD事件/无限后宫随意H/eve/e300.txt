@@ -1,0 +1,83 @@
+eve_start
+	if_date,88,5
+	//地球が阿古迪巴領
+	if_hid,33,16
+	//ララウィンが阿古迪巴配下
+	if_poid,537,16
+	if_not_poid,609,16
+eve_end
+
+chk_exeplayer,16,0,0,0
+chk_exeplayer_else
+	chk_mval,状態:player=2,,,,,,
+	chk_mval_then
+		bgm_chg,60
+		get_kunpsn,poid_player
+		set_epid1,poid_player
+		//zin_reg_init
+		zin_reg_event,p_name1の王宮,pid1,pval,,gzin8
+		zin_reg_msg,p_name1様、ただいまの報告によると阿古迪巴が死んだそうです,1
+		zin_reg_msg,ほう．．．．crついに逝ったか．．．,0
+		zin_reg_msg,どうやら地球の勢いもここまでだな,0
+		zin_reg_msg,それで次の覇王は誰だ？,0
+		zin_reg_msg,ララウィン．．．．crと聞いております,1
+		zin_reg_msg,ララウィンか．．．cr確かそのような王子がおったな,0
+		zin_reg_msg,果たしてオヤジを超えられるのか．．．,0
+		zin_reg_msg,お手並み拝見といこうではないか,0
+		zin_reg_button,0
+		//zin_reg_exit
+		//ララウィンに覇王継承
+		chg_haou,16,537
+		set_dead,16,0
+		set_run_msg,阿古迪巴が死亡しララウィンが覇王になりました。
+		end
+	chk_mval_else
+		//ララウィンに覇王継承
+		chg_haou,16,537
+		set_dead,16,0
+		set_run_msg,阿古迪巴が死亡しララウィンが覇王になりました。
+		end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,阿古迪巴の王宮,16,537,zin30,gzin9
+zin_reg_qnar,阿古迪巴は体調の悪い日が続き、自らの死期が近いことを悟っていた。
+zin_reg_msg,父上、お加減はいかがですか？,1
+zin_reg_msg,むう．．．どうやらワシもそう長くなさそうだ,0
+zin_reg_msg,何を弱気な．．．,1
+zin_reg_msg,ララウィンよ、cr次の覇王はお前だ,0
+
+//布朗の状態判断
+chk_mval,状態:625=2,覇王:625=16,,,
+chk_mval_then
+	zin_reg_msg,しかし心配は布朗のことだ,0
+	zin_reg_msg,ヤツの派閥は今最大勢力,0
+	zin_reg_msg,王位を狙っているのは間違いない,0
+	zin_reg_msg,ワシが死んだらヤツがどう動くかわからん,0
+	zin_reg_msg,せめて阿茲瑪がおれば布朗をうまく抑えてくれたものを．．．,0
+	zin_reg_msg,父上、そのようなことは心配なさらず,1
+	zin_reg_msg,はやく元気になることだけを考えてください,1
+	zin_reg_msg,うむ．．．．．crそうだな,0
+	goto,*join01
+chk_mval_else
+	zin_reg_msg,私に務まるでしょうか．．．,1
+	zin_reg_msg,按ずるな、周りの者が助けてくれよう,0
+	zin_reg_msg,せめて兄上がおられれば．．．,1
+	zin_reg_msg,阿茲瑪の事は言うな,0
+	zin_reg_msg,あの男は初めからいなかったのだ,0
+	zin_reg_msg,そう思え,0
+	zin_reg_msg,は、はい．．．,1
+	zin_reg_msg,これでワシも安心してあの世へ行ける,0
+
+*join01
+zin_reg_qnar,その数日後、阿古迪巴は様態が急変しそのまま崩御した。cr阿古迪巴の遺言に従い王位はララウィンが継ぐことになった。
+zin_reg_title,ララウィンが覇王になりました。
+zin_reg_button,0
+//zin_reg_exit
+//ララウィンに覇王継承
+chg_haou,16,537
+set_dead,16,0
+//ララウィンにプレイヤー変更
+chg_player,537,16
+end

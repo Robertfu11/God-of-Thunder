@@ -1,0 +1,104 @@
+//海賊オルド　妹
+zin_old_init
+zin_old_img_pid,pid2,1
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	//体位ごとに分岐
+	switch_otaii,pid2
+	case_okijo
+		zin_old_msg,call_pid21的tin_str、好大啊．．．．crp_name2的小穴．．．要裂開了啊！,pid2
+		zin_old_msg,你的裡面才真的是超正點啊。轉眼間就要高潮了啊,pid1
+		zin_old_msg,啊啊嗯、那就就去了的話，可是不行的喲。我的心情才剛剛覺得有些愉悅啊！,pid2
+		zin_old_msg,不要緊的、我會先把你的小穴、搞到高潮的,pid1
+		zin_old_msg,真的？　p_name2的腰技堅持得住嗎？,pid2
+		zin_old_qnar,p_name2靈巧的在p_name1的身上扭動著、開始激烈的上下套弄起來。
+		zin_old_msg,真的．．．．好棒．．．．tin_str有．．．一種被吸走的感覺．．．,pid1
+		zin_old_msg,還有這樣的感覺啊！！,pid2
+		zin_old_msg,嗚嗯嗯嗯嗯！！,pid1
+		zin_flush,pid2
+		zin_old_msg,誒、怎麼？　難道．．．．已經高潮了？,pid2
+		zin_old_msg,呵呵、看來是那樣的,pid1
+		zin_old_msg,真是的、我都還、沒有高潮呢！！,pid2
+		zin_old_msg,抱歉啊、下次我會注意忍耐的、今天還請原諒,pid1
+		zin_old_msg,真是、低級啊！！,pid2
+		end
+	case_oback
+	case_oseijo
+	default_otaii
+		zin_old_msg,啊嗯．．．call_pid21的tin_str．．．很熱呢．．．,pid2
+		zin_old_msg,你的小穴裡面噗溜噗溜的。已經這麼濕了啊。真是個好色的妹妹啊,pid1
+		zin_old_msg,那、不要說這樣的話啊、call_pid21！！,pid2
+		zin_old_msg,對不起啊、很喜歡吧、色情的妹妹呢,pid1
+		zin_old_msg,哦、真的．．．．啊啊．．．很棒喲call_pid21．．．噗嗤噗嗤的弄！！,pid2
+		zin_old_msg,還要更多、更多的抽動啊！！,pid2
+		zin_old_msg,好吧．．．那這樣如何！！,pid1
+		zin_old_msg,啊嗚嗯嗯嗯嗯．．．好深．．．深啊call_pid21！！　p_name2的子宮．．．要壞了呢！！,pid2
+		zin_old_msg,啊、啊嗯．．．已經．．．高潮了．．．call_pid21的tane_str．．．滿滿的．．．滿滿的射進來了啊啊啊啊！！,pid2
+		zin_old_msg,好、全都射出來了！　孕育一個精力充沛的孩子吧！！,pid1
+		zin_old_msg,嗯、好．．．call_pid21的孩子．．．想孕育個call_pid21的孩子啊啊啊啊啊！！！！,pid2
+		zin_flush,pid2
+		end
+
+//初膜パターン
+case_hatumaku
+		zin_old_msg,啊啊嗯．．．call_pid21君的．．．tin_str．．．插進來了啊．．．,pid2
+		zin_old_msg,是啊．．．這就是p_name2的裡面嘛．．．cr緊緊的糾纏著．．．怎麼樣？　稍稍感到舒服了嗎？,pid1
+		zin_old_msg,嗚、嗚嗯．．．雖然不太明白．．．但很舒服．．．,pid2
+		zin_old_msg,好、那我慢慢的動。不用擔心的、心情會慢慢變得舒暢的,pid1
+		zin_old_msg,是、是嗎．．．啊．．．啊嗯．．．嗯嗯．．．,pid2
+		zin_old_msg,怎麼樣？　這樣還行嗎？,pid1
+		zin_old_msg,啊嗚．．．不、不行了．．．這是怎麼．．．那裡．．．好、好想．．．,pid2
+		zin_old_msg,哈哈、知道了、p_name2是這裡吧！！,pid1
+		zin_old_msg,啊．．．啊啊嗯！！　啊、不行啊call_pid21！！　那裡、不要摩擦啊！！,pid2
+		zin_old_msg,p_name2、總覺得．．總覺得、變得奇怪了！！！,pid2
+		zin_old_msg,是嗎、p_name2啊．．．第一次做就高潮了嗎,pid1
+		zin_old_msg,嗯、高潮？．．．啊。高潮了．．．什麼、什麼啊！！,pid2
+		zin_old_msg,馬上就讓你明白、看著啊！　記住這種漸漸涌上來的感覺了吧？,pid1
+		zin_old_msg,誒、什麼！　什麼啊．．．有什麼．．．p_name2的身体．．．啊、啊、不行．．．已經．．．不能忍耐下去了！！！！,pid2
+		zin_flush,pid2
+		zin_old_msg,哈～～哈～～到底．．．我．．是怎麼了．．．哈～～,pid2
+		zin_old_msg,一幅已經高潮的樣子了呢。舒服吧。那就是高潮、高潮的感覺啊,pid1
+		zin_old_msg,哈～～哈～～我．．．．高潮了啊啊啊啊．．．,pid2
+		end
+
+//孕みパターン
+case_botebara
+	//体位ごとに分岐
+	switch_otaii,pid2
+	case_okijo
+		zin_old_msg,call_pid21的tin_str、好大啊．．．．crp_name2的小穴．．．要裂開了啊！,pid2
+		zin_old_msg,陰蒂都露來了啊、p_name2的小穴也長大了啊,pid1
+		zin_old_msg,不過、還是玩弄處女時比較舒服啊,pid1
+		zin_old_msg,嘛．．．像平常那樣如果比我先去的話是不行的吧,pid2
+		zin_old_msg,我知道了,pid1
+		zin_old_msg,真的？　肚子裡的寶寶啊、小心的像之前那樣動腰就好啊,pid2
+		zin_old_qnar,p_name2靈巧的在p_name1的身上扭動著、開始激烈的前後套弄起來。
+		zin_old_msg,喂、喂．．．這樣前後的動作比之前還要色情．．．啊、心情真好．．．,pid1
+		zin_old_msg,是、是嗎？　只是按照寶寶的思考行動而已嘛．．．,pid2
+		zin_old_msg,嗚啊啊啊啊！！,pid1
+		zin_flush,pid2
+		zin_old_msg,誒、怎麼？　難道．．．．已經高潮了？,pid2
+		zin_old_msg,呵呵、看來是那樣的,pid1
+		zin_old_msg,又那樣、我還、沒去！！,pid2
+		zin_old_msg,抱歉啊、下次我會注意忍耐的、今天還請原諒,pid1
+		zin_old_msg,已經、總是這樣啊！！,pid2
+		end
+	case_oback
+	case_oseijo
+	default_otaii
+		zin_old_msg,啊嗯．．．call_pid21的tin_str．．．很熱呢．．．,pid2
+		zin_old_msg,你的小穴裡面噗溜噗溜的。孕育著siru_str能還能來這麼多水啊。真是個好色的妹妹啊,pid1
+		zin_old_msg,那、不要說些奇怪的話吧、call_pid21！！,pid2
+		zin_old_msg,但是、很高興啊、懷孕的妹妹比之前更加色情呢,pid1
+		zin_old_msg,嗚、嗚嗯．．．因為．．．總覺得比以往更容易有感覺了呢,pid2
+		zin_old_msg,是嗎、那就把你那高潮的臉、再讓我好好看看啊！！,pid1
+		zin_old_qnar,這樣說著、p_name1在p_name2的身上沒有顧慮的開始揮動著腰。
+		zin_old_msg,啊、啊啊嗯！！　真是的．．．也不知道溫柔一點．．．,pid2
+		zin_old_msg,但、但是．．．非常的．．．有感覺啊啊啊啊！！,pid2
+		zin_old_msg,呵呵、懷孕了嘛、你的味道還是一樣啊．．．啊、放心吧．．．,pid1
+		zin_old_msg,啊啊！　已、已經．．．高潮了．．啊啊．．不管了．．嗯啊啊ーー！,pid2
+		zin_flush,pid2
+		end

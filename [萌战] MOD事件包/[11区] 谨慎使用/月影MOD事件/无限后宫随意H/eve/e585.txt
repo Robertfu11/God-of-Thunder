@@ -1,0 +1,25 @@
+eve_start
+	if_eveflg,31,8
+	//プレイヤーが非覇王である
+	if_pkun,player,<13000
+	if_pkun,player,>6999
+eve_end
+
+set_eveflg,31,9
+set_epid1,poid_player
+
+bgm_chg,62
+//zin_reg_init
+zin_reg_event,演唱會會場,847,844,,gzin76
+zin_reg_qnar,奧莉比婭舉行了演唱會。
+zin_reg_msg,台下的朋友們、非常感謝大家今天能來到這裏,0
+zin_reg_msg,為了感謝大家的熱情、就讓奧莉比婭獻歌到天明吧！！,0
+zin_reg_msg,今晚就請盡情的歡樂吧！！,0
+zin_reg_msg,哦哦、真是太棒了！！,1
+zin_reg_title,部下的忠誠度上升。
+zin_reg_button,0
+//zin_reg_exit
+//忠誠アップ
+ploy_up,poid_player,0,30
+ploy_up,poid_player,1,30
+end

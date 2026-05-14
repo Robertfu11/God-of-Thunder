@@ -1,0 +1,13 @@
+bgm_chg,54
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin18
+zin_reg_qnar,p_name1訪問了p_name2的住所。
+zin_regs_msg,啊呀、記得你是p_name1,記得你是p_name1,1
+zin_reg_msg,打擾你了？,0
+zin_regs_msg,不會不會、歡迎來到寒舍,沒這回事,1
+zin_regs_msg,還請隨意,還請隨意,1
+zin_reg_title,與p_name2的親密度提升了。
+zin_reg_button,0
+zin_reg_exit
+add_sinmitu,pid2,15
+end

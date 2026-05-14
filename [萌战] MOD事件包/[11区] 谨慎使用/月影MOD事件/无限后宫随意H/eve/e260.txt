@@ -1,0 +1,76 @@
+//xeve
+//琳希淩辱劇情
+eve_start
+	if_eveflg,27,0
+	//琳希、スクロックの捕虜
+	if_horyo,668,624
+eve_end
+
+set_eveflg,27,1
+set_non_virgin,668
+chk_exeplayer,624,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,61
+//zin_reg_init
+zin_reg_event,地下牢,624,668,,gzin35
+zin_reg_msg,呵呵呵，老子的願望終於實現了,0
+zin_reg_msg,沒想到能活捉你這傢伙,0
+zin_reg_msg,你．．．cr絕對會遭天譴的！！,1
+zin_reg_msg,啊哈哈哈哈哈哈,0
+zin_reg_msg,都這個地步了還想靠老天爺，老子看你是完蛋了,0
+zin_reg_msg,不是靠老天爺cr而是我絕對會殺掉你的！！,1
+zin_reg_msg,是麼，氣勢不錯,0
+zin_reg_msg,這樣才有趣,0
+zin_reg_msg,真期待你會變成什麼樣,0
+zin_reg_msg,你跪在我面前哭著哀求老子的樣子已經浮現在眼前了,0
+zin_reg_msg,還有體液流得一地都是的那個被玩壞了樣子也是啊，呵呵呵,0
+zin_reg_msg,誰、誰會變成那種樣子！！,1
+zin_reg_msg,值得期待不是麼,0
+zin_reg_msg,喂，把她帶到特別房間,0
+zin_reg_face_0,756
+zin_reg_msg,遵命！！,0
+zin_reg_msg,過來！！,0
+zin_reg_msg,不，不要，放手！！,1
+set_epid1,624
+set_epid2,668
+zin_old_init
+//男はいない差分
+zin_old_img_str,e260a,0,1
+zin_old_msg,琳希被帶到房間之後手腳都被綁了起來，身體完全動不了。,0
+zin_old_msg,呵呵呵呵，這姿勢真不錯。你那見不得人的地方現在是看得一清二楚啊,pid1
+zin_old_msg,放、放開我！！　你，你這卑鄙的傢伙！！,pid2
+zin_old_msg,哦？嘴巴那麼硬，可是這裏流出來的是什麼啊？,pid1
+zin_old_msg,光是被人看到已經有感覺了麼,pid1
+zin_old_msg,你、你說什麼！！,pid2
+zin_old_msg,既然這麼想要，就給你好了,pid1
+zin_old_msg,來！！,pid1
+zin_old_msg,啊啊！！！！,pid2
+//挿入差分
+zin_old_img_str,e260b,0,1
+zin_old_msg,不、不要．．．．．快拔出來．．．．,pid2
+zin_old_msg,嗯，年輕的就是好。皮膚滑滑的，下面也夠緊,pid1
+zin_old_msg,有、有完沒完．．．．快拔．．．出．．．來．．．,pid2
+zin_old_msg,啊哈哈哈，想動也動不了吧。再掙紮也沒用,pid1
+zin_old_msg,可、可惡．．．．．．,pid2
+zin_old_msg,斯庫洛克加快了抽插的速度。,0
+zin_old_msg,嗚嗚嗚嗚！！！　求，求你，快停下來！！！,pid2
+zin_old_msg,嗚哦哦哦哦．．．這，這個太爽了．．．簡直停不下來了,pid1
+zin_old_msg,每、每一下都能．．．突到你的子宮那！！,pid1
+zin_old_msg,不要！！　肚、肚子．．．．要被．．．弄壞了,pid2
+zin_old_msg,好，給你裏面來發老子的濃縮精華,pid1
+zin_old_msg,給我心存感激地收下！！！！,pid1
+zin_old_msg,欸，難道是！！　住、住手、求你了！！！,pid2
+//ほうけ差分
+zin_flush_file,e260c,0
+zin_old_msg,呵呵呵．．．不錯．．．,pid1
+zin_old_msg,沒想到這麼爽，下次繼續賜你濃縮精華,pid1
+zin_old_msg,好好吸收營養然後乖乖休息,pid1
+zin_old_msg,要給我懷上個好孩子哦,pid1
+zin_old_msg,．．．．．．．．．．．,pid2
+zin_reg_button,16
+//zin_reg_exit
+zin_old_exit
+end

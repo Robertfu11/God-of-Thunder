@@ -1,0 +1,43 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,妻子的背叛,pid1,pid2,,gzin18
+zin_reg_qnar,p_name2背著老公與p_name1密會。
+	zin_reg_msg,麼啊．．．強壯的tin_str最棒了,1
+	zin_reg_msg,是嗎？,0
+	zin_reg_msg,比我老公的、還要更加出色呢,1
+	zin_reg_msg,嗯嗯嗯．．．嗚嗚．．．咻嗚．．．,1
+	zin_reg_msg,哦哦哦．．．cr果然．．．,0
+	zin_reg_msg,我就喜歡你淫蕩，果然不能隨便輕視人妻啊,0
+	zin_reg_msg,哈哈、不止是嘴巴、其他的、也想要快來呀，人家都受不了了,1
+	zin_reg_msg,你真是個騷貨啊，淫水這麽多、那我不妨都嘗試一下,0
+                zin_reg_msg,騷貨，把屁股挪過來，喊我老公,0
+                zin_reg_msg,老公，塞進去，我要，快，啊……,1
+psn_putsex,1,pid2,1
+	zin_reg_msg,啊嗚．．啊啊啊．．cr厲害．．．好大．．．,1
+                zin_reg_msg,媽的，幹死你這小騷貨．．,0
+	zin_reg_msg,果然．．．．．cr輸了嗚嗚嗚．．．,1
+	zin_reg_msg,哈哈、怎麼樣．．．感受到了吧！！我插得比你老公深是不是,0
+                zin_reg_msg,嗯．．．,1
+	zin_reg_msg,好．．．好棒．．．,1
+	zin_reg_msg,像這樣的做愛．．．是第一次．．．,1
+                zin_reg_msg,你以後還要你老公干你嗎？,0
+                zin_reg_msg,嗯．．．,1
+	zin_reg_msg,什麼．．．可惡．．．那我不干你了，找你老公那條爛雞巴吧,0
+                zin_reg_msg,哦．．．不．．．不要這樣,1
+                zin_reg_qnar,慾火難耐的人妻主動爬到他的身上
+                zin_reg_msg,不，我不要我老公那條爛陰莖了,1
+                zin_reg_qnar,人妻主動把屁股貼到他的陰莖上摩擦
+                zin_reg_msg,把套子拿掉吧，我喜歡肉貼肉的感覺,0
+psn_putsex,1,pid2,1
+                zin_reg_msg,好的．．．,1
+                zin_reg_msg,啊！！．．．呃．．．你的比他大好多,1
+                zin_reg_msg,还有呢？,0
+                zin_reg_msg,比他粗，比他强一千倍一万倍,1
+	zin_reg_msg,啊嗯、哈啊啊啊！！！不行了要泄了,1
+                zin_reg_msg,那就接受你老公以外男人的精液吧哈哈哈，我会全部满满的射进你的子宫里的,0
+                zin_reg_msg,啊啊啊啊啊．．．．来了，滚烫的精液满满的射进了我的子宫里了，好舒服,1
+zin_reg_button,0
+zin_reg_exit
+//嫁の親密マイナス
+dec_sinmitu,pid2,10
+end

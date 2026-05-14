@@ -1,0 +1,39 @@
+eve_start
+    if_date,100,11
+    if_eveflg,62,4
+    if_poid,429,eveflg064
+//妃がいる
+	if_ouzoku,eveflg064,12200,606
+	set_epid2,pval
+//庫爾特尼奧が生まれている
+    if_poid,870,eveflg064
+eve_end
+
+chk_exeplayer,eveflg064,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+set_epid1,eveflg064
+set_epid3,870
+
+bgm_chg,61
+zin_reg_event,,pid1,pid2,,gzin9
+zin_reg_msg,call_pid21、那個叫帕米拉的成為王族是你的意思？,1
+zin_reg_msg,身為王子的母親,0
+zin_reg_msg,得給她相符的身份,0
+zin_reg_msg,這與p_name3的王位繼承有關,0
+zin_reg_msg,難道、p_name3要成為下一位王？,1
+zin_reg_msg,當然,0
+zin_reg_msg,怎、怎麼可能．．．,1
+zin_reg_msg,call_pid21は、你被那個女的騙了,1
+zin_reg_msg,那個女的想要成為這個星球的霸王,1
+zin_reg_msg,愚蠢的事就不要再講了,0
+zin_reg_msg,cf_pid1的孩子生了下來,0
+zin_reg_msg,那個孩子成為王有什麼不好,0
+zin_reg_msg,call_pid21完全信任那個女人啊,1
+zin_reg_msg,是被洗腦了吧,1
+zin_reg_msg,你這傢伙．．．cr再、侮辱cf_pid1可不會原諒你了,0
+zin_reg_msg,嗚嗚．．．,1
+zin_reg_button,0
+end

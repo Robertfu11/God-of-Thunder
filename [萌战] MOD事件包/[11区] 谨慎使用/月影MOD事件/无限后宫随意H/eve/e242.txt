@@ -1,0 +1,44 @@
+eve_start
+	if_eveflg,26,2
+	if_poid,163,624
+	if_poid,688,624
+eve_end
+
+set_eveflg,26,3
+
+chk_exeplayer,624,0,0,0
+chk_exeplayer_else
+end
+
+chk_exeplayer_then
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,摩西的研究室,688,163,,gzin41
+zin_reg_msg,摩西、在嗎？,1
+zin_reg_msg,達姆易！！cr什麼事嗎！！,0
+zin_reg_msg,為了你的人造人而來的,1
+zin_reg_msg,把她讓給我吧,1
+zin_reg_msg,什麼！？,0
+zin_reg_msg,還沒有調整完,0
+zin_reg_msg,還處在調整密封艙的階段,0
+zin_reg_msg,沒問題cr密封艙的階段也沒事,1
+zin_reg_msg,無理的移動有可能會死的！！,0
+zin_reg_msg,不用擔心,1
+zin_reg_msg,以後的調整都有留瓦増大人負責了,1
+zin_reg_msg,留瓦増嗎！！,0
+zin_reg_msg,沒錯,1
+zin_reg_msg,斯庫洛克大人已經等不及了,1
+zin_reg_msg,以後留瓦増大人會把他調整為完美的戰斗人造人吧,1
+zin_reg_msg,什、什麼．．．．,0
+zin_reg_msg,喂、搬出去！！,1
+zin_reg_face_1,756
+zin_reg_msg,是！！,1
+zin_reg_msg,啊、等等、cr等一下！！,0
+zin_reg_face_1,163
+zin_reg_msg,摩西！！！cr抵抗的話連你也帶走,1
+zin_reg_msg,唔．．．．．,0
+zin_reg_msg,老實看著吧,1
+zin_reg_msg,．．．．原諒我、cr欣．．．．,0
+zin_reg_button,0
+//zin_reg_exit
+end

@@ -1,0 +1,50 @@
+bgm_chg,60
+get_kunpsn,pid1
+zin_reg_event,p_name1的王宮,pid1,pval,,gzin8
+zin_reg_msg,聽說p_name3家的buf_str1被抓住了是真的嗎？,0
+zin_reg_msg,是的、您想見嘛？,1
+zin_reg_msg,嗯、帶到老地方、你懂的,0
+zin_reg_msg,尊敬！！,1
+bl_fadeout
+bgm_chg,61
+bl_fadein,gzin6
+zin_reg_event,后宮的房間,pid1,pid2,,gzin6
+zin_reg_msg,你就是p_name3家的buf_str1麼,0
+zin_reg_msg,把我帶到這種地方來、你想做什麼！！,1
+zin_reg_msg,我想做的就是、讓你為callself_pid1生個孩子,0
+zin_reg_msg,你說什麼！！,1
+zin_reg_msg,快給我把衣服脫了吧,0
+zin_reg_msg,給我退下！！cr呀、咿呀、放開我！！,1
+zin_reg_msg,吼吼吼、你的抵抗是徒勞的,0
+zin_reg_msg,不要、不要誒誒誒ーーーーっ！！,1
+bl_fadeout
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,你不會再奉仕舒服點麼,pid1
+zin_old_msg,這種、這種事情．．．不要．．．buf_str2、救救我．．．,pid2
+zin_old_msg,呵呵呵、沒用的。此時此刻p_name3的首級已經作為勝者的禮物了,pid1
+zin_old_msg,請你敬候佳音,pid1
+zin_old_msg,你騙人！！　夫君他、什麼時候被buf_str3打敗了！！,pid2
+zin_old_msg,嘿嘿、你已是我階下之囚說這些還有什麼意義,pid1
+zin_old_msg,與其有時間想這些沒用的、還不如我來讓你爽個透吧、哦裡亞！！,pid1
+zin_old_msg,哈啊！　啊啊！　啊、啊、怎麼這樣！！,pid2
+zin_old_msg,不要、不要啊．．．這麼弄、p_name2的下面．．．太突然了．．．,pid2
+zin_old_msg,嘎嘎、如何？　看起來流了好多蜜汁誒？,pid1
+zin_old_msg,怎麼、怎麼可能．．．你這種男人．．．怎、怎麼會有感覺．．．嗚嗚、咕嗚、哈啊、哈啊．．．,pid2
+zin_old_msg,看起來是真的誒、淫亂的buf_str1吶,pid1
+zin_old_msg,你真的是王族？　你這下流的女人,pid1
+zin_old_msg,這、這．．．不可能．．．嗯嗯．．可是、可是．．．這個樣子．．．要、要去了．．．啊呀啊啊啊！！,pid2
+zin_old_msg,唔唔．．．差不多我也該．．．,pid1
+zin_old_msg,さあ、滿滿的的給你種子。cr懷個好孩子吧！！,pid1
+zin_old_msg,不、不行！！　你的孩子．．．我、我不想生！！,pid2
+zin_old_msg,咕嗚嗚！！！,pid1
+zin_old_msg,噫、不要、不要、不要誒ーーーーー！！！！！,pid2
+zin_flush,pid2
+zin_old_msg,哈啊～～哈啊～～．．．這、這種事．．．,pid2
+zin_old_msg,哈哈哈、這還不算完呢。cr直到你裡面再也灌不下callself_pid1的子種為止、都不算完,pid1
+zin_old_msg,腿分開！！,pid1
+zin_old_msg,怎、怎麼會．．．buf_str2、早點來救我．．．cr不然的話．．．小寶寶．．就真的、會出來了．．．,pid2
+zin_reg_button,16
+zin_reg_exit
+set_non_virgin,pid2
+end

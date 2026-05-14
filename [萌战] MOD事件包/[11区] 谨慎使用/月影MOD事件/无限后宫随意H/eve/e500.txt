@@ -1,0 +1,30 @@
+eve_start
+	if_eveflg,67,0
+	if_aft_date,96,2
+	if_bef_date,104,2
+	if_cmpos,11,6
+//哈根が天王領
+	if_chkwsts,18,覇王,669
+	if_chkwsts,20,覇王,669
+//阿多魯塞姆は覇王ではない
+	if_not_haou,13
+eve_end
+
+set_eveflg,67,1
+
+bgm_chg,53
+get_phao
+set_epid1,pval
+get_kunpsn,pid1
+set_epid2,pval
+
+zin_reg_event,p_name1的王宮,pid1,pid2,,gzin8
+zin_reg_msg,call_pid21,1
+zin_reg_msg,大王，根據間諜的情報編號11-6黑洞出現了,1
+zin_reg_msg,哪說明了什麼呢?,0
+zin_reg_msg,說不定對今後的戰略有很大的影響。,1
+zin_reg_msg,嗯，你說的不錯。,0
+zin_reg_button,0
+//マップ変更
+set_hexmap,11,6,2
+end
