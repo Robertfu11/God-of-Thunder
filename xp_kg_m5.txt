@@ -1,0 +1,11 @@
+//タイプ５　ふぇら　ダミー
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,呵呵、還沒有丟麼,pid1
+	zin_old_msg,啊、今天怎麼這麼神勇,pid2
+	zin_old_msg,好厲害．．,pid2
+	zin_old_msg,好戲還在后頭吶！！,pid1
+	zin_old_msg,誒、要壞掉了啦！！！　啊啊啊啊,pid2
+	zin_old_msg,哼．．明天換個妞吧,pid1
+	zin_old_msg,好．．舒服．．．,pid2
+	end

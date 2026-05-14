@@ -1,0 +1,9 @@
+bgm_chg,58
+zin_reg_init
+zin_reg_event,,pid2,,zin1,gzin34
+zin_reg_msg,和哥哥生下孩子這種事．．．,0
+zin_reg_msg,今後可怎麼辦啊．．．,0
+zin_reg_title,p_name3出生了
+zin_reg_button,0
+zin_reg_exit
+end

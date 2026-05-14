@@ -1,0 +1,27 @@
+zin_reg_msg,幹．．．你幹什麼call_pid21！！,1
+zin_reg_msg,偶爾也要乖乖聽哥哥的話呀,0
+zin_reg_msg,不、不行、這樣的事情是不行的,1
+zin_reg_msg,太奇怪了！！我麼可是兄妹呀！！,1
+zin_reg_msg,一點也不奇怪！,0
+zin_reg_msg,啊、不行啊！！,1
+bgm_chg,56
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,嗚嗚．．．,pid2
+zin_old_msg,太過分了、call_pid21．．．,pid2
+zin_old_msg,那麼、現在正式開始,pid1
+zin_old_msg,誒，沒有辦法了．．．,pid2
+zin_old_msg,但是不管你怎麼說、這個以上的事情都禁止的,pid2
+zin_old_msg,乖乖把小穴給哥哥撐開,pid1
+zin_old_msg,啊、不行！！,pid2
+chk_mval,初膜:pid2=0,,,,,
+chk_mval_then
+	zin_old_msg,我．．．還是處女呀！！,pid2
+	zin_old_msg,你的處女是哥哥的東西,pid1
+	zin_old_msg,討厭呀！！,pid2
+chk_mval_else
+zin_old_msg,真是倔強．．．但是．．．,pid1
+zin_old_msg,啊！！怎麼、那樣突然！！啊啊啊啊啊啊啊！！！！,pid2
+zin_flush,pid2
+zin_old_msg,這樣的．．．這樣的感覺是怎麽回事．．．,pid2
+end

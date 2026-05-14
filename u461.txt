@@ -1,0 +1,237 @@
+//同じ覇王配下のキャラ同士の結婚イベント
+
+eve_start
+	//プレイヤーが仕官状態
+	if_val,状態:player=2
+	//毎年6月に条件判定発生
+	//if_month,6
+	//確率設定．好きな確率に設定可能。
+	//デフォルトでは、毎年６月に三分の一の確率で発生
+	//if_rnd,3
+eve_end
+
+//対象キャラの選出：状態：仕官,同覇王,男,バイオノイド以外,年齢>OLD,未婚,親密が1以上（プレイヤーが選出されるのを防ぐための条件）
+	get_mpid,状態=2,覇王=poid_player,性別=1,特殊!1,年齢>OLD,婚姻=0,親密>=1
+	set_epid1,pval
+	chk_mval,pid1<>player
+	chk_mval_then
+		//対象キャラの選出：状態：仕官,同覇王,女,バイオノイド以外,年齢>OLD,未婚,親密度が90未満(90以上はプレイヤーを好いていて、結婚しないってことで)
+		get_mpid,状態=2,覇王=poid_player,性別=2,特殊!1,年齢>OLD,婚姻=0,親密<90
+		set_epid2,pval
+		//pid1,pid2に対象がいる場合、イベントへ。いなければ終了。
+		chk_mval,pid1>0,pid2>0,,,
+			chk_mval_then
+				goto,*start
+			chk_mval_else
+				end
+	chk_mval_else
+		end
+
+*start
+//プレイヤーのＩＤ代入
+	set_epid3,player
+	bgm_chg,60
+	zin_reg_event,,pid3,,,gzin43
+	zin_reg_msg,嗯？是婚禮的邀请函嗎？,0
+	zin_reg_face,pid1
+	zin_reg_msg,哈？原來是call_pid31要结婚了啊。,0
+	zin_reg_face,pid2
+	zin_reg_msg,新娘子又會是誰呢…什么、是call_pid32？,0
+//女とオルドの経験があるかないかで分岐
+	chk_mval,オルド回数:pid2>0,,,,
+	chk_mval_then
+		goto,*motokano
+	chk_mval_else
+		zin_reg_2sel,率直的祝福,破坏！
+		get_resp
+		ret_sel1
+			rnd,2
+			case0
+				zin_reg_msg,他們倆個什么时候变成这种关系的。,0
+				zin_reg_msg,完全不知道。但是、不管怎么说也应该祝福一下！,0
+				goto,*syukuhuku
+			case1
+				zin_reg_msg,居然能娶到大众情人call_pid32、call_pid31可真是让人羡慕啊！,0
+				zin_reg_msg,好好祝福一下吧！,0
+				goto,*syukuhuku
+		ret_sel2
+			goto,*huseiritu
+*motokano
+		zin_reg_event,,pid3,,zin3,gzin43
+		zin_reg_qnar,p_name3的脑海裡不禁回想起当初一起做愛時、p_name2充滿媚態的娇躯。
+		rnd,3
+		case0
+			zin_reg_msg,嗯、認真說起來、call_pid32干起来的感觉、其實还是很不错的。,0
+			zin_reg_msg,以后可以随便都能干到、call_pid31還真是让人羡慕啊。,0
+			goto,*kitikubunki
+		case1
+			zin_reg_msg,嗯、call_pid32的man_str可是不可多得的名器啊。,0
+			zin_reg_msg,call_pid31也是得到了很好的东西啊。,0
+			goto,*kitikubunki
+		case2
+			zin_reg_msg,有過肉体关系的女人即將要成为别人的妻子、哈。,0
+			zin_reg_msg,嗯、总有一种强烈的背德感。,0
+
+*kitikubunki
+		zin_reg_msg,话虽如此、call_pid32啊…、好怀念啊。,0
+		//祝福ルートと鬼畜ルート
+		zin_reg_3sel,率直的祝福,好好品尝下新娘的味道,破坏掉！
+		get_resp
+		ret_sel1
+			rnd,2
+			case0
+				zin_reg_msg,哎呀、可喜可贺！,0
+				zin_reg_msg,嘛、反正是cf_pid3的旧衣服、哇哈哈哈哈哈哈！,0
+				goto,*syukuhuku
+			case1
+				zin_reg_msg,可喜可贺！,0
+				zin_reg_msg,那麼、call_pid31的喜酒我就喝下啦！,0
+				goto,*syukuhuku
+		ret_sel2
+			bgm_chg,61
+			zin_reg_msg,…已经好久没有品尝過call_pid32的味道啦。,0
+			zin_reg_msg,好、就这么决定啦…哈哈哈。,0
+			goto,*syukuhuku2
+		ret_sel3
+			goto,*huseiritu
+
+*syukuhuku
+		bl_fadeout
+		bgm_chg,70
+		zin_reg_event,,pid1,pid2,zin6,gzin39
+		zin_reg_msg,call_pid12…、爱着你。,0
+		zin_reg_msg,call_pid21、好高兴…。cf_pid2也爱着你。,1
+		zin_reg_title,p_name1与p_name2结婚了。
+		set_pkon,pid1,pid2
+		zin_reg_button,0
+		zin_reg_exit
+		end
+
+*syukuhuku2
+		bl_fadeout
+		rnd,2
+		//結婚前夜．女の家
+		case0
+			zin_reg_event,結婚式前夜．p_name2的家,pid2,pid3,zin53,gzin18
+			zin_reg_msg,额、call_pid23！？cr嗨、好久不见啦、怎么突然就過来啦？,0
+			zin_reg_msg,啊啊、听说call_pid32要结婚了。cr恭喜恭喜。,1
+			zin_reg_msg,呵呵、谢谢、我很高兴。,0
+			zin_reg_msg,其實我是有些话想跟你说的、方便的話、可以让我进去吗？,1
+			zin_reg_msg,…对不起、cf_pid2、因为要为明天的婚礼做准备。,0
+			zin_reg_msg,不会占用你多少時間的、怎样、好吧？,1
+			zin_reg_msg,不行啊。,0
+			zin_reg_msg,那个、如果被看到的话、call_pid21会误会的。,0
+			zin_reg_msg,请回去吧。,0
+			zin_reg_msg,误会、呐…。,1
+			zin_reg_msg,明明都已经做过那么多次了、用不了多少時間的啦。,1
+			zin_reg_msg,停、停下！cr如果被谁听到了的话！,0
+			zin_reg_msg,cf_pid1不在乎的、相反、大家都想知道的吧。,1
+			zin_reg_msg,call_pid32喜欢什么样的体位啦、弱点在哪里啦。,1
+			zin_reg_msg,call_pid31也很想知道如何让call_pid32高潮的方法吧、也许反過來還会很感谢我也说不定？,1
+			zin_reg_msg,请、请停下来啊！,0
+			zin_reg_msg,我知道了、让你进来就是啦、求求你、不要在说了！,0
+			zin_reg_msg,哈哈哈…。,1
+			//暗転．オルドへ
+			bl_fadeout
+			goto,*netoriold
+		//結婚式直前、控え室
+		case1
+			zin_reg_event,結婚式开始前．准备室,pid2,pid3,zin6,gzin61
+			bgm_se,34
+			zin_reg_msg,额、call_pid23！？,0
+			zin_reg_msg,真是、漂亮啊。,1
+			zin_reg_msg,洁白的婚纱真的很适合call_pid32啊。,1
+			zin_reg_msg,…谢、谢谢。cr那么、有什么事吗？,0
+			zin_reg_msg,离仪式开始已经没有多少时间了，我要出去了…。,0
+			zin_reg_msg,哈哈、放心、用完之后你就可以出去了。,1
+			zin_reg_msg,…用？cr事到如今cf_pid2还有什么可用的？,0
+			zin_reg_msg,很简单、仪式开始之前、我想品尝新娘的味道。,1
+			zin_reg_msg,啊、味道！？cr说、说什么蠢话！？,0
+			zin_reg_msg,脑袋不正常了吗！？,0
+			zin_reg_msg,赶紧从房间里滚出去！！,0
+			zin_reg_msg,喂喂、这么对待过去的男人不太好吧。,1
+			zin_reg_msg,明明以前每天都会那么激烈的做爱。,1
+			zin_reg_msg,停、停下、不要说了！,0
+			zin_reg_msg,万一call_pid21听到的话、cf_pid2…っ。,0
+			zin_reg_msg,…说起来、cf_pid3手里可是有当初我们做爱时的照片哦。,1
+			zin_reg_event,,pid2,pid3,zin3,gzin61
+			zin_reg_msg,你看、这个。cr怎么样、拍的不错吧？,1
+			zin_reg_msg,啊…啊啊…那样的…。,0
+			zin_reg_msg,当然我家里还有大量的照片存在着,1
+			zin_reg_msg,如果我因为被从房间赶出去而感到寂寞了的话、说不定会把照片发给大家看哦。,1
+			zin_reg_msg,怎、怎么会…。,0
+			zin_reg_msg,来吧…你要怎么办？,1
+			zin_reg_msg,为、为什么…、要对cf_pid2做这样的事…。,0
+			//暗転．オルドへ
+			bl_fadeout
+			goto,*netoriold
+
+*netoriold
+		zin_reg_init
+		zin_old_init
+		zin_old_img_pid,pid2,1
+		zin_old_msg,不要啊、请住手！crcf_pid2、已经是call_pid21的妻子了！？,pid2
+		zin_old_msg,哈哈．．．和过去一样、干起来的感觉真好！crcall_pid31是太久没做了吗？,pid3
+		zin_old_msg,嗯、call_pid21哈、call_pid23什么的、啊、不同！！,pid2
+		zin_old_msg,哈哈、最最、重要的是、我喜欢那个人！嗯嗯！,pid2
+		zin_old_msg,真是的、不行、不要那么激烈的动,pid2
+		zin_old_msg,呼呼、call_pid32的man_str因为久违了的cf_pid3的tin_str而高兴着、虽然上边的嘴不怎么坦率,pid3
+		zin_old_msg,算了、呼、cf_pid3和call_pid31到底有什么不同？,pid3
+		zin_old_msg,哼、結婚、之前、彼此要保持身体上的纯洁！啊、啊啊！,pid2
+		zin_old_msg,真是、哇哈哈哈哈哈哈哈！！真是杰作啊！,pid3
+		zin_old_msg,岂止man_str连菊花都被cf_pid3充分的开发过了、call_pid32纯洁的身体？cr哇哈哈哈哈！,pid3
+		zin_old_msg,啊、啊啊啊！cr不、不要说、不要再说了！,pid2
+		zin_old_msg,呵呵呵．．．你闻到cf_pid3的味道就变得很想做了吧！,pid3
+		zin_old_msg,我！才没有那样的感觉！cr嗯、不要！不要用力顶、那樣不行！！,pid2
+		zin_old_msg,call_pid32不是就喜欢在里边這麼被捅吗。cr怎么样、感受到了吧！,pid3
+		zin_old_msg,真是的！啊、啊哈！,pid2
+		zin_old_msg,那、那里不可以、我、变得、有感觉的、要去了！cr咿呀啊啊啊啊啊！！,pid2
+		zin_old_msg,哈哈、时间也差不多了、得赶紧射出来cr当然、是在里边中出哦！,pid3
+		zin_old_msg,阴道中灌满cf_pid3的tane_str來迎接结婚典礼吧！,pid3
+		zin_old_msg,我！不要啊、快点从man_str里拔出去！,pid2
+		zin_old_msg,今天是危险日、哈哈、不要、求求你、不要啊啊！,pid2
+		zin_old_msg,啊、我、不行了、要来啦！cr明明不想高潮、竟然、高潮了、啊、啊啊、不要啊！,pid2
+		zin_old_msg,我、要去了、去了、去了啊啊啊啊啊啊啊啊！,pid2
+		zin_flush,pid2
+		zin_old_msg,啊啊．．．好过分．．．为什么．．．明明不想要高潮的．．．cr嘩嘩．．．出来了．．．,pid2
+		zin_old_msg,．．．cf_pid2、被人操到高潮了．．．cr．．．结婚典礼前．．．明明拒绝的．．．,pid2
+		zin_old_msg,call_pid21．．．对不起．．．真的、嗚嗚嗚．．．,pid2
+		zin_old_fadeout,0,20
+		zin_reg_button,16
+		zin_reg_exit
+		//オルド終了
+		bgm_chg,70
+		zin_reg_event,結婚式,pid1,pid2,zin6,gzin39
+			zin_reg_msg,call_pid12…、我爱你。,0
+			zin_reg_msg,call_pid21…cf_pid2嗯、也、爱你、呢。,1
+			zin_reg_msg,嗯！？cr啊、啊啊、这样的…。,1
+			zin_reg_qnar,仪式开始前、p_name3射在阴道里的tane_str、正从p_name2的man_str、沿着大腿流了下来。
+			zin_reg_msg,call_pid12、你的脸好红啊、没事吧？,0
+			zin_reg_msg,嗯、嗯嗯、什、什么事都没有…。,1
+			zin_reg_msg,（…call_pid21、对不起。cf_pid2、已经被玷污了…）,1
+			zin_reg_msg,嗯、嗯嗯……呜呜…。,1
+			zin_reg_msg,call_pid12…哈哈、竟然感动的哭了、真是可爱的家伙啊。,0
+			zin_reg_msg,今后…一起组建一个幸福的家庭吧。,0
+			zin_reg_msg,好的……呜呜呜。,1
+			zin_reg_msg,我爱你、call_pid12。,0
+			zin_reg_msg,cf_pid2…我也爱你、call_pid21。,1
+			zin_reg_face_l,pid3
+			zin_reg_msg,呵呵……p_name2的味道還真是不錯啊……。,0
+			zin_reg_msg,新娘子帶著別人的精液結婚、想想真是……。,0
+			zin_reg_msg,不知以後是否有機會再和p_name2做呢？,0
+			zin_reg_title,p_name1与p_name2结婚了。
+			set_pkon,pid1,pid2
+			//弱みを握る
+			upd_sts,pid2,弱み,2
+			zin_reg_button,0
+			zin_reg_exit
+		end
+
+
+*huseiritu
+	zin_reg_msg,不行！讓call_pid31就這樣娶了call_pid32、簡直太可惜了！,0
+	zin_reg_msg,这门亲事、cf_pid3要把它破坏掉才行！！,0
+	zin_reg_qnar,利用不可思议的力量、把p_name1与p_name2的婚礼破坏掉了。
+	zin_reg_button,0
+	zin_reg_exit
+	end

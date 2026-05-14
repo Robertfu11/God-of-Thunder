@@ -1,0 +1,408 @@
+set_eveflg,240,0
+set_eveflg,241,0
+set_eveflg,242,0
+
+///pregnant
+for,PMAX,240,1
+	chk_msts,eveflg240,性別,2,懐妊,0,年齢,>12,人物汎用,>4999,NON,0
+	chk_msts_else
+	continue
+	chk_msts_then
+		set_eveflg,241,人物汎用:eveflg240
+		sub,242,eveflg241,5000	
+		set_epid1,eveflg242
+		set_epid2,eveflg240
+		set_epid3,player,0
+		///////人形x
+		chk_mval,特殊:eveflg240=1
+		chk_mval_then
+		continue
+		chk_mval_else
+		goto,*checking
+next
+end
+//////////////////////////////////////////
+*checking
+//check jyoutai
+chk_ormval,状態:eveflg240=5,状態:eveflg240=18,状態:eveflg240=2,,,
+	//heimin
+	chk_ormval_then
+	set_ninsin,pid2,pid1
+	upd_sts,pid2,32,0
+	goto,*nomalpreg
+chk_ormval_else
+chk_sts,eveflg240,0,8
+chk_sts_else
+continue
+	//horyou
+	chk_sts_then
+	set_ninsin,pid2,pid1
+	upd_sts,pid2,32,0
+	goto,*horyoupreg
+
+///////////////////////////////////////////
+*nomalpreg
+chk_sts,eveflg240,17,>0
+chk_sts_then
+	chk_existpid,pid1,pid2
+	chk_existpid_then
+	goto,*special
+	chk_existpid_else
+	goto,*normal
+chk_sts_else
+goto,*normal
+
+//////////////////////////////////////////
+*normal
+chk_sts,eveflg242,4,13000
+//ounoko
+chk_sts_then
+//iecheck
+	chk_sts,eveflg240,4,>12079
+	chk_sts_then
+	zin_reg_init
+	zin_reg_event,懐妊,pid2,,,gzin23
+	goto,*start1
+	chk_sts_else
+	zin_reg_init
+	zin_reg_event,懐妊,pid2,,,gzin18
+	goto,*start1
+*start1
+		chk_ormval,性格:eveflg240=14,性格:eveflg240=24,,,,
+		//inran
+		chk_ormval_then
+		bgm_chg,60
+			zin_reg_msg,あうっ．．．crぐふっ．．．．,0
+			zin_reg_msg,うげぇっ．．．！！,0
+			zin_reg_msg,ごほっ、ごほっ．．．cr．．．げほっ．．．,0
+			zin_reg_msg,这果然是．．．p_name1的小宝宝,0
+			zin_reg_msg,哈哈哈．．．crcall_pid1的tin_str每天都把callself_pid2的crman_str当成cr精液便器使用着
+			zin_reg_qnar,p_name2微笑着抚摸正在孕育着p_name1后代的下腹
+			zin_reg_button,0
+			zin_reg_exit
+			continue
+		//rape
+		chk_ormval_else
+		bgm_chg,56
+			zin_reg_msg,あうっ．．．crぐふっ．．．．,0
+			zin_reg_msg,うげぇっ．．．！！,0
+			zin_reg_msg,ごほっ、ごほっ．．．cr．．．げほっ．．．,0
+			zin_reg_msg,这是怎么了．．．cr突然感觉恶心．．．,0
+			zin_reg_msg,难道．．．cr是p_name1的种．．．,0
+			zin_reg_msg,呜呜呜．．．怎么会变成这样,0
+			zin_reg_qnar,因为总是在子宫中大量射精结果p_name1的精子cr成功的让p_name2的卵子受精、cr结果p_name2的肚子里有了p_name1的孩子。
+			zin_reg_button,0
+			zin_reg_exit
+			continue
+//sikannoko
+chk_sts_else
+//iecheck
+	chk_sts,eveflg240,4,>12079
+	chk_sts_then
+	zin_reg_init
+	zin_reg_event,懐妊,pid2,,,gzin23
+	goto,*start2
+	chk_sts_else
+	zin_reg_init
+	zin_reg_event,懐妊,pid2,,,gzin18
+	goto,*start2
+*start2
+		chk_ormval,性格:eveflg240=14,性格:eveflg240=24,,,,
+		//inran
+		chk_ormval_then
+		bgm_chg,60
+			zin_reg_msg,あうっ．．．crぐふっ．．．．,0
+			zin_reg_msg,うげぇっ．．．！！,0
+			zin_reg_msg,ごほっ、ごほっ．．．cr．．．げほっ．．．,0
+			zin_reg_msg,这果然是．．．p_name1的孩子,0
+			zin_reg_msg,呜呜．．．call_pid1每天趁着老公不在的空隙cr把callself_pid2的man_str当作cr精液便器来使用
+			zin_reg_msg,啊啊啊．．．callself_pid2的子宫里竟然有了别的男人的孩子．．．
+			zin_reg_qnar,因强烈的背德感而哭泣的p_name2温柔的抚摸着正孕育着p_name1后代的下腹
+			zin_reg_button,0
+			zin_reg_exit
+			continue
+			//rape
+			chk_ormval_else
+			bgm_chg,56
+			zin_reg_msg,あうっ．．．crぐふっ．．．．,0
+			zin_reg_msg,うげぇっ．．．！！,0
+			zin_reg_msg,ごほっ、ごほっ．．．cr．．．げほっ．．．,0
+			zin_reg_msg,这到底是怎么了．．．cr突然感到恶心．．．,0
+			zin_reg_msg,难道是．．．crp_name1的种．．．,0
+			zin_reg_qnar,因为总是在子宫中大量射精结果p_name1的精子cr成功的让p_name2的卵子受精、cr結果p_name2的肚子里有了p_name1的孩子。
+			zin_reg_button,0
+			zin_reg_exit
+			continue
+
+//////////////////////////////////////////
+*special
+chk_sts,eveflg242,4,13000
+//ounoko
+chk_sts_then
+//sikannoko
+chk_sts_else
+//iecheck
+	chk_sts,eveflg240,4,>12079
+	chk_sts_then
+	zin_reg_init
+	zin_reg_event,懐妊,pid2,,,gzin23
+	goto,*start2
+	chk_sts_else
+	zin_reg_init
+	zin_reg_event,懐妊,pid2,,,gzin18
+	goto,*start2
+*start2
+		chk_ormval,性格:eveflg240=14,性格:eveflg240=24,,,,
+		//inran
+		chk_ormval_then
+		bgm_chg,60
+		rnd,2
+		case0
+			zin_reg_msg,あうっ．．．crぐふっ．．．．,0
+			zin_reg_msg,うげぇっ．．．！！,0
+			zin_reg_msg,ごほっ、ごほっ．．．cr．．．げほっ．．．,0
+			zin_reg_msg,这难道是．．．p_name1的小宝宝,0
+			zin_reg_msg,哈哈哈．．．crcall_pid1的tin_str每天都把callself_pid2的crman_str当成cr精液便器来使用
+			zin_reg_qnar,p_name2微笑着抚摸正在孕育着p_name1后代的下腹
+			zin_reg_button,0
+			zin_reg_exit
+			continue
+		case1
+		zin_reg_event,懐妊,pid2,pid1,,
+			zin_reg_msg,call_pid1、稍微cr有些事情想和你说,0
+			zin_reg_msg,嗯call_pid2、什么事,1
+			zin_reg_msg,其实上个月的月经没来。,0
+			zin_reg_msg,看来 callself_pid2怀上了、crcall_pid1的孩子,0
+			zin_reg_msg,什么？或许是call_pid2丈夫的孩子?,1
+			zin_reg_msg,不会,0
+			zin_reg_msg,最近、callself_pid2的里边那个人的crtane_str一直没进来过,0
+			zin_reg_msg,嘿嘿嘿是吗,1
+			zin_reg_msg,但是看你的样子好像很高兴怀上了别人的孩子,1
+			zin_reg_msg,哎呀、你不知道吗。,0
+			zin_reg_msg,callself_pid2已经是半个call_pid1的怀孕用爱妾了啊?,0
+			zin_reg_msg,虽然不是说不爱那个人了,0
+			zin_reg_msg,哈哈哈何等贪婪的女人啊,1
+			zin_reg_msg,你做的很好call_pid2、要给我生个健康的孩子哦,1
+			zin_reg_msg,是的、call_pid1,0
+			zin_reg_qnar,p_name2微笑着抚摸正在孕育着p_name1后代的下腹
+			zin_reg_button,0
+			zin_reg_exit
+			continue
+		//rape
+		chk_ormval_else
+		bgm_chg,56
+		rnd,2
+		case0
+			zin_reg_msg,あうっ．．．crぐふっ．．．．,0
+			zin_reg_msg,うげぇっ．．．！！,0
+			zin_reg_msg,ごほっ、ごほっ．．．cr．．．げほっ．．．,0
+			zin_reg_msg,这到底是怎么了．．．cr突然感到恶心．．．,0
+			zin_reg_msg,难道是．．．crp_name1的种．．．,0
+			zin_reg_msg,呜呜呜．．．怎么会变成这样,0
+			zin_reg_qnar,因为总是在子宫中大量射精结果p_name1的精子cr成功的让p_name2的卵子受精、cr結果p_name2的肚子里有了p_name1的孩子。
+			zin_reg_button,0
+			zin_reg_exit
+			continue
+		case1
+		zin_reg_event,懐妊,pid2,pid1,,
+			zin_reg_msg,call_pid1、稍微cr有些事想和你说,0
+			zin_reg_msg,嗯call_pid2、什么事,1
+			zin_reg_msg,其实上个月的月经没有来。,0
+			zin_reg_msg,看来 callself_pid2怀上了、crcall_pid1的孩子．．．,0
+			zin_reg_msg,哈哈哈、终于,1
+			zin_reg_msg,毎日callself_pid1的精液cr在你身体里中出终于有了回报,1
+			zin_reg_msg,生下个健康的孩子给call_pid2的丈夫看看,1
+			zin_reg_msg,这、这样．．．糟糕的事
+			zin_reg_msg,哈哈哈、一起见证、crcall_pid2成为王族母亲的时刻
+			zin_reg_msg,呜呜呜．．．怎么会变成这样,0
+			zin_reg_qnar,因为总是在子宫中大量射精结果p_name1的精子cr成功的让p_name2的卵子受精、cr結果p_name2的肚子里有了p_name1的孩子。
+			zin_reg_button,0
+			zin_reg_exit
+			continue
+
+//iecheck
+	chk_sts,eveflg240,4,>12079
+	chk_sts_then
+	zin_reg_init
+	zin_reg_event,懐妊,pid2,,,gzin23
+	goto,*start3
+	chk_sts_else
+	zin_reg_init
+	zin_reg_event,懐妊,pid2,,,gzin18
+	goto,*start3
+*start3
+		chk_ormval,性格:eveflg240=14,性格:eveflg240=24,,,,
+		//inran
+		chk_ormval_then
+		bgm_chg,60
+		rnd,2
+		case0
+			zin_reg_msg,あうっ．．．crぐふっ．．．．,0
+			zin_reg_msg,うげぇっ．．．！！,0
+			zin_reg_msg,ごほっ、ごほっ．．．cr．．．げほっ．．．,0
+			zin_reg_msg,这果然是．．．p_name1的孩子,0
+			zin_reg_msg,呜呜．．．call_pid1每天趁着丈夫不在家的间隙cr把callself_pid2的man_str当作cr精液便器来使用
+			zin_reg_msg,啊啊啊．．．callself_pid2的子宫里竟然有了别的男人的孩子．．．
+			zin_reg_qnar,因强烈的背德感而哭泣的p_name2温柔的抚摸着正孕育着p_name1的孩子的下腹
+			zin_reg_button,0
+			zin_reg_exit
+			continue
+		case1
+		zin_reg_event,懐妊,pid2,pid1,,
+			zin_reg_msg,call_pid1、稍微cr有些话要和你说,0
+			zin_reg_msg,嗯call_pid2、什么事,1
+			zin_reg_msg,其实上个与的月经没有来。,0
+			zin_reg_msg,看来 、callself_pid2怀上了您的孩子,0
+			zin_reg_msg,什么？或许是call_pid2丈夫的孩子?,1
+			zin_reg_msg,不会,0
+			zin_reg_msg,最近、callself_pid2的里边那个人的crtane_str一直没进来过,0
+			zin_reg_msg,哈哈哈．．．是吗、那样的话就把孩子给生下来,1
+			zin_reg_msg,嗯嗯、非常乐意,0
+			zin_reg_msg,call_pid1的孩子的话不过多少我都会给您生,0
+			zin_reg_msg,哈哈哈、给丈夫以外的男人生孩子居然高兴成这样,1
+			zin_reg_msg,已经完全堕落成一头母猪了啊,1
+			zin_reg_msg,让callself_pid2知道身为女性的乐趣的人正式call_pid1啊？,0
+			zin_reg_msg,哈哈哈、真是个可爱的家伙。那么我会好好期待的,1
+			zin_reg_msg,是、call_pid1,0
+			zin_reg_qnar,p_name2微笑着抚摸正在孕育着p_name1后代的下腹
+			zin_reg_button,0
+			zin_reg_exit
+			continue
+			//rape
+			chk_ormval_else
+			bgm_chg,56
+			zin_reg_msg,あうっ．．．crぐふっ．．．．,0
+			zin_reg_msg,うげぇっ．．．！！,0
+			zin_reg_msg,ごほっ、ごほっ．．．cr．．．げほっ．．．,0
+			zin_reg_msg,这到底是怎么了．．．cr突然感觉恶心．．．,0
+			zin_reg_msg,难道．．．cr是p_name1的种．．．,0
+			zin_reg_qnar,因为总是在子宫中大量射精结果p_name1的精子cr成功的让p_name2的卵子受精、cr结果p_name2の的肚子里有了p_name1的孩子。
+			zin_reg_button,0
+			zin_reg_exit
+			continue
+///////////////////////////////////////////
+*horyoupreg
+
+///horyo  kunkou
+chk_msts,eveflg240,勲功,13000,NON,0,NON,0,NON,0,NON,0
+
+///王
+chk_msts_then
+bgm_chg,60
+zin_reg_init
+zin_reg_event,受精,pid2,,,gzin40
+	zin_reg_msg,あうっ．．．crぐふっ．．．．,0
+	zin_reg_msg,うげぇっ．．．！！,0
+	zin_reg_msg,ごほっ、ごほっ．．．cr．．．げほっ．．．,0
+	zin_reg_msg,这到底是怎么回事．．．cr突然感到恶心．．．,0
+		chk_ormval,性格:eveflg240=14,性格:eveflg240=24,,,,
+		//inran
+		chk_ormval_then
+		zin_reg_msg,难道．．．cr是p_name1的种．．．,0
+		zin_reg_msg,は、ははは、真是个鲁莽的家伙、尽然一点不害怕让女王怀孕,0
+		zin_reg_msg,嘛、那家伙的孩子的话．．．生下来也可以吧,0
+		zin_reg_qnar,p_name2微笑着抚摸正在孕育着p_name1后代的下腹
+		zin_reg_button,0
+		zin_reg_exit
+		continue
+		//rape
+		chk_ormval_else
+		zin_reg_msg,难道是．．．crp_name1的种．．．,0
+		zin_reg_msg,くぅ．．．呜呜呜．．．这份耻辱我是不会忘记的,0
+		zin_reg_qnar,因为总是在子宫中大量射精结果p_name1的精子cr成功的让p_name2的卵子受精、cr結果p_name2的肚子里有了p_name1的孩子。
+		zin_reg_button,0
+		zin_reg_exit
+		continue
+
+chk_msts_else
+chk_msts,eveflg240,勲功,>12199,NON,0,NON,0,NON,0,NON,0
+
+////妃
+chk_msts_then
+bgm_chg,60
+zin_reg_init
+zin_reg_event,受精,pid2,,,gzin40
+	zin_reg_msg,あうっ．．．crぐふっ．．．．,0
+	zin_reg_msg,うげぇっ．．．！！,0
+	zin_reg_msg,ごほっ、ごほっ．．．cr．．．げほっ．．．,0
+	zin_reg_msg,到底怎么回事．．．cr突然感到恶心．．．,0
+		chk_ormval,性格:eveflg240=14,性格:eveflg240=24,,,,
+		//inran
+		chk_ormval_then
+		zin_reg_msg,难道．．．cr是p_name1的种．．．,0
+		zin_reg_msg,啊哈哈哈、失敗、失敗,0
+		zin_reg_msg,那个人的tane_str挺厉害的啊,0
+		zin_reg_msg,虽然有点对不起他、cr还是生下来吧、那个人的孩子,0
+		zin_reg_qnar,p_name2微笑着抚摸正在孕育着p_name1后代的下腹
+		zin_reg_button,0
+		zin_reg_exit
+		continue
+		//rape
+		chk_ormval_else
+		zin_reg_msg,难道．．．cr是p_name1的种．．．,0
+		zin_reg_msg,呜呜呜．．．我该拿你．．．怎么办．．．,0
+		zin_reg_qnar,因为总是在子宫中大量射精结果p_name1的精子cr成功的让p_name2的卵子受精、cr結果p_name2的肚子里有了p_name1的孩子。
+		zin_reg_button,0
+		zin_reg_exit
+		continue
+
+chk_msts_else
+chk_msts,eveflg240,勲功,>12079,勲功,12201,NON,0,NON,0,NON,0
+
+////姫
+chk_msts_then
+bgm_chg,60
+zin_reg_init
+zin_reg_event,受精,pid2,,,gzin40
+	zin_reg_msg,あうっ．．．crぐふっ．．．．,0
+	zin_reg_msg,うげぇっ．．．！！,0
+	zin_reg_msg,ごほっ、ごほっ．．．cr．．．げほっ．．．,0
+	zin_reg_msg,这到底是怎么了．．．cr突然感到恶心．．．,0
+		chk_ormval,性格:eveflg240=14,性格:eveflg240=24,,,,
+		//inran
+		chk_ormval_then
+		zin_reg_msg,难道．．．cr是p_name1的种．．．,0
+		zin_reg_msg,嘛、那个人的tane_str挺厉害的嘛,0
+		zin_reg_msg,呵呵、孩子并没有罪、还是生下来吧
+		zin_reg_qnar,p_name2微笑着抚摸正在孕育着p_name1后代的下腹
+		zin_reg_button,0
+		zin_reg_exit
+		continue
+		//rape
+		chk_ormval_else
+		zin_reg_msg,难道．．．cr是p_name1的种．．．,0
+		zin_reg_msg,呜呜呜．．．我已经．．．,0
+		zin_reg_qnar,因为总是在子宫中大量射精结果p_name1的精子cr成功的让p_name2的卵子受精、cr结果p_name2的肚子里有了p_name1的孩子。
+		zin_reg_button,0
+		zin_reg_exit
+		continue
+
+////仕官
+chk_msts_else
+bgm_chg,60
+zin_reg_init
+zin_reg_event,受精,pid2,,,gzin40
+	zin_reg_msg,あうっ．．．crぐふっ．．．．,0
+	zin_reg_msg,うげぇっ．．．！！,0
+	zin_reg_msg,ごほっ、ごほっ．．．cr．．．げほっ．．．,0
+	zin_reg_msg,这到底是怎么回事．．．cr感到一阵恶心．．．,0
+		chk_ormval,性格:eveflg240=14,性格:eveflg240=24,,,,
+		//inran
+		chk_ormval_then
+		zin_reg_msg,难道是．．．crp_name1的种．．．,0
+		zin_reg_msg,啊哈哈哈、失敗、失敗,0
+		zin_reg_msg,一不小心做太多了吗,0
+		zin_reg_msg,还是生下来吧、cr毕竟孩子是无罪的,0
+		zin_reg_msg,呵呵呵、孩子吗．．．．．．,0
+		zin_reg_qnar,p_name2微笑着抚摸正在孕育着p_name1后代的下腹
+		zin_reg_button,0
+		zin_reg_exit
+		continue
+		//rape
+		chk_ormval_else
+		zin_reg_msg,难道是．．．crp_name1的种．．．,0
+		zin_reg_msg,呜呜呜．．．我已经．．．,0
+		zin_reg_qnar,因为总是在子宫中大量射精结果p_name1的精子cr成功的让p_name2的卵子受精、cr结果p_name2的肚子里有了p_name1的孩子。
+		zin_reg_button,0
+		zin_reg_exit
+		continue

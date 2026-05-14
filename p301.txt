@@ -1,0 +1,9 @@
+bgm_chg,107
+zin_reg_event,,pid1,pid2,,gzin19
+zin_reg_title,p_name1直営艦隊
+zin_reg_qnar,p_name1為了討伐周邊出沒的的宇宙海賊艦隊而出擊了。
+zin_reg_msg,司令！！cr雷達有反應了！,1
+zin_reg_msg,識別信号．．．．cr紅色,1
+zin_reg_msg,這樣呀、終於願意露臉啦,0
+zin_reg_qnar,勝利条件：擊滅海賊艦隊
+end

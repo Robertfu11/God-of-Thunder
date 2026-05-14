@@ -1,0 +1,10 @@
+bgm_chg,65
+zin_reg_init
+zin_reg_event,,pid1,,zin1,gzin34
+zin_reg_msg,（傻笑）眞是個精神的孩子呢,0
+zin_reg_msg,孩子已經出生了,0
+zin_reg_msg,只是你的父親又去了哪裏了呢．．．,0
+zin_reg_title,p_name2出生了。
+zin_reg_button,0
+zin_reg_exit
+end

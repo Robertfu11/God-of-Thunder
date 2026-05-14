@@ -1,0 +1,27 @@
+//部下オルド　バック20%
+rnd,2
+case0
+	zin_old_msg,啊啊啊啊！！好！！好厲害﹒﹒﹒您、裏面全部都被塞滿了！！,pid2
+	zin_old_msg,call_pid12的小穴也很好呢。cr花瓣都被操翻出來了﹒﹒﹒子宮口也緊緊咬著我不放呢．．．,pid1
+	zin_old_msg,那、那樣﹒﹒﹒我的淫亂請不要說出來．．．,pid2
+	zin_old_msg,說什麼呢、明明是十分色情的軍人卻．．．,pid1
+	zin_old_msg,至今為止有很多下級軍官被欺騙了吧？,pid1
+	zin_old_msg,那、那種事情．．．啊啊．．．,pid2
+	zin_old_msg,我、是娼婦．．．啊啊啊！！,pid2
+	zin_old_msg,啊﹒﹒﹒真的call_pid12的淫穴咬著肉棒呢。cr已經要射了！！,pid1
+	zin_old_msg,沒有、好舒服﹒﹒﹒哦﹒﹒﹒我﹒﹒﹒也忍不住了！！！！,pid2
+	zin_flush,pid2
+	end
+case1
+	zin_old_msg,call_pid12那裏准備好了？,pid1
+	zin_old_msg,啊、恩﹒﹒﹒是．．．cr花心﹒﹒﹒相當舒服喲！！！,pid2
+	zin_old_msg,call_pid21的tin_str．．．離不開了！！！,pid2
+	zin_old_msg,真的！！　那、那裏夾得好緊！！,pid1
+	zin_old_msg,好厲害的力量啊．．．．,pid1
+	zin_old_msg,因為﹒﹒﹒那裏﹒﹒﹒經常鍛煉！！　唔嗯嗯嗯嗯！！！,pid2
+	zin_old_msg,好厲害、從小穴裏エロ汁不斷溢出來了,pid1
+	zin_old_msg,因為﹒﹒﹒真的被插得很舒服啊．．．,pid2
+	zin_old_msg,哈啊！！　啊啊啊！！　已經要丟了！！,pid2
+	zin_old_msg,p_name2、高潮了！！　丟了啊！！　一庫咦咦咦咦咦！！！！,pid2
+	zin_flush,pid2
+	end

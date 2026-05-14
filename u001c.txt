@@ -1,0 +1,12 @@
+// 同派閥男性+友好&忠誠
+set_eveflg,190,0
+for,PMAX,190,1
+chk_msts,eveflg190,派閥,player,性別,1,状態,2,NON,0,NON,0
+chk_msts_then
+	upd_sts,eveflg190,友好,100
+	upd_sts,eveflg190,忠誠,100
+	continue
+chk_msts_else
+	continue
+next
+end

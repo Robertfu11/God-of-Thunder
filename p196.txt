@@ -1,0 +1,11 @@
+bgm_chg,60
+zin_reg_event,,pid1,pid2,,gzin33
+zin_reg_msg,你就是想在我軍仕官的p_name2嗎？,0
+zin_reg_msg,是的,1
+zin_reg_msg,嗯、你在上個月接受的測驗嘛．．．,0
+zin_reg_msg,判定結果合格了,0
+zin_reg_msg,明天開始的軍旅生涯就好好努力吧,0
+zin_reg_msg,是的、十分感謝,1
+zin_reg_title,p_name2仕官了。
+zin_reg_button,0
+end

@@ -1,0 +1,153 @@
+//王族オルド襲う　相手：妹
+//状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+rnd,2
+case0
+	zin_reg_msg,趕緊脫光！,0
+	zin_reg_msg,不行就是不行！！,1
+	zin_reg_msg,放棄無謂的抵抗吧！！,0
+	zin_reg_msg,不．．．不要．．．cr求你了、call_pid1．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,怎麼樣、被哥哥侵犯的感覺？,pid1
+	zin_old_msg,call_pid1．．．住手啊．．．趕快住手．．．,pid2
+	zin_old_msg,這可是不行的喲．．．,pid1
+	zin_old_msg,我把你冊封為妾、就是要和你生孩子的．．．,pid1
+	zin_old_msg,怎麼、怎麼這樣．．．好過分．．．,pid2
+	zin_old_msg,那麼、張開子宮、接受我的種子吧！！,pid1
+	zin_old_msg,啊啊、怎麼會這樣．．．不要這麼深！！！,pid2
+	zin_flush,pid2
+	end
+case1
+	zin_reg_msg,不、不可以、call_pid1,1
+	zin_reg_msg,你冷靜一點！！,1
+	zin_reg_msg,callself_pid1一直都很冷靜．,0
+	zin_reg_msg,再次和哥哥融為一體吧．,0
+	zin_reg_msg,啊、不行、不行啊、call_pid1！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊、怎麼會．．call_pid1的肉棒．．．進來了．．．唔嗯嗯！！,pid2
+	zin_old_msg,哦哦．．．call_pid2的裡面．．．好溫暖、感覺也很棒．．．,pid1
+	zin_old_msg,call_pid1．．．已經夠了啊．．．拔、拔出來．．．,pid2
+	zin_old_msg,這種事怎麼可能！！　根本停不下來！！,pid1
+	zin_old_msg,p_name1開始用盡全力抽插著．,0
+	zin_old_msg,啊啊、call_pid1．．．不行．．不行啊．．．不、快停下！！,pid2
+	zin_old_msg,call_pid2、要、要射了．．．裡面、內射哦！！,pid1
+	zin_old_msg,那、只有那個不可以啊．．．外面．．．請射在．．．外面、call_pid1！！,pid2
+	zin_old_msg,咕唔唔唔！！！,pid1
+	zin_old_msg,呀啊、不行啊．．．裡面．．．裡面、不、不、不行啊啊啊！！！！,pid2
+	zin_flush,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+rnd,3
+case0
+	zin_reg_msg,你太任性了,0
+	zin_reg_msg,你、還是處女吧,0
+	zin_reg_msg,那、那個．．．,1
+	zin_reg_msg,和call_pid1沒有半點關系！！,1
+	zin_reg_msg,這太難為情了、不能和callself_pid1做這種事,0
+	zin_reg_msg,不要用那種理由來搪塞,1
+	zin_reg_msg,妳看、這樣不是很好麼,0
+	zin_reg_msg,連床都準備好了,0
+	zin_reg_msg,這、這樣．．．強行的．．．,1
+	zin_reg_msg,快到這裡來,0
+	zin_reg_msg,啊、不行、不要啊啊啊！！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,嗬．．．相當順利地進入了呢,pid1
+	zin_old_msg,不、不行、啊！！拔出來、啊！！,pid2
+	zin_old_msg,那樣可是不行的喲、在妳還沒有為callself_pid1生孩子之前．,pid1
+	zin_old_msg,那、那樣的．．．你在開玩笑麼、把p_name2．．．,pid2
+	zin_old_msg,我．．你的妹妹．．．只是當作生孩子的機器嗎．．．,pid2
+	zin_old_msg,這當然是妹妹的義務、那麼就好好準備、接受為兄濃厚的種子吧！！,pid1
+	zin_old_msg,啊啊嗯、那、那樣的、不、不想要啊啊啊啊啊啊！！！,pid2
+	zin_flush,pid2
+	zin_old_msg,怎麼會．．．嗚嗚嗚．．．,pid2
+	end
+case1
+	zin_reg_msg,那么、近親相姦如何．．,0
+	zin_reg_msg,不要、請不要這樣,1
+	zin_reg_msg,身為妹妹、還是請不要違背哥哥的話、比較好吧,0
+	zin_reg_msg,不行、我還．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,小小的性器、已經成功進入一半了哦,pid1
+	zin_old_msg,啊嗚嗯．．．啊啊嗚．．．嗚嗯啊．．．,pid2
+	zin_old_msg,call_pid2是処女吧？怎樣？被哥哥把初膜刺破的心情如何？,pid1
+	zin_old_msg,嗚嗚嗚．．．過分．．．call_pid1、太過分了．．．．,pid2
+	zin_old_msg,那麼、就讓妳知道哥哥的厲害．看看這個怎麼樣！！,pid1
+	zin_old_msg,p_name1猛然把肉棒向p_name2全部刺進去了．,0
+	zin_old_msg,嗚啊啊啊啊啊！！咝嗯啊呀啊啊啊啊！！,pid2
+	zin_old_msg,呼呼呼、子宮膜已經刺破了嗎？,pid1
+	zin_old_msg,嗚啊啊．．．已、已經．．．對不起．．．我不能、再作為媳婦嫁出去了．．．,pid2
+	zin_old_msg,不用考慮再做誰的媳婦了、call_pid2是屬於我的東西．不會讓給誰,pid1
+	zin_old_msg,那麼、妳的子宮就準備接收我的種子吧！！,pid1
+	zin_old_msg,要把妳完全變成我的東西！！,pid1
+	zin_old_msg,啊啊啊．．．滿、滿地．．餡料．．．出來了．．．已經什麼．．．都無法考慮了．．．,pid2
+	zin_flush,pid2
+	end
+case2
+	zin_reg_msg,作為妹妹、要聽哥哥的話,0
+	zin_reg_msg,call_pid1、拜託了、不要令人討厭．．．,1
+	zin_reg_msg,那麼、不乖也罷、p_name2,0
+	zin_reg_msg,啊、不要那樣．．．的、討厭啊．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,喔喔、不愧是我的妹妹、感覺就是和其他的女人不同啊！！,pid1
+	zin_old_msg,啊啊．．．被、這樣的．．．大的．．．是、第一次．．．,pid2
+	zin_old_msg,啊啊嗚．．．不行．．．call_pid1．．．會有感覺．．．,pid2
+	zin_old_msg,侵犯妹妹什麼的感覺至極、早早出來吧！！,pid1
+	zin_old_msg,哈嗯．．．不行啊、在裡面是不行的、call_pid1,pid2
+	zin_old_msg,謝謝妳呀！！,pid1
+	zin_flush,pid2
+	zin_old_msg,這樣的．．．call_pid1真過分．．．,pid2
+	end
+
+
+//孕みパターン
+case_botebara
+rnd,2
+case0
+	zin_reg_msg,對這幅已經懷有call_pid1孩子的身體,1
+	zin_reg_msg,在這之上、還會有什麼慾望嗎？,1
+	zin_reg_msg,現在就想抱你一下,0
+	zin_reg_msg,那樣的話、這樣的身體辦不到的,1
+	zin_reg_msg,不做的話是不行的、聽不懂嗎？,0
+	zin_reg_msg,啊啊嗚、不行啊、call_pid1！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,唔呼呼、快看、這樣感覺不是很好麼,pid1
+	zin_old_msg,抱著懷孕中的妹妹的感覺是很好的啊,pid1
+	zin_old_msg,啊啊．．．孕育著call_pid1的孩子．．．尤其還是被call_pid1侵犯之後懷上的．．．,pid2
+	zin_old_msg,說什麼呢、懷孕中的女人被抱著．不感到高興嗎？,pid1
+	zin_old_msg,那樣．．．很過分啊．．．call_pid1．．．,pid2
+	zin_old_msg,只是想像和懷孕中的妹妹做、就已經快高潮了,pid1
+	zin_old_msg,不行、今日請在外面．．．外面出來吧．．．,pid2
+	zin_old_msg,已經在孕育著子嗣了、中出已經沒有必要了,pid2
+	zin_old_msg,愚蠢．．．正因為如此、才應該在膣內深處狠狠的中出才行．cr來、作好接受的準備吧！！,pid1
+	zin_old_msg,啊啊、不行啊、我都說過不行了啊啊啊！！,pid2
+	zin_flush,pid2
+	end
+case1
+	zin_reg_msg,call_pid1、今天的心情如何呀？,1
+	zin_reg_msg,隨你的心情、怎樣都好,0
+	zin_reg_msg,callself_pid1只是想問問、僅此而已,0
+	zin_reg_msg,那麼、閒聊就到這裡結束吧,0
+	zin_reg_msg,張開雙腿、等待我的寵幸吧,0
+	zin_reg_msg,．．．．call_pid1,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊．．．call_pid1的棒棒．．．比平時還要．．．有感覺啊．．．,pid2
+	zin_old_msg,怎麼樣、還不錯吧？,pid1
+	zin_old_msg,看來妊娠中的敏感度也提高了啊、那麼、就捨棄理性只考慮如何讓自己的心情變得更加舒暢就好了,pid1
+	zin_old_msg,那、那樣的．．．是、不行的啊．．．,pid2
+	zin_old_msg,那麼、就讓我幫妳把殘留的理性、全部都吐露個乾淨吧、哈嗯！！！,pid1
+	zin_old_msg,啊啊嗚、不、不行啊、call_pid1！！現在被那麼深深的插．．．會馬上高潮的！！,pid2
+	zin_old_msg,call_pid1、拜託．．．那、那麼激烈的、不要那樣頂！！！,pid2
+	zin_old_msg,那麼、大量的種子、就由嬰兒和妳倆個人一起吸收吧！！！,pid1
+	zin_flush,pid2
+	end

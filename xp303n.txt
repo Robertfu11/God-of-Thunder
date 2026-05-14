@@ -1,0 +1,38 @@
+//夜這い　弱みオルド　姫　2回目以降
+zin_old_msg,怎麼樣、p_name2公主。cr心情漸漸舒暢起來了吧？,pid1
+zin_old_msg,那、那樣的．．．才、才不是！！　啊嗯！！,pid2
+rnd,2
+case0
+	zin_old_msg,即便如此、公主殿下意想不到的淫亂啊。腰部都在這樣的自己搖動著,pid1
+	zin_old_msg,因、因為．．．啊、你．．．強行．．．人家．．．才沒有呢、啊啊啊啊！！,pid2
+	zin_old_msg,說的什麼胡話啊。我怎麼不記得是被強行的？cr變成這樣明明是你自己的選擇。,pid1
+	goto,*np1
+case1
+	zin_old_msg,呵呵、我的tin_str讓公主殿下變得愉悅了嗎？cr和夢想中的公主發生這種事,pid1
+	zin_old_msg,這、這樣的．．．呃、変態．．．,pid2
+	zin_old_msg,即便是被這樣說也好。還想對公主的身體進行好好的開發、我會好好調教公主殿下的,pid1
+	zin_old_msg,這、這樣的．．．討厭．．．討厭啊．．．,pid2
+
+*np1
+//体位ごとに分岐
+switch_otaii,pid2
+//騎乗位
+case_okijo
+	zin_old_msg,那麼、請更加好好的搖動腰部吧。cr否則的話、就把我們的事公之於眾哦！　哇哈哈哈哈！！,pid1
+	zin_old_msg,啊、不行、只有這個．．．你、拜託你．．．crcf_pid2、我會努力的．．．,pid2
+	zin_old_msg,啊啊好的、要好好加油哦,pid1
+	zin_old_msg,是、是．．．．．．,pid2
+	goto,*switch_otaii_end
+
+default_otaii
+	zin_old_msg,因、因為．．．啊啊．．是啊啊、啊啊啊！！,pid2
+	zin_old_msg,腰就是停不下來麼。比想像中還要好的肉洞。cr是最棒的哦、公主！！,pid1
+	zin_old_msg,啊、哈啊、．．嗚嗯、嗚．．啊嗚．．啊啊啊啊！！,pid2
+*switch_otaii_end
+
+zin_old_msg,嘛．．．咻咻．．．高潮了呢。cr要把cf_pid1的種子一滴不剩的吸收掉、知道嗎？,pid1
+zin_old_msg,啊啊啊！！　是．．．是的．．．,pid2
+zin_flush,pid2
+zin_old_msg,哈哈哈．．．今天射出了好多。cr呵呵、前幾次都沒有令公主殿下受孕cr我很期待懷上寶寶的樂趣啊,pid1
+zin_old_msg,嗚嗯．．．啊哈．．．嗚嗯．．．,pid2
+end

@@ -1,0 +1,309 @@
+eve_start
+	if_psex,player,1
+	if_val,勲功:player=13000
+	if_val,状態:player=3
+	if_cnt_yaku,player,3,>30
+    if_amon,2 
+eve_end
+set_epid1,player
+set_eveflg,193,0
+set_eveflg,192,0
+bl_fadein,gzin8
+zin_reg_event,,player,840,,
+zin_reg_msg,妾太多了 cr給你們隨便玩吧!!,0
+zin_reg_msg,真的嗎 cr感激不盡!!,1
+zin_reg_msg,大家一起上吧 cr哈哈!!,0
+set_epid1,840
+set_eveflg,193,0
+set_eveflg,195,0
+for,PMAX,193,1
+                chk_msts,eveflg193,覇王,player,性別,2,状態,2,役職,3,NON,0,NON,0
+                chk_msts_then
+                set_eveflg,195,eveflg193
+				set_epid2,eveflg195			
+				chk_mval,初膜:pid2=0,,,,,
+				chk_mval_then
+				bl_fadein,gzin8
+                zin_reg_event,,840,pid2,,
+				zin_reg_msg,下ㄧ個是妳!!cr處女耶 真好!!cr嘿嘿!!,0
+                zin_reg_msg,不要!!,1
+				bl_fadeout
+				zin_old_init
+				zin_old_img_pid,pid2,1
+				rnd,4
+		case0
+			bgm_se,138
+			zin_old_msg,喲嗬．．．這個不錯、久違的軟玉溫香抱滿懷的感覺啊,pid1
+			bgm_se,139
+			zin_old_msg,啊．啊啊．．不、不要啊．．．．,pid2
+			bgm_se,133
+			zin_old_msg,呵呵、你這厭惡的表情讓我更加興奮了,pid1
+			bgm_se,134
+			zin_old_msg,啊啊．．．不行．．．不要、不要啊．．．．,pid2
+			bgm_se,136
+			zin_old_msg,我可不覺得你是第一次啊、這麼緊緊的吸著callself_pid1的老二、拔都拔不出啊,pid1
+			bgm_se,136
+			zin_old_msg,啊啊．．．好噁心．．．呃呃．．．不要啊．．．,pid2
+			bgm_se,136
+			zin_old_msg,你不知道這種話會起到反效果？cr讓我越來越興奮了．．．,pid1
+			bgm_se,137
+			zin_old_msg,那麼、直到你高潮之前、要一直發出這種聲音！！,pid1
+			bgm_se,137
+			zin_old_msg,啊啊、呀啊啊！！　不要、不要、不要這麼激烈！！！,pid2
+			bgm_se,137
+			zin_old_msg,疼、好疼啊！！　拔、拔出去！！　求求你！！,pid2
+			bgm_se,137
+			zin_old_msg,哈哈哈、好啊、再叫響一點！！　callself_pid1的絕頂就是這麼來的！！,pid1
+			bgm_se,137
+			zin_old_msg,啊啊．．．不、不要．．．我．．．已經．．要泄了．．．,pid2
+			bgm_se,141
+			zin_old_msg,已經、不、不行了誒誒誒！！！！！,pid2
+			set_non_virgin,pid2
+			zin_flush,pid2
+			zin_old_fadeout,0,5
+			continue
+		case1
+			bgm_se,135
+			zin_old_msg,哦哦．．．得到了個極品啊,pid1
+			bgm_se,135
+			zin_old_msg,啊呀啊啊啊！！．．．不要、不行．．．痛、痛、好痛啊啊啊啊い！！,pid2
+			bgm_se,133
+			zin_old_msg,照你今天破瓜這德行來說、你是怎麼守身到今日的？,pid1
+			bgm_se,134
+			zin_old_msg,向你致敬、木哈哈哈哈,pid1
+			bgm_se,136
+			zin_old_msg,噫噫噫噫噫．．．．,pid2
+			bgm_se,137
+			zin_old_msg,那、第一次就內射也不行嗎？,pid1
+			bgm_se,137
+			zin_old_msg,啊啊．．．不行．．．今天不行．．．請外射吧．．．裡面．．．不、不要啊．．．,pid2
+			bgm_se,137
+			zin_old_msg,是麼、那今天就大發慈悲原諒你,pid1
+			bgm_se,137
+			zin_old_msg,啊．．非常、非常．．．感謝．．．您．．．,pid2
+			bgm_se,137
+			zin_old_msg,嗚嗚！！！,pid1
+			zin_flush,pid2
+			bgm_se,141
+			zin_old_msg,噫啊啊啊！！．．．誒．．．這．．．裡面、怎麼在裡面．．．射了．．這麼多．．．啊啊．．．好、好過分．．．,pid2
+			bgm_se,141
+			zin_old_msg,不好意思、我剛改變主意。唔哈哈哈。,pid1
+			set_non_virgin,pid2
+			zin_flush,pid2
+			zin_old_fadeout,0,5
+			continue
+		case2
+			bgm_se,138
+			zin_old_msg,呵．．．你有個好東西呢、一件能融化callself_pid1肉棒的名器,pid1
+			bgm_se,135
+			zin_old_msg,不、不要不要．．．這樣．．．不要不要．．．,pid2
+			bgm_se,133
+			zin_old_msg,呵呵呵、處子的香氣已經飄過來了．．．,pid1
+			bgm_se,134
+			zin_old_msg,啊啊啊、不要啊．．．不要亂動啊．．．．,pid2
+			bgm_se,136
+			zin_old_msg,怎麼樣、有沒有一點點快感？,pid1
+			bgm_se,137
+			zin_old_msg,討、討厭啊．．．好疼．．．好疼誒誒誒誒！！,pid2
+			bgm_se,137
+			zin_old_msg,是麼、那這次就沒有辦法了、暫且放你一馬,pid1
+			bgm_se,137
+			zin_old_msg,啊．．．怎麼這樣．．．不要啊！！！,pid2
+			bgm_se,137
+			zin_old_msg,唔！！　要出來了哦、給你好多好多！！,pid1
+			bgm_se,141
+			zin_old_msg,哈啊．．．不行啊．．．只有這個不行啊！！！,pid2
+			set_non_virgin,pid2
+			zin_flush,pid2
+			zin_old_fadeout,0,5
+			continue
+		case3
+			bgm_se,138
+			zin_old_msg,哈咕．．．呀啊．．．,pid2
+			bgm_se,139
+			zin_old_msg,這種事．．．感覺超噁心．．．,pid2
+			bgm_se,133
+			zin_old_msg,既然是處那也沒辦法、感覺會慢慢好起來的吧,pid1
+			bgm_se,136
+			zin_old_msg,沒有．．．沒有這種事．．．,pid2
+			bgm_se,137
+			zin_old_msg,噗、可是到現在為止不是都挺好的麼,pid1
+			bgm_se,137
+			zin_old_msg,今天就讓callself_pid1好好地爽一下吧,pid1
+			bgm_se,141
+			zin_old_msg,啊啊、不行誒．．．不要誒．．．不要亂動啊ーーー！！,pid2
+			set_non_virgin,pid2
+			zin_flush,pid2
+			zin_old_fadeout,0,5
+				continue
+	    chk_mval_else
+		 rnd,4
+		 case0
+		 case1
+		 case2
+		 //zin_old_fadeout,0,5
+		// zin_reg_event,,840,pid2,,
+				//zin_reg_msg,不是處女!!,0
+                //zin_reg_msg,太累了 跳過!!,0
+				//zin_reg_msg,......,1
+		 continue
+		 case3
+		 bl_fadein,gzin8
+                zin_reg_event,,840,pid2,,
+				zin_reg_msg,下ㄧ個是妳!!cr雖然不是處女...cr將就點吧!!,0
+                zin_reg_msg,不要!!,1
+				bl_fadeout
+				zin_old_init
+				zin_old_img_pid,pid2,1
+		     rnd,4
+			case0
+				zin_old_msg,呵呵呵、怎麼樣、想起男人的味道了嗎？,pid1
+				bgm_se,138
+				zin_old_msg,呼．．．嗚嗚嗚．．．,pid2
+				bgm_se,138
+				zin_old_msg,什麼、舒服到發不出聲音了？,pid1
+				bgm_se,139
+				zin_old_msg,這、這種事情．．．．,pid2
+				bgm_se,139
+				zin_old_msg,今天要給你好好的加次油,pid1
+				bgm_se,136
+				zin_old_msg,那個．．．．討厭啊．．．．,pid2
+				bgm_se,136
+				zin_old_msg,溫柔的愛撫你的豆豆,pid1
+				bgm_se,136
+				zin_old_msg,啊啊、不行．．．那、那裡．．．不行誒誒誒！！！,pid2
+				zin_flush_one,pid2
+				bgm_se,137
+				zin_old_msg,啥、泄了？,pid1
+				bgm_se,137
+				zin_old_msg,哈啊～～哈啊～～哈啊～～哈啊～～呼嗚嗚嗚．．．．．．,pid2
+				zin_old_msg,這種程度怎麼可以結束、呔！看槍！！,pid1
+				bgm_se,137
+				zin_old_msg,呀啊啊啊啊！！　不、不行、快住手啊啊啊！！！,pid2
+				bgm_se,133
+				zin_old_msg,不、不要啊．．．又、又要高潮了啊 ！！！,pid2
+				bgm_se,137
+				zin_old_msg,很好、我得讓你多泄幾次、讓你瘋狂的丟！！,pid1
+				bgm_se,141
+				zin_old_msg,啊！！　已經要！！　要高潮了呀啊呀呀呀哎呀呀呀！！！,pid2
+				set_non_virgin,pid2
+				zin_flush,pid2
+				zin_old_fadeout,0,5
+				continue
+			case1
+				bgm_se,135
+				zin_old_msg,啊啊啊、不、不要、快、拔出來．．．,pid2
+				bgm_se,133
+				zin_old_msg,呵呵呵、我還不了解你、嘴上說不要、可是最喜歡被硬上弓了是不是？,pid1
+				bgm_se,134
+				zin_old_msg,沒、沒有．．．這回事．．．,pid2
+				bgm_se,135
+				zin_old_msg,你說謊、從剛才開始你的肉穴就已經在迎接我了,pid1
+				bgm_se,136
+				zin_old_msg,裡面的愛液已經泛濫成災了是不是！！,pid1
+				bgm_se,136
+				zin_old_msg,說、你就是喜歡被粗暴的侵犯！！,pid1
+				bgm_se,136
+				zin_old_msg,這、這、喜歡．．．才怪．．．,pid2
+				bgm_se,136
+				zin_old_msg,嘴硬的傢伙、你招不招！！,pid1
+				bgm_se,137
+				zin_old_msg,p_name1開始向著p_name2更深處快速挺近。,0
+				bgm_se,137
+				zin_old_msg,噶、噶啊啊啊啊！！！！,pid2
+				bgm_se,137
+				zin_old_msg,這個、這樣的．．．不、不行啊啊啊啊啊．．．啊啊、要高潮了啊啊！！,pid2
+				bgm_se,137
+				zin_old_msg,要高潮了？　那如實反映一下你此時此刻的心情吧,pid1
+				bgm_se,137
+				zin_old_msg,你不說的話、我這兒就停下了,pid1
+				bgm_se,137
+				zin_old_msg,怎麼、怎麼會這樣．．．不、不要停啊．．．啊啊．．．哈啊啊！！,pid2
+				bgm_se,137
+				zin_old_msg,還要．．．還要、我還要．．．粗暴的．．．被p_name2粗暴的侵犯啊啊！！！,pid2
+				bgm_se,137
+				zin_old_msg,呵呵呵、終于說了句真心話。cr好吧、馬上就讓你高潮！！,pid1
+				bgm_se,141
+				zin_old_msg,啊啊、咿咿．．．那裡．．．啊啊．．．要泄了、要高潮了呀啊啊啊啊！！！,pid2
+				set_non_virgin,pid2
+				zin_flush,pid2
+				zin_old_fadeout,0,5
+				continue
+			case2
+				bgm_se,138
+				zin_old_msg,．．．不．．．求你了．．快住手．．．,pid2
+				bgm_se,139
+				zin_old_msg,這必須不能住手,pid1
+				bgm_se,134
+				zin_old_msg,．．．呀啊啊．．．這、這樣．．．啊啊．．．,pid2
+				bgm_se,136
+				zin_old_msg,怎麼、快感上來了？,pid1
+				bgm_se,136
+				zin_old_msg,．．． 不、不是．．嗚嗚嗚．．．啊啊！！cr不要．．．不要．．．這樣用力．．．,pid2
+				bgm_se,136
+				zin_old_msg,呀啊啊！！　不、不行．．．我．．．有感覺了．．．,pid2
+				bgm_se,137
+				zin_old_msg,又是這樣上嘴拒絕、下嘴迎接、你這癡態到底怎麼回事？,pid1
+				bgm_se,137
+				zin_old_msg,．．唔．．．咕嗚嗚．．．已經．．．不行額．．．這樣就要．．．要、高潮了．．．,pid2
+				bgm_se,137
+				zin_old_msg,馬上就讓你高潮、再蠻橫的話都讓你說不出來！！,pid1
+				bgm_se,137
+				zin_old_msg,哈啊啊啊．．．昂．．．啊啊恩．．．不要．．．已經．．．已經、要瘋掉了！！,pid2
+				bgm_se,137
+				zin_old_msg,呵呵呵、沒關系、你就好好的給我瘋狂起來吧！！,pid1
+				bgm_se,141
+				zin_old_msg,啊、啊咿咿咿ーーーーーー！！！！,pid2
+				set_non_virgin,pid2
+				zin_flush,pid2
+				zin_old_fadeout,0,5
+				continue
+			case3
+				bgm_se,135
+				zin_old_msg,嗚嗚．．．好疼．．不要．．．,pid2
+				bgm_se,133
+				zin_old_msg,洞口好小啊、這麼小的洞口也夠稀奇的了,pid1
+				bgm_se,134
+				zin_old_msg,不、不要．．．疼、疼死了．．．拔、拔出來．．．,pid2
+				bgm_se,136
+				zin_old_msg,簡直就和處女一樣、不管幾次都和第一次一樣、非常難得的女人啊,pid1
+				bgm_se,136
+				zin_old_msg,那、到最后再讓你見識一下我的看家本領吧、嘿咻咻！！！,pid1
+				bgm_se,136
+				zin_old_msg,p_name1趁熱打鐵、一鼓作氣的瘋狂抽插。,0
+				bgm_se,136
+				zin_old_msg,呼、噗呀啊啊啊ーーーー！！！　嘎 ．．．嘎嘎嘎．．嘎．．．,pid2
+				bgm_se,137
+				zin_old_msg,嘿嘿、怎麼樣、要丟了麼？,pid1
+				bgm_se,137
+				zin_old_msg,快樂從此開始喲、看我的！！,pid1
+				bgm_se,137
+				zin_old_msg,p_name1把p_name2舉了起來、不斷的上下運動著。。p_name2已經失聲了。,0
+				bgm_se,137
+				zin_old_msg,．．．呀唔．．．呼．．．嗚嗚．．．呼啊啊．．．,pid2
+				bgm_se,137
+				zin_old_msg,總算是停止思考了。有時無抵抗的女人也是不錯的。,pid1
+				bgm_se,137
+				zin_old_msg,那麼、該把禮物送給你了、把門打開喲！！,pid1
+				bgm_se,141
+				zin_old_msg,噗嗚嗚ーーーー嗯！！！,pid1
+				set_non_virgin,pid2
+				zin_flush,pid2
+				zin_old_fadeout,0,5
+                        continue
+                chk_msts_else
+                    continue
+                 next
+				 bl_fadein,gzin8
+                zin_reg_event,,840,840,,
+				zin_reg_msg,結束了!!,0
+                zin_reg_msg,我快虛脫了!!,1
+				zin_reg_msg,我也是!!,0
+                zin_reg_msg,哈哈哈!!,1
+set_epid2,eveflg195
+set_eveflg,193,0
+chk_eveflg,195,0
+set_eveflg,193,0
+set_eveflg,192,0
+bl_fadeout
+end

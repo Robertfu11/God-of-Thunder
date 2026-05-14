@@ -1,0 +1,29 @@
+bgm_chg,54
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin18
+zin_reg_qnar,p_name1訪問了p_name2的住所。
+zin_reg_msg,哎呀、真是太豐盛了,0
+zin_reg_msg,一直受您招待真不好意思,0
+zin_regs_msg,不會不會、不用在意,別在意這點小事,1
+zin_regs_msg,說起來。。。crp_name1,對了，p_name1,1
+zin_regs_msg,現在、我軍正在募集有能力的人才,現在、我們p_name3軍正渴求人才,1
+zin_regs_msg,如何、要不要來p_name3軍發揮所長呢？,要不要跟我們並肩作戰呢？,1
+zin_regs_msg,callself_pid2可以推薦用適當的待遇來迎接你,我想用適當的待遇來推薦你入隊,1
+zin_reg_2sel,仕官,不仕官
+get_resp
+ret_sel1
+	zin_reg_msg,我知道了cr就拜託你了,0
+	zin_regs_msg,喔喔、好決心,嗯、好決心,1
+	zin_reg_title,在p_name3軍仕官了。
+	zin_reg_button,0
+	zin_reg_exit
+	set_sikan,pid1,pid3
+	upd_sts,pid1,4,2000
+	end
+ret_sel2
+	zin_reg_msg,抱歉，現在還沒有出仕的打算,0
+	zin_regs_msg,這樣呀、雖然可惜也沒辦法了,這樣呀、那也沒辦法了,1
+	zin_regs_msg,這次就先放棄吧,雖然可惜也只能放棄了,1
+	zin_reg_button,0
+	zin_reg_exit
+	end

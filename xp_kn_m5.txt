@@ -1,0 +1,10 @@
+//覇王オルド　妾タイプ5　ふぇらダミー
+	zin_old_msg,恩、就這麼舔．．．就這樣,pid1
+	zin_old_msg,啊啊、p_name1大人好厲害啊．．．,pid2
+	zin_old_msg,想要？　哪裡想要？,pid1
+	zin_old_msg,想要．．．下面的小嘴想要．．．,pid2
+	zin_old_msg,乖孩子。就讓本大人一竿子搗到底吧,pid1
+	zin_old_msg,啊、昂、p_name1大人的．．進來了．．,pid2
+	zin_old_msg,沒錯、進來了哦,pid1
+	zin_old_msg,笨蛋．．．昂、啊、最喜歡p_name1大人了．．．,pid2
+	end

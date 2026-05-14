@@ -1,0 +1,69 @@
+//覇王オルド和姦　妾
+//■Ｈ体位：騎乗位
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_msg,啊哈啊．．．callself_pid2的裡面．．．call_pid1的熱熱的東西．．．進來了啊．．．,pid2
+	zin_old_msg,這樣的tin_str因為．．．嬰兒的基因素噗溜噗溜的出來了啊．．．,pid2
+	zin_old_msg,callself_pid2的事．．．嗯嗯．．．懷孕的啊．．會．．．,pid2
+	zin_old_msg,啊啊、沒錯。會滿滿的全部出來給你的,pid1
+	zin_old_msg,啊啊．．．熱呼呼的tin_str．．．在跳動著．．．,pid2
+	zin_old_msg,嗯嗯．．好棒、的說．．．啊啊．．嗚啊啊啊啊．．．,pid2
+	zin_old_msg,肚子裡．．．頂進、來了．．嗯、嗯啊啊．．．,pid2
+	zin_old_msg,啊哈啊．．．好棒、真的．．．嗯嗯．．嗚啊嗯嗯嗯．．．,pid2
+	zin_old_msg,call_pid1像．．．在沙漠中．．騎馬．．的感覺一樣．．．,pid2
+	zin_old_msg,嗯．．．call_pid2的裡面也很棒啊．．．,pid1
+	zin_old_msg,哪有啊．．．call_pid1的．．嬰兒的基因．．．,pid2
+	zin_old_msg,為了榨取．．要抓牢．．用力的抓牢呢．．．全部都榨取出來,pid2
+	zin_old_msg,這樣的話、我會照你期望的在裡面充分的中出的,pid1
+	zin_old_msg,在那裡．．拜託．．的說．．callself_pid2的裡面．．．,pid2
+	zin_old_msg,嬰兒的基因．．很多的、汁液給我的說！,pid2
+	zin_old_msg,啊啊．．嗯嗯．．嗯．．嗯．．嗯嗯嗯嗯嗯嗯啊！,pid2
+	zin_flush,pid2
+	zin_old_msg,嗚啊啊啊．．黏糊糊的．．很多的很多的．．裡面．．很多的說．．．,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_old_msg,嗯嗯啊．．．啊哈啊．．．callself_pid2的裡面．．．進來、了啊啊．．．,pid2
+	zin_old_msg,call_pid1的．．好大的．．熱熱的．．進來了啊啊．．．,pid2
+	zin_old_msg,痛嗎、call_pid2？,pid1
+	zin_old_msg,嗯嗯嗯啊．．．對那家伙．．．完全、不說再說什麼了．．．,pid2
+	zin_old_msg,明明還是．．第一次的說．．．tin_str．．在、在．．跳動著．．．,pid2
+	zin_old_msg,那樣的．．感覺好舒服的說．．．,pid2
+	zin_old_msg,是嗎、那這樣做的話會更舒服的哦,pid1
+	zin_old_msg,啊啊．．呼啊啊．．嗯嗯．．嗚嗯．．tin_str在滴答滴答的．．．,pid2
+	zin_old_msg,callself_pid2的．．．man_str的裡面．．．啪啪啪的．．撞擊著的說．．．,pid2
+	zin_old_msg,心情舒暢吧、call_pid2,pid1
+	zin_old_msg,是的啊．．心情．．真的、很棒的說．．．,pid2
+	zin_old_msg,tin_str．．在裡面．．膨脹起來了．．啊啊啊．．簌簌、要來了．．．,pid2
+	zin_old_msg,啊啊、已經瀕臨要射精了啊．．．cr就在call_pid2的裡面中出來感謝吧,pid1
+	zin_old_msg,啊啊．．請不要說．．初体験man_str的．．裡面．．滿滿的．．．,pid2
+	zin_old_msg,我．．懷孕、為你．．你．．嗯嗯嗯！,pid2
+	zin_flush,pid2
+	zin_old_msg,嗚啊啊啊．．更多更多．．黏糊糊的．．進來了啊啊啊啊．．．,pid2
+	end
+//孕みパターン
+case_botebara
+	zin_old_msg,callself_pid2、帶著嬰兒．．好像在和馬先生做色色的事．．真的真的．．．,pid2
+	zin_old_msg,嗚啊啊啊．．好棒．．好棒、的說．．．啊嗯．．嗯嗯嗯啊．．．,pid2
+	zin_old_msg,真是的、還孕育著孩子呢、call_pid2的裡面深處黏糊糊的,pid1
+	zin_old_msg,因為．．是那樣的．．舒服的事．．喜歡啊．．什麼啊真是的,pid2
+	zin_old_msg,和馬先生做色色的事．．更多的更多的．．舒服．．想呢．．．,pid2
+	zin_old_msg,callself_pid2的．．寶寶．．對不起、真的呢．．．,pid2
+	zin_old_msg,callself_pid2．．心情好．．更加更加．．寶寶的房間．．真的希望能敲擊呢！,pid2
+	zin_old_msg,好吧、更多的敲擊吧,pid1
+	zin_old_msg,嗚啊．．嗚啊啊啊嗯！好棒！嬰兒的房間被敲擊著．．好棒好棒啊！,pid2
+	zin_old_msg,好舒服啊．．這樣．．這種時候．．熱呼呼的．．嬰兒的房間．．．,pid2
+	zin_old_msg,如果被敲壞了．．就完蛋了啊．．callself_pid2．．不行啊．．不行的啊！,pid2
+	zin_old_msg,現在才說不行太遲了吧．．．嗯啊啊！,pid1
+	zin_old_msg,啊啊啊．．和馬先生做色色的事．．tin_str．．callself_pid2的裡面．．膨脹著的說．．．,pid2
+	zin_old_msg,嗚啊啊啊．．不行啊、會壞掉的啊！,pid2
+	zin_old_msg,熱呼呼的．．嬰兒的房間．．啪啪啪啪的、敲擊著．．不行、的．．嗯嗯嗯嗯嗯嗯嗯啊！,pid2
+	zin_flush,pid2
+	zin_old_msg,嗚啊啊啊．．很多．．熱呼呼的、嬰兒的基因．．很多、很多．．嗯嗯嗯啊！,pid2
+	zin_old_msg,好棒、的說．．嗚啊啊啊．．好棒．．．好棒的啊啊啊啊．．．,pid2
+	zin_old_msg,寶寶．．會被淹死的啊啊．．．已經．．舒服的說．．．好的說．．．,pid2
+	end

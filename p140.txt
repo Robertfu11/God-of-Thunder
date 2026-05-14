@@ -1,0 +1,98 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin35
+chk_kunko,pid2,pid1
+case_kun_上司
+//相手が上官
+	zin_regs_msg,p_name2、你還好嗎？,p_name2、你還好嗎？,0
+	zin_reg_msg,call_pid21！！,1
+	zin_regs_msg,現在準備cr逃出惑星吧,立刻逃跑吧,0
+	zin_reg_msg,這樣做的話call_pid21的立場．．．,1
+	zin_regs_msg,別擔心,沒問題的不用介意,0
+	zin_regs_msg,嗯cr現在正是時候,早點走吧,0
+	zin_reg_2sel,逃脫,不逃脫
+	get_resp
+	ret_sel1
+		zin_reg_msg,唉,1
+		zin_regs_msg,外面的飛船已經做好準備,外面已經準備好飛船了,0
+		zin_regs_msg,隨時都可以走了,隨時都可以使用,0
+		zin_reg_msg,該怎樣謝你啊．．．,1
+		zin_regs_msg,比起道謝,還是快點走吧cr沒有時間了,0
+		zin_reg_title,p_name2逃跑了。
+		zin_reg_button,0
+		zin_reg_exit
+		set_hourou,pid2
+		dec_sinmitu,pid3,50
+		end
+	ret_sel2
+		zin_reg_msg,現在不能逃避,1
+		zin_reg_msg,call_pid21自己走吧,1
+		zin_regs_msg,真的嗎．．．,真的嗎．．．,0
+		zin_reg_msg,當然,1
+		zin_reg_msg,有你這番心意就夠了,1
+		zin_reg_msg,p_name2．．．,0
+		zin_reg_button,0
+		zin_reg_exit
+		end
+
+case_kun_同僚
+	zin_regs_msg,call_pid12、你還好嗎？,call_pid12、你還好嗎？,0
+	zin_reg_msg,call_pid21！！,1
+	zin_regs_msg,現在快點逃出惑星吧,開始逃跑吧,0
+	zin_reg_msg,那樣做，你的立場怎麼辦．．．,1
+	zin_regs_msg,別擔心,沒問題的不用介意,0
+	zin_regs_msg,嗯cr現在正是機會,早點走吧,0
+	zin_reg_2sel,逃脫,不逃脫
+	get_resp
+	ret_sel1
+		zin_reg_msg,唉,1
+		zin_regs_msg,外面的飛船已經做好準備,外面已經準備好飛船了,0
+		zin_regs_msg,隨時都可以走了,隨時都可以使用,0
+		zin_reg_msg,該怎樣謝你啊．．．,1
+		zin_regs_msg,比起道謝,還是快點走吧cr沒有時間了,0
+		zin_reg_title,p_name2逃跑了。
+		zin_reg_button,0
+		zin_reg_exit
+		set_hourou,pid2
+		dec_sinmitu,pid3,50
+		end
+	ret_sel2
+		zin_reg_msg,真是給call_pid21添麻煩了,1
+		zin_reg_msg,你快點走吧,1
+		zin_reg_msg,但是．．．,0
+		zin_reg_msg,有你這番心意就夠了,1
+		zin_reg_msg,call_pid12．．．,0
+		zin_reg_button,0
+		zin_reg_exit
+		end
+
+case_kun_部下
+//玩家の方が上官
+	zin_regs_msg,call_pid12、沒有事情吧？,受傷了嗎？,0
+	zin_reg_msg,call_pid21,1
+	zin_regs_msg,現在立刻逃走吧,我有鑰匙，你快點逃走吧,0
+	zin_reg_msg,但是、這樣對你好嗎？,1
+	zin_regs_msg,不用擔心,快點走吧cr趁現在,0
+	zin_reg_2sel,逃脫,不逃脫
+	get_resp
+	ret_sel1
+		zin_reg_msg,謝謝cr得救了,1
+		zin_reg_msg,外面的飛船已經做好準備了,0
+		zin_reg_msg,馬上可以使用,0
+		zin_reg_msg,明白了cr謝謝,1
+		zin_reg_msg,小心,0
+		zin_reg_title,p_name2逃跑了。
+		zin_reg_button,0
+		zin_reg_exit
+		set_hourou,pid2
+		dec_sinmitu,pid3,50
+		end
+	ret_sel2
+		zin_reg_msg,真是給你添麻煩了,1
+		zin_reg_msg,callself_pid2你快走吧,1
+		zin_reg_msg,但是．．．,0
+		zin_reg_msg,有你這番心意就夠了,1
+		zin_reg_msg,call_pid12．．．,0
+		zin_reg_button,0
+		zin_reg_exit
+		end

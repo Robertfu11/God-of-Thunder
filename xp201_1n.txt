@@ -1,0 +1,22 @@
+zin_reg_msg,你過來．．．來給哥哥抱抱,0
+zin_reg_msg,call_pid21．．．．,1
+zin_reg_msg,好的、既然call_pid21這麼希望的話,1
+zin_reg_msg,p_name2．．．,0
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+chk_mval,初膜:pid2=0,,,,,
+chk_mval_then
+	zin_old_msg,我、我還是處女！．．．,pid2
+	zin_old_msg,我明白了、我會溫柔點的,pid1
+	zin_old_msg,嗯．．．,pid2
+chk_mval_else
+zin_old_msg,吶！妹妹的小穴漂亮麼？,pid2
+zin_old_msg,啊、是漂亮的粉色呢,pid1
+zin_old_msg,哥哥這麼說我好高興．．．,pid2
+zin_old_msg,那裡．．．．就是那裡．．好舒服！！,pid2
+zin_old_msg,感覺舒服麼？call_pid21．．．,pid2
+zin_old_msg,嗯、哥哥我差不多要射了呢,pid1
+zin_old_msg,好，好的﹒﹒﹒射進來吧！啊，啊啊啊啊啊！！,pid2
+zin_flush,pid2
+end

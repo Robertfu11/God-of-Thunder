@@ -1,0 +1,9 @@
+eve_start
+if_date,70,3
+eve_end
+
+get_item,player,0,ÃÄËa
+get_item,player,0,ÃÄËa
+get_item,player,0,ã±¤ìËa
+
+end

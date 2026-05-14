@@ -1,0 +1,11 @@
+bgm_chg,60
+zin_reg_event,好戦演説,pid1,pid2,,gzin16
+zin_reg_msg,民眾們啊！如果現在停止戰斗的話，我國將會因為受到侵略而滅亡,0
+zin_reg_msg,不要畏懼犧牲,0
+zin_reg_msg,現在已經到了起身戰斗的時刻了！！,0
+zin_reg_qnar,帕米拉為了改變反戰的社會言論而做了一番演講。帕米拉很善於掌握民間輿論，已經引導為中立。
+zin_reg_msg,母親大人，做得太漂亮了,1
+zin_reg_msg,人心的掌控，你也要盡快掌握好,0
+zin_reg_msg,是的，我會銘記在心的,1
+zin_reg_button,0
+end

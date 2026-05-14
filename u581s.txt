@@ -1,0 +1,613 @@
+//捕虜調教
+get_mpid,状態=8,覇王=poid_player,年齢>OLD,性別=2,,,
+set_epid1,pval
+set_epid2,player
+set_epid3,756
+chg_pname,pid3,牢役人
+
+
+bgm_chg,61
+bl_fadein,gzin35
+
+zin_reg_event,牢獄内,pid2,pid3,,gzin35
+zin_reg_qnar,接头人动用关系网，安排你进入地下牢房
+chk_mval,pval=0,,,,
+chk_mval_then
+zin_reg_msg,大人，牢里最近都没有在押囚犯呢。,1
+zin_reg_msg,是吗，那可能是我搞错了。,0
+zin_reg_qnar,      你离开了监狱
+bl_fadeout
+end
+
+chk_mval_else
+zin_reg_msg,大人，牢里关押着重犯呢。,1
+zin_reg_3sel,拿出伪造命令,还是算了,强行劫狱
+get_resp
+
+ret_sel1
+chk_sts,player,4,>3000
+
+chk_sts_then
+zin_reg_qnar,p_name2把伪造的假释证明交给典狱长
+zin_reg_msg,目標俘虜是準備好的吧。,0
+zin_reg_msg,哈、大致上這樣做．．．真的沒什麼問題嗎？,1
+zin_reg_msg,假释证明你也看到了．．．,0
+zin_reg_msg,不用擔心、只是三天而已。三日後就回來。,0
+zin_reg_msg,哈、哈啊。p_name2那樣的話應該沒問題．．．,1
+zin_reg_qnar,p_name2用大袋子套抱著俘虜從牢裡消失了。
+add_kunkou,player,-500
+zin_reg_qnar,    功勋 -500
+bl_fadeout
+goto,*tiaojiao
+
+chk_sts_else
+zin_reg_qnar,你把伪造的释放命令交给典狱长
+zin_reg_msg,这个囚犯需要特别审讯。,0
+zin_reg_msg,大人，这个命令上的名字似乎不对呢！,1
+zin_reg_msg,可能是我搞错了,0
+zin_reg_msg,真的沒什麼問題嗎？,0
+zin_reg_msg,哈！请大人放心好了。,1
+zin_reg_qnar,p_name2离开监狱。
+bl_fadeout
+end
+
+
+ret_sel2
+bl_fadeout
+end
+
+ret_sel3
+zin_reg_qnar,p_name2朝狱卒走过去
+zin_reg_msg,谁！出来！,1
+zin_reg_msg,放了牢里的人，绕你狗命,0
+zin_reg_msg,来人啊，有人劫狱！,1
+zin_reg_msg,喊什么喊，找死！,0
+zin_reg_qnar,p_name2拔出短刀，猛然扑上
+btl_ansatu,pid1,pid3,0,0
+//模式0:打輸也不會死亡 1:輸了會死
+//背景文字列0:暗殺背景 1:宮廷内仇討用 2:部下同士　深夜(道路)
+get_resp
+
+ret_sel2
+rnd,2
+case0
+zin_reg_qnar,守卫闻讯赶来
+zin_reg_msg,快！他在这！,1
+zin_reg_msg,混蛋，看来是逃不出去了,0
+zin_reg_qnar,你被守卫包围了
+goto,*shoumai
+
+case1
+zin_reg_msg,真是不堪一击,0
+zin_reg_event,牢獄内,pid1,pid2,,gzin35
+zin_reg_qnar,你用守卫身上的钥匙打开牢房
+zin_reg_msg,你是谁，为什么要救我？,0
+zin_reg_msg,谈不上救，只是给你一次机会,1
+zin_reg_msg,你到底想干什么！,0
+zin_reg_msg,你打算一直站在这里聊天？,1
+zin_reg_msg,我。。。。,0
+zin_reg_qnar,你打晕了p_name1扛在肩上，消失在夜色中
+goto,*tiaojiao
+
+ret_sel3
+goto*shoumai
+
+
+*shoumai
+zin_reg_msg,笨～蛋～,1
+zin_reg_msg,給我押下去,1
+zin_reg_msg,等等，这是call_pid32大人！,1
+zin_reg_msg,怎么会，一定是误会！,1
+zin_reg_msg,话说回来，深夜跑来做这种事，迟早会被敌对派系发现的吧。,1
+chk_sts,player,4,>3000
+chk_sts_then
+zin_reg_msg,咳··咳··，知道了，我会打点的,0
+upd_sts,player,勲功,-500
+zin_reg_qnar,你动用关系收拾了现场，功勋-500
+bl_fadeout
+end
+
+
+chk_sts_else
+zin_reg_qnar,你试图收买典狱长
+zin_reg_msg,你当我是白痴吗，劫狱可是重罪,1
+zin_reg_msg,即便是call_pid32，也給我押下去,1
+set_horyo,player,poid_player
+bl_fadeout
+end
+
+
+
+*tiaojiao
+bgm_chg,61
+bl_fadein,gzin73
+zin_reg_event,某處廢屋一間,pid1,pid2,,gzin73
+zin_reg_msg,起床了．．．事情很突然、但是從今天起要和你打個賭。。,1
+zin_reg_msg,什麼！？發生什麼事了．．．賭什麼？,0
+zin_reg_msg,三天裡、對cf_pid2的調教如果能夠耐得住就釋放你。,1
+zin_reg_msg,如果能被釋放、忍上三天就好了啊！我知道了,0
+zin_reg_3sel,安排调教师,快速调教,亲自调教
+get_resp
+ret_sel1
+chk_sts,player,4,>3000
+chk_sts_then
+upd_sts,player,4,-200
+zin_reg_qnar,      功勋-200
+zin_reg_qnar,  犯人在调教专家的刺激下很快屈服了
+bl_fadeout
+txtload,u581b
+
+chk_sts_else
+zin_reg_qnar,      调教师不愿意搭理你
+zin_reg_msg,看来目前的职级还不够叫人重视呢！,1
+zin_reg_msg,只能亲自调教了。,1
+bl_fadeout
+goto,*tiaojiao2
+
+ret_sel2
+rnd,2
+case0
+bl_fadeout
+txtload,u581b
+case1
+bgm_chg,58
+bl_fadein,gzin73
+zin_reg_event,調教失敗,pid1,pid2,,gzin73
+zin_reg_msg,您真的是相當的有耐性啊．．．．,1
+zin_reg_msg,嗚嗚．．．這是真的把我放了？,0
+zin_reg_msg,是的、根據對您努力的評價充滿敬意而釋放。,1
+zin_reg_msg,．．．啊．．．那麼我自由了啊．．．嗚嗚嗚。,0
+zin_reg_msg,請按您的意愿去留吧。,1
+set_hourou,pid1
+bl_fadeout
+end
+
+ret_sel3
+bl_fadeout
+goto,*tiaojiao2
+
+*tiaojiao2
+set_eveflg,201,0
+bgm_chg,61
+bl_fadein,gzin73
+zin_reg_event,調教第一天．上午,pid1,pid2,,gzin73
+zin_reg_msg,那麼、接下來請接受調教吧、希望你真的能挺過去。,1
+zin_reg_msg,那、那樣．．．討厭！！,0
+zin_reg_msg,叫破喉嚨也是無用的。那麼立刻開始吧。,1
+zin_reg_3sel,接吻,揉弄胸部,玩弄肉穴
+get_resp
+ret_sel1
+	switch_seikaku,pid1
+	case_seikaku13
+		zin_reg_msg,．．．嗚嗯啊．．．什麼什麼的！！討厭的人！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+		add_eveflg,201,20
+		goto,*itigo
+	case_seikaku14
+		zin_reg_msg,．．．嗯啊．．．討厭．．．住手啊！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigo
+	case_seikaku23
+		zin_reg_msg,．．．嗚嗯啊．．．什麼什麼的！！討厭的人！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+		add_eveflg,201,20
+		goto,*itigo
+	case_seikaku24
+		zin_reg_msg,．．．嗯啊．．．討厭．．．住手啊！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigo
+	case_seikaku31
+		zin_reg_msg,．．．嗯啊．．．討厭．．．住手啊！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigo
+	case_seikaku41
+		zin_reg_msg,請住手！這是在模仿什麼的嗎？,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigo
+	case_seikaku42
+		zin_reg_msg,請住手！這是在模仿什麼的嗎？,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigo
+	default_seikaku
+		zin_reg_msg,嗯哈．．．突然這樣什麼的！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+		add_eveflg,201,10
+		goto,*itigo
+ret_sel2
+	switch_seikaku,pid1
+	case_seikaku13
+		zin_reg_msg,啊啊．．．不要這樣揉弄胸部的啊．．．,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+		add_eveflg,201,10
+		goto,*itigo
+	case_seikaku14
+		zin_reg_msg,呼嗯、好像胸部被觸摸的有些快樂呢？,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigo
+	case_seikaku23
+		zin_reg_msg,啊啊．．．不要這樣揉弄胸部的啊．．．,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+		add_eveflg,201,10
+		goto,*itigo
+	case_seikaku24
+		zin_reg_msg,呼嗯、好像胸部被觸摸的有些快樂呢？,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigo
+	case_seikaku31
+		zin_reg_msg,呼嗯、好像胸部被觸摸的有些快樂呢？,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigo
+	case_seikaku41
+		zin_reg_msg,那、那樣的．．．討厭　揉胸　不行啊！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigo
+	case_seikaku42
+		zin_reg_msg,那、那樣的．．．討厭　揉胸　不行啊！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigo
+	default_seikaku
+		zin_reg_msg,胸部．．．啊啊嗯！不能那樣強力啊．．．,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+		add_eveflg,201,20
+		goto,*itigo
+ret_sel3
+	switch_seikaku,pid1
+	case_seikaku13
+		zin_reg_msg,不要碰我那個地方啊！！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigo
+	case_seikaku14
+		zin_reg_msg,哈、哈．．．呀啊．．．啊唔,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigo
+	case_seikaku23
+		zin_reg_msg,不要碰我那個地方啊！！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigo
+	case_seikaku24
+		zin_reg_msg,哈、哈．．．呀啊．．．啊唔,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigo
+	case_seikaku31
+		zin_reg_msg,哈、哈．．．呀啊．．．啊唔,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigo
+	case_seikaku41
+		zin_reg_msg,那麼劇烈摩擦的話啊！啊啊嗯！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+		add_eveflg,201,20
+		goto,*itigo
+	case_seikaku42
+		zin_reg_msg,那麼劇烈摩擦的話啊！啊啊嗯！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+		add_eveflg,201,20
+		goto,*itigo
+	default_seikaku
+		zin_reg_msg,嗚啊嗯！．．．那裡好癢啊．．．,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+		add_eveflg,201,10
+		goto,*itigo
+
+*itigo
+bgm_chg,61
+bl_fadein,gzin73
+zin_reg_event,調教中途休息片刻,pid1,pid2,,gzin73
+zin_reg_msg,聲音聽起來很可愛呢,1
+zin_reg_msg,真的麼．．．,0
+zin_reg_msg,下次是下午開始、請多多努力哦,1
+zin_reg_msg,．．．．．．,0
+bl_fadeout
+zin_reg_qnar,　　　　　　　　　　　　然後、到了下午。
+bgm_chg,61
+bl_fadein,gzin73
+zin_reg_event,調教第一天．下午,pid1,pid2,,gzin73
+zin_reg_msg,上午的表現不錯、那麼下午也要加油呢,1
+zin_reg_msg,這樣的事．．．請住手啊,0
+zin_reg_msg,這樣無理的請求。停止的事是不可能的呢,1
+zin_reg_msg,．．．．．．嗚嗚嗚,0
+zin_reg_msg,下午準備進行哪些調教項目呢．．．,1
+zin_reg_3sel,玩弄乳首,玩弄陰蒂,舔弄脖子
+get_resp
+ret_sel1
+	switch_seikaku,pid1
+	case_seikaku13
+		zin_reg_msg,不行的說．．．那樣的地方．．．不要啊！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigoo
+	case_seikaku14
+		zin_reg_msg,不要碰乳首之類的地方啊！！惡心！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigoo
+	case_seikaku23
+		zin_reg_msg,不行的說．．．那樣的地方．．．不要啊！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigoo
+	case_seikaku24
+		zin_reg_msg,不要碰乳首之類的地方啊！！惡心！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigoo
+	case_seikaku31
+		zin_reg_msg,不要碰乳首之類的地方啊！！惡心！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigoo
+	case_seikaku41
+		zin_reg_msg,啊啊嗯！那樣的地方．．．變了啊．．．,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+		add_eveflg,201,10
+		goto,*itigoo
+	case_seikaku42
+		zin_reg_msg,啊啊嗯！那樣的地方．．．變了啊．．．,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+		add_eveflg,201,10
+		goto,*itigoo
+	default_seikaku
+		zin_reg_msg,乳首硬了啊啊啊啊啊！！！不行啊！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+		add_eveflg,201,20
+		goto,*itigoo
+ret_sel2
+	switch_seikaku,pid1
+	case_seikaku13
+		zin_reg_msg,不要碰那裡啊！！多髒啊！！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigoo
+	case_seikaku14
+		zin_reg_msg,嗚啊啊啊啊啊！刺激太強烈的說！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigoo
+	case_seikaku23
+		zin_reg_msg,不要碰那裡啊！！多髒啊！！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigoo
+	case_seikaku24
+		zin_reg_msg,嗚啊啊啊啊啊！刺激太強烈的說！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigoo
+	case_seikaku31
+		zin_reg_msg,嗚啊啊啊啊啊！刺激太強烈的說！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigoo
+	case_seikaku41
+		zin_reg_msg,那麼劇烈的話．．．啊嗚！嗯哼ーー！！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+		add_eveflg,201,20
+		goto,*itigoo
+	case_seikaku42
+		zin_reg_msg,那麼劇烈的話．．．啊嗚！嗯哼ーー！！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+		add_eveflg,201,20
+		goto,*itigoo
+	default_seikaku
+		zin_reg_msg,什麼啊．．．被摸的腦袋變得糊塗了呢．．．,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+		add_eveflg,201,10
+		goto,*itigoo
+ret_sel3
+	switch_seikaku,pid1
+	case_seikaku13
+		zin_reg_msg,不要．．．討厭啊。那樣的地方、嗯、不要舔啊！！,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+		add_eveflg,201,20
+		goto,*itigoo
+	case_seikaku14
+		zin_reg_msg,明明．．．討厭的說．．．好癢啊,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+		add_eveflg,201,10
+		goto,*itigoo
+	case_seikaku23
+		zin_reg_msg,不要．．．討厭啊。那樣的地方、嗯、不要舔啊！！,0
+		zin_reg_qnar,　　　　　　p_name1の感度が20上がった
+		add_eveflg,201,20
+		goto,*itigoo
+	case_seikaku24
+		zin_reg_msg,明明．．．討厭的說．．．好癢啊,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+		add_eveflg,201,10
+		goto,*itigoo
+	case_seikaku31
+		zin_reg_msg,明明．．．討厭的說．．．好癢啊,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+		add_eveflg,201,10
+		goto,*itigoo
+	case_seikaku41
+		zin_reg_msg,這樣地方不要舔啊。好惡心啊,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigoo
+	case_seikaku42
+		zin_reg_msg,這樣地方不要舔啊。好惡心啊,0
+		zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+		add_eveflg,201,-20
+		goto,*itigoo
+	default_seikaku
+		zin_reg_msg,嗯啊！！還能這樣舔的說．．．,0
+		zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+		add_eveflg,201,15
+		goto,*itigoo
+
+*itigoo
+bgm_chg,61
+bl_fadein,gzin73
+zin_reg_event,調教第一天結束了,pid1,pid2,,gzin73
+zin_reg_msg,呵呵呵呵．．．中間幾次高潮了嗎？。,1
+zin_reg_msg,．．．啊嗯！！！不過、有一點差別！！！,0
+zin_reg_msg,誒？有區別的嗎。真是失禮了。,1
+zin_reg_msg,今天已經結束了吧？,1
+zin_reg_msg,．．．（咕嚕——）．．．,0
+zin_reg_msg,是啊、肚子也餓了吃飯嗎？。,1
+zin_reg_msg,哎呀！這個．．．這是．．．嗚嗚、好害羞．．．,0
+zin_reg_qnar,之後、二人一起各自領取了飯食回到了自己的房間裡。
+chk_cpsts,知力,pid2>pid1
+chk_cpsts_then
+	zin_reg_msg,．．．嗚嗯．．．身体很熱．．．,0
+	zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+	bl_fadeout
+	add_eveflg,201,10
+chk_cpsts_else
+	bgm_chg,61
+	bl_fadein,gzin73
+	zin_reg_event,調教第二天．上午,pid1,pid2,,gzin73
+	zin_reg_msg,早上好。昨晚睡的好嗎？,1
+	zin_reg_msg,．．．那樣的事、睡不著什麼的．．．,0
+	zin_reg_msg,但是、今天也會被調教的說。,1
+	zin_reg_msg,隨意忍忍不就好了麼。,0
+	zin_reg_msg,誒？還會反抗的啊．．．,1
+	zin_reg_msg,聽說今天的項目可是很難的喲、所以請繼續努力吧,1
+	zin_reg_msg,．．．．討厭．．．什麼的．．．,
+	zin_reg_msg,那麼、我來看看都有哪些調教項目吧？,1
+	zin_reg_3sel,語言責備,鞭子抽打,縄縛吊起
+	get_resp
+	ret_sel1
+		switch_seikaku,pid1
+		case_seikaku13
+			zin_reg_msg,．．．不對！淫乱什麼的．．．這是不對的,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+			add_eveflg,201,20
+			goto,*ninokyu
+		case_seikaku14
+			zin_reg_msg,不、不對的．．．濕了什麼的．．．啊、我才不會說啊啊啊,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+			add_eveflg,201,15
+			goto,*ninokyu
+		case_seikaku23
+			zin_reg_msg,．．．不對！淫乱什麼的．．．這是不對的,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+			add_eveflg,201,20
+			goto,*ninokyu
+		case_seikaku24
+			zin_reg_msg,不、不對的．．．濕了什麼的．．．啊、我才不會說啊啊啊,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+			add_eveflg,201,15
+			goto,*ninokyu
+		case_seikaku31
+			zin_reg_msg,不、不對的．．．濕了什麼的．．．啊、我才不會說啊啊啊,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+			add_eveflg,201,15
+			goto,*ninokyu
+		case_seikaku41
+			zin_reg_msg,你在說些什麼啊！？骯髒、下流！,0
+			zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+			add_eveflg,201,-20
+			goto,*ninokyu
+		case_seikaku42
+			zin_reg_msg,你在說些什麼啊！？骯髒、下流！,0
+			zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+			add_eveflg,201,-20
+			goto,*ninokyu
+		default_seikaku
+			zin_reg_msg,那樣的事、現在不說也．．．呀啊．．．,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+			add_eveflg,201,10
+			goto,*ninokyu
+	ret_sel2
+		switch_seikaku,pid1
+		case_seikaku13
+			zin_reg_msg,什麼東西啊、很痛啊！住手啊！,0
+			zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+			add_eveflg,201,-20
+			goto,*ninokyu
+		case_seikaku14
+			zin_reg_msg,．．．不要再打啦．．．很痛的、討厭啊啊,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+			add_eveflg,201,10
+			goto,*ninokyu
+		case_seikaku23
+			zin_reg_msg,什麼東西啊、很痛啊！住手啊！,0
+			zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+			add_eveflg,201,-20
+			goto,*ninokyu
+		case_seikaku24
+			zin_reg_msg,．．．不要再打啦．．．很痛的、討厭啊啊,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+			add_eveflg,201,10
+			goto,*ninokyu
+		case_seikaku31
+			zin_reg_msg,．．．不要再打啦．．．很痛的、討厭啊啊,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+			add_eveflg,201,10
+			goto,*ninokyu
+		case_seikaku41
+			zin_reg_msg,呼ーーー！！被抽打的身體要麻木了的說！！！,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+			add_eveflg,201,20
+			goto,*ninokyu
+		case_seikaku42
+			zin_reg_msg,呼ーーー！！被抽打的身體要麻木了的說！！！,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+			add_eveflg,201,20
+			goto,*ninokyu
+		default_seikaku
+			zin_reg_msg,為什麼．．．．明明很痛．．．身體卻很熱．．．啊啊嗯,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+			add_eveflg,201,15
+			goto,*ninokyu
+	ret_sel3
+		switch_seikaku,pid1
+		case_seikaku13
+			zin_reg_msg,這樣吊著．．．什麼都被看光光了的說,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+			add_eveflg,201,10
+			goto,*ninokyu
+		case_seikaku14
+			zin_reg_msg,縄子被小穴吞掉了．．．嗚啊嗯,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+			add_eveflg,201,20
+			goto,*ninokyu
+		case_seikaku23
+			zin_reg_msg,這樣吊著．．．什麼都被看光光了的說,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了１０點
+			add_eveflg,201,-20
+			goto,*ninokyu
+		case_seikaku24
+			zin_reg_msg,縄子被小穴吞掉了．．．嗚啊嗯,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+			add_eveflg,201,20
+			goto,*ninokyu
+		case_seikaku31
+			zin_reg_msg,縄子被小穴吞掉了．．．嗚啊嗯,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了２０點
+			add_eveflg,201,20
+			goto,*ninokyu
+		case_seikaku41
+			zin_reg_msg,縄子刺刺的．．．啊嗯．．．不要了啊啊啊啊,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+			add_eveflg,201,15
+			goto,*ninokyu
+		case_seikaku42
+			zin_reg_msg,縄子刺刺的．．．啊嗯．．．不要了啊啊啊啊,0
+			zin_reg_qnar,　　　　　　p_name1的感度提高了１５點
+			add_eveflg,201,15
+			goto,*ninokyu
+		default_seikaku
+			zin_reg_msg,痛啊！不要了！快把我放下來啊！,0
+			zin_reg_qnar,　　　　　　p_name1的感度降低了２０點
+			add_eveflg,201,-20
+			goto,*ninokyu
+
+*ninokyu
+txtload,u581a

@@ -1,0 +1,57 @@
+chk_family,pid2,pid1
+case_fam_妻
+	zin_reg_msg,啊、漂亮的香料、給我的？,1
+	zin_reg_msg,我認為對你有用啊,0
+	zin_reg_msg,謝謝、call_pid1,1
+	zin_reg_qnar,此后、p_name2聞到香味、成為p_name1的性奴隸。
+	zin_reg_button,0
+	zin_reg_exit
+	end
+
+case_fam_妹
+case_fam_娘
+case_fam_娘(養)
+	zin_reg_msg,這是給我的東西？,1
+	zin_reg_msg,call_pid2認為對你有用,0
+	zin_reg_msg,謝謝、call_pid1,1
+	zin_reg_qnar,此后、p_name2聞到香味、成為p_name1的性奴隸。
+	zin_reg_button,0
+	zin_reg_exit
+	end
+
+case_fam_母
+case_fam_姉
+	zin_reg_msg,很不錯的香料．．cr給我的？,1
+	zin_reg_msg,call_pid2認為對你有用啊,0
+	zin_reg_msg,謝謝、call_pid1,1
+	zin_reg_qnar,此后、p_name2聞到香味、成為p_name1的性奴隸。
+	zin_reg_button,0
+	zin_reg_exit
+	end
+
+default_fam
+	chk_kunko,pid1,pid2
+	case_kun_上司
+		zin_reg_msg,啊、不錯的香料cr是callself_pid2に？,1
+		zin_reg_msg,p_name2認為對你有用啊,0
+		zin_reg_msg,謝謝你，快點回去焚燒聞聞,1
+		zin_reg_qnar,此后、p_name2聞到香味、成為p_name1的性奴隸。
+		zin_reg_button,0
+		zin_reg_exit
+		end
+	case_kun_同僚
+		zin_reg_msg,啊、不錯的香料cr給我的？,1
+		zin_reg_msg,認為對你有用啊,0
+		zin_reg_msg,謝謝、call_pid1,1
+		zin_reg_qnar,此后、p_name2聞到香味、成為p_name1的性奴隸。
+		zin_reg_button,0
+		zin_reg_exit
+		end
+	case_kun_部下
+		zin_reg_msg,啊、好棒的香料cr送給我的？,1
+		zin_reg_msg,就是給你的,0
+		zin_reg_msg,謝謝、call_pid1,1
+		zin_reg_qnar,此后、p_name2聞到香味、成為p_name1的性奴隸。
+		zin_reg_button,0
+		zin_reg_exit
+		end

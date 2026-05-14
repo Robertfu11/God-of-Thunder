@@ -1,0 +1,47 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,p_name的王宮,pid2,pid1,,gzin8
+zin_reg_msg,父親大人、我有事相求,1
+zin_reg_msg,什麼事？　p_name1,0
+zin_reg_msg,我想要嫁到p_name3大人那裏去,1
+zin_reg_msg,你說啥！？,0
+zin_reg_msg,嗯．．．確實得為你的婚姻大事做打算了．．．,0
+zin_reg_msg,那就請一定把我嫁到p_name3大人家去！！,1
+zin_reg_msg,可我們還不知道對方,0
+zin_reg_msg,p_name3大人他是不是願意呢,0
+zin_reg_msg,那、那個．．．．,1
+zin_reg_msg,只能等他同意了再說了,1
+zin_reg_msg,嗯．．．cr我知道了、我去探探口風．．．,0
+bl_fadeout
+bl_fadein,gzin8
+zin_reg_event,p_name3的王宮,pid3,pid2,zin62,gzin8
+zin_reg_msg,這不是p_name2大人嘛、有何貴幹？,0
+zin_reg_msg,p_name3殿下、您還記得小女p_name1嗎？,1
+zin_reg_msg,當然記得,0
+zin_reg_msg,實不相瞞、小女希望能和殿下永結同好,1
+zin_reg_msg,您願意迎娶p_name1為妃嗎？,1
+zin_reg_msg,什麼！！,0
+zin_reg_button,3
+get_resp
+ret_yes
+	zin_reg_msg,當然了,0
+	zin_reg_msg,當然願意迎娶為妃,0
+	zin_reg_msg,哦哦、是麼,1
+	zin_reg_msg,那就讓小女收拾收拾過來,1
+	zin_reg_msg,請您准備迎親吧,1
+	zin_reg_msg,我知道了,0
+	zin_reg_title,p_name1成為了妃。
+	zin_reg_button,0
+	zin_reg_exit
+	set_pmov,pid1,pid3
+	set_pkon,pid1,pid3
+	end
+
+ret_no
+	zin_reg_msg,非常抱歉、我現在還沒有結婚的想法,0
+	zin_reg_msg,嗯．．．是這樣麼,1
+	zin_reg_msg,沒辦法、忘記剛才的話把,1
+	zin_reg_button,0
+	zin_reg_exit
+	dec_sinmitu,pid1,50
+	end

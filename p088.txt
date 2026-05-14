@@ -1,0 +1,12 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,脫走,pid1,0,,gzin19
+zin_reg_msg,這種情況、我已經無法再對主君效忠了,0
+zin_reg_msg,還是逃到別的國家去吧．．．,0
+zin_reg_msg,好吧、去p_name3殿下那裏試試吧,0
+zin_reg_msg,那位閣下、聽說非常善待部下,0
+zin_reg_msg,一定會對callself_pid1以禮相待的,0
+zin_reg_title,p_name1向p_name3投降了。
+zin_reg_button,0
+zin_reg_exit
+end

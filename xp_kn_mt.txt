@@ -1,0 +1,115 @@
+//王族オルド通常　相手：母
+//状態チェック
+chk_wsts,pid2
+//通常パターン
+case_hatumaku
+case_normal
+rnd,4
+case0
+	zin_reg_msg,來、把call_pid1的小雞雞放進媽這裡面來,1
+	zin_reg_msg,啊啊、call_pid2．．．,0
+	zin_reg_msg,唔哇．．．進、進來了．．．兒子的小雞雞．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊、你看call_pid1．．．媽和你．．．合為一體．．．唔唔！！,pid2
+	zin_old_msg,call_pid2．．．這、這麼激烈的腰振．．．唔．．．,pid1
+	zin_old_msg,啊啊．．．對不起咯．．．感覺太好了嘛．．．停不下來了．．．,pid2
+	zin_old_msg,唔唔．．．和兒子交合．．．真的很舒服．．．,pid2
+	zin_old_msg,那、call_pid1、再一次、把你的種子給媽吧,pid2
+	zin_old_msg,將來你的弟弟、也是你的兒子喲,pid2
+	zin_old_msg,好、好的．．．把我的種子．．．給call_pid2．．唔唔！！,pid1
+	zin_flush,pid2
+	zin_old_msg,啊啊．．．出來好多．．．跳動著．．．好像早點要你的孩子．．．,pid2
+	end
+case1
+	zin_reg_msg,還是忘不了母親的懷抱啊,1
+	zin_reg_msg,call_pid2．．．．,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,嘛、不知不覺間．．．你已經變得這麼大了,pid2
+	zin_old_msg,啊啊、call_pid2的味道．．．好懷念．．．,pid1
+	zin_old_msg,嘿嘿、果然還是個孩子,pid2
+	zin_old_msg,你說啥呢、是這樣麼？,pid1
+	zin_old_msg,哈嗚．．啊啊．．．這個．．．,pid2
+	zin_old_msg,狠狠的抽插call_pid2的子宮．．．這也是小孩能辦到的事情？,pid1
+	zin_old_msg,好厲害！！．．．不、不行了．．．感覺好棒．．．,pid2
+	zin_old_msg,我要射了哦、call_pid2！！,pid1
+	zin_old_msg,啊啊．．．啊啊．．．被、被兒子．．．弄高潮了ーーー！！！,pid2
+	zin_flush,pid2
+	end
+case2
+	zin_reg_msg,今天也來安慰一下媽媽嘛,1
+	zin_reg_msg,包在我身上、call_pid2,0
+	zin_reg_msg,嘛、好高興．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,呀、啊．．．咿．．．果然．．．call_pid1的大肉棒．．．感覺才是最棒的．．．,pid2
+	zin_old_msg,啊啊、繼續．．．繼續用call_pid1的大肉棒侵犯媽媽吧！！,pid2
+	zin_old_msg,call_pid2．．．這是、你這種羞恥的放蕩樣子．．．,pid1
+	zin_old_msg,兒子的肉棒居然這樣讓你如癡如醉．．．這讓皇后情何以堪啊,pid1
+	zin_old_msg,啊啊、對不起．．．原諒你．．．淫蕩的母親吧！！！,pid2
+	zin_old_msg,不原諒．．必須給call_pid2點懲罰才行！！,pid1
+	zin_old_msg,啊啊、怎麼這樣．．．懲罰．．．媽媽這種事．．．啊！！,pid2
+	zin_old_msg,呵呵、馬上就為call_pid2的子宮滿滿的獻上我的精液,pid1
+	zin_old_msg,啊啊、咿咿．．．一直到裡面．．．好舒服．．．．,pid2
+	zin_old_msg,還要．．．我還要．．．請、請懲罰我！！．．．唔咕．．．呃！！,pid2
+	zin_old_msg,那、要射了！！,pid1
+	zin_flush,pid2
+	zin_old_msg,啊啊．．．肚子裡全是．．．兒子、兒子的精液．．．．,pid2
+	end
+case3
+	zin_reg_msg,那麼、今天也讓媽媽來為你治愈疲勞吧,1
+	zin_reg_msg,啊啊、call_pid2．．．．,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,怎麼？　call_pid1、感覺好嗎？,pid2
+	zin_old_msg,是、是的．．．call_pid2的裡面．．感覺．．．最棒了．．．,pid1
+	zin_old_msg,呵呵呵、乖孩子．．．,pid2
+	zin_old_msg,那就放松下來、一切就交給媽媽吧,pid2
+	zin_old_msg,唔唔！！,pid1
+	zin_old_msg,啊．．．很好．．．很好．．．直到最深處．．．call_pid1的小雞雞．．．,pid2
+	zin_old_msg,嗚．．．call_pid2．．．這麼激烈．．．我忍不住了．．,pid1
+	zin_old_msg,可以哦call_pid1．．．忍不住的話．．．隨時都可以喲．．．,pid2
+	zin_old_msg,隨時都可以向母親獻上．．．你的濃稠之物哦！！,pid2
+	zin_old_msg,好．．．call_pid2．．．就要、要射了！！,pid1
+	zin_old_msg,很好、很好．．．鮮榨的．．．鮮榨的白濁、領受了啊啊啊！！！,pid2
+	zin_flush,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_reg_msg,call_pid1、你在做什麼,1
+	zin_reg_msg,快點、母親想要啪啪啪的事情,1
+	zin_reg_msg,你怎麼了、call_pid2cr如此的情迷意亂．．．,0
+	zin_reg_msg,愛子情深、明白了？,1
+	zin_reg_msg,趕快、趕快進家門吧,1
+	zin_reg_msg,是、遵命、我回來了．．．,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+rnd,2
+case0
+	zin_old_msg,這怎麼樣、call_pid2,pid1
+	zin_old_msg,哈啊啊．．．很好．．．再用點力摩擦我的陰核．．．,pid2
+	zin_old_msg,我明白了、call_pid2．．．這怎麼樣？,pid1
+	zin_old_msg,啊啊．．．好、好厲害．．．果然兒子的小雞雞才是最棒的．．．,pid2
+	zin_old_msg,你感覺怎麼樣？,pid2
+	zin_old_msg,是、是的．．．call_pid2的肉穴裡．．．被稠密的包圍著．．．感覺超好,pid1
+	zin_old_msg,很好．．．那向你肚子裡的兄弟問個好吧,pid2
+	zin_old_msg,好的、看我一棍子捅破天！！、接招！！,pid1
+	zin_old_msg,哈嗚．．．嗚嗚．．．噶啊啊．．．好厲害．．．直到子宮裡面．．．快速的來了！！,pid2
+	zin_old_msg,咕．．．call_pid2．．．我要射了！！,pid1
+	zin_old_msg,好的、把你的精奶．．．給你的兄弟喝個痛快！！,pid2
+	zin_old_msg,咕唔唔唔唔！！！,pid1
+	zin_flush,pid2
+	end
+case1
+	zin_old_msg,啊啊．．．call_pid2．．．我終于和call_pid2有了孩子呢,pid1
+	zin_old_msg,漸漸的肚子變得好大了呢．．．有點不好意思呢,pid2
+	zin_old_msg,你在說什麼呀、大肚子的call_pid2才是最有魅力的,pid1
+	zin_old_msg,嘛、聽你這麼說好高興喲。call_pid1、那就給你更多的服務吧,pid2
+	zin_old_msg,啊．．．call_pid2．．．這裡．．．咕．．．,pid1
+	zin_old_msg,怎樣、要射了？,pid2
+	zin_old_msg,是、是的．．．要、要射了喲、call_pid2！！,pid1
+	zin_old_msg,好的、滿滿的出來吧、call_pid1！！,pid2
+	zin_flush,pid2
+	end

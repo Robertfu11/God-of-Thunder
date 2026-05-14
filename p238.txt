@@ -1,0 +1,10 @@
+bgm_chg,54
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin18
+zin_reg_qnar,p_name1訪問了p_name2的住所。
+zin_reg_msg,啊啦、難道你是p_name1,1
+zin_reg_msg,真高興你來訪呢,1
+zin_reg_msg,忘不了你呢,0
+zin_reg_msg,真高興聽到你這樣說,1
+set_eveflg,52,1
+end

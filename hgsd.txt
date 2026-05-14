@@ -1,0 +1,199 @@
+set_epid1,player
+set_epid3,782
+
+zin_reg_event,灯红酒绿之街道,pid1,pid3,,gzin2
+zin_reg_qnar,     怀有宝物的行商上门拜访
+zin_reg_msg,這就是、這就是call_pid31大人麼、總是承蒙惠顧、真是萬分感謝。,1
+zin_reg_3sel,购买药剂,购买宝物,这次算了
+get_resp
+ret_sel1
+zin_reg_msg,都在这里呢，请call_pid31挑选！,0
+goto,*g1
+
+ret_sel2
+zin_reg_msg,都在这里呢，请call_pid31挑选！,0
+goto,*g2
+
+ret_sel3
+zin_reg_qnar,短暫的閒聊之後、p_name1離開了這裡．．．
+zin_reg_button,0
+zin_reg_exit
+end
+
+
+*g1
+zin_reg_3sel,全身性感香,精力剂,试试手气
+get_resp
+ret_sel1
+drop_item,player,金塊
+get_item,player,,全身性感香
+zin_reg_qnar,         你购买了全身性感香
+zin_reg_button,0
+zin_reg_exit
+end
+ret_sel2
+drop_item,player,金塊
+get_item,player,,精力剤
+zin_reg_qnar,         你购买了精力剤
+zin_reg_button,0
+zin_reg_exit
+end
+
+ret_sel3
+rnd,9
+
+case0
+drop_item,player,金塊
+get_item,player,,延命酒
+zin_reg_qnar,     你打开神秘包裹，里面是延命酒
+zin_reg_button,0
+zin_reg_exit
+end
+
+case1
+drop_item,player,金塊
+get_item,player,,強化鍵
+zin_reg_qnar,     你打开神秘包裹，里面是強化鍵
+zin_reg_button,0
+zin_reg_exit
+end
+
+case2
+drop_item,player,金塊
+get_item,player,,女神的原味胸罩
+zin_reg_qnar,     你打开神秘包裹，里面是女神的原味胸罩
+zin_reg_button,0
+zin_reg_exit
+end
+
+case3
+drop_item,player,金塊
+get_item,player,,女神的原味内裤
+zin_reg_qnar,      你打开神秘包裹，里面是女神的原味内裤
+zin_reg_button,0
+zin_reg_exit
+end
+
+case4
+drop_item,player,金塊
+get_item,player,,女神的原味丝袜
+zin_reg_qnar,      你打开神秘包裹，里面是女神的原味丝袜
+zin_reg_button,0
+zin_reg_exit
+end
+
+case5
+drop_item,player,金塊
+get_item,player,,総合アミノ酸
+zin_reg_qnar,      你打开神秘包裹，里面是綜合胺基酸
+zin_reg_button,0
+zin_reg_exit
+end
+
+case6
+drop_item,player,金塊
+get_item,player,,チロシン
+zin_reg_qnar,      你打开神秘包裹，里面是酪氨酸
+zin_reg_button,0
+zin_reg_exit
+end
+
+case7
+drop_item,player,金塊
+get_item,player,,テオブロミン
+zin_reg_qnar,       你打开神秘包裹，里面是可可鹼
+zin_reg_button,0
+zin_reg_exit
+end
+
+case8
+drop_item,player,金塊
+get_item,player,,レシチン
+zin_reg_qnar,       你打开神秘包裹，里面是卵磷脂
+zin_reg_button,0
+zin_reg_exit
+end
+
+
+
+*g2
+zin_reg_3sel,一族の家宝,一族の証,试试手气
+get_resp
+ret_sel1
+drop_item,player,金塊
+get_item,player,,一族の家宝
+zin_reg_qnar,         你购买了一族の家宝
+zin_reg_button,0
+zin_reg_exit
+end
+ret_sel2
+drop_item,player,金塊
+get_item,player,,一族の証
+zin_reg_qnar,         你购买了一族の証
+zin_reg_button,0
+zin_reg_exit
+end
+
+ret_sel3
+rnd,7
+
+case0
+drop_item,player,金塊
+get_item,player,,防衛戦術書 五
+zin_reg_qnar,      你打开神秘包裹，里面是防衛戦術書 五
+zin_reg_button,0
+zin_reg_exit
+end
+
+case1
+drop_item,player,金塊
+get_item,player,,艦隊戦術書 五
+zin_reg_qnar,      你打开神秘包裹，里面是艦隊戦術書 五
+zin_reg_button,0
+zin_reg_exit
+end
+
+case2
+drop_item,player,金塊
+get_item,player,,ああ言えばコウユウ
+zin_reg_qnar,      你打开神秘包裹，里面是強詞奪理
+zin_reg_button,0
+zin_reg_exit
+end
+
+case3
+drop_item,player,金塊
+get_item,player,,金剣
+zin_reg_qnar,      你打开神秘包裹，里面是金剣
+zin_reg_button,0
+zin_reg_exit
+end
+
+case4
+drop_item,player,金塊
+get_item,player,,６段玉手箱
+zin_reg_qnar,      你打开神秘包裹，里面是６段玉手箱
+zin_reg_button,0
+zin_reg_exit
+end
+
+case5
+drop_item,player,金塊
+get_item,player,,技術解説書
+zin_reg_qnar,       你打开神秘包裹，里面是技術解説書
+zin_reg_button,0
+zin_reg_exit
+end
+
+case6
+drop_item,player,金塊
+get_item,player,,とてもいい壺
+zin_reg_qnar,      你打开神秘包裹，里面是名瓷
+zin_reg_button,0
+zin_reg_exit
+end
+
+
+
+
+

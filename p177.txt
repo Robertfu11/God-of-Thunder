@@ -1,0 +1,15 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,p_name1的執務室,pid1,pid2,,gzin43
+zin_reg_msg,call_pid21、太抱歉了．．．,1
+zin_reg_msg,怎麼了？,0
+zin_reg_msg,其實p_name3叛變去buf_str1派了,1
+zin_reg_msg,什麼！？,0
+zin_reg_msg,傳言說他對p_name1派有不滿的抱怨．．．,1
+zin_reg_msg,啊．．．cr成員要徹底效忠啊,0
+zin_reg_msg,隨便從p_name1派中脫離是不允許的！！,0
+zin_reg_msg,是！！,1
+zin_reg_qnar,p_name3叛變去buf_str1派了。
+zin_reg_button,0
+zin_reg_exit
+end

@@ -1,0 +1,74 @@
+//覇王オルド　ボテ汎用
+rnd,6
+case0
+	zin_old_msg,啊啊、您能夠臨幸這樣的我．．．看來您還是忘不了我的味道哦．．．恩恩．．．,pid2
+	zin_old_msg,似乎、就是這回事,pid1
+	zin_old_msg,這胖胖的肚子．．．也和胸部一樣韻味無窮呢．．．,pid1
+	zin_old_msg,啊啊．．．好高興．．．call_pid1．．孩子．．和我．．三個人．．在一起．．．．．,pid2
+	zin_old_msg,請把．．．call_pid1的愛．．．也滿滿的．．給予孩子,pid2
+	zin_old_msg,這、這樣麼．．．那咱就再給你做上一個．．．滿滿的給你！！,pid1
+	zin_old_msg,啊、來、來了．．．孩子．．．也有快感了．．．呀！！　呀啊啊啊啊！！,pid2
+	zin_old_msg,．．．孩子和我．．．一起都要、都要高潮了呀啊！！,pid2
+	zin_flush,pid2
+	end
+case1
+	zin_old_msg,怎麼樣、懷孕了不僅僅是感覺超好、感度也提高了不是麼？,pid1
+	zin_old_msg,啊、昂．．．啊、那種事．．．啊！！,pid2
+	zin_old_msg,別說謊了、我還沒進去你就已經濕漉漉滑溜溜的了,pid1
+	zin_old_msg,那、那個．．．啊啊．．．咿咿．．．,pid2
+	zin_old_msg,事實上這是久違的快樂吧？cr老實交代！！,pid1
+	zin_old_msg,是、是的．．．事實上．．．每次和call_pid1一起嘿咻．．．頭腦都會變得．．．一片空白．．．誒誒誒誒！！！,pid2
+	zin_old_msg,是麼、為了孩子一直都在忍耐著,pid1
+	zin_old_msg,是、是的．．．．好擔心孩子．．．,pid2
+	zin_old_msg,不用多慮、孩子它搖搖晃晃的也會很高興的,pid1
+	zin_old_msg,真、真的嗎．．．額額．．．啊啊！！,pid2
+	zin_old_msg,那就讓我們三個好伙伴一起高潮吧！！,pid1
+	zin_old_msg,好的．．我也要．．．要去了．．．要去了．．去了啊啊啊啊啊！！！,pid2
+	zin_flush,pid2
+	end
+case2
+	zin_old_msg,啊啊、今天的call_pid1．．．比以往更加神勇！！！,pid2
+	zin_old_msg,是、是麼．．．可能是看見大肚皮就興奮起來了吧,pid1
+	zin_old_msg,啊、啊啊昂．．．這、這麼激烈的話、孩子會．．．孩子會．．．,pid2
+	zin_old_msg,可是、這樣咯吱咯吱的摩擦．．．感覺、好有快感．．．．,pid2
+	zin_old_msg,啊啊．．．這樣的話．．．馬上、馬上就要高潮了！！,pid2
+	zin_old_msg,callself_pid1也快要射了．．．,pid1
+	zin_old_msg,再、再深一點．．．丟．．．．要丟了．．要丟了啊啊啊啊啊啊．啊啊！！！,pid2
+	zin_flush,pid2
+	end
+case3
+	zin_old_msg,哦呵呵呵、喜歡抱著我這種大肚皮的女人、call_pid1的口味還真是獵奇呢,pid2
+	zin_old_msg,懷著孩子的女人可是我最喜歡的,pid1
+	zin_old_msg,像胖子但又不是胖子、這種特殊的胴體最能喚起性欲了,pid1
+	zin_old_msg,嘛．．call_pid1的取向、好奇怪．．．噗,pid2
+	zin_old_msg,唔哦哦！！．．．盡管懷孕了、可還是如此的緊致,pid1
+	zin_old_msg,呵呵、p_name2的肉穴可是一件伸縮自如的寶貝,pid2
+	zin_old_msg,呼唔．．．已經快要．．把持不住了,pid1
+	zin_old_msg,請吧、call_pid1。在p_name2的肉穴裡面隨便幾次都可以,pid2
+	zin_old_msg,唔、呼、．．．要、要射了！！,pid1
+	zin_flush,pid2
+	end
+case4
+	zin_old_msg,呵呵呵、肚子搖晃得好厲害呢,pid1
+	zin_old_msg,求、求求您了．．．請．．cr請再．．溫柔一些,pid2
+	zin_old_msg,啊、寶寶．．要．．暈掉了．．啊啊．．．,pid2
+	zin_old_msg,恩．．．cr你那塊貌似已經很放松了不是麼？,pid1
+	zin_old_msg,沒．．沒有辦法．．．已經馬上要．．孩子要出生．．．,pid2
+	zin_old_msg,嘿嘿、男孩？　還是女孩？　在出生之前要好好的加餐才行,pid1
+	zin_old_msg,啊啊、已經、已經．．出來了．．嗎．．．,pid2
+	zin_old_msg,呼啊！！！,pid1
+	zin_flush,pid2
+	zin_old_msg,嗚嗚．．．．寶寶．．．cr在肚子裡．．．累壞了．．．,pid2
+	end
+case5
+	zin_old_msg,多了一個人呢、變得好重了誒．．．,pid1
+	zin_old_msg,是、是的．．．肚子已經變得好大了,pid2
+	zin_old_msg,啊啊！！　今天．．又比平時．．．更加、更加生猛．．．噫啊啊！！,pid2
+	zin_old_msg,懷孕的,pid1
+	zin_old_msg,唔．．．call_pid1、你這麼．．．大力的揉．．．奶水要．．啊啊．．．,pid2
+	zin_old_msg,是麼、好像真的被我揉出奶來了呢．．．,pid1
+	zin_old_msg,那、那就差不多了,pid1
+	zin_old_msg,抓緊時間享受現在這份快感吧,pid1
+	zin_old_msg,啊啊、不要．．．這麼．．．要、要高潮了！！！,pid2
+	zin_flush,pid2
+	end

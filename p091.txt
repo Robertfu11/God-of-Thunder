@@ -1,0 +1,30 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,公主的請求,pid1,pid2,,gzin8
+zin_reg_msg,父親大人、有件事想拜託您,1
+zin_reg_msg,什麼事啊？,0
+zin_reg_msg,實際上、我有了意中人,1
+zin_reg_msg,我想和他結婚,1
+zin_reg_msg,什麼！？,0
+zin_reg_msg,那、他是誰？,0
+zin_reg_msg,是p_name3,1
+zin_reg_msg,是他！！,0
+zin_reg_button,3
+get_resp
+ret_yes
+	zin_reg_msg,我同意了,0
+	zin_reg_msg,你能幸福、就是父親最大的心願,0
+	zin_reg_msg,非常感謝、父親大人！！,1
+	zin_reg_title,p_name1和p_name2結婚了。
+	zin_reg_button,0
+	zin_reg_exit
+	end
+ret_no
+	zin_reg_msg,我不允許！！,0
+	zin_reg_msg,居然和p_name3這種人在交往,0
+	zin_reg_msg,到底什麼時候、你們已經到了談婚論嫁的地步了,0
+	zin_reg_msg,你聽好、不許你再和p_name3來往了,0
+	zin_reg_msg,怎麼能這樣、父親大人！！,1
+	zin_reg_button,0
+	zin_reg_exit
+	end

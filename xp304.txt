@@ -1,0 +1,66 @@
+//夜這い　弱みオルド　皇太后
+chk_mval,オルド回数:pid2=0,,,,,
+//初回
+chk_mval_then
+	zin_old_msg,有多久沒有和男人性交過了？,pid1
+	zin_old_msg,啊、啊．．回答你的義務．．．啊、並沒有,pid2
+	zin_old_msg,那麼說的話．．．你該不會是忘了我可是掌握著你的秘密呢吧？,pid1
+	zin_old_msg,．．．．．．．．．．．cr也、也有．．．幾年了．．．沒、沒做了．．．,pid2
+	zin_old_msg,呵呵、既然如此。那麼今天就成為令你無法忘記的夜晚吧,pid1
+	goto,*np1
+//2回目以降
+chk_mval_else
+	rnd,2
+	case0
+		zin_old_msg,啊．．．嘛、這麼硬的．．．,pid2
+		zin_old_msg,還好、我認為能夠生下陛下的身體。還是有作為女人對待的價值的,pid1
+		zin_old_msg,拜、拜託你．．．這樣的話不要讓別人聽到．．．cr還請保守．．．啊、秘密．．．,pid2
+		zin_old_msg,呵呵、我知道了、皇太后大人。cr作為代價就是要讓我充分的享受今晚的快樂喲,pid1
+		zin_old_msg,啊啊！！　啊啊啊、不行啊啊啊啊！　不行、不行了ーーーcr這樣下去、太、過於刺激了！！,pid2
+		zin_old_msg,哦、這樣的話．．．像這樣愛液垂流的景象可是普通行為所出不來了喲,pid1
+		goto,*np1
+	case1
+		zin_old_msg,請、請您停止吧．．．做、這樣的事．．．,pid2
+		zin_old_msg,如果你不在乎秘密被宣揚出去的話，到是可以馬上停下來。cr不過．．．這個身體好像並沒有想要停下來的慾望喲,pid1
+		zin_old_msg,什麼、愚蠢的胡話啊．．．嗯、哎呀。cr啊啊啊啊啊！　不行的、不行啊啊啊啊ーーー,pid2
+		zin_old_msg,還好、我認為能夠生下陛下的身體。還是有作為女人對待的價值的,pid1
+		zin_old_msg,啊、怎麼可以說出這樣下流的言語．．．cr啊、啊你就不怕．．會、遭到天罰．．下地獄的嗎？,pid2
+		zin_old_msg,真是的、口無遮攔的女人啊,pid1
+
+*np1
+
+//体位ごとに分岐
+switch_otaii,pid2
+//騎乗位
+case_okijo
+	zin_old_msg,呼呼．．．嗯啊．．．cr已經、全部．．．都進來了啊．．．,pid2
+	zin_old_msg,哎呀哎呀、裡面完全都空空的嘛。cr想要這傢伙、想要的不得了呢,pid1
+	zin_old_msg,那、那種事情是．．．,pid2
+	zin_old_msg,嗯嗯、我會隱瞞之間發生的事哦。被像這樣搞、你也是相當久違了吧？,pid1
+	zin_old_msg,那是．．．怎麼樣都好。cr．．．．．我的動作．．．請拜託,pid2
+	zin_old_msg,還要多多仰仗你呢,pid1
+	zin_old_msg,嗯啊．．．啊！好猛烈！好猛烈！好棒！啊啊！啊嗚嗯．．．好強！,pid2
+	zin_old_msg,嗚哈哈．．．不、不愧是成熟的女人啊．．．高超的床技呢。cr小穴的緊窄程度和年齡不相符呢．．．唔、這緊密糾纏的感覺還真是不錯啊,pid1
+	zin_old_msg,啊．．．嗚嗚、呼嗚嗚．．是啊、啊啊啊！！cr快、快來．．．不然的話．．．cr我、我也．．也、也要．．．高潮了．．啊啊．．不管了．．啊啊ーー啊！,pid2
+	zin_old_msg,好、好的．．．一、一起高潮吧！！,pid1
+	goto,*switch_otaii_end
+default_otaii
+	zin_old_msg,都進來了啊、p_name2大人。cr哎呀哎呀、裡面完全都空空的嘛。cr想要這傢伙、想要的不得了呢,pid1
+	zin_old_msg,那、那種事情是．．．,pid2
+	zin_old_msg,嗯嗯、我會隱瞞之間發生的事哦。被像這樣搞、你也是相當久違了吧？cr今天讓cf_pid1把妳從母親變回個女人吧,pid1
+	zin_old_msg,．．．．．．．．．．．．．．．,pid2
+	zin_old_msg,好好的承受吧、p_name2大人,pid1
+	zin_old_msg,嗯啊！！　那、那樣．．．突然的刺到深處．．．cr會受不了啊．．．請、溫柔．．．嗯啊啊啊啊！！,pid2
+	zin_old_msg,呵呵呵、恰恰相反、像這樣緊密的糾纏著。cr這緊密的感覺、好像快要出來了呢,pid1
+	zin_old_msg,啊啊．．．哦、不行啊．．．在、陰道裡面．．．射的事、不被允許．．．,pid2
+	zin_old_msg,p_name2大人若是為我產下私生子的話、我也能成為國父的嗎？cr不如試一下吧,pid1
+	zin_old_msg,不、不要．．．不行啊．．．那、那樣做的話．．．啊、不行啊啊啊啊啊！！,pid2
+
+*switch_otaii_end
+zin_flush,pid2
+zin_old_msg,哈哈～～哈哈～～哈哈～～哈哈～～cr国母被我進行這樣的行為、一定很滿足的吧,pid2
+zin_old_msg,嗯、隔了這麼久、終於出現了。不、應該是搾取成功。cr那麼、下次也拜託了,pid1
+zin_old_msg,啊？　還有下次？,pid2
+zin_old_msg,當然了。我又沒有和你說過只有這一次就結束的,pid1
+zin_old_msg,想、想不到竟然會是這樣的人．．．,pid2
+end

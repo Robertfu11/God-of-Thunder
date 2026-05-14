@@ -1,0 +1,16 @@
+bgm_chg,70
+zin_reg_init
+zin_reg_event,,pid1,pid3,zin6,gzin8
+zin_reg_qnar,p_name1和以前認識的女性關係加深，決定娶為妃子了。
+zin_reg_msg,cf_pid1決定娶妃子了,0
+zin_reg_msg,各位，要熱情迎接妃子,0
+zin_reg_msg,代表家臣表示祝賀,1
+zin_reg_msg,這麼著也解決了家業繼承問題,1
+zin_reg_face_l,pid2
+zin_reg_msg,p_name3、請多多關照啊,0
+zin_reg_msg,哈哈，我們家臣全員會全力保護p_name2,1
+zin_reg_msg,那就拜託了,0
+zin_reg_title,p_name1結婚了。
+zin_reg_button,0
+zin_reg_exit
+end

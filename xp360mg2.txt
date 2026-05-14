@@ -1,0 +1,25 @@
+bgm_chg,64
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,不、不要．．．那樣的．．．啊、在深處．．．滋啵滋啵的頂．．．嗯嗯．．．嗯啊啊ーーー,pid2
+zin_old_msg,怎麼、這個man_str？　不停地有siru_str流出來、下流的聲音不停響起．．．這麼淫亂的女人還真是掃興,pid1
+zin_old_msg,因為．．．腰．．．不由自主的就動起來了．．．最舒服的地方．．．tin_str、撞擊著！！！！,pid2
+zin_old_msg,呼呼呼、腰的使用方法、終於學會了嘛。那麼、cf_pid1的tane_str想要嗎！,pid1
+zin_old_msg,想、想要．．．crcall_pid21的tane_str、想要！！,pid2
+zin_old_msg,那麼、腰更多的動起來！！　然後讓cf_pid1射精試試！！,pid1
+zin_old_msg,是、是的！！　嗯嗯嗯嗯．．．嗯嗯．．．嗯嗯啊啊ーーーっ！！,pid2
+zin_old_msg,如果光是這樣的話cf_pid1是不會射精的哦！！,pid1
+zin_old_msg,從cf_pid1這裏榨取tane_str時、要這樣做！！,pid1
+zin_old_qnar,p_name2挺動腰部向p_name1的深處沖撞。
+zin_old_msg,好猛烈啊啊啊！！　啊啊．．．嗯是啊啊！！　嗚嗚啊啊！！　嗯啊啊啊啊！！,pid2
+zin_old_msg,不、不要啊．．．那、那裏是．．．再這樣的話．．．p_name2．．．要壞掉了！！,pid2
+zin_old_msg,呼呼、今天一天、只需要考慮那裏的事情就可以了、放心吧,pid1
+zin_old_msg,啊是．．．嗯！　啊嗯！　啊嗯！　啊嗯！　啊嗯！　好！　好爽的！　tin_str好棒！　啊啊啊啊！,pid2
+zin_old_msg,好、差不多該把你想要的tane_str、在直到子宮撐破為止、滿滿的灌進去了！！,pid1
+zin_old_msg,給我！！　call_pid21的tane_str！！　請把我的肚子全部灌滿！！,pid2
+zin_old_msg,嗚！！　嗚嗚嗯！！！,pid1
+zin_flush,pid2
+zin_old_msg,啊啊！！　來了！！　call_pid21的tane_str！！正往子宮裏．．．不停的灌進來嗚嗚嗚！！！,pid2
+zin_reg_button,16
+zin_reg_exit
+end

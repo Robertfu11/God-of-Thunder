@@ -1,0 +1,55 @@
+eve_start
+	if_psex,player,1
+    if_amon,1
+	if_val,状態:player=2
+	if_val,勲功:player<13000
+eve_end
+set_epid1,player
+set_epid3,poid_player
+set_eveflg,193,0
+set_eveflg,192,0
+bl_fadein,gzin8
+zin_reg_event,,player,,,
+zin_reg_msg,弱み?,0
+ zin_reg_2sel,弱み,放棄
+        get_resp
+        ret_sel1
+        goto,*go
+        ret_sel2
+         end
+         *go
+                    sel_plist,26,poid_player,1,1,名單
+		            set_epid2,pval
+		            set_eveflg,192,pval
+		            chk_eveflg,192,<0
+                    chk_eveflg_then
+	                set_eveflg,192,0
+					zin_reg_msg,放棄,0
+                    end
+                     chk_eveflg_else
+                    bl_fadein,gzin8
+                    zin_reg_event,,player,eveflg192,,
+                    zin_reg_msg,弱みp_name2?,0
+                    zin_reg_3sel,弱み,重選,放棄
+                    get_resp
+                    ret_sel1
+					set_epid1,player
+					set_epid2,eveflg192
+					//set_horyo,eveflg192,poid_player
+                    upd_sts,pid2,弱み,1
+					txtload,u118
+                        end
+                    zin_reg_button,0
+                    //continue
+                    //break
+                    end
+                    ret_sel2
+                    txtload,u108
+                    end
+                    ret_sel3
+                    set_eveflg,193,0
+                    end
+set_eveflg,193,0
+set_eveflg,192,0
+bl_fadeout
+end

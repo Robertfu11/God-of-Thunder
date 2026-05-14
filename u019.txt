@@ -1,0 +1,27 @@
+//eve_start
+	//if_date,70,2
+//eve_end
+
+get_item,player,,１代理人接头暗哨
+get_item,player,,２后宫调教菜单
+//get_item,player,,飛行戦術書
+//get_item,player,,戦場包囲
+//get_item,player,,戦場包囲
+get_item,player,,面会パス
+//get_item,player,,要塞設計図
+//get_item,player,,特別部隊招集
+get_item,player,,精力剤
+get_item,player,,媚薬
+//get_item,player,,精力剤
+get_item,player,,一族の家宝
+get_item,player,,派閥加入券
+get_item,player,,全身性感香
+//add_money,poid_player,20000000
+get_item,player,,處女廚的眼鏡
+
+
+upd_sts,player,5,200
+upd_sts,player,6,200
+upd_sts,player,7,200
+upd_sts,player,8,200
+upd_sts,player,9,200

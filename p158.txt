@@ -1,0 +1,11 @@
+bgm_chg,64
+zin_reg_init
+zin_reg_event,,pid2,0,,gzin21
+zin_reg_msg,確定了、孩子的父親是p_name1呀,0
+zin_reg_msg,那個男人我十分討厭,0
+zin_reg_msg,還是打掉吧,0
+zin_reg_title,p_name2墮胎了。
+zin_reg_button,0
+zin_reg_exit
+set_datai,pid2
+end

@@ -1,0 +1,628 @@
+/////ねとられプラス_ver2.2（海賊）/////
+
+get_mpid,性別=1,状態=4,覇王=player,婚姻=0,,,
+set_eveflg,233,pval
+chk_mval,eveflg233>0,eveflg233!player,,,
+	chk_mval_then
+	chk_family,eveflg233,player
+		case_fam_兄
+		case_fam_弟
+		case_fam_父
+		case_fam_息子
+		case_fam_息子(養)
+		end
+		default_fam
+		goto,*Start
+	chk_mval_else
+	end
+
+*Start
+eve_start
+	if_val,状態:player=4
+	if_val,婚姻:player>0
+	if_val,オルド回数:yome_player>6
+	if_val,覇王:yome_player=player
+	if_rnd,2
+eve_end
+
+set_epid1,eveflg233
+set_epid2,yome_player
+
+bgm_chg,64
+zin_reg_event,机械室,pid1,pid2,,gzin42
+zin_reg_qnar,最近、p_name2背着丈夫与crp_name1偷偷约会
+zin_reg_qnar,为了躲避人们的视线而使用了不明显的机械室作为约会地点
+zin_reg_msg,今晚的夜色很美不来一发么．．．？,0
+zin_reg_msg,不行．．．cr像这样偷偷的见面就已经cr很危险了．．．,1
+zin_reg_msg,但是男人揉着女人的乳房cr心里默默期待着．．．？,0
+zin_reg_qnar,p_name1一边按着她的肩膀把她抱到怀里cr一边在耳边私语着
+zin_reg_msg,（啊、不行cr这样下去cr会停不下来的）,1
+zin_reg_msg,（必须想想办法cr拒绝他）,1
+zin_reg_qnar,用什么语言来抵抗？
+zin_reg_3sel,快乐系,魅力系,伦理系
+get_resp
+///////////////////////////////////////////////////////////////
+ret_sel1
+rnd,3
+case0
+zin_reg_msg,夫人不想试试丈夫以外的男人么？,0
+zin_reg_msg,cf_pid1我的cr大肉棒可是很厉害的哦,0
+zin_reg_qnar,p_name1用快乐系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+upd_sts,pid2,5,20
+chk_mval,知力:pid1<46,知力:pid2>99,,,
+chk_mval_then
+	goto,*Otokokati5A
+chk_mval_else
+	chk_cpsts,5,pid1>pid2
+	chk_cpsts_then
+	*Otokokati5A
+	zin_reg_msg,呵呵呵cr脸红了？,0
+	zin_reg_msg,不限制欲望是对的cr女人本能的会追求男人的肉棒,0
+	zin_reg_msg,今晚可要cr好好的疼爱你哦,0
+	zin_reg_msg,．．．嗯,1
+	upd_sts,pid2,5,-20
+	goto,*OldStart
+	chk_cpsts_else
+	zin_reg_msg,哎、还是不行！,1
+	zin_reg_msg,虽说很想要cr不过,1
+	zin_reg_msg,还是不能cr背叛那个人．．．,1
+	upd_sts,pid2,5,-20
+	goto,*BougyoSeiko
+
+case1
+zin_reg_msg,在狭窄的船上一个人的夜晚不寂寞么？,0
+zin_reg_msg,cf_pid1在下会cr牢牢地抱住你的,0
+zin_reg_qnar,p_name1用魅力系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+chk_mval,防御:pid1<46,防御:pid2>99,,,
+chk_mval_then
+	goto,*Otokokati7A
+chk_mval_else
+	chk_cpsts,7,pid1>pid2
+	chk_cpsts_then
+	*Otokokati7A
+	zin_reg_msg,可以让我cr撒娇么？,1
+	zin_reg_msg,可以,0
+	zin_reg_msg,今夜让彼此拥吻对方吧,0
+	zin_reg_msg,．．．嗯,1
+	goto,*OldStart
+	chk_cpsts_else
+	zin_reg_msg,哎、还是不行！,1
+	zin_reg_msg,虽然你也很优秀cr不过,1
+	zin_reg_msg,还是不能cr背叛那个人．．．,1
+	goto,*BougyoSeiko
+
+case2
+zin_reg_msg,大人他现在也cr不知道在哪cr抱着其她的女人,0
+zin_reg_msg,夫人没有必要cr忍耐了,0
+zin_reg_qnar,p_name1用伦理系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+chk_mval,交渉:pid1<46,交渉:pid2>99,,,
+chk_mval_then
+	goto,*Otokokati9A
+chk_mval_else
+	chk_cpsts,9,pid1>pid2
+	chk_cpsts_then
+	*Otokokati9A
+	zin_reg_msg,那个人也在搞着のcr．．．？,1
+	zin_reg_msg,那样做cr换了一个又一个,0
+	zin_reg_msg,因此cf_pid1也尽情的享受吧,0
+	zin_reg_msg,．．．嗯,1
+	goto,*OldStart
+	chk_cpsts_else
+	zin_reg_msg,哎、还是不行！,1
+	zin_reg_msg,虽然你说的很有道理不过,1
+	zin_reg_msg,还是不能cr背叛那个人．．．,1
+	goto,*BougyoSeiko
+///////////////////////////////////////////////////////////////
+ret_sel2
+rnd,3
+case0
+zin_reg_msg,夫人不想试试丈夫以外的男人么？,0
+zin_reg_msg,cf_pid1我的cr大肉棒可是很厉害的哦,0
+zin_reg_qnar,p_name1用快乐系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+chk_mval,知力:pid1<46,知力:pid2>99,,,
+chk_mval_then
+	goto,*Otokokati5B
+chk_mval_else
+	chk_cpsts,5,pid1>pid2
+	chk_cpsts_then
+	*Otokokati5B
+	zin_reg_msg,呵呵呵cr脸红了？,0
+	zin_reg_msg,不限制欲望是对的cr女人本能的会追求男人的肉棒,0
+	zin_reg_msg,今晚可要cr好好的疼爱你哦,0
+	zin_reg_msg,．．．嗯,1
+	goto,*OldStart
+	chk_cpsts_else
+	zin_reg_msg,哎、还是不行！,1
+	zin_reg_msg,虽说很想要cr不过,1
+	zin_reg_msg,还是不能cr背叛那个人．．．,1
+	goto,*BougyoSeiko
+
+case1
+zin_reg_msg,在狭窄的船上一个人的夜晚不寂寞么？,0
+zin_reg_msg,cf_pid1在下会cr牢牢地抱住你的,0
+zin_reg_qnar,p_name1用魅力系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+upd_sts,pid2,7,20
+chk_mval,防御:pid1<46,防御:pid2>99,,,
+chk_mval_then
+	goto,*Otokokati7B
+chk_mval_else
+	chk_cpsts,7,pid1>pid2
+	chk_cpsts_then
+	*Otokokati7B
+	zin_reg_msg,可以让我cr撒娇么？,1
+	zin_reg_msg,可以,0
+	zin_reg_msg,今夜让彼此拥吻对方吧,0
+	zin_reg_msg,．．．嗯,1
+	upd_sts,pid2,7,-20
+	goto,*OldStart
+	chk_cpsts_else
+	zin_reg_msg,哎、还是不行！,1
+	zin_reg_msg,虽然你也很优秀cr不过,1
+	zin_reg_msg,还是不能cr背叛那个人．．．,1
+	upd_sts,pid2,7,-20
+	goto,*BougyoSeiko
+
+case2
+zin_reg_msg,大人他现在也cr不知道在哪cr抱着其她的女人,0
+zin_reg_msg,夫人没有必要cr忍耐了,0
+zin_reg_qnar,p_name1用伦理系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+chk_mval,交渉:pid1<46,交渉:pid2>99,,,
+chk_mval_then
+	goto,*Otokokati9B
+chk_mval_else
+	chk_cpsts,9,pid1>pid2
+	chk_cpsts_then
+	*Otokokati9B
+	zin_reg_msg,那个人也在搞着のcr．．．？,1
+	zin_reg_msg,那样做cr换了一个又一个,0
+	zin_reg_msg,因此cf_pid1也尽情的享受吧,0
+	zin_reg_msg,．．．嗯,1
+	goto,*OldStart
+	chk_cpsts_else
+	zin_reg_msg,哎、还是不行！,1
+	zin_reg_msg,虽然你说的很有道理不过,1
+	zin_reg_msg,还是不能cr背叛那个人．．．,1
+	goto,*BougyoSeiko
+///////////////////////////////////////////////////////////////
+ret_sel3
+rnd,3
+case0
+zin_reg_msg,夫人不想试试丈夫以外的男人么？,0
+zin_reg_msg,cf_pid1我的cr大肉棒可是很厉害的哦,0
+zin_reg_qnar,p_name1用快乐系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+chk_mval,知力:pid1<46,知力:pid2>99,,,
+chk_mval_then
+	goto,*Otokokati5C
+chk_mval_else
+	chk_cpsts,5,pid1>pid2
+	chk_cpsts_then
+	*Otokokati5C
+	zin_reg_msg,呵呵呵cr脸红了？,0
+	zin_reg_msg,不限制欲望是对的cr女人本能的会追求男人的肉棒,0
+	zin_reg_msg,今晚可要cr好好的疼爱你哦,0
+	zin_reg_msg,．．．嗯,1
+	goto,*OldStart
+	chk_cpsts_else
+	zin_reg_msg,哎、还是不行！,1
+	zin_reg_msg,虽说很想要cr不过,1
+	zin_reg_msg,还是不能cr背叛那个人．．．,1
+	goto,*BougyoSeiko
+
+case1
+zin_reg_msg,在狭窄的船上一个人的夜晚不寂寞么？,0
+zin_reg_msg,cf_pid1在下会cr牢牢地抱住你的,0
+zin_reg_qnar,p_name1用魅力系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+chk_mval,防御:pid1<46,防御:pid2>99,,,
+chk_mval_then
+	goto,*Otokokati7C
+chk_mval_else
+	chk_cpsts,7,pid1>pid2
+	chk_cpsts_then
+	*Otokokati7C
+	zin_reg_msg,可以让我cr撒娇么？,1
+	zin_reg_msg,可以,0
+	zin_reg_msg,今夜让彼此拥吻对方吧,0
+	zin_reg_msg,．．．嗯,1
+	goto,*OldStart
+	chk_cpsts_else
+	zin_reg_msg,哎、还是不行！,1
+	zin_reg_msg,虽然你也很优秀cr不过,1
+	zin_reg_msg,还是不能cr背叛那个人．．．,1
+	goto,*BougyoSeiko
+
+case2
+zin_reg_msg,大人他现在也cr不知道在哪cr抱着其她的女人,0
+zin_reg_msg,夫人没有必要cr忍耐了,0
+zin_reg_qnar,p_name1用伦理系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+upd_sts,pid2,9,20
+chk_mval,交渉:pid1<46,交渉:pid2>99,,,
+chk_mval_then
+	goto,*Otokokati9C
+chk_mval_else
+	chk_cpsts,9,pid1>pid2
+	chk_cpsts_then
+	*Otokokati9C
+	zin_reg_msg,那个人也在搞着のcr．．．？,1
+	zin_reg_msg,那样做cr换了一个又一个,0
+	zin_reg_msg,因此cf_pid1也尽情的享受吧,0
+	zin_reg_msg,．．．嗯,1
+	upd_sts,pid2,9,-20
+	goto,*OldStart
+	chk_cpsts_else
+	zin_reg_msg,哎、还是不行！,1
+	zin_reg_msg,虽然你说的很有道理不过,1
+	zin_reg_msg,还是不能cr背叛那个人．．．,1
+	upd_sts,pid2,9,-20
+	goto,*BougyoSeiko
+///////////////////////////////////////////////////////////////
+*BougyoSeiko
+zin_reg_msg,那样的话．．．cr如果那样今晚就算了,0
+zin_reg_msg,cf_pid1もcr还要继续磨练男人的魅力啊,0
+zin_reg_msg,．．．,1
+zin_reg_button,0
+zin_reg_exit
+end
+
+*OldStart
+zin_reg_msg,．．那么这边有不常来人的房间cr房间,0
+bgm_chg,21
+zin_reg_event,舰内最里面的士官室,pid1,pid2,,gzin37
+zin_reg_msg,．．．啊．．．嗯嗯．．．．．．啊啊啊,1
+zin_reg_msg,唔．．．啊啊啊．．．．．．这技术．．．真棒．．．．,1
+zin_reg_msg,p_name2がcr因为夫人很有魅力．..就样就很好了吗？,0
+zin_reg_msg,呜．．．cr嗯．．．cr带上避孕套吧,1
+zin_reg_msg,即使不带也不要紧,0
+zin_reg_msg,不、不行！cr拜托了！,1
+zin_reg_msg,不会cr这么简单就怀孕的．．．,0
+zin_reg_msg,（不行、就这样cr直接做的话）,1
+zin_reg_msg,（必须要cr说服他）,1
+zin_reg_qnar,用什么语言来抵抗？
+zin_reg_3sel,快乐系,魅力系,伦理系
+get_resp
+///////////////////////////////////////////////////////////////
+ret_sel1
+rnd,3
+case0
+zin_reg_msg,想直接感受到夫人的小穴cr这样很愉快啊,0
+zin_reg_qnar,p_name1用快乐系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+upd_sts,pid2,5,20
+chk_mval,知力:pid1<46,知力:pid2>99,,,
+chk_mval_then
+	goto,*Namakati5A
+chk_mval_else
+	chk_cpsts,5,pid1>pid2
+	chk_cpsts_then
+	*Namakati5A
+	zin_reg_qnar,说服失败！crp_name1就那样直接把肉棒插入了
+	zin_reg_msg,（对不起cr．．．．．．亲爱的）,1
+	upd_sts,pid2,5,-20
+	goto,*SinOld
+	chk_cpsts_else
+	zin_reg_qnar,说服成功！crp_name1勉强的套上避孕套插入了
+	upd_sts,pid2,5,-20
+	goto,*KurokoOld
+
+case1
+zin_reg_msg,想就这样让夫人你直接cr感受到我的肉棒,0
+zin_reg_qnar,p_name1用魅力系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+chk_mval,防御:pid1<46,防御:pid2>99,,,
+chk_mval_then
+	goto,*Namakati7A
+chk_mval_else
+	chk_cpsts,7,pid1>pid2
+	chk_cpsts_then
+	*Namakati7A
+	zin_reg_qnar,说服失败！crp_name1就那样直接把肉棒插入了
+	zin_reg_msg,（对不起cr．．．．．．亲爱的）,1
+	goto,*SinOld
+	chk_cpsts_else
+	zin_reg_qnar,说服成功！crp_name1勉强的套上避孕套插入了
+	goto,*KurokoOld
+
+case2
+zin_reg_msg,cf_pid1不能cr信任我么？,0
+zin_reg_qnar,p_name1用伦理系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+chk_mval,交渉:pid1<46,交渉:pid2>99,,,
+chk_mval_then
+	goto,*Namakati9A
+chk_mval_else
+	chk_cpsts,9,pid1>pid2
+	chk_cpsts_then
+	*Namakati9A
+	zin_reg_qnar,说服失败！crp_name1就那样直接把肉棒插入了
+	zin_reg_msg,（对不起cr．．．．．．亲爱的）,1
+	goto,*SinOld
+	chk_cpsts_else
+	zin_reg_qnar,说服成功！crp_name1勉强的套上避孕套插入了
+	goto,*KurokoOld
+///////////////////////////////////////////////////////////////
+ret_sel2
+rnd,3
+case0
+zin_reg_msg,想直接感受到夫人的小穴cr这样很愉快啊,0
+zin_reg_qnar,p_name1用快乐系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+chk_mval,知力:pid1<46,知力:pid2>99,,,
+chk_mval_then
+	goto,Namakati5B
+chk_mval_else
+	chk_cpsts,5,pid1>pid2
+	chk_cpsts_then
+	*Namakati5B
+	zin_reg_qnar,说服失败！crp_name1就那样直接把肉棒插入了
+	zin_reg_msg,（对不起cr．．．．．．亲爱的）,1
+	goto,*SinOld
+	chk_cpsts_else
+	zin_reg_qnar,说服成功！crp_name1勉强的套上避孕套插入了
+	goto,*KurokoOld
+
+case1
+zin_reg_msg,想就这样让夫人你直接cr感受到我的肉棒,0
+zin_reg_qnar,p_name1用魅力系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+upd_sts,pid2,7,20
+chk_mval,防御:pid1<46,防御:pid2>99,,,
+chk_mval_then
+	goto,*Namakati7B
+chk_mval_else
+	chk_cpsts,7,pid1>pid2
+	chk_cpsts_then
+	*Namakati7B
+	zin_reg_qnar,说服失败！crp_name1就那样直接把肉棒插入了
+	zin_reg_msg,（对不起cr．．．．．．亲爱的）,1
+	upd_sts,pid2,7,-20
+	goto,*SinOld
+	chk_cpsts_else
+	zin_reg_qnar,说服成功！crp_name1勉强的套上避孕套插入了
+	upd_sts,pid2,7,-20
+	goto,*KurokoOld
+
+case2
+zin_reg_msg,cf_pid1不能cr信任我么？,0
+zin_reg_qnar,p_name1用伦理系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+chk_mval,交渉:pid1<46,交渉:pid2>99,,,
+chk_mval_then
+	goto,*Namakati9B
+chk_mval_else
+	chk_cpsts,9,pid1>pid2
+	chk_cpsts_then
+	*Namakati9B
+	zin_reg_qnar,说服失败！crp_name1就那样直接把肉棒插入了
+	zin_reg_msg,（对不起cr．．．．．．亲爱的）,1
+	goto,*SinOld
+	chk_cpsts_else
+	zin_reg_qnar,说服成功！crp_name1勉强的套上避孕套插入了
+	goto,*KurokoOld
+///////////////////////////////////////////////////////////////
+ret_sel3
+rnd,3
+case0
+zin_reg_msg,想直接感受到夫人的小穴cr这样很愉快啊,0
+zin_reg_qnar,p_name1用快乐系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+chk_mval,知力:pid1<46,知力:pid2>99,,,
+chk_mval_then
+	goto,*Namakati5C
+chk_mval_else
+	chk_cpsts,5,pid1>pid2
+	chk_cpsts_then
+	*Namakati5C
+	zin_reg_qnar,说服失败！crp_name1就那样直接把肉棒插入了
+	zin_reg_msg,（对不起cr．．．．．．亲爱的）,1
+	goto,*SinOld
+	chk_cpsts_else
+	zin_reg_qnar,说服成功！crp_name1勉强的套上避孕套插入了
+	goto,*KurokoOld
+
+case1
+zin_reg_msg,想就这样让夫人你直接cr感受到我的肉棒,0
+zin_reg_qnar,p_name1用魅力系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+chk_mval,防御:pid1<46,防御:pid2>99,,,
+chk_mval_then
+	goto,*Namakati7C
+chk_mval_else
+	chk_cpsts,7,pid1>pid2
+	chk_cpsts_then
+	*Namakati7C
+	zin_reg_qnar,说服失败！crp_name1就那样直接把肉棒插入了
+	zin_reg_msg,（对不起cr．．．．．．亲爱的）,1
+	goto,*SinOld
+	chk_cpsts_else
+	zin_reg_qnar,说服成功！crp_name1勉强的套上避孕套插入了
+	goto,*KurokoOld
+
+case2
+zin_reg_msg,cf_pid1不能cr信任我么？,0
+zin_reg_qnar,p_name1用伦理系的语言诱惑了
+zin_reg_msg,我、我也．．．,1
+zin_reg_msg,．．．,1
+upd_sts,pid2,9,20
+chk_mval,交渉:pid1<46,交渉:pid2>99,,,
+chk_mval_then
+	goto,*Namakati9C
+chk_mval_else
+	chk_cpsts,9,pid1>pid2
+	chk_cpsts_then
+	*Namakati9C
+	zin_reg_qnar,说服失败！crp_name1就那样直接把肉棒插入了
+	zin_reg_msg,（对不起cr．．．．．．亲爱的）,1
+	upd_sts,pid2,9,-20
+	goto,*SinOld
+	chk_cpsts_else
+	zin_reg_qnar,说服成功！crp_name1勉强的套上避孕套插入了
+	upd_sts,pid2,9,-20
+	goto,*KurokoOld
+*SinOld
+zin_old_init
+zin_old_img_pid,pid2,1
+rnd,3
+case0
+zin_old_msg,啊啊啊啊啊．．．嗯嗯嗯．．．crp_name1先生tin_str．．．！,pid2
+goto,*old1
+case1
+zin_old_msg,啊啊．．．大肉棒．．．cr插进来了,pid2
+goto,*old1
+case2
+zin_old_msg,．．．啊啊啊．．．嗯嗯．．．嗯嗯．．．好厉害cr．．．你的tin_str．．．好厉害啊啊,pid2
+
+*old1
+rnd,3
+case0
+zin_old_msg,已经湿了么．．．cr等不急了么？,pid1
+goto,*old2
+case1
+zin_old_msg,唔．．．好紧．．．cr这么想要我的肉棒么？,pid1
+goto,*old2
+case2
+zin_old_msg,呼呼．．．只是稍微插进去一点cr就这么有感觉了？,pid1
+
+*old2
+rnd,3
+case0
+zin_old_msg,不要这么说．．．好羞耻．．．,pid2
+goto,*old3
+case1
+zin_old_msg,啊啊啊．．．那里．．．嗯嗯．．．cr好舒服．．．,pid2
+goto,*old3
+case2
+zin_old_msg,．．．啊啊啊．．．好硬．．．cr插进去好疼,pid2
+
+*old3
+rnd,3
+case0
+zin_old_msg,哼哼、已经成为诱惑雄性的小母狗了么．．．和老大的比这么样？,pid1
+goto,*old4
+case1
+zin_old_msg,好、siru_str夹得好紧．．．吸的好厉害．．．cr老大的tin_str哪个好？,pid1
+goto,*old4
+case2
+zin_old_msg,我们这次做的．．．cf_pid1我的和老大的哪个舒服？,pid1
+
+*old4
+rnd,3
+case0
+zin_old_msg,啊啊啊．．．嗯嗯．．．你的tin_str肉棒cr．．．好大好粗．．．！,pid2
+goto,*old5
+case1
+zin_old_msg,那样的事．．．！．．．不听cr．．．那个人的契合度．．．啊啊嗯．．,pid2
+goto,*old5
+case2
+zin_old_msg,．．．啊啊．．．嗯嗯嗯．．．哪一个cr．．．哪一个都好．．．！,pid2
+
+*old5
+zin_old_msg,呼呼呼．．．那样出来么！cr老实说tin_strNTR御姐把御姐搞得这样那样最喜欢了！！,pid1
+rnd,3
+case0
+zin_old_msg,啊啊那样子．．．好激烈．．．啊啊啊．．．cr好厉害、好厉害啊啊啊嗯！！,pid2
+goto,*old6
+case1
+zin_old_msg,だめええええ！．．．ハアハア．．．だめっ、もっとゆっくり．．．ゆっくりいいぃ．．．,pid2
+goto,*old6
+case2
+zin_old_msg,不行不行不行了！．．．啊啊啊．．．深、再插深一点．．．好深好深啊啊啊嗯嗯．．．！,pid2
+
+*old6
+rnd,3
+case0
+zin_old_msg,已经不行了、不行了．．．．．．好厉害．．．cr里面好舒服．．．竟然次次都能插到花心啊啊啊,pid2
+goto,*old7
+case1
+zin_old_msg,啊啊啊．．！你的tin_str艹的我好、好舒服啊啊！cr好、好棒好爽啊啊啊？,pid2
+goto,*old7
+case2
+zin_old_msg,．．啊啊啊．．．要飞了．．．射进来！嗯嗯拜托一起吧．．．！,pid2
+
+*old7
+rnd,3
+case0
+zin_old_msg,呼呼man_str真是tin_str可怜啊．．．cr好、cf_pid1要射了！．．．一起高潮吧！！,pid1
+goto,*old8
+case1
+zin_old_msg,啊啊．．．可爱的、p_name2！cr．．．我全部都射进去了．．．好好接受我的子种怀孕吧！！,pid1
+goto,*old8
+case2
+zin_old_msg,厉害．．．你的man_strがcf_pid1的tane_str小穴cr吸着不放！．．．射出来了！！,pid1
+
+*old8
+zin_flush,pid2
+rnd,3
+case0
+zin_old_msg,．．．啊啊、好厉害．．．你的tane_str插到子宫里了．．．好舒服．．．,pid2
+goto,*NinsinHantei
+case1
+zin_old_msg,．．．．．．啊啊啊．．．出来好多．．．装不下了．．．额额、咕噜噜的流出来了．．．,pid2
+goto,*NinsinHantei
+case2
+zin_old_msg,呼呼呼．．．．．．cf_pid2好兴奋．．．．．．好厉害．．．．．．好舒服．．．．．．,pid2
+
+*NinsinHantei
+dec_sinmitu,pid2,10
+rnd,5
+case0
+	chk_sts,pid2,16,0
+	chk_sts_then
+		set_ninsin,pid2,pid1
+		zin_reg_button,16
+		zin_old_exit
+		end
+	chk_sts_else
+		zin_reg_button,16
+		zin_old_exit
+		end
+case1
+case2
+case3
+case4
+	zin_reg_button,16
+	zin_old_exit
+	end
+
+*KurokoOld
+zin_reg_msg,小穴cr这么喜欢么？,0
+psn_putsex,1,0,1
+zin_reg_msg,哈哈cr别人老婆的小穴好喜欢cr．．．,0
+zin_reg_msg,我也变得好奇怪cr背叛了丈夫cr和其他的男人,1
+zin_reg_msg,现在的夫人cr已经变成了淫乱的小母狗了呢,0
+zin_reg_msg,额cr请不要那样说．．,1
+zin_reg_msg,．．．但是心情很舒畅cr．．．这样很好呢,1
+zin_reg_msg,被言词责备cr感觉很舒服？噢更紧了,0
+zin_reg_msg,啊啊啊、那样的cr啊啊啊、去、去了．．．！,1
+zin_reg_msg,好cf_pid1我也！cr．．．去了,0
+zin_reg_event,舰内最里面的士官室,pid1,pid2,zin4,gzin37
+zin_reg_qnar,p_name1在射精之前、把肉棒拔了出来退下避孕套、射在了女人的性器上
+zin_reg_msg,呜呜呜．．．好cr．．．．．．烫．．,1
+dec_sinmitu,pid2,10
+zin_reg_button,0
+zin_reg_exit
+end

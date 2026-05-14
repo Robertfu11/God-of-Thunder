@@ -1,0 +1,71 @@
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,callself_pid1和buf_str1比如何？,0
+	zin_reg_msg,那、那種事情．．．,1
+	zin_reg_msg,忘記那個死鬼吧,0
+	zin_reg_msg,callself_pid1會讓你做個好夢的,0
+	zin_reg_msg,撒、給我看看你的蜜壺吧,0
+	zin_reg_msg,是、是的．．．．,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,感覺如何、被buf_str1愛著的感覺？,pid1
+	zin_old_msg,這、這種事情．．．請不要再這樣說了,pid2
+	zin_old_msg,看看你這樣子、在仇人的懷裡居然能濕成這個樣子．．．怎麼看都是個淫亂的女人喲,pid1
+	zin_old_msg,我們說好了、今晚可不許說不要這類的話,pid1
+	zin_old_msg,啊啊．．．那樣．．．call_pid1可．．．恩恩．．．啊啊！！,pid2
+	zin_old_msg,嘿嘿、很投入嘛。或者說肉體很投入．．．,pid1
+	zin_old_msg,啊啊．．．p_name2是．．．call_pid1的專用．．．肉、肉奴隸的說！！,pid2
+	zin_old_msg,呵呵呵、算了算了。cr那、差不多就讓callself_pid1給你想要的吧,pid1
+	zin_old_msg,好好的懷上吧、仇人的子嗣喲！！,pid1
+	zin_old_msg,是、是的、領、領種．．．謝恩！,pid2
+	zin_flush,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,我．．．還沒讓男人碰過,1
+	zin_reg_msg,嗬．．．還是原封貨麼,0
+	zin_reg_msg,那就沒什麼可擔心的了,0
+	zin_reg_msg,懷著仇恨做callself_pid1的女人吧,0
+	zin_reg_msg,這、這可．．．．,1
+	zin_reg_msg,撒、趕緊把腿打開,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊啊、不可以．．．這麼巨大的．．．壞、要壞掉了．．．,pid2
+	zin_old_msg,讓我們來找點樂子吧,pid1
+	zin_old_msg,即使是你這種有來頭的女人、破處的感覺亦是妙不可言,pid1
+	zin_old_msg,而且、這種被緊緊的包裹住快要窒息的感覺﹒﹒﹒,pid1
+	zin_old_msg,不、不可以．．．不要這樣粗暴．．．肚子裡面．．要被插壞了！！,pid2
+	zin_old_msg,這種充滿彈性的蜜穴、根本停不下來！！,pid1
+	zin_old_msg,呀啊啊啊！！　疼、好疼啊！！,pid2
+	zin_old_msg,呼．．．接下來、讓你的腹中充滿仇恨的種子吧！！,pid1
+	zin_old_msg,一滴都不許浪費、通通給我吸進去！！！,pid1
+	zin_old_msg,啊啊、怎麼這樣、明明是第一次、就．．．射在裡面啊！！,pid2
+	zin_flush,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_reg_msg,肚子已經變得這麼大了呀,0
+	zin_reg_msg,一看見你這肚子就有想來一發的沖動,0
+	zin_reg_msg,請、請不要這樣、不要這麼說,1
+	zin_reg_msg,嘴上說著拒絕的話、其實你已經濕透了對吧？,0
+	zin_reg_msg,讓我來確認一下,0
+	zin_reg_msg,啊啊、今天真的、真的、不行誒！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,啊、不行啊．．．明明懷了孩子呀．．．可還是隨便的就動起腰來了！！,pid2
+	zin_old_msg,呵呵呵、已經完全是callself_pid1的女人了,pid1
+	zin_old_msg,無論如何也記不起仇恨了,pid1
+	zin_old_msg,生出來的孩子也太可憐了吧,pid1
+	zin_old_msg,p_name2是call_pid1的女人．．．,pid2
+	zin_old_msg,今、今後．．．還請您．．好好疼愛．．,pid2
+	zin_old_msg,呵呵、可愛的傢伙,pid1
+	zin_old_msg,一副沒有callself_pid1就活不下去的樣子,pid1
+	zin_old_msg,那好吧、今天也請你收下滿滿一包禮物,pid1
+	zin_old_msg,領受吧！！,pid1
+	zin_old_msg,是、是的．．．call_pid1的種子．．．全部、全部收下了！！,pid2
+	zin_flush,pid2
+	end

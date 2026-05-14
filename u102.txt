@@ -1,0 +1,24 @@
+eve_start
+	if_psex,player,1
+eve_end
+
+set_eveflg,190,0
+
+
+for,PMAX,190,1
+
+	chk_msts,eveflg190,ÐÔ„e,1,ÓÑºÃ,<30,Ò†Íõ,poid_player,NON,0,NON,0
+	chk_msts_then
+
+		//set_hourou,eveflg190
+        set_kataki_oya,eveflg190,player,eveflg190
+		continue
+
+	chk_msts_else
+		continue
+
+next
+
+set_eveflg,190,0
+
+end

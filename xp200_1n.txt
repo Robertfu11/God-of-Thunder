@@ -1,0 +1,26 @@
+bgm_chg,56
+zin_reg_msg,我知道了,1
+zin_reg_msg,既然是call_pid21希望的話．．．那麼．．．,1
+chk_mval,初膜:pid2=0,,,,,
+chk_mval_then
+	zin_reg_msg,我的處女給父親也．．．,1
+	goto,*next_proc
+chk_mval_else
+	zin_reg_msg,我的身體奉獻給父親也．．．,1
+*next_proc
+zin_reg_msg,是麼,0
+zin_reg_msg,真不愧是我的好女兒,0
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,啊、那裡是．．．,pid2
+zin_old_msg,請、對我的身體．．．溫柔點．．．,pid2
+zin_old_msg,喔喔喔！不愧是處女穴！快要被吸進去了,pid1
+zin_old_msg,啊啊！和父親合體的感覺．．．好、好舒服．．．．．．．,pid2
+zin_old_msg,還是年輕女人的身體好，和你媽媽的身體完全不一樣,pid1
+zin_old_msg,現在這個時候怎麼能想母親呢．．．call_pid21．．．,pid2
+zin_old_msg,我的．．．身心．．．都是call_pid21的東西,pid2
+zin_old_msg,恩、你是我的東西,pid1
+zin_old_msg,是，是的﹒﹒﹒啊，去了！要去了！要高潮了！！！！,pid2
+zin_flush,pid2
+end

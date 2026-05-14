@@ -1,0 +1,38 @@
+zin_reg_msg,又來了？,1
+zin_reg_msg,真是拿你沒辦法啊,1
+zin_reg_msg,請到這邊來,1
+zin_reg_msg,call_pid12．．．,0
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_msg,call_pid12的身体、就是那麼的讓人欲罷不能啊,pid1
+	zin_old_msg,是嗎？你的、也是讓人難以忘懷呢,pid2
+	zin_old_msg,真的？那、這次我要射進去了？　call_pid12,pid1
+	zin_old_msg,好的、請把精液射進我的小穴吧,pid2
+	zin_old_msg,呃、啊、依舊那麼的緊窄啊、call_pid12,pid1
+	zin_old_msg,啊啊．．．嗯啊．．．好、好棒．．．,pid2
+	zin_old_msg,頂．．頂到最深處．．高、高潮了啊！！,pid2
+	zin_flush,pid2
+	end
+
+//孕みパターン
+case_botebara
+	zin_old_msg,啊、姐姐．．．肚子裡還孕育著一個新的生命。,pid1
+	zin_old_msg,有著同其他女性絕對不同的味道。子宮的重量帶來絶妙的新鮮刺激．．．．,pid1
+	zin_old_msg,可是、肚子會被如此巨大的擴沿著、擠壓著我的tin_str．．．．,pid1
+	zin_old_msg,女人這種生物還真是好強啊．．．,pid1
+	zin_old_msg,call_pid21真是的．．．又在說著一些奇怪的話．．．,pid2
+	zin_old_msg,比起這些、p_name2的子宮更加像是在用厚瓶底來回的搔弄著我的tin_str！！,pid1
+	zin_old_msg,啊啊、放心的享受吧！！　這樣才比較好吧！！,pid1
+	zin_old_msg,哈、好的！！　那麼．．．那裡．．．感覺也、更加．．．強烈．．．啊啊啊啊！！,pid2
+	zin_old_msg,p_name2的弱點我可是全都知曉呢。我更喜歡女人潮噴的光景啊,pid1
+	zin_old_msg,知道了！！　如果那樣的話．．．這、腰部．．需要call_pid21幫忙抬著哦！！,pid2
+	zin_old_msg,哈啊啊啊．．．已經．．．不行了、啊啊啊啊啊啊ーーー啊！！！！！,pid2
+	zin_old_qnar,一股股愛液從p_name2的股間、噴射而出。
+	zin_flush,pid2
+	end

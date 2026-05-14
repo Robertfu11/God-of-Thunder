@@ -1,0 +1,63 @@
+bgm_chg,21
+zin_reg_init
+zin_old_init
+zin_old_img_pid,pid2,1
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_msg,啊啊．．．又這樣弄．．．我的胸部．．．呀啊啊啊！！,pid2
+	zin_old_msg,你還是一如既往的敏感吶,pid1
+	zin_old_msg,可是．．．被你這麼．．．這麼蹂躪．．．啊啊昂,pid2
+	zin_old_msg,奶頭感覺不錯是吧？,pid1
+	zin_old_msg,啊啊．．．爽．．．好爽！！！,pid2
+	zin_old_msg,呼呼呼、你是個值得深挖的女人。不過正戲現在才開始！！,pid1
+	zin_old_msg,啊啊．．．裡、裡面．．一直到裡面去了啊！！！,pid2
+	zin_old_msg,肚、肚子裡．．．咯吱咯吱的．．．好厲害．．．！！,pid2
+	zin_old_msg,好像小穴也變得很聽話了哦,pid1
+	zin_old_msg,趁熱打鐵、那就賜你子種吧．．．嗚噢噢噢噢！！,pid1
+	zin_old_msg,啊啊、又進來了．．．call_pid1的精液．．．又進來了啊啊啊！！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_old_msg,嘿嘿、果然是初物沒錯。又小又深、未經世故．．．,pid1
+	zin_old_msg,嗚嗚．．．．．．．,pid2
+	zin_old_msg,怎麼、很疼嗎？,pid1
+	zin_old_msg,沒、沒有．．．這種程度我還．．．啊啊．．．,pid2
+	zin_old_msg,幸虧準備了不少潤滑劑。嘛、有了這點汁量的話、那就用不上了,pid1
+	zin_old_msg,嗚嗚．．．．那裡．．．．．請不要．．不要．．這麼玩弄．．呀啊啊！！,pid2
+	zin_old_msg,嗯啊、這裡是敏感帶麼？　軟綿綿的的乳房感覺超好的說,pid1
+	zin_old_msg,這、不要這樣．．．不、不要啊！！！,pid2
+	zin_old_msg,可如果下面不爽那就太掃興了,pid1
+	zin_old_msg,不、不是．．．p_name2的小穴．．．也、也是超舒服的．．．,pid2
+	zin_old_msg,是嘛、都很敏感。不錯的身體素質。,pid1
+	zin_old_msg,是、是的．．．請讓p_name2的小穴．．．變得．．．．．感覺．．超棒吧,pid2
+	zin_old_msg,嗯、感覺果然不錯。差不多該出種了。滿滿的飲了這一杯吧,pid1
+	zin_old_msg,好、好的．．．恭迎call_pid1的．．種子大人！！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end
+
+//孕みパターン
+case_botebara
+	zin_old_msg,哈啊啊、饒了．．．饒了我的．．奶頭吧．．．．啊啊、啊啊啊！！,pid2
+	zin_old_msg,怎麼了？　比平時的反應要強烈很多啊,pid1
+	zin_old_msg,那個．．．可能是．．．有了身孕．．．的關系．．．奶水．．．奶水出來了啊！！,pid2
+	zin_old_msg,是麼、好像真的已經下奶了。終于快到日子了呢。很期待到底會有一個怎麼樣的小寶寶呢,pid1
+	zin_old_msg,好的．．．那就．．．請．．．放過我的．．．奶頭吧．．．,pid2
+	zin_old_msg,可是這手感、p_name2乳房的手感實在是太贊了．．．cr胸部好像大了一些了不是麼？,pid1
+	zin_old_msg,就是、就是說啦．．．就是這樣．．．胸部．．．才會、才會特別敏感的！！,pid2
+	zin_old_msg,你這樣子好可愛。果然最后的歸宿還是p_name2軟軟的溫柔鄉裡啊,pid1
+	zin_old_msg,嗚嗚．．．慢一點．．．請你．．．慢一點．．．會嚇到、嬰兒的．．．,pid2
+	zin_old_msg,、這個硬邦邦的東西是小孩的腦袋？　給它點問候吧,pid1
+	zin_old_msg,啊啊．．．這樣．．．這樣不行．．．不要、不要、欺負孩子．．．不、不行啊！！！！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end

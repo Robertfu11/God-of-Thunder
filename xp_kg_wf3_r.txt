@@ -1,0 +1,82 @@
+//■強姦
+//■相手：妻（妃）
+//■Ｈ体位：騎乗位
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_reg_msg,沒辦法、還是得靠武力來做的嘛,0
+	zin_reg_msg,啊啊嗚！！　住手！！放開我！！,1
+	zin_reg_msg,聽我的話！！,0
+	zin_reg_msg,哎呀啊啊！！,1
+	zin_reg_msg,呵呵、真是嬌嫩呢,0
+	zin_reg_msg,以callself_pid1的力量是不可能實現的吧,0
+	zin_reg_msg,那麼、不如還是仔細的品味一下呢,0
+	zin_reg_msg,嗯嗚嗚嗚嗚嗚,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,嗯嗯啊．．．啊啊嗯．．．進來．．了．．,pid2
+	zin_old_msg,怎麼了、接受著callself_pid1的插入、看起來心情不錯啊．．．,pid1
+	zin_old_msg,這樣的．．．這樣色情的樣子．．．不要、不要再說．．．,pid2
+	zin_old_msg,討厭的話、強行的和call_pid2做、也很不錯的嘛,pid1
+	zin_old_msg,嗯嗯嗯嗯！嗯啊啊啊．．嗚啊．．啊．．啊啊！,pid2
+	zin_old_msg,好、好痛．．痛的啊．．．沒有濕．．明明．．這樣的．．．,pid2
+	zin_old_msg,這樣的．．啊．．啊．．啊啊啊．．請．．．馬上．．停下的說．．停下啊,pid2
+	zin_old_msg,這緊緊糾纏的感覺,pid1
+	zin_old_msg,那樣的．．．啊啊啊．．啊．．速度．．嗯嗯．．嗯啊啊啊啊．．．,pid2
+	zin_old_msg,嗚！！　出來了啊、call_pid2,pid1
+	zin_old_msg,不行啊．．啊啊．．不行．．不行．．這樣的．．中出．．不行的啊啊啊啊啊！,pid2
+	zin_flush,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,你所保留的處女是屬於callself_pid1的東西,0
+	zin_reg_msg,還是放棄反抗打開雙腿吧,0
+	zin_reg_msg,那樣之類的、討厭！！,1
+	zin_reg_msg,罷了、還是用武力征服吧,0
+	zin_reg_msg,啊啊、不行！！cr痛啊啊啊啊啊！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,真的、不想了．．．嗯嗯．．．這樣的．．．這樣的．．．難為情的樣子．．,pid2
+	zin_old_msg,女孩子．．．第一次的夜晚．．．是、最重要的．．了啊．．．,pid2
+	zin_old_msg,但是、不管怎麼再做掩飾、都是一樣的吧？？,pid1
+	zin_old_msg,而且callself_pid1這樣緊窄的糾纏著、是想趕快榨取出來精液嗎,pid1
+	zin_old_msg,明白了、不過．．．啊啊．．．．不、要．．嗯嗯．．嗯啊啊．．．,pid2
+	zin_old_msg,哈啊．．嗚．．嗯嗯．．嗯啊啊．．．想說．．．嗯啊．．．,pid2
+	zin_old_msg,不動的話、不論再過多久也不會榨取出來精液的．．．嗯啊！,pid1
+	zin_old_msg,嗯嗯嗯嗯！嗯啊啊啊．．啊．．啊．．不要那麼．．激烈的．．嗯嗯嗯！,pid2
+	zin_old_msg,嗚嗯．．啊、啊．．痛．．快．．不、不要．．不要．．不要了！,pid2
+	zin_old_msg,call_pid2再怎麼討厭、也不會逃出callself_pid1的掌控的,pid1
+	zin_old_msg,啊、緊密的糾纏著。call_pid2也、試著動動腰啊,pid1
+	zin_old_msg,啊啊啊．．啊．．嗯嗯．．嗯啊啊啊．．．．嗯嗯．．．,pid2
+	zin_old_msg,嗯啊啊啊．．嗚嗯．．啊啊．．callself_pid2的．．裡面．．．,pid2
+	zin_old_msg,call_pid1在．．跳動著．．啊．．痛啊．．請．．停下！,pid2
+	zin_old_msg,啊啊、精液已經充分的射入深處了．．．一定會好好的懷孕的,pid1
+	zin_old_msg,不．．不．．不啊．．嗯嗯．．嗯哼．．啊啊．．嗯嗯．．嗯．．嗯啊啊！,pid2
+	zin_old_msg,不行．．這樣、那樣．．強硬．．生孩子之類的．．不要．．不要．．啊啊啊啊嗯！,pid2
+	zin_flush,pid2
+	end
+//孕みパターン
+case_botebara
+	zin_reg_msg,越說討厭就越想做呢,0
+	zin_reg_msg,抱著肚子大大的妻子更有趣呢,0
+	zin_reg_msg,現在不行啊,1
+	zin_reg_msg,真到生產為止還請忍耐一下啊,1
+	zin_reg_msg,那是不可能的啊！！,0
+	zin_reg_msg,啊啊、住、住手啊！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	zin_old_msg,嗯嗯．．．啊啊．．．啊、嗯嗯嗯嗯．．．,pid2
+	zin_old_msg,和你說啊．．．這樣的体勢．．．非常的．．．痛苦呢．．．,pid2
+	zin_old_msg,嗯嗯嗯嗯！　嗯啊啊啊．．嗚、啊．．嗯嗯．．嗯．．嗯啊．．．,pid2
+	zin_old_msg,真的．．這樣．．這樣的．．難受．．束縛．．真的是太．．．,pid2
+	zin_old_msg,你看、call_pid12也在動呢,pid1
+	zin_old_msg,這、這樣的肚子啊．．．嗚、就是這樣的啊．．．,pid2
+	zin_old_msg,如果是單方面的動、心情會舒暢的吧,pid1
+	zin_old_msg,嗯嗯．．啊．．啊啊啊．．不行．．辦不到、的．．嗯嗯嗯啊．．．,pid2
+	zin_old_msg,那麼、只好充分的射精給你吧,pid1
+	zin_old_msg,呃、啊．．不行．．嗯．．嗯啊啊啊．．啊啊嗯．．嗚嗯嗯嗯啊！！,pid2
+	zin_flush,pid2
+	end

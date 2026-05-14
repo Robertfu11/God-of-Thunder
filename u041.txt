@@ -1,0 +1,38 @@
+eve_start
+	if_val,妻:player>0
+	if_eveflg,127,>100
+eve_end
+//iecheck
+	set_epid2,eveflg124
+	chk_sts,eveflg124,4,>12079
+	chk_sts_then
+	zin_reg_init
+	zin_reg_event,堕落,pid2,,,gzin23
+	goto,*start1
+	chk_sts_else
+	zin_reg_init
+	zin_reg_event,堕落,pid2,,,gzin18
+	goto,*start1
+	*start1
+		chk_ormval,性格:eveflg124=14,性格:eveflg124=24,,,,
+		//inran
+		chk_ormval_then
+		end
+		//rape
+		chk_ormval_else
+		bgm_chg,56
+			zin_reg_msg,．．．到底是怎么了、callself_pid2,0
+			zin_reg_msg,最近、那里总感觉一阵燥热．．．．．．0
+			zin_reg_msg,不管怎么和丈夫做爱都无法平息．．．．,0
+			zin_reg_msg,啊啊啊．．．．．tin_str、tin_str好想要．．．,0
+			zin_reg_msg,谁的都可以、想要tin_str不停的侵犯callself_pid2的man_str,0
+			zin_reg_qnar,乱交行为开始了p_name2成了任何男人都可以上的女人。
+			zin_reg_button,0
+			zin_reg_exit
+rnd,2
+case0
+upd_sts,eveflg124,11,24
+end
+case1
+upd_sts,eveflg124,11,14
+end

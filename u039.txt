@@ -1,0 +1,70 @@
+///ÅÉéy1
+eve_start
+	if_val,ÆÞ:player>0
+	if_val,×´‘B:player=2
+	if_val,„ë¹¦:player<6000
+	if_val,Äêýh:player>17
+	if_val,ÅÉéy:player>0
+	if_val,Äêýh:eveflg124>13
+	if_val,Äêýh:eveflg124<50
+	if_val,×´‘B:eveflg124=2
+	if_same_oid,player,eveflg124
+	if_val,×´‘B:eveflg125=2
+	if_val,„ë¹¦:eveflg125>8999
+	if_val,Äêýh:eveflg125>17
+	if_val,ÐÔ„e:eveflg125=1
+	if_val,ÐÅÄî:eveflg125>49
+	if_same_oid,player,eveflg125
+eve_end
+
+
+set_epid1,eveflg125
+set_epid2,player
+set_epid3,eveflg124
+	chk_family,pid1,pid2
+	case_fam_Š—
+	goto,*nono
+	case_fam_Ä¸
+	goto,*nono
+	case_fam_ÆÞ
+	goto,*nono
+	case_fam_Äï
+	goto,*nono
+	case_fam_Äï(ðB)
+	goto,*nono
+	case_fam_ÃÃ
+	goto,*nono
+	default_fam
+	goto,*gonow2
+
+
+
+//////////////////////////////
+*gonow2
+	chk_family,pid1,pid3
+	case_fam_Š—
+	goto,*nono
+	case_fam_Ä¸
+	goto,*nono
+	case_fam_ÆÞ
+	goto,*nono
+	case_fam_Äï
+	goto,*nono
+	case_fam_Äï(ðB)
+	goto,*nono
+	case_fam_ÃÃ
+	goto,*nono
+	default_fam
+	goto,*yesyes
+
+
+/////////////////////////////
+*yesyes
+add_eveflg,123,1
+end
+
+
+
+/////////////////////////////
+*nono
+end

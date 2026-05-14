@@ -1,0 +1,58 @@
+//部下オルド　相手：嫁
+bl_fadeout
+bgm_chg,51
+zin_old_init
+zin_old_img_pid,pid2,1
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	zin_old_msg,啊嗯．．．你．．．cr不要那麼強烈的．．．啊啊,pid2
+	zin_old_msg,這樣不好嗎．．．偶爾來一發,pid1
+	zin_old_msg,因為．．．那樣的．．．cr馬上就會高潮啊！！,pid2
+	zin_old_msg,仍然、覺得、你還像之前那麼．．．cr可愛啊,pid1
+	zin_old_msg,啊！！　被這樣說的話．．．已經．．．啊啊！！,pid2
+	zin_old_msg,好啊、又是你先。cr去了啊、再讓我看看你那高潮的臉。,pid1
+	zin_old_msg,啊啊．．．不行、已經．．．cr高潮了啊啊啊啊！！！！！！！！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_old_msg,你．．．溫柔點．．．拜託．．啊．．．,pid2
+	zin_old_msg,還是第一次嗎？　我知道了,pid1
+	zin_old_msg,啊嗚嗯．．．嗚嗚．．．,pid2
+	zin_old_msg,沒問題嗎？,pid1
+	zin_old_msg,嗚、嗚嗯．．．沒事．．．好了、繼續吧．．．,pid2
+	zin_old_msg,嗯嗯．．．,pid1
+	zin_old_msg,啊啊嗯．．．嗯嗯．．．好．．．cr舒服．．．好啊．．．,pid2
+	zin_old_msg,是嗎、你的小穴感覺也很不錯啊,pid1
+	zin_old_msg,真的嗎？　很高興呢．．．啊啊啊！！！,pid2
+	zin_old_msg,好棒．．．我．．．已經．．．高潮了．．．嗚啊啊啊啊！！,pid2
+	zin_old_msg,啊啊．．．你、我也．．．高潮了．．．,pid1
+	zin_old_msg,哎啊啊啊、啊啊啊！！cr不行、不行了啊ーーー、高潮、高潮了啊啊啊啊！！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end
+
+//孕みパターン
+case_botebara
+	zin_old_msg,啊．．．那、那麼強烈的話．．不行啊．．．,pid2
+	zin_old_msg,寶寶、會壞掉的啊,pid2
+	zin_old_msg,啊啦、啊啦．．．這麼一點力量進入了嗎,pid1
+	zin_old_msg,啊嗯．．．這樣．．．那樣的感覺．．．溫柔啊．．．,pid2
+	zin_old_msg,這樣也十分．．．有、感覺的嗎．．．哈啊啊啊！　啊啊啊！,pid2
+	zin_old_msg,抱著大肚子的孕婦、這樣也很萌啊。胸部拍打在大大的肚子上．．．很厲害的震撼力呢,pid1
+	zin_old_msg,去、不要說些奇怪的話啊！！cr呵啊、哎呀！　很抱歉呢ーーー,pid2
+	zin_old_msg,那、差不多也．．．高潮了．．．,pid1
+	zin_old_msg,嗯、嗯．．．好、来吧．．．私也．．．有、高潮．．．,pid2
+	zin_old_msg,嗚嗯嗯嗯嗯！！,pid1
+	zin_old_msg,一庫、一庫、一庫哆ーーーーー啊！！！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end

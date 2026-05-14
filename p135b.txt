@@ -1,0 +1,369 @@
+//通用人物的牢房凌辱
+bgm_chg,53
+zin_reg_init
+zin_reg_event,地下牢,pid1,pid2,,gzin35
+zin_reg_msg,我查查哪邊有空房,1
+bl_fadeout
+zin_old_init
+zin_old_img_str,eA00,0,1
+gosub,*GetRnd
+zin_old_msg,嗯～str_eveflg(269)號房看來有空呀,pid2
+zin_old_msg,那我回上面工作了，你自己好好鬆一下吧,pid2
+set_epid2,812
+gosub,*ShowA
+zin_old_msg,求、求你．．．請放我出去！！　嗚嗚！！,pid2
+zin_old_msg,當初讓妳選擇投降時妳不投降～,pid1
+zin_old_msg,現在都成了公用便器沒價值了啦。,pid1
+zin_old_msg,求、求你．．．cr嗚啊啊啊！！,pid2
+zin_old_msg,妳就在這當個稱職的肉便器不是很好嗎？cr哈哈哈！！,pid1
+zin_old_msg,我．．．不是．．．cr．．．肉、肉便器．．．,pid2
+zin_old_msg,真掘強呀、讓callself_pid1胯下的東西更硬了呢cr看招！！,pid1
+zin_old_msg,啊啊．．．嗚啊啊！！cr住、住手呀．．．嗚咿！！,pid2
+zin_old_msg,喔喔、雖然被不知道多少人插過，不過還是不錯的肉穴呢,pid1
+zin_old_msg,一下就讓我快射了呢,pid1
+zin_old_msg,不、不要呀．．．不行．．．不可以射在裡面．．．,pid2
+zin_old_msg,求求你！！　裡面不行！！　我求你了！！cr請、請不要中出！！,pid2
+zin_old_msg,呼、要去啦！！！！！！,pid1
+zin_old_msg,咿、咿呀！！cr裡、裡面、不不行ーーーーーーー！！,pid2
+gosub,*ShowB
+zin_old_msg,嗚．．．好過分．．．明明說了．．．不能射在裡面的．．．cr還射得．．．這樣多．．．,pid2
+zin_old_msg,還沒結束呢，難得花了大本，今天我要玩個爽,pid1
+zin_old_msg,咿、咿呀！！cr不不要ーーーーーーー！！,pid2
+gosub,*ShowB
+zin_reg_button,16
+zin_reg_exit
+end
+
+*GetRnd
+set_eveflg,269,1
+rnd,39
+case39
+	add_eveflg,269,1
+case38
+	add_eveflg,269,1
+case37
+	add_eveflg,269,1
+case36
+	add_eveflg,269,1
+case35
+	add_eveflg,269,1
+case34
+	add_eveflg,269,1
+case33
+	add_eveflg,269,1
+case32	
+	add_eveflg,269,1
+case31
+	add_eveflg,269,1
+case30
+	add_eveflg,269,1
+case29
+	add_eveflg,269,1
+case28
+	add_eveflg,269,1
+case27
+	add_eveflg,269,1
+case26
+	add_eveflg,269,1
+case25
+	add_eveflg,269,1
+case24
+	add_eveflg,269,1
+case23
+	add_eveflg,269,1
+case22
+	add_eveflg,269,1
+case21
+	add_eveflg,269,1
+case20
+	add_eveflg,269,1
+case19
+	add_eveflg,269,1
+case18
+	add_eveflg,269,1
+case17
+	add_eveflg,269,1
+case16
+	add_eveflg,269,1
+case15
+	add_eveflg,269,1
+case14
+	add_eveflg,269,1
+case13
+	add_eveflg,269,1
+case12
+	add_eveflg,269,1
+case11
+	add_eveflg,269,1
+case10
+	add_eveflg,269,1
+case9
+	add_eveflg,269,1
+case8
+	add_eveflg,269,1
+case7
+	add_eveflg,269,1
+case6
+	add_eveflg,269,1
+case5
+	add_eveflg,269,1
+case4
+	add_eveflg,269,1
+case3
+	add_eveflg,269,1
+case2
+	add_eveflg,269,1
+case1
+	add_eveflg,269,1
+case0
+return
+
+*ShowA
+select_pid,eveflg269
+case_1
+	zin_old_img_str,eA01a,0,1
+	return
+case_2
+	zin_old_img_str,eA02a,0,1
+	return
+case_3
+	zin_old_img_str,eA03a,0,1
+	return
+case_4
+	zin_old_img_str,eA04a,0,1
+	return
+case_5
+	zin_old_img_str,eA05a,0,1
+	return
+case_6
+	zin_old_img_str,eA06a,0,1
+	return
+case_7
+	zin_old_img_str,eA07a,0,1
+	return
+case_8
+	zin_old_img_str,eA08a,0,1
+	return
+case_9
+	zin_old_img_str,eA09a,0,1
+	return
+case_10
+	zin_old_img_str,eA10a,0,1
+	return
+case_11
+	zin_old_img_str,eA11a,0,1
+	return
+case_12
+	zin_old_img_str,eA12a,0,1
+	return
+case_13
+	zin_old_img_str,eA13a,0,1
+	return
+case_14
+	zin_old_img_str,eA14a,0,1
+	return
+case_15
+	zin_old_img_str,eA15a,0,1
+	return
+case_16
+	zin_old_img_str,eA16a,0,1
+	return
+case_17
+	zin_old_img_str,eA17a,0,1
+	return
+case_18
+	zin_old_img_str,eA18a,0,1
+	return
+case_19
+	zin_old_img_str,eA19a,0,1
+	return
+case_20
+	zin_old_img_str,eA20a,0,1
+	return
+case_21
+	zin_old_img_str,eA21a,0,1
+	return
+case_22
+	zin_old_img_str,eA22a,0,1
+	return
+case_23
+	zin_old_img_str,eA23a,0,1
+	return
+case_24
+	zin_old_img_str,eA24a,0,1
+	return
+case_25
+	zin_old_img_str,eA25a,0,1
+	return
+case_26
+	zin_old_img_str,eA26a,0,1
+	return
+case_27
+	zin_old_img_str,eA27a,0,1
+	return
+case_28
+	zin_old_img_str,eA28a,0,1
+	return
+case_29
+	zin_old_img_str,eA29a,0,1
+	return
+case_30
+	zin_old_img_str,eA30a,0,1
+	return
+case_31
+	zin_old_img_str,eA31a,0,1
+	return
+case_32
+	zin_old_img_str,eA32a,0,1
+	return
+case_33
+	zin_old_img_str,eA33a,0,1
+	return
+case_34
+	zin_old_img_str,eA34a,0,1
+	return
+case_35
+	zin_old_img_str,eA35a,0,1
+	return
+case_36
+	zin_old_img_str,eA36a,0,1
+	return
+case_37
+	zin_old_img_str,eA37a,0,1
+	return
+case_38
+	zin_old_img_str,eA38a,0,1
+	return
+case_39
+	zin_old_img_str,eA39a,0,1
+	return
+case_40
+	zin_old_img_str,eA40a,0,1
+	return
+default
+	return
+
+*ShowB
+select_pid,eveflg269
+case_1
+	zin_flush_file,eA01b,0
+	return
+case_2
+	zin_flush_file,eA02b,0
+	return
+case_3
+	zin_flush_file,eA03b,0
+	return
+case_4
+	zin_flush_file,eA04b,0
+	return
+case_5
+	zin_flush_file,eA05b,0
+	return
+case_6
+	zin_flush_file,eA06b,0
+	return
+case_7
+	zin_flush_file,eA07b,0
+	return
+case_8
+	zin_flush_file,eA08b,0
+	return
+case_9
+	zin_flush_file,eA09b,0
+	return
+case_10
+	zin_flush_file,eA10b,0
+	return
+case_11
+	zin_flush_file,eA11b,0
+	return
+case_12
+	zin_flush_file,eA12b,0
+	return
+case_13
+	zin_flush_file,eA13b,0
+	return
+case_14
+	zin_flush_file,eA14b,0
+	return
+case_15
+	zin_flush_file,eA15b,0
+	return
+case_16
+	zin_flush_file,eA16b,0
+	return
+case_17
+	zin_flush_file,eA17b,0
+	return
+case_18
+	zin_flush_file,eA18b,0
+	return
+case_19
+	zin_flush_file,eA19b,0
+	return
+case_20
+	zin_flush_file,eA20b,0
+	return
+case_21
+	zin_flush_file,eA21b,0
+	return
+case_22
+	zin_flush_file,eA22b,0
+	return
+case_23
+	zin_flush_file,eA23b,0
+	return
+case_24
+	zin_flush_file,eA24b,0
+	return
+case_25
+	zin_flush_file,eA25b,0
+	return
+case_26
+	zin_flush_file,eA26b,0
+	return
+case_27
+	zin_flush_file,eA27b,0
+	return
+case_28
+	zin_flush_file,eA28b,0
+	return
+case_29
+	zin_flush_file,eA29b,0
+	return
+case_30
+	zin_flush_file,eA30b,0
+	return
+case_31
+	zin_flush_file,eA31b,0
+	return
+case_32
+	zin_flush_file,eA32b,0
+	return
+case_33
+	zin_flush_file,eA33b,0
+	return
+case_34
+	zin_flush_file,eA34b,0
+	return
+case_35
+	zin_flush_file,eA35b,0
+	return
+case_36
+	zin_flush_file,eA36b,0
+	return
+case_37
+	zin_flush_file,eA37b,0
+	return
+case_38
+	zin_flush_file,eA38b,0
+	return
+case_39
+	zin_flush_file,eA39b,0
+	return
+case_40
+	zin_flush_file,eA40b,0
+	return
+default
+	return

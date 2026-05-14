@@ -1,0 +1,46 @@
+bgm_chg,21
+zin_reg_init
+zin_old_init
+zin_old_img_pid,pid2,1
+
+//女の状態チェック
+chk_wsts,pid2
+//通常パターン
+case_botebara
+case_normal
+	zin_old_msg,啊啊．．．這樣．．不行．．．,pid2
+	zin_old_msg,恩．．．你們生化人沒有搭載感覺機能嗎？,pid1
+	zin_old_msg,那、那個．．．無法理解．．．啊啊！！,pid2
+	zin_old_msg,做足前戲的話、性感帶也許就會發揮機能了,pid1
+	zin_old_msg,快感會慢慢有的哦,pid1
+	zin_old_msg,不、不要啊．．．這樣．．．討、討厭．．．,pid2
+	zin_old_msg,話說、貌似你已經汁水橫流了呢,pid1
+	zin_old_msg,果然搭載了性感帶的機能、我很期待哦,pid1
+	zin_old_msg,不要．．．感覺一點都不好啊啊啊啊．．．,pid2
+	zin_old_msg,不好意思、callself_pid1的肉棒感覺可是相當的好,pid1
+	zin_old_msg,差不多要射了啊！！,pid1
+	zin_old_msg,不要、不要啊啊啊．．．白色的奇怪東西．．．不要射進來！！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end
+
+//初膜パターン
+case_hatumaku
+	zin_old_msg,哈啊啊、好疼！！　請、請你、住手啊啊啊啊啊！！,pid2
+	zin_old_msg,明明只是個人偶、破處居然有血．．．這玩意哪個紳士造的啊．．．,pid1
+	zin_old_msg,哈啊啊、不、不行．．．疼、好疼啊啊啊！！！,pid2
+	zin_old_msg,小屄可真夠緊的,pid1
+	zin_old_msg,托你的福、我這兒也快出來了,pid1
+	zin_old_msg,啊啊．．．力氣、力氣．．．使不出來．．．,pid2
+	zin_old_msg,果然是這樣．．．,pid1
+	zin_old_msg,以前、就聽說過被插入中的生化人行動和思考能力都很低下的傳聞,pid1
+	zin_old_msg,貌似此言不虛,pid1
+	zin_old_msg,無垢少女的純血、愧領了,pid1
+	zin_old_msg,似乎今後也沒有生育能力、真是無可挑剔的暖床極品啊,pid1
+	zin_old_msg,嗚嗚！！！！,pid1
+	zin_old_msg,唔哇啊啊啊啊啊啊！！,pid2
+	zin_flush,pid2
+	zin_reg_button,16
+	zin_reg_exit
+	end

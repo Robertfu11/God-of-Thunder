@@ -1,0 +1,110 @@
+//覇王オルド　妾タイプ2　バック
+//状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+rnd,7
+case0
+	zin_old_msg,不行了、今天的call_pid1、真的好大！！crp_name2的肉穴、要裂開了！！,pid2
+	zin_old_msg,用力過頭了麼？　那稍微放慢點,pid1
+	zin_old_msg,啊啊．．．那、那種事．．．啊啊．．．,pid2
+	zin_old_msg,那這咋樣？,pid1
+	zin_old_msg,呀！！　後面有什麼東西進來了．．．呀啊啊啊啊！！,pid2
+	zin_old_msg,我只是把手指伸進去了而已。這兒也是緊得不得了呢,pid1
+	zin_old_msg,那、那個．．．啊、菊花．．不、不行．．．,pid2
+	zin_old_msg,哦哦、call_pid2的肉穴好像擴大了一些。這樣全力沖刺也沒有問題了,pid1
+	zin_old_msg,啊啊！！　突然這樣．．．這樣、這樣太激烈了！！,pid2
+	zin_old_msg,呼、呼啊．．．很好、差不多該射了！！,pid1
+	zin_old_msg,哈、哈啊．．．p_name2也．．．p_name2也讓一起、一起去吧！！,pid2
+	zin_old_msg,那就手指再深一些吧！！,pid1
+	zin_old_msg,啊、咿呀、啊、菊花．．．不、不要啊啊啊啊啊！！！,pid2
+	zin_flush,pid2
+	end
+case1
+	zin_old_msg,啊啊、不行．．．後面．．後面吃不消．．．,pid2
+	zin_old_msg,我知道、不過這沒問題的,pid1
+	zin_old_msg,那、那個．．．呀！！　啊啊啊ーーー！！,pid2
+	zin_old_msg,奇怪的汁液咕嘟咕嘟流出來了啊,pid1
+	zin_old_msg,肉棒完全被吃掉了．．．．,pid1
+	zin_old_msg,那、那是因為call_pid1．．．唔．．．哈．．．啊啊！！,pid2
+	zin_old_msg,好厲害、裡面．．．在裡面不斷地變大了．．．哈唔啊啊啊！！,pid2
+	zin_old_msg,那是因為call_pid2裡面很棒喲、唔唔．．．,pid1
+	zin_old_msg,好、好棒．．．裡面．．．不停的．．．抽動．．．,pid2
+	zin_old_msg,好．．呀出來了．．我就在裡面了．．,pid1
+	zin_old_msg,是、是的．．．裡面．．．在裡面、滿滿的給我！！！,pid2
+	zin_flush,pid2
+	end
+case2
+	zin_old_msg,啊哈啊．．．．好厲害．．．．從後面抽插．．．．p_name2的蜜汁．．．止不住．．．唔啊！！,pid2
+	zin_old_msg,你真是個淫蕩的女人啊,pid1
+	zin_old_msg,是、是的．．．更加粗暴的．．．粗暴的侵犯p_name2吧！！,pid2
+	zin_old_msg,很好、那就像狗一樣肏你！！,pid1
+	zin_old_msg,呀啊啊啊、好、好棒．．．．簡直就是野獸．．．真的好像野獸一樣．．．．,pid2
+	zin_old_msg,這、這樣．．．下去．．．從來、從來．．．沒有、這麼爽過啊啊啊啊！！,pid2
+	zin_old_msg,怎麼樣、要去了？　要高潮就告訴我,pid1
+	zin_old_msg,是、是．．．要、要高潮了．．．已經．．．不行了啊、啊啊啊啊ーーーー！！！,pid2
+	zin_flush,pid2
+	end
+case3
+	zin_old_msg,怎麼樣call_pid2、callself_pid1的肉棒滋味兒如何？,pid1
+	zin_old_msg,是、是的．．．好棒．．．好燙．．．直到子宮、好像、好像也要燃燒起來了．．．,pid2
+	zin_old_msg,是麼、那就再好好嘗嘗,pid1
+	zin_old_msg,啊、咿咿咿呀！！　肉穴．．．要破掉了啊啊！！,pid2
+	zin_old_msg,這算個毛、好戲還在后頭呢！！cr那、瘋狂高潮吧！！,pid1
+	zin_old_msg,咕啊啊啊啊！！　這樣的！！　受不了了啊啊啊ーーー！！,pid2
+	zin_old_msg,呼哈哈哈、好坦率的傢伙。那就給你獎賞！！,pid1
+	zin_old_msg,獎、獎賞．．．滿滿的．．．收到了．．．啊啊！！！,pid2
+	zin_flush,pid2
+	end
+case4
+	zin_old_msg,怎麼樣、還能在動下屁股不？　callself_pid1這樣很累的,pid1
+	zin_old_msg,哈、呀．．．．嗯嗯．．．,pid2
+	zin_old_msg,嗯、腰上功夫還很稚嫩啊,pid1
+	zin_old_msg,下面也變得松了。還有待進步啊,pid1
+	zin_old_msg,怎、怎麼會．．．呀啊．．．啊啊啊！！！,pid2
+	zin_old_msg,呵呵呵、唯獨叫聲還不錯。cr不過為了自己快樂而放松肉棒、不是一個合格的妾室,pid1
+	zin_old_msg,那接下來、盡情的包裹住callself_pid1的肉棒試試！！,pid1
+	zin_old_msg,呼唔嗚嗚！！！．．．啊啊．．．．唔嗯嗯嗯！！！,pid2
+	zin_old_msg,嗯、只有這種程度麼．．．算了。cr不過這也算不錯了,pid1
+	zin_old_msg,快、屁股動起來、讓callself_pid1射在裡面！！,pid1
+	zin_old_msg,是、是的．．．唔咕．．．嗯嗯嗯！！！！,pid2
+	zin_old_msg,很好．．．來了來了、我要來了．．．,pid1
+	zin_old_msg,哈啊、哈啊、這、這怎麼樣、哈啊,pid2
+	zin_old_msg,啊啊、不錯．．．喲西、要射了,pid1
+	zin_old_msg,是、是的．．．好多好多的．．．射進來吧．．．,pid2
+	zin_old_msg,精液、注入！！,pid1
+	zin_flush,pid2
+	end
+case5
+	zin_old_msg,哈啊、不行．．．腰．．．腰快要動不了了！！,pid2
+	zin_old_msg,說過爆菊很好玩的不正是call_pid2麼,pid1
+	zin_old_msg,那是．．．因為．．．感覺很棒．．．,pid2
+	zin_old_msg,哈啊啊～～哈啊～～還要．．．再深一點．．．再深一點！！,pid2
+	zin_old_msg,呵呵、簡直就和女奴一樣啊,pid1
+	zin_old_msg,是、是的．．．．p_name2是．．．call_pid1的．．．奴隸的說！！,pid2
+	zin_old_msg,是麼、墮落到無以復加吧！！,pid1
+	zin_old_msg,啊、啊呀呀呀呀啊啊啊啊啊！！！！！,pid2
+	zin_flush,pid2
+	end
+case6
+	zin_old_msg,啊啊！！　不行．．．這樣激烈的．．．馬上就要高潮了！！,pid2
+	zin_old_msg,沒關系、盡管高潮,pid1
+	zin_old_msg,怎麼、怎麼這樣．．．明明好想和call_pid1．一起再．．．歡樂一下的！！,pid2
+	zin_old_msg,呀啊啊啊．．．陰核被．．．摩擦著、好、好舒服．．．,pid2
+	zin_old_msg,唔哦．．．這貨、突然就收緊了．．．,pid1
+	zin_old_msg,不錯、我要射了、今天的推薦是哪裡！！,pid1
+	zin_old_msg,當、當然、在裡面．．．在裡面．．．把call_pid1的種子．．．種子給我！！,pid2
+	zin_old_msg,很好、好好受著吧、哦啦啊啊啊！！！,pid1
+	zin_flush,pid2
+	end
+
+//初膜パターン
+case_hatumaku
+	txtload,xpkm_tv
+	end
+
+
+//孕みパターン
+case_botebara
+	txtload,xpkm_tb
+	end

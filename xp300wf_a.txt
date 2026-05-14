@@ -1,0 +1,193 @@
+chk_kunko,pid1,pid3
+case_kun_部下
+	//人妻の夫がプレイヤーの部下
+	rnd,4
+	case0
+		zin_old_msg,唔嗯啊！！　嗚嗚、cf_pid1的man_str．．．明明是只屬於..我老公的啊．．．,pid2
+		zin_old_msg,啊、討厭．．．被tin_str全部插進來了．．．明明很討厭的說．．．嗯嗚！！,pid2
+		zin_old_msg,什麼啊．．．原來已經有老公了麼？那樣的．．．就是人妻咯,pid1
+		zin_old_msg,玩弄人妻的感覺就是好啊．．．,pid1
+		zin_old_msg,喂．．．這麼簡單．．．就能背叛你老公了啊？,pid1
+		zin_old_msg,啊、討厭．．．因為．．．call_pid21的tin_str．．．好粗．．．好硬．．．好有力．．．唔嗯．．．唔啊！！,pid2
+		zin_old_msg,呵呵、那樣的話。cr那麼、call_pid12就變得更加淫亂吧！！,pid1
+		zin_old_msg,啊！！好棒、好厲害！！man_str的深處．．．被call_pid21的tin_str頂到了啊．．．不斷的攪動著！！！,pid2
+		zin_old_msg,對不起！！ 哇、哇．．．腦袋．．．變得奇怪了嗯嗯嗯嗯啊！！！,pid2
+		zin_flush,pid2
+		end
+	case1
+		zin_old_msg,什麼啊、man_str都已經這樣黏糊糊的了,pid1
+		zin_old_msg,p_name3到底是和一個什麼樣的女人結婚了啊,pid1
+		zin_old_msg,討厭啊啊．．．那、那樣的話不要說啊．．．,pid2
+		zin_old_msg,那你自己說cr我是見異思遷非常喜歡和色狼做愛的變態妻子、吶、說說看,pid1
+		zin_old_msg,不、不要啊．．．這樣、色情的話．．．啊、說不出口．．．嗯嗯嗯！！！,pid2
+		zin_old_msg,如果不說的話、那就這樣結束吧,pid1
+		zin_old_msg,不、不行啊啊啊．．．?放、放棄什麼的．．．討、討厭啊啊啊．．．?,pid2
+		zin_old_msg,那就說！！,pid1
+		zin_old_msg,cf_pid2是．．．見異思遷非常喜歡和色狼做愛．．．変態人妻啊．．．誒、誒、啊啊啊啊嗯！！,pid2
+		zin_old_msg,哦、連話都說不出來了麼,pid1
+		zin_old_msg,啊唔嗯、唔嗯啊、啊．．．真的、唔．．．啊唔．．．嗯啊唔啊啊啊ーーーーーっ！,pid2
+		zin_old_msg,不行了、這樣就．．．?,pid1
+		zin_old_msg,啊嗯、嗚、来了．．．已經．．．高潮．．．高潮．．．高潮了啊啊啊啊呀ーーーーーっ！！！,pid2
+		zin_flush,pid2
+		end
+	case2
+		zin_old_msg,嗚啊啊啊啊啊！！！　好、好棒啊啊啊啊！！cr這樣的深處．．．被、擴張開的．．．還是、第一次的說,pid2
+		zin_old_msg,怎麼樣、比你丈夫、p_name3的還要好吧？,pid1
+		zin_old_msg,好！！　call_pid21的方式．．．一直．．．好、好好好好好的哦！！,pid2
+		zin_old_msg,是這樣啊、那麼好嗎？cr但是、p_name3那個傢伙、每天都可以使用這麼好的man_str呢,pid1
+		zin_old_msg,要不、cf_pid1也做call_pid12的新娘吧,pid1
+		zin_old_msg,不行、的啊．．．cf_pid1、已經和p_name3君結婚了的說．．．,pid2
+		zin_old_msg,結婚既然不行了話、那生孩子還是沒問題的吧？,pid1
+		zin_old_msg,生孩子也不行的吧．．．那樣會破壞．．．彼此間幸福的哦哦哦哦哦哦．．．,pid2
+		zin_old_msg,哈哈、那還做什麼啊cr不能生孩子的話就只能放棄的說,pid1
+		zin_old_msg,不要啊啊、放棄、多快樂啊啊！！cr好吧、為了生孩子也不可以停止的啊！！,pid2
+		zin_old_msg,是嗎、差不多也該最後衝刺了呢cr為了讓call_pid12的子宮懷上孩子、決定好好的來一次高潮吧！！,pid1
+		zin_old_msg,啊嗯、那裡！！cr真的不行啊、會懷上p_name3以外的孩子的、tane_str不要進來啊！！,pid2
+		zin_flush,pid2
+		zin_old_msg,啊啊嗯、進來了！！crcall_pid21的tane_str在子宮裡、高潮會懷上孩子的啊啊啊啊！！,pid2
+		zin_old_msg,呵呵、p_name3還在工作中、妻子卻正在和別人瘋狂的造孩子、估計做夢也不會想到的吧,pid1
+		end
+	case3
+		zin_old_msg,唔嗯唔啊．．．唔啊啊啊！　啊、啊啊嗯．．．,pid2
+		zin_old_msg,啊啊嗯！！　好棒啊、tin_str、在深處．．．變得好大啊！！！,pid2
+		zin_old_msg,啊啊嗯！！　已經、已經不行了！！　啊、你．．．不好意思ーーーー啊嗯！！！,pid2
+		zin_flush_one,pid2
+		zin_old_msg,什麼？已經高潮了？,pid1
+		zin_old_msg,唔嗯．．．啊、因為．．．call_pid21的．．．太大、好爽的嘛．．．哈啊．．．,pid2
+		zin_old_msg,看來完全被p_name3訓練的不錯嘛,pid1
+		zin_old_msg,喂、現在這樣可還沒有結束喲！！,pid1
+		zin_old_msg,嗯啊唔唔唔唔唔唔唔唔！！　啊、不行了！！　已經、已經高潮了啊啊！！,pid2
+		zin_old_msg,無論幾次、我都還沒有高潮啊！！,pid1
+		zin_old_msg,啊啊嗯、那、那樣的．．．啊、不行啊．．．p_name2．．．會、壞掉的啊啊！！！,pid2
+		zin_old_msg,那麼、停下麼？,pid1
+		zin_old_msg,啊啊嗯、那樣．．．啊、不行誒．．．?,pid2
+		zin_old_msg,到底要怎樣啊！！,pid1
+		zin_old_msg,嗯嗯啊！！　稍微、稍微給我．．．call_pid21的大tin_str．．．,pid2
+		zin_old_msg,在p_name2的膣内．．．啊、侵犯啊！！！,pid2
+		zin_old_msg,知道了知道了、那就在call_pid12的裡面做到被p_name3趕出來為止、可以了吧！！,pid1
+		zin_old_msg,啊啊嗯、來、來了！！　又、已經．．．來了啊啊啊啊啊啊！！,pid2
+		zin_flush,pid2
+		end
+case_kun_同僚
+	rnd,4
+	case0
+		zin_old_msg,唔嗯啊！！　嗚嗚、cf_pid1的man_str．．．明明是只屬於..我老公的啊．．．,pid2
+		zin_old_msg,啊、討厭．．．被tin_str全部插進來了．．．明明很討厭的說．．．嗯嗚！！,pid2
+		zin_old_msg,什麼啊．．．原來已經有老公了麼？那樣的．．．就是人妻咯,pid1
+		zin_old_msg,玩弄人妻的感覺就是好啊．．．,pid1
+		zin_old_msg,喂．．．這麼簡單．．．就能背叛你老公了啊？,pid1
+		zin_old_msg,啊、討厭．．．因為．．．call_pid21的tin_str．．．好粗．．．好硬．．．好有力．．．唔嗯．．．唔啊！！,pid2
+		zin_old_msg,呵呵、那樣的話。cr那麼、call_pid12就變得更加淫亂吧！！,pid1
+		zin_old_msg,啊！！好棒、好厲害！！man_str的深處．．．被call_pid21的tin_str頂到了啊．．．不斷的攪動著！！！,pid2
+		zin_old_msg,對不起！！ 哇、哇．．．腦袋．．．變得奇怪了嗯嗯嗯嗯啊！！！,pid2
+		zin_flush,pid2
+		end
+	case1
+		zin_old_msg,什麼啊、man_str都已經這樣黏糊糊的了,pid1
+		zin_old_msg,p_name3到底是和一個什麼樣的女人結婚了啊,pid1
+		zin_old_msg,討厭啊啊．．．那、那樣的話不要說啊．．．,pid2
+		zin_old_msg,那你自己說cr我是見異思遷非常喜歡和色狼做愛的變態妻子、吶、說說看,pid1
+		zin_old_msg,不、不要啊．．．這樣、色情的話．．．啊、說不出口．．．嗯嗯嗯！！！,pid2
+		zin_old_msg,如果不說的話、那就這樣結束吧,pid1
+		zin_old_msg,不、不行啊啊啊．．．?放、放棄什麼的．．．討、討厭啊啊啊．．．?,pid2
+		zin_old_msg,那就說！！,pid1
+		zin_old_msg,cf_pid2是．．．見異思遷非常喜歡和色狼做愛．．．変態人妻啊．．．誒、誒、啊啊啊啊嗯！！,pid2
+		zin_old_msg,哦、連話都說不出來了麼,pid1
+		zin_old_msg,啊唔嗯、唔嗯啊、啊．．．真的、唔．．．啊唔．．．嗯啊唔啊啊啊ーーーーーっ！,pid2
+		zin_old_msg,不行了、這樣就．．．?,pid1
+		zin_old_msg,啊嗯、嗚、来了．．．已經．．．高潮．．．高潮．．．高潮了啊啊啊啊呀ーーーーーっ！！！,pid2
+		zin_flush,pid2
+		end
+	case2
+		zin_old_msg,嗚啊啊啊啊啊！！！　好、好棒啊啊啊啊！！cr這樣的深處．．．被、擴張開的．．．還是、第一次的說,pid2
+		zin_old_msg,怎麼樣、比你丈夫、p_name3的還要好吧？,pid1
+		zin_old_msg,好！！　call_pid21的方式．．．一直．．．好、好好好好好的哦！！,pid2
+		zin_old_msg,是這樣啊、那麼好嗎？cr但是、p_name3那個傢伙、每天都可以使用這麼好的man_str呢,pid1
+		zin_old_msg,要不、cf_pid1也做call_pid12的新娘吧,pid1
+		zin_old_msg,不行、的啊．．．cf_pid1、已經和p_name3君結婚了的說．．．,pid2
+		zin_old_msg,結婚既然不行了話、那生孩子還是沒問題的吧？,pid1
+		zin_old_msg,生孩子也不行的吧．．．那樣會破壞．．．彼此間幸福的哦哦哦哦哦哦．．．,pid2
+		zin_old_msg,哈哈、那還做什麼啊cr不能生孩子的話就只能放棄的說,pid1
+		zin_old_msg,不要啊啊、放棄、多快樂啊啊！！cr好吧、為了生孩子也不可以停止的啊！！,pid2
+		zin_old_msg,是嗎、差不多也該最後衝刺了呢cr為了讓call_pid12的子宮懷上孩子、決定好好的來一次高潮吧！！,pid1
+		zin_old_msg,啊嗯、那裡！！cr真的不行啊、會懷上p_name3以外的孩子的、tane_str不要進來啊！！,pid2
+		zin_flush,pid2
+		zin_old_msg,啊啊嗯、進來了！！crcall_pid21的tane_str在子宮裡、高潮會懷上孩子的啊啊啊啊！！,pid2
+		zin_old_msg,呵呵、p_name3還在工作中、妻子卻正在和別人瘋狂的造孩子、估計做夢也不會想到的吧,pid1
+		end
+	case3
+		zin_old_msg,唔嗯唔啊．．．唔啊啊啊！　啊、啊啊嗯．．．,pid2
+		zin_old_msg,啊啊嗯！！　好棒啊、tin_str、在深處．．．變得好大啊！！！,pid2
+		zin_old_msg,啊啊嗯！！　已經、已經不行了！！　啊、你．．．不好意思ーーーー啊嗯！！！,pid2
+		zin_flush_one,pid2
+		zin_old_msg,什麼？已經高潮了？,pid1
+		zin_old_msg,唔嗯．．．啊、因為．．．call_pid21的．．．太大、好爽的嘛．．．哈啊．．．,pid2
+		zin_old_msg,看來完全被p_name3訓練的不錯嘛,pid1
+		zin_old_msg,喂、現在這樣可還沒有結束喲！！,pid1
+		zin_old_msg,嗯啊唔唔唔唔唔唔唔唔！！　啊、不行了！！　已經、已經高潮了啊啊！！,pid2
+		zin_old_msg,無論幾次、我都還沒有高潮啊！！,pid1
+		zin_old_msg,啊啊嗯、那、那樣的．．．啊、不行啊．．．p_name2．．．會、壞掉的啊啊！！！,pid2
+		zin_old_msg,那麼、停下麼？,pid1
+		zin_old_msg,啊啊嗯、那樣．．．啊、不行誒．．．?,pid2
+		zin_old_msg,到底要怎樣啊！！,pid1
+		zin_old_msg,嗯嗯啊！！　稍微、稍微給我．．．call_pid21的大tin_str．．．,pid2
+		zin_old_msg,在p_name2的膣内．．．啊、侵犯啊！！！,pid2
+		zin_old_msg,知道了知道了、那就在call_pid12的裡面做到被p_name3趕出來為止、可以了吧！！,pid1
+		zin_old_msg,啊啊嗯、來、來了！！　又、已經．．．來了啊啊啊啊啊啊！！,pid2
+		zin_flush,pid2
+		end
+case_kun_上司
+	//人妻の夫がプレイヤーの上司
+	rnd,3
+	case0
+		zin_old_msg,什麼啊、man_str都已經這樣黏糊糊的了,pid1
+		zin_old_msg,夫人、在p_name3大人的家裡迎接著其他男人的插入、是在期待著什麼麼？,pid1
+		zin_old_msg,討厭啊啊．．．那、那是．．．,pid2
+		zin_old_msg,那你自己說cr我是見異思遷非常喜歡和色狼做愛的變態妻子、吶、說說看,pid1
+		zin_old_msg,不、不要啊．．．這樣、色情的話．．．啊、說不出口．．．嗯嗯嗯！！！,pid2
+		zin_old_msg,如果不說的話、那就這樣結束吧,pid1
+		zin_old_msg,不、不行啊啊啊．．．?放、放棄什麼的．．．討、討厭啊啊啊．．．?,pid2
+		zin_old_msg,那就說！！,pid1
+		zin_old_msg,cf_pid2是．．．見異思遷非常喜歡和色狼做愛．．．変態人妻啊．．．誒、誒、啊啊啊啊嗯！！,pid2
+		zin_old_msg,哦、連話都說不出來了麼,pid1
+		zin_old_msg,啊唔嗯、唔嗯啊、啊．．．真的、唔．．．啊唔．．．嗯啊唔啊啊啊ーーーーーっ！,pid2
+		zin_old_msg,不行了、這樣就．．．?,pid1
+		zin_old_msg,啊嗯、嗚、来了．．．已經．．．高潮．．．高潮．．．高潮了啊啊啊啊呀ーーーーーっ！！！,pid2
+		zin_flush,pid2
+		end
+	case1
+		zin_old_msg,嗚啊啊啊啊啊！！！　好、好棒啊啊啊啊！！cr這樣的深處．．．被、擴張開的．．．還是、第一次的說,pid2
+		zin_old_msg,怎麼樣、比你丈夫、p_name3的還要好吧？,pid1
+		zin_old_msg,好！！　call_pid21的方式．．．一直．．．好、好好好好好的哦！！,pid2
+		zin_old_msg,cf_pid1也很不錯啊cr能和p_name3大人的夫人做簡直就像是在做夢一樣呢,pid1
+		zin_old_msg,以丈夫的部下作為性處理的對象而出來賣春、如果被傳出去的話、人妻的形象啊,pid1
+		zin_old_msg,對啊．．．那個人的部下積累了太多的性欲實在不想錯過呢,pid2
+		zin_old_msg,因此特別提供身體做為對部下的獎勵！！cr所、所以、請不用客氣！！,pid2
+		zin_old_msg,再這樣激烈做下去的話、恐怕不得不小心些cr也許會有中出的可能啊．．．,pid1
+		zin_old_msg,好吧、只要你舒服就好啊cr所以．．．可以更強烈的往上頂的喲！！,pid2
+		zin_old_msg,那麼、就恭敬不如從命．．．cr積存已久的tane_str、請全部用man_str好好的接收吧！！,pid1
+		zin_flush,pid2
+		zin_old_msg,啊啊嗯、來了啊！！cr丈夫部下的tin_str咻咻的把tane_str噴出來了啊啊啊啊啊．．．,pid2
+		zin_old_msg,呵呵、p_name3大人還在工作中、夫人卻被部下的tin_str中出著、估計怎麼做夢也不會想到的吧,pid1
+		end
+	case2
+		zin_old_msg,唔嗯唔啊．．．唔啊啊啊！　啊、啊啊嗯．．．,pid2
+		zin_old_msg,啊啊嗯！！　好棒啊、tin_str、在深處．．．變得好大啊！！！,pid2
+		zin_old_msg,啊啊嗯！！　已經、已經不行了！！　啊、你．．．不好意思ーーーー啊嗯！！！,pid2
+		zin_flush_one,pid2
+		zin_old_msg,什麼？已經高潮了？,pid1
+		zin_old_msg,唔嗯．．．啊、因為．．．call_pid21的．．．太大、好爽的嘛．．．哈啊．．．,pid2
+		zin_old_msg,看來完全被p_name3訓練的不錯嘛,pid1
+		zin_old_msg,喂、現在這樣可還沒有結束喲！！,pid1
+		zin_old_msg,嗯啊唔唔唔唔唔唔唔唔！！　啊、不行了！！　已經、已經高潮了啊啊！！,pid2
+		zin_old_msg,無論幾次、我都還沒有高潮啊！！,pid1
+		zin_old_msg,啊啊嗯、那、那樣的．．．啊、不行啊．．．p_name2．．．會、壞掉的啊啊！！！,pid2
+		zin_old_msg,那麼、停下麼？,pid1
+		zin_old_msg,啊啊嗯、那樣．．．啊、不行誒．．．?,pid2
+		zin_old_msg,到底要怎樣啊！！,pid1
+		zin_old_msg,嗯嗯啊！！　稍微、稍微給我．．．call_pid21的大tin_str．．．,pid2
+		zin_old_msg,在p_name2的膣内．．．啊、侵犯啊！！！,pid2
+		zin_old_msg,上司夫人的命信是不能違背的啊cr那就在call_pid12的裡面做到被p_name3趕出來為止、可以了吧！！,pid1
+		zin_old_msg,啊啊嗯、來、來了！！　又、已經．．．來了啊啊啊啊啊啊！！,pid2
+		zin_flush,pid2
+		end

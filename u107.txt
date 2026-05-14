@@ -1,0 +1,13 @@
+eve_start
+    //if_date,95,03
+	if_pkun,player,13000
+    if_is_habatu,poid_player
+    if_val,È:player>0
+eve_end
+
+get_bgst_habatu,player,0
+set_epid2,pval
+set_epid1,È:player
+txtload,xp020
+
+end

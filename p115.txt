@@ -1,0 +1,10 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,,pid1,0,,gzin14
+zin_regs_msg,艦隊司令倒是沒關系．．．,艦隊司令還好說．．．,0
+zin_regs_msg,為什麼我要在p_name2手下幹活,為什麼p_name2是總司令？,0
+zin_regs_msg,這樣的人事安排我無法認同！！,總司令應該是我！！,0
+zin_reg_title,p_name1對人事安排心生不滿。
+zin_reg_button,0
+zin_reg_exit
+end

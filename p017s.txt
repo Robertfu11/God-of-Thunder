@@ -1,0 +1,17 @@
+bgm_chg,69
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin9
+zin_reg_msg,你看、p_name1cr生下來了哦,1
+zin_reg_msg,這．．．cr恭喜了,0
+zin_reg_face,pid3
+zin_reg_msg,什麼嘛、愁眉苦臉的表情,1
+zin_reg_msg,欸、這又不是我的孩子咯,0
+zin_reg_msg,別這麼說,1
+zin_reg_msg,這孩子是我親生的,1
+zin_reg_msg,是要繼承這個國家的,1
+zin_reg_msg,請你當好這個孩子的父親,1
+zin_reg_msg,啊、好．．．,0
+zin_reg_title,p_name3出生了。
+zin_reg_button,0
+zin_reg_exit
+end

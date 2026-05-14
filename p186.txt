@@ -1,0 +1,13 @@
+bgm_chg,54
+zin_reg_event,,pid2,pid4,,gzin9
+zin_reg_qnar,p_name2收到了p_name4的關於婚禮儀式的回複、於是p_name2將p_name4邀請了出來。
+zin_reg_msg,call_pid42、有什麼事情嗎？,1
+zin_reg_msg,p_name4、p_name3好像也很喜歡你的樣子啊,0
+zin_reg_msg,是這樣嗎？真是太好了,1
+zin_reg_msg,結婚儀式在下個月,0
+zin_reg_msg,那個真是很期待啊,1
+zin_reg_msg,這樣你也能獨當一面,0
+zin_reg_msg,非常感謝、call_pid42,1
+zin_reg_button,0
+set_eveflg,61,2
+end

@@ -1,0 +1,11 @@
+bgm_chg,58
+zin_reg_init
+zin_reg_event,,pid2,,zin1,gzin34
+zin_reg_msg,p_name1的孩子出生了．．．,0
+zin_reg_msg,為什麼會變成這樣啊、從來沒想過啊﹒﹒﹒,0
+zin_reg_msg,難道說是我的問題嗎,0
+zin_reg_msg,這次為了孩子的將來，我一定要好好養大你的,0
+zin_reg_title,p_name3出生了
+zin_reg_button,0
+zin_reg_exit
+end

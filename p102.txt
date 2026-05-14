@@ -1,0 +1,15 @@
+zin_reg_init
+zin_reg_event,修行,pid1,pid2,,gzin8
+zin_reg_msg,您叫我嗎？,1
+zin_reg_msg,你以前說過、「想要修行」是吧,0
+zin_reg_msg,這次、我批准你修行,0
+zin_reg_msg,是、非常感謝,1
+zin_reg_msg,放浪諸國、儲備各種各樣的知識、還能錘煉激勵自己,0
+zin_reg_msg,遵命,1
+zin_reg_msg,那就一年之後回國,1
+zin_reg_msg,可以,0
+zin_reg_msg,那我就盡早出發了,1
+zin_reg_title,p_name2出門修行了。
+zin_reg_button,0
+zin_reg_exit
+end

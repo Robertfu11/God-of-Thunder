@@ -1,0 +1,50 @@
+rnd,4
+case0
+	zin_old_msg,啊啊啊啊啊﹒﹒﹒那樣．．．cr在肚子裏面那樣攪拌不行！！,pid2
+	zin_old_msg,那麼、就停止吧？,pid1
+	zin_old_msg,那、那樣．．．call_pid21．．．壞心眼！！！,pid2
+	zin_old_msg,呵呵、即使被拒絕、也不會聽下來哦！！,pid1
+	zin_old_msg,啊、啊啊！！　更加．．．用力的抽插！！cr啊啊！！！,pid2
+	zin_old_msg,更加茲噗茲噗﹒﹒﹒頂到花心了！！,pid2
+	zin_old_msg,這裏！！　這裏？！！,pid1
+	zin_old_msg,啊啊！！　那、那裏﹒﹒﹒不、不行了！！,pid2
+	zin_old_msg,我已經﹒﹒﹒抱歉、高潮！！　高潮了嗚嗚嗚！！！！,pid2
+	zin_flush,pid2
+	end
+case1
+	zin_old_msg,喂喂、陰道裏已經這麼濕了麼！！,pid1
+	zin_old_msg,還是意想不到呢buf_str1,pid1
+	zin_old_msg,啊啊﹒﹒﹒那樣﹒﹒﹒想等著你來嘛．．．,pid2
+	zin_old_msg,呵呵、那裏真是可愛,pid1
+	zin_old_msg,真的？怎麼樣舒服嗎？,pid2
+	zin_old_msg,啊啊、call_pid12的man_str總是好舒服啊,pid1
+	zin_old_msg,啊啊！！　p_name2好爽！！　cr呀、腰都使不上勁了ーーーっ！！,pid2
+	zin_old_msg,喵、這樣摩擦小豆豆﹒﹒﹒那裏都勃起了．．．,pid2
+	zin_old_msg,這、這﹒﹒﹒賽高啊！！cr好舒服！！　要飛起來了ーーーっ！！！,pid2
+	zin_flush,pid2
+	end
+case2
+	zin_old_msg,嗚嗯！！　啊啊！！　啊啊啊啊啊！！,pid2
+	zin_old_msg,頭腦混亂。cr就那樣想要嗎？,pid1
+	zin_old_msg,是、是的！！　這是就是真的！！　想要高潮啊啊啊！！！,pid2
+	zin_old_msg,哇！！　陰道突然變緊了！！,pid1
+	zin_old_msg,啊、啊啊！！　不要休息！！cr更多！！　雞巴往子宮裏深深地插吧！！！,pid2
+	zin_old_msg,我、我知道了！！　這、是這樣嗎！！cr還是﹒﹒﹒要這樣！！,pid1
+	zin_old_msg,啊！！　啊啊啊！！cr真的要壞掉了！！！,pid2
+	zin_old_msg,call_pid21、就是那裏！！　最最最喜歡了！！,pid2
+	zin_old_msg,啊啊啊！！　已經不行了！！　去了！！cr高潮了一庫一庫咦咦咦咦咦！！！,pid2
+	zin_flush,pid2
+	end
+case3
+	zin_old_msg,call_pid21的tin_str．．．已經進去man_str了喲！！,pid2
+	zin_old_msg,當然了、這是你想要的吧？,pid1
+	zin_old_msg,那、是啊﹒﹒﹒這﹒﹒﹒這樣的、想要啊．．．,pid2
+	zin_old_msg,p_name2的man_str．．．庫出庫出．．．的エロ汁可是不停的在流哦！！！,pid2
+	zin_old_msg,p_name2的陰道﹒﹒﹒想要被更加激烈的侵犯啊！！,pid2
+	zin_old_msg,休息一下吧buf_str1,pid1
+	zin_old_msg,不行．．．p_name2淫亂的事情．．．buf_str1停不下來﹒﹒﹒啊啊啊．．．,pid2
+	zin_old_msg,所以﹒﹒﹒中出在裏面﹒﹒﹒滿滿的﹒﹒﹒把精液都射進我的子宮吧！！！,pid2
+	zin_old_msg,啊、給你哦。全部的！！,pid1
+	zin_old_msg,啊啊、射進來了！！　call_pid21的tin_str．．．精液熱熱的灌滿了嗚嗚嗚！！！,pid2
+	zin_flush,pid2
+	end

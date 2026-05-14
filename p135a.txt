@@ -1,0 +1,497 @@
+//指定人物的牢房凌辱
+chk_sts,pid2,初膜,>0
+chk_sts_then
+	goto,*Not_virgin
+chk_sts_else
+	goto,*Is_virgin
+
+
+*Not_virgin
+//非處女，先確認有無多人Ｈ圖，決定是否顯示
+gosub,*GetPolyH
+select_pid,eveflg269
+case_0
+	goto,*Is_virgin
+case_1
+//就算有多p圖, 一樣以機率決定是否玩多p, 不喜歡的可以改寫這塊就可以避免(例如把*Has_PolyH也改為*No_PolyH, 或是更改位置來改寫機率)
+//	rnd,3
+//	case2
+//	case1
+		goto,*Has_PolyH
+//	case0
+//		goto,*No_PolyH
+case_2
+	goto,*No_PolyH
+end
+
+*Is_virgin
+//處女(或無額外H圖)，呼叫一般的單人Ｈ圖
+bgm_chg,53
+zin_reg_init
+zin_reg_event,地下牢,pid1,pid2,,gzin35
+zin_reg_msg,如何？cr在這住的還習慣吧？,0
+zin_reg_msg,有何貴幹？,1
+zin_reg_msg,今天想好好疼愛妳呢,0
+zin_reg_msg,真讓人期待,0
+zin_reg_msg,你、你在說什麼？,1
+zin_reg_msg,來人、把她送到我的房間去,0
+zin_reg_face_1,756
+zin_reg_msg,了解！！,1
+zin_reg_msg,送到特別室去,0
+zin_reg_msg,知道了,1
+bl_fadeout
+zin_old_init
+zin_old_img_pid,pid2,0
+zin_old_msg,你、你這．．．混蛋！！　嗚嗚！！,pid2
+zin_old_msg,喔喔、比想像中還舒服的小穴呢,pid1
+zin_old_msg,如何、成為callself_pid1的妾就可以自由活動喔？,pid1
+zin_old_msg,誰、誰要當你的女人．．．cr嗚啊啊啊！！,pid2
+zin_old_msg,這樣呀、不過在這邊玩妳也一樣嘛。cr哈哈哈！！,pid1
+zin_old_msg,把別人．．．當成玩具．．．cr．．．玩、玩弄．．．真是．．．最、最糟糕的混蛋．．．,pid2
+zin_old_msg,真掘強呀、讓callself_pid1胯下的東西更硬了呢cr看招！！,pid1
+zin_old_msg,啊啊．．．嗚啊啊！！cr住、住手呀．．．嗚咿！！,pid2
+zin_old_msg,嗯、是時候讓你懷上混蛋的孩子了呢,pid1
+zin_old_msg,咦．．．什麼．．．你難道要．．．,pid2
+zin_old_msg,不、不要呀．．．不行．．．不可以射在裡面．．．,pid2
+zin_old_msg,求求你！！　裡面不行！！　我求你了！！cr請、請不要中出！！,pid2
+zin_old_msg,呼、要去啦！！！！！！,pid1
+zin_old_msg,咿、咿呀！！cr裡、裡面、不不行ーーーーーーー！！,pid2
+zin_flush,pid2
+zin_old_msg,嗚．．．好過分．．．明明說了．．．不能射在裡面的．．．cr還射得．．．這樣多．．．,pid2
+zin_reg_button,16
+zin_reg_exit
+upd_sts,pid2,初膜,pid1
+//set_virgin,pid2
+end
+		
+*No_PolyH
+//非處女, 額外H圖為凌辱系
+bgm_chg,53
+zin_reg_init
+zin_reg_event,地下牢,pid1,pid2,,gzin35
+zin_reg_msg,如何？cr在這住的還習慣吧？,0
+zin_reg_msg,有何貴幹？,1
+zin_reg_msg,今天想好好疼愛妳呢,0
+zin_reg_msg,真讓人期待,0
+bl_fadeout
+zin_old_init
+gosub,*ShowA
+zin_old_msg,你、你這．．．混蛋！！　嗚嗚！！,pid2
+zin_old_msg,喔喔、比想像中還舒服的小穴呢,pid1
+zin_old_msg,如何、成為callself_pid1的妾就可以自由活動喔？,pid1
+zin_old_msg,誰、誰要當你的女人．．．cr嗚啊啊啊！！,pid2
+zin_old_msg,這樣呀、不過在這邊玩妳也一樣嘛。cr哈哈哈！！,pid1
+zin_old_msg,把別人．．．當成玩具．．．cr．．．玩、玩弄．．．真是．．．最、最糟糕的混蛋．．．,pid2
+zin_old_msg,真掘強呀、讓callself_pid1胯下的東西更硬了呢cr看招！！,pid1
+zin_old_msg,啊啊．．．嗚啊啊！！cr住、住手呀．．．嗚咿！！,pid2
+zin_old_msg,嗯、是時候讓你懷上混蛋的孩子了呢,pid1
+zin_old_msg,咦．．．什麼．．．你難道要．．．,pid2
+zin_old_msg,不、不要呀．．．不行．．．不可以射在裡面．．．,pid2
+zin_old_msg,求求你！！　裡面不行！！　我求你了！！cr請、請不要中出！！,pid2
+zin_old_msg,呼、要去啦！！！！！！,pid1
+zin_old_msg,咿、咿呀！！cr裡、裡面、不不行ーーーーーーー！！,pid2
+gosub,*ShowB
+zin_old_msg,嗚．．．好過分．．．明明說了．．．不能射在裡面的．．．cr還射得．．．這樣多．．．,pid2
+zin_reg_button,16
+zin_reg_exit
+upd_sts,pid2,初膜,pid1
+//set_virgin,pid2
+end
+
+*Has_PolyH
+//非處女, 額外H圖為多p系的
+bgm_chg,53
+zin_reg_init
+zin_reg_event,地下牢,pid1,pid2,,gzin35
+zin_reg_msg,（哎呀呀... 被別人搶先啦）,0
+zin_old_init
+gosub,*ShowC
+zin_old_msg,喔喔、各位還真早呀,pid1
+zin_old_msg,啊啊．．．嗚啊啊！！cr住、住手呀．．．嗚咿！！,pid2
+zin_old_msg,哈哈～聽到有好女人當然要快點來呀,756
+zin_old_msg,好女人呀？我看稱為母豬要貼切的多了吧？,pid1
+zin_old_msg,說的也是呢、老兄要不要展現下你的技術呀？,756
+zin_old_msg,那我就現個醜吧，這邊的穴就先讓給我吧,pid1
+zin_old_msg,嗚啊啊！！cr又、又進來了．．．嗚咿！！,pid2
+zin_old_msg,喔喔！沒想到被玩了這麼久還沒鬆垮垮的呀！！,pid1
+zin_old_msg,嗚、啊嗚．．．！！,pid2
+zin_old_msg,呼呼！本大爺的肉棒也不錯吧～,pid1
+zin_old_msg,嗚．．．不．．．不要．．．,pid2
+zin_old_msg,再縮緊些！～,pid1
+zin_old_msg,啊啊．．．嗚啊啊！！cr不、不行了．．．嗚咿！！,pid2
+zin_old_msg,呼、要去啦！！！！！！,pid1
+zin_old_msg,咿、咿呀！！cr裡、裡面ーーーーーーー！！,pid2
+gosub,*ShowD
+zin_reg_button,16
+zin_reg_exit
+end
+
+*GetPolyH
+//設定是多p圖片還是凌辱圖片(0:無; 1:多p; 2:單人凌辱)，多ｐ優先於凌辱
+select_pid,pid2
+case_349
+	set_eveflg,269,1
+	return
+case_386
+	set_eveflg,269,2
+	return
+case_403
+	set_eveflg,269,1
+	return
+case_404
+	set_eveflg,269,1
+	return
+case_418
+	set_eveflg,269,1
+	return
+case_419
+	set_eveflg,269,1
+	return
+case_430
+	set_eveflg,269,1
+	return
+case_506
+	set_eveflg,269,1
+	return
+case_2206
+	set_eveflg,269,1
+	return
+case_2209
+	set_eveflg,269,1
+	return
+case_2219
+	set_eveflg,269,1
+	return
+case_2220
+	set_eveflg,269,1
+	return
+case_2223
+	set_eveflg,269,1
+	return
+default
+	set_eveflg,269,0
+	return
+
+*ShowA
+//凌辱系Ｈ圖
+select_pid,pid2
+case_386
+	rnd,2
+	case1
+		zin_old_img_str,\p135\ew0386a2,0,1
+		set_eveflg,270,2
+		return
+	case0
+		zin_old_img_str,\p135\ew0386a1,0,1
+		set_eveflg,270,1
+		return
+case_403
+	rnd,2
+	case1
+		zin_old_img_str,\p135\ew0403a2,0,1
+		set_eveflg,270,2
+		return
+	case0
+		zin_old_img_str,\p135\ew0403a1,0,1
+		set_eveflg,270,1
+		return
+case_418
+		zin_old_img_str,\p135\ew0418a1,0,1
+		return
+case_430
+		zin_old_img_str,\p135\ew0430a1,0,1
+		return
+case_2209
+		zin_old_img_str,\p135\ew2209a1,0,1
+		return
+case_2223
+		zin_old_img_str,\p135\ew2223a1,0,1
+		return
+default
+	zin_old_img_pid,pid2,0
+	return
+
+*ShowB
+//凌辱系Ｈ圖結尾
+select_pid,pid2
+case_386
+	select_pid,eveflg270
+	case_2
+		zin_old_img_str,\p135\ew0386b2,0,1
+		return
+	case_1
+		zin_old_img_str,\p135\ew0386b1,0,1
+		return
+	default
+		return
+case_403
+	select_pid,eveflg270
+	case_2
+		zin_old_img_str,\p135\ew0403b2,0,1
+		return
+	case_1
+		zin_old_img_str,\p135\ew0403b1,0,1
+		return
+	default
+		return
+case_418
+	zin_old_img_str,\p135\ew0418b1,0,1
+	return
+case_430
+	zin_old_img_str,\p135\ew0430b1,0,1
+	return
+case_2209
+	zin_old_img_str,\p135\ew2209b1,0,1
+	return
+case_2223
+	zin_old_img_str,\p135\ew2223b1,0,1
+	return
+default
+	zin_flush,pid2
+	return
+
+*ShowC
+//多p系Ｈ圖
+select_pid,pid2
+case_349
+	rnd,2
+	case1
+		zin_old_img_str,\p135\ew0349c2,0,1
+		set_eveflg,270,2
+		return
+	case0
+		zin_old_img_str,\p135\ew0349c1,0,1
+		set_eveflg,270,1
+		return
+case_403
+	rnd,2
+	case1
+		zin_old_img_str,\p135\ew0403c2,0,1
+		set_eveflg,270,2
+		return
+	case0
+		zin_old_img_str,\p135\ew0403c1,0,1
+		set_eveflg,270,1
+		return
+case_404
+	rnd,2
+	case1
+		zin_old_img_str,\p135\ew0404c2,0,1
+		set_eveflg,270,2
+		return
+	case0
+		zin_old_img_str,\p135\ew0404c1,0,1
+		set_eveflg,270,1
+		return
+case_418
+	rnd,3
+	case2
+		zin_old_img_str,\p135\ew0418c3,0,1
+		set_eveflg,270,3
+		return
+	case1
+		zin_old_img_str,\p135\ew0418c2,0,1
+		set_eveflg,270,2
+		return
+	case0
+		zin_old_img_str,\p135\ew0418c1,0,1
+		set_eveflg,270,1
+		return
+case_419
+	rnd,4
+	case3
+		zin_old_img_str,\p135\ew0419c4,0,1
+		set_eveflg,270,4
+		return
+	case2
+		zin_old_img_str,\p135\ew0419c3,0,1
+		set_eveflg,270,3
+		return
+	case1
+		zin_old_img_str,\p135\ew0419c2,0,1
+		set_eveflg,270,2
+		return
+	case0
+		zin_old_img_str,\p135\ew0419c1,0,1
+		set_eveflg,270,1
+		return
+case_430
+	rnd,3
+	case2
+		zin_old_img_str,\p135\ew0430c3,0,1
+		set_eveflg,270,3
+		return
+	case1
+		zin_old_img_str,\p135\ew0430c2,0,1
+		set_eveflg,270,2
+		return
+	case0
+		zin_old_img_str,\p135\ew0430c1,0,1
+		set_eveflg,270,1
+		return
+case_506
+	zin_old_img_str,\p135\ew0506c1,0,1
+	return
+case_2206
+	rnd,2
+	case1
+		zin_old_img_str,\p135\ew2206c2,0,1
+		set_eveflg,270,2
+		return
+	case0
+		zin_old_img_str,\p135\ew2206c1,0,1
+		set_eveflg,270,1
+		return
+case_2209
+	zin_old_img_str,\p135\ew2209c1,0,1
+	return
+case_2219
+	zin_old_img_str,\p135\ew2219c1,0,1
+	return
+case_2220
+	rnd,2
+	case1
+		zin_old_img_str,\p135\ew2220c2,0,1
+		set_eveflg,270,2
+		return
+	case0
+		zin_old_img_str,\p135\ew2220c1,0,1
+		set_eveflg,270,1
+		return
+case_2223
+	zin_old_img_str,\p135\ew2223c1,0,1
+	return
+default
+	zin_old_img_pid,pid2,0
+	return
+
+*ShowD
+//多p系Ｈ圖結束
+select_pid,pid2
+case_349
+	select_pid,eveflg270
+	case2
+		zin_old_img_str,\p135\ew0349d2,0,1
+		set_eveflg,270,2
+		return
+	case1
+		zin_old_img_str,\p135\ew0349d1,0,1
+		set_eveflg,270,1
+		return
+	default
+		return
+case_403
+	select_pid,eveflg270
+	case2
+		zin_old_img_str,\p135\ew0403d2,0,1
+		set_eveflg,270,2
+		return
+	case1
+		zin_old_img_str,\p135\ew0403d1,0,1
+		set_eveflg,270,1
+		return
+	default
+		return
+case_404
+	select_pid,eveflg270
+	case2
+		zin_old_img_str,\p135\ew0404d2,0,1
+		set_eveflg,270,2
+		return
+	case1
+		zin_old_img_str,\p135\ew0404d1,0,1
+		set_eveflg,270,1
+		return
+	default
+		return
+case_418
+	rnd,3
+	case3
+		zin_old_img_str,\p135\ew0418d3,0,1
+		set_eveflg,270,3
+		return
+	case2
+		zin_old_img_str,\p135\ew0418d2,0,1
+		set_eveflg,270,2
+		return
+	case1
+		zin_old_img_str,\p135\ew0418d1,0,1
+		set_eveflg,270,1
+		return
+	default
+		return
+case_419
+	rnd,4
+	case4
+		zin_old_img_str,\p135\ew0419d4,0,1
+		set_eveflg,270,4
+		return
+	case3
+		zin_old_img_str,\p135\ew0419d3,0,1
+		set_eveflg,270,3
+		return
+	case2
+		zin_old_img_str,\p135\ew0419d2,0,1
+		set_eveflg,270,2
+		return
+	case1
+		zin_old_img_str,\p135\ew0419d1,0,1
+		set_eveflg,270,1
+		return
+	default
+		return
+case_430
+	rnd,3
+	case3
+		zin_old_img_str,\p135\ew0430d3,0,1
+		set_eveflg,270,3
+		return
+	case2
+		zin_old_img_str,\p135\ew0430d2,0,1
+		set_eveflg,270,2
+		return
+	case1
+		zin_old_img_str,\p135\ew0430d1,0,1
+		set_eveflg,270,1
+		return
+	default
+		return
+case_506
+	zin_old_img_str,\p135\ew0506d1,0,1
+	return
+case_2206
+	select_pid,eveflg270
+	case2
+		zin_old_img_str,\p135\ew2206d2,0,1
+		set_eveflg,270,2
+		return
+	case1
+		zin_old_img_str,\p135\ew2206d1,0,1
+		set_eveflg,270,1
+		return
+	default
+		return
+case_2209
+	zin_old_img_str,\p135\ew2209d1,0,1
+	return
+case_2219
+	zin_old_img_str,\p135\ew2219d1,0,1
+	return
+case_2220
+	select_pid,eveflg270
+	case2
+		zin_old_img_str,\p135\ew2220d2,0,1
+		set_eveflg,270,2
+		return
+	case1
+		zin_old_img_str,\p135\ew2220d1,0,1
+		set_eveflg,270,1
+		return
+	default
+		return
+case_2223
+	zin_old_img_str,\p135\ew2223d1,0,1
+	return
+default
+	zin_old_img_pid,pid2,0
+	return

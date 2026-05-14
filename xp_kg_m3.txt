@@ -1,0 +1,192 @@
+//覇王オルド　強引　妾　タイプ3　騎乗位
+//状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	chk_sts,pid2,4,12080
+	chk_sts_then
+		zin_reg_msg,你說什麼！？cr你要違抗callself_pid1的命令？,0
+		zin_reg_msg,這是命令嗎？,1
+		zin_reg_msg,沒錯,0
+		zin_reg_msg,違抗命令的話、我隨時可以切斷你的生活來源,0
+		zin_reg_msg,怎、怎麼可以．．．,1
+		zin_reg_msg,不知道習慣于奢侈生活的你能不能適應,0
+		zin_reg_msg,我、我知道了,1
+		zin_reg_msg,知道的話、那就自覺的跨到callself_pid1身上來！,0
+		zin_reg_msg,咕啊．．．．,1
+		zin_old_init
+		zin_old_img_pid,pid2,1
+		goto,*jump_point1
+	chk_sts_else
+		zin_reg_msg,倔強的女人喲、我就呆一會兒也不行嗎,0
+		zin_reg_msg,趕快回去！！,1
+		zin_reg_msg,這是不可能的,0
+		zin_reg_msg,我越來越想和你合體了,0
+		zin_reg_msg,覺悟吧、我會讓你爽到天亮的！！,0
+		zin_reg_msg,你、你說什麼．．．不、你不能這樣．．．,1
+		zin_reg_msg,絕對、不可以啊ーーー！！,1
+		zin_old_init
+		zin_old_img_pid,pid2,1
+
+*jump_point1
+rnd,3
+case0
+	//結婚している
+	chk_sts,pid2,17,>0
+	chk_sts_then
+		zin_old_msg,啊啊．．．老公以外的．．．還沒有進來過呢．．．,pid2
+		zin_old_msg,覺得對不起你丈夫？cr這種情緒在你成為妾室的時候就應該通通忘記,pid1
+		zin_old_msg,怎麼會這樣．．．這和我想的不一樣．．．,pid2
+		zin_old_msg,呵呵呵、不用在意。馬上就給你足以忘卻憂愁的快樂,pid1
+		zin_old_msg,你馬上就會體會到做妾的快樂了,pid1
+		zin_old_msg,不、不可能．．．會是這樣的．．．,pid2
+		zin_old_msg,那我就證明給你看！！　今夜就給我墮落吧、唔裡呀啊啊啊！！,pid1
+		zin_old_msg,呀！！　啊啊！！　啊咿啊啊啊ーーー！！cr快、快住手！！　這樣強力的抽插ーー！！,pid2
+		zin_old_msg,嘿咻、嘿咻、嘿咻咻！！　還沒完吶！！,pid1
+		zin_old_msg,咿咿咿ーーーーーっ！！　這、這樣、不、不行啊ーーーー！！！,pid2
+		zin_old_msg,拜、拜託．．．請停下來ーー．．．這樣下去的話．．．要高潮了．．．被老公以外的肉棒．．．要、要高潮了．．,pid2
+		zin_old_msg,那就趕緊高潮。你放心、不管幾次我一定會讓你嘗到決定的滋味的,pid1
+		zin_old_msg,啊啊、不要．．．已經要．．．去啊．．．啊啊．．．,pid2
+		zin_old_msg,要去了、去了．．．去了啊啊啊啊ーーーーー！！！,pid2
+		zin_flush,pid2
+		zin_old_msg,接下來、才是正戲。你會慢慢的沉迷墮落的。做好覺悟吧,pid1
+		zin_old_msg,．．．嗚．．．啊啊．．．嗚嗚．．．．嗯．．．,pid2
+		end
+	chk_sts_else
+		zin_old_msg,撒、把腰動起來！！　試著讓我爽快的交貨吧！！,pid1
+		zin_old_msg,．．．已經．．不、不行了．．．不、不行了！！,pid2
+		zin_old_msg,已經沒指望了麼。明明能把callself_pid1的肉棒整根含住的說．．．,pid1
+		zin_old_msg,不過、你有一個不錯的肉壺。這可是一件好器物,pid1
+		zin_old_msg,嗚嗚．．．住、住手啊．．．,pid2
+		zin_old_msg,呵呵呵、當你體會到人生的醍醐味的時候也許就改變想法了,pid1
+		zin_old_msg,沒有、沒有．．．這種事情．．．,pid2
+		zin_old_msg,能看見勃起的陰核了哦。身體也應該進入状態了吧。沒辦法、今晚就辛苦一下callself_pid1為你做特殊服務吧,pid1
+		zin_old_msg,咿啊啊啊啊！！　不要．．．這、這麼從下面．．．突然進來啊！！！,pid2
+		zin_old_msg,嘿、嘿咗！！,pid1
+		zin_old_msg,求、求你了．．不要這樣．．激烈．．．啊啊．．昂．．不要．．．要高潮了！！,pid2
+		zin_old_msg,可惡．．居然想比本王先高潮！！,pid1
+		zin_old_msg,唔哦哦哦哦哦ーーー！！,pid1
+		zin_old_msg,咿啊啊啊、不行了、要、要、高潮了ーーーー！！！,pid2
+		zin_flush,pid2
+		zin_old_msg,今天是特別優待。從明天起、你就要學習如何取悅于callself_pid1的方法了、明白了嗎,pid1
+		zin_old_msg,．．．呀．．．呀．．．．,pid2
+		end
+case1
+	zin_old_msg,啊啊、這種事情．．．不、不可以！！！！,pid2
+	zin_old_msg,明明在拒絕可是屁股已經扭起來了、這怎麼解釋？,pid1
+	zin_old_msg,那、那個．．．call_pid1．．．啊啊！！,pid2
+	zin_old_msg,這還沒進去呢、就已經汁水四溢了不是麼,pid1
+	zin_old_msg,你果然是在硬撐沒錯吧？,pid1
+	zin_old_msg,不、不是的！！　啊！！,pid2
+	zin_old_msg,你的身體可不是這麼說的喲,pid1
+	zin_old_msg,肉穴裹得是如此之緊你知道嗎,pid1
+	zin_old_msg,．．．．嗚嗚嗚．．．恩恩．．．唔哇啊．．．,pid2
+	zin_old_msg,咯咯咯、也許懷上我的孩子就能讓你改變心意了、接下來就是子宮的快樂時間、開飯啦！！,pid1
+	zin_old_msg,唔哇．．．嗯、啊啊咿咿咿咿！！！！！,pid2
+	zin_flush,pid2
+	end
+case2
+	txtload,xpkm_gn
+	end
+
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,接下來、你打算如何？,0
+	zin_reg_msg,從這個王國逃走？,0
+	zin_reg_msg,這樣會給你全家添麻煩的喲,0
+	zin_reg_msg,這樣也沒關系嗎？,0
+	zin_reg_msg,那、那個．．．．,1
+	zin_reg_msg,明白了的話、就趕緊脫光了坐到callself_pid1上面來,0
+	zin_reg_msg,自己把callself_pid1的肉棒塞進去,0
+	zin_reg_msg,怎麼、這怎麼可以！！,1
+	zin_reg_msg,你說做不到？,0
+	zin_reg_msg,．．．．．．．cr我、我明白了,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+rnd,3
+case0
+	zin_old_msg,嗯、你怎麼回事？　不能再用力的動下腰嗎。你這樣子可沒法為callself_pid1生兒育女啊,pid1
+	zin_old_msg,怎、怎麼會．．．今天明明是我的第一次．．．孩子什麼的．．．,pid2
+	zin_old_msg,愚蠢．．．為callself_pid1產子才是你在這裡存在的唯一價值,pid1
+	zin_old_msg,好好理解一下自己的處境吧,pid1
+	zin_old_msg,就、這樣．．．隨便的．．．好過分．．．,pid2
+	zin_old_msg,比起那個、你的肉穴還真是細膩紅潤有光澤啊,pid1
+	zin_old_msg,這可是想要肉棒的鐵證哦,pid1
+	zin_old_msg,沒、沒有．．．這種事情．．．．,pid2
+	zin_old_msg,好吧、今天特別服務。就讓callself_pid1親自從下面進攻,pid1
+	zin_old_msg,誒、這樣．．．啊啊、吧、不行．．．那樣．．．咿啊啊啊啊！！,pid2
+	zin_old_msg,呵呵呵、怎麼樣？感覺還不錯吧,pid1
+	zin_old_msg,這、這麼．．．啊啊．．．好厲害．．．第、第一次．．．,pid2
+	zin_old_msg,因為你是第一次、我才在肉棒上涂了特殊的潤滑液,pid1
+	zin_old_msg,差不多到了生效的時候了。休息一下？,pid1
+	zin_old_msg,啊．．．不、不行．．．不、不行啊．．．不、不要、不要啊．．．,pid2
+	zin_old_msg,那、你想要什麼呢？　試著自己說出來哦,pid1
+	zin_old_msg,．．．拜、拜託．．．還要．．．更猛烈的．．抽插,pid2
+	zin_old_msg,呵呵、女人的本能覺醒了。好吧、如你所愿,pid1
+	zin_old_msg,啊、啊啊、呀．．啊啊恩、咿．．．這個、咿呀啊啊！！,pid2
+	zin_old_msg,請你、更加猛烈的插我吧！！！,pid2
+	zin_old_msg,嗯．．．你有個緊致有度的肉穴、是塊良田啊,pid1
+	zin_old_msg,想要call_pid1的．．．call_pid1的孩子．．．種子．．．播撒進來吧啊啊啊啊！！,pid2
+	zin_flush,pid2
+	end
+case1
+case2
+	txtload,xpkm_gv
+	end
+
+//孕みパターン
+case_botebara
+	//結婚している
+	chk_sts,pid2,17,>0
+	chk_sts_then
+		zin_reg_msg,你怎麼了？　懷了別人的孩子感覺很后悔？,0
+		zin_reg_msg,．．．．．．．．,1
+		zin_reg_msg,呵呵呵、無顏見夫君？,0
+		zin_reg_msg,這大腹便便的模樣．．．．,0
+		zin_reg_msg,好過分．．．對我的身體品頭論足．．．,1
+		zin_reg_msg,你說什麼、你老公也一定會很高興,0
+		zin_reg_msg,能夠懷上王的孩子,0
+		zin_reg_msg,接下來、今晚我們來做點快活的事情,0
+		zin_reg_msg,．．．這種事情．．．,1
+		zin_old_init
+		zin_old_img_pid,pid2,1
+		zin_old_msg,那、就腆著你的大肚子來榨取callself_pid1的種子吧！！,pid1
+		zin_old_msg,嗚．．．嗚嗚．．噗嗤．．,pid2
+		zin_old_msg,沒法再動快點了麼！！　本來懷了孩子就已經很松了,pid1
+		zin_old_msg,以前教你的絕活都忘記了嗎！！,pid1
+		zin_old_msg,．．．是、是的．．．嗚嗚．．．恩恩．．．哈啊啊啊啊．．．．,pid2
+		zin_old_msg,呵呵呵、肚子啪啪啪的還害羞了啊、這個就是孕婦的感覺麼,pid1
+		zin_old_msg,可是、你不賣力點的話、callself_pid1可交不了公糧啊,pid1
+		zin_old_msg,咕嗚嗚嗚！！　嗚嗚嗚嗚嗚！！　唔啊啊啊啊！！,pid2
+		zin_old_msg,p_name2盡一切可能扭動著腰肢、為榨出汁而努力著。,0
+		zin_old_msg,吼吼．．．這不是做的不錯嘛。這種程度的快感．．．不愧是p_name2啊,pid1
+		zin_old_msg,啊啊．．．不行了．．．這種做法．．．孩子、孩子．．．要、出來了啊．．．,pid2
+		zin_old_msg,那不是很好嘛、你打算在這裡生、我就客串一回醫生咯！！,pid1
+		zin_old_msg,怎、怎麼會這樣．．．．咕嗚嗚嗚嗚．．．！！,pid2
+		zin_old_msg,唔．．．很遺憾、我先走一步了．．．唔、唔啊啊啊！！,pid1
+		zin_old_msg,啊啊、啊、啊咕嗚嗚ーーーー！！,pid2
+		zin_flush,pid2
+		end
+	chk_sts_else
+		zin_reg_msg,你在矯情什麼呢,0
+		zin_reg_msg,才、才沒有、矯情什麼的,1
+		zin_reg_msg,呵呵、那麼、今天還會像往常那樣疼愛你的,0
+		zin_reg_msg,啊、不行、今天、不、不行！！,1
+		zin_old_init
+		zin_old_img_pid,pid2,1
+		zin_old_msg,唔、讓孕婦玩騎馬、相當不錯的視覺震撼力啊,pid1
+		zin_old_msg,相當的松弛啊。是子宮膨脹順便把肉穴也擴張了麼,pid1
+		zin_old_msg,不過你懷孕的時候你就已經是二手貨了．．．,pid1
+		zin_old_msg,．．．怎麼、這麼說．．．好過分的說法．．．,pid2
+		zin_old_msg,你放心吧、生下孩子之前、我是不會拋棄你的,pid1
+		zin_old_msg,．．．好、好過分哇．．．生完了孩子．．．就沒用了．．．,pid2
+		zin_old_msg,這取決于p_name2的決定。如果你能取悅于callself_pid1、那我就一直包養你,pid1
+		zin_old_msg,．．．嗚嗚．．．那種事情啊．．．,pid2
+		zin_old_msg,那麼、讓我看看你的實力吧！！,pid1
+		zin_old_msg,唔咕．．．嗚嗚．．．．咕！！　哈啊啊．．爽．．．,pid2
+		zin_old_msg,嗬．．．大有進步啊．．．要出種了啊！！,pid1
+		zin_old_msg,p_name2的．．．二手肉穴裡．．．call_pid1的種子．．．進來了啊！！,pid2
+		zin_old_msg,嗯！！　咕唔唔唔！！！！,pid1
+		zin_flush,pid2
+		end

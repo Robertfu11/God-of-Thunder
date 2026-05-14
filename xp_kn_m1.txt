@@ -1,0 +1,36 @@
+//覇王オルド　妾　タイプ１　正常位
+//状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+rnd,5
+case0
+	zin_old_msg,哈啊、不行．．．別這麼隨便的．．．亂動．．．,pid2
+	zin_old_msg,你還得習慣一下自己把身體動起來啊,pid1
+	zin_old_msg,不要這樣．．．可是．．．還要、還要,pid2
+	zin_old_msg,再、往裡面．．．這麼啪啪的抽動．．．這也．．．太胡來了．．．哇唔啊啊啊啊！！,pid2
+	zin_old_msg,多麼淫蕩的女人啊．．．,pid1
+	zin_old_msg,真想看看你高潮的樣子,pid1
+	zin_old_msg,那、就讓我看看你一瀉千裡的模樣吧！！,pid1
+	zin_old_msg,啊啊．．．不行．．．我自己．．．無法控制．．．,pid2
+	zin_old_msg,啊ーーー、啊呃啊啊恩．．．要、要去了．．．真的．．．要去了啊啊啊啊啊啊啊！！,pid2
+	zin_old_msg,撒、速度給我去！！,pid1
+	zin_old_msg,啊啊．．．昂啊！　嗷！　啊哦！　好！很好！　大雞巴哥哥！！！！,pid2
+	zin_flush,pid2
+	end
+case1
+case2
+case3
+case4
+	txtload,xpkm_tn
+	end
+
+//初膜パターン
+case_hatumaku
+	txtload,xpkm_tv
+	end
+
+//孕みパターン
+case_botebara
+	txtload,xpkm_tb
+	end

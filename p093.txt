@@ -1,0 +1,12 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,懐妊,pid1,,,gzin32
+zin_reg_msg,啊啊．．．cr啊．．．．,0
+zin_reg_msg,嘔．．．！！,0
+zin_reg_msg,這是、這是．．．cr．．．怎麼了．．．,0
+zin_reg_msg,什麼．．．cr這個感覺是．．．,0
+zin_reg_msg,啊啊．．．懷孕？？,0
+zin_reg_title,p_name1懷孕了。
+zin_reg_button,0
+zin_reg_exit
+end

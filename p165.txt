@@ -1,0 +1,28 @@
+//友好アップ
+add_sinmitu,pid2,70
+
+chk_kunko,pid1,pid2
+case_kun_上司
+	zin_reg_msg,這是給callself_pid2的？,1
+	zin_reg_msg,很適合p_name2大人,0
+	zin_regs_msg,哈哈、很好,不錯、你有前途,1
+	zin_reg_title,p_name2成為部下了。
+	zin_reg_button,0
+	zin_reg_exit
+	end
+case_kun_同僚
+	zin_reg_msg,這是給callself_pid2的？,1
+	zin_reg_msg,很適合你,0
+	zin_regs_msg,嗯、p_name1,哈哈、感謝你了,1
+	zin_reg_title,p_name2成為部下了。
+	zin_reg_button,0
+	zin_reg_exit
+	end
+case_kun_部下
+	zin_regs_msg,那是你自己用的嗎？,要給我嗎？,1
+	zin_reg_msg,很適合你,0
+	zin_reg_msg,call_pid21、發誓效忠,1
+	zin_reg_title,p_name2成為部下了。
+	zin_reg_button,0
+	zin_reg_exit
+	end

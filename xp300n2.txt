@@ -1,0 +1,12 @@
+//部下オルド　2回目以降20%
+zin_old_msg,啊啊啊！！　call_pid21、那裏﹒﹒﹒犯規的說！！,pid2
+zin_old_msg,犯規什麼啊？,pid1
+zin_old_msg,因為那裏﹒﹒﹒明明非常敏感ーーー！！,pid2
+zin_old_msg,呵呵、那種事情當然知道,pid1
+zin_old_msg,那麼、今天能堅持幾秒？,pid1
+zin_old_msg,啊、啊啊！！　已經不行誒ーーーーーっ！！,pid2
+zin_old_msg,哎呀、已經高潮了嗎？,pid1
+zin_old_msg,那樣的事、怎麼做我也滿足不了啦！！,pid1
+zin_old_msg,因為﹒﹒﹒那樣！！！　已經﹒﹒﹒到極限的說！！！！,pid2
+zin_flush,pid2
+end

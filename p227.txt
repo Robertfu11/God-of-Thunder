@@ -1,0 +1,13 @@
+bgm_chg,54
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin18
+zin_reg_qnar,p_name1訪問了p_name2的住所。
+zin_regs_msg,這不是p_name1嗎,喔、p_name1,1
+zin_regs_msg,來的正好,請等一下吧,1
+zin_regs_msg,今天有好喝的酒喔,今天打算親手做些料理呢,1
+zin_reg_msg,還真是讓人期待呢,0
+zin_reg_title,與p_name2的親密度提升了
+zin_reg_button,0
+zin_reg_exit
+add_sinmitu,pid2,15
+end

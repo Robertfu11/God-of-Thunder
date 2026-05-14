@@ -1,0 +1,52 @@
+//部下オルド　騎乗位 20%
+chk_kunko,pid1,pid2
+case_kun_部下
+	zin_old_msg,你看、被call_pid12自己放入的,pid1
+	zin_old_msg,是、是的．．．嗯啊．．．cr對call_pid21的tin_str．．．插的話有點擔心．．．！！,pid2
+	zin_old_msg,哈嗯．．．哈嗯．．．cr這樣硬挺著．．．子宮都頂到了的說,pid2
+	zin_old_msg,哦、這樣放入之後cr腰部可以動動的哦,pid1
+	zin_old_msg,呼啊．．．是、這樣的麼？,pid2
+	zin_old_msg,還不行啊．．．cr是這樣動的喲！！,pid1
+	zin_old_msg,啊喂！嘛、等一下！！cr那樣、那樣太強了啊．．．這樣的話馬上就會．．．,pid2
+	zin_old_msg,呵呵、好吧、跨坐在上司的腰上做的感覺怎麼樣？cr像是立場逆轉了一樣，稍稍有點小興奮的吧？,pid1
+	zin_old_msg,唔啊啊．．．那樣的、根本沒時間考慮、的啊！！cr子宮被搖晃著．．．頭腦、一片空白的說！！,pid2
+	zin_old_msg,call_pid12真的是很可愛的說cr這樣、讓我立即開啟更加可愛的開關、好好的疼愛你吧,pid1
+	zin_old_msg,啊、乳首不行啊啊啊啊！！cr這樣、這樣的、cf_pid2會被玩壞的啊啊啊啊！！,pid2
+	zin_flush,pid2
+	end
+case_kun_同僚
+	zin_old_msg,你看、被call_pid12自己放入的,pid1
+	zin_old_msg,是、是的．．．嗯啊．．．cr對call_pid21的tin_str．．．插的話有點擔心．．．！！,pid2
+	zin_old_msg,哈嗯．．．哈嗯．．．cr這樣硬挺著．．．子宮都頂到了的說,pid2
+	zin_old_msg,哦、這樣放入之後cr腰部可以動動的哦,pid1
+	zin_old_msg,呼啊．．．是、這樣的麼？,pid2
+	zin_old_msg,還不行啊．．．cr是這樣動的喲！！,pid1
+	zin_old_msg,啊喂！嘛、等一下！！cr那樣、那樣太強了啊．．．子宮被搖晃著．．．,pid2
+	zin_old_msg,什麼、已經去了麼？cr好啊、也幫幫我嘛,pid1
+	zin_old_msg,啊、乳首不行啊啊啊啊！！cr這樣、這樣的、cf_pid2會被玩壞的啊啊啊啊！！,pid2
+	zin_flush,pid2
+	end
+case_kun_上司
+	rnd,2
+	case0
+		zin_old_msg,你看、call_pid21的tin_str被吞進去了哦,pid2
+		zin_old_msg,呼、呼嗯．．．嗯啊．．．crcall_pid12的man_str．．．好熱．．．！！,pid1
+		zin_old_msg,哈啊．．．如此強壯的頂到子宮了啊啊,pid2
+		zin_old_msg,call_pid12．．．,pid1
+		zin_old_msg,唔啊．．．稍微有點兒．．．不能忍耐了？,pid2
+		zin_old_msg,這樣的感覺好舒服啊、真的無法再忍耐了的說cr啊啊．．．call_pid12！！call_pid12！！,pid1
+		zin_old_msg,啊喂！嘛、等一下！！cr那、那樣太強了．．．子宮都被晃到了啊．．．,pid2
+		zin_old_msg,cf_pid1也差不多了吧！,pid1
+		zin_old_msg,可以、這樣說吧、cf_pid2被玩壞了嗚嗚嗚嗚！！,pid2
+		zin_flush,pid2
+		end
+	case1
+		zin_old_msg,看著cf_pid2、總是會有一些奇怪的想像,pid2
+		zin_old_msg,這樣、tin_str進來了哦．．．,pid2
+		zin_old_msg,讓我好好的享受一下吧！！,pid2
+		zin_old_msg,唔嗯誒！！,pid1
+		zin_flush_one,pid2
+		zin_old_msg,嗯嗯？．．．啊、什麼？　已經高潮了？,pid2
+		zin_old_msg,是的、真是對不起．．．,pid1
+		zin_old_msg,什麼啊．．．這麼沒用?,pid2
+		end

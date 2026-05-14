@@ -1,0 +1,105 @@
+//覇王オルド　強引　妾　タイプ2　バック
+//状態チェック
+chk_wsts,pid2
+//通常パターン
+case_normal
+	chk_sts,pid2,4,12080
+	chk_sts_then
+		zin_reg_msg,你說什麼！？cr你要違抗callself_pid1的命令嗎？,0
+		zin_reg_msg,命令？,1
+		zin_reg_msg,沒錯,0
+		zin_reg_msg,否則就和你斷絕一切關系,0
+		zin_reg_msg,怎、怎麼會這樣．．．,1
+		zin_reg_msg,習慣于奢侈生活的你、一定很不適應吧,0
+		zin_reg_msg,我、我明吧了,1
+		zin_reg_msg,既然明白了、那就把腿張開、屁股朝著我,0
+		zin_reg_msg,咕．．．．,1
+		zin_old_init
+		zin_old_img_pid,pid2,1
+		goto,*jump_point1
+	chk_sts_else
+		zin_reg_msg,你打算一直這麼任性下去？,0
+		zin_reg_msg,快、把屁股轉過來、四腳落地！！,0
+		zin_reg_msg,這、這種姿勢、我做不到！！,1
+		zin_reg_msg,我看你是敬酒不吃吃罰酒,0
+		zin_reg_msg,啊．．．不、不要、請放開我！！,1
+		zin_old_init
+		zin_old_img_pid,pid2,1
+
+*jump_point1
+rnd,3
+case0
+	zin_old_msg,不、不要啊．．．這種體位．．．,pid2
+	zin_old_msg,呵呵呵、不喜歡麼？像狗一樣、從後面被侵犯著？,pid1
+	zin_old_msg,這、這樣．．．被抽插著．．．沒法．．．拒絕．．．唔嗯嗯！！,pid2
+	zin_old_msg,似乎你的抗拒也只是出于理性,pid1
+	zin_old_msg,你這種用咸濕的語調說出的謊話、鬼才信,pid1
+	zin_old_msg,不、不是這樣．．．啊、不要．．．．,pid2
+	zin_old_msg,敞開你的心扉吧、這樣你就能知道身為女人的快樂了,pid1
+	zin_old_msg,那種事情．．．不想知道．．．不、想知道．．．,pid2
+	zin_old_msg,嘿嘿、你說不想知道？　看我的！！！,pid1
+	zin_old_msg,啊、啊咿咿咿啊！！！　不、不行．．．已經．．．無法．．無法忍受了．．．,pid2
+	zin_old_msg,請、請告訴我．．．．身為、身為女人的快樂．．．請告訴我啊啊啊啊！！！！,pid2
+	zin_flush,pid2
+	end
+case1
+	zin_old_msg,你有個漂亮的好身材。好一個豐乳肥臀吶,pid1
+	zin_old_msg,求求你．．．啊、不要．．．,pid2
+	zin_old_msg,這已經很濕了不是麼。一邊汁水四溢、一邊拒人千裡、這是怎麼一回事呢,pid1
+	zin_old_msg,哦哦、那裡、果然是緊致有度,pid1
+	zin_old_msg,不要啊！　不、不要．．．饒了我吧．．啊啊,pid2
+	zin_old_msg,那接下來、給本王生個孩子吧．．．準備好了麼！！,pid1
+	zin_old_msg,不要啊　啊！　啊！　啊！　噫！　好棒！　大肉棒ーーー！！,pid2
+	zin_flush,pid2
+	end
+case2
+	txtload,xpkm_gn
+	end
+
+
+//初膜パターン
+case_hatumaku
+	zin_reg_msg,你以為我會如此簡單的放過你？,0
+	zin_reg_msg,把你的處女獻給callself_pid1吧,0
+	zin_reg_msg,這、這個．．不要！！,1
+	zin_reg_msg,讓人欲火焚身的女人喲、趕快給我脫！,0
+	zin_reg_msg,callself_pid1就是你的第一個騎手！！,0
+	zin_reg_msg,啊、不、不行誒！！,1
+	zin_old_init
+	zin_old_img_pid,pid2,1
+rnd,3
+case0
+	zin_old_msg,喂、把屁股再抬高一點,pid1
+	zin_old_msg,嗚嗚嗚嗚．．．．．,pid2
+	zin_old_msg,呵呵呵、你想把第一次獻給你最愛的男人？,pid1
+	zin_old_msg,讓你失望了、不過這就是你的命。乖乖認命吧,pid1
+	zin_old_msg,怎麼、怎麼會這樣．．．啊啊！！,pid2
+	zin_old_msg,怎麼、很疼？　看起來完全沒有使用痕跡。你從來沒有自慰過？,pid1
+	zin_old_msg,這、這個．．．好丟人．．．唔嗯嗯．．．呀、不要啊．．．,pid2
+	zin_old_msg,嗬、意想不到深度啊。把的callself_pid1肉棒整根吸入了,pid1
+	zin_old_msg,那接下來、試著叫床吧！！,pid1
+	zin_old_msg,昂！！　不、不要．．．不要．．．這麼強烈的、啊！！,pid2
+	zin_old_msg,你想要高潮隨時可以、只有今天才允許你這麼做、那、趕快丟吧！！,pid1
+	zin_old_msg,啊、啊、啊、啊．．．哈啊．．．咿．．．啊啊、啊啊啊啊啊！！,pid2
+	zin_old_msg,啊啊．．．不、不要啊．．．在我裡面的．．．又變大了呀．．．啊！！,pid2
+	zin_old_msg,啊啊、不行．．．來了．．．奇怪的．．．奇怪的東西、進來了啊啊啊啊！！！,pid2
+	zin_flush,pid2
+	end
+case1
+case2
+	txtload,xpkm_gn
+	end
+
+
+//孕みパターン
+case_botebara
+	zin_reg_msg,求求你、今天請高抬貴手,1
+	zin_reg_msg,不行、用p_name2的身體來平息這欲火,0
+	zin_reg_msg,啊、孩子、沒準兒會有什麼意外．．．,1
+	zin_reg_msg,等出了意外再做一個就是,0
+	zin_reg_msg,怎、怎麼能這樣．．．．,1
+	zin_reg_msg,那麼、我開始了！！,0
+	zin_old_init
+	zin_old_img_pid,pid2,1
+	txtload,xpkm_gb
+	end

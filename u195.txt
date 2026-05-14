@@ -1,0 +1,237 @@
+/////ねとられプラス_ver2.2（遠距離妻）/////
+
+eve_start
+	if_val,婚姻:player>0
+	if_orval,状態:player=2,状態:player=4,状態:player=8,,
+	if_val,状態:yome_player=2
+	if_val,オルド回数:yome_player>4
+	if_val,覇王:yome_player!poid_player
+	if_rnd,2
+eve_end
+
+set_epid2,yome_player
+
+chk_mval,eveflg179=0,,,,
+chk_mval_then
+	goto,*TMaotoko
+chk_mval_else
+	goto,*TakokudeNetorare
+
+*TMaotoko
+get_mpid,性別=1,状態=2,覇王=覇王:pid2,勲功<11001,勲功>=勲功:pid2,婚姻=0,年齢>=年齢:pid2
+set_eveflg,179,pval
+chk_mval,eveflg179>0,特殊:eveflg179=0,,,
+	chk_mval_then
+		upd_sts,eveflg179,19,2
+		goto,*TakokudeNetorare
+	chk_mval_else
+		end
+
+*TakokudeNetorare
+set_epid1,eveflg179
+chk_sts,pid2,12,<79
+chk_sts_then
+goto,*Netorare2
+chk_sts_else
+bgm_chg,21
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,...那样的行为......停止.........请停止．..！,pid2
+zin_old_msg,cf_pid2我已经结婚，有心爱的丈夫了！,pid2
+zin_old_msg,哦？..那有怎么了？  你是个好女人。骑他人的妻子这种事，最能盅惑男人了,pid1
+zin_old_msg,哦...呃...，这样的事...！cr是不被容许......cr和...丈夫以外的人什么的...,pid2
+zin_old_msg,呼呼呼......啊...,pid2
+zin_old_msg,．．．嘿，是那样吗，像夫人你cr这么漂亮的女人，要怎么才能让po_name2先生的属下骑呢．．．,pid1
+zin_old_msg,那位先生现在是不在这里的，现在在做cr着什么明白的吧...？cr如果在战场上被不知道哪的枪口瞄准的话cr...哼！,pid1
+zin_old_msg,啊！ 那样的事．．．呼呼呼．．．．．．不要．．．,pid2
+zin_old_msg,呵呵，总之为了保护你的先生，cr加深同僚关系这样的大事，cr你知道有多么重要么？,pid1
+zin_old_msg,首先作为你先生的同僚我cf_pid1不过是打算加深你的理解，这样努力着啊,pid1
+zin_old_msg,．．．哦．．．．．．明、明白了．．．cr不过．．．突然间  要做、做爱什么的．．．！,pid2
+zin_old_msg,哈哈哈．．．男人和女人之间最契合得就是这个．．．你难道还指望只是聊天么,pid1
+zin_old_msg,．．．那么，闲聊也到这里．．．cr身体很老实的你man_str不是tane_str不是也很想要么cr叫的很大声啊,pid1
+zin_old_msg,啊啊！ 等等！  不要射在里面！,pid2
+zin_old_msg,哈哈、真紧啊！  做好觉悟吧cr作为女人高兴的接受我的精子吧、p_name2！,pid1
+zin_old_msg,哦那样那样那样啊！！,pid2
+zin_flush,pid2
+zin_old_msg,啊啊...啊.........对不起...老公对不起...对不起..............,pid2
+dec_sinmitu,pid2,25
+goto,*TNinsinHantei
+
+*Netorare2
+chk_sts,pid2,12,<25
+chk_sts_then
+goto,*Netorare3
+chk_sts_else
+bgm_chg,21
+zin_old_init
+zin_old_img_pid,pid2,1
+rnd,3
+case0
+zin_old_msg,啊啊啊啊．．．进来了．．．crp_name1先生的tin_str．．．,pid2
+goto,*Nold1
+case1
+zin_old_msg,啊啊啊．．．好大．．．crcf_pid2插进来了．．．,pid2
+goto,*Nold1
+case2
+zin_old_msg,．．．啊啊啊．．．嗯嗯．．．额额．．．好厉害cr．．．你的tin_str．．．,pid2
+
+*Nold1
+rnd,3
+case0
+zin_old_msg,噢？  已经湿了么．．．在期待这么？,pid1
+goto,*Nold2
+case1
+zin_old_msg,哦噢．．．喝下去了呢．．．cr这里也有被先生很好的开发过呢,pid1
+goto,*Nold2
+case2
+zin_old_msg,哈哈．．．只是轻轻的一碰cr就已经很有感觉了么？,pid1
+
+*Nold2
+rnd,3
+case0
+zin_old_msg,请不要那么说．．．好羞耻．．．,pid2
+goto,*Nold3
+case1
+zin_old_msg,额．．．这里．．．嗯嗯．．．cr．．．好舒服．．．,pid2
+goto,*Nold3
+case2
+zin_old_msg,．．．嗯嗯啊啊．．．好大好硬．．．cr在里面抽插着..嗯嗯．．．,pid2
+
+*Nold3
+rnd,3
+case0
+zin_old_msg,噢噢、夫人你的样子、好魅惑好有魅力．．．cr我的大枪与你先生的比如何？,pid1
+goto,*Nold4
+case1
+zin_old_msg,喔、siru_str好紧的小穴好棒．．．cr我和你先生的tin_str哪一个好？,pid1
+goto,*Nold4
+case2
+zin_old_msg,夫人你和你丈夫也这么做么．．．crcf_pid1我的技术是不是比你丈夫的好？,pid1
+
+*Nold4
+rnd,3
+case0
+zin_old_msg,啊啊．．．嗯嗯．．．你的tin_str大肉棒cr．．．太厉害了．．．！,pid2
+goto,*Nold5
+case1
+zin_old_msg,那样的事...！...不想听．．．cr那个人的事现在不想说．．．嗯啊嗯啊．．．,pid2
+goto,*Nold5
+case2
+zin_old_msg,．．．嗯嗯．．．哪一个也好．．．啊啊啊cr．．．哪一个也好喜欢．．．！,pid2
+
+*Nold5
+zin_old_msg,哦哦哦．．．要高潮了么！cr女人在我的大屌下tin_str变的很坦率呢！cr．．．我要射进去了哦哦哦！！,pid1
+rnd,3
+case0
+zin_old_msg,啊啊啊那样的．．．好激烈．．．啊啊啊嗯嗯嗯．．．cr啊啊啊啊，射进来了，我也去了，啊嗯啊嗯啊嗯啊嗯！！,pid2
+goto,*Nold6
+case1
+zin_old_msg,不行不行不行了！．．．啊啊啊．．．深、再插深一点．．．好深好深啊啊啊嗯嗯．．．,pid2
+goto,*Nold6
+case2
+zin_old_msg,啊啊啊．．．感觉来了．．．哦哦．．．．．麻麻的．．．！,pid2
+
+*Nold6
+rnd,3
+case0
+zin_old_msg,已经不行了、不行了．．．．．．好厉害．．．cr里面好舒服．．．要飞了,pid2
+goto,*Nold7
+case1
+zin_old_msg,啊啊．．！你tin_str插到！cr敏感的地方了！．．．好、好舒服？,pid2
+goto,*Nold7
+case2
+zin_old_msg,．．啊啊啊．．．要飞了．．．射进来！嗯嗯拜托一起吧．．．！,pid2
+
+*Nold7
+rnd,3
+case0
+zin_old_msg,呼呼man_str真是tin_str可怜啊．．．cr好、cf_pid1要射了！．．．一起高潮吧！！,pid1
+goto,*Nold8
+case1
+zin_old_msg,啊啊．．．可爱的、p_name2！cr．．．射进去了．．．接受我的子种怀孕吧！！,pid1
+goto,*Nold8
+case2
+zin_old_msg,厉害．．．你的man_strがcf_pid1的tane_str小穴cr吸着不放！．．．射出来了！！,pid1
+
+*Nold8
+zin_flush,pid2
+dec_sinmitu,pid2,15
+rnd,3
+case0
+zin_old_msg,．．．啊啊、好厉害．．．你的tane_str插到子宫里了．．．好舒服．．．,pid2
+goto,*TNinsinHantei
+case1
+zin_old_msg,．．．啊啊啊．．．出来好多．．．装不下了．．．额额、咕噜噜的流出来了．．．,pid2
+goto,*TNinsinHantei
+case2
+zin_old_msg,呼呼呼．．．．．．cf_pid2好兴奋．．．．．．好厉害．．．．．．,pid2
+goto,*TNinsinHantei
+
+*Netorare3
+bgm_chg,21
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_msg,．．．啊啊啊．．．．．．嗯嗯．．．．．．．．．啊啊．．．．．．,pid2
+zin_old_msg,．．．．．．好．．．好强壮．．．cr．．．p_name1先生的．．．,pid2
+zin_old_qnar,酒店的屋内．．．crp_name2和p_name1私会并一起上了床
+zin_old_msg,呼呼．．．堕落了么．．．？crp_name2这里感觉怎么样,pid1
+zin_old_msg,是．．．那样．．．啊．．．．那里觉得．．．啊啊啊！,pid2
+zin_old_msg,嗯嗯嗯．．．啊啊．．．啊啊、好舒服．．．,pid2
+zin_old_msg,．．．没想到成了长久的关系cr老实说最初只是打算cr玩玩,pid1
+zin_old_msg,什么！．．．cf_pid2我是可以随便的女人么？,pid2
+zin_old_msg,因此、最初只是说说,pid1
+zin_old_msg,现在不同了。已经p_name2是梦中情人了！cr没有你已经不行了,pid1
+zin_old_msg,真的？．．．好开心．．．crcf_pid2因为那样..所以．．．,pid2
+zin_old_msg,不知什么时候真的喜欢上了cr．．．但你不是有丈夫么？,pid1
+zin_old_msg,呃．．．那个人离得很远．．．．．．cr．．．现在、你cf_pid2是我的全部,pid2
+zin_old_msg,是啊．．．一直太在意那个了，不过cr现在我们可以好好的打上一炮！,pid1
+zin_old_msg,啊．．．忽然变得好激烈．．．．．嗯嗯啊！．．．啊啊．．．．．．好棒．．．！,pid2
+zin_old_msg,啊．．．啊啊．．．抱歉．．．要是更早的能坦率面对就好了．．．,pid2
+zin_old_msg,哦！  别在意！cr那么、要加速喽！  好吗？,pid1
+zin_old_msg,啊啊．．．好．．．来吧．．．．．啊啊啊．．．cf_pid2好厉害！,pid2
+zin_old_msg,．．．还有件事想说,pid1
+zin_old_msg,嗯嗯．．．是、什么？．．．啊啊．．．．．．．是什么呢．．．啊啊啊．．．！,pid2
+zin_old_msg,把腰挺起来、同时来吧cr啊啊．．．全部接住啊啊．．．,pid1
+zin_old_msg,啊啊啊．．．已经啊啊啊！cr．．．不行了．．．．．．泄了啊啊啊啊啊啊啊啊,pid2
+zin_old_msg,cf_pid1结婚吧,pid1
+zin_flush,pid2
+zin_old_msg,．．．！！！,pid2
+zin_old_msg,．．．．．．呼呼呼．．．．．．好高兴．．．cr．．．也．．．也是好厉害的人啊．．．,pid2
+zin_old_msg,．．．不能说这样的事啊．．．．．．,pid2
+zin_old_msg,．．．．．．但是．．．．．．好幸福．．．,pid2
+chk_sts,player,0,8
+chk_sts_then
+	zin_old_qnar,之后、牢房中的player_name听到了这件事的流言
+	zin_old_qnar,妻子p_name2与其他男人再婚了．．．
+	goto,*Rikon
+chk_sts_else
+	zin_old_qnar,那之后的一周后crplayer_nameの收到了一个没有署名的小包裹
+	zin_old_qnar,拆开那小小的包裹后，那里面
+	zin_old_qnar,看到了以前结婚时送给妻子的结婚戒指．．．
+
+*Rikon
+set_rikon,player
+set_pkon,pid1,pid2
+upd_sts,pid1,19,0
+set_eveflg,179,0
+
+*TNinsinHantei
+rnd,5
+case0
+	chk_sts,pid2,16,0
+	chk_sts_then
+		set_ninsin,pid2,pid1
+		zin_reg_button,16
+		zin_old_exit
+		end
+	chk_sts_else
+		zin_reg_button,16
+		zin_old_exit
+		end
+case1
+case2
+case3
+case4
+	zin_reg_button,16
+	zin_old_exit
+	end

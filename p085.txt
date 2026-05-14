@@ -1,0 +1,46 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,,pid1,pid2,,gzin8
+//	zin_reg_msg,０１２３４５６７８９０１２３４５６７８９０１,0
+	zin_reg_msg,為什麼要降我的職！！,1
+	zin_reg_msg,我沒做錯任何事,1
+zin_reg_3sel,呵斥,說服,收回成命
+get_resp
+ret_sel1
+	zin_reg_msg,放肆！！你對crcallself_pid1的決策有異議嗎？,0
+	zin_reg_msg,沒、沒有．．．cr沒有那種事．．．,1
+	zin_reg_msg,好了、退下！！,0
+	zin_reg_msg,是、是．．．,1
+	zin_reg_title,p_name2的忠誠度降低了。
+	zin_reg_button,0
+	zin_reg_exit
+	set_eveflg,1,1
+	end
+ret_sel2
+	zin_reg_msg,啊、你聽我說,0
+	zin_reg_msg,這次的調動．．．．cr．．．．．．．．．．,0
+	rnd,2
+	case0
+		zin_reg_msg,這種調動恕我無法接受,1
+		zin_reg_msg,固執的傢伙．．．,0
+		zin_reg_title,p_name2的忠誠度降低了。
+		zin_reg_button,0
+		zin_reg_exit
+		set_eveflg,1,2
+		end
+	case1
+		zin_reg_msg,您這麼說的話、我也是無可奈何,1
+		zin_reg_msg,你明白我的苦心了嗎？,0
+		zin_reg_msg,是的、告辭了,1
+		zin_reg_title,p_name2接受了人事調動、回去了。
+		zin_reg_button,0
+		zin_reg_exit
+		set_eveflg,1,3
+		end
+ret_sel3
+	zin_reg_msg,知道了、我收回調動命令,0
+	zin_reg_msg,您能理解太好了,1
+	zin_reg_button,0
+	zin_reg_exit
+	set_eveflg,1,4
+	end

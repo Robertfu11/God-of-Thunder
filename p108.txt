@@ -1,0 +1,12 @@
+bgm_chg,60
+//zin_reg_init
+zin_reg_event,,pid1,pid2,zin62,gzin8
+	zin_reg_msg,我似乎要退出同盟了,0
+	zin_reg_msg,看起來真是這樣,1
+	zin_reg_msg,這意味著什麼你應該知道吧？,0
+	zin_reg_msg,當然cr至此以後將兵戎相見,1
+	zin_reg_msg,很好的覺悟cr盡量別讓自己後悔,0
+zin_reg_title,p_name2退出了同盟。
+zin_reg_button,0
+//zin_reg_exit
+end

@@ -1,0 +1,15 @@
+bgm_chg,60
+zin_reg_init
+zin_reg_event,p_name1艦隊,pid1,pid2,,gzin29
+zin_regs_msg,p_name2、你好像還沒有加入任何派系呢,p_name2、你好像還不屬於任何派系是吧,0
+zin_reg_msg,那又如何？,1
+zin_regs_msg,怎麼樣、加入p_name3派如何？,加入p_name3派嗎？,0
+zin_reg_msg,是p_name3派嗎．．．,1
+zin_regs_msg,是的、請借給我們你的力量,我們希望能借助你的力量,0
+zin_reg_msg,．．．．．．,1
+zin_reg_msg,我知道了cr就讓我略盡綿薄之力吧,1
+zin_regs_msg,哦哦、明智的決定,那可太好了,0
+zin_reg_title,p_name2加入了p_name3派。
+zin_reg_button,0
+zin_reg_exit
+end

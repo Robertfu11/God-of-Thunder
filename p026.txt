@@ -1,0 +1,11 @@
+bgm_chg,60
+zin_reg_event,,pid1,pid2,,gzin18
+zin_reg_msg,p_name1閣下cr有點事請你過來下,1
+zin_reg_msg,什麼啊、你這混蛋！！,0
+zin_reg_msg,對你現在有強姦p_name3的嫌疑而逮捕你,1
+zin_reg_msg,什麼！！,0
+zin_reg_msg,p_name3已經申報了這件事情了cr老實點吧,1
+zin_reg_msg,她、那個傢伙．．．,0
+zin_reg_title,p_name1逮捕了。
+zin_reg_button,0
+end

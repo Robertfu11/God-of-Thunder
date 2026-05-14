@@ -1,0 +1,11 @@
+bgm_chg,60
+zin_reg_event,金脈発見,pid1,pid2,zin24,gzin1
+//	zin_reg_msg,０１２３４５６７８９０１２３４５６７８９０１,0
+	zin_reg_msg,p_name1大人、,1
+	zin_reg_msg,在我們的行星上發現了金脈,1
+	zin_reg_msg,哦哦、很給力,0
+	zin_reg_msg,盡一切可能開采,0
+	zin_reg_msg,了解,1
+zin_reg_title,在行星buf_str2上、發現了buf_str1。
+zin_reg_button,0
+end

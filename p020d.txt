@@ -1,0 +1,182 @@
+//プレイヤーの子が生まれた
+//母親は人妻、夫はプレイヤーの部下
+/////////隠蔽工作//////////////////////
+zin_reg_event,,player,pid2,,gzin39
+zin_reg_msg,話說回來cr今天是p_name2的cr分娩期了啊．．．,0
+zin_reg_msg,剛出生時的血統檢查cr會進行的吧．．．,0
+zin_reg_msg,而這個孩子並不是p_name1的cr孩子呢cr呵呵,0
+zin_reg_msg,那麼．．．cr該怎麼辦呢？,0
+
+zin_reg_2sel,掩蔽事實,愉快的享受事實
+get_resp
+ret_sel1
+zin_reg_msg,額．．．cr被發現的話cr會很麻煩的呢,0
+zin_reg_msg,把病院的檢查官cr收買下吧,0
+bgm_chg,65
+zin_reg_event,,pid1,pid2,zin1,gzin9
+zin_reg_msg,call_pid21、孩子終於生出來了呢,1
+zin_reg_msg,噢噢、終於出生了嗎,0
+zin_reg_face,pid3
+zin_reg_msg,多麼的、可愛啊,0
+zin_reg_msg,．．．誒？,0
+zin_reg_msg,那個、你在抱著自己的孩子、發什麼呆呀？,1
+zin_reg_msg,這個、額．．．crcall_pid12的面貌看起來．．．,0
+zin_reg_msg,cf_pid1有點cr不太像我呢．．．,0
+zin_reg_msg,你、你在胡說什麼呢呀crcall_pid21孩子還小cr長大了就會相似了嘛,1
+zin_reg_msg,額？你說的也不錯cr小孩子確實都差不多．．．,0
+zin_reg_msg,是、是啊cr啊、對了．．．,1
+zin_reg_msg,還是請馬上為這個孩子取個好名字吧,1
+zin_reg_msg,噢噢、對啊,0
+zin_reg_msg,p_name3不錯吧,0
+zin_reg_msg,恩、不錯呢,1
+bgm_chg,67
+zin_reg_event,,player,pid2,zin1,gzin9
+zin_reg_msg,噢噢、平安出生比什麼都重要呢,0
+zin_reg_msg,！？,1
+zin_reg_event,,player,pid1,zin1,gzin9
+zin_reg_msg,啊、還真是稀客呢、怎麼有空過來呀,1
+zin_reg_msg,當然了、今天可是對你很重要的日子呢、對吧,0
+zin_reg_msg,看啊、還真是和你一模一樣可愛的孩子呢！,0
+zin_reg_msg,哈哈哈cr你這麼說還真是讓人不好意思啊,1
+zin_reg_msg,這個孩子、說真的cr和我真的很像嗎？,1
+zin_reg_msg,恩恩、當然嘍、cr畢竟是你親生的嘛,0
+zin_reg_event,,player,pid2,zin1,gzin9
+zin_reg_msg, ． ． ．哈哈、哈哈,1
+zin_reg_msg,呼呼、長大了也一定會像他的親生父親一樣、是個好孩子呢． ． .,0
+zin_reg_msg,啊啊． ． .,1
+zin_reg_event,,player,pid1,zin1,gzin9
+zin_reg_msg,怎麼了？cr身體不舒服嗎？,1
+zin_reg_msg,那個、畢竟剛生完孩子、有些累了呢,0
+zin_reg_msg,身為局外著在這裏確實不太好呢、如此我就先告辭了吧,0
+zin_reg_msg,啊還真是抱歉呢cr難得特意來看看,1
+zin_reg_msg,沒事沒事、過兩天、大家集體聚一下來慶祝慶祝吧,0
+zin_reg_msg,在那之前還是好好保重身體吧． ． .,0
+zin_reg_event,,player,pid2,zin1,gzin9
+zin_reg_msg,p_name2殿下． ． ．cr多保重哦,0
+zin_reg_msg,. ． ． ． .,1
+zin_reg_event,,pid1,pid2,zin1,gzin9
+zin_reg_msg,（call_pid21、對不起、對不起）,1
+upd_sts,pid3,0,2
+upd_sts,pid3,2,0
+upd_sts,pid3,21,poid_player
+upd_sts,pid3,24,pid1
+upd_sts,pid3,25,player
+upd_sts,pid3,26,pid2
+chk_sts,pid3,3,1
+chk_sts_then
+upd_sts,pid3,14,1
+upd_sts,pid3,4,0
+zin_reg_title,p_name3出生了。
+zin_reg_button,0
+zin_reg_exit
+end
+chk_sts_else
+upd_sts,pid3,14,0
+upd_sts,pid3,4,0
+zin_reg_title,p_name3出生了。
+zin_reg_button,0
+zin_reg_exit
+end
+/////////////////////////////////
+ret_sel2
+zin_reg_msg,呼呼呼cr是啊． ． .,0
+zin_reg_msg,當他知道自己的老婆懷的是別人的孩子cr會有如何的反映呢cr還真是讓人期待啊． ． .,0
+zin_reg_msg,這麼開心的事情怎麼忍心去阻止呢,0
+/////////////////////////////////
+bgm_chg,67
+zin_reg_init
+zin_reg_event,,pid1,pid2,zin1,gzin34
+zin_reg_msg,親愛的、看啊cr很可愛的吧,1
+zin_reg_face,pid3
+zin_reg_msg,p_name2、我問你,0
+zin_reg_msg,這個孩子的親生父親並不是cf_pid1吧,0
+zin_reg_qnar,對剛出生的孩子進行慣例的血統檢查。
+zin_reg_msg,. ． ． ． ． ． ． .,1
+zin_reg_msg,到底誰是孩子的親生父親！！,0
+zin_reg_msg,他、他是． ． .,1
+zin_reg_msg,快給我說！！,0
+zin_reg_msg,. ． ． ． ． ． ．cr是call_pid24,1
+zin_reg_msg,call_pid14那個傢伙． ． ． .,0
+//性格による分岐
+switch_seikaku,pid1
+case_seikaku11
+case_seikaku12
+case_seikaku13
+case_seikaku14
+case_seikaku21
+case_seikaku22
+//離婚
+	zin_reg_msg,嗚嗚、對不起、call_pid21,1
+	zin_reg_msg,沒什麼可說的了． ． .,0
+	zin_reg_msg,你這樣的女人,0
+	zin_reg_msg,算了cr我們離婚吧,0
+	zin_reg_msg,怎麼會！！,1
+	zin_reg_msg,從現在開始各自顧好自己的生活吧,0
+	zin_reg_title,p_name2離婚了。
+	set_rikon,pid1
+	goto,*switch_seikaku_end
+case_seikaku23
+case_seikaku24
+//自爆
+	zin_reg_msg,這、這叫什麼事啊啊啊啊啊,0
+	zin_reg_msg,call_pid14愛著你的嗎？,0
+	zin_reg_msg,嗚嗚、對不起、call_pid21,1
+	zin_reg_msg,自己的老婆原來一直懷著別人的孩子． ． .,0
+	zin_reg_msg,呀啊啊啊啊啊啊啊！！,0
+	zin_reg_msg,p_name4孩子這種事情我怎麼可能容忍啊啊！,0
+	zin_reg_msg,你們、就在這裏和cf_pid1一起消失吧,0
+	zin_reg_msg,call_pid21？,1
+	bgm_se,11
+	zin_reg_event,,0,0,zin70,gzin34
+	zin_reg_qnar,p_name1當場將炸彈引爆連著整個醫院一起炸掉了。
+	set_dead,pid1,0
+	set_dead,pid2,0
+	set_dead,pid3,0
+	goto,*switch_seikaku_end
+case_seikaku31
+case_seikaku32
+//子を殺す
+	zin_reg_msg,是那個傢伙的孩子嗎,0
+	zin_reg_msg,嗚嗚、對不起、call_pid21,1
+	zin_reg_qnar,p_name1將嬰兒抱了起來。
+	zin_reg_msg,call_pid21、你要做什麼？,1
+	zin_reg_msg,當然是將這個孩子幹掉cr你覺得我會讓他長大麼,0
+	zin_reg_msg,那、那樣的事！！,1
+	zin_reg_msg,這是你的責任cr為自己的行為後悔去吧,0
+//女の格闘が70以上→旦那を殺す
+	chk_mval,格闘:pid2>70,,,,,
+	chk_mval_then
+		bgm_se,13
+		zin_reg_msg,嗚啊！！,0
+		zin_reg_qnar,p_name2用手頭上的小刀向p_name1突然刺去。
+		zin_reg_msg,你、你． ． .,0
+		zin_reg_msg,真是不好意思呢、call_pid21,1
+		zin_reg_msg,cf_pid2跟你相比，我選擇了這個孩子跟p_name4呢,1
+		zin_reg_msg,咳、咳啊啊． ． .,0
+		zin_reg_face_0,0
+		zin_reg_title,p_name1死亡了。
+		set_dead,pid1,0
+		goto,*switch_seikaku_end
+	chk_mval_else
+		zin_reg_msg,拜託了、請住手call_pid21！！,1
+		zin_reg_qnar,p_name1就那樣孩子被帶走了。cr過兩天、p_name2被告知孩子已經死亡了。
+		set_dead,pid3,0
+		goto,*switch_seikaku_end
+//case_seikaku41
+//case_seikaku42
+default_seikaku
+//放浪
+	zin_reg_msg,這、這算什麼啊,0
+	zin_reg_msg,call_pid14愛著你的嗎？,0
+	zin_reg_msg,嗚嗚、對不起、call_pid21,1
+	zin_reg_msg,自己的老婆原來一直懷著別的男人的孩子,0
+	zin_reg_msg,cf_pid1是多麼窩囊的男人． ． .,0
+	zin_reg_msg,call_pid21． ． ． ,1
+	zin_reg_qnar,p_name1就離開了醫院不回來了。
+	zin_reg_title,p_name1在野了。
+	set_hourou,pid1
+
+*switch_seikaku_end
+zin_reg_button,0
+zin_reg_exit
+end

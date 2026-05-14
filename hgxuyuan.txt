@@ -1,0 +1,305 @@
+set_epid1,player
+set_epid2,2608
+
+bgm_chg,62
+zin_reg_event,你的私人藏品,pid1,pid2,,gzin9
+zin_reg_qnar,     你把女神的原味内衣每一个细节都添了一遍
+zin_reg_qnar,     羞红了脸的女神现身了！
+
+zin_reg_msg,（红着脸）快把内衣还给人家~~~,1
+zin_reg_msg,那可不行，我可是费了好大力气才收集到的！,0
+zin_reg_msg,玩弄人家的内衣这种事情~~人家的身体可是感受得到哦！,1
+zin_reg_msg,（好羞耻，得赶紧想个办法拿回内衣才行）,1
+zin_reg_msg,这样吧，我能帮你实现一个愿望，然后你要把内衣还给人家！,1
+zin_reg_msg,此话当真？那行，我想想。,0
+zin_reg_qnar,     女神承诺帮你实现一个愿望，你打算
+zin_reg_3sel,让老女人都变成少女,让我的部下都变成超人,请女神大人侍奉在下！
+
+get_resp
+
+ret_sel1
+goto,*yw1
+
+ret_sel2
+goto,*yw2
+
+ret_sel3
+goto,*yw3
+
+*yw1
+for,PMAX,210,1
+
+chk_msts,eveflg210,性別,2,年齢,>25,NON,0,NON,0,NON,0
+chk_msts_then
+zin_reg_msg,就这些么，还有没有别的？。,1
+set_epid3,eveflg210
+upd_sts,pid3,2,-15
+chk_sts,pid3,2,<25
+chk_sts_then
+chk_wsts,pid3
+case_normal
+set_virgin,pid3
+continue
+case_botebara
+continue
+case_hatumaku
+continue
+chk_sts_else
+continue
+
+chk_msts_else
+zin_reg_msg,就这些么，还有没有别的？。,0
+break
+
+next
+zin_reg_msg,所有25岁以上的女性都变年轻了呢。,1
+zin_reg_msg,而且还把其中没有怀孕的年轻女性都变回了处女！,1
+zin_reg_msg,这下你该满意啦，快把人家的内衣还回来！,1
+zin_reg_msg,嘿嘿，再让我舔一下,0
+zin_reg_msg,啊，不要啊，快住手！,1
+zin_reg_qnar,  女神帮你实现了愿望，你履行诺言，把内衣还给了她
+zin_reg_qnar,  女神拿到内衣的瞬间就红着脸消失了
+zin_reg_button,0  
+zin_reg_exit
+end
+
+*yw2
+for,PMAX,210,1
+
+chk_msts,eveflg210,状態,2,覇王,poid_player,NON,0,NON,0,NON,0
+chk_msts_then
+set_epid3,eveflg210
+
+chk_sts,pid1,4,13000
+chk_sts_then
+upd_sts,pid3,5,+50
+upd_sts,pid3,6,+50
+upd_sts,pid3,7,+50
+upd_sts,pid3,8,+50
+upd_sts,pid3,9,+50
+continue
+
+chk_sts_else
+chk_sts,pid1,0,4
+chk_sts_then
+upd_sts,pid3,5,+50
+upd_sts,pid3,6,+50
+upd_sts,pid3,7,+50
+upd_sts,pid3,8,+50
+upd_sts,pid3,9,+50
+continue
+chk_sts_else
+chk_sts,pid3,31,0
+chk_sts_then
+continue
+chk_sts_else
+upd_sts,pid3,5,+50
+upd_sts,pid3,6,+50
+upd_sts,pid3,7,+50
+upd_sts,pid3,8,+50
+upd_sts,pid3,9,+50
+continue
+
+chk_msts_else
+break
+
+next
+zin_reg_msg,如果你有属下的话，他们的能力都大幅增强了呢。,1
+zin_reg_msg,这下你该满意啦，快把人家的内衣还回来！,1
+zin_reg_msg,嘿嘿，再让我舔一下,0
+zin_reg_msg,啊，不要啊，快住手！,1
+zin_reg_qnar,  女神帮你实现了愿望，你履行诺言，把内衣还给了她
+zin_reg_qnar,  女神拿到内衣的瞬间就红着脸消失了
+zin_reg_button,0  
+zin_reg_exit
+end
+
+*yw3
+zin_reg_msg,这，这是绝对不可以的啊。,1
+zin_reg_msg,可是你都答应帮我实现愿望了，难道女神也会反悔不成？,0
+zin_reg_msg,唉唉，没办法了，女神是不可以食言,1
+zin_reg_msg,拜托，请轻一点！,1
+zin_reg_msg,嘿嘿，我一定会好好疼爱你的,0
+zin_reg_event,受种怀孕吧,pid1,pid2,,gzin32
+bgm_chg,63
+zin_reg_qnar,  女神朱唇微含，双眼紧闭地躺在床上，身体因为害怕而微微发抖
+zin_reg_qnar,  你如饿虎般扑了上去
+zin_old_init
+zin_old_img_pid,pid2,1
+zin_old_qnar,p_name2被p_name1推倒在床上
+zin_old_msg,别，别这样……,pid2
+chk_sts,pid2,28,0
+chk_sts_then
+set_virgin,1856
+add_menkai,pid2
+goto,*gog2
+chk_sts_else
+goto,*gog1
+
+*gog1
+rnd,4
+case0
+	zin_old_msg,呵呵呵、怎麼樣、想起男人的味道了嗎？,pid1
+	zin_old_msg,呼．．．嗚嗚嗚．．．,pid2
+	zin_old_msg,什麼、舒服到發不出聲音了？,pid1
+	zin_old_msg,這、這種事情．．．．,pid2
+	zin_old_msg,今天要給你好好的加次油,pid1
+	zin_old_msg,那個．．．．討厭啊．．．．,pid2
+	zin_old_msg,溫柔的愛撫你的豆豆,pid1
+	zin_old_msg,啊啊、不行．．．那、那裡．．．不行誒誒誒！！！,pid2
+	zin_flush_one,pid2
+	zin_old_msg,啥、泄了？,pid1
+	zin_old_msg,哈啊～～哈啊～～哈啊～～哈啊～～呼嗚嗚嗚．．．．．．,pid2
+	zin_old_msg,這種程度怎麼可以結束、呔！看槍！！,pid1
+	zin_old_msg,呀啊啊啊啊！！　不、不行、快住手啊啊啊！！！,pid2
+	zin_old_msg,不、不要啊．．．又、又要高潮了啊！！！,pid2
+	zin_old_msg,很好、我得讓你多泄幾次、讓你瘋狂的丟！！,pid1
+	zin_old_msg,啊！！　已經要！！　要高潮了呀啊呀呀呀哎呀呀呀！！！,pid2
+	zin_flush,pid2
+goto,*xxend
+case1
+	zin_old_msg,啊啊啊、不、不要、快、拔出來．．．,pid2
+	zin_old_msg,呵呵呵、我還不了解你、嘴上說不要、可是最喜歡被硬上弓了是不是？,pid1
+	zin_old_msg,沒、沒有．．．這回事．．．,pid2
+	zin_old_msg,你說謊、從剛才開始你的肉穴就已經在迎接我了,pid1
+	zin_old_msg,裡面的愛液已經泛濫成災了是不是！！,pid1
+	zin_old_msg,說、你就是喜歡被粗暴的侵犯！！,pid1
+	zin_old_msg,這、這、喜歡．．．才怪．．．,pid2
+	zin_old_msg,嘴硬的傢伙、你招不招！！,pid1
+	zin_old_msg,p_name1開始向著p_name2更深處快速挺近。,0
+	zin_old_msg,噶、噶啊啊啊啊！！！！,pid2
+	zin_old_msg,這個、這樣的．．．不、不行啊啊啊啊啊．．．啊啊、要高潮了啊啊！！,pid2
+	zin_old_msg,要高潮了？　那如實反映一下你此時此刻的心情吧,pid1
+	zin_old_msg,你不說的話、我這兒就停下了,pid1
+	zin_old_msg,怎麼、怎麼會這樣．．．不、不要停啊．．．啊啊．．．哈啊啊！！,pid2
+	zin_old_msg,還要．．．還要、我還要．．．粗暴的．．．被p_name2粗暴的侵犯啊啊！！！,pid2
+	zin_old_msg,呵呵呵、終于說了句真心話。cr好吧、馬上就讓你高潮！！,pid1
+	zin_old_msg,啊啊、咿咿．．．那裡．．．啊啊．．．要泄了、要高潮了呀啊啊啊啊！！！,pid2
+	zin_flush,pid2
+goto,*xxend
+case2
+	zin_old_msg,．．．不．．．求你了．．快住手．．．,pid2
+	zin_old_msg,這必須不能住手,pid1
+	zin_old_msg,．．．呀啊啊．．．這、這樣．．．啊啊．．．,pid2
+	zin_old_msg,怎麼、快感上來了？,pid1
+	zin_old_msg,．．．不、不是．．嗚嗚嗚．．．啊啊！！cr不要．．．不要．．．這樣用力．．．,pid2
+	zin_old_msg,呀啊啊！！　不、不行．．．我．．．有感覺了．．．,pid2
+	zin_old_msg,又是這樣上嘴拒絕、下嘴迎接、你這癡態到底怎麼回事？,pid1
+	zin_old_msg,．．唔．．．咕嗚嗚．．．已經．．．不行額．．．這樣就要．．．要、高潮了．．．,pid2
+	zin_old_msg,馬上就讓你高潮、再蠻橫的話都讓你說不出來！！,pid1
+	zin_old_msg,哈啊啊啊．．．昂．．．啊啊恩．．．不要．．．已經．．．已經、要瘋掉了！！,pid2
+	zin_old_msg,呵呵呵、沒關系、你就好好的給我瘋狂起來吧！！,pid1
+	zin_old_msg,啊、啊咿咿咿ーーーーーー！！！！,pid2
+	zin_flush,pid2
+goto,*xxend
+
+case3
+	zin_old_msg,嗚嗚．．．好疼．．不要．．．,pid2
+	zin_old_msg,洞口好小啊、這麼小的洞口也夠稀奇的了,pid1
+	zin_old_msg,不、不要．．．疼、疼死了．．．拔、拔出來．．．,pid2
+	zin_old_msg,簡直就和處女一樣、不管幾次都和第一次一樣、非常難得的女人啊,pid1
+	zin_old_msg,那、到最后再讓你見識一下我的看家本領吧、嘿咻咻！！！,pid1
+	zin_old_msg,p_name1趁熱打鐵、一鼓作氣的瘋狂抽插。,0
+	zin_old_msg,呼、噗呀啊啊啊ーーーー！！！　嘎．．．嘎嘎嘎．．嘎．．．,pid2
+	zin_old_msg,嘿嘿、怎麼樣、要丟了麼？,pid1
+	zin_old_msg,快樂從此開始喲、看我的！！,pid1
+	zin_old_msg,p_name1把p_name2舉了起來、不斷的上下運動著。。p_name2已經失聲了。,0
+	zin_old_msg,．．．呀唔．．．呼．．．嗚嗚．．．呼啊啊．．．,pid2
+	zin_old_msg,總算是停止思考了。有時無抵抗的女人也是不錯的。,pid1
+	zin_old_msg,那麼、該把禮物送給你了、把門打開喲！！,pid1
+	zin_old_msg,噗嗚嗚ーーーー嗯！！！,pid1
+	zin_flush,pid2
+goto,*xxend
+
+*gog2
+	zin_old_msg,哦哦．．．女神大人还是个处女，得到了個極品啊,pid1
+	zin_old_msg,啊呀啊啊啊！！．．．不要、不行．．．痛、痛、好痛啊啊啊啊い！！,pid2
+	zin_old_msg,照你今天破瓜這德行來說、你是怎麼守身到今日的？,pid1
+	zin_old_msg,向你致敬、木哈哈哈哈,pid1
+	zin_old_msg,噫噫噫噫噫．．．．,pid2
+	zin_old_msg,那、第一次就內射也不行嗎？,pid1
+	zin_old_msg,啊啊．．．不行．．．今天不行．．．請外射吧．．．裡面．．．不、不要啊．．．,pid2
+	zin_old_msg,是麼、那今天就大發慈悲原諒你,pid1
+	zin_old_msg,啊．．非常、非常．．．感謝．．．您．．．,pid2
+	zin_old_msg,嗚嗚！！！,pid1
+	zin_flush,pid2
+	zin_old_msg,噫啊啊啊！！．．．誒．．．這．．．裡面、怎麼在裡面．．．射了．．這麼多．．．啊啊．．．好、好過分．．．,pid2
+	zin_old_msg,不好意思、我剛改變主意。唔哈哈哈。,pid1
+	zin_old_msg,啊．啊啊．．不、不要啊．．．．,pid2
+	zin_old_msg,呵呵、你這厭惡的表情讓我更加興奮了,pid1
+	zin_old_msg,啊啊．．．不行．．．不要、不要啊．．．．,pid2
+	zin_old_msg,我可不覺得你是第一次啊、這麼緊緊的吸著callself_pid1的老二、拔都拔不出啊,pid1
+	zin_old_msg,啊啊．．．好噁心．．．呃呃．．．不要啊．．．,pid2
+	zin_old_msg,你不知道這種話會起到反效果？cr讓我越來越興奮了．．．,pid1
+	zin_old_msg,那麼、直到你高潮之前、要一直發出這種聲音！！,pid1
+	zin_old_msg,啊啊、呀啊啊！！　不要、不要、不要這麼激烈！！！,pid2
+	zin_old_msg,疼、好疼啊！！　拔、拔出去！！　求求你！！,pid2
+	zin_old_msg,哈哈哈、好啊、再叫響一點！！　callself_pid1的絕頂就是這麼來的！！,pid1
+	zin_old_msg,啊啊．．．不、不要．．．我．．．已經．．要泄了．．．,pid2
+	zin_old_msg,已經、不、不行了誒誒誒！！！！！,pid2
+	zin_flush,pid2
+	zin_old_msg,哈咕．．．呀啊．．．,pid2
+	zin_old_msg,這種事．．．感覺超噁心．．．,pid2
+	zin_old_msg,既然是處那也沒辦法、感覺會慢慢好起來的吧,pid1
+	zin_old_msg,沒有．．．沒有這種事．．．,pid2
+	zin_old_msg,噗、可是到現在為止不是都挺好的麼,pid1
+	zin_old_msg,今天就讓callself_pid1好好地爽一下吧,pid1
+	zin_old_msg,啊啊、不行誒．．．不要誒．．．不要亂動啊ーーー！！,pid2
+	zin_flush,pid2
+	zin_old_msg,呵．．．你有個好東西呢、一件能融化callself_pid1肉棒的名器,pid1
+	zin_old_msg,不、不要不要．．．這樣．．．不要不要．．．,pid2
+	zin_old_msg,呵呵呵、處子的香氣已經飄過來了．．．,pid1
+	zin_old_msg,啊啊啊、不要啊．．．不要亂動啊．．．．,pid2
+	zin_old_msg,怎麼樣、有沒有一點點快感？,pid1
+	zin_old_msg,討、討厭啊．．．好疼．．．好疼誒誒誒誒！！,pid2
+	zin_old_msg,是麼、那這次就沒有辦法了、暫且放你一馬,pid1
+	zin_old_msg,啊．．．怎麼這樣．．．不要啊！！！,pid2
+	zin_old_msg,唔！！　要出來了哦、給你好多好多！！,pid1
+	zin_old_msg,哈啊．．．不行啊．．．只有這個不行啊！！！,pid2
+	zin_flush,pid2
+goto,*xxend
+
+
+*xxend
+zin_reg_event,与女神的鱼水之欢,pid1,pid2,,gzin9
+set_non_virgin,pid3
+zin_reg_qnar,  你把女神翻来覆去干了个爽，直到身体内一滴也没有了
+zin_reg_msg,这下你该满意啦，快把人家的内衣还回来！,1
+zin_reg_msg,嘿嘿，再让我舔一下,0
+zin_reg_msg,啊，不要啊，快住手！,1
+zin_reg_qnar,  女神帮你实现了愿望，你履行诺言，把内衣还给了她
+zin_reg_qnar,  女神拿到内衣的瞬间就红着脸消失了
+get_mpid,性別=2,状態=1,,,,,
+chk_mval,pval!0,,,,
+chk_mval_then
+set_epid4,pval
+zin_reg_qnar,  大概过了两周后。。。。。。。。。。。。
+zin_reg_qnar,  女神带着一个长相惊为天人的少女来到你面前
+zin_reg_face,pid4
+zin_reg_msg,天上一天地上一年，神界不允许我照看一个人间的女儿,1
+zin_reg_msg,啊，难道说！,0
+zin_reg_msg,她也是你的女儿，请好好对她！,1
+zin_reg_qnar,  女神留下了你们爱的结晶，红着脸转身消失了。
+upd_sts,pid4,24,pid1
+upd_sts,pid4,25,pid1
+upd_sts,pid4,26,pid2
+set_pnen,pid4,14
+set_virgin,pid,4
+
+chk_sts,pid1,0,5
+chk_sts_then
+set_hourou,pid4
+zin_reg_button,0  
+zin_reg_exit
+end
+
+chk_sts_else
+set_sikan,pid4,poid_player
+zin_reg_button,0  
+zin_reg_exit
+end
+
+chk_mval_else
+zin_reg_button,0  
+zin_reg_exit
+end
