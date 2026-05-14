@@ -1,9 +1,0 @@
-bgm_chg,60
-zin_reg_init
-zin_reg_event,,pid1,pid2,,gzin8
-zin_reg_msg,本日p_name2作為我的孩子出生了,0
-zin_reg_msg,p_name2有王位繼承權、大家有心理準備喲,0
-zin_reg_title,p_name2成為王子。
-zin_reg_button,0
-zin_reg_exit
-end

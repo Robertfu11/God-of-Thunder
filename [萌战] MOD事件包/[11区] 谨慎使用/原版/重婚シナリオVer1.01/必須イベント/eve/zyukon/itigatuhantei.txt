@@ -1,7 +1,0 @@
-auth_uid,E6BE
-//‚PŒŽ‚©‚Ç‚¤‚©‚ð”»’è‚·‚éƒCƒxƒ“ƒg‚Q
-chk_eveflg,189,1
-chk_eveflg_then
-txtload,zyukon/yomezouka
-chk_eveflg_else
-txtload,zyukon/maiturn3

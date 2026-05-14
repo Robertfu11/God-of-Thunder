@@ -1,9 +1,0 @@
-bgm_chg,58
-zin_reg_init
-zin_reg_event,,pid2,,zin1,gzin34
-zin_reg_msg,終於出生了、我的孩子．．．,0
-zin_reg_msg,你的父親是個混蛋、不過放心我會好好培育你的,0
-zin_reg_title,p_name3出生了
-zin_reg_button,0
-zin_reg_exit
-end

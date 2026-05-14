@@ -1,7 +1,0 @@
-zin_reg_init
-zin_reg_event,出擊,pid1,pid2,,gzin19
-zin_regs_msg,小的們、出場啦！！,弟兄們、大鬧一場吧！！,0
-zin_reg_msg,唔呀！！,1
-zin_reg_button,0
-zin_reg_exit
-end

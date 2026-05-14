@@ -1,8 +1,0 @@
-//»ùË¹¤ò¢ËÀÔO¶¨
-eve_start
-    if_eveflg,62,2
-	if_psts,835,5
-eve_end
-
-set_kasi,835
-end

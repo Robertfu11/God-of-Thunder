@@ -1,6 +1,0 @@
-eve_start
-	if_bet_eveflg,65,11,15
-eve_end
-
-add_eveflg,65,1
-end

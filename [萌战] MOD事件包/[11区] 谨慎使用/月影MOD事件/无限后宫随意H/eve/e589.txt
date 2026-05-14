@@ -1,9 +1,0 @@
-//xeve
-eve_start
-	if_eveflg,31,>0
-	if_pkun,player,<7000
-eve_end
-
-set_eveflg,31,99
-
-end

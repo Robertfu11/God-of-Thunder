@@ -1,8 +1,0 @@
-eve_start
-	if_not_wexist,8
-	if_aft_date,72,4
-	if_cwpos,8
-eve_end
-
-put_wakusei,8
-set_run_msg,惑星格格尼被发现了。

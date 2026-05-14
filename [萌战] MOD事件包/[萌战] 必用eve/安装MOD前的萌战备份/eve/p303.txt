@@ -1,9 +1,0 @@
-bgm_chg,107
-zin_reg_event,,pid1,pid2,,gzin19
-zin_reg_title,p_name1直営艦隊
-zin_reg_qnar,p_name1為了討伐在國內各地發動叛亂的抵抗軍而出擊。
-zin_reg_msg,司令！！cr雷達有反應了！,1
-zin_reg_msg,毫無疑問是抵抗軍的艦隊,1
-zin_reg_msg,這樣呀、那麼開始工作吧,0
-zin_reg_qnar,勝利条件：擊滅抵抗軍艦隊
-end

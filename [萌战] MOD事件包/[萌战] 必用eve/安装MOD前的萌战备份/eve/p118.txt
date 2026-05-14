@@ -1,9 +1,0 @@
-bgm_chg,60
-zin_reg_init
-zin_reg_event,,pid1,0,,gzin14
-zin_regs_msg,受夠了在p_name2總司令下工作,我已經受夠了p_name2總司令下工作,0
-zin_regs_msg,就這樣做吧！！,不要再待在這個地方！！,0
-zin_reg_title,p_name1脫逃了。
-zin_reg_button,0
-zin_reg_exit
-end

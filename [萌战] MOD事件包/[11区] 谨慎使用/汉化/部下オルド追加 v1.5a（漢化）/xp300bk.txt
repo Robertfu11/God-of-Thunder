@@ -1,6 +1,0 @@
-//何和オルド　バック 20%
-chk_wsts,pid2
-case_normal
-	txtload,xp300bk_a
-case_botebara
-	txtload,xp300bk_b

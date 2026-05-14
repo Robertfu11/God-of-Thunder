@@ -1,7 +1,0 @@
-eve_start
-	if_date,107,12
-eve_end
-
-set_hexmap,13,8,0
-set_hexmap,15,7,0
-set_hexmap,16,7,0

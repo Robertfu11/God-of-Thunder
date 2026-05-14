@@ -1,7 +1,0 @@
-eve_start
-	if_bet_eveflg,72,1,14
-eve_end
-
-//田伙打鼻陎茇芼市它件玄失永皿
-add_eveflg,72,1
-end

@@ -1,5 +1,0 @@
-chk_wsts,pid2
-case_normal
-	txtload,xp300nn_a
-case_botebara
-	txtload,xp300nn_b

@@ -1,8 +1,0 @@
-eve_start
-	if_date,85,9
-	if_cmpos,12,5
-eve_end
-
-//¥Ð¥ë¥´ÒÆ„Ó
-set_winfo,20,0,0,0,0,0,12,5
-end

@@ -1,6 +1,0 @@
-eve_start
-	if_date,130,2
-eve_end
-
-//全イベント終了　SP特殊設定解除
-cls_allsp2

@@ -1,6 +1,0 @@
-//部下オルド　2回目以降 20%
-chk_wsts,pid2
-case_normal
-	txtload,xp300n2_a
-case_botebara
-	txtload,xp300n2_b

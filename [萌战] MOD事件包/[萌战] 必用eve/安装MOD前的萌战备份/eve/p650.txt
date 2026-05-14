@@ -1,7 +1,0 @@
-bgm_chg,60
-zin_reg_event,,pid1,pid2,,gzin61
-zin_reg_qnar,p_name1與p_name2當前的利害關係一致、於是締結了同盟。
-zin_reg_msg,從今以後一同邁向繁榮,0
-zin_reg_msg,嗯、共同抵禦敵人吧,1
-zin_reg_button,0
-end

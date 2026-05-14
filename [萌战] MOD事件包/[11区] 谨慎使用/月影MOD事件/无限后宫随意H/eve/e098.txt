@@ -1,9 +1,0 @@
-eve_start
-	if_eveflg,11,1
-	if_date,72,9
-	if_pkun,7,13000
-eve_end
-
-//¥Õ¥¡©`¥ê¡¢¥¢¥Ù¥ä¥¯©`¥ó¤È½Y»é
-set_sikan,574,7
-set_pkon,7,574

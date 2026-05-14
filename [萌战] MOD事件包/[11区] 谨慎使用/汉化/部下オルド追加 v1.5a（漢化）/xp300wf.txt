@@ -1,7 +1,0 @@
-get_mpid,»éÒö=pid2,×´‘B!3,,,,,
-set_epid3,pval
-chk_wsts,pid2
-case_normal
-	txtload,xp300wf_a
-case_botebara
-	txtload,xp300wf_b

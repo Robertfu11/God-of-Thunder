@@ -1,8 +1,0 @@
-eve_start
-	if_not_wexist,2
-	if_aft_date,73,12
-	if_cwpos,2
-eve_end
-
-put_wakusei,2
-set_run_msg,惑星斯托被发现了。
